@@ -44,14 +44,14 @@ export default function Footer() {
                     <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-white/10 blur-[80px] pointer-events-none rounded-full" />
                 </motion.div>
             </div>
-
-            {/* Mega 5-Column Footer */}
+ 
+            {/* 3-Column Footer */}
             <div className="max-w-7xl mx-auto px-4 w-full pb-10 border-t border-slate-100 pt-20">
                 <div className="flex flex-wrap justify-between gap-10">
-
+ 
                     {/* Brand Column */}
-                    <div className="w-full lg:w-[22%]">
-                        <a href="#" className="flex items-center gap-2 group mb-5 inline-flex">
+                    <div className="w-full lg:w-[30%]">
+                        <a href="/" className="flex items-center gap-2 group mb-5 inline-flex">
                             <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-white shadow-sm">
                                 <Bot className="w-5 h-5" />
                             </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                             <FaChrome className="w-[18px] h-[18px]" />
                             <span className="text-[15px]">Chrome extension</span>
                         </button>
-
+ 
                         {/* Social */}
                         <div className="flex gap-4 opacity-60">
                             <a href="#" className="hover:text-primary transition-colors"><Instagram className="w-4 h-4" /></a>
@@ -72,83 +72,51 @@ export default function Footer() {
                             <a href="#" className="hover:text-primary transition-colors"><Youtube className="w-4 h-4" /></a>
                         </div>
                     </div>
-
-                    {/* Link Columns Wrapper */}
-                    <div className="w-full lg:w-[70%] flex flex-wrap justify-between gap-6 text-[12px]">
-
-                        {/* Column 2: Chrome Extension & Support */}
-                        <div className="w-[45%] md:w-auto">
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">Chrome Extension</h4>
-                            <ul className="space-y-3.5 mb-8">
-                                {['The Chrome Extension', 'Supercharged Answers', 'Screenshot questions', 'Text Select', 'Sidepanel AI chat', 'Backed by academic sources', 'Edge Browser Support'].map(link => (
-                                    <li key={link}><a href="#" className="text-slate-500 hover:text-[#3b82f6] transition-colors">{link}</a></li>
-                                ))}
-                            </ul>
-
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">Support and Docs</h4>
+ 
+                    {/* Link Columns */}
+                    <div className="w-full lg:w-[60%] flex flex-wrap gap-12 md:gap-24 text-[13px]">
+ 
+                        {/* Column 2: Navigation */}
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[14px]">General</h4>
                             <ul className="space-y-3.5">
-                                {['Help Center', 'Contact us', 'Request a feature', 'Terms & Conditions', 'Privacy Policy', 'Acceptable Use'].map(link => (
-                                    <li key={link}><a href="#" className="text-slate-500 hover:text-[#3b82f6] transition-colors">{link}</a></li>
-                                ))}
+                                <li>
+                                    <a href="/" className="text-slate-500 hover:text-[#3b82f6] transition-colors font-medium">Home</a>
+                                </li>
                             </ul>
                         </div>
-
-                        {/* Column 3: Mobile App & AI Chat */}
-                        <div className="w-[45%] md:w-auto">
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">Mobile App</h4>
-                            <ul className="space-y-3.5 mb-8">
-                                {['The iOS App', 'Scan & Solve', 'Ask follow up questions', 'Step-by-step explanations'].map(link => (
-                                    <li key={link}><a href="#" className="text-slate-500 hover:text-[#3b82f6] transition-colors">{link}</a></li>
-                                ))}
-                            </ul>
-
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">AI Chat & Study Tools</h4>
+ 
+                        {/* Column 3: Compare */}
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[14px]">Compare Alternatives</h4>
                             <ul className="space-y-3.5">
-                                {['Powerful AI chat', 'Quiz Mode', 'AI Coding Tutor', 'AI Essay Writer'].map(link => (
-                                    <li key={link}><a href="#" className="text-slate-500 hover:text-[#3b82f6] transition-colors">{link}</a></li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Column 4: Free Solver Tools & Compare */}
-                        <div className="w-[45%] md:w-auto">
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">Free Solver Tools</h4>
-                            <ul className="space-y-3.5 mb-8">
-                                {['AI Homework Helper', 'AI Math Solver', 'AI Accounting Solver', 'AI Summarizer', 'AI Plagiarism Checker', 'AI Tutor', 'View all subjects →'].map(link => (
-                                    <li key={link}><a href="#" className="text-slate-500 hover:text-[#3b82f6] transition-colors">{link}</a></li>
-                                ))}
-                            </ul>
-
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[13px]">Compare</h4>
-                            <ul className="space-y-3.5">
-                                {['CheatMate alternative', 'Quietly alternative', 'TestBro alternative', 'Quizard alternative', 'Mindko alternative', 'Classlogy alternative', 'ChatGPT alternative', 'Quizlet alternative', 'Photomath alternative', 'Gauthmath alternative', 'Photosolve alternative', 'Studybuddy.gg alternative', 'Coursology alternative', 'Transcript alternative', 'Smartsolve alternative', 'Homeworkify alternative', 'AnswersAi alternative', 'Studyx.ai alternative'].map(link => (
-                                    <li key={link}>
-                                        <a href={
-                                            link === 'CheatMate alternative' ? '/cheatmate-vs-examghost' :
-                                                link === 'Quietly alternative' ? '/usequietly-vs-examghost' :
-                                                    link === 'TestBro alternative' ? '/testbro-vs-examghost' :
-                                                        link === 'Quizard alternative' ? '/quizard-vs-examghost' :
-                                                            link === 'Mindko alternative' ? '/mindko-vs-examghost' :
-                                                                link === 'Classlogy alternative' ? '/classlogy-vs-examghost' :
-                                                                    '#'
-                                        } className="text-slate-500 hover:text-[#3b82f6] transition-colors">
-                                            {link}
+                                {[
+                                    { name: 'CheatMate Alternative', path: '/cheatmate-vs-examghost' },
+                                    { name: 'Quietly Alternative', path: '/usequietly-vs-examghost' },
+                                    { name: 'TestBro Alternative', path: '/testbro-vs-examghost' },
+                                    { name: 'Quizard Alternative', path: '/quizard-vs-examghost' },
+                                    { name: 'Mindko Alternative', path: '/mindko-vs-examghost' },
+                                    { name: 'Classlogy Alternative', path: '/classlogy-vs-examghost' }
+                                ].map(link => (
+                                    <li key={link.path}>
+                                        <a href={link.path} className="text-slate-500 hover:text-[#3b82f6] transition-colors font-medium">
+                                            {link.name}
                                         </a>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-
+ 
                     </div>
-
+ 
                 </div>
-
+ 
                 <div className="pt-10 mt-16 border-t border-slate-100 text-center">
                     <p className="text-[11px] text-slate-400 font-medium">
                         Copyright © {new Date().getFullYear()}, ExamGhost
                     </p>
                 </div>
-
+ 
             </div>
         </footer>
     );
