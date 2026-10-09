@@ -43,13 +43,13 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #070b14;
-    color: #f8fafc;
+    background-color: #ffffff;
+    color: #0f172a;
   }
 
   body {
-    background-color: #070b14;
-    color: #f8fafc;
+    background-color: #ffffff;
+    color: #0f172a;
     overflow-x: hidden;
   }
 }

@@ -1,99 +1,80 @@
 'use client';
-import React, { useState } from 'react';
-import { Check, Sparkles, Zap, Shield, HelpCircle, Lock } from 'lucide-react';
+import React from 'react';
+import { Check, Sparkles, Shield, Lock, Zap } from 'lucide-react';
 import { SiDiscord } from 'react-icons/si';
-import { motion } from 'framer-motion';
 
 export default function Pricing() {
-    const [billingCycle, setBillingCycle] = useState<'monthly' | 'lifetime'>('monthly');
-
     return (
-        <section id="pricing" className="py-24 bg-[#090e1a] text-white relative overflow-hidden border-b border-white/5">
-            {/* Ambient Lighting */}
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <section id="pricing" className="py-20 bg-white text-slate-900 border-b border-slate-200/80">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
 
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mb-12"
-                >
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full mb-4">
-                        <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-                        <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">
-                            Affordable Student Pricing
+                <div className="text-center max-w-2xl mx-auto mb-14">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full mb-3">
+                        <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                        <span className="text-xs font-semibold text-slate-700">
+                            Transparent Pricing
                         </span>
                     </div>
-                    <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-                        Invest in Your GPA for Less Than Lunch
+                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+                        Invest in your GPA for less than lunch
                     </h2>
-                    <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-                        Cancel anytime with one click. Backed by our 100% Always Working & 7-Day Refund Guarantee.
+                    <p className="text-sm sm:text-base text-slate-600">
+                        Cancel anytime with one click. Backed by our 7-day money-back guarantee.
                     </p>
-                </motion.div>
+                </div>
 
-                {/* Lifetime Community VIP Banner */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="max-w-4xl mx-auto mb-16 bg-gradient-to-r from-blue-900/40 via-indigo-900/30 to-purple-900/40 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 backdrop-blur-xl relative overflow-hidden shadow-[0_0_50px_rgba(99,102,241,0.15)]"
-                >
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+                {/* Discord Community Callout */}
+                <div className="max-w-3xl mx-auto mb-12 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#5865F2]/10 border border-[#5865F2]/20 flex items-center justify-center shrink-0">
+                            <SiDiscord className="w-5 h-5 text-[#5865F2]" />
+                        </div>
                         <div>
-                            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1.5">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                Discord Early Adopter Offer
-                            </div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
-                                Join the Official Community & Win Free Access
+                            <h3 className="text-sm font-bold text-slate-900">
+                                Join 2,400+ students on Discord
                             </h3>
-                            <p className="text-xs sm:text-sm text-slate-300 max-w-lg">
-                                Get 24/7 priority support, sneak peeks of upcoming LMS bypass patches, and participate in weekly free license drops.
+                            <p className="text-xs text-slate-500">
+                                Real-time Canvas update alerts, test-taking strategies & weekly giveaways.
                             </p>
                         </div>
-                        <a
-                            href="#"
-                            className="shrink-0 px-6 py-3.5 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-xs sm:text-sm rounded-xl transition-all flex items-center gap-2.5 shadow-lg shadow-[#5865F2]/30 active:scale-95"
-                        >
-                            <SiDiscord className="w-4 h-4" />
-                            <span>Join Discord (Free)</span>
-                        </a>
                     </div>
-                </motion.div>
+                    <a
+                        href="#"
+                        className="px-4 py-2 bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-semibold rounded-lg shadow-sm transition-colors shrink-0"
+                    >
+                        Join Discord (Free)
+                    </a>
+                </div>
 
                 {/* Pricing Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14">
 
                     {/* Tier 1: Free Trial */}
-                    <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
+                    <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
                         <div>
-                            <h4 className="text-base font-bold text-slate-200 mb-1">Free Trial</h4>
-                            <p className="text-xs text-slate-400 mb-6">Test the stealth engine risk-free.</p>
+                            <h3 className="text-base font-bold text-slate-900 mb-1">Free Trial</h3>
+                            <p className="text-xs text-slate-500 mb-5">Test the stealth engine risk-free.</p>
                             
-                            <div className="flex items-baseline gap-1.5 mb-6">
-                                <span className="text-4xl font-extrabold text-white">$0</span>
-                                <span className="text-xs text-slate-400">/ forever</span>
+                            <div className="flex items-baseline gap-1 mb-6">
+                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$0</span>
+                                <span className="text-xs text-slate-500">/ forever</span>
                             </div>
 
-                            <div className="space-y-3 mb-8 text-xs text-slate-300">
+                            <div className="space-y-3 mb-8 text-xs text-slate-600">
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-slate-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>5 Solves per Day</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-slate-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>Basic Focus Interceptor</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-slate-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>Supports Canvas & Blackboard</span>
                                 </div>
-                                <div className="flex items-center gap-2.5 text-slate-500">
+                                <div className="flex items-center gap-2.5 text-slate-400">
                                     <span>✕ No Snap-It Screenshot Mode</span>
                                 </div>
                             </div>
@@ -101,90 +82,90 @@ export default function Pricing() {
 
                         <a 
                             href="#"
-                            className="w-full py-3.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold text-xs text-center transition-all block"
+                            className="w-full py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs text-center transition-colors block"
                         >
                             Install Free
                         </a>
                     </div>
 
                     {/* Tier 2: Monthly Pro (Popular) */}
-                    <div className="p-8 rounded-3xl bg-gradient-to-b from-blue-600/10 via-white/[0.03] to-white/[0.01] border-2 border-blue-500/60 flex flex-col justify-between relative shadow-[0_0_40px_rgba(59,130,246,0.18)] hover:-translate-y-1 transition-all">
-                        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-md">
-                            Most Popular • 50% Off
+                    <div className="p-7 rounded-2xl bg-white border-2 border-slate-900 shadow-md flex flex-col justify-between relative">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
+                            Most Popular
                         </div>
 
                         <div>
-                            <h4 className="text-base font-bold text-white mb-1">Monthly Pro</h4>
-                            <p className="text-xs text-slate-400 mb-6">Full power for active semesters.</p>
+                            <h3 className="text-base font-bold text-slate-900 mb-1">Monthly Pro</h3>
+                            <p className="text-xs text-slate-500 mb-5">Full power for active semesters.</p>
 
                             <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-slate-500 line-through text-lg font-bold">$15.99</span>
-                                <span className="text-4xl font-extrabold text-white">$7.99</span>
-                                <span className="text-xs text-slate-400">/ month</span>
+                                <span className="text-slate-400 line-through text-sm font-semibold">$15.99</span>
+                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$7.99</span>
+                                <span className="text-xs text-slate-500">/ month</span>
                             </div>
 
-                            <div className="space-y-3 mb-8 text-xs text-slate-200">
+                            <div className="space-y-3 mb-8 text-xs text-slate-700">
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-blue-400 shrink-0 stroke-[2.5]" />
-                                    <span className="font-semibold text-white">Unlimited Quiz & Exam Solves</span>
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    <span className="font-semibold text-slate-900">Unlimited Quiz Solves</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-blue-400 shrink-0 stroke-[2.5]" />
-                                    <span>100% Focus Interceptor (Zero Log Flags)</span>
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    <span>100% Focus Interceptor (Zero Flags)</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-blue-400 shrink-0 stroke-[2.5]" />
-                                    <span>Snap-It Screenshot & Diagram Solve</span>
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    <span>Snap-It Screenshot & Graph Solver</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-blue-400 shrink-0 stroke-[2.5]" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>2nd-Attempt Auto-Memory</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-blue-400 shrink-0 stroke-[2.5]" />
-                                    <span>Step-by-Step AI Reasoning</span>
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    <span>Step-by-Step Explanations</span>
                                 </div>
                             </div>
                         </div>
 
                         <a 
                             href="#"
-                            className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center shadow-lg shadow-blue-600/30 transition-all block active:scale-95"
+                            className="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs text-center shadow-sm transition-colors block"
                         >
                             Start Pro Access
                         </a>
                     </div>
 
-                    {/* Tier 3: Semester / Lifetime Pass */}
-                    <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
+                    {/* Tier 3: Lifetime Pass */}
+                    <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
                         <div>
-                            <div className="inline-block text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-2">
+                            <div className="inline-block text-[10px] font-bold text-blue-600 uppercase tracking-wider mb-1">
                                 Best Value
                             </div>
-                            <h4 className="text-base font-bold text-slate-200 mb-1">Lifetime Pass</h4>
-                            <p className="text-xs text-slate-400 mb-6">Pay once, protected for your entire degree.</p>
+                            <h3 className="text-base font-bold text-slate-900 mb-1">Lifetime Pass</h3>
+                            <p className="text-xs text-slate-500 mb-5">Pay once, protected for your entire degree.</p>
 
                             <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-slate-500 line-through text-lg font-bold">$129</span>
-                                <span className="text-4xl font-extrabold text-white">$49.99</span>
-                                <span className="text-xs text-slate-400">/ one-time</span>
+                                <span className="text-slate-400 line-through text-sm font-semibold">$129</span>
+                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$49.99</span>
+                                <span className="text-xs text-slate-500">/ one-time</span>
                             </div>
 
-                            <div className="space-y-3 mb-8 text-xs text-slate-300">
+                            <div className="space-y-3 mb-8 text-xs text-slate-600">
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                                    <span className="font-semibold text-white">Lifetime Unlimited Access</span>
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    <span className="font-semibold text-slate-900">Lifetime Unlimited Access</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>Free Automatic Updates Forever</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>All Future LMS Patches Included</span>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>Priority VIP Discord Ticket Support</span>
                                 </div>
                             </div>
@@ -192,7 +173,7 @@ export default function Pricing() {
 
                         <a 
                             href="#"
-                            className="w-full py-3.5 rounded-xl border border-white/15 bg-white/10 hover:bg-white/15 text-white font-bold text-xs text-center transition-all block"
+                            className="w-full py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs text-center transition-colors block"
                         >
                             Get Lifetime Pass
                         </a>
@@ -200,18 +181,18 @@ export default function Pricing() {
 
                 </div>
 
-                {/* Trust & Guarantee Footer */}
-                <div className="max-w-2xl mx-auto text-center flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-slate-400 border-t border-white/5 pt-8">
+                {/* Trust & Guarantee Strip */}
+                <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-slate-500 border-t border-slate-200/80 pt-8">
                     <div className="flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-emerald-400" />
+                        <Shield className="w-4 h-4 text-emerald-600" />
                         <span>100% Always Working Guarantee</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-blue-400" />
-                        <span>7-Day Hassle-Free Full Refund</span>
+                        <Lock className="w-4 h-4 text-blue-600" />
+                        <span>7-Day Full Refund Guarantee</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-amber-400" />
+                        <Zap className="w-4 h-4 text-amber-500" />
                         <span>Instant Chrome Setup in 60s</span>
                     </div>
                 </div>

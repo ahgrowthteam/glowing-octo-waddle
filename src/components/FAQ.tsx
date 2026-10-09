@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, ShieldCheck } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FAQ() {
@@ -42,69 +42,67 @@ export default function FAQ() {
     ];
 
     return (
-        <section id="faq" className="py-24 bg-[#070b14] text-white relative border-b border-white/5">
-            <div className="max-w-4xl mx-auto px-4 relative z-10 w-full">
+        <section id="faq" className="py-20 bg-slate-50/60 text-slate-900 border-b border-slate-200/80">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 w-full">
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-600/10 border border-blue-500/30 rounded-full mb-4">
-                        <HelpCircle className="w-3.5 h-3.5 text-blue-400" />
-                        <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">
-                            Clear Answers to Real Questions
+                <div className="text-center mb-14">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm mb-3">
+                        <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
+                        <span className="text-xs font-semibold text-slate-700">
+                            Got Questions?
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                        Everything you need to know about stealth technology, Canvas logs, and our 100% working guarantee.
+                    <p className="text-sm sm:text-base text-slate-600">
+                        Everything you need to know about stealth technology, Canvas logs, and our refund guarantee.
                     </p>
-                </motion.div>
+                </div>
 
-                <div className="space-y-3.5">
-                    {faqs.map((faq, idx) => (
-                        <div
-                            key={idx}
-                            className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                                openIndex === idx 
-                                    ? 'border-blue-500/40 bg-white/[0.04] shadow-[0_0_30px_rgba(59,130,246,0.1)]' 
-                                    : 'border-white/5 bg-white/[0.015] hover:border-white/10 hover:bg-white/[0.03]'
-                            }`}
-                        >
-                            <button
-                                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                <div className="space-y-3">
+                    {faqs.map((faq, idx) => {
+                        const isOpen = openIndex === idx;
+                        return (
+                            <div
+                                key={idx}
+                                className={`border rounded-xl transition-all duration-200 overflow-hidden ${
+                                    isOpen 
+                                        ? 'border-slate-300 bg-white shadow-sm' 
+                                        : 'border-slate-200 bg-white hover:border-slate-300'
+                                }`}
                             >
-                                <span className="font-bold text-white text-sm sm:text-base pr-4">
-                                    {faq.q}
-                                </span>
-                                <div className={`w-7 h-7 rounded-xl bg-white/5 flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                                    openIndex === idx ? 'rotate-180 text-blue-400 bg-blue-600/20' : 'text-slate-400'
-                                }`}>
-                                    <ChevronDown className="w-4 h-4" />
-                                </div>
-                            </button>
+                                <button
+                                    className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none"
+                                    onClick={() => setOpenIndex(isOpen ? null : idx)}
+                                >
+                                    <span className="font-semibold text-slate-900 text-sm sm:text-base pr-4">
+                                        {faq.q}
+                                    </span>
+                                    <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 transition-transform ${
+                                        isOpen ? 'rotate-180 text-blue-600 bg-blue-50' : 'text-slate-400'
+                                    }`}>
+                                        <ChevronDown className="w-4 h-4" />
+                                    </div>
+                                </button>
 
-                            <AnimatePresence initial={false}>
-                                {openIndex === idx && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.25, ease: "easeInOut" }}
-                                    >
-                                        <div className="px-6 pb-6 text-slate-300 leading-relaxed text-xs sm:text-sm border-t border-white/5 pt-4">
-                                            {faq.a}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
+                                <AnimatePresence initial={false}>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <div className="px-5 pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-3">
+                                                {faq.a}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        );
+                    })}
                 </div>
 
             </div>
