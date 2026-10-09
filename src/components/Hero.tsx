@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
     Bot, PlayCircle, Shield, CheckCircle2, Clock, 
     Check, Terminal, Eye, Sparkles, RefreshCw, Lock
@@ -13,6 +13,7 @@ export default function Hero() {
     const [solved, setSolved] = useState(false);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isScanning, setIsScanning] = useState(false);
+    const [shortcutNotice, setShortcutNotice] = useState<string | null>(null);
 
     const handleSolve = () => {
         setIsScanning(true);
@@ -27,10 +28,47 @@ export default function Hero() {
         setSolved(false);
         setSelectedOption(null);
         setIsScanning(false);
+        setShortcutNotice(null);
+    };
+
+    // Real keyboard shortcut listener
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const isCmdOrCtrl = e.metaKey || e.ctrlKey;
+            const isShift = e.shiftKey;
+            const key = e.key.toLowerCase();
+
+            // Match Cmd+Shift+X or Ctrl+Shift+X or Cmd+Shift+S or Alt+Q
+            if ((isCmdOrCtrl && isShift && (key === 'x' || key === 's' || key === 'e')) || (e.altKey && key === 'q')) {
+                e.preventDefault();
+                setActiveTab('simulator');
+                setShortcutNotice(`Shortcut triggered (${isCmdOrCtrl ? '⌘' : 'Alt'}+${key.toUpperCase()})`);
+                handleSolve();
+                const demoEl = document.getElementById('demo');
+                if (demoEl) {
+                    const top = demoEl.getBoundingClientRect().top + window.scrollY - 90;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+                setTimeout(() => setShortcutNotice(null), 3000);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
+    const scrollToDemoAndSolve = () => {
+        setActiveTab('simulator');
+        handleSolve();
+        const demoEl = document.getElementById('demo');
+        if (demoEl) {
+            const top = demoEl.getBoundingClientRect().top + window.scrollY - 90;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
     };
 
     return (
-        <section className="relative pt-32 sm:pt-36 pb-20 overflow-hidden bg-white text-slate-900 border-b border-slate-100">
+        <section className="relative pt-28 sm:pt-32 pb-20 overflow-hidden bg-white text-slate-900 border-b border-slate-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
                 {/* Top Badge */}
@@ -42,7 +80,7 @@ export default function Hero() {
                 </div>
 
                 {/* Hero Headline & Subtitle */}
-                <div className="text-center max-w-3xl mx-auto mb-10">
+                <div className="text-center max-w-3xl mx-auto mb-8">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
                         The invisible homework & quiz helper for Canvas.
                     </h1>
@@ -52,7 +90,7 @@ export default function Hero() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8">
                     <a
                         href="#pricing"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition-all"
@@ -61,11 +99,8 @@ export default function Hero() {
                         <span>Add to Chrome — Free</span>
                     </a>
                     <button
-                        onClick={() => {
-                            setActiveTab('simulator');
-                            handleSolve();
-                        }}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold text-sm shadow-sm transition-colors"
+                        onClick={scrollToDemoAndSolve}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold text-sm shadow-sm transition-colors cursor-pointer"
                     >
                         <PlayCircle className="w-4 h-4 text-slate-500" />
                         <span>Try Interactive Demo</span>
@@ -73,16 +108,29 @@ export default function Hero() {
                 </div>
 
                 {/* Hotkeys micro-bar */}
-                <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500 mb-10">
-                    <span className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md font-mono text-slate-700">
+                <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs text-slate-500 mb-8">
+                    <button
+                        onClick={scrollToDemoAndSolve}
+                        className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md font-mono text-slate-700 cursor-pointer transition-colors"
+                        title="Click or press ⌘+Shift+X on keyboard"
+                    >
                         ⌘+Shift+X Solve
-                    </span>
-                    <span className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md font-mono text-slate-700">
+                    </button>
+                    <button
+                        onClick={scrollToDemoAndSolve}
+                        className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md font-mono text-slate-700 cursor-pointer transition-colors"
+                        title="Click or press ⌘+Shift+S on keyboard"
+                    >
                         ⌘+Shift+S Snap-It OCR
-                    </span>
+                    </button>
                     <span className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md font-medium">
                         0 Tab Leaves Logged
                     </span>
+                    {shortcutNotice && (
+                        <span className="flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium animate-pulse">
+                            {shortcutNotice}
+                        </span>
+                    )}
                 </div>
 
                 {/* Segmented Control Tabs */}
@@ -90,7 +138,7 @@ export default function Hero() {
                     <div className="inline-flex p-1 bg-slate-100 border border-slate-200 rounded-xl text-xs font-semibold">
                         <button
                             onClick={() => setActiveTab('simulator')}
-                            className={`px-4 py-2 rounded-lg transition-all ${
+                            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
                                 activeTab === 'simulator'
                                     ? 'bg-white text-slate-900 shadow-sm'
                                     : 'text-slate-600 hover:text-slate-900'
@@ -100,7 +148,7 @@ export default function Hero() {
                         </button>
                         <button
                             onClick={() => setActiveTab('teacherLog')}
-                            className={`px-4 py-2 rounded-lg transition-all ${
+                            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
                                 activeTab === 'teacherLog'
                                     ? 'bg-white text-slate-900 shadow-sm'
                                     : 'text-slate-600 hover:text-slate-900'
@@ -112,7 +160,7 @@ export default function Hero() {
                 </div>
 
                 {/* Simulator Window */}
-                <div className="max-w-4xl mx-auto rounded-2xl bg-white border border-slate-200 shadow-lg overflow-hidden">
+                <div id="demo" className="max-w-4xl mx-auto rounded-2xl bg-white border border-slate-200 shadow-lg overflow-hidden scroll-mt-24">
                     
                     {/* Browser Chrome Header */}
                     <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">

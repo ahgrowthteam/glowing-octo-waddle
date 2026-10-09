@@ -72,7 +72,7 @@ export default function Navbar() {
                     {/* Action CTA & Mobile Toggle */}
                     <div className="flex items-center gap-2.5">
                         <a
-                            href="#pricing"
+                            href="/#pricing"
                             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-sm transition-colors"
                         >
                             <FaChrome className="w-3.5 h-3.5 text-blue-400" />
