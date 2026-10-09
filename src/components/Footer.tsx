@@ -1,105 +1,112 @@
 'use client';
 import React from 'react';
-import { Bot, Star, Youtube, Instagram } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
-import { FaChrome } from 'react-icons/fa';
+import { Bot, Star, Youtube, Instagram, ShieldCheck } from 'lucide-react';
+import { FaTiktok, FaChrome } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
     return (
-        <footer className="bg-white relative">
+        <footer className="bg-[#050811] text-white relative pt-12">
 
-            {/* Pre-Footer Blue CTA Card */}
-            <div className="max-w-[1000px] mx-auto px-4 relative z-20 w-full mb-16 pt-10 -mt-20">
+            {/* Pre-Footer CTA Card */}
+            <div className="max-w-5xl mx-auto px-4 relative z-20 w-full mb-16">
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-[2rem] p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(59,130,246,0.3)] relative overflow-hidden"
+                    className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-10 md:p-14 text-center shadow-[0_0_60px_rgba(59,130,246,0.3)] relative overflow-hidden"
                 >
-                    {/* Avatars */}
                     <div className="flex items-center justify-center mb-6">
                         <div className="flex -space-x-2">
                             {['bg-blue-300', 'bg-purple-300', 'bg-indigo-300', 'bg-sky-300', 'bg-emerald-300'].map((bg, i) => (
-                                <div key={i} className={`w-8 h-8 rounded-full border-2 border-primary ${bg} flex items-center justify-center`}></div>
+                                <div key={i} className={`w-8 h-8 rounded-full border-2 border-indigo-600 ${bg} flex items-center justify-center`} />
                             ))}
                         </div>
-                        <div className="flex flex-col items-start ml-4">
+                        <div className="flex flex-col items-start ml-4 text-left">
                             <div className="flex gap-1 mb-0.5">
-                                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 fill-white text-white" />)}
+                                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />)}
                             </div>
-                            <span className="text-white text-[11px] font-bold tracking-wider opacity-90">250K+ STUDENTS TRUST US</span>
+                            <span className="text-white text-[11px] font-bold tracking-wider opacity-90 uppercase">50,000+ Active Students</span>
                         </div>
                     </div>
 
-                    <h2 className="text-3xl md:text-[2.75rem] leading-tight font-bold text-white mb-4 tracking-tight">Ready to fast-track your homework?</h2>
-                    <p className="text-blue-100 text-[17px] mb-10 font-medium">Save hours on homework and never worry about exams ever again.</p>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+                        Ready to make Canvas tests effortless?
+                    </h2>
+                    <p className="text-blue-100 text-sm sm:text-base mb-8 font-medium max-w-xl mx-auto">
+                        Install in 30 seconds. Switch tabs safely, auto-solve quiz questions, and stay 100% invisible to professors.
+                    </p>
 
-                    <button className="bg-white text-slate-900 font-bold px-10 py-4 text-[15px] rounded-xl hover:scale-105 transition-transform shadow-xl shadow-black/10 hover:shadow-black/20">
-                        Get started - Its free
-                    </button>
-
-                    {/* Glow Accents Behind Button */}
-                    <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-white/10 blur-[80px] pointer-events-none rounded-full" />
+                    <a 
+                        href="#pricing"
+                        className="inline-flex items-center gap-3 bg-white text-slate-900 font-bold px-8 py-4 text-sm rounded-xl hover:scale-105 transition-all shadow-xl shadow-black/20"
+                    >
+                        <FaChrome className="w-5 h-5 text-blue-600" />
+                        <span>Add ExamGhost to Chrome — Free</span>
+                    </a>
                 </motion.div>
             </div>
  
-            {/* 3-Column Footer */}
-            <div className="max-w-7xl mx-auto px-4 w-full pb-10 border-t border-slate-100 pt-20">
+            {/* 3-Column Footer Links */}
+            <div className="max-w-7xl mx-auto px-4 w-full pb-12 border-t border-white/5 pt-16">
                 <div className="flex flex-wrap justify-between gap-10">
  
                     {/* Brand Column */}
-                    <div className="w-full lg:w-[30%]">
-                        <a href="/" className="flex items-center gap-2 group mb-5 inline-flex">
-                            <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-white shadow-sm">
+                    <div className="w-full lg:w-[32%]">
+                        <a href="/" className="flex items-center gap-2.5 group mb-4 inline-flex">
+                            <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
                                 <Bot className="w-5 h-5" />
                             </div>
-                            <span className="font-extrabold text-xl tracking-tight text-slate-800">ExamGhost</span>
+                            <span className="font-extrabold text-xl tracking-tight text-white">ExamGhost <span className="text-blue-400 italic">AI</span></span>
                         </a>
-                        <p className="text-slate-500 text-[14px] font-medium mb-6 leading-relaxed">
-                            Instant, Expert Homework Help.
+                        <p className="text-slate-400 text-xs sm:text-sm font-normal mb-6 leading-relaxed">
+                            Undetectable AI homework helper & test companion. Intercepts focus-loss event listeners on Canvas, Blackboard, Moodle, and Brightspace.
                         </p>
-                        <button className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#4F71E5] hover:bg-blue-600 text-white rounded-xl font-bold transition-all shadow-md mb-8">
-                            <FaChrome className="w-[18px] h-[18px]" />
-                            <span className="text-[15px]">Chrome extension</span>
-                        </button>
- 
+
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-semibold text-emerald-400 mb-6">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                            <span>100% Stealth Active</span>
+                        </div>
+
                         {/* Social */}
-                        <div className="flex gap-4 opacity-60">
-                            <a href="#" className="hover:text-primary transition-colors"><Instagram className="w-4 h-4" /></a>
-                            <a href="#" className="hover:text-primary transition-colors"><FaTiktok className="w-4 h-4" /></a>
-                            <a href="#" className="hover:text-primary transition-colors"><Youtube className="w-4 h-4" /></a>
+                        <div className="flex gap-4 text-slate-400">
+                            <a href="#" className="hover:text-blue-400 transition-colors"><Instagram className="w-4 h-4" /></a>
+                            <a href="#" className="hover:text-blue-400 transition-colors"><FaTiktok className="w-4 h-4" /></a>
+                            <a href="#" className="hover:text-blue-400 transition-colors"><Youtube className="w-4 h-4" /></a>
                         </div>
                     </div>
  
                     {/* Link Columns */}
-                    <div className="w-full lg:w-[60%] flex flex-wrap gap-12 md:gap-24 text-[13px]">
+                    <div className="w-full lg:w-[60%] flex flex-wrap gap-12 md:gap-20 text-xs sm:text-sm">
  
-                        {/* Column 2: Navigation */}
+                        {/* Column 1: Navigation */}
                         <div>
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[14px]">General</h4>
-                            <ul className="space-y-3.5">
-                                <li>
-                                    <a href="/" className="text-slate-500 hover:text-[#3b82f6] transition-colors font-medium">Home</a>
-                                </li>
+                            <h4 className="font-bold text-white mb-4 tracking-tight uppercase text-xs">Product</h4>
+                            <ul className="space-y-3">
+                                <li><a href="#demo" className="text-slate-400 hover:text-white transition-colors">Quiz Simulator</a></li>
+                                <li><a href="#demo" className="text-slate-400 hover:text-white transition-colors">Teacher Log Proof</a></li>
+                                <li><a href="#features" className="text-slate-400 hover:text-white transition-colors">Features</a></li>
+                                <li><a href="#pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+                                <li><a href="#faq" className="text-slate-400 hover:text-white transition-colors">FAQ</a></li>
                             </ul>
                         </div>
  
-                        {/* Column 3: Compare */}
+                        {/* Column 2: Compare */}
                         <div>
-                            <h4 className="font-bold text-slate-800 mb-5 tracking-tight text-[14px]">Compare Alternatives</h4>
-                            <ul className="space-y-3.5">
+                            <h4 className="font-bold text-white mb-4 tracking-tight uppercase text-xs">Competitor Comparisons</h4>
+                            <ul className="space-y-2.5">
                                 {[
+                                    { name: 'CanvasHack Alternative', path: '/cheatmate-vs-examghost' },
                                     { name: 'CheatMate Alternative', path: '/cheatmate-vs-examghost' },
-                                    { name: 'Quietly Alternative', path: '/usequietly-vs-examghost' },
+                                    { name: 'UseQuietly Alternative', path: '/usequietly-vs-examghost' },
                                     { name: 'TestBro Alternative', path: '/testbro-vs-examghost' },
                                     { name: 'Quizard Alternative', path: '/quizard-vs-examghost' },
                                     { name: 'Mindko Alternative', path: '/mindko-vs-examghost' },
                                     { name: 'Classlogy Alternative', path: '/classlogy-vs-examghost' }
-                                ].map(link => (
-                                    <li key={link.path}>
-                                        <a href={link.path} className="text-slate-500 hover:text-[#3b82f6] transition-colors font-medium">
+                                ].map((link, idx) => (
+                                    <li key={idx}>
+                                        <a href={link.path} className="text-slate-400 hover:text-blue-400 transition-colors">
                                             {link.name}
                                         </a>
                                     </li>
@@ -111,9 +118,12 @@ export default function Footer() {
  
                 </div>
  
-                <div className="pt-10 mt-16 border-t border-slate-100 text-center">
-                    <p className="text-[11px] text-slate-400 font-medium">
-                        Copyright © {new Date().getFullYear()}, ExamGhost
+                <div className="pt-8 mt-12 border-t border-white/5 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                    <p>
+                        Copyright © {new Date().getFullYear()} ExamGhost. All rights reserved.
+                    </p>
+                    <p>
+                        Engineered for student privacy and test-taking workflow support.
                     </p>
                 </div>
  

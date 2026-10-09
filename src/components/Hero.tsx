@@ -1,351 +1,472 @@
 "use client";
 
-import { Bot, PlayCircle, ArrowRight, Sparkles, Shield, Zap, CheckCircle2, Clock, BarChart3 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { 
+    Bot, PlayCircle, Sparkles, Shield, Zap, CheckCircle2, Clock, 
+    BarChart3, AlertTriangle, Check, Terminal, EyeOff, Layers, Camera,
+    ExternalLink, ChevronRight
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaChrome } from 'react-icons/fa';
 
-// Animation Variants
-const mockupContainerVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.8,
-            ease: [0.16, 1, 0.3, 1], // Custom bouncy ease out
-            when: "beforeChildren",
-            staggerChildren: 0.15
-        }
-    }
-};
-
-const sidebarVariants = {
-    hidden: { opacity: 0, x: -25 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.6, ease: "easeOut" }
-    }
-};
-
-const canvasVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15,
-            delayChildren: 0.2
-        }
-    }
-};
-
-const rowVariants = {
-    hidden: { opacity: 0, x: -15, scale: 0.98 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: { type: "spring", stiffness: 120, damping: 15 }
-    }
-};
-
-const tooltipVariants = {
-    hidden: { opacity: 0, scale: 0.8, x: 20 },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        x: 0,
-        transition: { type: "spring", stiffness: 300, damping: 25, delay: 1.2 }
-    }
-};
-
 export default function Hero() {
-    return (
-        <section className="relative pt-32 pb-24 overflow-hidden bg-white">
-            {/* Ambient background effects */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-primary/[0.06] to-transparent rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-100/30 rounded-full blur-[100px] pointer-events-none"></div>
+    const [activeTab, setActiveTab] = useState<'simulator' | 'teacherLog'>('simulator');
+    const [solved, setSolved] = useState(false);
+    const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    const [isScanning, setIsScanning] = useState(false);
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Trust Badge */}
-                <div className="flex justify-center mb-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50/80 border border-blue-100 rounded-full backdrop-blur-sm">
-                        <Sparkles className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-semibold text-primary">Trusted by 50,000+ students worldwide</span>
+    const handleSolve = () => {
+        setIsScanning(true);
+        setTimeout(() => {
+            setIsScanning(false);
+            setSolved(true);
+            setSelectedOption(1); // ATP option
+        }, 650);
+    };
+
+    const handleReset = () => {
+        setSolved(false);
+        setSelectedOption(null);
+        setIsScanning(false);
+    };
+
+    return (
+        <section className="relative pt-28 pb-24 overflow-hidden bg-[#070b14] text-white">
+            {/* Ambient background glows */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute top-1/3 left-10 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 right-10 w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
+
+            {/* Subtle Grid Pattern Overlay */}
+            <div 
+                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{ 
+                    backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
+                    backgroundSize: '40px 40px' 
+                }} 
+            />
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                {/* Top Live Status & Trust Badge */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full backdrop-blur-md">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                        </span>
+                        <span className="text-[12px] font-bold text-emerald-400 tracking-wide uppercase">
+                            Undetected on Canvas v2026.10 & Blackboard
+                        </span>
+                    </div>
+
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
+                        <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                        <span className="text-[12px] font-semibold text-slate-300">
+                            Trusted by 50,000+ Students Worldwide
+                        </span>
                     </div>
                 </div>
 
-                {/* Text Content */}
-                <div className="text-center max-w-4xl mx-auto mb-16 relative z-30">
-                    <h1 className="text-4xl sm:text-6xl md:text-[4.5rem] font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
-                        Ace your exams & homework <br className="hidden md:block" />
-                        <span className="text-primary italic relative">
-                            invisibly
-                            <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                                <path d="M2 6c30-4 60-4 90-2s70 2 106-2" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-primary/30" />
-                            </svg>
-                        </span>{' '}with ExamGhost.
+                {/* Hero Headline & Value Prop */}
+                <div className="text-center max-w-4xl mx-auto mb-12">
+                    <h1 className="text-4xl sm:text-6xl md:text-[4.2rem] font-extrabold tracking-tight text-white mb-6 leading-[1.08]">
+                        Switch tabs & ace tests <br className="hidden md:block" />
+                        without leaving a{' '}
+                        <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent italic">
+                            single trace.
+                        </span>
                     </h1>
 
-                    <p className="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-medium">
-                        The only 100% undetectable AI extension. Get instant, accurate solutions overlaid directly on your screen.
+                    <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-normal leading-relaxed">
+                        The only stealth AI extension that intercepts Canvas quiz-log focus tracking. Get instant, verified solutions overlaid on your screen with zero suspicious activity flags.
                     </p>
 
-                    {/* Feature pills */}
-                    <div className="flex flex-wrap justify-center gap-3 mb-10">
+                    {/* Feature badges */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-8">
                         {[
-                            { icon: Shield, text: "100% Undetectable" },
-                            { icon: Zap, text: "<1.5s Response" },
-                            { icon: Bot, text: "AI-Powered" }
+                            { icon: Shield, text: "Zero Tab-Switch Logs", color: "text-emerald-400" },
+                            { icon: Zap, text: "<1.2s Answer Speed", color: "text-blue-400" },
+                            { icon: EyeOff, text: "Shadow DOM Stealth", color: "text-purple-400" },
+                            { icon: Camera, text: "Snap-It Screenshot Solve", color: "text-amber-400" }
                         ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-xs font-semibold text-slate-600">
-                                <item.icon className="w-3.5 h-3.5 text-primary" />
+                            <div key={i} className="flex items-center gap-1.5 px-3.5 py-1.5 bg-white/[0.04] border border-white/10 rounded-full text-xs font-semibold text-slate-300 backdrop-blur-sm">
+                                <item.icon className={`w-3.5 h-3.5 ${item.color}`} />
                                 {item.text}
                             </div>
                         ))}
                     </div>
 
+                    {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#how-it-works" className="px-6 py-3.5 bg-white text-slate-700 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-sm">
-                            <PlayCircle className="w-[18px] h-[18px] text-primary" />
-                            See how it works
-                        </a>
-                        <button className="px-8 py-4 bg-[#4F71E5] hover:bg-blue-600 text-[16px] text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/40">
+                        <a 
+                            href="#pricing" 
+                            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-[15px] font-bold rounded-xl shadow-[0_0_30px_rgba(59,130,246,0.35)] hover:shadow-[0_0_45px_rgba(59,130,246,0.5)] transition-all flex items-center justify-center gap-3 hover:-translate-y-0.5 active:scale-95"
+                        >
                             <FaChrome className="w-5 h-5" />
-                            <span>Chrome extension</span>
-                        </button>
+                            <span>Add to Chrome — Free</span>
+                        </a>
+
+                        <a 
+                            href="#demo" 
+                            className="w-full sm:w-auto px-7 py-4 bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 hover:border-white/20 rounded-xl text-[15px] font-semibold transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+                        >
+                            <PlayCircle className="w-5 h-5 text-blue-400" />
+                            <span>Try Interactive Demo</span>
+                        </a>
+                    </div>
+
+                    {/* Keyboard Shortcut HUD */}
+                    <div className="mt-6 flex items-center justify-center gap-3 text-xs text-slate-400 font-mono">
+                        <span className="flex items-center gap-1.5">
+                            <kbd className="px-2 py-0.5 bg-white/10 border border-white/15 rounded text-[11px] text-slate-300">⌘/Ctrl</kbd>
+                            +
+                            <kbd className="px-2 py-0.5 bg-white/10 border border-white/15 rounded text-[11px] text-slate-300">Shift</kbd>
+                            +
+                            <kbd className="px-2 py-0.5 bg-blue-500/20 border border-blue-400/30 rounded text-[11px] text-blue-300 font-bold">X</kbd>
+                            <span className="text-slate-400 ml-1">Solve</span>
+                        </span>
+                        <span className="text-slate-600">•</span>
+                        <span className="flex items-center gap-1.5">
+                            <kbd className="px-2 py-0.5 bg-white/10 border border-white/15 rounded text-[11px] text-slate-300">⌘/Ctrl</kbd>
+                            +
+                            <kbd className="px-2 py-0.5 bg-white/10 border border-white/15 rounded text-[11px] text-slate-300">Shift</kbd>
+                            +
+                            <kbd className="px-2 py-0.5 bg-amber-500/20 border border-amber-400/30 rounded text-[11px] text-amber-300 font-bold">S</kbd>
+                            <span className="text-slate-400 ml-1">Snap-It</span>
+                        </span>
                     </div>
                 </div>
 
-                {/* ============================== */}
-                {/* PREMIUM BROWSER MOCKUP GRAPHIC */}
-                {/* ============================== */}
-                <motion.div
-                    variants={mockupContainerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="relative w-full max-w-[1000px] mx-auto z-20 mt-12 mb-12 group"
-                >
-                    {/* Hover glow */}
-                    <div className="absolute -inset-6 bg-gradient-to-b from-primary/[0.07] via-primary/[0.03] to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none blur-xl" />
-
-                    {/* Shadow frame */}
-                    <div className="bg-white/80 rounded-2xl p-1.5 sm:p-2 border border-slate-200/80 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.02)] relative backdrop-blur-xl">
-
-                        {/* The Actual Mockup */}
-                        <div className="rounded-xl border border-slate-200 shadow-sm relative bg-white flex flex-col overflow-hidden">
-
-                            {/* ========= BROWSER CHROME ========= */}
-                            <div className="bg-gradient-to-b from-[#f8f9fb] to-[#f3f4f6] px-4 py-3 flex items-center gap-3 border-b border-slate-200/70">
-                                <div className="flex gap-1.5">
-                                    <div className="w-3 h-3 rounded-full bg-[#FF5F57] shadow-[inset_0_-1px_1px_rgba(0,0,0,0.12)]"></div>
-                                    <div className="w-3 h-3 rounded-full bg-[#FEBC2E] shadow-[inset_0_-1px_1px_rgba(0,0,0,0.12)]"></div>
-                                    <div className="w-3 h-3 rounded-full bg-[#27C840] shadow-[inset_0_-1px_1px_rgba(0,0,0,0.12)]"></div>
-                                </div>
-
-                                {/* URL bar */}
-                                <div className="flex-1 max-w-md mx-auto relative">
-                                    <div className="bg-white text-[11px] text-center text-slate-400 py-2 px-4 rounded-lg border border-slate-200 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] flex items-center justify-center gap-2 font-medium">
-                                        <svg className="w-3 h-3 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-                                        canvas.instructure.com/quiz
-                                    </div>
-                                </div>
-
-                                {/* Tabs indicator */}
-                                <div className="hidden sm:flex items-center gap-1.5">
-                                    <div className="w-7 h-5 bg-white rounded border border-slate-200 flex items-center justify-center">
-                                        <span className="text-[9px] font-bold text-slate-400">3</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* ========= DASHBOARD BODY ========= */}
-                            <div className="flex flex-col md:flex-row h-auto md:h-[460px]">
-
-                                {/* -------- SIDEBAR -------- */}
-                                <motion.div
-                                    variants={sidebarVariants}
-                                    className="hidden md:flex w-[220px] bg-gradient-to-b from-white to-[#fafbfc] border-r border-slate-100 p-5 flex-col shrink-0"
-                                >
-                                    {/* Brand */}
-                                    <div className="flex items-center gap-2.5 font-bold text-primary mb-8 px-1 text-[15px]">
-                                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-                                            <Bot className="w-4.5 h-4.5 text-white" />
-                                        </div>
-                                        <span>ExamGhost</span>
-                                    </div>
-
-                                    {/* Nav Items */}
-                                    <div className="space-y-1 flex-1">
-                                        <div className="px-3 py-2.5 bg-primary/[0.07] text-primary text-[13px] font-bold rounded-lg flex items-center justify-between border border-primary/10">
-                                            Dashboard
-                                            <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)] animate-pulse"></span>
-                                        </div>
-                                        <div className="px-3 py-2.5 text-slate-500 text-[13px] font-medium rounded-lg hover:bg-slate-50 transition-colors">Settings</div>
-                                        <div className="px-3 py-2.5 text-slate-500 text-[13px] font-medium rounded-lg hover:bg-slate-50 transition-colors">History Logs</div>
-                                        <div className="px-3 py-2.5 text-slate-500 text-[13px] font-medium rounded-lg hover:bg-slate-50 transition-colors">Auto-Solver</div>
-                                    </div>
-
-                                    {/* Bottom Stats Card */}
-                                    <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-100 mt-auto">
-                                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-3">Session Stats</div>
-                                        <div className="space-y-2.5">
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex items-center gap-1.5">
-                                                    <CheckCircle2 className="w-3 h-3 text-emerald-500" />
-                                                    <span className="text-[11px] font-semibold text-slate-600">Solved</span>
-                                                </div>
-                                                <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">12/15</span>
-                                            </div>
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex items-center gap-1.5">
-                                                    <Clock className="w-3 h-3 text-blue-500" />
-                                                    <span className="text-[11px] font-semibold text-slate-600">Avg Time</span>
-                                                </div>
-                                                <span className="text-[11px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">0.8s</span>
-                                            </div>
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex items-center gap-1.5">
-                                                    <BarChart3 className="w-3 h-3 text-purple-500" />
-                                                    <span className="text-[11px] font-semibold text-slate-600">Accuracy</span>
-                                                </div>
-                                                <span className="text-[11px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">100%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-
-                                {/* -------- MAIN CANVAS -------- */}
-                                <div className="flex-1 p-6 sm:p-8 bg-[#fafbfc] relative overflow-visible flex flex-col">
-                                    {/* Top bar */}
-                                    <div className="flex items-center justify-between mb-6">
-                                        <h3 className="text-[20px] font-bold text-slate-900 tracking-tight">
-                                            Active Quiz Session
-                                        </h3>
-                                        <div className="hidden sm:flex items-center gap-2">
-                                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 border border-emerald-100 rounded-full">
-                                                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                                                <span className="text-[10px] font-bold text-emerald-600 tracking-wide uppercase">Ghost Active</span>
-                                            </div>
-                                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 border border-blue-100 rounded-full">
-                                                <span className="text-[10px] font-bold text-blue-600">Q4 of 15</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Quiz Card */}
-                                    <motion.div
-                                        variants={canvasVariants}
-                                        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 shadow-[0_2px_8px_rgba(0,0,0,0.04)] max-w-[560px] relative transition-all duration-300"
-                                    >
-                                        {/* Q Header */}
-                                        <motion.div variants={rowVariants} className="flex justify-between items-center mb-5">
-                                            <span className="text-[10px] font-black text-slate-400 font-mono tracking-[0.15em] uppercase">Question 4</span>
-                                            <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md tracking-wider uppercase">Matching</span>
-                                        </motion.div>
-                                        <motion.div variants={rowVariants} className="text-[15px] font-bold text-slate-800 mb-6 tracking-tight leading-snug">
-                                            Match each molecule with its role in photosynthesis:
-                                        </motion.div>
-
-                                        {/* Matching rows */}
-                                        <div className="space-y-3 relative">
-                                            {/* Row 1: CO2 → Carbon Source (Solved) */}
-                                            <motion.div variants={rowVariants} className="grid grid-cols-[1fr_1.5fr] gap-3 items-center">
-                                                <div className="font-semibold text-[13px] text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 text-center">
-                                                    CO₂
-                                                </div>
-                                                <div className="p-3 border rounded-lg text-[12px] font-semibold text-emerald-700 bg-emerald-50/50 border-emerald-200 text-center relative">
-                                                    Carbon Source
-                                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 absolute right-2.5 top-1/2 -translate-y-1/2" />
-                                                </div>
-                                            </motion.div>
-
-                                            {/* Row 2: H2O → Electron Donor (Active + Tooltip) */}
-                                            <motion.div variants={rowVariants} className="grid grid-cols-[1fr_1.5fr] gap-3 items-center relative z-20">
-                                                <div className="font-semibold text-[13px] text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 text-center">
-                                                    H₂O
-                                                </div>
-                                                <div className="p-3 border-2 rounded-lg text-[12px] font-semibold text-emerald-700 bg-emerald-50/50 border-emerald-300 text-center relative shadow-[0_0_0_3px_rgba(16,185,129,0.1)]">
-                                                    Electron Donor
-                                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 absolute right-2.5 top-1/2 -translate-y-1/2" />
-                                                </div>
-
-                                                {/* ===== FLOATING TOOLTIP ===== */}
-                                                <motion.div
-                                                    variants={tooltipVariants}
-                                                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[calc(100%+20px)] w-[220px] z-50 hidden sm:block"
-                                                >
-                                                    <div className="bg-[#0f172a] text-white p-4 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.05)] relative">
-                                                        {/* Arrow */}
-                                                        <div className="absolute top-1/2 -left-[6px] -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-r-[7px] border-r-[#0f172a] border-b-[7px] border-b-transparent"></div>
-
-                                                        <div className="flex items-center gap-2 mb-2">
-                                                            <div className="w-5 h-5 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                                                                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                                                            </div>
-                                                            <span className="text-[10px] font-black text-emerald-400 tracking-[0.12em] uppercase">All Matched</span>
-                                                        </div>
-                                                        <p className="text-[12px] font-medium text-slate-300 leading-relaxed">
-                                                            H₂O splits to provide electrons, releasing O₂.
-                                                        </p>
-                                                    </div>
-                                                </motion.div>
-                                            </motion.div>
-
-                                            {/* Row 3: O2 → Byproduct (Solved) */}
-                                            <motion.div variants={rowVariants} className="grid grid-cols-[1fr_1.5fr] gap-3 items-center">
-                                                <div className="font-semibold text-[13px] text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 text-center">
-                                                    O₂
-                                                </div>
-                                                <div className="p-3 border rounded-lg text-[12px] font-semibold text-emerald-700 bg-emerald-50/50 border-emerald-200 text-center relative">
-                                                    Byproduct
-                                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 absolute right-2.5 top-1/2 -translate-y-1/2" />
-                                                </div>
-                                            </motion.div>
-
-                                            {/* Row 4: C6H12O6 → Product (Solving animation) */}
-                                            <motion.div variants={rowVariants} className="grid grid-cols-[1fr_1.5fr] gap-3 items-center">
-                                                <div className="font-semibold text-[13px] text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 text-center">
-                                                    C₆H₁₂O₆
-                                                </div>
-                                                <div className="p-3 border rounded-lg text-[12px] font-medium text-slate-400 bg-white border-slate-200 text-center relative overflow-hidden">
-                                                    {/* Shimmer scanning effect */}
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50 to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
-                                                    <span className="relative z-10 flex items-center justify-center gap-2">
-                                                        <div className="flex gap-0.5 items-end h-2.5">
-                                                            <div className="w-0.5 bg-primary/70 rounded-full h-full animate-bounce [animation-delay:-0.3s]" />
-                                                            <div className="w-0.5 bg-primary/70 rounded-full h-1.5 animate-bounce [animation-delay:-0.15s]" />
-                                                            <div className="w-0.5 bg-primary/70 rounded-full h-2.5 animate-bounce" />
-                                                        </div>
-                                                        Solving...
-                                                    </span>
-                                                </div>
-                                            </motion.div>
-                                        </div>
-
-                                        {/* Bottom progress indicator */}
-                                        <motion.div variants={rowVariants} className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                                            <div className="flex items-center gap-2">
-                                                <div className="h-1 w-32 bg-slate-100 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: "75%" }}
-                                                        transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                                                        className="h-full bg-emerald-500 rounded-full"
-                                                    />
-                                                </div>
-                                                <span className="text-[10px] font-bold text-slate-400">75%</span>
-                                            </div>
-                                            <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">3 of 4 matched</span>
-                                        </motion.div>
-                                    </motion.div>
-                                </div>
-                            </div>
+                {/* ========================================================= */}
+                {/* DUAL INTERACTIVE DEMO: SIMULATOR vs TEACHER LOG INSPECTOR */}
+                {/* ========================================================= */}
+                <div id="demo" className="max-w-5xl mx-auto mt-6 mb-16">
+                    {/* Mode Selector Tabs */}
+                    <div className="flex justify-center mb-6">
+                        <div className="bg-white/5 border border-white/10 p-1.5 rounded-2xl flex gap-2 backdrop-blur-md">
+                            <button
+                                onClick={() => setActiveTab('simulator')}
+                                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all ${
+                                    activeTab === 'simulator'
+                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
+                                        : 'text-slate-400 hover:text-white'
+                                }`}
+                            >
+                                <Bot className="w-4 h-4" />
+                                Student Quiz Simulator
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('teacherLog')}
+                                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all ${
+                                    activeTab === 'teacherLog'
+                                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                                        : 'text-slate-400 hover:text-white'
+                                }`}
+                            >
+                                <Terminal className="w-4 h-4" />
+                                Professor Action Log (Proof)
+                            </button>
                         </div>
                     </div>
-                </motion.div>
+
+                    {/* Window Container */}
+                    <div className="relative rounded-2xl border border-white/10 bg-[#0d1424] shadow-[0_20px_70px_rgba(0,0,0,0.6)] overflow-hidden">
+                        
+                        {/* Browser Window Header */}
+                        <div className="bg-[#0b101c] px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                                <div className="w-3 h-3 rounded-full bg-[#FF5F57]/80" />
+                                <div className="w-3 h-3 rounded-full bg-[#FEBC2E]/80" />
+                                <div className="w-3 h-3 rounded-full bg-[#27C840]/80" />
+                            </div>
+
+                            <div className="flex items-center gap-2 px-4 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs font-mono text-slate-400 max-w-sm w-full justify-center">
+                                <Shield className="w-3 h-3 text-emerald-400" />
+                                <span>canvas.university.edu/courses/3184/quizzes/5892</span>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-bold text-emerald-400 uppercase">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                    Ghost Active
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Content Area */}
+                        <div className="p-6 sm:p-8">
+                            <AnimatePresence mode="wait">
+                                {activeTab === 'simulator' ? (
+                                    <motion.div
+                                        key="simulator"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="max-w-3xl mx-auto"
+                                    >
+                                        {/* Quiz Meta Bar */}
+                                        <div className="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-white/10 gap-3">
+                                            <div>
+                                                <h4 className="text-sm font-bold text-slate-200">Biology 101 — Midterm Exam</h4>
+                                                <p className="text-xs text-slate-400 font-mono">Question 14 of 30 • 2 Points</p>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <div className="flex items-center gap-1.5 text-xs text-slate-300 font-mono px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
+                                                    <Clock className="w-3.5 h-3.5 text-blue-400" />
+                                                    <span>Time Remaining: 38:42</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Question Text */}
+                                        <div className="mb-6">
+                                            <p className="text-base sm:text-lg font-semibold text-white leading-relaxed">
+                                                Which organelle is primarily responsible for the synthesis of adenosine triphosphate (ATP) via oxidative phosphorylation in eukaryotic cells?
+                                            </p>
+                                        </div>
+
+                                        {/* Multiple Choice Options */}
+                                        <div className="space-y-3 mb-8">
+                                            {[
+                                                { id: 0, label: "A", text: "Golgi apparatus" },
+                                                { id: 1, label: "B", text: "Mitochondria", isCorrect: true },
+                                                { id: 2, label: "C", text: "Endoplasmic reticulum" },
+                                                { id: 3, label: "D", text: "Ribosome" }
+                                            ].map((option) => {
+                                                const isSelected = selectedOption === option.id;
+                                                const isCorrectOption = solved && option.isCorrect;
+
+                                                return (
+                                                    <div
+                                                        key={option.id}
+                                                        onClick={() => setSelectedOption(option.id)}
+                                                        className={`relative flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border transition-all cursor-pointer select-none ${
+                                                            isCorrectOption
+                                                                ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-200 shadow-[0_0_20px_rgba(16,185,129,0.15)]'
+                                                                : isSelected
+                                                                ? 'bg-blue-600/15 border-blue-500/40 text-white'
+                                                                : 'bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300 hover:bg-white/[0.04]'
+                                                        }`}
+                                                    >
+                                                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${
+                                                            isCorrectOption
+                                                                ? 'border-emerald-400 bg-emerald-500 text-black'
+                                                                : isSelected
+                                                                ? 'border-blue-400 bg-blue-600 text-white'
+                                                                : 'border-white/20 text-slate-400'
+                                                        }`}>
+                                                            {isCorrectOption ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : option.label}
+                                                        </div>
+
+                                                        <span className="text-sm font-medium flex-1">
+                                                            {option.text}
+                                                        </span>
+
+                                                        {isCorrectOption && (
+                                                            <div className="flex items-center gap-2">
+                                                                <span className="text-[11px] font-mono px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded font-bold">
+                                                                    99.8% Match
+                                                                </span>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+
+                                        {/* AI Explanation Popover (When Solved) */}
+                                        <AnimatePresence>
+                                            {solved && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: 'auto' }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    className="mb-6 p-4 rounded-xl bg-blue-600/10 border border-blue-500/30 overflow-hidden"
+                                                >
+                                                    <div className="flex items-start gap-3">
+                                                        <Sparkles className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                                                        <div className="text-xs text-slate-300 space-y-1">
+                                                            <div className="font-bold text-blue-300">ExamGhost Step-by-Step Breakdown:</div>
+                                                            <p>
+                                                                Mitochondria generate ~90% of cellular energy (ATP) through the electron transport chain and ATP synthase embedded in the inner mitochondrial membrane. The Golgi apparatus modifies proteins, while the endoplasmic reticulum synthesizes lipids/proteins.
+                                                            </p>
+                                                            <div className="text-[11px] text-emerald-400 pt-1 font-mono">
+                                                                🛡️ Quiz focus retained • Zero tab-leave events generated
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+
+                                        {/* Simulator Controls */}
+                                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+                                            <div className="text-xs text-slate-400">
+                                                Click anywhere to test or trigger the automated AI solver:
+                                            </div>
+
+                                            <div className="flex items-center gap-3 w-full sm:w-auto">
+                                                <button
+                                                    onClick={handleReset}
+                                                    className="px-4 py-2 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+                                                >
+                                                    Reset
+                                                </button>
+                                                <button
+                                                    onClick={handleSolve}
+                                                    disabled={isScanning}
+                                                    className="flex-1 sm:flex-initial px-5 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center gap-2 active:scale-95"
+                                                >
+                                                    {isScanning ? (
+                                                        <>
+                                                            <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                            <span>Scanning DOM...</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Sparkles className="w-3.5 h-3.5" />
+                                                            <span>Solve with ExamGhost (⌘+Shift+X)</span>
+                                                        </>
+                                                    )}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="teacherLog"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="space-y-6"
+                                    >
+                                        <div className="text-center max-w-xl mx-auto mb-6">
+                                            <h4 className="text-lg font-bold text-white mb-1">
+                                                What Your Professor Sees: Teacher Log Inspector
+                                            </h4>
+                                            <p className="text-xs text-slate-400">
+                                                Canvas logs every time your browser tab loses focus. See the difference ExamGhost makes in your official audit trail.
+                                            </p>
+                                        </div>
+
+                                        {/* Side by side logs */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            
+                                            {/* Attempt 1: Without ExamGhost */}
+                                            <div className="rounded-xl border border-red-500/30 bg-red-950/20 p-5 flex flex-col justify-between">
+                                                <div>
+                                                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-red-500/20">
+                                                        <span className="text-xs font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+                                                            <AlertTriangle className="w-3.5 h-3.5 text-red-400" />
+                                                            Attempt 1: Without ExamGhost
+                                                        </span>
+                                                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-bold">
+                                                            FLAGGED (3 Tabs Left)
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="space-y-2.5 font-mono text-xs">
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:01</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                                                            <span>Session started</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:03</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                                                            <span>Viewed question #1</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 p-2 rounded bg-red-500/15 border border-red-500/30 text-red-300">
+                                                            <span className="text-red-400 font-bold">00:04</span>
+                                                            <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                                                            <span className="font-semibold">Stopped viewing the quiz page</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:08</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                                                            <span>Resumed quiz</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 p-2 rounded bg-red-500/15 border border-red-500/30 text-red-300">
+                                                            <span className="text-red-400 font-bold">00:15</span>
+                                                            <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                                                            <span className="font-semibold">Stopped viewing the quiz page</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:21</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                                                            <span>Answered question #1</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="mt-5 pt-3 border-t border-red-500/20 text-[11px] text-red-300/80 leading-relaxed">
+                                                    ⚠️ Canvas triggers automated academic dishonesty alerts when repeated focus loss is detected.
+                                                </div>
+                                            </div>
+
+                                            {/* Attempt 2: With ExamGhost */}
+                                            <div className="rounded-xl border border-emerald-500/40 bg-emerald-950/20 p-5 flex flex-col justify-between shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                                                <div>
+                                                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-500/20">
+                                                        <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                                                            <Shield className="w-3.5 h-3.5 text-emerald-400" />
+                                                            Attempt 2: With ExamGhost
+                                                        </span>
+                                                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">
+                                                            100% CLEAN (0 Flags)
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="space-y-2.5 font-mono text-xs">
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:01</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                            <span>Session started</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:03</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                            <span>Viewed question #1</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-emerald-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                                                            <span className="text-emerald-400 font-bold">00:07</span>
+                                                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                                                            <span>Answered question #1 (Ghost Active)</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:12</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                            <span>Viewed question #2</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-emerald-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                                                            <span className="text-emerald-400 font-bold">00:16</span>
+                                                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                                                            <span>Answered question #2 (Ghost Active)</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-slate-400">
+                                                            <span className="text-slate-500">00:22</span>
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                            <span>Viewed question #3</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="mt-5 pt-3 border-t border-emerald-500/20 text-[11px] text-emerald-300 leading-relaxed font-semibold">
+                                                    ✅ ExamGhost blocks browser visibility listeners. Canvas records a continuous, flawless student session with zero leaves.
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
