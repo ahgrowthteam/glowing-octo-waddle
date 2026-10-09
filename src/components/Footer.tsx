@@ -94,7 +94,7 @@ export default function Footer() {
                         <h4 className="font-display font-semibold text-xs uppercase tracking-wider text-ink mb-3.5 flex items-center justify-between">
                             <span>Comparisons</span>
                             <Link href="/compare" className="text-[10px] text-indigo-700 font-bold hover:underline">
-                                View All (33) →
+                                View All (45) →
                             </Link>
                         </h4>
                         <ul className="space-y-1.5 text-xs text-ink-secondary max-h-72 overflow-y-auto pr-1">
@@ -131,6 +131,18 @@ export default function Footer() {
                             <li><Link href="/knowt-vs-examghost" className="hover:text-ink transition-colors">vs Knowt</Link></li>
                             <li><Link href="/cramly-vs-examghost" className="hover:text-ink transition-colors">vs Cramly AI</Link></li>
                             <li><Link href="/quizzy-vs-examghost" className="hover:text-ink transition-colors">vs Quizzy AI</Link></li>
+                            <li><Link href="/canvaspass-vs-examghost" className="hover:text-ink transition-colors">vs CanvasPass</Link></li>
+                            <li><Link href="/examclutch-vs-examghost" className="hover:text-ink transition-colors">vs ExamClutch</Link></li>
+                            <li><Link href="/mathosai-vs-examghost" className="hover:text-ink transition-colors">vs Mathos AI</Link></li>
+                            <li><Link href="/quizwizard-vs-examghost" className="hover:text-ink transition-colors">vs Quiz Wizard</Link></li>
+                            <li><Link href="/snapgpt-vs-examghost" className="hover:text-ink transition-colors">vs SnapGPT</Link></li>
+                            <li><Link href="/testwhiz-vs-examghost" className="hover:text-ink transition-colors">vs TestWhiz</Link></li>
+                            <li><Link href="/brainly-vs-examghost" className="hover:text-ink transition-colors">vs Brainly</Link></li>
+                            <li><Link href="/coursehero-vs-examghost" className="hover:text-ink transition-colors">vs Course Hero</Link></li>
+                            <li><Link href="/quizplus-vs-examghost" className="hover:text-ink transition-colors">vs QuizPlus</Link></li>
+                            <li><Link href="/studymonkey-vs-examghost" className="hover:text-ink transition-colors">vs StudyMonkey</Link></li>
+                            <li><Link href="/wolframalpha-vs-examghost" className="hover:text-ink transition-colors">vs Wolfram|Alpha</Link></li>
+                            <li><Link href="/homeworkify-vs-examghost" className="hover:text-ink transition-colors">vs Homeworkify</Link></li>
                         </ul>
                     </div>
 

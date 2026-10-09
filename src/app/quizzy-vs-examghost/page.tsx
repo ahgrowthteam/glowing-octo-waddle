@@ -173,7 +173,7 @@ export default function QuizzyVsExamghostPage() {
                             href="/compare"
                             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
                         >
-                            <span>View All 33 Competitors</span>
+                            <span>View All 45 Competitors</span>
                         </Link>
                     </div>
 
