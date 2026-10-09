@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-    Bot, PlayCircle, Shield, CheckCircle2, Clock, 
-    Check, Terminal, Eye, Sparkles, RefreshCw, Lock
+    Shield, Sparkles, RefreshCw, CheckCircle2, 
+    ArrowRight, Eye, Lock, Zap, Check, AlertCircle
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FaChrome } from 'react-icons/fa';
 
 export default function Hero() {
@@ -13,6 +12,7 @@ export default function Hero() {
     const [solved, setSolved] = useState(false);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isScanning, setIsScanning] = useState(false);
+    const [hudOpacity, setHudOpacity] = useState(100);
     const [shortcutNotice, setShortcutNotice] = useState<string | null>(null);
 
     const handleSolve = () => {
@@ -20,8 +20,8 @@ export default function Hero() {
         setTimeout(() => {
             setIsScanning(false);
             setSolved(true);
-            setSelectedOption(1); // Mitochondria option
-        }, 500);
+            setSelectedOption(1); // Mitochondria
+        }, 450);
     };
 
     const handleReset = () => {
@@ -31,25 +31,24 @@ export default function Hero() {
         setShortcutNotice(null);
     };
 
-    // Real keyboard shortcut listener
+    // Keyboard shortcut listeners: Cmd+Shift+X (solve) and Cmd+B (stealth opacity)
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             const isCmdOrCtrl = e.metaKey || e.ctrlKey;
             const isShift = e.shiftKey;
             const key = e.key.toLowerCase();
 
-            // Match Cmd+Shift+X or Ctrl+Shift+X or Cmd+Shift+S or Alt+Q
-            if ((isCmdOrCtrl && isShift && (key === 'x' || key === 's' || key === 'e')) || (e.altKey && key === 'q')) {
+            if (isCmdOrCtrl && isShift && (key === 'x' || key === 's')) {
                 e.preventDefault();
                 setActiveTab('simulator');
-                setShortcutNotice(`Shortcut triggered (${isCmdOrCtrl ? '⌘' : 'Alt'}+${key.toUpperCase()})`);
+                setShortcutNotice(`Auto-solve triggered (${isCmdOrCtrl ? '⌘' : 'Ctrl'}+Shift+${key.toUpperCase()})`);
                 handleSolve();
-                const demoEl = document.getElementById('demo');
-                if (demoEl) {
-                    const top = demoEl.getBoundingClientRect().top + window.scrollY - 90;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }
                 setTimeout(() => setShortcutNotice(null), 3000);
+            }
+
+            if (isCmdOrCtrl && key === 'b') {
+                e.preventDefault();
+                setHudOpacity(prev => (prev === 100 ? 25 : prev === 25 ? 0 : 100));
             }
         };
 
@@ -57,198 +56,253 @@ export default function Hero() {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, []);
 
-    const scrollToDemoAndSolve = () => {
-        setActiveTab('simulator');
-        handleSolve();
-        const demoEl = document.getElementById('demo');
-        if (demoEl) {
-            const top = demoEl.getBoundingClientRect().top + window.scrollY - 90;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-    };
-
     return (
-        <section className="relative pt-28 sm:pt-32 pb-20 overflow-hidden bg-white text-slate-900 border-b border-slate-100">
+        <section className="relative pt-12 sm:pt-16 pb-24 md:pb-32 overflow-hidden bg-cream text-ink">
+            
+            {/* Backdrop: Ghost Wordmark + Torn Paper Collage */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+                {/* Giant Ghost Word */}
+                <div className="absolute top-12 left-1/2 -translate-x-1/2 font-display font-extrabold text-[12vw] tracking-[-0.04em] text-ink opacity-[0.032] select-none whitespace-nowrap">
+                    EXAMGHOST
+                </div>
+
+                {/* Organic Torn Paper Collage SVG */}
+                <svg 
+                    className="absolute bottom-0 left-0 right-0 w-full h-[600px] object-cover opacity-90"
+                    viewBox="0 0 1440 800" 
+                    preserveAspectRatio="xMidYMax slice"
+                >
+                    <g filter="url(#torn)">
+                        {/* Periwinkle Bottom Left Scrap */}
+                        <path 
+                            d="M-80 520 C 60 440, 180 480, 300 430 C 420 380, 540 450, 590 570 C 640 680, 560 760, 600 850 L -80 850 Z" 
+                            fill="#c4d0f8" 
+                            stroke="#fff" 
+                            strokeWidth="18" 
+                            strokeLinejoin="round"
+                        />
+                        {/* Mint Bottom Right Scrap */}
+                        <path 
+                            d="M1520 480 C 1400 420, 1270 480, 1180 440 C 1070 390, 970 470, 930 580 C 890 690, 980 760, 940 850 L 1520 850 Z" 
+                            fill="#cdeecb" 
+                            stroke="#fff" 
+                            strokeWidth="18" 
+                            strokeLinejoin="round"
+                        />
+                        {/* Lilac Accent Scrap */}
+                        <path 
+                            d="M980 480 C 1040 430, 1120 460, 1170 435 C 1230 405, 1290 450, 1270 510 C 1250 565, 1150 550, 1070 570 C 990 590, 930 535, 980 480 Z" 
+                            fill="#e2d3fa" 
+                            stroke="#fff" 
+                            strokeWidth="14" 
+                            strokeLinejoin="round"
+                        />
+                        {/* Ink Dark Contrast Scrap */}
+                        <path 
+                            d="M260 480 C 310 430, 380 440, 420 415 C 470 390, 520 430, 500 485 C 480 540, 390 530, 330 540 C 270 550, 230 520, 260 480 Z" 
+                            fill="#111111" 
+                            stroke="#fff" 
+                            strokeWidth="12" 
+                            strokeLinejoin="round"
+                        />
+                    </g>
+                </svg>
+            </div>
+
+            {/* Main Hero Container */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
-                {/* Top Badge */}
+                {/* Eyebrow Pill */}
                 <div className="flex justify-center mb-6">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 shadow-sm">
+                    <span className="eyebrow bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-black/5 shadow-sm text-xs">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Undetected on Canvas, Blackboard, Moodle & Brightspace</span>
-                    </div>
-                </div>
-
-                {/* Hero Headline & Subtitle */}
-                <div className="text-center max-w-3xl mx-auto mb-8">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-                        The invisible homework & quiz helper for Canvas.
-                    </h1>
-                    <p className="text-slate-600 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto">
-                        ExamGhost blocks focus-tracking and tab-switch events directly in your browser. Get answers overlaid in your quiz without triggering alerts in your professor&apos;s log.
-                    </p>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8">
-                    <a
-                        href="#pricing"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition-all"
-                    >
-                        <FaChrome className="w-4 h-4 text-blue-400" />
-                        <span>Add to Chrome — Free</span>
-                    </a>
-                    <button
-                        onClick={scrollToDemoAndSolve}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold text-sm shadow-sm transition-colors cursor-pointer"
-                    >
-                        <PlayCircle className="w-4 h-4 text-slate-500" />
-                        <span>Try Interactive Demo</span>
-                    </button>
-                </div>
-
-                {/* Hotkeys micro-bar */}
-                <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs text-slate-500 mb-8">
-                    <button
-                        onClick={scrollToDemoAndSolve}
-                        className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md font-mono text-slate-700 cursor-pointer transition-colors"
-                        title="Click or press ⌘+Shift+X on keyboard"
-                    >
-                        ⌘+Shift+X Solve
-                    </button>
-                    <button
-                        onClick={scrollToDemoAndSolve}
-                        className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md font-mono text-slate-700 cursor-pointer transition-colors"
-                        title="Click or press ⌘+Shift+S on keyboard"
-                    >
-                        ⌘+Shift+S Snap-It OCR
-                    </button>
-                    <span className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md font-medium">
-                        0 Tab Leaves Logged
+                        <span>24 STEALTH TOOLS · 100% INVISIBLE EXAM SUITE</span>
                     </span>
-                    {shortcutNotice && (
-                        <span className="flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium animate-pulse">
-                            {shortcutNotice}
-                        </span>
-                    )}
                 </div>
 
-                {/* Segmented Control Tabs */}
-                <div className="flex justify-center mb-6">
-                    <div className="inline-flex p-1 bg-slate-100 border border-slate-200 rounded-xl text-xs font-semibold">
-                        <button
-                            onClick={() => setActiveTab('simulator')}
-                            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
-                                activeTab === 'simulator'
-                                    ? 'bg-white text-slate-900 shadow-sm'
-                                    : 'text-slate-600 hover:text-slate-900'
-                            }`}
-                        >
-                            Student Quiz View
-                        </button>
-                        <button
-                            onClick={() => setActiveTab('teacherLog')}
-                            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
-                                activeTab === 'teacherLog'
-                                    ? 'bg-white text-slate-900 shadow-sm'
-                                    : 'text-slate-600 hover:text-slate-900'
-                            }`}
-                        >
-                            Professor Audit Log (Proof)
-                        </button>
-                    </div>
+                {/* Editorial Headline */}
+                <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-bold tracking-tight text-ink leading-[1.03] text-center mb-6 max-w-4xl mx-auto">
+                    <span>All your exam tools,</span>
+                    <br />
+                    <span>in one invisible box.</span>
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-base sm:text-lg md:text-xl text-ink-muted text-center max-w-2xl mx-auto mb-9 font-normal leading-relaxed">
+                    24 powerful stealth tools for Canvas, Blackboard, Moodle and D2L. Private, on-device AI vision, zero SpeedGrader logs, and so completely undetectable you’ll never take an exam with anxiety again.
+                </p>
+
+                {/* Call To Actions */}
+                <div className="flex flex-wrap items-center justify-center gap-3.5 mb-6">
+                    <a
+                        href="/#pricing"
+                        className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift"
+                    >
+                        <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                        <span>Get ExamGhost</span>
+                        <span className="opacity-70 font-normal">· $19.99</span>
+                    </a>
+
+                    <a
+                        href="#tools"
+                        className="btn-soft px-6 py-3.5 text-base group"
+                    >
+                        <span>Explore the tools</span>
+                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-ink" />
+                    </a>
                 </div>
 
-                {/* Simulator Window */}
-                <div id="demo" className="max-w-4xl mx-auto rounded-2xl bg-white border border-slate-200 shadow-lg overflow-hidden scroll-mt-24">
-                    
-                    {/* Browser Chrome Header */}
-                    <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full bg-slate-300" />
-                            <span className="w-3 h-3 rounded-full bg-slate-300" />
-                            <span className="w-3 h-3 rounded-full bg-slate-300" />
-                        </div>
-                        <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-md px-3 py-1 text-xs text-slate-600 font-mono w-full max-w-sm justify-center">
-                            <Lock className="w-3 h-3 text-slate-400" />
-                            <span className="truncate">canvas.university.edu/courses/3184/quizzes/58201</span>
-                        </div>
-                        <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            <span>Stealth Active</span>
+                {/* Fine print */}
+                <p className="text-center text-xs text-ink-muted mb-12 sm:mb-16">
+                    Chrome, Edge & Brave · 100% On-Device · 0 SpeedGrader Logs · 14-day refund guarantee
+                </p>
+
+                {/* Shortcut Notification Banner */}
+                {shortcutNotice && (
+                    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-ink text-white px-5 py-2.5 rounded-full text-xs font-medium shadow-2xl flex items-center gap-2 animate-bounce">
+                        <Sparkles className="w-4 h-4 text-[#ffd23f]" />
+                        <span>{shortcutNotice}</span>
+                    </div>
+                )}
+
+                {/* Hero Stage Window with Floating Tilt Badges */}
+                <div className="relative max-w-4xl mx-auto mt-6">
+
+                    {/* Floating Card Chip 1 (Top Left): Focus Shield */}
+                    <div className="hidden lg:flex absolute -top-8 -left-12 z-20 items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#c4d0f8] text-ink border border-white/80 shadow-soft -rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <Shield className="w-4 h-4 text-ink" />
+                        <div className="text-xs font-semibold leading-tight">
+                            <div>Focus Shield Active</div>
+                            <div className="text-[10px] font-normal opacity-80">0 SpeedGrader Logs · Blur Masked</div>
                         </div>
                     </div>
 
-                    {/* Window Content */}
-                    <div className="p-6 sm:p-8">
-                        <AnimatePresence mode="wait">
-                            {activeTab === 'simulator' ? (
-                                <motion.div
-                                    key="simulator"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.2 }}
+                    {/* Floating Card Chip 2 (Top Right): Snap-It Vision */}
+                    <div className="hidden lg:flex absolute -top-6 -right-12 z-20 items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#e2d3fa] text-ink border border-white/80 shadow-soft rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <Sparkles className="w-4 h-4 text-ink" />
+                        <div className="text-xs font-semibold leading-tight">
+                            <div>Snap-It Vision OCR</div>
+                            <div className="text-[10px] font-normal opacity-80">0.3s · LaTeX & Diagrams Decoded</div>
+                        </div>
+                    </div>
+
+                    {/* Floating Card Chip 3 (Bottom Left): Stealth DOM */}
+                    <div className="hidden lg:flex absolute -bottom-6 -left-10 z-20 items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#cdeecb] text-ink border border-white/80 shadow-soft rotate-2 hover:rotate-0 transition-transform duration-300">
+                        <Lock className="w-4 h-4 text-ink" />
+                        <div className="text-xs font-semibold leading-tight">
+                            <div>Shadow DOM Sandbox</div>
+                            <div className="text-[10px] font-normal opacity-80">Zero Footprint in Page Inspector</div>
+                        </div>
+                    </div>
+
+                    {/* Floating Card Chip 4 (Bottom Right): Ghost HUD Opacity */}
+                    <div className="hidden lg:flex absolute -bottom-6 -right-10 z-20 items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#ffd5cc] text-ink border border-white/80 shadow-soft -rotate-2 hover:rotate-0 transition-transform duration-300">
+                        <Eye className="w-4 h-4 text-ink" />
+                        <div className="text-xs font-semibold leading-tight">
+                            <div>Ghost HUD: {hudOpacity}%</div>
+                            <div className="text-[10px] font-normal opacity-80">Press ⌘+B to toggle stealth</div>
+                        </div>
+                    </div>
+
+                    {/* Central macOS Native Window */}
+                    <div className="bg-white rounded-3xl border border-black/10 shadow-lift overflow-hidden">
+
+                        {/* macOS Window Title Bar */}
+                        <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-6 py-3 flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                                <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
+                                <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
+                                <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
+                                <span className="text-xs text-ink-muted font-medium ml-2 hidden sm:inline-block">
+                                    Canvas LMS — BIOL 204 Midterm Exam (Timed)
+                                </span>
+                            </div>
+
+                            {/* View Switcher Tabs */}
+                            <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-black/5 shadow-sm text-xs font-medium">
+                                <button
+                                    onClick={() => setActiveTab('simulator')}
+                                    className={`px-3 py-1 rounded-full transition-all ${
+                                        activeTab === 'simulator'
+                                            ? 'bg-ink text-white shadow-xs'
+                                            : 'text-ink-muted hover:text-ink'
+                                    }`}
                                 >
-                                    {/* Quiz Metadata */}
-                                    <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-6 text-xs text-slate-500 font-medium">
-                                        <div className="flex items-center gap-2">
-                                            <span className="font-semibold text-slate-800">Molecular Biology • Midterm Examination</span>
-                                            <span>•</span>
-                                            <span>Question 14 of 30</span>
+                                    Student View
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('teacherLog')}
+                                    className={`px-3 py-1 rounded-full transition-all flex items-center gap-1.5 ${
+                                        activeTab === 'teacherLog'
+                                            ? 'bg-ink text-white shadow-xs'
+                                            : 'text-ink-muted hover:text-ink'
+                                    }`}
+                                >
+                                    <span>Teacher Log</span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Window Content Body */}
+                        <div className="p-6 sm:p-8">
+                            {activeTab === 'simulator' ? (
+                                <div>
+                                    {/* Question Header & Points */}
+                                    <div className="flex items-start justify-between pb-4 border-b border-black/5 mb-6">
+                                        <div>
+                                            <span className="text-xs font-semibold text-ink-muted uppercase tracking-wider">
+                                                Question 14 of 40
+                                            </span>
+                                            <h3 className="font-display text-lg sm:text-xl font-bold text-ink mt-1">
+                                                Which organelle is responsible for generating most of the chemical energy needed to power the cell&apos;s biochemical reactions?
+                                            </h3>
                                         </div>
-                                        <div className="flex items-center gap-1 text-slate-600">
-                                            <Clock className="w-3.5 h-3.5" />
-                                            <span>Time remaining: 38:42</span>
+                                        <div className="text-right shrink-0 ml-4">
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-1 rounded-full font-semibold text-ink">
+                                                2.5 pts
+                                            </span>
                                         </div>
                                     </div>
 
-                                    {/* Question Title */}
-                                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-6 leading-snug">
-                                        Which organelle is primarily responsible for the synthesis of adenosine triphosphate (ATP) via oxidative phosphorylation in eukaryotic cells?
-                                    </h3>
-
-                                    {/* Options List */}
+                                    {/* Multiple Choice Options */}
                                     <div className="space-y-3 mb-6">
                                         {[
-                                            { id: 0, label: "A", text: "Golgi apparatus" },
-                                            { id: 1, label: "B", text: "Mitochondria" },
-                                            { id: 2, label: "C", text: "Endoplasmic reticulum" },
-                                            { id: 3, label: "D", text: "Ribosome" },
-                                        ].map((option) => {
-                                            const isCorrectAnswer = option.id === 1;
-                                            const isSelected = selectedOption === option.id;
-                                            const showAsSolved = solved && isCorrectAnswer;
+                                            { id: 0, text: 'A) Golgi apparatus' },
+                                            { id: 1, text: 'B) Mitochondria' },
+                                            { id: 2, text: 'C) Endoplasmic reticulum' },
+                                            { id: 3, text: 'D) Lysosome' }
+                                        ].map((opt) => {
+                                            const isCorrectTarget = opt.id === 1;
+                                            const isSelected = selectedOption === opt.id;
 
                                             return (
                                                 <div
-                                                    key={option.id}
-                                                    onClick={() => setSelectedOption(option.id)}
-                                                    className={`p-3.5 sm:p-4 rounded-xl border text-sm flex items-center justify-between cursor-pointer transition-all ${
-                                                        showAsSolved
-                                                            ? 'border-emerald-500 bg-emerald-50/70 text-emerald-950 font-medium'
+                                                    key={opt.id}
+                                                    onClick={() => setSelectedOption(opt.id)}
+                                                    className={`p-3.5 sm:p-4 rounded-2xl border text-sm font-medium transition-all duration-200 cursor-pointer flex items-center justify-between ${
+                                                        solved && isCorrectTarget
+                                                            ? 'bg-[#cdeecb]/40 border-emerald-500/60 shadow-sm text-ink'
                                                             : isSelected
-                                                            ? 'border-blue-500 bg-blue-50/50 text-slate-900'
-                                                            : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 text-slate-700'
+                                                            ? 'bg-black/5 border-ink text-ink'
+                                                            : 'bg-white border-black/5 hover:border-black/20 text-ink'
                                                     }`}
                                                 >
-                                                    <div className="flex items-center gap-3">
-                                                        <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-semibold ${
-                                                            showAsSolved
-                                                                ? 'bg-emerald-600 text-white'
-                                                                : isSelected
-                                                                ? 'bg-blue-600 text-white'
-                                                                : 'bg-slate-100 text-slate-600'
+                                                    <span className="flex items-center gap-3">
+                                                        <span className={`w-4 h-4 rounded-full border flex items-center justify-center text-[10px] ${
+                                                            isSelected || (solved && isCorrectTarget)
+                                                                ? 'border-ink bg-ink text-white'
+                                                                : 'border-black/20'
                                                         }`}>
-                                                            {option.label}
+                                                            {isSelected || (solved && isCorrectTarget) ? '✓' : ''}
                                                         </span>
-                                                        <span>{option.text}</span>
-                                                    </div>
+                                                        <span>{opt.text}</span>
+                                                    </span>
 
-                                                    {showAsSolved && (
-                                                        <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1">
+                                                    {solved && isCorrectTarget && (
+                                                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
                                                             <Check className="w-3.5 h-3.5" />
-                                                            <span>Correct Answer</span>
+                                                            <span>99.8% Match</span>
                                                         </span>
                                                     )}
                                                 </div>
@@ -256,117 +310,111 @@ export default function Hero() {
                                         })}
                                     </div>
 
-                                    {/* Solution Explanation Box */}
-                                    {solved && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: 'auto' }}
-                                            className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 mb-6"
-                                        >
-                                            <div className="font-semibold mb-1 flex items-center gap-1.5 text-emerald-800">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                                <span>ExamGhost In-DOM Solution (0.8s)</span>
+                                    {/* ExamGhost Live Ghost HUD Overlay Box */}
+                                    <div 
+                                        className="transition-opacity duration-300 rounded-2xl p-4 border border-black/5 bg-[#fbf9f4] shadow-sm mb-6"
+                                        style={{ opacity: hudOpacity / 100 }}
+                                    >
+                                        <div className="flex items-center justify-between mb-2">
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                                <span className="text-xs font-bold text-ink">
+                                                    ExamGhost Stealth HUD (⌘+B to hide)
+                                                </span>
                                             </div>
-                                            <p className="leading-relaxed text-emerald-900/90">
-                                                Mitochondria are the primary site of cellular respiration, generating greater than 90% of cellular ATP via the electron transport chain and ATP synthase on the inner mitochondrial membrane.
-                                            </p>
-                                        </motion.div>
-                                    )}
-
-                                    {/* Action Bar */}
-                                    <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-xs text-slate-500">
-                                        <span>Click options or trigger auto-solve:</span>
-                                        <div className="flex items-center gap-2">
-                                            {solved && (
-                                                <button
-                                                    onClick={handleReset}
-                                                    className="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors"
-                                                >
-                                                    Reset
-                                                </button>
-                                            )}
-                                            <button
-                                                onClick={handleSolve}
-                                                disabled={isScanning}
-                                                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-sm transition-colors flex items-center gap-1.5"
-                                            >
-                                                {isScanning ? (
-                                                    <>
-                                                        <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                                                        <span>Solving...</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <Sparkles className="w-3.5 h-3.5" />
-                                                        <span>Solve with ExamGhost (⌘+Shift+X)</span>
-                                                    </>
-                                                )}
-                                            </button>
+                                            <span className="text-[11px] font-mono text-ink-muted">
+                                                Latency: 380ms · Shadow DOM
+                                            </span>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            ) : (
-                                <motion.div
-                                    key="teacherLog"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    {/* Teacher Log Header */}
-                                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 mb-6">
-                                        <div className="flex items-center justify-between text-xs text-slate-600 mb-2">
-                                            <span className="font-semibold text-slate-900">Canvas Quiz Action Log Inspector</span>
-                                            <span className="text-emerald-700 font-medium">Status: Clean • Zero Flags</span>
-                                        </div>
-                                        <p className="text-xs text-slate-500 leading-relaxed">
-                                            This is the exact administrative view your instructor or teaching assistant sees in Canvas SpeedGrader.
+                                        <p className="text-xs text-ink-secondary leading-relaxed">
+                                            {solved
+                                                ? "Mitochondria produce ATP through cellular respiration and oxidative phosphorylation, earning the designation as the 'powerhouse of the cell'."
+                                                : "Ready. Click 'Auto-Solve' or press ⌘+Shift+X to inject high-confidence answer."}
                                         </p>
                                     </div>
 
-                                    {/* Event Timeline Table */}
-                                    <div className="border border-slate-200 rounded-xl overflow-hidden mb-6 text-xs">
-                                        <div className="bg-slate-50 px-4 py-2.5 font-semibold text-slate-700 border-b border-slate-200 grid grid-cols-12 gap-2">
-                                            <span className="col-span-3">Timestamp</span>
-                                            <span className="col-span-6">Action Recorded by Canvas</span>
-                                            <span className="col-span-3 text-right">Audit Flag</span>
-                                        </div>
-                                        <div className="divide-y divide-slate-100 font-mono">
-                                            <div className="px-4 py-3 grid grid-cols-12 gap-2 items-center text-slate-700 bg-white">
-                                                <span className="col-span-3 text-slate-500">10:00:15 AM</span>
-                                                <span className="col-span-6">Started quiz attempt #1</span>
-                                                <span className="col-span-3 text-right text-emerald-600 font-semibold">Normal</span>
-                                            </div>
-                                            <div className="px-4 py-3 grid grid-cols-12 gap-2 items-center text-slate-700 bg-white">
-                                                <span className="col-span-3 text-slate-500">10:04:22 AM</span>
-                                                <span className="col-span-6">Answered Question 13</span>
-                                                <span className="col-span-3 text-right text-emerald-600 font-semibold">Normal</span>
-                                            </div>
-                                            <div className="px-4 py-3 grid grid-cols-12 gap-2 items-center text-slate-700 bg-emerald-50/50">
-                                                <span className="col-span-3 text-slate-500">10:06:40 AM</span>
-                                                <span className="col-span-6 font-medium text-emerald-900">Answered Question 14 (ExamGhost solved)</span>
-                                                <span className="col-span-3 text-right text-emerald-600 font-semibold">0 Tab Switches</span>
-                                            </div>
-                                            <div className="px-4 py-3 grid grid-cols-12 gap-2 items-center text-slate-700 bg-white">
-                                                <span className="col-span-3 text-slate-500">10:08:10 AM</span>
-                                                <span className="col-span-6">Viewed Question 15</span>
-                                                <span className="col-span-3 text-right text-emerald-600 font-semibold">Normal</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Proof summary callout */}
-                                    <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 flex items-center justify-between">
+                                    {/* Action Bar */}
+                                    <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                                         <div className="flex items-center gap-2">
-                                            <Shield className="w-4 h-4 text-emerald-600 shrink-0" />
-                                            <span><strong>Zero &apos;Stopped viewing page&apos; alerts:</strong> Focus-interception prevented Canvas from logging tab loss.</span>
+                                            <button
+                                                onClick={handleSolve}
+                                                disabled={isScanning || solved}
+                                                className="btn-dark px-5 py-2.5 text-xs sm:text-sm"
+                                            >
+                                                {isScanning ? (
+                                                    <RefreshCw className="w-4 h-4 animate-spin text-white" />
+                                                ) : (
+                                                    <Sparkles className="w-4 h-4 text-[#ffd23f]" />
+                                                )}
+                                                <span>{solved ? 'Solved & Selected' : 'Auto-Solve (⌘+Shift+X)'}</span>
+                                            </button>
+
+                                            {solved && (
+                                                <button
+                                                    onClick={handleReset}
+                                                    className="btn-soft px-4 py-2.5 text-xs text-ink"
+                                                >
+                                                    <RefreshCw className="w-3.5 h-3.5" />
+                                                    <span>Reset Demo</span>
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        <div className="flex items-center gap-2 text-xs text-ink-muted">
+                                            <Shield className="w-4 h-4 text-emerald-600" />
+                                            <span>Canvas Tab Blurs Intercepted: 0</span>
                                         </div>
                                     </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
+                                </div>
+                            ) : (
+                                /* Teacher SpeedGrader Audit Log View */
+                                <div>
+                                    <div className="flex items-center justify-between pb-4 border-b border-black/5 mb-6">
+                                        <div>
+                                            <span className="text-xs font-semibold text-emerald-700 uppercase tracking-wider flex items-center gap-1.5">
+                                                <CheckCircle2 className="w-3.5 h-3.5" />
+                                                SpeedGrader Session Audit Log
+                                            </span>
+                                            <h3 className="font-display text-lg font-bold text-ink mt-0.5">
+                                                Student: Alexander Wright (Canvas ID: #882910)
+                                            </h3>
+                                        </div>
+                                        <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1 rounded-full font-semibold">
+                                            Clean Session · 0 Flags
+                                        </span>
+                                    </div>
 
+                                    {/* Log Table / List */}
+                                    <div className="space-y-2.5 font-mono text-xs mb-6">
+                                        <div className="p-3 rounded-xl bg-white border border-black/5 flex items-center justify-between">
+                                            <span className="text-ink">10:04:12 AM — Quiz session initialized</span>
+                                            <span className="text-emerald-700 font-semibold">Normal</span>
+                                        </div>
+                                        <div className="p-3 rounded-xl bg-white border border-black/5 flex items-center justify-between">
+                                            <span className="text-ink">10:04:15 AM — Question 1 answered</span>
+                                            <span className="text-emerald-700 font-semibold">Normal</span>
+                                        </div>
+                                        <div className="p-3 rounded-xl bg-white border border-black/5 flex items-center justify-between">
+                                            <span className="text-ink">10:08:42 AM — Question 14 answered (Mitochondria)</span>
+                                            <span className="text-emerald-700 font-semibold">Normal</span>
+                                        </div>
+                                        <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/80 flex items-center justify-between text-emerald-900">
+                                            <span className="flex items-center gap-2">
+                                                <Check className="w-4 h-4 text-emerald-600" />
+                                                <span>Tab blur / unfocused events detected:</span>
+                                            </span>
+                                            <span className="font-bold">0 events</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-4 rounded-2xl bg-[#c4d0f8]/30 border border-[#c4d0f8] text-xs text-ink">
+                                        <strong>Why this matters:</strong> Other tools leave suspicious gaps or trigger Canvas&apos;s &quot;Stopped viewing the Canvas quiz checklist&quot; warning in SpeedGrader. ExamGhost blocks DOM visibility events at the native browser layer so your professor sees only continuous, uninterrupted focus.
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                    </div>
                 </div>
 
             </div>

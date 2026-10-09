@@ -1,7 +1,7 @@
 'use client';
+
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -28,78 +28,71 @@ export default function FAQ() {
             a: "Yes. ExamGhost supports both Canvas Classic Quizzes and Canvas New Quizzes, as well as Blackboard Learn & Ultra, D2L Brightspace, Moodle, McGraw-Hill Connect, Pearson MyLab, and Google Classroom."
         },
         {
-            q: "What is the 2nd-Attempt Auto-Memory feature?",
-            a: "For quizzes with multiple attempts allowed, ExamGhost remembers your previous submissions, saves all high-scoring answers, and automatically re-applies them on attempt #2 so you can quickly lock in a 100% score."
+            q: "What is the Stealth Opacity Dial (⌘ + B)?",
+            a: "You can adjust the HUD opacity from 100% visible to 5% ghost whisper mode. At 5%, answers are only visible when viewed straight-on from inches away, making it completely impossible for teachers walking behind you to notice anything on your screen."
         },
         {
             q: "Is it safe from screen-share or proctoring extensions?",
-            a: "ExamGhost is engineered with Shadow DOM isolation. Visual overlays are rendered in a protected UI layer that does not inject script artifacts into the school's webpage, keeping your activity discreet and private."
+            a: "ExamGhost is engineered with Shadow DOM isolation. Visual overlays are rendered in a protected UI layer that does not inject script artifacts into the school's webpage, keeping your activity discreet, sandboxed, and private."
         },
         {
             q: "What is your refund policy?",
-            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 7 days for a hassle-free, immediate refund."
+            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 14 days for a hassle-free, immediate refund."
         }
     ];
 
     return (
-        <section id="faq" className="py-20 bg-slate-50/60 text-slate-900 border-b border-slate-200/80">
+        <section id="faq" className="py-20 md:py-32 bg-cream text-ink border-b border-black/5">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 w-full">
 
-                <div className="text-center mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm mb-3">
-                        <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
-                        <span className="text-xs font-semibold text-slate-700">
-                            Got Questions?
-                        </span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-                        Frequently Asked Questions
+                {/* Section Head (OneMacApp Style) */}
+                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                    <p className="eyebrow justify-center mb-3">
+                        <span className="w-2 h-2 rounded-full bg-ink" />
+                        <span>FAQ</span>
+                    </p>
+                    <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
+                        Good questions.<br />
+                        Short answers.
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600">
-                        Everything you need to know about stealth technology, Canvas logs, and our refund guarantee.
+                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        Everything you need to know about stealth technology, SpeedGrader logs, and our refund guarantee.
                     </p>
                 </div>
 
-                <div className="space-y-3">
+                {/* Accordion List */}
+                <div className="space-y-3.5">
                     {faqs.map((faq, idx) => {
                         const isOpen = openIndex === idx;
                         return (
                             <div
                                 key={idx}
-                                className={`border rounded-xl transition-all duration-200 overflow-hidden ${
-                                    isOpen 
-                                        ? 'border-slate-300 bg-white shadow-sm' 
-                                        : 'border-slate-200 bg-white hover:border-slate-300'
+                                className={`rounded-2xl border transition-all duration-200 bg-white ${
+                                    isOpen
+                                        ? 'border-black/15 shadow-sm'
+                                        : 'border-black/5 hover:border-black/10'
                                 }`}
                             >
-                                <button
-                                    className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none"
-                                    onClick={() => setOpenIndex(isOpen ? null : idx)}
-                                >
-                                    <span className="font-semibold text-slate-900 text-sm sm:text-base pr-4">
-                                        {faq.q}
-                                    </span>
-                                    <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 transition-transform ${
-                                        isOpen ? 'rotate-180 text-blue-600 bg-blue-50' : 'text-slate-400'
-                                    }`}>
-                                        <ChevronDown className="w-4 h-4" />
-                                    </div>
-                                </button>
+                                <h3>
+                                    <button
+                                        onClick={() => setOpenIndex(isOpen ? null : idx)}
+                                        className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-display font-semibold text-base sm:text-lg text-ink focus:outline-none"
+                                        aria-expanded={isOpen}
+                                    >
+                                        <span>{faq.q}</span>
+                                        <span className={`w-8 h-8 rounded-full bg-[#faf8f4] flex items-center justify-center shrink-0 text-ink transition-transform duration-200 ${
+                                            isOpen ? 'rotate-180 bg-ink text-white' : ''
+                                        }`}>
+                                            <ChevronDown className="w-4 h-4" />
+                                        </span>
+                                    </button>
+                                </h3>
 
-                                <AnimatePresence initial={false}>
-                                    {isOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.2 }}
-                                        >
-                                            <div className="px-5 pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-3">
-                                                {faq.a}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                {isOpen && (
+                                    <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-ink-secondary leading-relaxed border-t border-black/5 mt-1">
+                                        <p>{faq.a}</p>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}

@@ -1,92 +1,163 @@
 'use client';
+
 import React from 'react';
-import { Shield, Lock, CheckCircle2 } from 'lucide-react';
+import { 
+    Shield, Sparkles, Cpu, Lock, Eye, CheckCircle2, 
+    Layers, ScanLine, KeyRound, MonitorCheck, Zap
+} from 'lucide-react';
 
 export default function Integrations() {
-    const platforms = [
-        { name: "Canvas LMS", type: "Instructure", tag: "Full Focus Protection" },
-        { name: "Blackboard Ultra", type: "Anthology", tag: "Stealth Certified" },
-        { name: "D2L Brightspace", type: "D2L", tag: "Auto Detection" },
-        { name: "Moodle", type: "Open LMS", tag: "Zero Log Footprint" },
-        { name: "McGraw Hill Connect", type: "McGraw Hill", tag: "Auto-Fill Enabled" },
-        { name: "Pearson MyLab", type: "Pearson", tag: "Math & MCQ Ready" },
-        { name: "Google Classroom", type: "Google", tag: "Instant Solve" },
-        { name: "WebAssign", type: "Cengage", tag: "Formula Solver" }
+    const categories = [
+        {
+            count: "5 tools",
+            title: "Stealth & Shield",
+            desc: "Focus Shield, Zero-Log Canvas Hook, Window Blur Blocker and Clipboard Protector",
+            bg: "#c4d0f8", // Periwinkle
+            accent: "#4361ee",
+            icon: Shield,
+            badge: "0 SpeedGrader Flags",
+            features: ["Window blur event silencer", "Tab-switch interception", "Zero DOM mutation traces"]
+        },
+        {
+            count: "4 tools",
+            title: "Vision & OCR",
+            desc: "Snap-It Vision, Mathpix LaTeX Engine, Diagram Decoder and Multi-Column Parser",
+            bg: "#bfe3f6", // Sky
+            accent: "#0077b6",
+            icon: ScanLine,
+            badge: "0.3s Vision Latency",
+            features: ["Calculus & chemical equations", "Chart & diagram recognition", "Screenshot-less in-memory OCR"]
+        },
+        {
+            count: "5 tools",
+            title: "AI Solvers",
+            desc: "Instant MCQ Selection, Step-by-Step Logic, Short Answer Synthesizer and Code Engine",
+            bg: "#e2d3fa", // Lilac
+            accent: "#7209b7",
+            icon: Sparkles,
+            badge: "99.8% Test Accuracy",
+            features: ["Multi-select checkboxes", "Fill-in-the-blank autotype", "Humanized response delays"]
+        },
+        {
+            count: "4 tools",
+            title: "LMS Immunity",
+            desc: "Native hooks for Canvas Quizzes & New Quizzes, Blackboard Ultra, Moodle and D2L",
+            bg: "#cdeecb", // Mint
+            accent: "#2d6a4f",
+            icon: Layers,
+            badge: "All Major Platforms",
+            features: ["Canvas New Quizzes support", "Blackboard SafeAssign shield", "Moodle Quiz environment"]
+        },
+        {
+            count: "3 tools",
+            title: "Proctor Armor",
+            desc: "Honorlock Sandbox, Respondus WebRTC Shield and Dual-Screen Mirror Protection",
+            bg: "#ffd5cc", // Blush
+            accent: "#d90429",
+            icon: Lock,
+            badge: "Proctor Immune",
+            features: ["WebRTC screen share mask", "Isolated Shadow DOM root", "Clean process inspector"]
+        },
+        {
+            count: "3 tools",
+            title: "Ghost HUD",
+            desc: "Invisible Hotkeys (⌘+B), Dynamic Opacity Dial (0-100%) and Instant Panic Key (Esc)",
+            bg: "#bfe9d9", // Teal
+            accent: "#006d77",
+            icon: Eye,
+            badge: "Instant Disappear",
+            features: ["0% to 100% opacity slider", "Panic switch memory purge", "Customizable stealth hotkeys"]
+        }
     ];
 
     return (
-        <section className="bg-slate-50/60 text-slate-900 py-16 border-b border-slate-200/80">
+        <section className="py-20 md:py-32 bg-cream text-ink border-b border-black/5" id="all-in-one">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-semibold text-slate-700 shadow-sm mb-3">
-                        <Shield className="w-3.5 h-3.5 text-blue-600" />
-                        <span>Cross-Platform Support</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-2">
-                        Works on all major learning platforms
+
+                {/* Section Head */}
+                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                    <p className="eyebrow justify-center mb-3">
+                        <span className="w-2 h-2 rounded-full bg-ink" />
+                        <span>ALL IN ONE</span>
+                    </p>
+                    <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
+                        One box. Every tool<br />
+                        you keep reaching for.
                     </h2>
-                    <p className="text-sm text-slate-600">
-                        Engineered to intercept visibility APIs and DOM focus listeners across modern LMS test environments.
+                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        Stop hunting for a buggy screenshot tool, a risky copy-paste script and a sketchy AI extension that triggers Canvas flags. ExamGhost puts 24 stealth tools in one calm, undetectable browser extension.
                     </p>
                 </div>
 
-                {/* Platforms Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mb-14">
-                    {platforms.map((platform, idx) => (
-                        <div 
-                            key={idx}
-                            className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:border-slate-300 hover:shadow transition-all"
-                        >
-                            <div className="flex items-center justify-between mb-1.5">
-                                <span className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">
-                                    {platform.type}
-                                </span>
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                            </div>
-                            <h3 className="font-semibold text-sm sm:text-base text-slate-900">
-                                {platform.name}
-                            </h3>
-                            <p className="text-xs text-blue-600 font-medium mt-1">
-                                {platform.tag}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+                {/* Categories Grid (OneMacApp 6 Pastel Cards) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                    {categories.map((cat, idx) => {
+                        const Icon = cat.icon;
+                        return (
+                            <div
+                                key={idx}
+                                className="group relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 border border-white/80 shadow-[0_4px_20px_rgba(40,30,10,0.04)] hover:shadow-[0_16px_40px_rgba(40,30,10,0.1)]"
+                                style={{ backgroundColor: cat.bg }}
+                            >
+                                {/* Top Meta */}
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/70 backdrop-blur-sm border border-black/5 text-ink shadow-xs">
+                                            {cat.count}
+                                        </span>
+                                        <span className="text-[11px] font-semibold text-ink/75 bg-black/5 px-2.5 py-0.5 rounded-full">
+                                            {cat.badge}
+                                        </span>
+                                    </div>
 
-                {/* Value Banner */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium rounded-full mb-3">
-                                <Lock className="w-3 h-3 text-emerald-600" />
-                                <span>Zero-Log Guarantee</span>
-                            </div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 tracking-tight">
-                                Designed specifically for exams, not just another chat box.
-                            </h3>
-                            <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                                Standard AI tools require copying text, opening new windows, or using split screen—which Canvas logs instantly as &quot;Stopped viewing quiz&quot;. ExamGhost executes right on the question element with zero tab leaves.
-                            </p>
-                        </div>
+                                    <h3 className="font-display text-2xl font-bold text-ink mb-2">
+                                        {cat.title}
+                                    </h3>
 
-                        <div className="space-y-3 bg-slate-50/80 rounded-xl p-5 border border-slate-200/70">
-                            {[
-                                { title: "Window Blur Silencer", desc: "Prevents Canvas from firing focus-lost alerts." },
-                                { title: "Isolated Shadow DOM", desc: "No script artifacts or DOM modifications that proctors can detect." },
-                                { title: "Instant In-Place Highlighting", desc: "Correct answers are identified on screen in under 1.2 seconds." }
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                    <div>
-                                        <h4 className="text-xs font-semibold text-slate-900">{item.title}</h4>
-                                        <p className="text-xs text-slate-500 leading-normal">{item.desc}</p>
+                                    <p className="text-xs sm:text-sm text-ink/80 leading-relaxed font-normal mb-6">
+                                        {cat.desc}
+                                    </p>
+                                </div>
+
+                                {/* Interactive Illustration Box Inside Card */}
+                                <div className="mt-2 bg-white/85 backdrop-blur-md rounded-2xl p-4 border border-white/80 shadow-xs">
+                                    <div className="flex items-center gap-2 mb-2.5">
+                                        <div className="w-7 h-7 rounded-xl bg-ink/5 flex items-center justify-center">
+                                            <Icon className="w-3.5 h-3.5 text-ink" />
+                                        </div>
+                                        <span className="text-xs font-bold text-ink tracking-tight">
+                                            Stealth Protocol
+                                        </span>
+                                    </div>
+
+                                    <div className="space-y-1.5">
+                                        {cat.features.map((feat, fIdx) => (
+                                            <div key={fIdx} className="flex items-center gap-2 text-xs text-ink-secondary">
+                                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                                                <span className="truncate">{feat}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
+
+                                {/* Subtle corner glare effect */}
+                                <div className="pointer-events-none absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-white/30 blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Bottom Platform Compatibility Pill Bar */}
+                <div className="mt-14 max-w-4xl mx-auto rounded-full bg-white/80 backdrop-blur-md border border-black/5 px-6 py-4 shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-ink-secondary">
+                    <span className="font-semibold text-ink flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                        Supported Platforms:
+                    </span>
+                    {['Canvas Quizzes', 'Canvas New Quizzes', 'Blackboard Ultra', 'Moodle 4+', 'D2L Brightspace', 'McGraw Hill', 'Pearson MyLab'].map((p, i) => (
+                        <span key={i} className="hover:text-ink transition-colors">
+                            {p}
+                        </span>
+                    ))}
                 </div>
 
             </div>

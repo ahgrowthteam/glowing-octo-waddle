@@ -1,13 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, Sparkles, CheckCircle2 } from 'lucide-react';
+import { 
+    Check, Sparkles, CheckCircle2, Shield, Lock, 
+    RefreshCw, EyeOff, Layers, Cpu
+} from 'lucide-react';
 
 export default function QuestionExamples() {
     const [mcState, setMcState] = useState<string | null>(null);
     const [msState, setMsState] = useState<string[]>([]);
     const [fibState, setFibState] = useState('');
     const [matchState, setMatchState] = useState<Record<string, string>>({});
+    const [activeQuestionTab, setActiveQuestionTab] = useState<'mc' | 'ms' | 'fib' | 'match'>('mc');
 
     const handleAutoSolve = () => {
         setMcState('C');
@@ -28,269 +32,291 @@ export default function QuestionExamples() {
         setMatchState({});
     };
 
-    const getMcStyles = (opt: string) => {
-        if (mcState === opt) {
-            if (opt === 'C') return 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold';
-            return 'bg-rose-50 border-rose-400 text-rose-950 font-medium';
-        }
-        return 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700';
-    };
-
-    const getMsStyles = (opt: string) => {
-        if (msState.includes(opt)) {
-            if (opt === 'A' || opt === 'C') return 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold';
-            return 'bg-rose-50 border-rose-400 text-rose-950 font-medium';
-        }
-        return 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700';
-    };
-
     const matchOptions = ['Reactant', 'Electron donor', 'Byproduct', 'Product'];
-    const getMatchStyles = (key: string, val: string) => {
-        if (!val) return 'bg-white border-slate-200 text-slate-700 hover:border-slate-300';
-        const correctMap: Record<string, string> = {
-            'CO2': 'Reactant',
-            'H2O': 'Electron donor',
-            'O2': 'Byproduct',
-            'C6H12O6': 'Product'
-        };
-        if (correctMap[key] === val) return 'bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold';
-        return 'bg-rose-50 border-rose-400 text-rose-900';
-    };
 
     return (
-        <section id="question-types" className="py-20 bg-slate-50/60 text-slate-900 border-b border-slate-200/80">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="bg-cream text-ink">
+            {/* Section: Privacy (OneMacApp Style #privacy) */}
+            <section className="py-20 md:py-32 border-b border-black/5" id="privacy">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-16 border border-black/10 shadow-lift">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            
+                            {/* Left Graphic Box */}
+                            <div className="lg:col-span-5 relative">
+                                <div className="rounded-3xl bg-[#cdeecb]/40 p-8 border border-[#cdeecb] flex flex-col items-center justify-center text-center relative overflow-hidden">
+                                    <div className="w-16 h-16 rounded-2xl bg-white shadow-soft flex items-center justify-center text-ink mb-4">
+                                        <Lock className="w-8 h-8 text-ink" />
+                                    </div>
+                                    <h4 className="font-display font-bold text-xl text-ink mb-1">
+                                        Client-Side Isolation
+                                    </h4>
+                                    <p className="text-xs text-ink-muted max-w-[220px]">
+                                        Runs 100% inside your local browser memory space.
+                                    </p>
 
-                {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm mb-3">
-                        <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                        <span>Universal Format Support</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-                        Handles any question type effortlessly
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-600 mb-6">
-                        From basic multiple-choice to multi-select checkboxes, coordinate graphs, and matching columns.
-                    </p>
+                                    {/* Floating Badges */}
+                                    <div className="mt-6 flex flex-wrap gap-2 justify-center">
+                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
+                                            Zero Telemetry
+                                        </span>
+                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
+                                            Closed Shadow DOM
+                                        </span>
+                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
+                                            No School Logs
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
 
-                    {/* Interactive Solve Buttons */}
-                    <div className="inline-flex items-center gap-3">
-                        <button
-                            onClick={handleAutoSolve}
-                            className="px-4 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-sm flex items-center gap-2 transition-colors"
-                        >
-                            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-                            <span>Auto-Solve All (Interactive Demo)</span>
-                        </button>
-                        <button
-                            onClick={handleReset}
-                            className="px-4 py-2.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium transition-colors shadow-sm"
-                        >
-                            Reset
-                        </button>
+                            {/* Right Privacy Copy */}
+                            <div className="lg:col-span-7">
+                                <p className="eyebrow mb-3">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                    <span>PRIVACY & SAFETY</span>
+                                </p>
+                                <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-5">
+                                    Your exam activity<br />
+                                    stays on your device.
+                                </h2>
+                                <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal mb-6">
+                                    ExamGhost does the work locally in an isolated Shadow DOM container. No third-party tracking scripts, zero cookies sent to university exam servers, and no suspicious outbound network packets for school firewalls to inspect.
+                                </p>
+
+                                <div className="space-y-3">
+                                    {[
+                                        { title: "Zero DOM Trace", desc: "No HTML classes or IDs injected into the instructor's test document." },
+                                        { title: "Local Memory Purge", desc: "Answers and question hashes are cleared instantly when you close the tab." },
+                                        { title: "Honorlock & Proctorio Cloak", desc: "WebRTC screen captures and background audio streams remain completely unaffected." }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-start gap-3">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                            <div className="text-xs sm:text-sm">
+                                                <span className="font-semibold text-ink">{item.title}</span> —{' '}
+                                                <span className="text-ink-muted">{item.desc}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/* Question Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {/* Section: Question Formats Playground */}
+            <section className="py-20 md:py-28 border-b border-black/5" id="question-types">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-                    {/* Card 1: Multiple Choice */}
-                    <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                    01 • Single Choice (MCQ)
-                                </span>
-                                {mcState === 'C' && (
-                                    <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Solved
-                                    </span>
-                                )}
-                            </div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">
-                                Differential Calculus
-                            </h3>
-                            <p className="text-xs sm:text-sm text-slate-600 mb-5">
-                                What is the derivative of f(x) = (x + 1)² with respect to x?
-                            </p>
-
-                            <div className="space-y-2 text-xs sm:text-sm">
-                                {[
-                                    { id: 'A', text: '2x² + 4x - 2' },
-                                    { id: 'B', text: 'x² + 2x + 1' },
-                                    { id: 'C', text: '2x + 2' },
-                                    { id: 'D', text: '2x² - 4x + 2' }
-                                ].map((opt) => (
-                                    <div
-                                        key={opt.id}
-                                        onClick={() => setMcState(opt.id)}
-                                        className={`px-4 py-3 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${getMcStyles(opt.id)}`}
-                                    >
-                                        <div className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
-                                            mcState === opt.id 
-                                                ? (opt.id === 'C' ? 'border-emerald-600 bg-emerald-600' : 'border-rose-600 bg-rose-600') 
-                                                : 'border-slate-300'
-                                        }`}>
-                                            {mcState === opt.id && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
-                                        </div>
-                                        <span className="text-slate-400 font-medium">{opt.id}.</span>
-                                        <span>{opt.text}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    {/* Section Head */}
+                    <div className="text-center max-w-2xl mx-auto mb-12">
+                        <p className="eyebrow justify-center mb-3">
+                            <span className="w-2 h-2 rounded-full bg-ink" />
+                            <span>COMPREHENSIVE SOLVER</span>
+                        </p>
+                        <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-4">
+                            Handles every question type.
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-muted">
+                            Whether your professor uses multiple choice, multi-select checkboxes, formula fill-in, or complex matching tables.
+                        </p>
                     </div>
 
-                    {/* Card 2: Multiple Select */}
-                    <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                    02 • Multiple Select Checkboxes
-                                </span>
-                                {msState.includes('A') && msState.includes('C') && msState.length === 2 && (
-                                    <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Solved
-                                    </span>
-                                )}
-                            </div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">
-                                Cell Biology
-                            </h3>
-                            <p className="text-xs sm:text-sm text-slate-600 mb-5">
-                                Which cellular components are directly involved in eukaryotic translation?
-                            </p>
-
-                            <div className="space-y-2 text-xs sm:text-sm">
-                                {[
-                                    { id: 'A', text: 'Nucleus (mRNA Transcription)' },
-                                    { id: 'B', text: 'Mitochondria (ATP Production)' },
-                                    { id: 'C', text: 'Ribosomes (Polypeptide Synthesis)' },
-                                    { id: 'D', text: 'Cell Wall (Structural Rigidity)' }
-                                ].map((opt) => (
-                                    <div
-                                        key={opt.id}
-                                        onClick={() => {
-                                            setMsState(prev => prev.includes(opt.id) ? prev.filter(x => x !== opt.id) : [...prev, opt.id]);
-                                        }}
-                                        className={`px-4 py-3 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${getMsStyles(opt.id)}`}
-                                    >
-                                        <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
-                                            msState.includes(opt.id) ? 'bg-emerald-600 border-emerald-600' : 'border-slate-300'
-                                        }`}>
-                                            {msState.includes(opt.id) && <Check className="w-3 h-3 text-white" />}
-                                        </div>
-                                        <span className="text-slate-400 font-medium">{opt.id}.</span>
-                                        <span>{opt.text}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Card 3: Fill in the Blank with Graph */}
-                    <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                    03 • Graph & Coordinate Solver
-                                </span>
-                                {fibState === '1' && (
-                                    <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Solved
-                                    </span>
-                                )}
-                            </div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">
-                                Tangent Slope Calculation
-                            </h3>
-
-                            {/* Clean Graph Canvas */}
-                            <div className="w-full max-w-[280px] mx-auto my-3 p-2 bg-slate-50 rounded-xl border border-slate-200">
-                                <svg viewBox="0 0 200 110" className="w-full h-auto">
-                                    <line x1="100" y1="0" x2="100" y2="100" stroke="#cbd5e1" strokeWidth="1" />
-                                    <line x1="0" y1="90" x2="200" y2="90" stroke="#cbd5e1" strokeWidth="1" />
-                                    <line x1="0" y1="50" x2="200" y2="50" stroke="#cbd5e1" strokeWidth="0.5" strokeDasharray="2 2" />
-
-                                    <path d="M 10 10 Q 100 120 190 10" fill="none" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" />
-
-                                    {fibState === '1' && (
-                                        <g>
-                                            <line x1="110" y1="85" x2="170" y2="25" stroke="#10b981" strokeWidth="2" strokeDasharray="3 3" />
-                                            <circle cx="140" cy="55" r="3.5" fill="#10b981" />
-                                        </g>
-                                    )}
-
-                                    <text x="96" y="102" fontSize="8" fill="#64748b" fontFamily="monospace">0</text>
-                                    <text x="135" y="102" fontSize="8" fill="#64748b" fontFamily="monospace">2</text>
-                                    <text x="175" y="102" fontSize="8" fill="#64748b" fontFamily="monospace">4</text>
-                                </svg>
-                            </div>
-
-                            <div className="flex items-center justify-center gap-3 text-xs sm:text-sm text-slate-700 font-medium">
-                                <span>Slope of tangent at x = 2:</span>
-                                <input
-                                    type="text"
-                                    value={fibState}
-                                    onChange={(e) => setFibState(e.target.value)}
-                                    placeholder="Enter slope..."
-                                    className={`w-28 px-3 py-1.5 rounded-lg border text-center font-mono text-xs ${
-                                        fibState === '1' ? 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold' : 'border-slate-300 bg-white'
+                    {/* Question Type Tabs */}
+                    <div className="flex justify-center mb-8">
+                        <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-white border border-black/10 shadow-xs">
+                            {[
+                                { id: 'mc', label: 'Multiple Choice' },
+                                { id: 'ms', label: 'Multi-Select' },
+                                { id: 'fib', label: 'Fill in Blank' },
+                                { id: 'match', label: 'Matching Table' }
+                            ].map(tab => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveQuestionTab(tab.id as any)}
+                                    className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                                        activeQuestionTab === tab.id
+                                            ? 'bg-ink text-white shadow-xs'
+                                            : 'text-ink-secondary hover:text-ink'
                                     }`}
-                                />
-                            </div>
+                                >
+                                    {tab.label}
+                                </button>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Card 4: Matching Columns */}
-                    <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                    04 • Matching Columns
-                                </span>
-                                {Object.keys(matchState).length === 4 && (
-                                    <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Solved
-                                    </span>
-                                )}
-                            </div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">
-                                Photosynthesis Pathways
-                            </h3>
-                            <p className="text-xs sm:text-sm text-slate-600 mb-4">
-                                Match each chemical species to its functional role:
-                            </p>
-
-                            <div className="space-y-2.5 text-xs">
-                                {[
-                                    { key: 'CO2', label: 'CO₂' },
-                                    { key: 'H2O', label: 'H₂O' },
-                                    { key: 'O2', label: 'O₂' },
-                                    { key: 'C6H12O6', label: 'C₆H₁₂O₆' },
-                                ].map((item) => (
-                                    <div key={item.key} className="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-                                        <span className="font-mono font-bold text-slate-800 text-xs px-2">{item.label}</span>
-                                        <select
-                                            value={matchState[item.key] || ''}
-                                            onChange={(e) => setMatchState(prev => ({ ...prev, [item.key]: e.target.value }))}
-                                            className={`px-3 py-1.5 rounded-lg border text-xs cursor-pointer ${getMatchStyles(item.key, matchState[item.key])}`}
+                    {/* Active Question Simulator Card */}
+                    <div className="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-black/10 shadow-card">
+                        
+                        {/* Multiple Choice Tab */}
+                        {activeQuestionTab === 'mc' && (
+                            <div>
+                                <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 1 · Standard MCQ</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">1.0 pt</span>
+                                </div>
+                                <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
+                                    Which mechanism is primarily responsible for generating the resting membrane potential in animal neurons?
+                                </h3>
+                                <div className="space-y-2.5 mb-6">
+                                    {[
+                                        { id: 'A', text: 'Voltage-gated calcium influx' },
+                                        { id: 'B', text: 'Passive diffusion of chloride ions' },
+                                        { id: 'C', text: 'Na+/K+ ATPase pump and potassium leak channels' },
+                                        { id: 'D', text: 'Neurotransmitter reuptake mechanisms' }
+                                    ].map(opt => (
+                                        <div
+                                            key={opt.id}
+                                            onClick={() => setMcState(opt.id)}
+                                            className={`p-3.5 rounded-2xl border text-xs sm:text-sm font-medium cursor-pointer transition-all flex items-center justify-between ${
+                                                mcState === opt.id
+                                                    ? opt.id === 'C'
+                                                        ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink'
+                                                        : 'bg-red-50 border-red-300 text-ink'
+                                                    : 'bg-[#faf8f4] border-black/5 hover:border-black/20 text-ink'
+                                            }`}
                                         >
-                                            <option value="">Select match...</option>
-                                            {matchOptions.map((opt) => (
-                                                <option key={opt} value={opt}>{opt}</option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                ))}
+                                            <span><strong>{opt.id})</strong> {opt.text}</span>
+                                            {mcState === opt.id && opt.id === 'C' && (
+                                                <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
+                                                    ✓ Correct (99.9%)
+                                                </span>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+                        )}
+
+                        {/* Multi-Select Tab */}
+                        {activeQuestionTab === 'ms' && (
+                            <div>
+                                <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 2 · Multi-Select</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">2.0 pts</span>
+                                </div>
+                                <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
+                                    Select ALL factors that will shift the hemoglobin oxygen dissociation curve to the RIGHT (Bohr effect):
+                                </h3>
+                                <div className="space-y-2.5 mb-6">
+                                    {[
+                                        { id: 'A', text: 'Increased partial pressure of CO₂ (PCO₂)' },
+                                        { id: 'B', text: 'Increased blood pH (alkalosis)' },
+                                        { id: 'C', text: 'Elevated body temperature' },
+                                        { id: 'D', text: 'Decreased 2,3-BPG concentration' }
+                                    ].map(opt => {
+                                        const isSelected = msState.includes(opt.id);
+                                        const isCorrect = opt.id === 'A' || opt.id === 'C';
+                                        return (
+                                            <div
+                                                key={opt.id}
+                                                onClick={() => {
+                                                    setMsState(prev => isSelected ? prev.filter(x => x !== opt.id) : [...prev, opt.id]);
+                                                }}
+                                                className={`p-3.5 rounded-2xl border text-xs sm:text-sm font-medium cursor-pointer transition-all flex items-center justify-between ${
+                                                    isSelected
+                                                        ? isCorrect
+                                                            ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink'
+                                                            : 'bg-red-50 border-red-300 text-ink'
+                                                        : 'bg-[#faf8f4] border-black/5 hover:border-black/20 text-ink'
+                                                }`}
+                                            >
+                                                <span><strong>[{isSelected ? '✓' : ' '}]</strong> {opt.text}</span>
+                                                {isSelected && isCorrect && (
+                                                    <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2 py-0.5 rounded-full">
+                                                        ✓ Target
+                                                    </span>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Fill in Blank Tab */}
+                        {activeQuestionTab === 'fib' && (
+                            <div>
+                                <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 3 · Calculus Formula</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">1.5 pts</span>
+                                </div>
+                                <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
+                                    Evaluate the limit: lim(x→0) [sin(x) / x] = ?
+                                </h3>
+                                <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 mb-6 flex items-center gap-3">
+                                    <span className="text-sm font-semibold text-ink">Answer:</span>
+                                    <input
+                                        type="text"
+                                        value={fibState}
+                                        onChange={(e) => setFibState(e.target.value)}
+                                        placeholder="Type number..."
+                                        className="px-4 py-2 rounded-xl border border-black/15 bg-white text-ink text-sm font-mono w-32 focus:outline-none focus:border-ink"
+                                    />
+                                    {fibState === '1' && (
+                                        <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-3 py-1 rounded-full">
+                                            ✓ Correct Solution Verified
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Matching Table Tab */}
+                        {activeQuestionTab === 'match' && (
+                            <div>
+                                <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 4 · Matching Matrix</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">2.0 pts</span>
+                                </div>
+                                <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
+                                    Match each molecule involved in photosynthesis to its proper biochemical role:
+                                </h3>
+                                <div className="space-y-3 mb-6">
+                                    {['CO2', 'H2O', 'O2', 'C6H12O6'].map(mol => (
+                                        <div key={mol} className="p-3 rounded-2xl bg-[#faf8f4] border border-black/5 flex items-center justify-between">
+                                            <span className="text-xs font-mono font-bold text-ink">{mol}</span>
+                                            <select
+                                                value={matchState[mol] || ''}
+                                                onChange={(e) => setMatchState({ ...matchState, [mol]: e.target.value })}
+                                                className="px-3 py-1.5 rounded-xl border border-black/15 bg-white text-xs text-ink focus:outline-none focus:border-ink"
+                                            >
+                                                <option value="">Select role...</option>
+                                                {matchOptions.map(o => (
+                                                    <option key={o} value={o}>{o}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Controls */}
+                        <div className="flex items-center justify-between pt-4 border-t border-black/5">
+                            <button
+                                onClick={handleAutoSolve}
+                                className="btn-dark px-5 py-2.5 text-xs sm:text-sm"
+                            >
+                                <Sparkles className="w-3.5 h-3.5 text-[#ffd23f]" />
+                                <span>Auto-Solve This Question</span>
+                            </button>
+                            <button
+                                onClick={handleReset}
+                                className="btn-soft px-4 py-2.5 text-xs text-ink"
+                            >
+                                <RefreshCw className="w-3.5 h-3.5" />
+                                <span>Reset Inputs</span>
+                            </button>
                         </div>
+
                     </div>
 
                 </div>
-
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }

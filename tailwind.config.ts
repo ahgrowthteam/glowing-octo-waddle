@@ -51,11 +51,33 @@ const config: Config = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
+                cream: "#fcf9f5",
+                paper: "#ffffff",
+                ink: {
+                    DEFAULT: "#111111",
+                    secondary: "#2b2926",
+                    muted: "#6d6a63",
+                },
+                peri: "#c4d0f8",
+                sky: "#bfe3f6",
+                lilac: "#e2d3fa",
+                mint: "#cdeecb",
+                blush: "#ffd5cc",
+                teal: "#bfe9d9",
+                yellow: {
+                    DEFAULT: "#ffd23f",
+                    butter: "#ffe9a0",
+                },
+            },
+            fontFamily: {
+                display: ["ui-rounded", '"SF Pro Rounded"', '"Hiragino Maru Gothic ProN"', '"Quicksand"', "system-ui", "-apple-system", "sans-serif"],
+                sans: ["Inter", "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"],
             },
             borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
+                xl: "36px",
+                lg: "26px",
+                md: "18px",
+                sm: "12px",
             },
             keyframes: {
                 "accordion-down": {

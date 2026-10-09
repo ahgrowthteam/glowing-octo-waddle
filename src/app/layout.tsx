@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ExamGhost AI - The Only 100% Invisible Exam Assistant",
-  description: "Instantly solve any Canvas quiz with a 100% undetectable AI browser extension.",
+  title: "ExamGhost — All your exam tools, in one invisible box",
+  description: "24 powerful stealth tools for Canvas, Blackboard, Moodle and D2L. Zero SpeedGrader logs, instant AI vision OCR, and 100% undetectable.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen`}>
+      <body className={`${inter.className} bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen`}>
+        {/* SVG Filter for OneMacApp Torn Paper Deckle Edges */}
+        <svg className="sr-only" aria-hidden="true" width="0" height="0">
+          <defs>
+            <filter id="torn" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+          </defs>
+        </svg>
         {children}
       </body>
     </html>

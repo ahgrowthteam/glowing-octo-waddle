@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function QuizardComparison() {
     return (
-        <div className="min-h-screen bg-white selection:bg-blue-100 selection:text-blue-900">
+        <div className="min-h-screen bg-cream text-ink selection:bg-peri/30 selection:text-ink">
             <Navbar />
 
             {/* SEO Hero Section */}

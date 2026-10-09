@@ -1,188 +1,209 @@
 'use client';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { 
-    Command, CheckCircle2, ShieldCheck, Zap, Camera, History
+    Command, ShieldCheck, Zap, Eye, CheckCircle2, 
+    Sparkles, Lock, ArrowRight, Shield, RefreshCw
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function GhostMode() {
-    const [activeStep, setActiveStep] = useState<number>(0);
+    const [opacityVal, setOpacityVal] = useState(80);
+    const [activeKey, setActiveKey] = useState<string | null>(null);
+    const [inspectorMode, setInspectorMode] = useState<'normal' | 'shadow'>('normal');
+    const [blurCount, setBlurCount] = useState(0);
 
-    const steps = [
-        {
-            stepNum: "01",
-            title: "Activate with a single shortcut (⌘+Shift+X)",
-            description: "No need to open secondary tabs, minimize your browser, or switch desktop spaces. Press your secret keybind and ExamGhost activates directly on the active quiz page.",
-            icon: Zap,
-            visual: (
-                <div className="w-full h-full bg-slate-50 flex flex-col items-center justify-center p-6 border border-slate-200 rounded-xl">
-                    <div className="flex items-center gap-2 mb-6">
-                        <div className="w-12 h-12 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm text-slate-800 font-bold text-base">
-                            <Command className="w-5 h-5 text-slate-700" />
-                        </div>
-                        <span className="text-slate-400 font-bold text-lg">+</span>
-                        <div className="h-12 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm text-slate-800 font-semibold text-sm">
-                            Shift
-                        </div>
-                        <span className="text-slate-400 font-bold text-lg">+</span>
-                        <div className="w-12 h-12 bg-blue-600 border border-blue-500 rounded-xl flex items-center justify-center shadow-sm text-white font-bold text-base">
-                            X
-                        </div>
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-medium text-emerald-800">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Ghost Engine Ready in &lt;1.0s</span>
-                    </div>
-                </div>
-            )
-        },
-        {
-            stepNum: "02",
-            title: "Silence Canvas focus-loss listeners",
-            description: "ExamGhost neutralizes the browser window-blur and visibility-change events. The LMS continues receiving a steady 'page active' heartbeat so zero tab-switching events are written to your audit log.",
-            icon: ShieldCheck,
-            visual: (
-                <div className="w-full h-full bg-slate-50 flex flex-col items-center justify-center p-6 border border-slate-200 rounded-xl">
-                    <div className="w-full max-w-[280px] bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                        <div className="flex items-center justify-between mb-2 text-xs font-mono">
-                            <span className="text-slate-500">EventListener.blur</span>
-                            <span className="text-emerald-700 font-bold">SILENCED</span>
-                        </div>
-                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-3">
-                            <div className="h-full bg-emerald-500 rounded-full w-full" />
-                        </div>
-                        <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-600" />
-                            <span>Canvas log status: 100% Normal</span>
-                        </div>
-                    </div>
-                </div>
-            )
-        },
-        {
-            stepNum: "03",
-            title: "Snap-It crop tool for locked formulas (⌘+Shift+S)",
-            description: "Can't copy text? Taking an organic chemistry exam or math test with complex graphs? Hit Snap-It to draw a quick box over any diagram and get instant multimodal step-by-step solving.",
-            icon: Camera,
-            visual: (
-                <div className="w-full h-full bg-slate-50 flex flex-col items-center justify-center p-6 border border-slate-200 rounded-xl">
-                    <div className="w-[240px] h-[130px] border-2 border-dashed border-blue-400 rounded-xl bg-white p-3 flex flex-col justify-between shadow-sm">
-                        <div className="flex justify-between items-center text-[11px] font-mono text-blue-600">
-                            <span>[Area: 480 × 260px]</span>
-                            <span>Solved</span>
-                        </div>
-                        <div className="text-center font-mono text-xs font-bold text-slate-800 bg-slate-100 py-1.5 rounded">
-                            f(x) = ∫ 2x · e^(x²) dx
-                        </div>
-                        <div className="flex justify-between items-center text-[11px] text-slate-600">
-                            <span className="text-emerald-700 font-semibold">Answer: e^(x²) + C</span>
-                            <span>99.9%</span>
-                        </div>
-                    </div>
-                </div>
-            )
-        },
-        {
-            stepNum: "04",
-            title: "Smart multi-attempt memory",
-            description: "For quizzes with multiple attempts allowed, ExamGhost remembers verified correct responses and re-applies them automatically so you can achieve full marks on attempt #2.",
-            icon: History,
-            visual: (
-                <div className="w-full h-full bg-slate-50 flex flex-col items-center justify-center p-6 border border-slate-200 rounded-xl">
-                    <div className="w-full max-w-[260px] bg-white border border-slate-200 rounded-xl p-4 shadow-sm text-xs">
-                        <div className="flex items-center justify-between mb-3 text-slate-600">
-                            <span>Attempt 1 Score:</span>
-                            <span className="text-blue-600 font-bold">85% Saved</span>
-                        </div>
-                        <div className="space-y-2 mb-3">
-                            <div className="flex items-center justify-between p-2 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px]">
-                                <span>Q1 - Q12 Correct</span>
-                                <span className="font-semibold">Auto-Restored</span>
-                            </div>
-                            <div className="flex items-center justify-between p-2 rounded bg-blue-50 text-blue-800 border border-blue-200 text-[11px]">
-                                <span>Q13 - Q15 Retrying</span>
-                                <span className="font-semibold">Solved</span>
-                            </div>
-                        </div>
-                        <div className="text-center text-[11px] font-bold text-emerald-700">
-                            Projected Attempt 2: 100% Score
-                        </div>
-                    </div>
-                </div>
-            )
-        }
-    ];
+    // Keyboard listener for real-time key reflection
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const isCmd = e.metaKey || e.ctrlKey;
+            if (isCmd && e.shiftKey && e.key.toLowerCase() === 'x') {
+                setActiveKey('⌘+Shift+X');
+                setTimeout(() => setActiveKey(null), 1200);
+            } else if (isCmd && e.key.toLowerCase() === 'b') {
+                setActiveKey('⌘+B');
+                setTimeout(() => setActiveKey(null), 1200);
+            } else if (e.key === 'Escape') {
+                setActiveKey('Esc');
+                setTimeout(() => setActiveKey(null), 1200);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     return (
-        <section id="how-it-works" className="py-20 bg-white text-slate-900 border-b border-slate-200/80">
+        <section className="py-20 md:py-32 bg-cream text-ink border-b border-black/5" id="motion">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-700 mb-3">
-                        <Zap className="w-3.5 h-3.5 text-blue-600" />
-                        <span>Simple 4-Step Architecture</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-                        How ExamGhost protects you
+
+                {/* Section Head */}
+                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                    <p className="eyebrow justify-center mb-3">
+                        <span className="w-2 h-2 rounded-full bg-ink" />
+                        <span>THE EXPERIENCE</span>
+                    </p>
+                    <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
+                        Details you feel<br />
+                        before you notice.
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600">
-                        Easy for you to operate with intuitive shortcuts, technically invisible to proctoring detection.
+                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        We obsessed over the micro-interactions, native shortcuts, and memory mechanics so you never feel a spike in your heart rate during high-stakes exams.
                     </p>
                 </div>
 
-                {/* Steps Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    {/* Step list (left) */}
-                    <div className="lg:col-span-6 space-y-3">
-                        {steps.map((step, idx) => {
-                            const Icon = step.icon;
-                            const isActive = activeStep === idx;
-                            return (
-                                <div
-                                    key={idx}
-                                    onClick={() => setActiveStep(idx)}
-                                    className={`p-5 rounded-xl border text-left cursor-pointer transition-all ${
-                                        isActive
-                                            ? 'bg-blue-50/50 border-blue-500/80 shadow-sm'
-                                            : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50/50'
-                                    }`}
-                                >
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold ${
-                                            isActive ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
-                                        }`}>
-                                            {step.stepNum}
-                                        </div>
-                                        <h3 className={`text-sm sm:text-base font-semibold ${
-                                            isActive ? 'text-blue-900' : 'text-slate-900'
-                                        }`}>
-                                            {step.title}
-                                        </h3>
-                                    </div>
-                                    <p className="text-xs text-slate-600 leading-relaxed pl-10">
-                                        {step.description}
-                                    </p>
+                {/* 3 Interactive Experience Showcase Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 mb-14">
+
+                    {/* Card 1: Dynamic Stealth Opacity Dial */}
+                    <div className="rounded-3xl bg-white p-6 sm:p-7 border border-black/10 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="w-9 h-9 rounded-2xl bg-[#c4d0f8] flex items-center justify-center text-ink shadow-xs">
+                                    <Eye className="w-4 h-4" />
+                                </span>
+                                <span className="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-[#f4f1ea] text-ink">
+                                    {opacityVal}% Opacity
+                                </span>
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                Stealth Opacity Dial
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed mb-6 font-normal">
+                                Dial the Ghost HUD down so only your eyes can see it from your seating angle. Completely unreadable from behind.
+                            </p>
+                        </div>
+
+                        {/* Interactive Slider & Live Target */}
+                        <div className="space-y-4 pt-4 border-t border-black/5">
+                            <input
+                                type="range"
+                                min="5"
+                                max="100"
+                                value={opacityVal}
+                                onChange={(e) => setOpacityVal(Number(e.target.value))}
+                                className="w-full accent-ink cursor-pointer"
+                                aria-label="Stealth opacity range"
+                            />
+
+                            <div 
+                                className="p-3.5 rounded-2xl bg-[#faf8f4] border border-black/5 transition-opacity duration-150"
+                                style={{ opacity: opacityVal / 100 }}
+                            >
+                                <div className="text-[11px] font-bold text-ink mb-0.5">
+                                    ✓ Target: B) Krebs Cycle (99.8%)
                                 </div>
-                            );
-                        })}
+                                <div className="text-[10px] text-ink-muted leading-normal">
+                                    Produces NADH and FADH2 in the mitochondrial matrix.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Step visual interactive preview (right) */}
-                    <div className="lg:col-span-6 h-[340px]">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeStep}
-                                initial={{ opacity: 0, scale: 0.98 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.98 }}
-                                transition={{ duration: 0.2 }}
-                                className="w-full h-full"
+                    {/* Card 2: Native Hotkey Resonance */}
+                    <div className="rounded-3xl bg-white p-6 sm:p-7 border border-black/10 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="w-9 h-9 rounded-2xl bg-[#e2d3fa] flex items-center justify-center text-ink shadow-xs">
+                                    <Command className="w-4 h-4" />
+                                </span>
+                                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-900">
+                                    Instant Reaction
+                                </span>
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                Native Hotkeys
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed mb-6 font-normal">
+                                Zero mouse movements toward suspicious corners. Press shortcuts to solve, dim, or instantly vaporize the HUD.
+                            </p>
+                        </div>
+
+                        {/* Interactive Key Buttons */}
+                        <div className="space-y-2 pt-4 border-t border-black/5">
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => {
+                                        setActiveKey('⌘+Shift+X');
+                                        setTimeout(() => setActiveKey(null), 1200);
+                                    }}
+                                    className={`flex-1 py-2 px-2.5 rounded-xl border text-xs font-medium transition-all ${
+                                        activeKey === '⌘+Shift+X'
+                                            ? 'bg-ink text-white border-ink scale-95 shadow-sm'
+                                            : 'bg-[#faf8f4] border-black/10 hover:border-black/20 text-ink'
+                                    }`}
+                                >
+                                    ⌘+Shift+X (Solve)
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setActiveKey('⌘+B');
+                                        setTimeout(() => setActiveKey(null), 1200);
+                                    }}
+                                    className={`flex-1 py-2 px-2.5 rounded-xl border text-xs font-medium transition-all ${
+                                        activeKey === '⌘+B'
+                                            ? 'bg-ink text-white border-ink scale-95 shadow-sm'
+                                            : 'bg-[#faf8f4] border-black/10 hover:border-black/20 text-ink'
+                                    }`}
+                                >
+                                    ⌘+B (Stealth)
+                                </button>
+                            </div>
+
+                            <button
+                                onClick={() => {
+                                    setActiveKey('Esc');
+                                    setTimeout(() => setActiveKey(null), 1200);
+                                }}
+                                className={`w-full py-2 px-3 rounded-xl border text-xs font-medium transition-all ${
+                                    activeKey === 'Esc'
+                                        ? 'bg-red-600 text-white border-red-600 scale-95'
+                                        : 'bg-[#faf8f4] border-black/10 hover:border-black/20 text-ink'
+                                }`}
                             >
-                                {steps[activeStep].visual}
-                            </motion.div>
-                        </AnimatePresence>
+                                Esc (Emergency Kill Switch)
+                            </button>
+
+                            {activeKey && (
+                                <div className="text-center text-[11px] font-semibold text-emerald-700 animate-pulse pt-1">
+                                    Triggered: {activeKey}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Card 3: SpeedGrader Event Interceptor */}
+                    <div className="rounded-3xl bg-white p-6 sm:p-7 border border-black/10 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="w-9 h-9 rounded-2xl bg-[#cdeecb] flex items-center justify-center text-ink shadow-xs">
+                                    <ShieldCheck className="w-4 h-4" />
+                                </span>
+                                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                    0 SpeedGrader Flags
+                                </span>
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                Focus Shield Silencer
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed mb-6 font-normal">
+                                Canvas listens for when your window loses focus. ExamGhost traps the event at the native browser layer and responds with an active focus token.
+                            </p>
+                        </div>
+
+                        {/* Interactive Blur Intercept */}
+                        <div className="space-y-3 pt-4 border-t border-black/5">
+                            <button
+                                onClick={() => setBlurCount(b => b + 1)}
+                                className="btn-dark w-full py-2 text-xs justify-center shadow-xs"
+                            >
+                                Intercept Tab Blur Event
+                            </button>
+
+                            <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 flex items-center justify-between">
+                                <span className="text-[11px] font-medium">Logged in SpeedGrader:</span>
+                                <span className="font-bold font-mono">0 Flags ({blurCount} Silenced)</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

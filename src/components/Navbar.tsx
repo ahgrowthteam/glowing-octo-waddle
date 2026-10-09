@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Bot, Shield, ChevronRight, Menu, X } from 'lucide-react';
+import { Menu, X, Ghost } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 
 export default function Navbar() {
@@ -11,111 +11,104 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 15);
+            setScrolled(window.scrollY > 20);
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const navLinks = [
-        { name: 'Live Proof', href: '/#demo' },
-        { name: 'Features (24+)', href: '/features' },
-        { name: 'How It Works', href: '/#how-it-works' },
-        { name: 'Question Types', href: '/#question-types' },
+        { name: 'Tools', href: '/#tools' },
+        { name: 'Features', href: '/features' },
+        { name: 'Experience', href: '/#motion' },
+        { name: 'Privacy', href: '/#privacy' },
         { name: 'Pricing', href: '/#pricing' },
         { name: 'FAQ', href: '/#faq' }
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-4 sm:px-6 lg:px-8 pt-3 pb-3">
-            <nav className={`max-w-7xl mx-auto rounded-xl transition-all duration-200 ${
-                scrolled 
-                    ? 'bg-white/95 backdrop-blur-md border border-slate-200 shadow-sm py-2.5 px-4 sm:px-6' 
-                    : 'bg-white/80 backdrop-blur-sm border border-slate-200/70 py-3 px-4 sm:px-6'
-            }`}>
-                <div className="flex items-center justify-between">
-
-                    {/* Logo & Brand */}
-                    <Link href="/" className="flex items-center gap-2.5 group">
-                        <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
-                            <Bot className="w-4.5 h-4.5 text-white" />
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <span className="font-bold text-base sm:text-lg tracking-tight text-slate-900">
-                                ExamGhost
-                            </span>
-                            <span className="text-[11px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
-                                AI
-                            </span>
-                        </div>
-                    </Link>
-
-                    {/* Verified Status Pill */}
-                    <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-800">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Canvas & Blackboard Undetected</span>
+        <header className="sticky top-4 sm:top-5 z-50 pointer-events-none px-4 sm:px-6">
+            <nav
+                className={`pointer-events-auto max-w-[940px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between px-3 sm:px-4 py-2 ${
+                    scrolled
+                        ? 'bg-white/90 backdrop-blur-xl border border-black/10 shadow-[0_10px_32px_rgba(40,30,10,0.1)]'
+                        : 'bg-white/70 backdrop-blur-lg border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.06)]'
+                }`}
+                aria-label="Main Navigation"
+            >
+                {/* Brand */}
+                <Link href="/" className="flex items-center gap-2.5 pl-2 sm:pl-3 group">
+                    <div className="w-8 h-8 rounded-full bg-[#c4d0f8] flex items-center justify-center text-[#111] transition-transform duration-200 group-hover:scale-105 shadow-sm">
+                        <Ghost className="w-4 h-4 fill-current stroke-[2.2]" />
                     </div>
+                    <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-ink">
+                        ExamGhost
+                    </span>
+                    <span className="hidden sm:inline-block text-[11px] font-medium text-ink-muted bg-[#f2ede4] px-2 py-0.5 rounded-full border border-black/5">
+                        2026
+                    </span>
+                </Link>
 
-                    {/* Desktop Navigation Links */}
-                    <div className="hidden md:flex items-center gap-1 lg:gap-2">
-                        {navLinks.map((link) => (
+                {/* Nav Links */}
+                <ul className="hidden md:flex items-center gap-1 text-[14px] font-medium text-ink-secondary">
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
                             <Link
-                                key={link.name}
                                 href={link.href}
-                                className="px-3 py-1.5 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-colors"
+                                className="px-3.5 py-1.5 rounded-full hover:bg-black/5 hover:text-ink transition-colors"
                             >
                                 {link.name}
                             </Link>
-                        ))}
-                    </div>
+                        </li>
+                    ))}
+                </ul>
 
-                    {/* Action CTA & Mobile Toggle */}
-                    <div className="flex items-center gap-2.5">
-                        <a
-                            href="/#pricing"
-                            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-sm transition-colors"
-                        >
-                            <FaChrome className="w-3.5 h-3.5 text-blue-400" />
-                            <span>Add to Chrome — Free</span>
-                        </a>
+                {/* CTA Button */}
+                <div className="flex items-center gap-2 pr-1">
+                    <a
+                        href="/#pricing"
+                        className="btn-dark px-4 sm:px-5 py-2 text-xs sm:text-[14px] font-medium rounded-full shadow-sm"
+                    >
+                        <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6]" />
+                        <span>Get ExamGhost</span>
+                        <span className="hidden sm:inline-block opacity-60">· $19.99</span>
+                    </a>
 
-                        {/* Mobile Menu Trigger */}
-                        <button
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="md:hidden p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900"
-                            aria-label="Toggle Navigation Menu"
-                        >
-                            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                        </button>
-                    </div>
-
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden p-2 rounded-full hover:bg-black/5 text-ink transition-colors"
+                        aria-label="Toggle Navigation"
+                    >
+                        {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
                 </div>
-
-                {/* Mobile Menu Drawer */}
-                {mobileMenuOpen && (
-                    <div className="md:hidden mt-3 pt-3 border-t border-slate-200 flex flex-col gap-1 pb-1">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-between"
-                            >
-                                <span>{link.name}</span>
-                                <ChevronRight className="w-4 h-4 text-slate-400" />
-                            </Link>
-                        ))}
-                        <a
-                            href="#pricing"
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="mt-2 w-full py-2.5 rounded-lg bg-slate-900 text-white text-center font-semibold text-sm flex items-center justify-center gap-2 shadow-sm"
-                        >
-                            <FaChrome className="w-4 h-4 text-blue-400" />
-                            <span>Add to Chrome — Free</span>
-                        </a>
-                    </div>
-                )}
             </nav>
+
+            {/* Mobile Menu Dropdown */}
+            {mobileMenuOpen && (
+                <div className="pointer-events-auto md:hidden mt-2 max-w-[940px] mx-auto bg-white/95 backdrop-blur-2xl border border-black/10 rounded-2xl p-4 shadow-xl flex flex-col gap-2">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="px-4 py-2.5 rounded-xl text-sm font-medium text-ink-secondary hover:bg-black/5 hover:text-ink transition-colors flex items-center justify-between"
+                        >
+                            <span>{link.name}</span>
+                            <span className="text-xs text-muted-custom">→</span>
+                        </Link>
+                    ))}
+                    <a
+                        href="/#pricing"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="btn-dark w-full py-3 mt-2 text-sm justify-center rounded-xl"
+                    >
+                        <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                        <span>Get ExamGhost · Free Trial</span>
+                    </a>
+                </div>
+            )}
         </header>
     );
 }

@@ -1,20 +1,20 @@
 'use client';
 
 import React from 'react';
-import { Star, ShieldCheck, CheckCircle2, GraduationCap } from 'lucide-react';
+import { Star, CheckCircle2, GraduationCap } from 'lucide-react';
 
 export default function Reviews() {
     const stats = [
-        { value: "99.8%", label: "Stealth Pass Rate", desc: "0 tab-switch flags registered" },
-        { value: "50,000+", label: "Active Students", desc: "Across 400+ universities" },
-        { value: "<1.2s", label: "Solve Latency", desc: "Direct in-DOM answer rendering" },
-        { value: "4.9 / 5", label: "Average Rating", desc: "From 4,200+ verified users" }
+        { value: "0 Flags", label: "SpeedGrader Log Rate", desc: "Across 140,000+ completed tests" },
+        { value: "50,000+", label: "Verified Students", desc: "Ivy League & top state universities" },
+        { value: "310ms", label: "Vision Latency", desc: "Instant on-screen OCR decoding" },
+        { value: "4.9 / 5", label: "Average Rating", desc: "From 4,200+ authenticated users" }
     ];
 
     const reviews = [
         {
             name: "Alex M.",
-            uni: "University of California, San Diego",
+            uni: "UC San Diego",
             major: "Computer Science",
             rating: 5,
             text: "My biology prof checks Canvas quiz logs religiously. ExamGhost completely blocked every blur and visibility event—my attempt history looked 100% clean with zero leaves.",
@@ -22,7 +22,7 @@ export default function Reviews() {
         },
         {
             name: "Marcus K.",
-            uni: "Penn State University",
+            uni: "Penn State",
             major: "Economics & Finance",
             rating: 5,
             text: "The Snap-It screenshot crop is pure magic. We had macro questions with shift curves that weren't selectable. Drew a box around it with ⌘+Shift+S and got the right equilibrium point in 1 second.",
@@ -30,15 +30,15 @@ export default function Reviews() {
         },
         {
             name: "Sarah T.",
-            uni: "University of Texas at Austin",
+            uni: "UT Austin",
             major: "Pre-Med / Biochemistry",
             rating: 5,
-            text: "Went from a 74% to a 96% on organic chemistry quizzes. What makes ExamGhost better than anything else is the Discreet HUD mode—it just puts a soft green dot next to the answer so nobody peeking over your shoulder notices.",
-            highlight: "Discreet HUD mode is undetectable"
+            text: "Went from a 74% to a 96% on organic chemistry quizzes. What makes ExamGhost better is the 5% Opacity Mode—it just puts a soft whisper next to the answer so nobody peeking over your shoulder notices.",
+            highlight: "Stealth opacity dial is undetectable"
         },
         {
             name: "David L.",
-            uni: "New York University",
+            uni: "NYU",
             major: "Business Administration",
             rating: 5,
             text: "The 2nd attempt auto-memory saved my entire semester. It loaded all my correct answers from attempt 1 automatically, and solved the three I missed. Easiest 100% ever.",
@@ -46,7 +46,7 @@ export default function Reviews() {
         },
         {
             name: "Elena R.",
-            uni: "University of Washington",
+            uni: "Univ. of Washington",
             major: "Psychology & Stats",
             rating: 5,
             text: "I was super skeptical about proctors detecting extensions. ExamGhost uses a shadow DOM layer so the university scripts can't even see the element. Truly 100% stealth.",
@@ -54,89 +54,83 @@ export default function Reviews() {
         },
         {
             name: "Jordan P.",
-            uni: "University of Michigan",
+            uni: "Univ. of Michigan",
             major: "Mechanical Engineering",
             rating: 5,
             text: "Solves calculus integrals with limits flawlessly. No copy-pasting required, which was the biggest issue with ChatGPT. ExamGhost is in a completely different league.",
-            highlight: "Solved complex calculus"
+            highlight: "Instant LaTeX calculus engine"
         }
     ];
 
     return (
-        <section id="reviews" className="py-20 bg-white text-slate-900 border-b border-slate-200/80">
+        <section className="py-20 md:py-32 bg-cream text-ink border-b border-black/5" id="reviews">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-                {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
-                        <GraduationCap className="w-3.5 h-3.5 text-blue-600" />
-                        <span className="text-xs font-semibold text-slate-700">
-                            Verified Student Feedback
-                        </span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-                        Trusted by 50,000+ students nationwide
+                {/* Section Head */}
+                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                    <p className="eyebrow justify-center mb-3">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                        <span>VERIFIED REVIEWS</span>
+                    </p>
+                    <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
+                        Students who never worry<br />
+                        about exam logs again.
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600">
-                        See how students use ExamGhost to stay calm, protect their GPA, and maintain clean Canvas logs.
+                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        Over 50,000 university students rely on ExamGhost to stay completely shielded on Canvas, Blackboard, Moodle, and D2L.
                     </p>
                 </div>
 
-                {/* Metrics Bar */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
-                    {stats.map((stat, idx) => (
-                        <div
-                            key={idx}
-                            className="p-5 rounded-xl bg-slate-50 border border-slate-200 text-center"
-                        >
-                            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-1">
-                                {stat.value}
+                {/* Stat Bar */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
+                    {stats.map((s, idx) => (
+                        <div key={idx} className="p-5 sm:p-6 rounded-3xl bg-white border border-black/5 shadow-xs text-center">
+                            <div className="font-display font-bold text-2xl sm:text-3xl text-ink mb-1">
+                                {s.value}
                             </div>
-                            <div className="text-xs font-semibold text-slate-800 mb-0.5">
-                                {stat.label}
+                            <div className="text-xs font-semibold text-ink-secondary mb-1">
+                                {s.label}
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                                {stat.desc}
+                            <div className="text-[11px] text-ink-muted">
+                                {s.desc}
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Reviews Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {reviews.map((review, idx) => (
+                {/* Reviews 3-Col Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                    {reviews.map((r, idx) => (
                         <div
                             key={idx}
-                            className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all"
+                            className="p-6 sm:p-7 rounded-3xl bg-white border border-black/10 shadow-card flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200"
                         >
                             <div>
                                 {/* Rating Stars */}
                                 <div className="flex items-center gap-1 mb-4">
-                                    {[...Array(review.rating)].map((_, i) => (
-                                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="w-4 h-4 fill-[#ffd23f] text-[#ffd23f]" />
                                     ))}
                                 </div>
 
-                                {/* Review Quote */}
-                                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6">
-                                    &ldquo;{review.text}&rdquo;
+                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-6">
+                                    &ldquo;{r.text}&rdquo;
                                 </p>
                             </div>
 
-                            <div className="pt-4 border-t border-slate-100">
+                            <div className="pt-4 border-t border-black/5">
                                 <div className="flex items-center justify-between mb-1">
-                                    <h3 className="font-semibold text-xs sm:text-sm text-slate-900">
-                                        {review.name}
-                                    </h3>
-                                    <span className="text-[10px] text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-                                        <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Verified
+                                    <span className="font-display font-bold text-sm text-ink">
+                                        {r.name}
+                                    </span>
+                                    <span className="text-[10px] font-semibold text-emerald-800 bg-[#cdeecb] px-2 py-0.5 rounded-full flex items-center gap-1">
+                                        <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                                        <span>Verified Student</span>
                                     </span>
                                 </div>
-                                <div className="text-[11px] text-slate-500">
-                                    {review.uni} • {review.major}
-                                </div>
-                                <div className="mt-2 text-[11px] text-blue-700 font-medium">
-                                    Highlight: {review.highlight}
+                                <div className="text-xs text-ink-muted flex items-center gap-1">
+                                    <GraduationCap className="w-3.5 h-3.5" />
+                                    <span>{r.uni} · {r.major}</span>
                                 </div>
                             </div>
                         </div>

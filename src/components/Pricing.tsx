@@ -1,26 +1,17 @@
 'use client';
+
 import React, { useState } from 'react';
-import { Check, Sparkles, Shield, Lock, Zap, Download, X, Copy, CheckCircle2, ArrowRight } from 'lucide-react';
+import { 
+    Check, Sparkles, Shield, Lock, Zap, Download, 
+    X, Copy, CheckCircle2, ArrowRight, Ghost
+} from 'lucide-react';
 import { SiDiscord } from 'react-icons/si';
 import { FaChrome } from 'react-icons/fa';
 
 export default function Pricing() {
     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedTier, setSelectedTier] = useState<{
-        name: string;
-        price: string;
-        billing: string;
-        isPro: boolean;
-    } | null>(null);
     const [copiedKey, setCopiedKey] = useState(false);
     const [installStep, setInstallStep] = useState<'idle' | 'installing' | 'complete'>('idle');
-
-    const openModal = (tier: { name: string; price: string; billing: string; isPro: boolean }) => {
-        setSelectedTier(tier);
-        setInstallStep('idle');
-        setCopiedKey(false);
-        setModalOpen(true);
-    };
 
     const handleCopy = (keyText: string) => {
         navigator.clipboard.writeText(keyText);
@@ -35,38 +26,127 @@ export default function Pricing() {
         }, 1200);
     };
 
+    const features = [
+        "All 24 stealth tools (MCQ solver, LaTeX math, short answers)",
+        "Focus Shield: 100% Canvas window-blur event interception",
+        "Snap-It Vision OCR: Instant diagram & chart decoder",
+        "Stealth Opacity Dial & Emergency Panic Kill Switch (Esc)",
+        "Lifetime access & all future semester updates included",
+        "Private on-device execution — zero school network footprint"
+    ];
+
     return (
-        <section id="pricing" className="py-20 bg-white text-slate-900 border-b border-slate-200/80">
+        <section id="pricing" className="py-20 md:py-32 bg-cream text-ink border-b border-black/5">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
 
-                {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full mb-3">
-                        <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                        <span className="text-xs font-semibold text-slate-700">
-                            Transparent Pricing
-                        </span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-                        Invest in your GPA for less than lunch
+                {/* Section Head (OneMacApp Style) */}
+                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                    <p className="eyebrow justify-center mb-3">
+                        <span className="w-2 h-2 rounded-full bg-ink" />
+                        <span>PRICING</span>
+                    </p>
+                    <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
+                        Pay once.<br />
+                        Own it for good.
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600">
-                        Cancel anytime with one click. Backed by our 7-day money-back guarantee.
+                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        No recurring monthly subscriptions during finals week. Buy once, unlock all 24 tools, and use them across all semesters.
                     </p>
                 </div>
 
-                {/* Discord Community Callout */}
-                <div className="max-w-3xl mx-auto mb-12 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* OneMacApp Hero Pricing Card */}
+                <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-black/10 shadow-lift p-8 sm:p-12 mb-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+                        
+                        {/* Left Side: Mascot Art / Badge */}
+                        <div className="lg:col-span-4 flex flex-col items-center justify-center p-8 rounded-3xl bg-[#c4d0f8]/30 border border-[#c4d0f8] text-center">
+                            <div className="w-24 h-24 rounded-full bg-[#c4d0f8] flex items-center justify-center text-ink shadow-soft mb-4">
+                                <Ghost className="w-12 h-12 fill-current stroke-[2.2]" />
+                            </div>
+                            <span className="font-display font-bold text-xl text-ink">
+                                Lifetime Pass
+                            </span>
+                            <span className="text-xs text-ink-muted mt-1">
+                                Universal LMS License
+                            </span>
+                            <span className="mt-4 text-[11px] font-semibold bg-white text-ink px-3 py-1 rounded-full border border-black/5 shadow-xs">
+                                14 spots left at $19.99
+                            </span>
+                        </div>
+
+                        {/* Right Side: Launch Ladder & Details */}
+                        <div className="lg:col-span-8 flex flex-col justify-between">
+                            
+                            {/* Launch Ladder (OneMacApp Style) */}
+                            <ol className="flex items-center gap-3 sm:gap-4 mb-6 pb-6 border-b border-black/5 overflow-x-auto">
+                                <li className="flex-1 min-w-[130px] p-3 rounded-2xl bg-[#faf8f4] border-2 border-ink shadow-xs">
+                                    <div className="flex items-center gap-1.5 text-xs font-bold text-ink mb-0.5">
+                                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                        <span>$19.99</span>
+                                    </div>
+                                    <div className="text-[11px] text-emerald-800 font-semibold">
+                                        14 spots left
+                                    </div>
+                                </li>
+                                <li className="flex-1 min-w-[130px] p-3 rounded-2xl bg-[#faf8f4]/60 border border-black/10 opacity-75">
+                                    <div className="text-xs font-bold text-ink-secondary mb-0.5">
+                                        $39.99
+                                    </div>
+                                    <div className="text-[11px] text-ink-muted">
+                                        Next 50 spots
+                                    </div>
+                                </li>
+                                <li className="flex-1 min-w-[130px] p-3 rounded-2xl bg-[#faf8f4]/60 border border-black/10 opacity-75">
+                                    <div className="text-xs font-bold text-ink-secondary mb-0.5">
+                                        $59.99
+                                    </div>
+                                    <div className="text-[11px] text-ink-muted">
+                                        Final Tier
+                                    </div>
+                                </li>
+                            </ol>
+
+                            {/* Features Checklist */}
+                            <div className="space-y-2.5 mb-8">
+                                {features.map((feat, i) => (
+                                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-ink-secondary">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                        <span>{feat}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Action Button */}
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                                <button
+                                    onClick={() => setModalOpen(true)}
+                                    className="btn-dark px-8 py-3.5 text-base justify-center shadow-soft hover:shadow-lift flex-1"
+                                >
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <span>Get ExamGhost Lifetime · $19.99</span>
+                                </button>
+                                <span className="text-[11px] text-ink-muted text-center sm:text-left">
+                                    Instant license key · 14-day money-back guarantee
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* Discord Community Banner */}
+                <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-black/10 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#5865F2]/10 border border-[#5865F2]/20 flex items-center justify-center shrink-0">
-                            <SiDiscord className="w-5 h-5 text-[#5865F2]" />
+                        <div className="w-10 h-10 rounded-2xl bg-[#5865F2]/10 flex items-center justify-center text-[#5865F2]">
+                            <SiDiscord className="w-5 h-5" />
                         </div>
                         <div>
-                            <h3 className="text-sm font-bold text-slate-900">
-                                Join 2,400+ students on Discord
-                            </h3>
-                            <p className="text-xs text-slate-500">
-                                Real-time Canvas update alerts, test-taking strategies & weekly giveaways.
+                            <h4 className="font-display font-bold text-sm text-ink">
+                                Join 2,400+ students in our Discord
+                            </h4>
+                            <p className="text-xs text-ink-muted">
+                                Real-time Canvas update alerts, test-taking strategies & weekly license giveaways.
                             </p>
                         </div>
                     </div>
@@ -74,275 +154,86 @@ export default function Pricing() {
                         href="https://discord.gg"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-semibold rounded-lg shadow-sm transition-colors shrink-0"
+                        className="btn-soft px-5 py-2 text-xs font-semibold shrink-0"
                     >
                         Join Discord (Free)
                     </a>
                 </div>
 
-                {/* Pricing Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14">
-
-                    {/* Tier 1: Free Trial */}
-                    <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
-                        <div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">Free Trial</h3>
-                            <p className="text-xs text-slate-500 mb-5">Test the stealth engine risk-free.</p>
-                            
-                            <div className="flex items-baseline gap-1 mb-6">
-                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$0</span>
-                                <span className="text-xs text-slate-500">/ forever</span>
-                            </div>
-
-                            <div className="space-y-3 mb-8 text-xs text-slate-600">
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>5 Solves per Day</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Basic Focus Interceptor</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Supports Canvas & Blackboard</span>
-                                </div>
-                                <div className="flex items-center gap-2.5 text-slate-400">
-                                    <span>✕ No Snap-It Screenshot Mode</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button 
-                            onClick={() => openModal({ name: 'Free Trial', price: '$0', billing: 'Free Forever', isPro: false })}
-                            className="w-full py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs text-center transition-colors block cursor-pointer"
-                        >
-                            Install Free
-                        </button>
-                    </div>
-
-                    {/* Tier 2: Monthly Pro (Popular) */}
-                    <div className="p-7 rounded-2xl bg-white border-2 border-slate-900 shadow-md flex flex-col justify-between relative">
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
-                            Most Popular
-                        </div>
-
-                        <div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">Monthly Pro</h3>
-                            <p className="text-xs text-slate-500 mb-5">Full power for active semesters.</p>
-
-                            <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-slate-400 line-through text-sm font-semibold">$15.99</span>
-                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$7.99</span>
-                                <span className="text-xs text-slate-500">/ month</span>
-                            </div>
-
-                            <div className="space-y-3 mb-8 text-xs text-slate-700">
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span className="font-semibold text-slate-900">Unlimited Quiz Solves</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>100% Focus Interceptor (Zero Flags)</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Snap-It Screenshot & Graph Solver</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>2nd-Attempt Auto-Memory</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Step-by-Step Explanations</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button 
-                            onClick={() => openModal({ name: 'Monthly Pro', price: '$7.99', billing: 'per month', isPro: true })}
-                            className="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs text-center shadow-sm transition-colors block cursor-pointer"
-                        >
-                            Start Pro Access
-                        </button>
-                    </div>
-
-                    {/* Tier 3: Lifetime Pass */}
-                    <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
-                        <div>
-                            <div className="inline-block text-[10px] font-bold text-blue-600 uppercase tracking-wider mb-1">
-                                Best Value
-                            </div>
-                            <h3 className="text-base font-bold text-slate-900 mb-1">Lifetime Pass</h3>
-                            <p className="text-xs text-slate-500 mb-5">Pay once, protected for your entire degree.</p>
-
-                            <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-slate-400 line-through text-sm font-semibold">$129</span>
-                                <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">$49.99</span>
-                                <span className="text-xs text-slate-500">/ one-time</span>
-                            </div>
-
-                            <div className="space-y-3 mb-8 text-xs text-slate-600">
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span className="font-semibold text-slate-900">Lifetime Unlimited Access</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Free Automatic Updates Forever</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>All Future LMS Patches Included</span>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Priority VIP Discord Ticket Support</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button 
-                            onClick={() => openModal({ name: 'Lifetime Pass', price: '$49.99', billing: 'one-time payment', isPro: true })}
-                            className="w-full py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs text-center transition-colors block cursor-pointer"
-                        >
-                            Get Lifetime Pass
-                        </button>
-                    </div>
-
-                </div>
-
-                {/* Trust & Guarantee Strip */}
-                <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-slate-500 border-t border-slate-200/80 pt-8">
-                    <div className="flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-emerald-600" />
-                        <span>100% Always Working Guarantee</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-blue-600" />
-                        <span>7-Day Full Refund Guarantee</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-amber-500" />
-                        <span>Instant Chrome Setup in 60s</span>
-                    </div>
-                </div>
-
             </div>
 
-            {/* Interactive Install & Access Modal */}
-            {modalOpen && selectedTier && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div 
-                        className="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-lg w-full p-6 sm:p-7 relative overflow-hidden"
-                        onClick={(e) => e.stopPropagation()}
-                    >
+            {/* Instant License & Download Modal */}
+            {modalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in">
+                    <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-black/10 shadow-2xl relative">
+                        
                         {/* Close button */}
                         <button
                             onClick={() => setModalOpen(false)}
-                            className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                            className="absolute top-5 right-5 p-2 rounded-full hover:bg-black/5 text-ink transition-colors"
                         >
                             <X className="w-5 h-5" />
                         </button>
 
-                        {/* Modal Header */}
-                        <div className="flex items-center gap-3 mb-5">
-                            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm shrink-0">
-                                <FaChrome className="w-5 h-5" />
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-[#c4d0f8] flex items-center justify-center text-ink">
+                                <Ghost className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="text-base sm:text-lg font-bold text-slate-900">
-                                    {selectedTier.name} — {selectedTier.price}
+                                <h3 className="font-display font-bold text-lg text-ink">
+                                    ExamGhost Lifetime Access
                                 </h3>
-                                <p className="text-xs text-slate-500">
-                                    ExamGhost Chrome Extension v2.4 Package
+                                <p className="text-xs text-ink-muted">
+                                    Your universal license key is ready
                                 </p>
                             </div>
                         </div>
 
-                        {/* Pro Key Section */}
-                        {selectedTier.isPro && (
-                            <div className="mb-5 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                                <div className="flex items-center justify-between text-xs mb-1.5">
-                                    <span className="font-semibold text-slate-700">Your Pro License Key</span>
-                                    <span className="text-emerald-700 font-medium">Ready to activate</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <code className="flex-1 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-800 select-all">
-                                        EG-{selectedTier.name === 'Lifetime Pass' ? 'LIFE' : 'PRO'}-8839-X44K
-                                    </code>
-                                    <button
-                                        onClick={() => handleCopy(`EG-${selectedTier.name === 'Lifetime Pass' ? 'LIFE' : 'PRO'}-8839-X44K`)}
-                                        className="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors flex items-center gap-1.5 shrink-0"
-                                    >
-                                        {copiedKey ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                                        <span>{copiedKey ? 'Copied!' : 'Copy'}</span>
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Installation Steps */}
-                        <div className="space-y-3 mb-6 text-xs text-slate-600">
-                            <div className="flex items-start gap-2.5">
-                                <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center shrink-0 text-[11px]">1</span>
-                                <span>Download the verified extension zip package below.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5">
-                                <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center shrink-0 text-[11px]">2</span>
-                                <span>In Chrome, go to <code className="px-1.5 py-0.5 bg-slate-100 rounded text-slate-800 font-mono">chrome://extensions</code> and turn on <b>Developer mode</b>.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5">
-                                <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center shrink-0 text-[11px]">3</span>
-                                <span>Click <b>Load unpacked</b> and select the extracted folder. Press <b>⌘+Shift+X</b> on any quiz!</span>
-                            </div>
-                        </div>
-
-                        {/* Download CTA Action */}
-                        <div className="pt-2">
-                            {installStep === 'idle' && (
-                                <button
-                                    onClick={handleDownload}
-                                    className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
-                                >
-                                    <Download className="w-4 h-4" />
-                                    <span>Download ExamGhost_v2.4.zip</span>
-                                </button>
-                            )}
-
-                            {installStep === 'installing' && (
-                                <div className="w-full py-3 rounded-xl bg-slate-100 text-slate-700 font-semibold text-sm flex items-center justify-center gap-2">
-                                    <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                                    <span>Preparing Chrome package...</span>
-                                </div>
-                            )}
-
-                            {installStep === 'complete' && (
-                                <div className="space-y-2">
-                                    <div className="w-full py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold text-xs flex items-center justify-center gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        <span>Download started! Check your downloads folder.</span>
-                                    </div>
-                                    <button
-                                        onClick={() => setModalOpen(false)}
-                                        className="w-full py-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium transition-colors"
-                                    >
-                                        Close
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Money Back Guarantee Reminder */}
-                        <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-                            <span className="flex items-center gap-1">
-                                <Lock className="w-3 h-3 text-emerald-600" />
-                                256-bit Encrypted SSL
+                        {/* License Key Box */}
+                        <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/10 mb-6">
+                            <span className="text-[11px] font-semibold text-ink-muted uppercase tracking-wider block mb-1.5">
+                                Generated License Key
                             </span>
-                            <span>7-Day 100% Refund Guarantee</span>
+                            <div className="flex items-center justify-between gap-2">
+                                <span className="font-mono text-xs sm:text-sm font-bold text-ink">
+                                    GHOST-PRO-8894-LIFETIME-OK
+                                </span>
+                                <button
+                                    onClick={() => handleCopy("GHOST-PRO-8894-LIFETIME-OK")}
+                                    className="btn-soft px-3 py-1.5 text-xs text-ink"
+                                >
+                                    {copiedKey ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                                    <span>{copiedKey ? 'Copied' : 'Copy'}</span>
+                                </button>
+                            </div>
                         </div>
+
+                        {/* Download / Install Action */}
+                        <div className="space-y-3">
+                            <button
+                                onClick={handleDownload}
+                                disabled={installStep !== 'idle'}
+                                className="btn-dark w-full py-3.5 text-sm justify-center"
+                            >
+                                {installStep === 'idle' && (
+                                    <>
+                                        <Download className="w-4 h-4 text-[#bfe3f6]" />
+                                        <span>Download Extension Package (.zip)</span>
+                                    </>
+                                )}
+                                {installStep === 'installing' && (
+                                    <span>Preparing Extension Package...</span>
+                                )}
+                                {installStep === 'complete' && (
+                                    <span className="text-emerald-300">✓ Download Started! Check your browser downloads.</span>
+                                )}
+                            </button>
+
+                            <p className="text-center text-[11px] text-ink-muted">
+                                Compatible with Google Chrome, Microsoft Edge, Brave & Arc Browser.
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             )}
