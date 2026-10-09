@@ -59,9 +59,9 @@ export default function Pricing() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
                         
                         {/* Left Side: Mascot Art / Badge */}
-                        <div className="lg:col-span-4 flex flex-col items-center justify-center p-8 rounded-3xl bg-[#c4d0f8]/30 border border-[#c4d0f8] text-center">
-                            <div className="w-24 h-24 rounded-full bg-[#c4d0f8] flex items-center justify-center text-ink shadow-soft mb-4">
-                                <Ghost className="w-12 h-12 fill-current stroke-[2.2]" />
+                        <div className="lg:col-span-4 flex flex-col items-center justify-center p-8 rounded-3xl bg-[#c4d0f8]/30 border border-[#c4d0f8] text-center group">
+                            <div className="w-28 h-28 rounded-2xl overflow-hidden border border-black/10 bg-cream/90 shadow-soft mb-4 transform transition-transform duration-300 group-hover:scale-105">
+                                <img src="/images/ghost/ghost_grad.jpg" alt="A+ ExamGhost Mascot" className="w-full h-full object-cover" />
                             </div>
                             <span className="font-display font-bold text-xl text-ink">
                                 Lifetime Pass
@@ -69,7 +69,8 @@ export default function Pricing() {
                             <span className="text-xs text-ink-muted mt-1">
                                 Universal LMS License
                             </span>
-                            <span className="mt-4 text-[11px] font-semibold bg-white text-ink px-3 py-1 rounded-full border border-black/5 shadow-xs">
+                            <span className="mt-4 text-[11px] font-semibold bg-white text-ink px-3 py-1 rounded-full border border-black/5 shadow-xs flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                 14 spots left at $19.99
                             </span>
                         </div>

@@ -223,7 +223,9 @@ export default function FeaturesPage() {
             <section className="pt-24 sm:pt-32 pb-16 bg-cream border-b border-black/5 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
                     <p className="eyebrow justify-center mb-3">
-                        <Award className="w-4 h-4 text-ink" />
+                        <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
+                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="Ghost" className="w-full h-full object-cover scale-110" />
+                        </span>
                         <span>ALL 24 FEATURES</span>
                     </p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-5">

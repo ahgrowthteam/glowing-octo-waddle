@@ -38,8 +38,8 @@ export default function Navbar() {
             >
                 {/* Brand */}
                 <Link href="/" className="flex items-center gap-2.5 pl-2 sm:pl-3 group">
-                    <div className="w-8 h-8 rounded-full bg-[#c4d0f8] flex items-center justify-center text-[#111] transition-transform duration-200 group-hover:scale-105 shadow-sm">
-                        <Ghost className="w-4 h-4 fill-current stroke-[2.2]" />
+                    <div className="w-8 h-8 rounded-full overflow-hidden border border-black/10 transition-transform duration-200 group-hover:scale-110 shadow-sm bg-[#c4d0f8]">
+                        <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" className="w-full h-full object-cover scale-110" />
                     </div>
                     <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-ink">
                         ExamGhost

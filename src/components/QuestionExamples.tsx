@@ -42,21 +42,25 @@ export default function QuestionExamples() {
                     <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-16 border border-black/10 shadow-lift">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                             
-                            {/* Left Graphic Box */}
+                            {/* Left Graphic Box (3D Privacy Ghost Mascot) */}
                             <div className="lg:col-span-5 relative">
-                                <div className="rounded-3xl bg-[#cdeecb]/40 p-8 border border-[#cdeecb] flex flex-col items-center justify-center text-center relative overflow-hidden">
-                                    <div className="w-16 h-16 rounded-2xl bg-white shadow-soft flex items-center justify-center text-ink mb-4">
-                                        <Lock className="w-8 h-8 text-ink" />
+                                <div className="rounded-3xl bg-[#cdeecb]/30 p-6 border border-[#cdeecb] flex flex-col items-center justify-center text-center relative overflow-hidden group">
+                                    <div className="w-56 h-56 rounded-2xl overflow-hidden border border-black/5 shadow-soft bg-cream/80 relative mb-4">
+                                        <img 
+                                            src="/images/ghost/ghost_privacy.jpg" 
+                                            alt="Privacy Ghost Mascot" 
+                                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                                        />
                                     </div>
                                     <h4 className="font-display font-bold text-xl text-ink mb-1">
                                         Client-Side Isolation
                                     </h4>
-                                    <p className="text-xs text-ink-muted max-w-[220px]">
+                                    <p className="text-xs text-ink-muted max-w-[260px]">
                                         Runs 100% inside your local browser memory space.
                                     </p>
 
                                     {/* Floating Badges */}
-                                    <div className="mt-6 flex flex-wrap gap-2 justify-center">
+                                    <div className="mt-5 flex flex-wrap gap-2 justify-center">
                                         <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
                                             Zero Telemetry
                                         </span>

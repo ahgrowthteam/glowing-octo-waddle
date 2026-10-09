@@ -16,6 +16,7 @@ export default function Integrations() {
             accent: "#4361ee",
             icon: Shield,
             badge: "0 SpeedGrader Flags",
+            image: "/images/ghost/ghost_card_stealth.jpg",
             features: ["Window blur event silencer", "Tab-switch interception", "Zero DOM mutation traces"]
         },
         {
@@ -26,6 +27,7 @@ export default function Integrations() {
             accent: "#0077b6",
             icon: ScanLine,
             badge: "0.3s Vision Latency",
+            image: "/images/ghost/ghost_card_vision.jpg",
             features: ["Calculus & chemical equations", "Chart & diagram recognition", "Screenshot-less in-memory OCR"]
         },
         {
@@ -36,6 +38,7 @@ export default function Integrations() {
             accent: "#7209b7",
             icon: Sparkles,
             badge: "99.8% Test Accuracy",
+            image: "/images/ghost/ghost_card_ai.jpg",
             features: ["Multi-select checkboxes", "Fill-in-the-blank autotype", "Humanized response delays"]
         },
         {
@@ -46,6 +49,7 @@ export default function Integrations() {
             accent: "#2d6a4f",
             icon: Layers,
             badge: "All Major Platforms",
+            image: "/images/ghost/ghost_card_lms.jpg",
             features: ["Canvas New Quizzes support", "Blackboard SafeAssign shield", "Moodle Quiz environment"]
         },
         {
@@ -56,6 +60,7 @@ export default function Integrations() {
             accent: "#d90429",
             icon: Lock,
             badge: "Proctor Immune",
+            image: "/images/ghost/ghost_card_proctor.jpg",
             features: ["WebRTC screen share mask", "Isolated Shadow DOM root", "Clean process inspector"]
         },
         {
@@ -66,6 +71,7 @@ export default function Integrations() {
             accent: "#006d77",
             icon: Eye,
             badge: "Instant Disappear",
+            image: "/images/ghost/ghost_card_hud.jpg",
             features: ["0% to 100% opacity slider", "Panic switch memory purge", "Customizable stealth hotkeys"]
         }
     ];
@@ -89,7 +95,7 @@ export default function Integrations() {
                     </p>
                 </div>
 
-                {/* Categories Grid (OneMacApp 6 Pastel Cards) */}
+                {/* Categories Grid (OneMacApp 6 Pastel Cards with 3D Ghost Characters) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
                     {categories.map((cat, idx) => {
                         const Icon = cat.icon;
@@ -114,22 +120,22 @@ export default function Integrations() {
                                         {cat.title}
                                     </h3>
 
-                                    <p className="text-xs sm:text-sm text-ink/80 leading-relaxed font-normal mb-6">
+                                    <p className="text-xs sm:text-sm text-ink/80 leading-relaxed font-normal mb-5">
                                         {cat.desc}
                                     </p>
                                 </div>
 
-                                {/* Interactive Illustration Box Inside Card */}
-                                <div className="mt-2 bg-white/85 backdrop-blur-md rounded-2xl p-4 border border-white/80 shadow-xs">
-                                    <div className="flex items-center gap-2 mb-2.5">
-                                        <div className="w-7 h-7 rounded-xl bg-ink/5 flex items-center justify-center">
-                                            <Icon className="w-3.5 h-3.5 text-ink" />
-                                        </div>
-                                        <span className="text-xs font-bold text-ink tracking-tight">
-                                            Stealth Protocol
-                                        </span>
-                                    </div>
+                                {/* 3D Ghost Character Graphic Box (Replacing OneMacApp toolbox with Ghost character) */}
+                                <div className="mt-2 mb-4 rounded-2xl overflow-hidden border border-black/5 shadow-soft bg-cream/70 relative aspect-[4/3] flex items-center justify-center group-hover:shadow-lift transition-all duration-300">
+                                    <img 
+                                        src={cat.image} 
+                                        alt={`${cat.title} Ghost character`}
+                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
 
+                                {/* Feature checklist pills */}
+                                <div className="bg-white/85 backdrop-blur-md rounded-2xl p-3.5 border border-white/80 shadow-xs">
                                     <div className="space-y-1.5">
                                         {cat.features.map((feat, fIdx) => (
                                             <div key={fIdx} className="flex items-center gap-2 text-xs text-ink-secondary">

@@ -102,6 +102,24 @@
   box-shadow: var(--shadow-card);
 }
 
+@keyframes floatGentleLeft {
+  0%, 100% { transform: translateY(0px) rotate(-6deg); }
+  50% { transform: translateY(-12px) rotate(-3deg); }
+}
+
+@keyframes floatGentleRight {
+  0%, 100% { transform: translateY(0px) rotate(6deg); }
+  50% { transform: translateY(-14px) rotate(9deg); }
+}
+
+.animate-float-left {
+  animation: floatGentleLeft 5s ease-in-out infinite;
+}
+
+.animate-float-right {
+  animation: floatGentleRight 6s ease-in-out infinite 0.8s;
+}
+
 /* Eyebrow badge style */
 .eyebrow {
   letter-spacing: 0.1em;

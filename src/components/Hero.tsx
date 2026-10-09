@@ -114,9 +114,12 @@ export default function Hero() {
 
                 {/* Eyebrow Pill */}
                 <div className="flex justify-center mb-6">
-                    <span className="eyebrow bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-black/5 shadow-sm text-xs">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>24 STEALTH TOOLS · 100% INVISIBLE EXAM SUITE</span>
+                    <span className="eyebrow bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-black/5 shadow-sm text-xs flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
+                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="Ghost" className="w-full h-full object-cover scale-110" />
+                        </span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="font-semibold">24 STEALTH TOOLS · 100% INVISIBLE EXAM SUITE</span>
                     </span>
                 </div>
 
@@ -165,8 +168,30 @@ export default function Hero() {
                     </div>
                 )}
 
-                {/* Hero Stage Window with Floating Tilt Badges */}
+                {/* Hero Stage Window with Floating Tilt Badges & 3D Ghost Characters */}
                 <div className="relative max-w-4xl mx-auto mt-6">
+
+                    {/* Floating 3D Ghost Mascot (Left): Peace Sign Ghost */}
+                    <div className="hidden xl:flex absolute -left-44 top-1/4 z-30 flex-col items-center pointer-events-none animate-float-left">
+                        <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-white shadow-lift bg-cream pointer-events-auto group cursor-pointer transition-transform duration-300 hover:scale-105">
+                            <img src="/images/ghost/ghost_peace.jpg" alt="ExamGhost Peace Mascot" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="mt-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/5 text-[11px] font-bold text-ink shadow-soft flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                            <span>100% Invisible ✌️</span>
+                        </div>
+                    </div>
+
+                    {/* Floating 3D Ghost Mascot (Right): Grad A+ Star Ghost */}
+                    <div className="hidden xl:flex absolute -right-44 top-1/3 z-30 flex-col items-center pointer-events-none animate-float-right">
+                        <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-white shadow-lift bg-cream pointer-events-auto group cursor-pointer transition-transform duration-300 hover:scale-105">
+                            <img src="/images/ghost/ghost_grad.jpg" alt="ExamGhost Grad Mascot" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="mt-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/5 text-[11px] font-bold text-ink shadow-soft flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-amber-400" />
+                            <span>A+ Guaranteed 🎓</span>
+                        </div>
+                    </div>
 
                     {/* Floating Card Chip 1 (Top Left): Focus Shield */}
                     <div className="hidden lg:flex absolute -top-8 -left-12 z-20 items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#c4d0f8] text-ink border border-white/80 shadow-soft -rotate-3 hover:rotate-0 transition-transform duration-300">
