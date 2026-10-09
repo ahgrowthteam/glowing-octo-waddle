@@ -19,14 +19,14 @@ import Footer from '@/components/Footer';
 import { COMPETITORS } from '@/data/competitors';
 
 export const metadata: Metadata = {
-    title: "ExamGhost vs All 23 Competitors (2026) | Direct Stealth & Latency Benchmark",
-    description: "Compare ExamGhost with CanvasHack, CheatMate, CanvasQuiz, CanvasNinja, CanvasWizard, QuizSolver AI, GetQuizSolve, UseQuietly, TestBro, FastSolve, Quizard, Classology, Mindko, Campus AI, AnswerAI, StudyX, StudyBotPro, Solvely, Gauth, TrustStudy, Answerly AI, Homework Helper+, and BetterCampus.",
+    title: "ExamGhost vs All 33 Competitors (2026) | Direct Stealth & Latency Benchmark",
+    description: "Compare ExamGhost with CanvasHack, CheatMate, CanvasQuiz, CanvasNinja, CanvasWizard, QuizSolver AI, GetQuizSolve, UseQuietly, TestBro, FastSolve, Quizard, Classology, Mindko, Campus AI, AnswerAI, StudyX, StudyBotPro, Solvely, Gauth, TrustStudy, Answerly AI, Homework Helper+, BetterCampus, Coursology, QuestionAI, StudyFox, Canvas Crack, QuizMate, Canvas Scholar, SchoolCheats, Knowt, Cramly AI, and Quizzy AI.",
     alternates: {
         canonical: "https://examghost.com/compare",
     },
     openGraph: {
-        title: "ExamGhost vs All 23 Competitors (2026) | Comprehensive Benchmark Hub",
-        description: "Direct technical benchmarks comparing ExamGhost with all 23 major exam and homework extensions.",
+        title: "ExamGhost vs All 33 Competitors (2026) | Comprehensive Benchmark Hub",
+        description: "Direct technical benchmarks comparing ExamGhost with all 33 major exam and homework extensions.",
         url: "https://examghost.com/compare",
         siteName: "ExamGhost",
         images: [
