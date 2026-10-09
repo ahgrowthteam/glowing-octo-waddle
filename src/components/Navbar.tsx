@@ -19,9 +19,10 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Tools', href: '/#tools' },
-        { name: 'Features', href: '/features' },
+        { name: 'Demo', href: '/#demo' },
         { name: 'Experience', href: '/#motion' },
         { name: 'Privacy', href: '/#privacy' },
+        { name: 'Community', href: '/#community' },
         { name: 'Pricing', href: '/#pricing' },
         { name: 'FAQ', href: '/#faq' }
     ];
