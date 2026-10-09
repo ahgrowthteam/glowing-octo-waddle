@@ -34,11 +34,11 @@ export default function Navbar() {
                 {/* Links */}
                 <div className="hidden md:flex items-center gap-7">
                     {[
-                        { name: 'Proof & Simulator', href: '#demo' },
-                        { name: 'Features', href: '#features' },
-                        { name: 'How It Works', href: '#how-it-works' },
-                        { name: 'Pricing', href: '#pricing' },
-                        { name: 'FAQ', href: '#faq' }
+                        { name: 'Proof & Simulator', href: '/#demo' },
+                        { name: 'Features (24+)', href: '/features' },
+                        { name: 'How It Works', href: '/#how-it-works' },
+                        { name: 'Pricing', href: '/#pricing' },
+                        { name: 'FAQ', href: '/#faq' }
                     ].map(link => (
                         <a 
                             key={link.name} 
