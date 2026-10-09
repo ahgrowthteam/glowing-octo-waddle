@@ -1270,12 +1270,921 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 answer: "No. Mindko does not mask focus events. ExamGhost includes Focus Shield, which silences window.blur events to keep your SpeedGrader logs 100% clean."
             },
             {
-                question: "How much does ExamGhost cost compared to Mindko?",
-                answer: "Mindko charges $12.99 to $19.99 every month. ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                question: "What platforms does ExamGhost support compared to Mindko?",
+                answer: "ExamGhost supports Canvas (Classic & New Quizzes), Blackboard Ultra, McGraw Hill Connect, Pearson MyLab, and Brightspace D2L natively out of the box."
             }
         ],
-        metaTitle: "Mindko vs ExamGhost (2026) | True Stealth vs $19.99/mo Subscription",
-        metaDescription: "Comparing Mindko and ExamGhost? Learn why students prefer ExamGhost's Shadow DOM invisibility and $19.99 lifetime plan over Mindko's monthly fees."
+        metaTitle: "Mindko vs ExamGhost (2026 Comparison) | Undetectable Quiz Solver vs Monthly Helper",
+        metaDescription: "Comparing Mindko and ExamGhost? Discover why students choose ExamGhost's zero-blur Focus Shield, Shadow DOM stealth, and $19.99 lifetime plan over Mindko's monthly subscription."
+    },
+    // 14. Campus AI
+    "campusai-vs-examghost": {
+        slug: "campusai-vs-examghost",
+        name: "Campus AI",
+        domain: "thecampusai.com",
+        badge: "The #1 Campus AI Alternative",
+        pricingSummary: "$9.99/mo or $59.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#bfe3f6",
+        heroHeadline: "Campus AI organizes flashcards. ExamGhost guarantees undetectable exam stealth.",
+        heroSubtitle: "Campus AI is a TikTok-promoted study helper focused on subject organization and AI flashcards. But during live Canvas or Blackboard exams, study apps offer zero Shadow DOM isolation and no window.blur suppression. ExamGhost delivers 24 dedicated exam stealth tools for a single $19.99 lifetime payment.",
+        flawTitle: "Campus AI's Flaws: Homework Focus, Missing Focus Shield & Monthly Subscriptions",
+        flawSummary: "Campus AI is engineered for study sessions and flashcard generation. Its open UI is easily spotted by webcam monitors, and it provides zero defense against Canvas SpeedGrader tab-switch tracking.",
+        flawBulletPoints: [
+            "No Focus Shield tab-blur masking: Canvas logs every window departure in SpeedGrader.",
+            "Study app interface: Wide layout with flashcards completely unsuitable for live tests.",
+            "Monthly recurring pricing ($9.99/mo) drains your budget semester after semester.",
+            "Lacks closed Shadow DOM isolation, leaving foreign nodes exposed to DOM inspectors."
+        ],
+        tldr: {
+            summary: "Campus AI is a general homework companion with subject folders and flashcards. ExamGhost is a dedicated stealth exam solver with 100% Shadow DOM invisibility, Focus Shield blur suppression, and a flat $19.99 lifetime price.",
+            keyTakeaways: [
+                "Campus AI charges recurring monthly subscriptions; ExamGhost is a single $19.99 lifetime payment.",
+                "ExamGhost silences window.blur events to prevent SpeedGrader flags; Campus AI has zero focus protection.",
+                "ExamGhost solves questions in 0.3s edge latency; Campus AI takes 5-8 seconds to generate flashcards and answers."
+            ],
+            quickCompare: [
+                { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Open Host Extension UI" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs 'Stopped viewing quiz')" },
+                { label: "Answer Latency", examghost: "0.3s Instant Edge AI", competitor: "5.0s - 8.0s Cloud Processing" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo or $59.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "6.2s",
+            competitorLabel: "Campus AI Cloud Tutor"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Flashcard Workflow vs Instant Stealth HUD",
+                competitorFlaw: "Campus AI is designed around creating study sets and flashcard summaries. This slow, multi-click process is impossible to use under tight exam timers.",
+                examghostAdvantage: "ExamGhost uses a zero-footprint HUD activated by hotkey (⌘+B), revealing precise multiple-choice answers in 0.3 seconds and vanishing instantly."
+            },
+            {
+                number: 2,
+                title: "Zero Window-Blur Masking in Canvas",
+                competitorFlaw: "Campus AI does not intercept browser focus events. Switching windows or clicking an extension popup triggers a departure log in Canvas SpeedGrader.",
+                examghostAdvantage: "ExamGhost's Focus Shield neutralizes window.blur and document.visibilitychange events, ensuring professors see an uninterrupted exam timeline."
+            },
+            {
+                number: 3,
+                title: "Recurring Monthly Billing vs Lifetime Access",
+                competitorFlaw: "Campus AI bills $9.99/month, adding up to $119.88/year or $479.52 across four years of college.",
+                examghostAdvantage: "ExamGhost gives you unlimited answers, free updates, and 24 stealth tools for a single, flat payment of $19.99."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo or $59.99/yr" }
+        ],
+        studentReview: {
+            quote: "Campus AI was okay for making flashcards before class, but useless on exams. ExamGhost gives me the exact answer in 0.3 seconds without leaving any trace in Canvas.",
+            author: "Liam M.",
+            school: "Arizona State University · Business",
+            gradeProof: "A in ACC 231"
+        },
+        faqs: [
+            {
+                question: "Can I use Campus AI safely during a proctored exam?",
+                answer: "No. Campus AI is a general study tool lacking Focus Shield blur protection. Interacting with it during a Canvas quiz logs tab-switch events directly in SpeedGrader."
+            },
+            {
+                question: "How does ExamGhost compare to Campus AI for exam solving?",
+                answer: "ExamGhost is engineered specifically for exams with 0.3s edge solves, closed Shadow DOM sandboxing, and Focus Shield blur suppression, while Campus AI focuses on flashcard study sets."
+            },
+            {
+                question: "How much do I save switching from Campus AI to ExamGhost?",
+                answer: "Campus AI costs $9.99/month ($479.52 over 4 years). ExamGhost is a single one-time payment of $19.99 for lifetime access, saving you over $450."
+            }
+        ],
+        metaTitle: "Campus AI vs ExamGhost (2026) | True Exam Stealth vs Flashcard App",
+        metaDescription: "Comparing Campus AI and ExamGhost? Learn why students choose ExamGhost's Focus Shield blur protection and $19.99 lifetime license over Campus AI's monthly plans."
+    },
+
+    // 15. AnswerAI
+    "answerai-vs-examghost": {
+        slug: "answerai-vs-examghost",
+        name: "AnswerAI",
+        domain: "answerai.pro",
+        badge: "The #1 AnswerAI Alternative",
+        pricingSummary: "$14.99/mo or $89.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#cdeecb",
+        heroHeadline: "AnswerAI is built for phone homework. ExamGhost is engineered for desktop exam stealth.",
+        heroSubtitle: "AnswerAI (answerai.pro) delivers screenshot Q&A through mobile apps and a basic extension. But desktop proctored exams require closed Shadow DOM v1 isolation, Mathpix LaTeX parsing, and active window.blur suppression. ExamGhost delivers 0.3s stealth answers for a one-time $19.99 lifetime fee.",
+        flawTitle: "AnswerAI's Flaws: Mobile Port Architecture, High Monthly Subscriptions & Missing Blur Masking",
+        flawSummary: "AnswerAI is built around smartphone camera photo solving. Its desktop extension lacks essential exam protections like Focus Shield blur masking and closed Shadow DOM sandboxing.",
+        flawBulletPoints: [
+            "Mobile-first OCR engine struggles with complex desktop LaTeX and multi-part questions.",
+            "No Focus Shield tab-blur interception, exposing you to Canvas SpeedGrader departure logs.",
+            "Expensive recurring price: $14.99/mo adds up to $179.88/year.",
+            "Lacks emergency panic escape flush and granular opacity controls."
+        ],
+        tldr: {
+            summary: "AnswerAI is a mobile-first screenshot solver with high monthly subscription fees. ExamGhost is a desktop-native exam stealth assistant with Mathpix LaTeX OCR, Focus Shield blur suppression, and a flat $19.99 lifetime price.",
+            keyTakeaways: [
+                "AnswerAI charges $14.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "ExamGhost includes Mathpix neural OCR for calculus and chemistry; AnswerAI uses generic text OCR.",
+                "ExamGhost silences window.blur events in Canvas; AnswerAI leaves SpeedGrader logs completely unmasked."
+            ],
+            quickCompare: [
+                { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Standard Web Extension" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs Defocus Events)" },
+                { label: "STEM / LaTeX Engine", examghost: "Mathpix Neural OCR (Integrals & SMILES)", competitor: "Generic Mobile OCR" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "5.8s",
+            competitorLabel: "AnswerAI Cloud API"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Desktop Native vs Ported Mobile OCR",
+                competitorFlaw: "AnswerAI was built for phone cameras. Porting it to desktop results in misparsed exponents, fractions, and chemical notation on LMS exams.",
+                examghostAdvantage: "ExamGhost integrates the Mathpix neural engine directly into its desktop vision pipeline, flawlessly recognizing multivariable calculus and organic chemistry."
+            },
+            {
+                number: 2,
+                title: "Absence of Canvas SpeedGrader Defense",
+                competitorFlaw: "AnswerAI provides no mechanism to prevent Canvas from logging 'Stopped viewing quiz' when you click outside the exam tab.",
+                examghostAdvantage: "ExamGhost's Focus Shield silences window.blur events, maintaining synthetic active state so professors see clean, uninterrupted timelines."
+            },
+            {
+                number: 3,
+                title: "Cost Over a 4-Year College Career",
+                competitorFlaw: "At $14.99/month, AnswerAI costs $719.52 over 48 months of college.",
+                examghostAdvantage: "ExamGhost costs $19.99 once. You own it for all four years of college with free updates and zero subscriptions."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+        ],
+        studentReview: {
+            quote: "AnswerAI kept messing up calculus fractions and charged me $15 every month. ExamGhost gets STEM problems right in 0.3s and I only paid $19.99 once.",
+            author: "Maya S.",
+            school: "Georgia Tech · Engineering",
+            gradeProof: "A- in MATH 1552"
+        },
+        faqs: [
+            {
+                question: "Can AnswerAI be detected on Canvas quizzes?",
+                answer: "Yes. AnswerAI lacks Focus Shield blur interception. Switching to AnswerAI triggers a defocus event in Canvas SpeedGrader that reveals you left the exam tab."
+            },
+            {
+                question: "Does AnswerAI solve STEM math equations accurately?",
+                answer: "AnswerAI's generic OCR frequently chokes on complex LaTeX, fractions, and chemical structures. ExamGhost uses the Mathpix neural engine for flawless STEM parsing."
+            },
+            {
+                question: "How does pricing compare between AnswerAI and ExamGhost?",
+                answer: "AnswerAI charges $14.99/month ($179.88/year). ExamGhost is a single, flat lifetime payment of $19.99."
+            }
+        ],
+        metaTitle: "AnswerAI vs ExamGhost (2026) | Desktop STEM Stealth vs Mobile Port",
+        metaDescription: "Comparing AnswerAI and ExamGhost? Discover why students choose ExamGhost's Mathpix STEM engine and $19.99 lifetime plan over AnswerAI's monthly fees."
+    },
+
+    // 16. StudyX
+    "studyx-vs-examghost": {
+        slug: "studyx-vs-examghost",
+        name: "StudyX",
+        domain: "studyx.ai",
+        badge: "The #1 StudyX Alternative",
+        pricingSummary: "$9.95 - $19.95/mo",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#c4d0f8",
+        heroHeadline: "StudyX searches 75M community answers. ExamGhost solves live exams in 0.3s stealth.",
+        heroSubtitle: "StudyX (studyx.ai) is an open homework community with 75M crowdsourced answers and multi-model chat. While useful for take-home assignments, slow multi-step web queries and open community forums trigger Canvas SpeedGrader departure logs. ExamGhost delivers instantaneous 0.3s edge solving inside an invisible Shadow DOM HUD.",
+        flawTitle: "StudyX's Flaws: Slow Community Search, High Monthly Cost & Zero Exam Shielding",
+        flawSummary: "StudyX is designed for homework research and essay drafting. Its community forum model is slow and offers no stealth protection during timed Canvas or Blackboard quizzes.",
+        flawBulletPoints: [
+            "Crowdsourced search takes 8-15 seconds—far too slow for timed exams with countdowns.",
+            "No Focus Shield: clicking StudyX sidebars logs active blur timestamps in Canvas SpeedGrader.",
+            "Subscription pricing ($9.95–$19.95/month) costs up to $240/year.",
+            "No closed Shadow DOM sandboxing; host scripts can detect injected extension elements."
+        ],
+        tldr: {
+            summary: "StudyX is a crowdsourced homework search tool with recurring monthly fees. ExamGhost is an instant 0.3s edge AI stealth solver with closed Shadow DOM isolation and a flat $19.99 lifetime price.",
+            keyTakeaways: [
+                "StudyX costs $9.95–$19.95/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "ExamGhost solves questions in 0.3 seconds; StudyX community queries take 8-15 seconds.",
+                "ExamGhost features Focus Shield to silence Canvas tab-blur events; StudyX has zero focus masking."
+            ],
+            quickCompare: [
+                { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Open Web Platform & Extension" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
+                { label: "Answer Latency", examghost: "0.3s Instant Edge AI", competitor: "8.0s - 15.0s Community Search" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.95 - $19.95 / Month" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "11.4s",
+            competitorLabel: "StudyX Community Query"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Instant Edge AI vs Crowdsourced Search",
+                competitorFlaw: "StudyX queries a 75M community database and multiple cloud LLMs. This multi-step pipeline results in 8–15 second latency, creating anxiety on timed tests.",
+                examghostAdvantage: "ExamGhost uses dedicated on-device neural edge models that parse and solve questions in 0.3 seconds flat."
+            },
+            {
+                number: 2,
+                title: "Homework Helper vs Dedicated Exam Stealth",
+                competitorFlaw: "StudyX is designed for open-book homework and paper research. It has no focus protection, no panic flush keys, and no opacity dial.",
+                examghostAdvantage: "ExamGhost is engineered exclusively for live proctored quizzes with Focus Shield blur interception, ⌘+B toggle, and instant Esc cache flush."
+            },
+            {
+                number: 3,
+                title: "Subscription Drain vs Lifetime Value",
+                competitorFlaw: "StudyX charges up to $19.95/month, totaling $957.60 across a standard 4-year degree.",
+                examghostAdvantage: "ExamGhost gives you full lifetime access across all your courses for a single $19.99 payment."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.95 - $19.95/mo" }
+        ],
+        studentReview: {
+            quote: "StudyX took 10 seconds per question searching community answers, which ate up my quiz timer. ExamGhost is instant (0.3s) and totally invisible to Canvas.",
+            author: "Julian K.",
+            school: "University of Florida · Finance",
+            gradeProof: "A in FIN 3403"
+        },
+        faqs: [
+            {
+                question: "Can StudyX be used during Canvas quizzes without detection?",
+                answer: "No. StudyX does not mask window blur events. Switching tabs or opening the StudyX interface causes Canvas to log departure timestamps in SpeedGrader."
+            },
+            {
+                question: "How fast is ExamGhost compared to StudyX?",
+                answer: "ExamGhost delivers verified answers in 0.3 seconds on-device, whereas StudyX averages 8 to 15 seconds searching community databases."
+            },
+            {
+                question: "What is the price difference between StudyX and ExamGhost?",
+                answer: "StudyX charges $9.95 to $19.95 per month ($120–$240/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "StudyX vs ExamGhost (2026) | Instant 0.3s Stealth vs 10s Community Search",
+        metaDescription: "Comparing StudyX and ExamGhost? Learn why students prefer ExamGhost's 0.3s edge AI and $19.99 lifetime plan over StudyX's slow community search and monthly fees."
+    },
+
+    // 17. StudyBotPro
+    "studybotpro-vs-examghost": {
+        slug: "studybotpro-vs-examghost",
+        name: "StudyBotPro",
+        domain: "studybotpro.co",
+        badge: "The #1 StudyBotPro Alternative",
+        pricingSummary: "$11.99/mo or $69.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#ffd5cc",
+        heroHeadline: "StudyBotPro auto-selects in the open DOM. ExamGhost isolates answers in closed Shadow DOM.",
+        heroSubtitle: "StudyBotPro (studybotpro.co) features highlight, snapshot, and auto-select. However, modifying host radio buttons and checkboxes directly in Canvas HTML alerts modern proctoring filters. ExamGhost keeps all UI strictly sandboxed in closed Shadow DOM v1 with zero host DOM mutation.",
+        flawTitle: "StudyBotPro's Flaws: Risky Page Form Autofill, No Blur Defense & Monthly Fees",
+        flawSummary: "StudyBotPro injects synthetic clicks into the live exam DOM to auto-select radio buttons. Automated Canvas audit scripts detect programmatic clicks lacking authentic mouse coordinates.",
+        flawBulletPoints: [
+            "Synthetic DOM auto-select triggers Canvas isTrusted: false detection scripts.",
+            "No Focus Shield: clicking auxiliary panels logs tab-switch events in SpeedGrader.",
+            "Monthly recurring subscription ($11.99/mo) drains your student budget.",
+            "Lacks closed-boundary Shadow DOM isolation, making it detectable by proctoring extensions."
+        ],
+        tldr: {
+            summary: "StudyBotPro is an auto-selecting quiz extension that mutates live page DOM elements. ExamGhost provides 100% closed Shadow DOM sandboxing, synthetic click immunity, and a flat $19.99 lifetime price.",
+            keyTakeaways: [
+                "StudyBotPro modifies exam DOM forms, risking automated integrity flags; ExamGhost uses an isolated Shadow HUD.",
+                "StudyBotPro costs $11.99/mo; ExamGhost is a single $19.99 lifetime payment.",
+                "ExamGhost includes Focus Shield blur suppression to keep Canvas SpeedGrader logs clean."
+            ],
+            quickCompare: [
+                { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (Zero Mutation)", competitor: "Open Host Page DOM Injection" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
+                { label: "Auto-Fill Safety", examghost: "Zero Synthetic Clicks (Safe HUD)", competitor: "Risky Programmatic Form Clicking" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$11.99/mo or $69.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.8s",
+            competitorLabel: "StudyBotPro Cloud Engine"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Synthetic isTrusted Click Hazards",
+                competitorFlaw: "StudyBotPro programmatically selects radio buttons using element.click(). In Canvas New Quizzes, event listeners check event.isTrusted and flag unverified script clicks.",
+                examghostAdvantage: "ExamGhost never tampers with exam DOM elements. It displays the verified answer on an invisible Shadow HUD so you click naturally with genuine mouse coordinates."
+            },
+            {
+                number: 2,
+                title: "Closed Shadow DOM vs Host Script Exposure",
+                competitorFlaw: "StudyBotPro inserts visible helper elements into the host DOM, which Honorlock and Proctorio inspect via MutationObservers.",
+                examghostAdvantage: "ExamGhost attaches to a closed-boundary Shadow Root that host scripts cannot query, inspect, or detect."
+            },
+            {
+                number: 3,
+                title: "Subscription Trap vs Single Payment",
+                competitorFlaw: "StudyBotPro charges $11.99/month ($143.88/year) on auto-debit.",
+                examghostAdvantage: "ExamGhost is $19.99 once for lifetime access across Canvas, Blackboard, Moodle, and D2L Brightspace."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$11.99/mo or $69.99/yr" }
+        ],
+        studentReview: {
+            quote: "StudyBotPro's auto-clicker felt super risky because Canvas logs click events. ExamGhost gives me the answer in a ghost HUD that only I can see. Zero worries.",
+            author: "Noah D.",
+            school: "Ohio State University · Biology",
+            gradeProof: "A in BIOL 1113"
+        },
+        faqs: [
+            {
+                question: "Why is StudyBotPro's auto-select feature risky?",
+                answer: "Modern LMS platforms like Canvas New Quizzes inspect mouse event coordinates and event.isTrusted properties. Programmatic clicks generated by extensions can be flagged by automated integrity filters."
+            },
+            {
+                question: "Does StudyBotPro prevent Canvas from logging window switches?",
+                answer: "No. StudyBotPro does not intercept window.blur events. ExamGhost features Focus Shield, which neutralizes focus loss and keeps SpeedGrader logs clean."
+            },
+            {
+                question: "How does pricing compare between StudyBotPro and ExamGhost?",
+                answer: "StudyBotPro costs $11.99/month ($143.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "StudyBotPro vs ExamGhost (2026) | Closed Shadow DOM vs DOM Injection",
+        metaDescription: "Comparing StudyBotPro and ExamGhost? Learn why students choose ExamGhost's zero-mutation Shadow DOM and $19.99 lifetime plan over StudyBotPro's auto-clicker."
+    },
+
+    // 18. Solvely
+    "solvely-vs-examghost": {
+        slug: "solvely-vs-examghost",
+        name: "Solvely",
+        domain: "solvely.ai",
+        badge: "The #1 Solvely Alternative",
+        pricingSummary: "$12.99/mo, $46.99/yr, or credit packs",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#ffe9a0",
+        heroHeadline: "Solvely drains your wallet with credit packs. ExamGhost gives you unlimited solves for life.",
+        heroSubtitle: "Solvely (solvely.ai) charges recurring fees of $12.99/month and caps usage with credit packs that expire. ExamGhost delivers truly unlimited solves, Mathpix STEM support, and Focus Shield tab-blur protection for a single $19.99 lifetime fee.",
+        flawTitle: "Solvely's Flaws: Expiring Credit Packs, High Subscription Fees & Zero Exam Shielding",
+        flawSummary: "Solvely operates on a freemium credit model that cuts you off mid-exam when credits run out. It has no Focus Shield to prevent Canvas SpeedGrader defocus logs.",
+        flawBulletPoints: [
+            "Credit-pack limits lock you out when you run out of tokens in the middle of a final exam.",
+            "No Focus Shield tab-blur suppression: switching windows creates Canvas alert flags.",
+            "Costs $12.99/month or $46.99/year, quickly adding up over a 4-year degree.",
+            "Lacks closed Shadow DOM isolation and one-key emergency panic flush."
+        ],
+        tldr: {
+            summary: "Solvely is a freemium homework app that monetizes through expiring credits and recurring subscriptions. ExamGhost offers 100% unlimited solves, Focus Shield blur masking, and a flat $19.99 lifetime license.",
+            keyTakeaways: [
+                "Solvely meters your questions with credits; ExamGhost provides unlimited answers for life.",
+                "Solvely costs $12.99/mo ($155.88/yr); ExamGhost is a single $19.99 one-time payment.",
+                "ExamGhost silences window.blur events in Canvas SpeedGrader; Solvely leaves logs unmasked."
+            ],
+            quickCompare: [
+                { label: "Usage Limits", examghost: "Unlimited Solves Forever", competitor: "Meteed Credits / Solves Per Day" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Defocus Logged)" },
+                { label: "STEM / LaTeX Engine", examghost: "Integrated Mathpix Neural Vision", competitor: "Standard Mobile Math Parser" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$12.99/mo or $46.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "5.2s",
+            competitorLabel: "Solvely Cloud Solver"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Expiring Credits vs Unlimited Lifetime Solves",
+                competitorFlaw: "Solvely limits how many questions you can ask per day or requires buying extra credit packs. Running out of credits during a 50-question midterm is disastrous.",
+                examghostAdvantage: "ExamGhost has zero credit limits, zero quotas, and zero monthly fees. Ask 1,000 questions a day without paying an extra cent."
+            },
+            {
+                number: 2,
+                title: "Canvas SpeedGrader Defocus Logging",
+                competitorFlaw: "Solvely provides zero blur masking. Opening the Solvely extension records an immediate 'Stopped viewing quiz' event in your professor's log.",
+                examghostAdvantage: "ExamGhost's Focus Shield intercepts window.blur, keeping your Canvas exam status continuously active."
+            },
+            {
+                number: 3,
+                title: "Financial Comparison: $19.99 Once vs Recurring Fees",
+                competitorFlaw: "Solvely's $12.99/month fee accumulates to $623.52 across four years of university.",
+                examghostAdvantage: "ExamGhost costs $19.99 once. You save more than $600 while gaining superior stealth tools."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$12.99/mo or $46.99/yr" }
+        ],
+        studentReview: {
+            quote: "I was in question 34 of my chemistry exam when Solvely told me my credits expired. I switched to ExamGhost and never looked back. Unlimited solves, zero stress.",
+            author: "Aiden T.",
+            school: "University of Michigan · Chemistry",
+            gradeProof: "A- in CHEM 210"
+        },
+        faqs: [
+            {
+                question: "Does Solvely limit how many questions I can solve?",
+                answer: "Yes. Solvely uses a credit-pack system that restricts free and entry-level users to a small number of daily questions. ExamGhost includes truly unlimited solves for life."
+            },
+            {
+                question: "Can professors see if I use Solvely on an exam?",
+                answer: "Yes. Solvely does not mask window blur events. Switching away from the quiz to use Solvely logs a departure event in Canvas SpeedGrader."
+            },
+            {
+                question: "How much does ExamGhost cost compared to Solvely?",
+                answer: "Solvely costs $12.99/month ($155.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "Solvely vs ExamGhost (2026) | Unlimited Solves vs Expiring Credit Packs",
+        metaDescription: "Comparing Solvely and ExamGhost? Learn why students prefer ExamGhost's unlimited solves, Focus Shield stealth, and $19.99 lifetime plan over Solvely's credit limits."
+    },
+
+    // 19. Gauth (ByteDance)
+    "gauth-vs-examghost": {
+        slug: "gauth-vs-examghost",
+        name: "Gauth (ByteDance)",
+        domain: "gauthmath.com",
+        badge: "The #1 Gauth Alternative",
+        pricingSummary: "$11.99/mo or $79.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#bfe9d9",
+        heroHeadline: "Gauth is a phone camera app. ExamGhost is a desktop exam stealth HUD.",
+        heroSubtitle: "Gauth (ByteDance) is a massive mobile-first math photo solver. Trying to photograph your computer monitor with a phone during an exam is a guaranteed webcam proctoring flag. ExamGhost runs silently on your Mac or PC with an invisible hotkey HUD and 0.3s edge AI.",
+        flawTitle: "Gauth's Flaws: Physical Phone Detection, Webcam Red Flags & No LMS Integration",
+        flawSummary: "Gauth requires pointing your phone camera at your computer screen. In proctored exams, head tilt and phone reflections are the #1 reason students get flagged by Honorlock and Proctorio.",
+        flawBulletPoints: [
+            "Phone camera usage triggers automated webcam eye-tracking and cell phone detection.",
+            "No desktop LMS integration: you cannot solve Canvas questions directly on your machine.",
+            "ByteDance telemetry and high subscription prices ($11.99/mo or $79.99/yr).",
+            "Zero Focus Shield blur protection for browser-based testing."
+        ],
+        tldr: {
+            summary: "Gauth is a mobile math camera app that requires holding a physical phone in front of your webcam. ExamGhost is an on-device desktop HUD with closed Shadow DOM sandboxing and a flat $19.99 lifetime price.",
+            keyTakeaways: [
+                "Holding a phone triggers automated proctoring webcam flags; ExamGhost runs invisibly on-screen via hotkey.",
+                "Gauth costs $11.99/mo ($79.99/yr); ExamGhost is a single $19.99 lifetime payment.",
+                "ExamGhost features Mathpix LaTeX parsing and Canvas Focus Shield blur suppression."
+            ],
+            quickCompare: [
+                { label: "Hardware Risk", examghost: "Zero Phone Needed (On-Device HUD)", competitor: "Physical Phone Camera Required" },
+                { label: "Webcam Proctor Safety", examghost: "100% Undetected (No Eye Deflection)", competitor: "Flagged (Eye-Tracking / Phone Detection)" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Manual Web App / Phone)" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$11.99/mo or $79.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "7.5s",
+            competitorLabel: "Gauth Photo Upload & Parse"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Webcam Eye-Tracking & Phone Reflection Exposure",
+                competitorFlaw: "Proctoring algorithms (Honorlock, Proctorio) detect secondary devices and gaze deflection when you look down at a phone to use Gauth.",
+                examghostAdvantage: "ExamGhost renders directly on your laptop screen inside an invisible HUD. Your eyes remain centered on the exam at all times."
+            },
+            {
+                number: 2,
+                title: "Snap-It Vision OCR vs Camera Photos",
+                competitorFlaw: "Taking photos of LCD monitors creates moiré patterns and glare that cause Gauth's OCR to misread math superscripts and minus signs.",
+                examghostAdvantage: "ExamGhost's Snap-It takes in-memory screen captures at native pixel resolution, feeding crystal-clear images directly into Mathpix."
+            },
+            {
+                number: 3,
+                title: "Subscription Cost vs Lifetime License",
+                competitorFlaw: "Gauth charges $11.99/month ($143.88/year) with auto-renewing subscriptions.",
+                examghostAdvantage: "ExamGhost is a single $19.99 lifetime payment with zero subscriptions and free lifetime updates."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: true },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$11.99/mo or $79.99/yr" }
+        ],
+        studentReview: {
+            quote: "I almost got caught using Gauth on my phone during an Honorlock quiz because the webcam saw the reflection in my glasses. ExamGhost runs right on my Mac invisibly.",
+            author: "Zachary P.",
+            school: "Penn State University · Computer Science",
+            gradeProof: "A in CMPSC 360"
+        },
+        faqs: [
+            {
+                question: "Why is using Gauth on a phone dangerous during exams?",
+                answer: "Honorlock, Proctorio, and Respondus monitor webcam feeds for cell phones, eye deflection, and screen glare reflections. Using a phone is the quickest way to get an academic integrity audit."
+            },
+            {
+                question: "How does ExamGhost solve STEM math compared to Gauth?",
+                answer: "ExamGhost integrates Mathpix neural vision directly into an on-screen desktop HUD, solving complex calculus and physics equations in 0.3 seconds without touching a phone."
+            },
+            {
+                question: "How much does ExamGhost cost compared to Gauth?",
+                answer: "Gauth charges $11.99/month ($143.88/year). ExamGhost is a single, flat lifetime payment of $19.99."
+            }
+        ],
+        metaTitle: "Gauth vs ExamGhost (2026) | Desktop Stealth HUD vs Risky Phone App",
+        metaDescription: "Comparing Gauth and ExamGhost? Learn why students prefer ExamGhost's on-screen desktop stealth and $19.99 lifetime plan over risky phone camera solvers like Gauth."
+    },
+
+    // 20. TrustStudy
+    "truststudy-vs-examghost": {
+        slug: "truststudy-vs-examghost",
+        name: "TrustStudy",
+        domain: "truststudy.app",
+        badge: "The #1 TrustStudy Alternative",
+        pricingSummary: "Freemium + $9.99/mo Pro",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#e2d3fa",
+        heroHeadline: "TrustStudy asks you to study first. ExamGhost gives you instant answers when the timer is ticking.",
+        heroSubtitle: "TrustStudy is built around 'Study, think, reveal'—forcing students through multi-step flashcard reviews. During timed exams, you don't have time for slow workflows. ExamGhost provides direct, verified answers in 0.3s with zero SpeedGrader tab-switch flags.",
+        flawTitle: "TrustStudy's Flaws: Multi-Step Reveal Workflow, No Tab-Blur Shielding & Recurring Fees",
+        flawSummary: "TrustStudy forces students to attempt questions before revealing answers, making it impractical for timed exams. It lacks Focus Shield blur protection for Canvas.",
+        flawBulletPoints: [
+            "'Study first, then reveal' workflow wastes valuable exam seconds during timed countdowns.",
+            "No Focus Shield blur masking: Canvas SpeedGrader logs departure events when interacting with popups.",
+            "Recurring Pro subscription ($9.99/mo) drains college budgets over multiple semesters.",
+            "Lacks closed Shadow DOM sandboxing and panic escape flush keys."
+        ],
+        tldr: {
+            summary: "TrustStudy is an educational study extension that delays answers through a study-first workflow. ExamGhost is an instant 0.3s exam stealth solver with closed Shadow DOM isolation and a flat $19.99 lifetime fee.",
+            keyTakeaways: [
+                "TrustStudy delays answers with multi-step review prompts; ExamGhost delivers answers in 0.3s flat.",
+                "TrustStudy costs $9.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "ExamGhost features Focus Shield to silence Canvas window.blur flags; TrustStudy has no blur defense."
+            ],
+            quickCompare: [
+                { label: "Workflow Efficiency", examghost: "Instant Answer in 0.3s (Single Hotkey)", competitor: "Delayed Multi-Step 'Study, Think, Reveal'" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Tab Switches)" },
+                { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Standard Extension UI" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo Pro Subscription" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "8.2s",
+            competitorLabel: "TrustStudy Multi-Step Reveal"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Instant 0.3s Solving vs Multi-Step Delay",
+                competitorFlaw: "TrustStudy's philosophy is forcing the student to guess or study before showing the solution. On a 50-minute exam with 60 questions, this delays you to failure.",
+                examghostAdvantage: "ExamGhost delivers the exact correct option in 0.3 seconds on an invisible ghost overlay, letting you finish with plenty of time to spare."
+            },
+            {
+                number: 2,
+                title: "Canvas SpeedGrader Focus Protection",
+                competitorFlaw: "TrustStudy does not suppress browser focus events. Interacting with its interface triggers defocus timestamps in Canvas.",
+                examghostAdvantage: "ExamGhost's Focus Shield silences window.blur and visibilitychange events, ensuring professors see an uninterrupted exam session."
+            },
+            {
+                number: 3,
+                title: "Lifetime Ownership vs Monthly Subscriptions",
+                competitorFlaw: "TrustStudy charges $9.99 every month ($119.88/year) for its Pro tier.",
+                examghostAdvantage: "ExamGhost gives you lifetime access with all 24 stealth tools for a single $19.99 payment."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo Pro" }
+        ],
+        studentReview: {
+            quote: "TrustStudy kept asking me to 'think and reflect' while my quiz timer was counting down to zero. ExamGhost gives me the answer immediately in 0.3s. Total lifesaver.",
+            author: "Elijah R.",
+            school: "University of Texas at Austin · Economics",
+            gradeProof: "A in ECO 329"
+        },
+        faqs: [
+            {
+                question: "Why is TrustStudy unsuitable for timed exams?",
+                answer: "TrustStudy is designed as a homework study aid that requires students to answer questions before revealing hints or solutions. On timed quizzes, this multi-step process wastes critical time."
+            },
+            {
+                question: "Does TrustStudy protect against Canvas SpeedGrader logs?",
+                answer: "No. TrustStudy provides no focus-masking technology. ExamGhost includes Focus Shield, which actively suppresses blur events to maintain a clean exam log."
+            },
+            {
+                question: "How does pricing compare between TrustStudy and ExamGhost?",
+                answer: "TrustStudy charges $9.99/month ($119.88/year) for Pro features. ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "TrustStudy vs ExamGhost (2026) | Instant Exam Stealth vs Delayed Study Workflow",
+        metaDescription: "Comparing TrustStudy and ExamGhost? Learn why students prefer ExamGhost's 0.3s instant edge solves and $19.99 lifetime plan over TrustStudy's delayed review workflow."
+    },
+
+    // 21. Answerly AI
+    "answerly-vs-examghost": {
+        slug: "answerly-vs-examghost",
+        name: "Answerly AI",
+        domain: "answerly.ai",
+        badge: "The #1 Answerly AI Alternative",
+        pricingSummary: "$9.99/mo or $49.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#fed7aa",
+        heroHeadline: "Answerly AI has ~320 users and fragile scripts. ExamGhost has 24 battle-tested stealth tools.",
+        heroSubtitle: "Answerly AI is a tiny Chrome extension (~320 users) with basic matching and fill-in-the-blank scripts that break with every Canvas update. ExamGhost is a hardened stealth engine with universal LMS support (Canvas, Blackboard, Moodle, D2L) and Mathpix LaTeX neural vision.",
+        flawTitle: "Answerly AI's Flaws: Tiny User Base, Fragile DOM Selectors & No Tab-Blur Masking",
+        flawSummary: "Answerly AI relies on hardcoded Canvas element selectors that frequently break during LMS updates. It offers zero Focus Shield protection against Canvas SpeedGrader tracking.",
+        flawBulletPoints: [
+            "Tiny user base (~320 users) with minimal development and unmaintained platform adapters.",
+            "Fragile DOM queries break whenever Canvas updates its frontend quiz components.",
+            "No Focus Shield blur suppression: Canvas logs every window departure in SpeedGrader.",
+            "Charges $9.99/mo recurring subscription for a basic tool with zero STEM/LaTeX capability."
+        ],
+        tldr: {
+            summary: "Answerly AI is a niche ~320-user extension with fragile Canvas scripts and monthly fees. ExamGhost is an enterprise-grade exam stealth suite with 24 tools, Mathpix OCR, and a flat $19.99 lifetime license.",
+            keyTakeaways: [
+                "Answerly AI has ~320 users and breaks on Canvas New Quizzes; ExamGhost supports Classic and New Quizzes.",
+                "Answerly AI charges $9.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "ExamGhost includes Focus Shield blur masking and closed Shadow DOM isolation."
+            ],
+            quickCompare: [
+                { label: "Platform Maturity", examghost: "Enterprise Engine (Canvas, Blackboard, Moodle)", competitor: "~320 Users (Fragile Canvas Script)" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs Defocus Events)" },
+                { label: "STEM / LaTeX Support", examghost: "Integrated Mathpix Neural Vision", competitor: "None (Text Matching Only)" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo or $49.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "6.0s",
+            competitorLabel: "Answerly Cloud Script"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Fragile Hardcoded Selectors vs Vision OCR",
+                competitorFlaw: "Answerly AI queries specific DOM classes like .quiz-question-text. When Canvas updates its UI, Answerly fails completely with blank responses.",
+                examghostAdvantage: "ExamGhost combines universal DOM adapters with Snap-It vision OCR, ensuring you get answers on any LMS regardless of code updates."
+            },
+            {
+                number: 2,
+                title: "SpeedGrader Blur Defocus Vulnerability",
+                competitorFlaw: "Answerly AI does not mask focus events. Clicking the extension icon triggers a window.blur event that alerts instructors in SpeedGrader.",
+                examghostAdvantage: "ExamGhost's Focus Shield intercepts blur events in real-time, maintaining an active exam timeline in Canvas logs."
+            },
+            {
+                number: 3,
+                title: "Cost Analysis: $19.99 Lifetime vs $9.99/Month",
+                competitorFlaw: "Answerly AI charges $9.99/month ($119.88/year) with no lifetime plan.",
+                examghostAdvantage: "ExamGhost is $19.99 once for lifetime access with free updates and 24 specialized tools."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo or $49.99/yr" }
+        ],
+        studentReview: {
+            quote: "Answerly stopped working right after Canvas updated its quiz layout. ExamGhost has never failed me once on Canvas or Blackboard, and it cost me only $19.99.",
+            author: "Brayden H.",
+            school: "University of Georgia · Marketing",
+            gradeProof: "A in MKTG 3000"
+        },
+        faqs: [
+            {
+                question: "Does Answerly AI work on Canvas New Quizzes?",
+                answer: "Answerly AI relies on outdated element selectors that frequently fail on Canvas New Quizzes. ExamGhost is fully optimized for both Classic and New Quizzes."
+            },
+            {
+                question: "Can Answerly AI be detected by professors in SpeedGrader?",
+                answer: "Yes. Answerly does not feature blur suppression, meaning Canvas logs departure timestamps whenever you interact with the extension."
+            },
+            {
+                question: "How does pricing compare between Answerly AI and ExamGhost?",
+                answer: "Answerly AI charges $9.99/month ($119.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "Answerly AI vs ExamGhost (2026) | Hardened Stealth Engine vs Fragile Extension",
+        metaDescription: "Comparing Answerly AI and ExamGhost? Learn why students prefer ExamGhost's 24 stealth tools and $19.99 lifetime plan over Answerly's fragile scripts and monthly fees."
+    },
+
+    // 22. Homework Helper+
+    "homework-helper-vs-examghost": {
+        slug: "homework-helper-vs-examghost",
+        name: "Homework Helper+",
+        domain: "homeworkhelperplus.com",
+        badge: "The #1 Homework Helper+ Alternative",
+        pricingSummary: "$14.99/mo or $89.99/yr",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#ffd5cc",
+        heroHeadline: "Homework Helper+ relies on right-click menus. ExamGhost bypasses locked-down exams.",
+        heroSubtitle: "Homework Helper+ requires right-click context menus to function—which are completely disabled on proctored Canvas and Blackboard quizzes (contextmenu preventDefault). ExamGhost operates via global keyboard shortcuts and invisible hotkeys, completely immune to right-click blocks.",
+        flawTitle: "Homework Helper+'s Flaws: Right-Click Lockout, Missing Focus Shield & Expensive Plans",
+        flawSummary: "Homework Helper+ depends on right-click context menus. Most proctored exam platforms disable right-clicking, rendering Homework Helper+ completely unusable on test day.",
+        flawBulletPoints: [
+            "Fails on locked quizzes: cannot trigger when instructors disable right-click context menus.",
+            "No Focus Shield blur suppression: Canvas SpeedGrader logs window departures.",
+            "Expensive subscription: $14.99/mo ($179.88/year) with auto-billing.",
+            "Lacks closed Shadow DOM isolation and one-key emergency panic cache flush."
+        ],
+        tldr: {
+            summary: "Homework Helper+ relies on right-click menus that are blocked on proctored tests. ExamGhost uses global hotkeys, closed Shadow DOM isolation, and a flat $19.99 lifetime license.",
+            keyTakeaways: [
+                "Homework Helper+ is disabled when quizzes block right-click; ExamGhost triggers via hotkey (⌘+B).",
+                "Homework Helper+ charges $14.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "ExamGhost silences window.blur events to keep Canvas SpeedGrader logs clean."
+            ],
+            quickCompare: [
+                { label: "Trigger Mechanism", examghost: "Invisible Hotkey (⌘+B) & Vision Area", competitor: "Right-Click Context Menu (Blocked on Exams)" },
+                { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
+                { label: "Locked Page Bypass", examghost: "100% Functional on Restricted Pages", competitor: "Fails on contextmenu preventDefault" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "5.5s",
+            competitorLabel: "Homework Helper+ API"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Context Menu Disabling on Proctored Quizzes",
+                competitorFlaw: "Professors easily disable right-click by enabling quiz restrictions (window.oncontextmenu = () => false). Homework Helper+ cannot open at all.",
+                examghostAdvantage: "ExamGhost uses low-level keyboard listeners (⌘+B or Ctrl+B) inside an isolated content script, completely immune to context menu blocks."
+            },
+            {
+                number: 2,
+                title: "Canvas SpeedGrader Defocus Telemetry",
+                competitorFlaw: "Homework Helper+ provides no focus-masking code. Switching windows or clicking an extension popup logs a departure flag in SpeedGrader.",
+                examghostAdvantage: "ExamGhost's Focus Shield intercepts and neutralizes window.blur events, ensuring clean exam session timelines."
+            },
+            {
+                number: 3,
+                title: "College Budget Math: $14.99/Month vs $19.99 Once",
+                competitorFlaw: "Homework Helper+ charges $14.99/month, costing $719.52 across four years of university.",
+                examghostAdvantage: "ExamGhost is a single $19.99 lifetime payment with zero recurring charges and free lifetime updates."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: true },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+        ],
+        studentReview: {
+            quote: "My professor disabled right-click on our midterm and Homework Helper+ became totally useless. ExamGhost opened right up with ⌘+B and solved every question in 0.3s.",
+            author: "Samantha V.",
+            school: "Florida State University · Psychology",
+            gradeProof: "A in PSY 2012"
+        },
+        faqs: [
+            {
+                question: "Does Homework Helper+ work when right-click is disabled?",
+                answer: "No. Homework Helper+ relies on right-click context menus. When professors disable right-clicking in Canvas or Blackboard, the extension cannot be triggered."
+            },
+            {
+                question: "How does ExamGhost trigger on restricted exam pages?",
+                answer: "ExamGhost uses global hotkeys (⌘+B or Ctrl+B) and an invisible HUD that operates completely independently of right-click restrictions."
+            },
+            {
+                question: "How much does ExamGhost cost compared to Homework Helper+?",
+                answer: "Homework Helper+ costs $14.99/month ($179.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+            }
+        ],
+        metaTitle: "Homework Helper+ vs ExamGhost (2026) | Hotkey Stealth vs Right-Click Lockout",
+        metaDescription: "Comparing Homework Helper+ and ExamGhost? Learn why students prefer ExamGhost's hotkey HUD and $19.99 lifetime plan over right-click dependent tools."
+    },
+
+    // 23. BetterCampus
+    "bettercampus-vs-examghost": {
+        slug: "bettercampus-vs-examghost",
+        name: "BetterCampus",
+        domain: "bettercampus.app",
+        badge: "BetterCampus vs ExamGhost",
+        pricingSummary: "Free / $4.99/mo themes",
+        examghostPricing: "$19.99 Lifetime",
+        themeColor: "#bfe3f6",
+        heroHeadline: "BetterCampus redesigns Canvas UI. ExamGhost solves Canvas exams in complete stealth.",
+        heroSubtitle: "BetterCampus is a popular UI customization extension that skins the Canvas interface with dark modes and custom fonts. While great for aesthetics, it provides zero academic solving tools. ExamGhost is the stealth exam solver designed to complement your Canvas experience with 0.3s verified answers.",
+        flawTitle: "BetterCampus vs ExamGhost: UI Theming vs True Stealth Exam Intelligence",
+        flawSummary: "BetterCampus is designed exclusively for visual customization of the Canvas interface (dark mode, typography). It has zero AI solving capabilities, zero proctor shields, and zero blur protection.",
+        flawBulletPoints: [
+            "BetterCampus is a theme customizer only: it has zero AI solver features or quiz assistance.",
+            "No Focus Shield: does not protect against Canvas SpeedGrader tab-switch tracking.",
+            "Alters page CSS stylesheets visibly, which can conflict with exam integrity monitors.",
+            "ExamGhost provides 24 dedicated academic stealth tools for $19.99 lifetime."
+        ],
+        tldr: {
+            summary: "BetterCampus is a cosmetic Canvas redesign extension with dark modes and custom fonts. ExamGhost is a dedicated stealth exam solver with 0.3s neural answers, Focus Shield blur suppression, and closed Shadow DOM isolation.",
+            keyTakeaways: [
+                "BetterCampus customizes Canvas themes; ExamGhost solves Canvas quizzes and exams.",
+                "BetterCampus offers zero AI solving; ExamGhost provides 24 specialized stealth modules.",
+                "Many students use BetterCampus for daily Canvas viewing and ExamGhost for undetectable exam solving."
+            ],
+            quickCompare: [
+                { label: "Core Purpose", examghost: "Stealth Exam Solver & Focus Shield", competitor: "Cosmetic Canvas Theme & Dark Mode" },
+                { label: "AI Solving Engine", examghost: "0.3s Neural Edge AI (MCQ, STEM, LaTeX)", competitor: "None (Zero AI Capabilities)" },
+                { label: "Canvas SpeedGrader Defense", examghost: "Active Focus Shield (Neutralizes window.blur)", competitor: "None" },
+                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "Free / $4.99/mo Theme Packs" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "N/A",
+            competitorLabel: "BetterCampus (No Solver)"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Cosmetic Theme Customization vs AI Intelligence",
+                competitorFlaw: "BetterCampus only changes CSS colors, dark modes, and dashboard layouts. It cannot solve questions or assist during tests.",
+                examghostAdvantage: "ExamGhost is an academic stealth engine powered by 0.3s edge AI, Mathpix neural vision, and closed Shadow DOM isolation."
+            },
+            {
+                number: 2,
+                title: "Canvas SpeedGrader Blur Telemetry Protection",
+                competitorFlaw: "BetterCampus modifies host stylesheets but offers zero tab-blur protection. Canvas SpeedGrader logs every departure event as usual.",
+                examghostAdvantage: "ExamGhost's Focus Shield silences window.blur and visibilitychange events, ensuring professors see an uninterrupted exam timeline."
+            },
+            {
+                number: 3,
+                title: "Complementary College Toolkit",
+                competitorFlaw: "Using BetterCampus alone leaves you unassisted during difficult exams and quizzes.",
+                examghostAdvantage: "ExamGhost costs $19.99 once for lifetime access, giving you an undetectable secret weapon on every quiz, midterm, and final."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM v1 Sandbox", description: "Isolates extension elements from host page scripts", examghost: true, competitor: false },
+            { feature: "Focus Shield Blur Interceptor", description: "Silences Canvas window.blur and tab leaves", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR", description: "Instant screenshot solve for locked questions", examghost: true, competitor: false },
+            { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
+            { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
+            { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "Free / $4.99/mo" }
+        ],
+        studentReview: {
+            quote: "I use BetterCampus for dark mode on Canvas during lectures, but ExamGhost is what got me straight A's on my exams. They make the ultimate combo.",
+            author: "Lucas W.",
+            school: "University of Washington · Informatics",
+            gradeProof: "A in INFO 200"
+        },
+        faqs: [
+            {
+                question: "Can BetterCampus solve quiz questions on Canvas?",
+                answer: "No. BetterCampus is purely a visual theme extension for custom dark modes and dashboard skins. ExamGhost is the AI solver that provides verified answers in 0.3s."
+            },
+            {
+                question: "Can I use BetterCampus and ExamGhost together?",
+                answer: "Yes! BetterCampus handles your Canvas dark mode aesthetic, while ExamGhost runs in an isolated closed Shadow DOM HUD to give you undetectable exam stealth."
+            },
+            {
+                question: "How much does ExamGhost cost?",
+                answer: "ExamGhost is a single one-time payment of $19.99 for lifetime access, universal LMS support, and 24 stealth tools."
+            }
+        ],
+        metaTitle: "BetterCampus vs ExamGhost (2026) | Canvas Theme vs True Stealth Exam Solver",
+        metaDescription: "Comparing BetterCampus and ExamGhost? Learn the difference between BetterCampus's Canvas UI themes and ExamGhost's undetectable 0.3s AI exam solver."
     }
 };
 

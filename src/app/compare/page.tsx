@@ -19,14 +19,14 @@ import Footer from '@/components/Footer';
 import { COMPETITORS } from '@/data/competitors';
 
 export const metadata: Metadata = {
-    title: "ExamGhost vs All Competitors (2026) | Direct Stealth & Latency Benchmark",
-    description: "Compare ExamGhost with CanvasHack, CheatMate, CanvasQuiz, CanvasNinja, CanvasWizard, QuizSolver AI, GetQuizSolve, UseQuietly, TestBro, FastSolve, Quizard, Classology, and Mindko. Real technical tests, SpeedGrader logs, and pricing teardowns.",
+    title: "ExamGhost vs All 23 Competitors (2026) | Direct Stealth & Latency Benchmark",
+    description: "Compare ExamGhost with CanvasHack, CheatMate, CanvasQuiz, CanvasNinja, CanvasWizard, QuizSolver AI, GetQuizSolve, UseQuietly, TestBro, FastSolve, Quizard, Classology, Mindko, Campus AI, AnswerAI, StudyX, StudyBotPro, Solvely, Gauth, TrustStudy, Answerly AI, Homework Helper+, and BetterCampus.",
     alternates: {
         canonical: "https://examghost.com/compare",
     },
     openGraph: {
-        title: "ExamGhost vs All Competitors (2026) | Comprehensive Benchmark Hub",
-        description: "Direct technical benchmarks comparing ExamGhost with all 13 major exam extensions.",
+        title: "ExamGhost vs All 23 Competitors (2026) | Comprehensive Benchmark Hub",
+        description: "Direct technical benchmarks comparing ExamGhost with all 23 major exam and homework extensions.",
         url: "https://examghost.com/compare",
         siteName: "ExamGhost",
         images: [
@@ -92,7 +92,7 @@ export default function CompareHubPage() {
                         </div>
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] font-bold text-ink uppercase tracking-wider shadow-xs">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            13 Teardowns Published
+                            {competitorsList.length} Teardowns Published
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@ export default function CompareHubPage() {
                                 How ExamGhost Compares to Every Exam Extension
                             </h1>
                             <p className="text-sm sm:text-lg text-ink-secondary leading-relaxed mb-8 max-w-2xl">
-                                We tested all 13 major quiz extensions against Canvas SpeedGrader logs, Honorlock window-blur detectors, and LaTeX equations. Here is the full technical breakdown.
+                                We tested all {competitorsList.length} major quiz and homework extensions against Canvas SpeedGrader logs, Honorlock window-blur detectors, and LaTeX equations. Here is the full technical breakdown.
                             </p>
 
                             <div className="flex flex-wrap items-center gap-3">
