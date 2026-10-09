@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://examghost.com'),
   title: "ExamGhost — All your exam tools, in one invisible box",
   description: "24 powerful stealth tools for Canvas, Blackboard, Moodle and D2L. Zero SpeedGrader logs, instant AI vision OCR, and 100% undetectable.",
   icons: {
