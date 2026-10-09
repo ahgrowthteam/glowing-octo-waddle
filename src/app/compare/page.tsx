@@ -153,7 +153,7 @@ export default function CompareHubPage() {
                             <h2 className="font-display font-bold text-lg text-ink">
                                 Summary of the 2026 Exam Extension Market
                             </h2>
-                            <p className="text-xs text-ink-muted">Key takeaways from 13 comprehensive tool audits</p>
+                            <p className="text-xs text-ink-muted">Key takeaways from {competitorsList.length} comprehensive tool audits</p>
                         </div>
                     </div>
 
@@ -171,11 +171,11 @@ export default function CompareHubPage() {
                 </div>
             </section>
 
-            {/* 13 COMPETITOR CARDS GRID */}
+            {/* 33 COMPETITOR CARDS GRID */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                 <div className="mb-8">
                     <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
-                        All 13 In-Depth Competitor Teardowns
+                        All {competitorsList.length} In-Depth Competitor Teardowns
                     </h2>
                     <p className="text-sm text-ink-muted">
                         Select any tool below to read the comprehensive technical comparison, DOM analysis, and student review.
