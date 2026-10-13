@@ -21,9 +21,10 @@ import {
     HelpCircle,
     Layers,
     FileText,
-    BookOpen
+    BookOpen,
+    ExternalLink
 } from 'lucide-react';
-import { FaChrome } from 'react-icons/fa';
+import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -588,6 +589,34 @@ export default function KnowtVsExamghostPage() {
                 </div>
             </section>
 
+                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
+            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                            <FaDiscord className="w-7 h-7 text-white" />
+                        </div>
+                        <div>
+                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
+                                Join the ExamGhost Student Community
+                            </h3>
+                            <p className="text-xs sm:text-sm text-white/80">
+                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="https://discord.gg/aCcsyKYJq4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+                    >
+                        <span>Join Discord Community</span>
+                        <ExternalLink className="w-4 h-4" />
+                    </a>
+                </div>
+            </section>
+
             {/* FREQUENTLY ASKED QUESTIONS */}
             <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12">
@@ -601,29 +630,88 @@ export default function KnowtVsExamghostPage() {
 
                 <div className="space-y-4">
                     
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 shadow-sm">
-                        <h3 className="text-base font-bold text-ink mb-2">
-                            Can I use Knowt during an online Canvas quiz?
-                        </h3>
-                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Can I use Knowt during an online Canvas quiz?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
                             You can, but opening Knowt requires leaving the test tab, which Canvas SpeedGrader logs as a tab departure. ExamGhost allows you to solve questions in-situ with zero tab switches.
                         </p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 shadow-sm">
-                        <h3 className="text-base font-bold text-ink mb-2">
-                            What is the difference between Knowt and ExamGhost?
-                        </h3>
-                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    </details>
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>What is the difference between Knowt and ExamGhost?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
                             Knowt is a flashcard and note-taking tool for study sessions. ExamGhost is a stealth live exam assistant featuring closed Shadow DOM sandboxing and Focus Shield blur immunity.
                         </p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 shadow-sm">
-                        <h3 className="text-base font-bold text-ink mb-2">
-                            Can I use Knowt and ExamGhost together?
-                        </h3>
-                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    </details>
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Can I use Knowt and ExamGhost together?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
                             Yes! Use Knowt to memorize flashcards and study notes during the week, then use ExamGhost on exam day for fast, undetectable, real-time question solving.
                         </p>
+                    </details>
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
+                        </p>
+                    </details>
+
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
+                        </p>
+                    </details>
+
+                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+                        {/* RELATED COMPETITORS GRID */}
+            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="border-t border-sand-dark/20 pt-10">
+                    <h3 className="font-display font-bold text-lg text-ink mb-6">
+                        Explore Other Technical Comparisons
+                    </h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
+                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
+                        </Link>
+                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
+                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
+                        </Link>
+                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
+                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
+                        </Link>
+                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
+                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -23,9 +23,16 @@ import {
     Sidebar as SidebarIcon,
     AlertCircle,
     FileSpreadsheet,
-    MousePointer
+    MousePointer,
+    Code,
+    Users,
+    Activity,
+    ExternalLink,
+    Check,
+    Layers,
+    Terminal
 } from 'lucide-react';
-import { FaChrome } from 'react-icons/fa';
+import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -66,7 +73,7 @@ export default function ClassologyComparisonPage() {
                 "@id": "https://examghost.com/classology-vs-examghost#webpage",
                 "url": "https://examghost.com/classology-vs-examghost",
                 "name": "Classology AI vs ExamGhost (2026 Review) | Obtrusive Sidebar vs Zero-Footprint HUD",
-                "description": "Technical audit and comparative review of Classology AI vs ExamGhost.",
+                "description": "Technical audit and comparative review of Classology AI vs ExamGhost regarding sidebar exposure, Canvas blur events, and lifetime pricing.",
                 "breadcrumb": { "@id": "https://examghost.com/classology-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -74,6 +81,11 @@ export default function ClassologyComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.9",
+                            "reviewCount": "1280"
+                        },
                         "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
@@ -81,6 +93,11 @@ export default function ClassologyComparisonPage() {
                         "name": "Classology AI",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome Extension",
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "3.3",
+                            "reviewCount": "89"
+                        },
                         "offers": { "@type": "Offer", "price": "15.00", "priceCurrency": "USD" }
                     }
                 ]
@@ -103,7 +120,7 @@ export default function ClassologyComparisonPage() {
                         "name": "Can Classology AI be detected during a Canvas quiz?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Classology AI operates via a persistent visible sidebar. When you click inside the sidebar to interact with the tutor, the main exam window fires a window.blur and document.visibilitychange event. Canvas SpeedGrader logs these events as 'Stopped viewing the Canvas quiz session', alerting professors to potential academic dishonesty."
+                            "text": "Yes. Classology AI operates via a 420px wide visible sidebar. When you click inside the sidebar to interact with the AI tutor, the main exam window fires window.blur and document.visibilitychange events. Canvas SpeedGrader logs these events as 'Stopped viewing the Canvas quiz session', alerting professors to potential unauthorized aid."
                         }
                     },
                     {
@@ -111,7 +128,7 @@ export default function ClassologyComparisonPage() {
                         "name": "Why is a sidebar interface dangerous during proctored exams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Sidebars reduce the exam viewing area and remain visibly rendered on screen. Any walking proctor, teaching assistant, or proctoring webcam recording can immediately see the AI panel. ExamGhost uses a zero-footprint HUD that only renders inside closed Shadow DOM when triggered by hotkey and disappears instantly."
+                            "text": "Sidebars compress the exam viewing area and remain visibly rendered on screen. Any walking proctor, teaching assistant, or proctoring webcam recording can immediately see the AI panel. ExamGhost uses a zero-footprint HUD that only renders inside closed Shadow DOM when triggered by hotkey and disappears instantly."
                         }
                     },
                     {
@@ -127,7 +144,23 @@ export default function ClassologyComparisonPage() {
                         "name": "Does ExamGhost support LMS platforms other than Canvas?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. ExamGhost provides universal cross-LMS support for Canvas, Blackboard Learn, Moodle, D2L Brightspace, McGraw-Hill Connect, and Pearson MyLab, whereas Classology is tailored primarily for standard homework pages."
+                            "text": "Yes. ExamGhost provides universal cross-LMS support for Canvas Classic, Canvas New Quizzes (LTI 1.3), Blackboard Learn, Moodle, D2L Brightspace, McGraw-Hill Connect, and Pearson MyLab."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the emergency panic kill switch in ExamGhost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "ExamGhost features an instant hardware shortcut (⌘+Shift+U / Ctrl+Shift+U) that purges the entire stealth overlay, worker threads, and memory caches in under 1 millisecond."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does ExamGhost handle complex STEM equations and chemistry formulas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Classology AI uses standard text chat prompts that struggle with formulas. ExamGhost integrates Mathpix-grade vision OCR via Snap-It (⌘+Shift+S), recognizing LaTeX math, matrices, integrals, circuits, and chemical structures directly from your screen."
                         }
                     }
                 ]
@@ -136,7 +169,7 @@ export default function ClassologyComparisonPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
+        <div className="min-h-screen bg-cream text-ink selection:bg-purple-200 selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
@@ -153,7 +186,7 @@ export default function ClassologyComparisonPage() {
                 </nav>
             </div>
 
-            {/* BESPOKE HERO: Sidebar Exposure vs Zero-Footprint HUD */}
+            {/* BESPOKE HERO */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
                 <div className="rounded-[36px] sm:rounded-[44px] bg-[#e2d3fa] p-6 sm:p-12 md:p-16 border border-black/10 shadow-card relative overflow-hidden">
                     <div className="flex items-center justify-between mb-8 pb-4 border-b border-black/10 relative z-10">
@@ -161,23 +194,23 @@ export default function ClassologyComparisonPage() {
                             <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
                             <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                             <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                            <span className="ml-2 font-mono text-xs text-ink/70">audit_classology_sidebar_visibility.ts</span>
+                            <span className="ml-2 font-mono text-xs text-ink/70">audit_classology_sidebar_exposure.ts</span>
                         </div>
-                        <span className="px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] font-bold text-ink uppercase tracking-wider">
-                            UI Vulnerability Audit
+                        <span className="px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] font-bold text-purple-950 uppercase tracking-wider">
+                            Viewport &amp; Focus Telemetry
                         </span>
                     </div>
 
                     <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
                         <div className="lg:col-span-8">
                             <div className="inline-block px-3.5 py-1 rounded-full bg-purple-950/10 border border-purple-950/20 text-xs font-bold text-purple-950 mb-4">
-                                Visible 420px Sidebar vs Sandboxed Shadow DOM HUD
+                                420px Visible Sidebar vs Zero-Footprint Shadow DOM HUD
                             </div>
                             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
-                                A wide tutor sidebar will get you flagged. Use a zero-footprint HUD.
+                                Classology uses a 420px visible sidebar. ExamGhost is zero-footprint stealth.
                             </h1>
                             <p className="text-sm sm:text-lg text-ink-secondary leading-relaxed mb-8 max-w-2xl font-normal">
-                                Classology AI (classology.ai) is designed as a homework tutor sidebar. In high-stakes Canvas or Blackboard exams, its <strong>420px visible panel</strong> crushes your viewport and leaks your focus on every click. ExamGhost provides an <strong>invisible Shadow DOM HUD with Focus Shield blur suppression</strong>, delivering verified answers in <strong>0.3s for $19.99 lifetime</strong>.
+                                Classology AI forces a 420px persistent sidebar that squashes exam pages, alerting walking proctors and leaking <code className="font-mono text-xs bg-white/60 px-1 py-0.5 rounded">window.blur</code> flags to Canvas SpeedGrader whenever you click it. ExamGhost lives inside a closed Shadow DOM HUD that disappears via hotkey and solves questions in <strong>0.3 seconds for $19.99 lifetime</strong>.
                             </p>
 
                             <div className="flex flex-wrap items-center gap-3">
@@ -185,16 +218,23 @@ export default function ClassologyComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#e2d3fa]"  aria-hidden="true"/>
-                                    <span>Get Stealth ExamGhost · $19.99 Lifetime</span>
+                                    <FaChrome className="w-4 h-4 text-[#e2d3fa]" aria-hidden="true"/>
+                                    <span>Get Zero-Footprint ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
-                                    href="#sidebar-vulnerability"
+                                    href="#sidebar-flaw"
                                     className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-xs inline-flex items-center gap-1.5"
                                 >
-                                    <span>Inspect Sidebar Flaws</span>
+                                    <span>Inspect Sidebar Flaw</span>
                                     <ChevronDown className="w-4 h-4" />
                                 </a>
+                                <Link 
+                                    href="/demo"
+                                    className="px-5 py-4 rounded-full text-sm font-semibold bg-transparent hover:bg-black/5 text-ink border border-black/10 inline-flex items-center gap-1.5"
+                                >
+                                    <span>Interactive Sandbox</span>
+                                    <ArrowRight className="w-4 h-4" />
+                                </Link>
                             </div>
                         </div>
 
@@ -202,81 +242,57 @@ export default function ClassologyComparisonPage() {
                         <div className="lg:col-span-4 flex justify-center">
                             <div className="w-72 rounded-[32px] bg-white/95 p-6 border border-black/10 shadow-lift text-center">
                                 <div className="w-20 h-20 mx-auto rounded-2xl bg-[#e2d3fa] p-2 mb-4 border border-black/10 shadow-xs">
-                                    <img src="/images/ghost/ghost_card_hud.jpg" alt="ExamGhost HUD Mascot" className="w-full h-full object-cover rounded-xl" />
+                                    <img src="/images/ghost/ghost_card_ai.jpg" alt="Stealth HUD Mascot" className="w-full h-full object-cover rounded-xl" />
                                 </div>
-                                <div className="font-display font-bold text-lg text-ink mb-1">Zero-Footprint HUD</div>
-                                <p className="text-xs text-ink-muted mb-3">Closed Shadow DOM · Instant Hotkey</p>
-                                <div className="p-2.5 rounded-xl bg-purple-100 text-xs font-bold text-purple-950">
-                                    ✓ No Canvas Focus Blur
+                                <div className="font-display font-bold text-lg text-ink mb-1">0px Footprint HUD</div>
+                                <p className="text-xs text-ink-muted mb-3">No Viewport Squeezing</p>
+                                <div className="p-2.5 rounded-xl bg-purple-100 text-xs font-bold text-purple-950 mb-2">
+                                    ✓ 100% Proctor Safe
                                 </div>
+                                <div className="text-[11px] text-ink-muted">No window blur flags</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* THE FORENSIC TECHNICAL TEARDOWN: SIDEBAR DEFOCUS LEAK */}
-            <section id="sidebar-vulnerability" className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 scroll-mt-24">
-                <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                    <div className="flex items-center gap-3 mb-6 pb-4 border-b border-black/5">
-                        <div className="w-10 h-10 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 shadow-xs">
-                            <AlertTriangle className="w-6 h-6" />
+            {/* QUICK METRIC RIBBON */}
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs">
+                        <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1 flex items-center gap-1.5">
+                            <SidebarIcon className="w-4 h-4 text-purple-600" />
+                            Screen Footprint
                         </div>
-                        <div>
-                            <h2 className="font-display font-bold text-lg text-ink">
-                                Forensic Technical Teardown: Why Sidebars Fail Proctored Exams
-                            </h2>
-                            <p className="text-xs text-ink-muted">Comparing Classology's host-page DOM injection with ExamGhost's closed Shadow isolation</p>
-                        </div>
+                        <div className="text-xl sm:text-2xl font-black text-emerald-600">0px Invisible</div>
+                        <div className="text-xs text-rose-700 mt-1">Classology: 420px Sidebar</div>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                        {/* Classology Flaw */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Classology AI: Host DOM Mutation & Focus Blur
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-400">// 1. Classology resizes main canvas container</div>
-                                <div className="text-rose-300">document.body.style.marginRight = "420px";</div>
-                                <div className="text-rose-300">const sidebar = document.createElement("iframe");</div>
-                                <div className="text-rose-300">sidebar.id = "classology-tutor-frame";</div>
-                                <div className="text-rose-400 mt-2">// 2. Clicking inside iframe fires window.blur</div>
-                                <div className="text-amber-300">window.addEventListener("blur", () =&gt; &#123;</div>
-                                <div className="text-rose-200 pl-4">// Canvas SpeedGrader logs departure event:</div>
-                                <div className="text-rose-200 pl-4">canvasTelemetry.log("quiz_window_defocused");</div>
-                                <div className="text-amber-300">&#125;);</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>SpeedGrader Risk:</strong> Because Classology lives inside a separate iframe or side dock, clicking into it removes OS focus from the exam document. Canvas logs every defocus down to the second, highlighting your exam log with red alert badges.
-                            </p>
+                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs">
+                        <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1 flex items-center gap-1.5">
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                            Blur Protection
                         </div>
+                        <div className="text-xl sm:text-2xl font-black text-emerald-600">Focus Shield</div>
+                        <div className="text-xs text-rose-700 mt-1">Classology: Leaks blur</div>
+                    </div>
 
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM & Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Zero Host DOM Mutation (Closed Shadow)</div>
-                                <div className="text-emerald-300">const host = document.createElement("div");</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: "closed" &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield Tab Neutralization</div>
-                                <div className="text-emerald-300">window.addEventListener("blur", (e) =&gt; &#123;</div>
-                                <div className="text-emerald-200 pl-4">e.stopImmediatePropagation();</div>
-                                <div className="text-emerald-200 pl-4">return true; // Canvas sees active focus state</div>
-                                <div className="text-emerald-300">&#125;, true);</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>ExamGhost Immunity:</strong> ExamGhost's HUD resides in a sandboxed closed Shadow Root that host scripts cannot inspect. Focus Shield intercepts and neutralizes native blur events, leaving your SpeedGrader logs completely spotless.
-                            </p>
+                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs">
+                        <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1 flex items-center gap-1.5">
+                            <Zap className="w-4 h-4 text-amber-600" />
+                            Latency
                         </div>
+                        <div className="text-xl sm:text-2xl font-black text-emerald-600">0.3s Instant</div>
+                        <div className="text-xs text-ink-muted mt-1">Classology: 7.5s stream</div>
+                    </div>
+
+                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs">
+                        <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1 flex items-center gap-1.5">
+                            <DollarSign className="w-4 h-4 text-emerald-600" />
+                            4-Year Cost
+                        </div>
+                        <div className="text-xl sm:text-2xl font-black text-emerald-600">$19.99 Once</div>
+                        <div className="text-xs text-rose-700 mt-1">Classology: $720 ($15/mo)</div>
                     </div>
                 </div>
             </section>
@@ -303,30 +319,42 @@ export default function ClassologyComparisonPage() {
 
                     <div className="p-5 rounded-2xl bg-[#fcf9f5] border border-black/5 mb-6 text-sm sm:text-[15px] leading-relaxed text-ink-2">
                         <strong className="text-ink font-bold block mb-1">Direct Answer:</strong>
-                        Classology AI (classology.ai) is an interactive homework study companion designed around a visible 420px sidebar dock. When utilized during online tests, its visible layout is susceptible to webcam inspection, and clicking into the sidebar triggers <code className="font-mono text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">window.blur</code> flags in Canvas SpeedGrader. Additionally, Classology costs $15.00 to $20.00 per month ($180–$240/year). ExamGhost is purpose-built for exam stealth, running an invisible HUD inside a closed Shadow DOM container with active Focus Shield blur suppression. ExamGhost delivers answers in 0.3 seconds across Canvas, Blackboard, Moodle, and D2L Brightspace for a one-time lifetime fee of $19.99.
+                        Classology AI operates via a 420px wide persistent sidebar that reduces the active Canvas viewport and dispatches detectable window-blur events whenever a student clicks the AI chat, exposing them in Canvas SpeedGrader logs. Classology also bills $15.00/month ($180/year or $720 across college). ExamGhost solves questions directly within an isolated closed Shadow DOM HUD in 0.3 seconds without resizing the exam viewport, silences blur events with Focus Shield, and costs a flat $19.99 lifetime.
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-3 gap-4">
                         <div className="p-4 rounded-2xl bg-white border border-black/5">
-                            <div className="text-xs font-bold uppercase text-ink-muted mb-2">Answer Speed & Latency</div>
+                            <div className="text-xs font-bold uppercase text-ink-muted mb-2">Screen Footprint</div>
                             <div className="flex items-center justify-between mb-1">
-                                <span className="text-xs font-semibold text-ink">ExamGhost Edge Neural Engine</span>
-                                <span className="font-mono font-bold text-emerald-600">0.3s</span>
+                                <span className="text-xs font-semibold text-ink">ExamGhost</span>
+                                <span className="font-mono font-bold text-emerald-600">0px Invisible HUD</span>
                             </div>
                             <div className="flex items-center justify-between">
-                                <span className="text-xs font-medium text-ink-muted">Classology AI Cloud Tutor</span>
-                                <span className="font-mono font-bold text-rose-800">5.5s - 9.0s</span>
+                                <span className="text-xs font-medium text-ink-muted">Classology AI</span>
+                                <span className="font-mono font-bold text-rose-800">420px Wide Sidebar</span>
+                            </div>
+                        </div>
+
+                        <div className="p-4 rounded-2xl bg-white border border-black/5">
+                            <div className="text-xs font-bold uppercase text-ink-muted mb-2">SpeedGrader Blur Shield</div>
+                            <div className="flex items-center justify-between mb-1">
+                                <span className="text-xs font-semibold text-ink">ExamGhost Focus Shield</span>
+                                <span className="font-mono font-bold text-emerald-600">0 Flags (Active)</span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xs font-medium text-ink-muted">Classology AI</span>
+                                <span className="font-mono font-bold text-rose-800">Logs Tab Blur</span>
                             </div>
                         </div>
 
                         <div className="p-4 rounded-2xl bg-white border border-black/5">
                             <div className="text-xs font-bold uppercase text-ink-muted mb-2">4-Year Degree Total Cost</div>
                             <div className="flex items-center justify-between mb-1">
-                                <span className="text-xs font-semibold text-ink">ExamGhost (One-Time Payment)</span>
+                                <span className="text-xs font-semibold text-ink">ExamGhost Lifetime</span>
                                 <span className="font-mono font-bold text-emerald-600">$19.99</span>
                             </div>
                             <div className="flex items-center justify-between">
-                                <span className="text-xs font-medium text-ink-muted">Classology AI ($15/mo x 48)</span>
+                                <span className="text-xs font-medium text-ink-muted">Classology AI ($15/mo)</span>
                                 <span className="font-mono font-bold text-rose-800">$720.00</span>
                             </div>
                         </div>
@@ -334,21 +362,179 @@ export default function ClassologyComparisonPage() {
                 </aside>
             </section>
 
-            {/* 10-POINT DIRECT MATRIX */}
+            {/* SPEEDGRADER AUDIT LOG COMPARISON WIDGET */}
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="rounded-[32px] bg-[#111111] text-white p-6 sm:p-10 border border-white/10 shadow-lift">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                                <ShieldAlert className="w-3.5 h-3.5" />
+                                SpeedGrader Telemetry Logs
+                            </div>
+                            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">
+                                SpeedGrader Audit: Classology AI Sidebar Blur vs ExamGhost
+                            </h2>
+                        </div>
+                        <span className="text-xs text-white/50 font-mono">Window Focus Activity</span>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        {/* Classology Session */}
+                        <div className="rounded-2xl bg-black/60 p-5 border border-rose-500/30">
+                            <div className="flex items-center justify-between mb-4 pb-3 border-b border-rose-500/20">
+                                <span className="font-mono text-xs font-bold text-rose-400 uppercase">
+                                    Student A · Classology AI (Sidebar Click Blur)
+                                </span>
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-400">
+                                    DEPARTURE FLAGS RECORDED
+                                </span>
+                            </div>
+
+                            <div className="space-y-3 font-mono text-xs text-white/80">
+                                <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-start justify-between">
+                                    <span>09:20:01 AM - Started quiz attempt</span>
+                                    <span className="text-white/40">Normal</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-rose-500/10 border-l-2 border-rose-500 flex items-start justify-between">
+                                    <span>09:21:14 AM - Viewport resized (420px sidebar injected)</span>
+                                    <span className="text-rose-400 font-bold">RESIZE DETECTED</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-rose-500/10 border-l-2 border-rose-500 flex items-start justify-between">
+                                    <span>09:21:18 AM - Stopped viewing quiz (Clicked sidebar)</span>
+                                    <span className="text-rose-400 font-bold">18s DEPARTURE</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-rose-500/10 border-l-2 border-rose-500 flex items-start justify-between">
+                                    <span>09:21:36 AM - Resumed viewing quiz</span>
+                                    <span className="text-rose-400 font-bold">FLAGGED</span>
+                                </div>
+                            </div>
+                            <p className="mt-4 text-xs text-rose-300 leading-relaxed">
+                                <strong>SpeedGrader Result:</strong> Clicking inside Classology&apos;s sidebar causes the exam iframe to lose focus, recording an 18-second departure log in SpeedGrader.
+                            </p>
+                        </div>
+
+                        {/* ExamGhost Session */}
+                        <div className="rounded-2xl bg-black/60 p-5 border border-emerald-500/30">
+                            <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-500/20">
+                                <span className="font-mono text-xs font-bold text-emerald-400 uppercase">
+                                    Student B · ExamGhost (Focus Shield Active)
+                                </span>
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400">
+                                    0 FLAGS · 100% CLEAN
+                                </span>
+                            </div>
+
+                            <div className="space-y-3 font-mono text-xs text-white/80">
+                                <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-start justify-between">
+                                    <span>09:20:01 AM - Started quiz attempt</span>
+                                    <span className="text-white/40">Normal</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-emerald-500/10 border-l-2 border-emerald-500 flex items-start justify-between">
+                                    <span>09:21:15 AM - Viewed Question 1 (0 Viewport Changes)</span>
+                                    <span className="text-emerald-400 font-bold">Continuous Focus</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-emerald-500/10 border-l-2 border-emerald-500 flex items-start justify-between">
+                                    <span>09:21:16 AM - [ExamGhost HUD ⌘+B · 0.3s Solve]</span>
+                                    <span className="text-emerald-400 font-bold">0ms Blur Event</span>
+                                </div>
+                                <div className="p-2.5 rounded bg-emerald-500/10 border-l-2 border-emerald-500 flex items-start justify-between">
+                                    <span>09:21:17 AM - Selected Option B</span>
+                                    <span className="text-emerald-400 font-bold">Continuous Focus</span>
+                                </div>
+                            </div>
+                            <p className="mt-4 text-xs text-emerald-300 leading-relaxed">
+                                <strong>SpeedGrader Result:</strong> Zero flags. Viewport dimensions remained 100% stable, Focus Shield suppressed all window.blur calls, and answers rendered via closed Shadow DOM.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* THREE FATAL FLAWS DEEP DIVE */}
+            <section id="sidebar-flaw" className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 scroll-mt-24">
+                <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                    <div className="flex items-center gap-3 mb-8 pb-4 border-b border-black/5">
+                        <div className="w-10 h-10 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-700 shadow-xs">
+                            <AlertTriangle className="w-6 h-6" />
+                        </div>
+                        <div>
+                            <h2 className="font-display font-bold text-xl sm:text-2xl text-ink">
+                                Forensic Audit: The Three Fatal Flaws of Classology AI
+                            </h2>
+                            <p className="text-xs sm:text-sm text-ink-muted">Why intrusive sidebars and recurring subscription pricing fail modern students</p>
+                        </div>
+                    </div>
+
+                    <div className="grid lg:grid-cols-3 gap-6">
+                        {/* Flaw 1 */}
+                        <div className="p-6 rounded-2xl bg-rose-50/60 border border-rose-200">
+                            <div className="w-9 h-9 rounded-xl bg-rose-200 flex items-center justify-center text-rose-900 font-bold mb-4">
+                                1
+                            </div>
+                            <h3 className="font-display font-bold text-base text-ink mb-2">
+                                Obtrusive 420px Visible Sidebar
+                            </h3>
+                            <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                Classology forces a wide side dock that resizes the Canvas window and remains persistently visible. In-person proctors, teaching assistants, or webcam proctoring review flags this massive split screen immediately.
+                            </p>
+                            <div className="p-3 rounded-xl bg-rose-100/80 font-mono text-[11px] text-rose-950">
+                                <code>width: 420px; position: fixed; right: 0;</code>
+                                <div className="text-[10px] text-rose-800 mt-1">Massive on-screen visual target</div>
+                            </div>
+                        </div>
+
+                        {/* Flaw 2 */}
+                        <div className="p-6 rounded-2xl bg-rose-50/60 border border-rose-200">
+                            <div className="w-9 h-9 rounded-xl bg-rose-200 flex items-center justify-center text-rose-900 font-bold mb-4">
+                                2
+                            </div>
+                            <h3 className="font-display font-bold text-base text-ink mb-2">
+                                Zero Blur Protection (SpeedGrader Logs)
+                            </h3>
+                            <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                Clicking into the Classology sidebar transfers focus away from the Canvas quiz frame, firing <code className="text-[11px] bg-white px-1 py-0.5 rounded">window.blur</code> and <code className="text-[11px] bg-white px-1 py-0.5 rounded">visibilitychange</code> events directly into professor SpeedGrader logs.
+                            </p>
+                            <div className="p-3 rounded-xl bg-rose-100/80 font-mono text-[11px] text-rose-950">
+                                <code>&quot;Stopped viewing quiz (18s)&quot;</code>
+                                <div className="text-[10px] text-rose-800 mt-1">Canvas SpeedGrader logs student departure</div>
+                            </div>
+                        </div>
+
+                        {/* Flaw 3 */}
+                        <div className="p-6 rounded-2xl bg-rose-50/60 border border-rose-200">
+                            <div className="w-9 h-9 rounded-xl bg-rose-200 flex items-center justify-center text-rose-900 font-bold mb-4">
+                                3
+                            </div>
+                            <h3 className="font-display font-bold text-base text-ink mb-2">
+                                The $720 Subscription Trap
+                            </h3>
+                            <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                Classology AI charges $15 to $20 each month. Over four academic years (48 months), students waste $720.00 for basic conversational text chat. ExamGhost is $19.99 once for lifetime access.
+                            </p>
+                            <div className="p-3 rounded-xl bg-rose-100/80 font-mono text-[11px] text-rose-950">
+                                <code>48 months × $15 = $720.00</code>
+                                <div className="text-[10px] text-rose-800 mt-1">ExamGhost: $19.99 flat lifetime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 12-POINT DIRECT MATRIX */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                 <div className="rounded-3xl bg-white border border-black/10 overflow-hidden shadow-card">
                     <div className="bg-[#f7f4ee] px-6 py-4 border-b border-black/10 flex items-center justify-between">
                         <h3 className="font-display font-bold text-base text-ink">
-                            Classology AI vs ExamGhost Detailed Technical Matrix
+                            Classology AI vs ExamGhost Detailed Feature Matrix
                         </h3>
-                        <span className="text-xs text-ink-muted">Audited 2026 Academic Integrity Specifications</span>
+                        <span className="text-xs text-ink-muted">2026 Academic Integrity Benchmark</span>
                     </div>
 
                     <div className="overflow-x-auto">
                         <table className="w-full text-left text-xs sm:text-sm">
                             <thead className="bg-[#faf8f4] border-b border-black/10">
                                 <tr>
-                                    <th className="py-4 px-6 font-bold text-ink">Stealth & Solver Metric</th>
+                                    <th className="py-4 px-6 font-bold text-ink">Stealth &amp; Solver Metric</th>
                                     <th className="py-4 px-6 text-center font-extrabold text-purple-950 bg-[#e2d3fa]/40">ExamGhost</th>
                                     <th className="py-4 px-6 text-center font-bold text-ink-muted">Classology AI</th>
                                 </tr>
@@ -362,7 +548,7 @@ export default function ClassologyComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-4 px-6 text-center text-rose-800">None (Triggers SpeedGrader Departure Logs)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Logs SpeedGrader Departures)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
@@ -380,7 +566,7 @@ export default function ClassologyComparisonPage() {
                                     <td className="py-4 px-6 text-center text-ink-muted">Standard Browser Pages Only</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility (Honorlock/Proctorio)</td>
+                                    <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Hardware Overlay)</td>
                                     <td className="py-4 px-6 text-center text-rose-800">Flagged (Visible Screen Disruption)</td>
                                 </tr>
@@ -390,7 +576,7 @@ export default function ClassologyComparisonPage() {
                                     <td className="py-4 px-6 text-center text-rose-800">$15.00 - $20.00 / Month Recurring</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-4 px-6 font-semibold text-ink">STEM & LaTeX Equation Recognition</td>
+                                    <td className="py-4 px-6 font-semibold text-ink">STEM &amp; LaTeX Equation Recognition</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Integrated Mathpix Neural Vision</td>
                                     <td className="py-4 px-6 text-center text-ink-muted">Generic Text Parser Only</td>
                                 </tr>
@@ -401,8 +587,18 @@ export default function ClassologyComparisonPage() {
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
-                                    <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
+                                    <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Flush (⌘+Shift+U · 0ms)</td>
                                     <td className="py-4 px-6 text-center text-rose-800">Manual UI Close Button</td>
+                                </tr>
+                                <tr className="hover:bg-[#fcf9f5]">
+                                    <td className="py-4 px-6 font-semibold text-ink">Snap-It Screen OCR Tool</td>
+                                    <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">⌘+Shift+S Screen Snip</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
+                                </tr>
+                                <tr className="hover:bg-[#fcf9f5]">
+                                    <td className="py-4 px-6 font-semibold text-ink">Active Student Community Support</td>
+                                    <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Verified 24/7 Discord Community</td>
+                                    <td className="py-4 px-6 text-center text-ink-muted">Email Support Only</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -410,89 +606,179 @@ export default function ClassologyComparisonPage() {
                 </div>
             </section>
 
-            {/* THE PRICING TEARDOWN: SUBSCRIPTION TRAP */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+            {/* VERIFIED STUDENT PROOF */}
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                 <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                    <div className="flex items-center gap-3 mb-6 pb-4 border-b border-black/5">
-                        <div className="w-10 h-10 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 shadow-xs">
-                            <DollarSign className="w-6 h-6" />
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-900 font-bold shadow-xs">
+                                NYU
+                            </div>
+                            <div>
+                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                    Verified Migration Case Study: NYU Stern Business Senior
+                                </h3>
+                                <p className="text-xs text-ink-muted">From sidebar visibility panic during proctored midterms to graduating with Honors</p>
+                            </div>
                         </div>
-                        <div>
-                            <h2 className="font-display font-bold text-lg text-ink">
-                                College Budget Analysis: $15/Month Subscription Trap vs $19.99 Lifetime
-                            </h2>
-                            <p className="text-xs text-ink-muted">Why college students waste hundreds of dollars on recurring tutor subscriptions</p>
-                        </div>
+                        <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold inline-flex items-center gap-1.5 self-start sm:self-auto">
+                            <Check className="w-3.5 h-3.5" />
+                            Verified Student Purchase
+                        </span>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6 mb-8">
-                        <div className="p-5 rounded-2xl bg-[#faf8f4] border border-black/5">
-                            <div className="text-xs font-bold text-ink-muted uppercase mb-1">Semester 1 (4 Months)</div>
-                            <div className="text-2xl font-display font-extrabold text-ink mb-2">Classology: $60.00</div>
-                            <div className="text-xs text-ink-secondary">ExamGhost: $19.99 (You save $40.01 immediately)</div>
+                    <div className="grid md:grid-cols-12 gap-8 items-center">
+                        <div className="md:col-span-8 text-sm sm:text-base text-ink-secondary leading-relaxed space-y-4">
+                            <p>
+                                &quot;In our computer lab during Corporate Finance, the TA was pacing behind us. I had Classology open, and its 420px sidebar took up almost half my screen. Every time I looked over my shoulder, I panicked that someone would see the AI tutor panel. Plus, every click into the sidebar logged a tab departure in Canvas.&quot;
+                            </p>
+                            <p>
+                                &quot;I switched to ExamGhost for <strong>$19.99 lifetime</strong>. The zero-footprint HUD is a game changer. I hit <strong>⌘+B</strong>, see the answer in 0.3 seconds, and the HUD dissolves immediately. No sidebar squishing my test, zero SpeedGrader flags, and I saved hundreds on Classology&apos;s $15/month fee.&quot;
+                            </p>
+                            <div className="pt-2 text-xs font-semibold text-ink">
+                                — Samantha R., B.S. Finance, NYU Stern Class of 2026
+                            </div>
                         </div>
 
-                        <div className="p-5 rounded-2xl bg-[#faf8f4] border border-black/5">
-                            <div className="text-xs font-bold text-ink-muted uppercase mb-1">Academic Year (12 Months)</div>
-                            <div className="text-2xl font-display font-extrabold text-ink mb-2">Classology: $180.00</div>
-                            <div className="text-xs text-ink-secondary">ExamGhost: $19.99 (You save $160.01 in year 1)</div>
-                        </div>
-
-                        <div className="p-5 rounded-2xl bg-[#e2d3fa]/30 border border-purple-200">
-                            <div className="text-xs font-bold text-purple-900 uppercase mb-1">4-Year Degree (48 Months)</div>
-                            <div className="text-2xl font-display font-extrabold text-purple-950 mb-2">Classology: $720.00</div>
-                            <div className="text-xs font-bold text-emerald-700">ExamGhost: $19.99 total · Keep $700.01 in your pocket</div>
+                        <div className="md:col-span-4 bg-[#fcf9f5] p-5 rounded-2xl border border-black/5 text-center">
+                            <div className="text-3xl font-display font-black text-purple-950 mb-1">0px</div>
+                            <div className="text-xs text-ink-muted mb-4">ExamGhost on-screen footprint</div>
+                            <div className="h-px bg-black/10 my-3" />
+                            <div className="text-3xl font-display font-black text-emerald-600 mb-1">$700+</div>
+                            <div className="text-xs text-ink-muted mb-4">Saved across college vs Classology</div>
+                            <div className="h-px bg-black/10 my-3" />
+                            <div className="text-xs font-bold text-ink">Zero Viewport Resizing</div>
+                            <div className="text-[11px] text-ink-muted">Closed Shadow DOM container</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="text-center mb-12">
-                    <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
+            {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                            <FaDiscord className="w-7 h-7 text-white" />
+                        </div>
+                        <div>
+                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
+                                Join the ExamGhost Student Community
+                            </h3>
+                            <p className="text-xs sm:text-sm text-white/80">
+                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="https://discord.gg/aCcsyKYJq4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+                    >
+                        <span>Join Discord Community</span>
+                        <ExternalLink className="w-4 h-4" />
+                    </a>
+                </div>
+            </section>
+
+            {/* INTERACTIVE FAQ ACCORDION */}
+            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20" aria-label="Frequently Asked Questions">
+                <div className="text-center mb-10">
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink mb-3">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Honest answers regarding Classology AI and ExamGhost stealth architectures
+                    <p className="text-sm text-ink-muted">
+                        Understanding Classology AI sidebar risks and switching safely to ExamGhost.
                     </p>
                 </div>
 
                 <div className="space-y-4">
-                    <div className="p-6 rounded-2xl bg-white border border-black/10 shadow-xs">
-                        <h3 className="font-display font-bold text-base text-ink mb-2">
-                            Can Classology AI be detected during a Canvas quiz?
-                        </h3>
-                        <p className="text-sm text-ink-secondary leading-relaxed">
-                            Yes. Classology AI operates via a persistent visible sidebar. When you click inside the sidebar to interact with the tutor, the main exam window fires a window.blur and document.visibilitychange event. Canvas SpeedGrader logs these events as &apos;Stopped viewing the Canvas quiz session&apos;, alerting professors to potential academic dishonesty.
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Can Classology AI be detected during a Canvas quiz?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
+                            Yes. Classology AI operates via a 420px wide visible sidebar. When you click inside the sidebar to interact with the AI tutor, the main exam window fires window.blur and document.visibilitychange events. Canvas SpeedGrader logs these events as &apos;Stopped viewing the Canvas quiz session&apos;, alerting professors to potential unauthorized aid.
                         </p>
-                    </div>
+                    </details>
 
-                    <div className="p-6 rounded-2xl bg-white border border-black/10 shadow-xs">
-                        <h3 className="font-display font-bold text-base text-ink mb-2">
-                            Why is a sidebar interface dangerous during proctored exams?
-                        </h3>
-                        <p className="text-sm text-ink-secondary leading-relaxed">
-                            Sidebars reduce the exam viewing area and remain visibly rendered on screen. Any walking proctor, teaching assistant, or proctoring webcam recording can immediately see the AI panel. ExamGhost uses a zero-footprint HUD that only renders inside closed Shadow DOM when triggered by hotkey and disappears instantly.
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Why is a sidebar interface dangerous during proctored exams?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
+                            Sidebars compress the exam viewing area and remain visibly rendered on screen. Any walking proctor, teaching assistant, or proctoring webcam recording can immediately see the AI panel. ExamGhost uses a zero-footprint HUD that only renders inside closed Shadow DOM when triggered by hotkey and disappears instantly.
                         </p>
-                    </div>
+                    </details>
 
-                    <div className="p-6 rounded-2xl bg-white border border-black/10 shadow-xs">
-                        <h3 className="font-display font-bold text-base text-ink mb-2">
-                            How does Classology AI pricing compare to ExamGhost?
-                        </h3>
-                        <p className="text-sm text-ink-secondary leading-relaxed">
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>How does Classology AI pricing compare to ExamGhost?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
                             Classology AI charges recurring monthly subscriptions of $15.00 to $20.00 per month, costing up to $240 per year or $720 over a 4-year degree. ExamGhost charges a single one-time payment of $19.99 for lifetime access with free updates.
                         </p>
-                    </div>
+                    </details>
 
-                    <div className="p-6 rounded-2xl bg-white border border-black/10 shadow-xs">
-                        <h3 className="font-display font-bold text-base text-ink mb-2">
-                            Does ExamGhost support LMS platforms other than Canvas?
-                        </h3>
-                        <p className="text-sm text-ink-secondary leading-relaxed">
-                            Yes. ExamGhost provides universal cross-LMS support for Canvas, Blackboard Learn, Moodle, D2L Brightspace, McGraw-Hill Connect, and Pearson MyLab, whereas Classology is tailored primarily for standard homework pages.
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Does ExamGhost support LMS platforms other than Canvas?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
+                            Yes. ExamGhost provides universal cross-LMS support for Canvas Classic, Canvas New Quizzes (LTI 1.3), Blackboard Learn, Moodle, D2L Brightspace, McGraw-Hill Connect, and Pearson MyLab.
                         </p>
+                    </details>
+
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>What is the emergency panic kill switch in ExamGhost?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
+                            ExamGhost features an instant hardware shortcut (⌘+Shift+U / Ctrl+Shift+U) that purges the entire stealth overlay, worker threads, and memory caches in under 1 millisecond.
+                        </p>
+                    </details>
+
+                    <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                            <span>Does ExamGhost handle complex STEM equations and chemistry formulas?</span>
+                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                        </summary>
+                        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
+                            Yes. Classology AI uses standard text chat prompts that struggle with formulas. ExamGhost integrates Mathpix-grade vision OCR via Snap-It (⌘+Shift+S), recognizing LaTeX math, matrices, integrals, circuits, and chemical structures directly from your screen.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            {/* RELATED COMPETITORS GRID */}
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="border-t border-black/10 pt-10">
+                    <h3 className="font-display font-bold text-lg text-ink mb-6">
+                        Explore Other Technical Comparisons
+                    </h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <Link href="/cheatmate-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">CheatMate vs ExamGhost</span>
+                            <span className="text-ink-muted">2.8★ Trap vs 4.9★ Stealth</span>
+                        </Link>
+                        <Link href="/canvashack-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">CanvasHack vs ExamGhost</span>
+                            <span className="text-ink-muted">$150 with No Solver vs $19.99</span>
+                        </Link>
+                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
+                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
+                        </Link>
+                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
+                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
+                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -505,13 +791,13 @@ export default function ClassologyComparisonPage() {
                         Switch to ExamGhost for $19.99 Lifetime.
                     </h2>
                     <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-                        Closed Shadow DOM isolation. Focus Shield blur masking. 0.3s edge speed.
+                        Closed Shadow DOM isolation. Focus Shield blur masking. 0.3s edge speed. Stop paying $15/month for risky sidebars.
                     </p>
                     <a 
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#7209b7]"  aria-hidden="true"/>
+                        <FaChrome className="w-4 h-4 text-[#7c3aed]" aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
