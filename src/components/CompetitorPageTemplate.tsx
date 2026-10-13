@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { 
     Check, 
     X, 
+    Shield,
     ShieldCheck, 
     ShieldAlert, 
     Zap, 
@@ -47,18 +48,19 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
         <div className="min-h-screen bg-cream text-ink selection:bg-peri/40 selection:text-ink font-sans">
             <Navbar />
 
-            {/* Breadcrumb Bar */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">ExamGhost vs {competitor.name}</span>
-                </nav>
-            </div>
+            <main id="main-content">
+                {/* Breadcrumb Bar */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
+                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
+                        <Link href="/" className="hover:text-ink transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
+                        <span>/</span>
+                        <span className="text-ink font-semibold">ExamGhost vs {competitor.name}</span>
+                    </nav>
+                </div>
 
-            {/* HERO SECTION */}
+                {/* HERO SECTION */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
                 <div 
                     className="relative rounded-[32px] sm:rounded-[44px] p-6 sm:p-12 md:p-16 border border-black/10 overflow-hidden shadow-card transition-all"
@@ -124,21 +126,23 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                                 </div>
                                 <div className="bg-white/85 backdrop-blur-md rounded-2xl p-3 border border-black/10 shadow-xs">
                                     <div className="flex items-center gap-1.5 text-xs text-ink-muted mb-1">
-                                        <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                                        <span>Trust Score</span>
+                                        <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                                        <span>Stealth Shield</span>
                                     </div>
-                                    <div className="font-display font-bold text-base text-ink">4.9 / 5.0 (50k+)</div>
+                                    <div className="font-display font-bold text-base text-ink">100% Undetectable</div>
                                 </div>
                             </div>
 
                             {/* Dual CTAs */}
                             <div className="flex flex-wrap items-center gap-3">
                                 <a
-                                    href="/#pricing"
+                                    href="https://discord.gg/aCcsyKYJq4"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="btn-dark px-6 py-3.5 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
-                                    <span>Get ExamGhost · $19.99 Lifetime</span>
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
+                                    <span>Get Extension</span>
                                 </a>
                                 <a
                                     href="#matrix"
@@ -247,9 +251,9 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                                 <Clock className="w-3.5 h-3.5 text-[#bfe3f6]" />
                                 Exam Pressure Latency Benchmark
                             </div>
-                            <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+                            <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4">
                                 Speed matters when the midterm timer is ticking.
-                            </h3>
+                            </h2>
                             <p className="text-sm text-[#bfbbb3] leading-relaxed mb-6">
                                 ExamGhost runs on-device neural edge models and parallel OCR, rendering verified answers into an invisible HUD in <strong>0.3 seconds</strong>. By comparison, {competitor.name} relies on {competitor.latencyComparison.competitorLabel}, taking <strong>{competitor.latencyComparison.competitor}</strong>.
                             </p>
@@ -298,7 +302,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
             <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                 <div className="rounded-[32px] sm:rounded-[36px] bg-[#ffd5cc]/35 border border-[#ffd5cc] p-6 sm:p-10 shadow-card">
                     <div className="flex items-start gap-4 mb-6">
-                        <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600 shrink-0 shadow-xs">
+                        <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-800 shrink-0 shadow-xs">
                             <ShieldAlert className="w-7 h-7" />
                         </div>
                         <div>
@@ -318,7 +322,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                     <div className="grid sm:grid-cols-2 gap-3.5">
                         {competitor.flawBulletPoints.map((flaw, idx) => (
                             <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-rose-200/60 shadow-xs flex items-start gap-3">
-                                <XCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                                <XCircle className="w-5 h-5 text-rose-800 shrink-0 mt-0.5" />
                                 <span className="text-xs sm:text-sm text-ink-2 font-medium leading-snug">{flaw}</span>
                             </div>
                         ))}
@@ -446,7 +450,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                                                         <Check className="w-5 h-5 stroke-[2.5]" />
                                                     </div>
                                                 ) : (
-                                                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-100 text-rose-600 shadow-xs">
+                                                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-100 text-rose-800 shadow-xs">
                                                         <X className="w-5 h-5 stroke-[2.5]" />
                                                     </div>
                                                 )
@@ -465,7 +469,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                                                         <Check className="w-4 h-4 stroke-[2]" />
                                                     </div>
                                                 ) : (
-                                                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-50 text-rose-500">
+                                                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-50 text-rose-800">
                                                         <X className="w-4 h-4 stroke-[2]" />
                                                     </div>
                                                 )
@@ -575,7 +579,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
             <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
                     <div>
-                        <h3 className="font-display text-2xl font-bold text-ink">Compare Other Exam Tools</h3>
+                        <h2 className="font-display text-2xl font-bold text-ink">Compare Other Exam Tools</h2>
                         <p className="text-xs sm:text-sm text-ink-muted">See how ExamGhost stacks up against the entire 2026 market.</p>
                     </div>
                     <Link 
@@ -601,9 +605,9 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                                         vs ExamGhost
                                     </span>
                                 </div>
-                                <h4 className="font-display font-bold text-base text-ink group-hover:text-indigo-700 transition-colors mb-1">
+                                <h3 className="font-display font-bold text-base text-ink group-hover:text-indigo-700 transition-colors mb-1">
                                     {other.name}
-                                </h4>
+                                </h3>
                                 <p className="text-xs text-ink-muted line-clamp-2 leading-relaxed">
                                     {other.heroHeadline}
                                 </p>
@@ -616,37 +620,7 @@ export default function CompetitorPageTemplate({ competitor }: CompetitorPageTem
                     ))}
                 </div>
             </section>
-
-            {/* PRE-FOOTER CTA CARD */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="bg-[#111111] text-white rounded-3xl p-8 sm:p-14 text-center shadow-lift relative overflow-hidden">
-                    <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-bold text-[#bfe3f6] mb-4">
-                            <Lock className="w-3.5 h-3.5" />
-                            Risk-Free 14-Day Money Back Guarantee
-                        </div>
-                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight leading-[1.08]">
-                            Switch to ExamGhost today.<br />
-                            Protect your degree forever.
-                        </h2>
-                        <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-                            No monthly billing traps. No detectable DOM injections. One invisible toolkit with 24 stealth modules for Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <a 
-                                href="/#pricing"
-                                className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
-                            >
-                                <FaChrome className="w-4 h-4 text-[#0077b6]" />
-                                <span>Get ExamGhost · $19.99 Lifetime</span>
-                            </a>
-                        </div>
-                        <div className="mt-4 text-xs text-white/50">
-                            Instant Web Store activation · Multi-device sync · Free lifetime updates
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </main>
 
             <Footer />
         </div>

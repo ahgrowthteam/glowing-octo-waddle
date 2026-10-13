@@ -120,6 +120,17 @@
   animation: floatGentleRight 6s ease-in-out infinite 0.8s;
 }
 
+@keyframes laserScan {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-laser-scan {
+  animation: laserScan 0.85s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 /* Eyebrow badge style */
 .eyebrow {
   letter-spacing: 0.1em;
@@ -145,6 +156,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-dark:hover {
@@ -172,6 +185,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-soft:hover {
@@ -253,6 +268,25 @@
   display: flex;
   width: max-content;
   animation: marqueeScroll 35s linear infinite;
+}
+
+/* Custom sleek scrollbar for footer and menus */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.15);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 17, 17, 0.3);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.15) transparent;
 }
 
 .animate-marquee-smooth:hover {

@@ -63,8 +63,7 @@ export default function FastSolveComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -113,6 +112,8 @@ export default function FastSolveComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -156,7 +157,7 @@ export default function FastSolveComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Focus Shield ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -195,9 +196,9 @@ export default function FastSolveComparisonPage() {
                                 <Sparkles className="w-5 h-5 text-sky-900" />
                             </div>
                             <div>
-                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
                                     Executive Summary: FastSolve vs ExamGhost
-                                </h3>
+                                </h2>
                                 <p className="text-xs text-ink-muted">Independent benchmark on event interception and speed</p>
                             </div>
                         </div>
@@ -227,11 +228,13 @@ export default function FastSolveComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

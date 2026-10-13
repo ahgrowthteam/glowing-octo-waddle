@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { 
     Shield, ScanLine, Sparkles, Layers, Eye, 
     Check, Lock, ArrowRight, Zap, CheckCircle2,
-    Camera, Terminal, MonitorCheck, KeyRound, Cpu
+    Camera, Terminal, MonitorCheck, KeyRound, Cpu, Sliders
 } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 
@@ -29,135 +29,113 @@ interface ToolCategory {
 
 const CATEGORIES: ToolCategory[] = [
     {
-        id: 'stealth',
-        label: 'Stealth & Shield',
-        count: '5 tools',
+        id: 'modes',
+        label: 'Display Modes',
+        count: '3 modes',
         bg: '#c4d0f8', // Periwinkle
         accent: '#3b5bdb',
-        tagline: 'STEALTH · 5 TOOLS',
-        headline: 'Zero blur events, zero flags, without touching page scripts.',
-        description: 'ExamGhost operates entirely in an isolated Shadow DOM container. It silences browser window.blur and visibilitychange listeners, so Canvas continuously records a 100% active, focused session.',
+        tagline: 'DISPLAY MODES · 3 MODES',
+        headline: 'Three ways to solve. Completely your call.',
+        description: 'Choose how visible the solving is in one click from the popup. Stealth is on by default with a subtle natural indicator, Invisible operates with zero on-screen traces for screen-shares, and Explain unlocks step-by-step reasoning.',
         bullets: [
-            'Window blur event silencer',
-            'Zero DOM mutation traces',
-            'Tab-switch interception',
-            '0 SpeedGrader alert flags'
+            'Invisible: Silent answer injection',
+            'Stealth: Quiet micro-cursor (default)',
+            'Explain: Full reasoning drawer',
+            '1-tap mode switcher in popup'
         ],
         tools: [
-            { id: 'focus-shield', name: 'Focus Shield', sub: 'Intercepts blur & tab switch events', icon: Shield, badge: '0 Flags' },
-            { id: 'shadow-dom', name: 'Shadow DOM Sandbox', sub: 'Zero footprint in page inspector', icon: Lock, badge: 'Isolated' },
-            { id: 'clipboard-guard', name: 'Clipboard Guard', sub: 'Bypasses right-click & copy locks', icon: Zap, badge: 'Unlocked' },
-            { id: 'heartbeat-spoof', name: 'Heartbeat Spoofer', sub: 'Simulates regular human cursor jitter', icon: Cpu, badge: 'Humanized' },
-            { id: 'action-neutralizer', name: 'SpeedGrader Silencer', sub: 'Neutralizes Canvas teacher action log', icon: Terminal, badge: 'Audit Proof' }
+            { id: 'stealth-mode', name: 'Stealth Mode (Default)', sub: 'Quiet cursor while solving, then applies answer', icon: Eye, badge: 'Default' },
+            { id: 'invisible-mode', name: 'Invisible Mode', sub: 'Silent injection with zero on-screen traces', icon: Lock, badge: 'Silent' },
+            { id: 'explain-mode', name: 'Explain Mode', sub: 'Applies answer + full step-by-step proof drawer', icon: Sparkles, badge: 'Deep Study' },
+            { id: 'mode-toggle', name: 'Instant Mode Switcher', sub: 'Toggle between all 3 modes in 1 click from popup', icon: Sliders, badge: 'Instant' }
         ]
     },
     {
-        id: 'vision',
-        label: 'Vision & OCR',
-        count: '4 tools',
+        id: 'methods',
+        label: 'Answer Methods',
+        count: '3 methods',
         bg: '#bfe3f6', // Sky
         accent: '#1971c2',
-        tagline: 'VISION & OCR · 4 TOOLS',
-        headline: 'Instant visual solve for formulas, diagrams and locked text.',
-        description: 'When exam text is unhighlightable or rendered inside Canvas New Quizzes canvas objects, hit ⌘+Shift+S. Our in-memory multimodal OCR decodes chemistry, calculus, and diagrams in under 350ms.',
+        tagline: 'ANSWER METHODS · 3 METHODS',
+        headline: 'Three delivery methods. Pick what fits the quiz.',
+        description: 'Independent of your display mode, choose how the answer lands on your page. Auto-fill selects the right choice directly, Highlight marks the option so you click it yourself, and Clipboard silently copies for essay prompts.',
         bullets: [
-            'Calculus & chemical equations',
-            'Screenshot-less in-memory OCR',
-            'Chart & diagram recognition',
-            'Sub-350ms solve latency'
+            'Auto-fill: Direct option selection',
+            'Highlight: 1–10s glow to self-click',
+            'Clipboard: Silent copy for essays',
+            'Configurable highlight duration'
         ],
         tools: [
-            { id: 'snap-it', name: 'Snap-It Vision OCR', sub: 'Drag crop over any question area', icon: Camera, badge: '0.3s' },
-            { id: 'latex-engine', name: 'Mathpix LaTeX Engine', sub: 'Decodes calculus integrals & matrices', icon: Sparkles, badge: 'LaTeX' },
-            { id: 'diagram-decoder', name: 'Diagram & Chart Parser', sub: 'Understands biology & circuit graphs', icon: ScanLine, badge: 'Visual AI' },
-            { id: 'unselectable-fix', name: 'CSS User-Select Fix', sub: 'Forces disabled text to be selectable', icon: Lock, badge: 'Native' }
+            { id: 'auto-fill', name: 'Auto-fill Engine', sub: 'Directly selects the right radio or checkbox', icon: CheckCircle2, badge: 'Default' },
+            { id: 'smart-highlight', name: 'Smart Highlight', sub: 'Marks the correct option so you click yourself', icon: Sparkles, badge: '1-10s Glow' },
+            { id: 'silent-clipboard', name: 'Silent Clipboard', sub: 'Copies text answer to clipboard for typing', icon: Zap, badge: 'Essay Safe' },
+            { id: 'duration-dial', name: 'Configurable Duration', sub: 'Adjust glow duration from 1s to 10s (default 4s)', icon: Sliders, badge: 'Custom' }
         ]
     },
     {
-        id: 'solvers',
-        label: 'AI Solvers',
-        count: '5 tools',
+        id: 'sniping',
+        label: 'Snap-It Vision',
+        count: '4 tools',
         bg: '#e2d3fa', // Lilac
         accent: '#6741d9',
-        tagline: 'AI SOLVERS · 5 TOOLS',
-        headline: 'Step-by-step logic, code synthesis, and natural timing.',
-        description: 'Powered by fine-tuned reasoning models that prioritize accuracy over speed. ExamGhost solves multiple-choice, multi-select checkboxes, and short-answer prompts with human-like typing delays.',
+        tagline: 'SNAP-IT VISION · 4 TOOLS',
+        headline: 'Draw to solve formulas, diagrams, and locked text.',
+        description: 'Can’t double-click a question or text is unselectable? Hit ⌘+Shift+S, draw a crop box around any problem, equation, or diagram, and let ExamGhost read the image and return the exact answer with proof.',
         bullets: [
-            'Multi-select checkbox bundles',
-            'Humanized typing jitter delay',
-            'Fill-in-the-blank autotype',
-            'Full reasoning explanation drawer'
+            'Calculus & chemical equations',
+            'Bypasses text-selection locks',
+            'Chart, graph & diagram recognition',
+            'Works on PDFs, slides & canvas'
         ],
         tools: [
-            { id: 'mcq-solver', name: 'MCQ Auto-Select', sub: 'Radio-selects with natural jitter delay', icon: CheckCircle2, badge: '99.8%' },
-            { id: 'multi-select', name: 'Multi-Select Bundler', sub: 'Accurately checks all true options', icon: Check, badge: 'Exact' },
-            { id: 'short-answer', name: 'Short Answer Synthesizer', sub: 'Concise answers in authentic student voice', icon: Sparkles, badge: 'Human' },
-            { id: 'step-reasoner', name: 'Deep Step-by-Step Reasoner', sub: 'Breaks down theorem and formula logic', icon: Cpu, badge: 'Reasoning' },
-            { id: 'code-debugger', name: 'Code & Syntax Solver', sub: 'Python, Java, C++, SQL debugging', icon: Terminal, badge: 'Multi-Lang' }
+            { id: 'snap-it', name: 'Snap-It Sniping (⌘+Shift+S)', sub: 'Drag crop rectangle around any question area', icon: Camera, badge: '0.3s' },
+            { id: 'latex-engine', name: 'LaTeX & Formula Engine', sub: 'Decodes calculus integrals, limits & matrices', icon: Sparkles, badge: 'LaTeX' },
+            { id: 'diagram-decoder', name: 'Diagram & Chart Parser', sub: 'Understands biology, circuits & organic chemistry', icon: ScanLine, badge: 'Visual AI' },
+            { id: 'unselectable-fix', name: 'Unselectable Text Bypass', sub: 'Solves canvas-rendered and protected quiz items', icon: Lock, badge: 'Universal' }
         ]
     },
     {
         id: 'lms',
-        label: 'LMS Immunity',
-        count: '4 tools',
+        label: 'Platforms',
+        count: '20+ LMSs',
         bg: '#cdeecb', // Mint
         accent: '#2f9e44',
-        tagline: 'LMS IMMUNITY · 4 TOOLS',
-        headline: 'Built specifically for Canvas, Blackboard, Moodle, and D2L.',
-        description: 'Every learning management system has different logging hooks. ExamGhost patches Canvas New Quizzes WebSocket packets, Blackboard SafeAssign telemetry, and Moodle session beacons.',
+        tagline: 'PLATFORMS · 20+ SUPPORTED',
+        headline: 'Works with every LMS you already use.',
+        description: 'ExamGhost runs client-side inside Chrome, Edge, Brave, and Arc. Whether you are on Canvas, Blackboard, Moodle, Google Classroom, Brightspace, or McGraw-Hill — double-tap any question and get the correct answer.',
         bullets: [
-            'Canvas New Quizzes support',
-            'Blackboard SafeAssign shield',
-            'Moodle Quiz environment',
-            'D2L Brightspace immunity'
+            'Canvas Quizzes & New Quizzes',
+            'Blackboard Learn & Ultra',
+            'Moodle & Google Classroom',
+            'Brightspace, Pearson & McGraw-Hill'
         ],
         tools: [
-            { id: 'canvas-hook', name: 'Canvas Quizzes & New Quizzes', sub: 'Direct WebSocket heartbeat override', icon: Layers, badge: 'Canvas' },
-            { id: 'bb-shield', name: 'Blackboard Ultra Shield', sub: 'Blocks SafeAssign activity beacons', icon: Shield, badge: 'Blackboard' },
-            { id: 'moodle-beacon', name: 'Moodle Beacon Blocker', sub: 'Silences quiz telemetry pings', icon: Lock, badge: 'Moodle' },
-            { id: 'd2l-hook', name: 'D2L Brightspace Mask', sub: 'Zero focus loss on quiz submissions', icon: MonitorCheck, badge: 'D2L' }
+            { id: 'canvas-hook', name: 'Canvas Quiz Solver', sub: 'Classic and New Quizzes solved inline in 1 click', icon: Layers, badge: 'Canvas' },
+            { id: 'bb-shield', name: 'Blackboard Ultra Helper', sub: 'Double-click answer solve on all test questions', icon: Shield, badge: 'Blackboard' },
+            { id: 'moodle-beacon', name: 'Moodle Quiz Solver', sub: 'Instant inline option selection & full explanation', icon: Lock, badge: 'Moodle' },
+            { id: 'classroom-forms', name: 'Google Classroom & Forms', sub: 'Handles MCQs, multi-selects & short answers', icon: MonitorCheck, badge: 'Forms' }
         ]
     },
     {
-        id: 'proctor',
-        label: 'Proctor Armor',
-        count: '3 tools',
-        bg: '#ffd5cc', // Blush
-        accent: '#e03131',
-        tagline: 'PROCTOR ARMOR · 3 TOOLS',
-        headline: 'Silent WebRTC screen protection, zero process leaks.',
-        description: 'Honorlock and Proctorio monitor background processes and WebRTC screen-shares. ExamGhost routes all graphical rendering off-screen, completely bypassing screen capture hooks.',
-        bullets: [
-            'WebRTC screen-share mask',
-            'Off-screen render buffer',
-            'Isolated Shadow DOM root',
-            'Clean process inspector'
-        ],
-        tools: [
-            { id: 'webrtc-mask', name: 'WebRTC Screen-Share Mask', sub: 'HUD remains invisible on captured video', icon: MonitorCheck, badge: 'Immune' },
-            { id: 'process-cloaker', name: 'Process Cloaker', sub: 'Disguises memory footprint as Chrome tab', icon: Lock, badge: 'Zero Leak' },
-            { id: 'audio-silencer', name: 'Click & Keypress Silencer', sub: 'Dampens audio cues for proctor mics', icon: Zap, badge: 'Whisper' }
-        ]
-    },
-    {
-        id: 'hud',
-        label: 'Ghost HUD',
-        count: '3 tools',
+        id: 'safety',
+        label: 'Privacy & Control',
+        count: '4 safety rules',
         bg: '#bfe9d9', // Teal
         accent: '#0ca678',
-        tagline: 'GHOST HUD · 3 TOOLS',
-        headline: 'Invisible hotkeys, opacity dial, and 10ms emergency kill.',
-        description: 'A floating translucent interface designed to be seen only by you. Dial opacity from 100% down to 5% whisper mode, toggle instantly with ⌘+B, or press Esc to purge memory in 8 milliseconds.',
+        tagline: 'PRIVACY & SAFETY · 4 RULES',
+        headline: 'Off until you switch it on. Zero background activity.',
+        description: 'ExamGhost only acts when you tell it to. It never runs in the background, requires no account to start, and leaves zero traces on your screen. Master shortcut ⌘+Shift+U turns it on and off instantly.',
         bullets: [
-            '0% to 100% opacity slider dial',
-            '10ms emergency panic kill (Esc)',
-            'Customizable stealth hotkeys',
-            'RAM & DOM instant purge'
+            'Off until you switch it on (⌘+Shift+U)',
+            'No account required to start (50 free)',
+            'Closed Shadow DOM container',
+            'Uninstall cleanly in one click'
         ],
         tools: [
-            { id: 'opacity-slider', name: 'Stealth Opacity Dial', sub: 'Adjust from 100% to 5% whisper mode', icon: Eye, badge: '0-100%' },
-            { id: 'panic-key', name: 'Emergency Panic Key (Esc)', sub: 'Purges HUD & RAM buffer in 8ms', icon: Zap, badge: '10ms Kill' },
-            { id: 'ghost-hotkeys', name: 'Native Hotkey Resonance', sub: '⌘+B to toggle, ⌘+Shift+S to scan', icon: KeyRound, badge: 'Native' }
+            { id: 'master-toggle', name: 'Master Shortcut (⌘+Shift+U)', sub: 'Toggle extension on and off in under 50ms', icon: KeyRound, badge: '⌘+Shift+U' },
+            { id: 'no-account', name: 'No Account to Start', sub: '50 free questions immediately upon install', icon: Sparkles, badge: 'Free 50' },
+            { id: 'shadow-dom', name: 'Closed Shadow DOM Container', sub: 'Leaves zero script or CSS footprints on pages', icon: Lock, badge: 'Isolated' },
+            { id: 'clean-uninstall', name: '1-Click Chrome Uninstall', sub: 'Remove anytime with no tangled data or strings', icon: Zap, badge: 'Clean' }
         ]
     }
 ];
@@ -181,15 +159,15 @@ export default function Features() {
                 {/* Section Header */}
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                     <p className="eyebrow justify-center mb-3">
-                        <span className="w-2 h-2 rounded-full bg-ink" />
-                        <span>24 STEALTH TOOLS</span>
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <span>BUILT FOR EXAMS · ZERO COMPLICATION</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        Everything you reach for,<br />
-                        already in the sidebar.
+                        Everything you need to solve,<br />
+                        completely invisible.
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
-                        Click through the categories below to explore how ExamGhost intercepts exam events, solves complex questions, and keeps your test session 100% invisible.
+                        Click through the categories below to explore our 3 display modes, 3 answer delivery methods, Snap-It screenshot solving, and zero-footprint privacy architecture.
                     </p>
                 </div>
 
@@ -237,7 +215,7 @@ export default function Features() {
                                             {activeCategory.label}
                                         </span>
                                     </div>
-                                    <span className="text-[11px] font-semibold text-ink-muted bg-black/5 px-2.5 py-0.5 rounded-full">
+                                    <span className="text-[11px] font-bold text-ink bg-black/10 px-2.5 py-0.5 rounded-full">
                                         {activeCategory.count}
                                     </span>
                                 </div>
@@ -320,12 +298,13 @@ export default function Features() {
                             {/* Dark CTA Button */}
                             <div>
                                 <a
-                                    href="/#pricing"
-                                    className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift inline-flex"
+                                    href="https://discord.gg/aCcsyKYJq4"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift inline-flex items-center gap-2"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
-                                    <span>Get ExamGhost</span>
-                                    <span className="opacity-70 font-normal">· $19.99</span>
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                                    <span>Get Extension</span>
                                 </a>
                             </div>
 

@@ -30,7 +30,7 @@ export default function Community() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="text-blue-100 text-lg mb-8"
                         >
-                            Get direct access to our developers, request new features, and join a community of 50,000+ elite students.
+                            Get direct access to our developers, request new features, and join our active student Discord community.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -40,21 +40,21 @@ export default function Community() {
                             className="space-y-4"
                         >
                             <div className="flex items-center justify-between text-[11px] font-bold text-blue-200 tracking-wider uppercase mb-1">
-                                <span>Lifetime Licenses Left</span>
-                                <span>194/250</span>
+                                <span>Stealth License Status</span>
+                                <span>Immediate Activation</span>
                             </div>
                             <div className="w-full h-3.5 bg-black/20 rounded-full overflow-hidden shadow-inner p-0.5">
                                 <motion.div
                                     className="h-full bg-white rounded-full relative overflow-hidden"
                                     initial={{ width: 0 }}
-                                    whileInView={{ width: "77.6%" }}
+                                    whileInView={{ width: "100%" }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
                                 </motion.div>
                             </div>
-                            <p className="text-xs text-blue-200/80 font-medium">Restocking in 12 days</p>
+                            <p className="text-xs text-blue-200/80 font-medium">Free automatic patch updates included</p>
                         </motion.div>
                     </div>
 
@@ -75,11 +75,11 @@ export default function Community() {
                                 <p className="font-bold text-slate-900 text-[15px] leading-tight mb-0.5">ExamGhost Official</p>
                                 <div className="flex items-center gap-1.5">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] animate-pulse" />
-                                    <p className="text-[12px] text-slate-500 font-semibold tracking-wide uppercase">4,203 Online</p>
+                                    <p className="text-[12px] text-slate-500 font-semibold tracking-wide uppercase">Active Study Server</p>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-[#5865F2]/20 text-[15px] flex items-center justify-center relative overflow-hidden group/btn">
+                        <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-[#5865F2]/20 text-[15px] flex items-center justify-center relative overflow-hidden group/btn">
                             <span className="relative z-10">Join Server</span>
                             <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
                         </a>

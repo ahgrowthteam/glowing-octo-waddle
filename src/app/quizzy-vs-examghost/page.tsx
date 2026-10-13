@@ -72,8 +72,7 @@ export default function QuizzyVsExamghostPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -131,6 +130,8 @@ export default function QuizzyVsExamghostPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -165,7 +166,7 @@ export default function QuizzyVsExamghostPage() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
                         >
-                            <FaChrome className="w-4 h-4 text-mint" />
+                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
                             <span>Get ExamGhost Lifetime — $19.99</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </a>
@@ -187,7 +188,7 @@ export default function QuizzyVsExamghostPage() {
                         <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
                             <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
                             <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-600">Quizzy AI: 4.2s (Quizzy Cloud Processing)</div>
+                            <div className="text-xs text-rose-800">Quizzy AI: 4.2s (Quizzy Cloud Processing)</div>
                         </div>
                         <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
                             <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
@@ -197,7 +198,7 @@ export default function QuizzyVsExamghostPage() {
                         <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
                             <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
                             <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-600">Quizzy AI: Canvas Logs Blurs</div>
+                            <div className="text-xs text-rose-800">Quizzy AI: Canvas Logs Blurs</div>
                         </div>
                     </div>
                 </div>
@@ -240,7 +241,7 @@ export default function QuizzyVsExamghostPage() {
             <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-12">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
+                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
                         <span>Architectural Analysis</span>
                     </div>
                     <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
@@ -255,31 +256,31 @@ export default function QuizzyVsExamghostPage() {
                     {/* Flaws List */}
                     <div className="space-y-4">
                         <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-500" />
+                            <XCircle className="w-5 h-5 text-rose-800" />
                             <span>Documented Limitations of Quizzy AI</span>
                         </h3>
                         <div className="space-y-3">
                             
                             <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
+                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                     Expiring credit limits: Forces students to buy extra credit tokens during finals week when usage peaks.
                                 </p>
                             </div>
                             <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
+                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                     High cloud latency: Visual language models take 4+ seconds to process screenshots.
                                 </p>
                             </div>
                             <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
+                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                     No Focus Shield: Lacks blur event masking, leaving students exposed to Canvas SpeedGrader tab tracking.
                                 </p>
                             </div>
                             <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
+                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                     No Canvas New Quizzes bridge: Fails on modern LMS assessments nested inside LTI iframes.
                                 </p>
@@ -433,7 +434,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-surface">
@@ -443,7 +444,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-cream/40">
@@ -453,7 +454,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-surface">
@@ -463,7 +464,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-cream/40">
@@ -473,7 +474,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-surface">
@@ -483,7 +484,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-cream/40">
@@ -493,7 +494,7 @@ export default function QuizzyVsExamghostPage() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
                                     </td>
                                     <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-500 inline" />
+                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
                                     </td>
                                 </tr>
                                 <tr className="bg-surface">
@@ -575,7 +576,7 @@ export default function QuizzyVsExamghostPage() {
                         <div>
                             <div className="flex justify-between text-xs font-bold text-ink mb-1">
                                 <span>Quizzy AI (Quizzy Cloud Processing)</span>
-                                <span className="text-rose-600">4.2s</span>
+                                <span className="text-rose-800">4.2s</span>
                             </div>
                             <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
                                 <div className="h-full bg-rose-500 rounded-full w-[80%]" />
@@ -632,7 +633,7 @@ export default function QuizzyVsExamghostPage() {
                         Ready to upgrade to undetectable exam stealth?
                     </h2>
                     <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Join thousands of students who traded expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
+                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
                     </p>
                     <a
                         href="https://chromewebstore.google.com/detail/examghost"
@@ -640,7 +641,7 @@ export default function QuizzyVsExamghostPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
                     >
-                        <FaChrome className="w-5 h-5 text-ink" />
+                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
                         <span>Get ExamGhost Lifetime for $19.99</span>
                         <ArrowRight className="w-4 h-4" />
                     </a>
@@ -649,6 +650,8 @@ export default function QuizzyVsExamghostPage() {
                     </div>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

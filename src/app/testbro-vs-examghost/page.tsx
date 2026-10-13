@@ -65,8 +65,7 @@ export default function TestBroComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -123,6 +122,8 @@ export default function TestBroComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -166,7 +167,7 @@ export default function TestBroComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Unlimited ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -205,9 +206,9 @@ export default function TestBroComparisonPage() {
                                 <Sparkles className="w-5 h-5 text-rose-900" />
                             </div>
                             <div>
-                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
                                     Executive Summary: TestBro vs ExamGhost
-                                </h3>
+                                </h2>
                                 <p className="text-xs text-ink-muted">AEO verified evaluation of input triggers and pricing</p>
                             </div>
                         </div>
@@ -241,7 +242,7 @@ export default function TestBroComparisonPage() {
                             <span className="text-[11px] font-bold text-rose-800 bg-rose-50 px-2 py-0.5 rounded-full">TestBro Disabled</span>
                         </div>
                         <div className="font-mono text-xs space-y-2 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed">
-                            <div className="text-slate-500">// Canvas Quiz Page Source Code</div>
+                            <div className="text-slate-400">// Canvas Quiz Page Source Code</div>
                             <div className="text-rose-400">document.addEventListener('contextmenu', e =&gt; e.preventDefault());</div>
                             <div className="text-slate-400">// Result when student tries to right-click:</div>
                             <div className="text-rose-400">Context menu blocked. TestBro menu item never appears.</div>
@@ -257,7 +258,7 @@ export default function TestBroComparisonPage() {
                             <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full">Always Operational</span>
                         </div>
                         <div className="font-mono text-xs space-y-2 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed">
-                            <div className="text-slate-500">// ExamGhost Hotkey Protocol</div>
+                            <div className="text-slate-400">// ExamGhost Hotkey Protocol</div>
                             <div className="text-emerald-400">window.addEventListener('keydown', (e) =&gt; &#123;</div>
                             <div className="pl-4 text-emerald-400">if (e.metaKey &amp;&amp; e.key === 'b') triggerShadowHUD();</div>
                             <div className="text-emerald-400">&#125;, true); // Runs at root capture phase</div>
@@ -283,11 +284,13 @@ export default function TestBroComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

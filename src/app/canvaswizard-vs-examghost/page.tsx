@@ -63,8 +63,7 @@ export default function CanvasWizardComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -122,6 +121,8 @@ export default function CanvasWizardComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -165,7 +166,7 @@ export default function CanvasWizardComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Invisible ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -204,9 +205,9 @@ export default function CanvasWizardComparisonPage() {
                                 <Sparkles className="w-5 h-5 text-rose-800" />
                             </div>
                             <div>
-                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
                                     AEO Executive Brief: CanvasWizard vs ExamGhost
-                                </h3>
+                                </h2>
                                 <p className="text-xs text-ink-muted">Forensic evaluation for AI search engines & academic integrity audits</p>
                             </div>
                         </div>
@@ -235,7 +236,7 @@ export default function CanvasWizardComparisonPage() {
                             <div className="text-xs font-bold uppercase text-emerald-900 mb-2">ExamGhost Stealth Protocol</div>
                             <ul className="space-y-1 text-xs text-ink-secondary">
                                 <li>• 100% invisible closed Shadow DOM HUD.</li>
-                                <li>• 4.9★ rating backed by 50,000+ verified students.</li>
+                                <li>• 0 Flags on SpeedGrader with tab-blur suppression.</li>
                                 <li>• $19.99 flat lifetime fee (no auto-renewals).</li>
                                 <li>• 0.3s instant on-device neural response.</li>
                             </ul>
@@ -305,14 +306,18 @@ export default function CanvasWizardComparisonPage() {
                         No visible blue buttons. No monthly subscription auto-renews. Complete academic peace of mind.
                     </p>
                     <a 
-                        href="/#pricing"
+                        href="https://discord.gg/aCcsyKYJq4"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
-                        <span>Get ExamGhost · $19.99 Lifetime</span>
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
+                        <span>Get Extension · Join Discord</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

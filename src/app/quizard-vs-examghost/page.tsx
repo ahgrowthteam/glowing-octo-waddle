@@ -64,8 +64,7 @@ export default function QuizardComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -91,6 +90,8 @@ export default function QuizardComparisonPage() {
         <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
+
+            <main id="main-content">
 
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
@@ -135,7 +136,7 @@ export default function QuizardComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get STEM-Powered ExamGhost · $19.99 Lifetime</span>
                                 </a>
                             </div>
@@ -167,9 +168,9 @@ export default function QuizardComparisonPage() {
                                 <Sparkles className="w-5 h-5 text-emerald-800" />
                             </div>
                             <div>
-                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
                                     Executive Summary: Quizard vs ExamGhost
-                                </h3>
+                                </h2>
                                 <p className="text-xs text-ink-muted">AEO verified STEM capability & stealth breakdown</p>
                             </div>
                         </div>
@@ -199,11 +200,13 @@ export default function QuizardComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

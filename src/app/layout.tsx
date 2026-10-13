@@ -6,10 +6,74 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://examghost.com'),
-  title: "ExamGhost — All your exam tools, in one invisible box",
-  description: "24 powerful stealth tools for Canvas, Blackboard, Moodle and D2L. Zero SpeedGrader logs, instant AI vision OCR, and 100% undetectable.",
+  title: {
+    default: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+    template: "%s | ExamGhost"
+  },
+  description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ platforms for instant answers right on the page. Screen-share safe, Snap-It sniping OCR, 3 stealth modes, and zero tab-switching.",
+  keywords: [
+    "ai quiz solver",
+    "canvas quiz solver",
+    "blackboard quiz solver",
+    "moodle quiz solver",
+    "brightspace quiz solver",
+    "google classroom quiz solver",
+    "schoology answers",
+    "mcq solver",
+    "ai homework helper",
+    "quiz answer extension",
+    "online exam helper",
+    "double click quiz solver",
+    "snap it quiz solver",
+    "screenshot quiz solver",
+    "draw to solve",
+    "invisible quiz solver",
+    "screen share safe exam helper",
+    "examghost"
+  ],
+  authors: [{ name: "ExamGhost Labs" }],
+  creator: "ExamGhost",
+  publisher: "ExamGhost",
+  alternates: {
+    canonical: "https://examghost.com",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://examghost.com",
+    siteName: "ExamGhost",
+    title: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+    description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
+    images: [
+      {
+        url: "/images/ghost/ghost_mascot_hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ExamGhost — Invisible AI Quiz Solver for Canvas, Blackboard, and Moodle",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+    description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
+    images: ["/images/ghost/ghost_mascot_hero.jpg"],
+    creator: "@examghost",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

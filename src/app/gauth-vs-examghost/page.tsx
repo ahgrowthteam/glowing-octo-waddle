@@ -71,8 +71,7 @@ export default function GauthComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -130,6 +129,8 @@ export default function GauthComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -173,7 +174,7 @@ export default function GauthComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe9d9]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe9d9]"  aria-hidden="true"/>
                                     <span>Get Undetected ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -298,7 +299,7 @@ export default function GauthComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Gauth Phone Camera</span>
-                                <span className="font-mono font-bold text-rose-500">High Risk (Flagged)</span>
+                                <span className="font-mono font-bold text-rose-800">High Risk (Flagged)</span>
                             </div>
                         </div>
 
@@ -310,7 +311,7 @@ export default function GauthComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Gauth ($11.99/mo x 48)</span>
-                                <span className="font-mono font-bold text-rose-500">$575.52</span>
+                                <span className="font-mono font-bold text-rose-800">$575.52</span>
                             </div>
                         </div>
                     </div>
@@ -340,12 +341,12 @@ export default function GauthComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Hardware Requirement</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Zero Phone Needed (On-Device HUD)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Physical Smartphone Camera</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Physical Smartphone Camera</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Webcam Proctoring Safety</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Eyes Centered)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Flagged (Phone Detection & Gaze Drift)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Flagged (Phone Detection & Gaze Drift)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
@@ -365,7 +366,7 @@ export default function GauthComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Pricing Model</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">$11.99/mo or $79.99/yr</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">$11.99/mo or $79.99/yr</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
@@ -380,12 +381,12 @@ export default function GauthComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">0% to 100% Granular Slider</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -407,11 +408,13 @@ export default function GauthComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0d9488]" />
+                        <FaChrome className="w-4 h-4 text-[#0d9488]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

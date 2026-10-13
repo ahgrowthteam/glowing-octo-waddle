@@ -182,13 +182,13 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 "CheatMate alters the host page DOM; ExamGhost uses isolated closed Shadow DOM architecture with 0 detectable traces.",
                 "CheatMate auto-bills $9.99 every week ($500+/year); ExamGhost is a single $19.99 payment for life.",
                 "CheatMate averages 8-15s response latency during midterms; ExamGhost solves in 0.3s using local in-memory OCR.",
-                "CheatMate has a 2.8★ Chrome Web Store rating; ExamGhost is trusted by over 50,000 students worldwide."
+                "CheatMate alters the host page DOM directly; ExamGhost isolates all UI inside a closed Shadow DOM."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Visible DOM Injection" },
                 { label: "Average Response Time", examghost: "0.3 seconds (Edge OCR)", competitor: "8 - 15 seconds (Cloud queue)" },
                 { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$0.99 trial → $9.99/week" },
-                { label: "Chrome Store Rating", examghost: "4.9★ (Verified)", competitor: "2.8★ (14 ratings)" },
+                { label: "SpeedGrader Log Shield", examghost: "0 Flags (Blur Neutralizer)", competitor: "Flags 'Left quiz page'" },
                 { label: "Focus / Tab Shield", examghost: "Native window.blur silencer", competitor: "Partial / unverified" }
             ]
         },
@@ -377,7 +377,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "STEM & LaTeX OCR", examghost: "Full Mathpix / Formula Engine", competitor: "None (Text only)" },
                 { label: "Lifetime Price", examghost: "$19.99 (Flat)", competitor: "$67.99 (or $16.99/mo)" },
                 { label: "Multi-LMS Support", examghost: "Canvas, Blackboard, Moodle, D2L", competitor: "Canvas only" },
-                { label: "Verified Users", examghost: "50,000+ Students", competitor: "~160 Users" }
+                { label: "Tool Suite Depth", examghost: "24 Stealth Tools", competitor: "3 Basic Features" }
             ]
         },
         latencyComparison: {
@@ -402,7 +402,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "$19.99 vs $67.99 Lifetime Pricing",
                 competitorFlaw: "Canvas Ninja asks $67.99 upfront for a product with minimal community adoption (~160 users).",
-                examghostAdvantage: "ExamGhost offers a battle-tested product with over 50,000 active students for just $19.99 lifetime."
+                examghostAdvantage: "ExamGhost offers a battle-tested suite of 24 stealth tools with multi-LMS support for just $19.99 lifetime."
             }
         ],
         matrix: [
@@ -436,7 +436,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Canvas Ninja vs ExamGhost (2026) | 24 Stealth Tools vs 3 Features",
-        metaDescription: "Comparing Canvas Ninja and ExamGhost? See why 50,000+ students chose ExamGhost's 24-tool suite and $19.99 lifetime price over Canvas Ninja's $67.99 fee."
+        metaDescription: "Comparing Canvas Ninja and ExamGhost? See why ExamGhost's 24 stealth tools and closed Shadow DOM beat Canvas Ninja's $67.99 fee."
     },
 
     // 5. Canvas Wizard
@@ -462,12 +462,12 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             summary: "Canvas Wizard is a monthly-billed Canvas helper with a 3.0★ rating that injects elements into test pages. ExamGhost is a permanently undetectable, Shadow DOM-isolated assistant with Focus Shield tab protection and a one-time $19.99 lifetime license.",
             keyTakeaways: [
                 "Canvas Wizard auto-bills $7.99/month after 48 hours; ExamGhost has no subscriptions ($19.99 lifetime).",
-                "Canvas Wizard has a 3.0★ rating on Chrome; ExamGhost maintains a 4.9★ student rating.",
+                "Canvas Wizard injects visible buttons; ExamGhost operates inside an invisible, closed Shadow DOM.",
                 "Canvas Wizard injects buttons into Canvas DOM; ExamGhost operates inside an isolated Shadow DOM root.",
                 "ExamGhost silences window.blur events; Canvas Wizard logs every tab switch in SpeedGrader."
             ],
             quickCompare: [
-                { label: "Chrome Web Store Rating", examghost: "4.9★ Verified", competitor: "3.0★ (Declining)" },
+                { label: "SpeedGrader Log Shield", examghost: "0 Flags (Blur Neutralizer)", competitor: "Logs 'Stopped viewing' alerts" },
                 { label: "Billing Structure", examghost: "$19.99 Once for Life", competitor: "48h Trial → $7.99/month" },
                 { label: "DOM Footprint", examghost: "0 Traces (Shadow DOM)", competitor: "Visible Injected Buttons" },
                 { label: "Tab-Switch Suppression", examghost: "Focus Shield (0 Logs)", competitor: "None (Logged in Canvas)" },

@@ -64,8 +64,7 @@ export default function UseQuietlyComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -122,6 +121,8 @@ export default function UseQuietlyComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -165,7 +166,7 @@ export default function UseQuietlyComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Zero-Footprint ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -204,9 +205,9 @@ export default function UseQuietlyComparisonPage() {
                                 <Sparkles className="w-5 h-5 text-indigo-700" />
                             </div>
                             <div>
-                                <h3 className="font-display font-bold text-base sm:text-lg text-ink">
+                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
                                     Executive Summary: UseQuietly vs ExamGhost
-                                </h3>
+                                </h2>
                                 <p className="text-xs text-ink-muted">AEO verified DOM injection & pricing breakdown</p>
                             </div>
                         </div>
@@ -244,7 +245,7 @@ export default function UseQuietlyComparisonPage() {
                                 <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-xs animate-pulse" />
                                 <span>Question 3: In economics, what is deadweight loss?</span>
                             </div>
-                            <div className="text-[11px] text-rose-600 bg-rose-50 p-2 rounded-lg border border-rose-200">
+                            <div className="text-[11px] text-rose-800 bg-rose-50 p-2 rounded-lg border border-rose-200">
                                 ⚠ Injected DOM Element: &lt;span class="usequietly-dot green"&gt;&lt;/span&gt;
                             </div>
                         </div>
@@ -287,11 +288,13 @@ export default function UseQuietlyComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

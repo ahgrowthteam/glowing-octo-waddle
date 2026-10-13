@@ -63,8 +63,7 @@ export default function CanvasQuizComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -121,6 +120,8 @@ export default function CanvasQuizComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -164,7 +165,7 @@ export default function CanvasQuizComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Undetectable ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -198,7 +199,7 @@ export default function CanvasQuizComparisonPage() {
             <section id="proctor-admission" className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 scroll-mt-24">
                 <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                     <div className="flex items-center gap-3 mb-6 pb-4 border-b border-black/5">
-                        <div className="w-10 h-10 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600 shadow-xs">
+                        <div className="w-10 h-10 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-800 shadow-xs">
                             <AlertCircle className="w-6 h-6" />
                         </div>
                         <div>
@@ -258,7 +259,7 @@ export default function CanvasQuizComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">CanvasQuiz Remote Server</span>
-                                <span className="font-mono font-bold text-rose-500">4.2s - 8.0s</span>
+                                <span className="font-mono font-bold text-rose-800">4.2s - 8.0s</span>
                             </div>
                         </div>
 
@@ -270,7 +271,7 @@ export default function CanvasQuizComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">CanvasQuiz ($79.99/yr x 4)</span>
-                                <span className="font-mono font-bold text-rose-500">$319.96</span>
+                                <span className="font-mono font-bold text-rose-800">$319.96</span>
                             </div>
                         </div>
                     </div>
@@ -300,32 +301,32 @@ export default function CanvasQuizComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Proctorio & Honorlock Stealth</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#cdeecb]/10">✓ 100% Undetectable Shadow DOM</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ Explicitly Fails (Admitted in FAQ)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ Explicitly Fails (Admitted in FAQ)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Page DOM Mutation</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#cdeecb]/10">Zero DOM Mutation (Closed Shadow Root)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">Injects "Get Answer" buttons into questions</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">Injects "Get Answer" buttons into questions</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">SpeedGrader Focus Shield</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#cdeecb]/10">✓ Silences window.blur events</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ Leaks focus departures</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ Leaks focus departures</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Multi-LMS Platform Support</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#cdeecb]/10">✓ Canvas, Blackboard, Moodle, D2L</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ Canvas only</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ Canvas only</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Pricing Model</td>
                                     <td className="py-3.5 px-6 text-center font-extrabold text-emerald-700 bg-[#cdeecb]/10">$19.99 Flat Lifetime</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-600 font-bold">$14.99/mo or $79.99/yr recurring</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-bold">$14.99/mo or $79.99/yr recurring</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Emergency Panic Kill Key</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#cdeecb]/10">✓ ⌘+Q Flash Clear Memory</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ None</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ None</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -371,11 +372,13 @@ export default function CanvasQuizComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

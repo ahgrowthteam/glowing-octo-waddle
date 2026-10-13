@@ -3,36 +3,29 @@
 import React, { useState } from 'react';
 import { 
     Check, Sparkles, CheckCircle2, Shield, Lock, 
-    RefreshCw, EyeOff, Layers, Cpu
+    RefreshCw, EyeOff, Layers, Cpu, MousePointer
 } from 'lucide-react';
 
 export default function QuestionExamples() {
     const [mcState, setMcState] = useState<string | null>(null);
     const [msState, setMsState] = useState<string[]>([]);
-    const [fibState, setFibState] = useState('');
-    const [matchState, setMatchState] = useState<Record<string, string>>({});
-    const [activeQuestionTab, setActiveQuestionTab] = useState<'mc' | 'ms' | 'fib' | 'match'>('mc');
+    const [tfState, setTfState] = useState<'true' | 'false' | null>(null);
+    const [saState, setSaState] = useState('');
+    const [activeQuestionTab, setActiveQuestionTab] = useState<'mc' | 'ms' | 'tf' | 'sa'>('mc');
 
     const handleAutoSolve = () => {
         setMcState('C');
         setMsState(['A', 'C']);
-        setFibState('1');
-        setMatchState({
-            'CO2': 'Reactant',
-            'H2O': 'Electron donor',
-            'O2': 'Byproduct',
-            'C6H12O6': 'Product'
-        });
+        setTfState('true');
+        setSaState('Ionic bonds involve the complete transfer of electrons between atoms to form ions, whereas covalent bonds involve the mutual sharing of valence electrons to achieve stable electron configurations.');
     };
 
     const handleReset = () => {
         setMcState(null);
         setMsState([]);
-        setFibState('');
-        setMatchState({});
+        setTfState(null);
+        setSaState('');
     };
-
-    const matchOptions = ['Reactant', 'Electron donor', 'Byproduct', 'Product'];
 
     return (
         <div className="bg-cream text-ink">
@@ -62,13 +55,13 @@ export default function QuestionExamples() {
                                     {/* Floating Badges */}
                                     <div className="mt-5 flex flex-wrap gap-2 justify-center">
                                         <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
-                                            Zero Telemetry
+                                            No Telemetry
                                         </span>
                                         <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
                                             Closed Shadow DOM
                                         </span>
                                         <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/5 shadow-xs">
-                                            No School Logs
+                                            Screen-Share Safe
                                         </span>
                                     </div>
                                 </div>
@@ -85,14 +78,15 @@ export default function QuestionExamples() {
                                     stays on your device.
                                 </h2>
                                 <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal mb-6">
-                                    ExamGhost does the work locally in an isolated Shadow DOM container. No third-party tracking scripts, zero cookies sent to university exam servers, and no suspicious outbound network packets for school firewalls to inspect.
+                                    ExamGhost does the work locally in an isolated Shadow DOM container. No third-party tracking scripts, zero cookies sent to university exam servers, and no background processes running when you don’t need them.
                                 </p>
 
                                 <div className="space-y-3">
                                     {[
-                                        { title: "Zero DOM Trace", desc: "No HTML classes or IDs injected into the instructor's test document." },
-                                        { title: "Local Memory Purge", desc: "Answers and question hashes are cleared instantly when you close the tab." },
-                                        { title: "Honorlock & Proctorio Cloak", desc: "WebRTC screen captures and background audio streams remain completely unaffected." }
+                                        { title: "Off Until You Switch It On", desc: "Never runs in the background. Toggle instantly with ⌘+Shift+U and off just as fast." },
+                                        { title: "No Account to Start", desc: "Install and use 50 free questions immediately. We only ask for an email if you upgrade." },
+                                        { title: "Nothing on Screen", desc: "Answers apply directly on the page — no new tabs or floating widgets. Screen-share safe by design." },
+                                        { title: "1-Click Clean Uninstall", desc: "Remove it from Chrome any time. Zero leftover data or background hooks." }
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -117,14 +111,14 @@ export default function QuestionExamples() {
                     {/* Section Head */}
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <p className="eyebrow justify-center mb-3">
-                            <span className="w-2 h-2 rounded-full bg-ink" />
-                            <span>COMPREHENSIVE SOLVER</span>
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                            <span>COMPREHENSIVE QUESTION SOLVER</span>
                         </p>
                         <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-4">
-                            Handles every question type.
+                            Handles every question format.
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
-                            Whether your professor uses multiple choice, multi-select checkboxes, formula fill-in, or complex matching tables.
+                            Whether your quiz uses multiple choice, multi-select checkboxes, true/false statements, or typed short answers.
                         </p>
                     </div>
 
@@ -134,8 +128,8 @@ export default function QuestionExamples() {
                             {[
                                 { id: 'mc', label: 'Multiple Choice' },
                                 { id: 'ms', label: 'Multi-Select' },
-                                { id: 'fib', label: 'Fill in Blank' },
-                                { id: 'match', label: 'Matching Table' }
+                                { id: 'tf', label: 'True / False' },
+                                { id: 'sa', label: 'Short Answer' }
                             ].map(tab => (
                                 <button
                                     key={tab.id}
@@ -159,7 +153,7 @@ export default function QuestionExamples() {
                         {activeQuestionTab === 'mc' && (
                             <div>
                                 <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
-                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 1 · Standard MCQ</span>
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 1 · Standard MCQ · Biology</span>
                                     <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">1.0 pt</span>
                                 </div>
                                 <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
@@ -186,7 +180,7 @@ export default function QuestionExamples() {
                                             <span><strong>{opt.id})</strong> {opt.text}</span>
                                             {mcState === opt.id && opt.id === 'C' && (
                                                 <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
-                                                    ✓ Correct (99.9%)
+                                                    ✓ Correct (Auto-Selected)
                                                 </span>
                                             )}
                                         </div>
@@ -199,7 +193,7 @@ export default function QuestionExamples() {
                         {activeQuestionTab === 'ms' && (
                             <div>
                                 <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
-                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 2 · Multi-Select</span>
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 2 · Multi-Select · Physiology</span>
                                     <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">2.0 pts</span>
                                 </div>
                                 <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
@@ -231,7 +225,7 @@ export default function QuestionExamples() {
                                                 <span><strong>[{isSelected ? '✓' : ' '}]</strong> {opt.text}</span>
                                                 {isSelected && isCorrect && (
                                                     <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2 py-0.5 rounded-full">
-                                                        ✓ Target
+                                                        ✓ Correct Selection
                                                     </span>
                                                 )}
                                             </div>
@@ -241,60 +235,68 @@ export default function QuestionExamples() {
                             </div>
                         )}
 
-                        {/* Fill in Blank Tab */}
-                        {activeQuestionTab === 'fib' && (
+                        {/* True / False Tab */}
+                        {activeQuestionTab === 'tf' && (
                             <div>
                                 <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
-                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 3 · Calculus Formula</span>
-                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">1.5 pts</span>
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 3 · True / False · Psychology</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">1.0 pt</span>
                                 </div>
                                 <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
-                                    Evaluate the limit: lim(x→0) [sin(x) / x] = ?
+                                    Classical conditioning was first demonstrated empirically by Ivan Pavlov using salivary conditioning in dogs.
                                 </h3>
-                                <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 mb-6 flex items-center gap-3">
-                                    <span className="text-sm font-semibold text-ink">Answer:</span>
-                                    <input
-                                        type="text"
-                                        value={fibState}
-                                        onChange={(e) => setFibState(e.target.value)}
-                                        placeholder="Type number..."
-                                        className="px-4 py-2 rounded-xl border border-black/15 bg-white text-ink text-sm font-mono w-32 focus:outline-none focus:border-ink"
-                                    />
-                                    {fibState === '1' && (
-                                        <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-3 py-1 rounded-full">
-                                            ✓ Correct Solution Verified
-                                        </span>
-                                    )}
+                                <div className="grid grid-cols-2 gap-3 mb-6">
+                                    {[
+                                        { val: 'true', label: 'True', correct: true },
+                                        { val: 'false', label: 'False', correct: false }
+                                    ].map((item) => (
+                                        <button
+                                            key={item.val}
+                                            onClick={() => setTfState(item.val as any)}
+                                            className={`p-4 rounded-2xl border text-sm font-bold transition-all flex items-center justify-between ${
+                                                tfState === item.val
+                                                    ? item.correct
+                                                        ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink'
+                                                        : 'bg-red-50 border-red-300 text-ink'
+                                                    : 'bg-[#faf8f4] border-black/5 hover:border-black/20 text-ink'
+                                            }`}
+                                        >
+                                            <span>{item.label}</span>
+                                            {tfState === item.val && item.correct && (
+                                                <span className="text-xs font-semibold text-emerald-800 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
+                                                    ✓ Correct
+                                                </span>
+                                            )}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
                         )}
 
-                        {/* Matching Table Tab */}
-                        {activeQuestionTab === 'match' && (
+                        {/* Short Answer / Essay Tab */}
+                        {activeQuestionTab === 'sa' && (
                             <div>
                                 <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-4">
-                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 4 · Matching Matrix</span>
-                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">2.0 pts</span>
+                                    <span className="text-xs font-semibold text-ink-muted uppercase">Question 4 · Short Answer · Chemistry</span>
+                                    <span className="text-xs font-semibold bg-[#f4f1ea] px-2.5 py-0.5 rounded-full">3.0 pts</span>
                                 </div>
                                 <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4">
-                                    Match each molecule involved in photosynthesis to its proper biochemical role:
+                                    In one or two sentences, explain the fundamental difference between an ionic bond and a covalent bond in terms of electron behavior.
                                 </h3>
-                                <div className="space-y-3 mb-6">
-                                    {['CO2', 'H2O', 'O2', 'C6H12O6'].map(mol => (
-                                        <div key={mol} className="p-3 rounded-2xl bg-[#faf8f4] border border-black/5 flex items-center justify-between">
-                                            <span className="text-xs font-mono font-bold text-ink">{mol}</span>
-                                            <select
-                                                value={matchState[mol] || ''}
-                                                onChange={(e) => setMatchState({ ...matchState, [mol]: e.target.value })}
-                                                className="px-3 py-1.5 rounded-xl border border-black/15 bg-white text-xs text-ink focus:outline-none focus:border-ink"
-                                            >
-                                                <option value="">Select role...</option>
-                                                {matchOptions.map(o => (
-                                                    <option key={o} value={o}>{o}</option>
-                                                ))}
-                                            </select>
+                                <div className="mb-6 space-y-2">
+                                    <textarea
+                                        rows={3}
+                                        value={saState}
+                                        onChange={(e) => setSaState(e.target.value)}
+                                        placeholder="Double-click or click Auto-Solve to populate answer..."
+                                        className="w-full p-3.5 rounded-2xl border border-black/15 bg-[#faf8f4] text-xs sm:text-sm text-ink leading-relaxed focus:outline-none focus:border-ink resize-none"
+                                    />
+                                    {saState && (
+                                        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-[#cdeecb]/40 p-2.5 rounded-xl border border-emerald-500/20">
+                                            <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                            <span>Answer formatted for direct submission or clipboard paste</span>
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -303,10 +305,10 @@ export default function QuestionExamples() {
                         <div className="flex items-center justify-between pt-4 border-t border-black/5">
                             <button
                                 onClick={handleAutoSolve}
-                                className="btn-dark px-5 py-2.5 text-xs sm:text-sm"
+                                className="btn-dark px-5 py-2.5 text-xs sm:text-sm flex items-center gap-2"
                             >
-                                <Sparkles className="w-3.5 h-3.5 text-[#ffd23f]" />
-                                <span>Auto-Solve This Question</span>
+                                <MousePointer className="w-3.5 h-3.5 text-emerald-400" />
+                                <span>Double-Click to Solve</span>
                             </button>
                             <button
                                 onClick={handleReset}

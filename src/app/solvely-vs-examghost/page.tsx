@@ -71,8 +71,7 @@ export default function SolvelyComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -130,6 +129,8 @@ export default function SolvelyComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -173,7 +174,7 @@ export default function SolvelyComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#ffe9a0]" />
+                                    <FaChrome className="w-4 h-4 text-[#ffe9a0]"  aria-hidden="true"/>
                                     <span>Get Unlimited ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -298,7 +299,7 @@ export default function SolvelyComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Solvely Free / Entry</span>
-                                <span className="font-mono font-bold text-rose-500">Metered Credits</span>
+                                <span className="font-mono font-bold text-rose-800">Metered Credits</span>
                             </div>
                         </div>
 
@@ -310,7 +311,7 @@ export default function SolvelyComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Solvely ($12.99/mo x 48)</span>
-                                <span className="font-mono font-bold text-rose-500">$623.52</span>
+                                <span className="font-mono font-bold text-rose-800">$623.52</span>
                             </div>
                         </div>
                     </div>
@@ -340,17 +341,17 @@ export default function SolvelyComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Usage Allowance</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Unlimited Solves Forever</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Daily Token Caps & Credit Packs</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Daily Token Caps & Credit Packs</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (SpeedGrader Logs Flags)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (SpeedGrader Logs Flags)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Closed Shadow DOM v1 Sandbox</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Standard Web Extension</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Standard Web Extension</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Answer Latency Benchmark</td>
@@ -360,7 +361,7 @@ export default function SolvelyComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Pricing Model</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">$12.99/mo or $46.99/yr</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">$12.99/mo or $46.99/yr</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Multi-LMS Compatibility</td>
@@ -375,17 +376,17 @@ export default function SolvelyComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">0% to 100% Granular Slider</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Opaque Panel)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Opaque Panel)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility (Honorlock/Proctorio)</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Hardware Overlay)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Flagged (Unshielded Extension)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Flagged (Unshielded Extension)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -407,11 +408,13 @@ export default function SolvelyComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#d97706]" />
+                        <FaChrome className="w-4 h-4 text-[#d97706]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

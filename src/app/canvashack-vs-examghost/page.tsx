@@ -67,8 +67,7 @@ export default function CanvasHackComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -133,6 +132,8 @@ export default function CanvasHackComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -177,7 +178,7 @@ export default function CanvasHackComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Switch to ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -331,10 +332,10 @@ export default function CanvasHackComparisonPage() {
                     <div className="rounded-3xl bg-white border border-rose-200 p-6 shadow-card">
                         <div className="flex items-center justify-between pb-3 mb-4 border-b border-rose-100">
                             <span className="font-mono text-xs font-bold text-rose-700">Canvas Professor SpeedGrader View</span>
-                            <span className="text-[11px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">Flagged Session</span>
+                            <span className="text-[11px] font-bold text-rose-800 bg-rose-50 px-2 py-0.5 rounded-full">Flagged Session</span>
                         </div>
                         <div className="font-mono text-xs space-y-2 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed">
-                            <div className="text-slate-500">// Student session: John D. (CanvasHack active)</div>
+                            <div className="text-slate-400">// Student session: John D. (CanvasHack active)</div>
                             <div>00:04:12 - Viewed Question 1</div>
                             <div className="text-rose-400">00:04:18 - [WARNING] Mouse pointer departed viewport (x: 1920, y: 440)</div>
                             <div className="text-rose-400">00:04:52 - [ANOMALY] 34s zero user activity while question active</div>
@@ -353,7 +354,7 @@ export default function CanvasHackComparisonPage() {
                             <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">100% Clean Session</span>
                         </div>
                         <div className="font-mono text-xs space-y-2 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed">
-                            <div className="text-slate-500">// Student session: Alex M. (ExamGhost active)</div>
+                            <div className="text-slate-400">// Student session: Alex M. (ExamGhost active)</div>
                             <div>00:04:12 - Viewed Question 1</div>
                             <div className="text-emerald-400">00:04:15 - Synthetic micro-movement verified (natural jitter)</div>
                             <div className="text-emerald-400">00:04:16 - Focused question active (document.hasFocus() = true)</div>
@@ -392,7 +393,7 @@ export default function CanvasHackComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Built-in AI Question Solver</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Instant 0.3s On-Screen</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ None (Manual Copy-Paste)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ None (Manual Copy-Paste)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Focus Shield Tab Suppression</td>
@@ -402,37 +403,37 @@ export default function CanvasHackComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Shadow DOM v1 Sandboxing</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Closed Boundary Invisibility</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ Traditional Content Script</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ Traditional Content Script</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Vision OCR for Graphs & Formulas</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Snap-It In-Memory Vision</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ No OCR Support</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ No OCR Support</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">LaTeX Math & Chemistry Solver</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Mathpix Integrated</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ None</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Multi-LMS Platform Coverage</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Canvas, BB, Moodle, D2L</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ Canvas Only</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ Canvas Only</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Emergency Panic Kill Switch</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ Instant ⌘+Q Flash Clear</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ None</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Stealth Opacity Slider</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#bfe3f6]/10">✓ 0% to 100% Ghost Mode</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-semibold">✗ No Visual HUD</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">✗ No Visual HUD</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Pricing Model</td>
                                     <td className="py-3.5 px-6 text-center font-extrabold text-emerald-700 bg-[#bfe3f6]/10">$19.99 Lifetime</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-600 font-bold">$149.99 or $24.99/mo</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-bold">$149.99 or $24.99/mo</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -528,11 +529,13 @@ export default function CanvasHackComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

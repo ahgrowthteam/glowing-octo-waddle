@@ -71,8 +71,7 @@ export default function BetterCampusComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -130,6 +129,8 @@ export default function BetterCampusComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -173,7 +174,7 @@ export default function BetterCampusComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get ExamGhost Stealth · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -237,11 +238,11 @@ export default function BetterCampusComparisonPage() {
                                     <span>Customizable card colors and dashboard fonts.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <XCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                                    <XCircle className="w-4 h-4 text-rose-800 shrink-0 mt-0.5" />
                                     <span>Zero quiz solving or AI question assistance.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <XCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                                    <XCircle className="w-4 h-4 text-rose-800 shrink-0 mt-0.5" />
                                     <span>No Focus Shield blur suppression for Canvas SpeedGrader.</span>
                                 </li>
                             </ul>
@@ -421,11 +422,13 @@ export default function BetterCampusComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0284c7]" />
+                        <FaChrome className="w-4 h-4 text-[#0284c7]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

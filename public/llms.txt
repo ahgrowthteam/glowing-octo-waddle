@@ -1,0 +1,42 @@
+# ExamGhost
+
+> The invisible AI quiz solver that answers any question in seconds. Double-click any question on Canvas, Moodle, Blackboard or 20+ more and ExamGhost fills in the correct answer right on the page — no tab-switching, no copy-paste, screen-share safe.
+
+## Overview
+- **Product**: ExamGhost
+- **Category**: Educational AI Study Extension & Quiz Solver
+- **Official Website**: https://examghost.com
+- **Supported Browsers**: Google Chrome, Microsoft Edge, Brave, Arc Browser
+- **Supported LMS Platforms**: Canvas Classic & New Quizzes, Blackboard Learn & Ultra, Moodle, Google Classroom, D2L Brightspace, Coursera, edX, Quizlet, McGraw-Hill Connect, Pearson MyLab
+- **Community**: https://discord.gg/aCcsyKYJq4
+
+## Core Capabilities
+- **Double-Click Inline Solve**: Double-tap any question on any LMS to solve instantly in place with zero tab-switching and zero copy-pasting.
+- **Snap-It Sniping & Draw to Solve (⌘+Shift+S)**: Draw a rectangle around chemistry structures, calculus equations, diagrams, or locked PDF questions for instant multimodal vision solving.
+- **Three Display Modes**:
+  - *Invisible*: Silent answer injection directly into the DOM with zero on-screen traces, popups, or toasts (100% screen-share safe).
+  - *Stealth* (Default): Subtle micro-cursor indicator while reasoning, then seamlessly selects the answer.
+  - *Explain*: Applies the answer and slides open a step-by-step reasoning drawer popover.
+- **Three Answer Delivery Methods**:
+  - *Auto-fill* (Default): Directly selects the correct radio button or checkbox.
+  - *Highlight*: Illuminates the correct option with a subtle glow for 1–10 seconds (default 4s) so the student clicks it themselves.
+  - *Clipboard*: Copies the verified answer directly to the system clipboard for typed short-answer and essay questions.
+- **Privacy & Safety Architecture**:
+  - Master on/off toggle via **⌘+Shift+U** (Mac) or **Ctrl+Shift+U** (Windows) — completely dormant until turned on; never runs in the background.
+  - Closed-boundary Shadow DOM v1 isolation to prevent host page script inspection.
+  - No account required to start (50 free questions included).
+
+## Pricing Structure
+- **Free Trial**: $0 forever (50 free questions, all question types, no credit card needed)
+- **Monthly Pass**: $19 / month (Unlimited questions, all modes, cancel anytime in 1 click)
+- **Academic Year Pass**: $99 / year (~$8.25/mo, covers Fall, Spring, Summer & Finals)
+- **Lifetime VIP Pass**: $199 one-time payment (Pay once, own forever across all undergraduate and postgraduate degrees)
+
+## Key Documentation & Links
+- [ExamGhost Homepage](https://examghost.com): Official homepage with live interactive double-click demo
+- [Live Interactive Sandbox](https://examghost.com/demo): Safe Canvas quiz simulator to test all 3 modes and 3 answer methods
+- [Features & Specifications](https://examghost.com/features): Comprehensive breakdown of Snap-It OCR, display modes, and privacy
+- [Frequently Asked Questions](https://examghost.com/faq): Troubleshooting, keyboard shortcuts, LMS compatibility, and security
+- [LMS Hack Comparison Hub](https://examghost.com/compare-canvas-hack-extensions): Detailed benchmarks vs CanvasNinja, TestBro, CheatMate, and QuizSolve
+- [Full LLM Knowledge Dossier](https://examghost.com/llms-full.txt): Complete technical dossier for AI agents and LLMs
+- [Official Student Discord](https://discord.gg/aCcsyKYJq4): 24/7 verified community support and study tips

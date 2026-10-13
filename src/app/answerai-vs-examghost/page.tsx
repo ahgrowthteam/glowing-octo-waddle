@@ -72,8 +72,7 @@ export default function AnswerAiComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -131,6 +130,8 @@ export default function AnswerAiComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -174,7 +175,7 @@ export default function AnswerAiComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#cdeecb]" />
+                                    <FaChrome className="w-4 h-4 text-[#cdeecb]"  aria-hidden="true"/>
                                     <span>Get Undetected ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -299,7 +300,7 @@ export default function AnswerAiComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">AnswerAI Remote API</span>
-                                <span className="font-mono font-bold text-rose-500">5.8s</span>
+                                <span className="font-mono font-bold text-rose-800">5.8s</span>
                             </div>
                         </div>
 
@@ -311,7 +312,7 @@ export default function AnswerAiComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">AnswerAI ($14.99/mo x 48)</span>
-                                <span className="font-mono font-bold text-rose-500">$719.52</span>
+                                <span className="font-mono font-bold text-rose-800">$719.52</span>
                             </div>
                         </div>
                     </div>
@@ -341,17 +342,17 @@ export default function AnswerAiComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">STEM & LaTeX Recognition</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Mathpix Neural Engine (99.4% Accuracy)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Generic Mobile OCR (Frequent Errors)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Generic Mobile OCR (Frequent Errors)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (SpeedGrader Logs Tab Switches)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (SpeedGrader Logs Tab Switches)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Closed Shadow DOM v1 Sandbox</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Standard Web Extension</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Standard Web Extension</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Answer Latency Benchmark</td>
@@ -366,22 +367,22 @@ export default function AnswerAiComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility (Honorlock/Proctorio)</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Hardware Overlay)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Flagged (Unshielded Interface)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Flagged (Unshielded Interface)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Pricing Model</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">$14.99/mo or $89.99/yr</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">$14.99/mo or $89.99/yr</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">0% to 100% Granular Slider</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Opaque Panel)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Opaque Panel)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Snap-It Vision Screen Solver</td>
@@ -408,11 +409,13 @@ export default function AnswerAiComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#059669]" />
+                        <FaChrome className="w-4 h-4 text-[#059669]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

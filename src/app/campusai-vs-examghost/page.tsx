@@ -72,8 +72,7 @@ export default function CampusAiComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -131,6 +130,8 @@ export default function CampusAiComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -174,7 +175,7 @@ export default function CampusAiComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Undetected ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -300,7 +301,7 @@ export default function CampusAiComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Campus AI Cloud Flashcards</span>
-                                <span className="font-mono font-bold text-rose-500">5.0s - 8.0s</span>
+                                <span className="font-mono font-bold text-rose-800">5.0s - 8.0s</span>
                             </div>
                         </div>
 
@@ -312,7 +313,7 @@ export default function CampusAiComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Campus AI ($9.99/mo x 48)</span>
-                                <span className="font-mono font-bold text-rose-500">$479.52</span>
+                                <span className="font-mono font-bold text-rose-800">$479.52</span>
                             </div>
                         </div>
                     </div>
@@ -347,12 +348,12 @@ export default function CampusAiComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Logs SpeedGrader Departure)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Logs SpeedGrader Departure)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Closed Shadow DOM v1 Sandbox</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Standard Extension UI</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Standard Extension UI</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Answer Latency Benchmark</td>
@@ -367,12 +368,12 @@ export default function CampusAiComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility (Honorlock/Proctorio)</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Hardware Overlay)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Flagged (Visible Screen Disruption)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Flagged (Visible Screen Disruption)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Pricing Model</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">$9.99/mo or $59.99/yr</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">$9.99/mo or $59.99/yr</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">STEM & LaTeX Equation Recognition</td>
@@ -382,12 +383,12 @@ export default function CampusAiComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">0% to 100% Granular Slider</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Opaque Panel)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Opaque Panel)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -409,11 +410,13 @@ export default function CampusAiComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0284c7]" />
+                        <FaChrome className="w-4 h-4 text-[#0284c7]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

@@ -66,8 +66,7 @@ export default function CheatMateComparisonPage() {
                         "@type": "SoftwareApplication",
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -133,6 +132,8 @@ export default function CheatMateComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -177,7 +178,7 @@ export default function CheatMateComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" />
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]"  aria-hidden="true"/>
                                     <span>Get Undetectable ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -195,7 +196,7 @@ export default function CheatMateComparisonPage() {
                             <div className="w-72 rounded-[32px] bg-white/95 p-6 border border-black/10 shadow-lift">
                                 <div className="text-xs font-mono uppercase text-ink-muted mb-2">Web Store User Score</div>
                                 <div className="flex items-baseline gap-2 mb-2">
-                                    <span className="font-display text-5xl font-black text-rose-600">2.8</span>
+                                    <span className="font-display text-5xl font-black text-rose-800">2.8</span>
                                     <span className="text-xs text-ink-muted">/ 5.0 (CheatMate)</span>
                                 </div>
                                 <div className="flex gap-1 mb-4">
@@ -207,7 +208,7 @@ export default function CheatMateComparisonPage() {
                                     "Billed my card $9.99 every week without warning, and the green button was visible on my Canvas exam!"
                                 </div>
                                 <div className="text-[11px] text-ink-muted text-center border-t border-black/5 pt-2">
-                                    Vs ExamGhost: <strong>4.9★ (50,000+ Students)</strong>
+                                    Vs ExamGhost: <strong>100% Undetectable Shadow DOM</strong>
                                 </div>
                             </div>
                         </div>
@@ -276,10 +277,10 @@ export default function CheatMateComparisonPage() {
                     <div className="rounded-3xl bg-white border border-rose-200 p-6 shadow-card">
                         <div className="flex items-center justify-between pb-3 mb-4 border-b border-rose-100">
                             <span className="font-mono text-xs font-bold text-rose-700">CheatMate / Study Buddy DOM Tree</span>
-                            <span className="text-[11px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">Vulnerable</span>
+                            <span className="text-[11px] font-bold text-rose-800 bg-rose-50 px-2 py-0.5 rounded-full">Vulnerable</span>
                         </div>
                         <div className="font-mono text-xs space-y-1 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed overflow-x-auto">
-                            <div className="text-slate-500">&lt;!-- Canvas Question Element --&gt;</div>
+                            <div className="text-slate-400">&lt;!-- Canvas Question Element --&gt;</div>
                             <div>&lt;div class="quiz-question"&gt;</div>
                             <div className="pl-4">&lt;p&gt;What is the derivative of sin(x)?&lt;/p&gt;</div>
                             <div className="pl-4 text-rose-400 bg-rose-950/40 py-1 px-2 rounded">
@@ -300,7 +301,7 @@ export default function CheatMateComparisonPage() {
                             <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">100% Undetectable</span>
                         </div>
                         <div className="font-mono text-xs space-y-1 bg-[#1e1e1e] text-slate-300 p-4 rounded-2xl mb-4 leading-relaxed overflow-x-auto">
-                            <div className="text-slate-500">&lt;!-- Canvas Question Element Untouched --&gt;</div>
+                            <div className="text-slate-400">&lt;!-- Canvas Question Element Untouched --&gt;</div>
                             <div>&lt;div class="quiz-question"&gt;</div>
                             <div className="pl-4">&lt;p&gt;What is the derivative of sin(x)?&lt;/p&gt;</div>
                             <div>&lt;/div&gt;</div>
@@ -374,37 +375,37 @@ export default function CheatMateComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Stealth Architecture</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">Closed Shadow DOM v1 (Zero DOM Footprint)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">Standard Content Script (Injects HTML Buttons)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">Standard Content Script (Injects HTML Buttons)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Focus Shield Tab Suppression</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">✓ 100% Native Blur Masking</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ Leaks Tab Blur Events to Canvas</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ Leaks Tab Blur Events to Canvas</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Answer Latency</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">0.3s (On-Device Neural Edge)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">12.4s (Remote Server OCR Queue)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">12.4s (Remote Server OCR Queue)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Pricing Model</td>
                                     <td className="py-3.5 px-6 text-center font-extrabold text-emerald-700 bg-[#c4d0f8]/10">$19.99 Lifetime</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-600 font-bold">$9.99/week ($519.48/year)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-bold">$9.99/week ($519.48/year)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-medium text-ink">Chrome Web Store Rating</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">4.9 / 5.0 (1,840+ Reviews)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">2.8 / 5.0 (Hundreds of 1★ Reviews)</td>
+                                    <td className="py-3.5 px-6 font-medium text-ink">Stealth Architecture</td>
+                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">Closed Shadow DOM (0 Flags)</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">Injected Host Page Buttons</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Emergency Panic Switch</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">✓ ⌘+Q Flash Clear Memory Buffer</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ None</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-3.5 px-6 font-medium text-ink">Proctoring Compatibility</td>
                                     <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-[#c4d0f8]/10">✓ Undetectable under Proctorio & Honorlock</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-500 font-medium">✗ MutationObserver Flags Triggered</td>
+                                    <td className="py-3.5 px-6 text-center text-rose-800 font-medium">✗ MutationObserver Flags Triggered</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -483,17 +484,21 @@ export default function CheatMateComparisonPage() {
                         Switch to ExamGhost for $19.99.
                     </h2>
                     <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-                        Join over 50,000 students using true closed Shadow DOM protection. No weekly charges. No detectable buttons.
+                        Get true closed Shadow DOM protection. No weekly charges. No detectable buttons.
                     </p>
                     <a 
-                        href="/#pricing"
+                        href="https://discord.gg/aCcsyKYJq4"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#0077b6]" />
-                        <span>Get ExamGhost · $19.99 Lifetime</span>
+                        <FaChrome className="w-4 h-4 text-[#0077b6]"  aria-hidden="true"/>
+                        <span>Get Extension · Join Discord</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

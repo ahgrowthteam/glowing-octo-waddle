@@ -73,8 +73,7 @@ export default function MindkoComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" },
-                        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -140,6 +139,8 @@ export default function MindkoComparisonPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
+            <main id="main-content">
+
             {/* Breadcrumb Navigation */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
@@ -183,7 +184,7 @@ export default function MindkoComparisonPage() {
                                     href="/#pricing"
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#fed7aa]" />
+                                    <FaChrome className="w-4 h-4 text-[#fed7aa]"  aria-hidden="true"/>
                                     <span>Get Undetected ExamGhost · $19.99 Lifetime</span>
                                 </a>
                                 <a 
@@ -312,7 +313,7 @@ export default function MindkoComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Mindko Remote Cloud Server</span>
-                                <span className="font-mono font-bold text-rose-500">4.5s - 7.5s</span>
+                                <span className="font-mono font-bold text-rose-800">4.5s - 7.5s</span>
                             </div>
                         </div>
 
@@ -324,7 +325,7 @@ export default function MindkoComparisonPage() {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-ink-muted">Mindko ($19.99/mo x 48)</span>
-                                <span className="font-mono font-bold text-rose-500">$959.52</span>
+                                <span className="font-mono font-bold text-rose-800">$959.52</span>
                             </div>
                         </div>
                     </div>
@@ -354,17 +355,17 @@ export default function MindkoComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">DOM Isolation Architecture</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Closed Shadow DOM v1 Sandbox</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Open Host Page DOM Injection</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Open Host Page DOM Injection</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Logs 'Stopped viewing quiz')</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Logs 'Stopped viewing quiz')</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Pricing Model</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">$12.99 - $19.99 / Month Recurring</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">$12.99 - $19.99 / Month Recurring</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Answer Latency Benchmark</td>
@@ -379,7 +380,7 @@ export default function MindkoComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Proctoring Compatibility (Honorlock/Proctorio)</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">100% Undetected (Hardware Overlay)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">Flagged by DOM Mutation Scanners</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">Flagged by DOM Mutation Scanners</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">STEM & LaTeX Equation Recognition</td>
@@ -389,12 +390,12 @@ export default function MindkoComparisonPage() {
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">0% to 100% Granular Control</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None (Fixed Opaque UI)</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None (Fixed Opaque UI)</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Emergency Panic Switch</td>
                                     <td className="py-4 px-6 text-center font-bold text-emerald-600 bg-emerald-50/20">Instant Escape Flush (0ms)</td>
-                                    <td className="py-4 px-6 text-center text-rose-600">None</td>
+                                    <td className="py-4 px-6 text-center text-rose-800">None</td>
                                 </tr>
                                 <tr className="hover:bg-[#fcf9f5]">
                                     <td className="py-4 px-6 font-semibold text-ink">Tool Count Included</td>
@@ -508,11 +509,13 @@ export default function MindkoComparisonPage() {
                         href="/#pricing"
                         className="btn-dark bg-white text-ink hover:bg-[#f4f1ea] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                     >
-                        <FaChrome className="w-4 h-4 text-[#ea580c]" />
+                        <FaChrome className="w-4 h-4 text-[#ea580c]"  aria-hidden="true"/>
                         <span>Get ExamGhost · $19.99 Lifetime</span>
                     </a>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

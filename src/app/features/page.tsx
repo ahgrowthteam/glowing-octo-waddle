@@ -219,8 +219,9 @@ export default function FeaturesPage() {
         <div className="min-h-screen bg-cream text-ink">
             <Navbar />
 
-            {/* Hero Banner (OneMacApp Style) */}
-            <section className="pt-24 sm:pt-32 pb-16 bg-cream border-b border-black/5 relative overflow-hidden">
+            <main id="main-content">
+                {/* Hero Banner (OneMacApp Style) */}
+                <section className="pt-24 sm:pt-32 pb-16 bg-cream border-b border-black/5 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
@@ -270,7 +271,8 @@ export default function FeaturesPage() {
             </section>
 
             {/* Features Cards Grid (OneMacApp Pastel Aesthetic) */}
-            <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+            <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6" aria-labelledby="features-catalog-heading">
+                <h2 id="features-catalog-heading" className="sr-only">Features Catalog</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredFeatures.map((feat, idx) => {
                         const Icon = feat.icon;
@@ -362,6 +364,7 @@ export default function FeaturesPage() {
                     </div>
                 </div>
             </section>
+            </main>
 
             <Footer />
         </div>

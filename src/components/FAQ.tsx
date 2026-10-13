@@ -8,36 +8,48 @@ export default function FAQ() {
 
     const faqs = [
         {
-            q: "Does ExamGhost bypass Canvas quiz audit logs?",
-            a: "Yes. When you take a Canvas quiz, Canvas listens for window 'blur' and 'visibilitychange' events. Every time you leave the page, Canvas logs: 'Stopped viewing the Canvas quiz-taking page'. ExamGhost intercepts these browser listeners at the DOM level, ensuring Canvas continues receiving an uninterrupted 'active' heartbeat. Your professor's log shows zero suspicious leaves."
+            q: "What is ExamGhost?",
+            a: "ExamGhost is an invisible AI quiz solver Chrome extension that helps students answer questions inline. Double-click any question on Canvas, Moodle, Blackboard, or 20+ other platforms and ExamGhost fills in the correct answer right on the page — with no tab-switching, no copy-pasting, and zero on-screen traces."
         },
         {
-            q: "Can Canvas or professors see when I switch tabs or use split screen?",
-            a: "No. Because ExamGhost blocks tab-switch event emission, Canvas cannot detect whether you have split screen active, another browser window open, or background tabs running. To the Canvas server, your quiz tab remains in focus the entire duration."
+            q: "How does double-click solving work?",
+            a: "Open your exam on any supported platform, ensure ExamGhost is toggled on (⌘+Shift+U), and double-click any question. ExamGhost reads the question text and options directly from the page DOM and highlights or auto-fills the correct answer in under a second. Need step-by-step reasoning? Shift + double-click opens a full explanation drawer."
         },
         {
-            q: "How does ExamGhost solve questions without copy-pasting?",
-            a: "You never need to copy, paste, or switch windows. Simply press your secret keyboard shortcut (⌘ + Shift + X or Ctrl + Shift + X) or double-tap the question. ExamGhost reads the question text and options directly from the page DOM and highlights the correct answer in under 1.2 seconds."
+            q: "What are the 3 display modes?",
+            a: "ExamGhost has three display modes you can pick in one click from the extension popup: Invisible applies the answer with nothing shown on screen (0 cursor, 0 overlay, 100% screen-share safe); Stealth (the default) shows a quiet micro-cursor while solving, then applies the answer; Explain applies the answer and displays a full step-by-step reasoning drawer."
         },
         {
-            q: "Can it solve math equations, chemistry diagrams, and locked questions?",
-            a: "Yes! Using Snap-It (⌘ + Shift + S), you can drag a crosshair crop box around any mathematical graph, organic chemistry molecular structure, or locked image on your screen. Our multimodal vision AI reads the image and returns the solution with step-by-step reasoning."
+            q: "What are the 3 answer methods?",
+            a: "Independent of your display mode, choose how the answer lands on your quiz: Auto-fill selects the right choice directly on the page; Highlight glows on the correct option for 1–10 seconds (default 4s) so you click it yourself; Clipboard silently copies the answer so you can paste it into short-answer or essay fields."
         },
         {
-            q: "Does it work on Canvas New Quizzes and Classic Quizzes?",
-            a: "Yes. ExamGhost supports both Canvas Classic Quizzes and Canvas New Quizzes, as well as Blackboard Learn & Ultra, D2L Brightspace, Moodle, McGraw-Hill Connect, Pearson MyLab, and Google Classroom."
+            q: "Can ExamGhost solve image-based questions and locked content?",
+            a: "Yes! Using Snap-It Sniping (⌘+Shift+S or right-click → Solve with Screenshot), you can draw a crop box around any mathematical graph, calculus integral, organic chemistry diagram, or scanned PDF worksheet. Our multimodal vision AI reads the image and returns the solution with step-by-step reasoning."
         },
         {
-            q: "What is the Stealth Opacity Dial (⌘ + B)?",
-            a: "You can adjust the HUD opacity from 100% visible to 5% ghost whisper mode. At 5%, answers are only visible when viewed straight-on from inches away, making it completely impossible for teachers walking behind you to notice anything on your screen."
+            q: "What platforms does ExamGhost work on?",
+            a: "ExamGhost works on all major LMS platforms including Canvas (Classic and New Quizzes), Blackboard Learn & Ultra, Moodle, Google Classroom, D2L Brightspace, and Schoology, as well as homework platforms like Coursera, edX, Quizlet, McGraw-Hill Connect, Pearson MyLab, and Google Forms — plus any quiz site that runs in Chrome."
         },
         {
-            q: "Is it safe from screen-share or proctoring extensions?",
-            a: "ExamGhost is engineered with Shadow DOM isolation. Visual overlays are rendered in a protected UI layer that does not inject script artifacts into the school's webpage, keeping your activity discreet, sandboxed, and private."
+            q: "How do I turn ExamGhost on and off?",
+            a: "The extension stays completely dormant until you activate it — it never runs background scripts or polling loops. Toggle it instantly using ⌘+Shift+U (Ctrl+Shift+U on Windows) or click the extension toolbar icon. Screenshot Solve is ⌘+Shift+S (Ctrl+Shift+S on Windows)."
+        },
+        {
+            q: "Why not just use ChatGPT?",
+            a: "Because switching tabs or copying and pasting during an exam is slow, stressful, and easily detected by proctoring software. ChatGPT requires opening a new tab, copying the question, pasting it, waiting, and switching back. ExamGhost answers directly on the exam page in two clicks without leaving the window."
+        },
+        {
+            q: "Is ExamGhost free to start?",
+            a: "Yes! Every student gets 50 free question solves immediately upon installing the extension. No credit card or billing details are required. You can test all 3 display modes, all 3 answer delivery methods, and Snap-It Vision OCR before deciding whether to upgrade."
+        },
+        {
+            q: "What pricing plans do you offer?",
+            a: "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access across your undergraduate and graduate degrees). All paid plans include unlimited question solves and priority speed."
         },
         {
             q: "What is your refund policy?",
-            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 14 days for a hassle-free, immediate refund."
+            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 14 days for a prompt, hassle-free refund."
         }
     ];
 

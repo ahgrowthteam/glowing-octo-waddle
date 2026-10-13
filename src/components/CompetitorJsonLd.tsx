@@ -7,7 +7,7 @@ interface CompetitorJsonLdProps {
 
 export default function CompetitorJsonLd({ competitor }: CompetitorJsonLdProps) {
     const pageUrl = `https://examghost.com/${competitor.slug}`;
-    const hubUrl = `https://examghost.com/compare`;
+    const hubUrl = `https://examghost.com/compare-canvas-hack-extensions`;
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -33,19 +33,37 @@ export default function CompetitorJsonLd({ competitor }: CompetitorJsonLdProps) 
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "Offer",
-                            "price": "19.99",
-                            "priceCurrency": "USD",
-                            "availability": "https://schema.org/InStock"
-                        },
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": "1840",
-                            "bestRating": "5",
-                            "worstRating": "1"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Trial",
+                                "price": "0",
+                                "priceCurrency": "USD",
+                                "description": "50 Free Question Solves, no credit card required",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Yearly Academic Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime VIP Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
