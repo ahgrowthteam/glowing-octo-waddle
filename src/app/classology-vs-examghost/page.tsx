@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_hud.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Classology AI vs ExamGhost Review",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Classology AI vs ExamGhost (2026 Technical Review)",
         description: "Classology AI's wide sidebar leaks your exam focus. Learn how ExamGhost provides 100% undetected stealth for $19.99 lifetime.",
-        images: ["/images/ghost/ghost_card_hud.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_stealth.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Canvas Scholar vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Canvas Scholar vs ExamGhost (2026 Comparison) | Multimodal AI vs Basic Scraper",
         description: "Canvas Scholar is a basic DOM scraper. ExamGhost is a neural multimodal exam solver.",
-        images: ["/images/ghost/ghost_card_stealth.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

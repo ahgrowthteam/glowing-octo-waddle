@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_privacy.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Mindko vs ExamGhost Review",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Mindko vs ExamGhost (2026 Technical Review)",
         description: "Mindko charges $19.99/mo for an extension that leaks your window blur. Learn how ExamGhost provides 100% undetected stealth for $19.99 lifetime.",
-        images: ["/images/ghost/ghost_privacy.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

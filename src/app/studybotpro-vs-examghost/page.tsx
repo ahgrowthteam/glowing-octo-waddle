@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_proctor.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "StudyBotPro vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "StudyBotPro vs ExamGhost (2026 Technical Review)",
         description: "StudyBotPro auto-click hazards vs ExamGhost closed Shadow DOM. Full technical teardown.",
-        images: ["/images/ghost/ghost_card_proctor.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

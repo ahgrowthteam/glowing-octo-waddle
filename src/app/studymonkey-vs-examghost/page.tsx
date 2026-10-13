@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_stealth.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "StudyMonkey vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "StudyMonkey vs ExamGhost (2026 Comparison) | 0.3s Direct Exam Solver vs 6s Chatbot",
         description: "StudyMonkey gives 6-second tutoring lectures. ExamGhost delivers 0.3s exam answers.",
-        images: ["/images/ghost/ghost_card_stealth.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

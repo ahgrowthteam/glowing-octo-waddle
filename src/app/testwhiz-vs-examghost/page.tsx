@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_stealth.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "TestWhiz vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
         description: "TestWhiz is a bloated study assistant. ExamGhost is a precision 0.3s exam stealth engine.",
-        images: ["/images/ghost/ghost_card_stealth.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

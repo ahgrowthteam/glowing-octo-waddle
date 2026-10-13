@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_stealth.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Quizzy AI vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
         description: "Stop rationing Quizzy credit packs. Get unlimited 0.3s solves with ExamGhost.",
-        images: ["/images/ghost/ghost_card_stealth.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

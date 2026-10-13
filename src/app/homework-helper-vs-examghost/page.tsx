@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_ai.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Homework Helper+ vs ExamGhost Review",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Homework Helper+ vs ExamGhost (2026 Technical Review)",
         description: "Homework Helper+ right-click lockout vs ExamGhost hotkey stealth. Full technical teardown.",
-        images: ["/images/ghost/ghost_card_ai.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

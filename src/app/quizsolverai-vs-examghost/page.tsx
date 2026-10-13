@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_ai.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "QuizSolver AI vs ExamGhost Review",

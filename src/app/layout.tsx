@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
     images: [
       {
-        url: "/images/ghost/ghost_mascot_hero.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ExamGhost — Invisible AI Quiz Solver for Canvas, Blackboard, and Moodle",
+        alt: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
     description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
-    images: ["/images/ghost/ghost_mascot_hero.jpg"],
+    images: ["/og-image.jpg"],
     creator: "@examghost",
   },
   robots: {

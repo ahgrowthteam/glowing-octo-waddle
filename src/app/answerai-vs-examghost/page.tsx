@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "ExamGhost",
         images: [
             {
-                url: "/images/ghost/ghost_card_vision.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "AnswerAI vs ExamGhost Review",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "AnswerAI vs ExamGhost (2026 Technical Review)",
         description: "AnswerAI mobile port vs ExamGhost desktop STEM stealth. Full technical teardown.",
-        images: ["/images/ghost/ghost_card_vision.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 

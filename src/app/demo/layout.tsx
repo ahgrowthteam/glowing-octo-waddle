@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         description: "Test double-click quiz solving live on a simulated Canvas exam. Zero install required.",
         images: [
             {
-                url: "/images/ghost/ghost_mascot_hero.jpg",
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "ExamGhost Live Interactive Demo Sandbox",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Try ExamGhost — Live Interactive Quiz Solver Demo (No Install)",
         description: "Test double-click quiz solving live on a simulated Canvas exam. Zero install required.",
-        images: ["/images/ghost/ghost_mascot_hero.jpg"],
+        images: ["/og-image.jpg"],
     },
 };
 
