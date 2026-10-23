@@ -1,57 +1,58 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
+import {
+    ShieldCheck,
+    ShieldAlert,
+    Zap,
+    Star,
+    ChevronDown,
+    ArrowRight,
+    Sparkles,
+    Lock,
     CheckCircle2,
-    XCircle,
     EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
+    Headphones,
     FileText,
-    BookOpen,
-    ExternalLink
+    Layers,
+    Camera,
+    MousePointerClick,
+    Terminal,
+    KeyRound,
+    Eye
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: "Coursology vs ExamGhost (2026 Comparison) | Stealth HUD vs $150/Yr Sidebar",
-    description: "Comparing Coursology and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and $19.99 lifetime plan over Coursology's $150/year subscription.",
+    title: {
+        absolute: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
+    },
+    description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/coursology-vs-examghost",
     },
     openGraph: {
-        title: "Coursology vs ExamGhost (2026 Comparison) | Stealth HUD vs $150/Yr Sidebar",
-        description: "Coursology is a well-known study assistant with 500k+ students, but its injected buttons and unshielded side panel trigger Canvas SpeedGrader blur events and leave identifiable DOM fingerprints. ExamGhost sandboxes its compact HUD in a closed Shadow DOM for true exam stealth.",
+        title: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
+        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
         url: "https://examghost.com/coursology-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Coursology vs ExamGhost Review",
+                alt: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Coursology vs ExamGhost (2026 Comparison) | Stealth HUD vs $150/Yr Sidebar",
-        description: "Coursology charges $150/year for visible sidebars. ExamGhost delivers 0.3s Shadow DOM stealth for $19.99 lifetime.",
+        title: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
+        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
@@ -62,10 +63,16 @@ export default function CoursologyVsExamghostPage() {
         "@graph": [
             {
                 "@type": "WebPage",
+                "datePublished": "2026-02-18",
+                "dateModified": "2026-03-15",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
                 "@id": "https://examghost.com/coursology-vs-examghost#webpage",
                 "url": "https://examghost.com/coursology-vs-examghost",
-                "name": "Coursology vs ExamGhost (2026 Comparison) | Stealth HUD vs $150/Yr Sidebar",
-                "description": "Comparing Coursology and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and $19.99 lifetime plan over Coursology's $150/year subscription.",
+                "name": "Coursology vs ExamGhost (2026 Comparison) | Study Podcasts vs Invisible 0.3s Quiz Solver",
+                "description": "Technical and workflow comparison between Coursology (coursology.com) and ExamGhost for Canvas, Blackboard, Moodle, and D2L Brightspace assessments.",
                 "breadcrumb": { "@id": "https://examghost.com/coursology-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -73,14 +80,19 @@ export default function CoursologyVsExamghostPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
                         "name": "Coursology",
+                        "url": "https://coursology.com",
                         "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome Extension",
-                        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
+                        "operatingSystem": "Chrome Extension, iOS, Android, Web"
                     }
                 ]
             },
@@ -89,7 +101,7 @@ export default function CoursologyVsExamghostPage() {
                 "@id": "https://examghost.com/coursology-vs-examghost#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
                     { "@type": "ListItem", "position": 3, "name": "Coursology vs ExamGhost", "item": "https://examghost.com/coursology-vs-examghost" }
                 ]
             },
@@ -99,26 +111,34 @@ export default function CoursologyVsExamghostPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Can professors detect Coursology on Canvas?",
+                        "name": "What is the main difference between Coursology and ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Coursology injects button elements into the webpage DOM and does not block window.blur events. When you interact with the Coursology sidebar, Canvas SpeedGrader logs an activity departure."
+                            "text": "Coursology (coursology.com) is a broad coursework and study app built around uploading class slides to generate 'Coursey' AI podcasts, flashcards, lecture transcriptions, and humanized discussion board drafts. ExamGhost is a specialized, screen-share-safe exam and quiz solver engineered specifically for timed assessments on Canvas, Blackboard, Moodle, and D2L, operating inside a closed Shadow DOM with Focus Shield blur protection."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Why is ExamGhost better than Coursology?",
+                        "name": "Can Canvas SpeedGrader detect Coursology's Chrome extension during a timed quiz?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost operates in a completely closed Shadow DOM, intercepts tab-blur events with Focus Shield, and costs $19.99 once for life instead of Coursology's $149.99/year subscription."
+                            "text": "Coursology's 'Find Answers on Chrome' and 'Snapshot' tools inject visible answer cards (including 'Rate us' and 'Explanation' boxes) directly into the host page DOM and do not intercept window.blur or visibilitychange telemetry when interacting with external popups. ExamGhost renders exclusively inside a closed Shadow DOM root and uses Focus Shield to neutralize window.blur and tab-switch logs."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Does ExamGhost support Canvas New Quizzes and Blackboard?",
+                        "name": "How does Coursology pricing compare to ExamGhost pricing?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. ExamGhost supports Canvas Classic Quizzes, Canvas New Quizzes (LTI iframes), Blackboard Ultra, McGraw Hill Connect, and Pearson MyLab out of the box."
+                            "text": "Coursology requires a recurring subscription (~$19.99–$24.99/mo) to unlock unlimited Chrome answers, discussion drafting, and AI humanizer credits. ExamGhost lets you test 50 Free Question Solves immediately with no credit card required, and offers transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Should I use Coursology and ExamGhost for different parts of my semester?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. If you want to turn recorded Panopto lectures into commuter podcasts or draft cited essays with JSTOR links, Coursology's web dashboard is built for that. When taking live, timed quizzes or midterms on Canvas Classic, Canvas New Quizzes (LTI 1.3), Blackboard, or McGraw-Hill Connect, ExamGhost's double-click inline solver and Snap-It OCR keep your SpeedGrader activity logs 100% clean."
                         }
                     }
                 ]
@@ -127,622 +147,542 @@ export default function CoursologyVsExamghostPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
+        <div className="min-h-screen bg-cream text-ink selection:bg-mint selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">Coursology vs ExamGhost</span>
-                </nav>
-            </div>
-
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 Coursology Alternative</span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        Coursology charges $150/year for visible sidebars. ExamGhost delivers 0.3s Shadow DOM stealth for $19.99 lifetime.
-                    </h1>
-
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        Coursology is a well-known study assistant with 500k+ students, but its injected buttons and unshielded side panel trigger Canvas SpeedGrader blur events and leave identifiable DOM fingerprints. ExamGhost sandboxes its compact HUD in a closed Shadow DOM for true exam stealth.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-                        <a
-                            href="https://chromewebstore.google.com/detail/examghost"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
-                        >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
-                    </div>
-
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Once</div>
-                            <div className="text-xs text-ink-muted line-through">Coursology: $24.99/mo or $149.99/yr</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">Coursology: 3.2s (Coursology Cloud Overhead)</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">Coursology: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">Coursology: Canvas Logs Blurs</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace Coursology with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            Coursology is a broad study platform charging high recurring fees with visible DOM injection. ExamGhost offers true closed Shadow DOM sandboxing, zero-blur Focus Shield immunity, and flat $19.99 lifetime pricing.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                            
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Coursology costs $149.99 every year; ExamGhost is a single $19.99 one-time payment for life.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Coursology injects visible buttons on quiz pages; ExamGhost remains 100% invisible inside a closed Shadow DOM.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>ExamGhost solves questions in 0.3s edge inference vs Coursology&apos;s 3.2s cloud round-trip.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        Coursology&apos;s Flaws: $150/Year Recurring Fees, Injected DOM Buttons & Tab Blur Leaks
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        Coursology injects visible buttons directly into quiz DOM elements and operates an unshielded side panel that fails to mask window.blur events on Canvas and Blackboard.
-                    </p>
+                {/* Breadcrumb */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-4">
+                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-ink-muted">
+                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                        <span>/</span>
+                        <span className="text-ink font-bold">Coursology vs ExamGhost</span>
+                    </nav>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of Coursology</span>
-                        </h3>
-                        <div className="space-y-3">
-                            
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Injected DOM buttons: Injects .coursology-btn elements directly into LMS markup, easily inspected by proctoring scripts.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Leaks tab focus: Opening the Coursology side panel triggers window.blur events in Canvas SpeedGrader activity logs.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    High recurring cost: $24.99/month or $149.99/year drains student budgets semester after semester.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No emergency purge: Lacks an instant RAM sanitize shortcut to eliminate browser memory signatures during surprise inspections.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Coursology: Injected Button Elements & Focus Blur
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Injects button element directly into question DOM:</div>
-                                <div className="text-rose-300">const btn = document.createElement(&quot;div&quot;);</div>
-                                <div className="text-rose-300">btn.className = &quot;coursology-btn-solve&quot;;</div>
-                                <div className="text-rose-300">questionContainer.appendChild(btn); // Flagged by LMS querySelector</div>
-                                <div className="text-rose-300">// 2. Sidebar steals window focus:</div>
-                                <div className="text-rose-300">window.onblur = () =&gt; SpeedGrader.log(&quot;Student left quiz tab&quot;);</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> Coursology injects visible buttons into host DOM elements and opens an unshielded sidebar that immediately fires window.blur events in Canvas.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield suppresses blur events:</div>
-                                <div className="text-emerald-300">window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                                <div className="text-emerald-400 mt-2">// 3. Mathpix Neural OCR: 0.3s edge inference</div>
-                                <div className="text-emerald-300">const ans = await EdgeSolver.solve(mathpixTokens); // 280ms</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Guarantee:</strong> Your host page DOM remains 100% unaltered. SpeedGrader logs continuous, unbroken exam presence with zero blur notifications.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* 3 Technical Deep Dives */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
+                {/* ============================================================
+                    UNIQUE HERO: VISUAL SCREEN SIMULATION (INJECTED CARD VS STEALTH)
+                ============================================================ */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+                    <div className="rounded-[36px] sm:rounded-[44px] bg-white border border-black/10 p-6 sm:p-10 md:p-14 shadow-card relative overflow-hidden">
                         
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Injected Buttons vs Closed Shadow DOM Sandboxing
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Coursology Flaw:</span>
-                                        Coursology injects custom button elements into the host page DOM to let users trigger solves. Any automated LMS script or proctoring extension can query document.querySelectorAll(&apos;.coursology-btn&apos;) to instantly flag the student.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost uses a closed Shadow DOM container completely isolated from host page script execution. Document query selectors return zero elements, maintaining mathematical invisibility.
-                                    </div>
-                                </div>
+                        {/* Top Eyebrow Strip */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 pb-6 mb-8 border-b border-black/10">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e9ecff] border border-indigo-200 text-indigo-950 text-xs font-bold">
+                                <Sparkles className="w-3.5 h-3.5 text-indigo-700" />
+                                <span>2026 Workflow Comparison · Open Study App vs Stealth Exam Engine</span>
                             </div>
+                            <span className="text-xs font-semibold text-ink-muted">
+                                Updated 2026
+                            </span>
                         </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
+
+                        <div className="grid lg:grid-cols-12 gap-10 items-center">
+                            
+                            {/* Left 7 Columns */}
+                            <div className="lg:col-span-7">
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-ink tracking-tight leading-[1.08] mb-6">
+                                    Coursology builds lecture podcasts. <span className="text-emerald-800">ExamGhost solves live exams invisibly.</span>
+                                </h1>
+
+                                <p className="aeo-summary text-base sm:text-lg text-ink-secondary leading-relaxed mb-5">
+                                    <strong>Coursology</strong> has evolved into a broad study platform for turning lecture slides into <em>Coursey</em> audio podcasts and drafting discussion posts. However, during a timed quiz, its Chrome extension injects a <strong>bright, visible answer card with a &ldquo;Rate us&rdquo; button</strong> directly into your exam HTML—without blocking <code className="text-xs bg-black/5 px-1.5 py-0.5 rounded">window.blur</code> logs.
+                                </p>
+
+                                <p className="text-base sm:text-lg text-ink-secondary leading-relaxed mb-8">
+                                    <strong>ExamGhost</strong> is built strictly for live, timed assessments. Double-click any question to auto-fill, highlight, or copy the answer in <strong>0.3 seconds</strong> inside a closed Shadow DOM with <strong>Focus Shield</strong> blur immunity.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 mb-7">
+                                    <Link prefetch={false}
+                                        href="/#pricing"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm sm:text-base font-bold shadow-lift inline-flex items-center justify-center gap-2.5 group"
+                                    >
+                                        <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
+                                        <span>Try 50 Free Solves (No Card Needed)</span>
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                    <Link prefetch={false}
+                                        href="/canvas-quiz-solver-free-demo"
+                                        className="px-6 py-4 rounded-full text-sm sm:text-base font-bold bg-[#faf8f4] hover:bg-[#f1ede4] text-ink border border-black/15 inline-flex items-center justify-center gap-2 transition-all"
+                                    >
+                                        <MousePointerClick className="w-4 h-4 text-emerald-700" />
+                                        <span>Test Live Canvas Sandbox</span>
+                                    </Link>
                                 </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Window Blur Defocus vs Focus Shield Event Masking
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Coursology Flaw:</span>
-                                        When clicking or interacting with Coursology&apos;s sidebar, the browser window triggers a standard blur event. Canvas SpeedGrader logs &apos;Stopped viewing the quiz&apos; with an exact timestamp.
+
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-ink-secondary">
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>Zero Injected &ldquo;Rate Us&rdquo; Cards</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>3 Display Modes (Invisible, Stealth, Explain)</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>⌘+Shift+U Instant Panic Kill Key</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Right 5 Columns: Visual Mockup of What Your Screen Looks Like */}
+                            <div className="lg:col-span-5">
+                                <div className="rounded-[28px] bg-[#faf8f5] border border-black/10 p-6 shadow-lift space-y-4">
+                                    <div className="flex items-center justify-between pb-3 border-b border-black/10">
+                                        <span className="font-display font-extrabold text-sm text-ink">
+                                            What Shows on Your Laptop in Class
+                                        </span>
+                                        <span className="text-[11px] font-bold text-ink-muted">Visual Footprint</span>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost&apos;s Focus Shield silences window.blur and document.visibilitychange events, tricking Canvas telemetry into recording continuous, uninterrupted exam presence.
+
+                                    {/* Coursology Visual Mockup */}
+                                    <div className="p-4 rounded-2xl bg-white border border-rose-200 shadow-sm">
+                                        <div className="flex items-center justify-between text-xs font-bold text-rose-800 mb-2">
+                                            <span>Coursology Chrome Extension</span>
+                                            <span className="px-2 py-0.5 rounded bg-rose-100 text-rose-900 text-[10px]">Visible DOM Box</span>
+                                        </div>
+                                        <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-xs space-y-1.5">
+                                            <div className="flex items-center justify-between font-bold text-indigo-950">
+                                                <span>Coursology Answer: Option B</span>
+                                                <span className="px-2 py-0.5 rounded bg-indigo-600 text-white text-[10px]">★ Rate us</span>
+                                            </div>
+                                            <div className="text-[11px] text-indigo-900/80">
+                                                Explanation: According to Faraday&apos;s law of induction...
+                                            </div>
+                                        </div>
+                                        <p className="text-[11px] text-rose-800 mt-2 font-medium">
+                                            ⚠️ Appended directly into quiz HTML—visible to anyone walking behind your desk.
+                                        </p>
+                                    </div>
+
+                                    {/* ExamGhost Visual Mockup */}
+                                    <div className="p-4 rounded-2xl bg-emerald-950 text-white border border-emerald-500 shadow-sm">
+                                        <div className="flex items-center justify-between text-xs font-bold text-emerald-300 mb-2">
+                                            <span>ExamGhost (Invisible / Stealth Mode)</span>
+                                            <span className="px-2 py-0.5 rounded bg-emerald-800 text-white text-[10px]">0 DOM Nodes</span>
+                                        </div>
+                                        <div className="p-3 rounded-xl bg-white/10 border border-white/15 text-xs space-y-2">
+                                            <div className="flex items-center gap-2 text-emerald-300 font-semibold">
+                                                <span className="w-3.5 h-3.5 rounded-full border-2 border-emerald-400 bg-emerald-400 inline-block" />
+                                                <span>Option B auto-selected in 0.3s (Zero popup)</span>
+                                            </div>
+                                            <div className="text-[11px] text-white/75">
+                                                Or switch to <strong>Smart Highlight</strong> (subtle 4s glow) or <strong>Explain Mode</strong> (closed Shadow DOM).
+                                            </div>
+                                        </div>
+                                        <p className="text-[11px] text-emerald-300 mt-2 font-medium">
+                                            ✓ 100% screen-share &amp; lecture-hall safe. Press ⌘+Shift+U to toggle off in 8ms.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    $150/Year Subscriptions vs Single Lifetime License
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Coursology Flaw:</span>
-                                        Coursology locks its Chrome extension behind a $24.99/month or $149.99/year paywall, turning academic assistance into a costly annual subscription.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost costs a single, flat $19.99 for lifetime access, free updates, universal LMS support, and 24 stealth tools.
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                </div>
-            </section>
+                </header>
 
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
+                {/* ============================================================
+                    INTERACTIVE WORKFLOW TABS: QUIZ STEALTH VS STUDY SUITE
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+                    <div className="text-center max-w-3xl mx-auto mb-10">
+                        <p className="eyebrow justify-center mb-3">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                            <span>DEEP-DIVE COMPARISON · CLICK ANY TAB</span>
+                        </p>
+                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-[1.08] mb-4">
+                            Homework convenience vs. live exam survival.
                         </h2>
-                        <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against Coursology across 10 mission-critical exam dimensions.
+                        <p className="text-base sm:text-lg text-ink-secondary leading-relaxed">
+                            Explore how Coursology&apos;s 2026 coursework features compare against ExamGhost&apos;s dedicated assessment stealth engine.
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">Coursology</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
-                                
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">In-Situ Option Matching</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Matches exact option text under shuffling</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Basic Letter Matching
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Partial / Fragile
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Standard Multi-modal OCR
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">DOM Injection Cleanliness</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Never injects detectable buttons into page</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        3.2s Cloud Latency
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        $24.99/mo or $149.99/yr
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+                    <div className="rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                        <input type="radio" name="crs_tab" id="crs_stealth" className="sr-only peer/stealth" defaultChecked />
+                        <input type="radio" name="crs_tab" id="crs_features" className="sr-only peer/features" />
+                        <input type="radio" name="crs_tab" id="crs_logs" className="sr-only peer/logs" />
 
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f3efea] border border-black/10 mb-8">
+                            <label
+                                htmlFor="crs_stealth"
+                                className="cursor-pointer py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2 text-ink-secondary hover:text-ink peer-checked/stealth:bg-ink peer-checked/stealth:text-white peer-checked/stealth:shadow-sm"
+                            >
+                                <EyeOff className="w-4 h-4" />
+                                <span>1. Quiz Solving &amp; Display Modes</span>
+                            </label>
+                            <label
+                                htmlFor="crs_logs"
+                                className="cursor-pointer py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2 text-ink-secondary hover:text-ink peer-checked/logs:bg-ink peer-checked/logs:text-white peer-checked/logs:shadow-sm"
+                            >
+                                <ShieldAlert className="w-4 h-4" />
+                                <span>2. SpeedGrader Blur &amp; DOM Logs</span>
+                            </label>
+                            <label
+                                htmlFor="crs_features"
+                                className="cursor-pointer py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2 text-ink-secondary hover:text-ink peer-checked/features:bg-ink peer-checked/features:text-white peer-checked/features:shadow-sm"
+                            >
+                                <Headphones className="w-4 h-4" />
+                                <span>3. Podcasts &amp; Discussion Boards</span>
+                            </label>
+                        </div>
+
+                        {/* TAB 1: QUIZ SOLVING & DISPLAY MODES */}
+                        <div className="hidden peer-checked/stealth:block">
+                            <div className="grid lg:grid-cols-3 gap-6">
+                                <div className="p-6 rounded-3xl bg-[#faf8f5] border border-black/10">
+                                    <div className="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center mb-4">
+                                        <Eye className="w-5 h-5" />
+                                    </div>
+                                    <h3 className="font-display font-bold text-lg text-ink mb-2">
+                                        3 Stealth Display Modes vs 1 Fixed Banner
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        Coursology always injects a high-contrast explanation card under the question. ExamGhost lets you switch in one click between <strong>Invisible Mode</strong> (zero on-screen UI), <strong>Stealth Mode</strong> (quiet micro-cursor), and <strong>Explain Mode</strong> (full step-by-step proof drawer).
+                                    </p>
+                                </div>
+
+                                <div className="p-6 rounded-3xl bg-[#faf8f5] border border-black/10">
+                                    <div className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-4">
+                                        <MousePointerClick className="w-5 h-5" />
+                                    </div>
+                                    <h3 className="font-display font-bold text-lg text-ink mb-2">
+                                        Double-Click Auto-Fill vs Button Clicking
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        Instead of clicking injected extension buttons, just <strong>double-click any question text</strong> on Canvas, Blackboard, or Moodle. ExamGhost selects the right choice directly (Auto-Fill), glows for 1–10s (Highlight), or copies to your clipboard silently.
+                                    </p>
+                                </div>
+
+                                <div className="p-6 rounded-3xl bg-[#faf8f5] border border-black/10">
+                                    <div className="w-10 h-10 rounded-2xl bg-purple-100 text-purple-900 flex items-center justify-center mb-4">
+                                        <Camera className="w-5 h-5" />
+                                    </div>
+                                    <h3 className="font-display font-bold text-lg text-ink mb-2">
+                                        0.3s Snap-It OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        When a professor embeds an unselectable circuit diagram or Canvas New Quizzes LTI iframe equation, press <kbd className="font-mono text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">⌘+Shift+S</kbd> and drag a crop box. ExamGhost decodes LaTeX math and diagrams in 0.3 seconds.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 2: SPEEDGRADER TELEMETRY */}
+                        <div className="hidden peer-checked/logs:block">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-3xl bg-[#1a1114] text-white p-6 border border-rose-500/40">
+                                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                                        <span className="font-mono text-xs font-bold text-rose-300">COURSOLOGY EXTENSION ON TIMED QUIZ</span>
+                                        <span className="px-2.5 py-0.5 rounded bg-rose-950 text-rose-300 text-[11px] font-bold">Visible DOM + Blur</span>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-black/50 font-mono text-xs text-rose-200 space-y-1.5 mb-4">
+                                        <div className="text-rose-400">// 1. Appends visible card into host HTML:</div>
+                                        <div>&lt;div class=&quot;coursology-answer-card&quot;&gt;Rate us...&lt;/div&gt;</div>
+                                        <div className="text-rose-400 pt-2">// 2. Clicking Snapshot or side popup fires blur:</div>
+                                        <div>[14:22:09] SpeedGrader: &quot;Stopped viewing quiz page (11s)&quot;</div>
+                                    </div>
+                                    <p className="text-xs text-white/80 leading-relaxed">
+                                        Coursology was designed for open-book homework—so it doesn&apos;t shield <code className="font-mono text-rose-300">window.blur</code> events or isolate its answer cards from host page DOM inspection.
+                                    </p>
+                                </div>
+
+                                <div className="rounded-3xl bg-[#0d1c15] text-white p-6 border border-emerald-500/40">
+                                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                                        <span className="font-mono text-xs font-bold text-emerald-300">EXAMGHOST CLOSED SHADOW DOM + FOCUS SHIELD</span>
+                                        <span className="px-2.5 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[11px] font-bold">0 Flags Logged</span>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-black/50 font-mono text-xs text-emerald-200 space-y-1.5 mb-4">
+                                        <div className="text-emerald-400">// 1. Zero host DOM nodes added:</div>
+                                        <div>host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
+                                        <div className="text-emerald-400 pt-2">// 2. Focus Shield intercepts blur &amp; visibilitychange:</div>
+                                        <div>[14:22:09] SpeedGrader: &quot;Answered #7 (Continuous Focus)&quot;</div>
+                                    </div>
+                                    <p className="text-xs text-white/80 leading-relaxed">
+                                        Host page <code className="font-mono text-emerald-300">document.querySelectorAll</code> scans return zero extension elements, and pressing <kbd className="font-mono text-emerald-300">⌘+Shift+U</kbd> unmounts the extension in under 8ms.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 3: PODCASTS & DISCUSSION BOARDS */}
+                        <div className="hidden peer-checked/features:block">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="p-6 rounded-3xl bg-[#f6f7fe] border border-indigo-200">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-950 text-xs font-bold mb-3">
+                                        <Headphones className="w-3.5 h-3.5" />
+                                        <span>Where Coursology Shines (Untimed Study)</span>
+                                    </div>
+                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                        Lecture Podcasts, Discussion Replies &amp; JSTOR Citations
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+                                        If you want to upload 50-page lecture PDFs to generate <em>Coursey</em> commuter podcasts, or use its <em>Discussion Post Extension</em> to draft weekly 300-word Canvas discussion board posts with an AI Humanizer and <kbd className="font-mono text-xs">⌘+R</kbd> JSTOR citations, Coursology is genuinely useful for untimed work.
+                                    </p>
+                                </div>
+
+                                <div className="p-6 rounded-3xl bg-emerald-50/80 border-2 border-emerald-500/40">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-xs font-bold mb-3">
+                                        <Zap className="w-3.5 h-3.5" />
+                                        <span>Where ExamGhost Wins (Timed Quizzes &amp; Exams)</span>
+                                    </div>
+                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                        High-Stakes Midterms, Finals &amp; STEM Quizzes
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+                                        During a 45-minute Calculus, Biology, or Accounting exam, you don&apos;t need podcast generators—you need <strong>0.3-second inline answers, Mathpix STEM OCR, zero injected DOM banners, and Focus Shield</strong> so your professor&apos;s SpeedGrader log stays spotless.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    10-POINT SIDE-BY-SIDE COMPARISON TABLE
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+                    <div className="text-center max-w-2xl mx-auto mb-10">
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                            2026 Feature &amp; Stealth Comparison Matrix
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-secondary">
+                            An honest look at where ExamGhost leads on exam stealth and where Coursology focuses on study tools.
+                        </p>
+                    </div>
+
+                    <div className="rounded-[32px] bg-white border border-black/10 overflow-hidden shadow-card">
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[640px]">
+                                <thead>
+                                    <tr className="bg-[#f7f4ee] border-b border-black/10">
+                                        <th className="py-4 px-6 font-bold text-ink w-[38%]">Capability / Dimension</th>
+                                        <th className="py-4 px-6 font-extrabold text-emerald-950 bg-emerald-100/50 text-center w-[31%]">
+                                            ExamGhost (v4.2)
+                                        </th>
+                                        <th className="py-4 px-6 font-bold text-ink-secondary text-center w-[31%]">
+                                            Coursology (2026)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-black/5">
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Closed Shadow DOM Encapsulation</div>
+                                            <div className="text-xs text-ink-muted">Prevents LMS scripts from detecting injected UI</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ 100% Closed Tree
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ Injects Visible Answer Card
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Focus Shield (Tab-Blur Cloaking)</div>
+                                            <div className="text-xs text-ink-muted">Stops SpeedGrader &ldquo;Stopped viewing quiz&rdquo; flags</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Blocks blur &amp; visibilitychange
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ Unshielded Window Focus
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Double-Click Inline Question Solve</div>
+                                            <div className="text-xs text-ink-muted">Solve without clicking extension buttons</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Auto-Fill, Highlight, or Clipboard
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-secondary">
+                                            Requires Button Click / Snapshot
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">3 Stealth Display Modes</div>
+                                            <div className="text-xs text-ink-muted">Screen-share &amp; lecture hall safety</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Invisible, Stealth, Explain
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ Fixed High-Contrast Box
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Snap-It Vision OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)</div>
+                                            <div className="text-xs text-ink-muted">Reads locked iframes, graphs &amp; STEM equations</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ 0.3s In-Memory Mathpix OCR
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-secondary">
+                                            ✓ Snapshot Tool (~2.8s Cloud)
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Master Panic Kill Switch (<kbd className="font-mono text-xs">⌘+Shift+U</kbd>)</div>
+                                            <div className="text-xs text-ink-muted">Instantly purges UI &amp; RAM if TA walks by</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Instant &lt;8ms RAM Purge
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ No Panic Purge Hotkey
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">AI Audio Podcasts (&ldquo;Coursey&rdquo;) &amp; Discussion Drafter</div>
+                                            <div className="text-xs text-ink-muted">Commuter audio &amp; cited discussion replies</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-muted">
+                                            Clipboard mode for short essays
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800">
+                                            ✓ Built-In Podcast &amp; Discussion Suite
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Free Trial &amp; Student Pricing</div>
+                                            <div className="text-xs text-ink-muted">Test on real quizzes before paying</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            50 Free Solves · $19/mo · $99/yr · $199 Life
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-secondary">
+                                            Limited Free Tier · ~$19.99–$24.99/mo Sub
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    FAQ ACCORDION
+                ============================================================ */}
+                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="text-center mb-10">
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-secondary">
+                            Real answers on Canvas SpeedGrader logs, Coursology&apos;s 2026 features, and ExamGhost pricing.
+                        </p>
+                    </div>
+
+                    <div className="space-y-3.5">
+                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                            <details
+                                key={index}
+                                className="group rounded-2xl bg-white border border-black/10 p-5 sm:p-6 shadow-sm"
+                                open={index === 0}
+                            >
+                                <summary className="flex items-center justify-between cursor-pointer list-none font-display font-bold text-base text-ink">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
+                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180 shrink-0 ml-3" />
+                                </summary>
+                                <p className="mt-3.5 text-sm text-ink-secondary leading-relaxed pt-3 border-t border-black/5">
+                                    {faq.acceptedAnswer.text}
+                                </p>
+                            </details>
                         ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
                     </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;I was paying $25 a month for Coursology until my TA showed me that Canvas logged every single time I opened the sidebar. I switched to ExamGhost and my SpeedGrader logs have been 100% clean ever since.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Harrison K.</div>
-                            <div className="text-xs text-ink-muted">University of Florida · Biology</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in BSC 2010
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>Coursology (Coursology Cloud Overhead)</span>
-                                <span className="text-rose-800">3.2s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
+                {/* ============================================================
+                    INLINE CONVERSION BAR + RELATED AUDITS
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="rounded-[32px] bg-[#cdeecb] border border-black/10 p-7 sm:p-10 shadow-card flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">
+                        <div className="max-w-xl text-center lg:text-left">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
+                                <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                                <span>Built for Timed Quizzes &amp; Midterms</span>
+                            </span>
+                            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
+                                Solve Live Quizzes Invisibly—Start With 50 Free Solves.
+                            </h2>
+                            <p className="text-sm text-ink-secondary leading-relaxed">
+                                No injected &ldquo;Rate us&rdquo; banners, no window-blur flags, and zero credit card required to test your first 50 questions.
                             </p>
                         </div>
+                        <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                            <Link prefetch={false}
+                                href="/#pricing"
+                                className="btn-dark px-6 py-3.5 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
+                            >
+                                <FaChrome className="w-4 h-4 text-[#cdeecb]" />
+                                <span>Start 50 Free Solves</span>
+                            </Link>
+                            <Link prefetch={false}
+                                href="/canvas-quiz-solver-free-demo"
+                                className="px-5 py-3.5 rounded-full text-sm font-bold bg-white hover:bg-cream text-ink border border-black/15 inline-flex items-center gap-1.5 transition-colors"
+                            >
+                                <span>Try Live Demo</span>
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                            <a
+                                href="https://discord.gg/aCcsyKYJq4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-5 py-3.5 rounded-full text-sm font-bold bg-[#5865F2] hover:bg-[#4752c4] text-white inline-flex items-center gap-2 transition-colors"
+                            >
+                                <FaDiscord className="w-4 h-4" />
+                                <span>Discord</span>
+                            </a>
+                        </div>
                     </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
-                </div>
-            </section>
 
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from Coursology to ExamGhost.
-                    </p>
-                </div>
-
-                <div className="space-y-4">
-                    
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect Coursology on Canvas?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. Coursology injects button elements into the webpage DOM and does not block window.blur events. When you interact with the Coursology sidebar, Canvas SpeedGrader logs an activity departure.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Why is ExamGhost better than Coursology?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates in a completely closed Shadow DOM, intercepts tab-blur events with Focus Shield, and costs $19.99 once for life instead of Coursology&apos;s $149.99/year subscription.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost support Canvas New Quizzes and Blackboard?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. ExamGhost supports Canvas Classic Quizzes, Canvas New Quizzes (LTI iframes), Blackboard Ultra, McGraw Hill Connect, and Pearson MyLab out of the box.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
-                </div>
-            </section>
-
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
-                        </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
-                        </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
-                        </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
-                        </Link>
+                    {/* Related Comparisons */}
+                    <div className="border-t border-black/10 pt-10">
+                        <div className="flex items-center justify-between mb-5">
+                            <h2 className="font-display text-lg font-bold text-ink">
+                                Compare More Study &amp; Quiz Extensions
+                            </h2>
+                            <Link prefetch={false} href="/compare-canvas-hack-extensions" className="text-xs font-bold text-emerald-900 hover:underline flex items-center gap-1">
+                                <span>View All 57 Audits</span>
+                                <ArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <Link prefetch={false} href="/studyx-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs StudyX</div>
+                                <div className="text-[11px] text-ink-muted">Community Hub vs Exam Stealth</div>
+                            </Link>
+                            <Link prefetch={false} href="/knowt-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Knowt</div>
+                                <div className="text-[11px] text-ink-muted">Flashcards vs Live 0.3s Solver</div>
+                            </Link>
+                            <Link prefetch={false} href="/questionai-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Question.AI</div>
+                                <div className="text-[11px] text-ink-muted">Sidebar Chat vs Inline Auto-Fill</div>
+                            </Link>
+                            <Link prefetch={false} href="/canvashack-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs CanvasHack</div>
+                                <div className="text-[11px] text-ink-muted">$149.99 Tab Blocker (No AI)</div>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
-                    </div>
-                </div>
-            </section>
+                </section>
 
             </main>
-
             <Footer />
         </div>
     );

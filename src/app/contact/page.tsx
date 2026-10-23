@@ -44,8 +44,8 @@ export default function ContactPage() {
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-4">
                         Contact Support.
                     </h1>
-                    <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-normal">
-                        Stuck on an exam, need license activation help, or have a refund request? Our engineering team and Discord moderators are on standby 24/7.
+                    <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed font-normal">
+                        ExamGhost provides 24/7 student engineering support via our official Discord server (under 10-minute response time) and email at support@examghost.com (under 4-hour SLA) for license key activation, Canvas New Quizzes and Blackboard Ultra compatibility updates, and 14-day 100% money-back refund requests.
                     </p>
                 </div>
 
@@ -273,6 +273,59 @@ export default function ContactPage() {
                     </div>
 
                 </div>
+
+                {/* Quick Self-Service Troubleshooting & Support SLA Guide */}
+                <section aria-labelledby="support-troubleshooting-heading" className="pt-8 border-t border-black/10">
+                    <div className="max-w-2xl mb-8">
+                        <p className="eyebrow mb-2">
+                            <span>INSTANT SELF-SERVICE GUIDE</span>
+                        </p>
+                        <h2 id="support-troubleshooting-heading" className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-2">
+                            Common Troubleshooting &amp; Support SLAs
+                        </h2>
+                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            Need an immediate fix during a live quiz? Review our four most common engineering resolutions below before waiting on a ticket.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs space-y-2">
+                            <h3 className="font-display font-bold text-base text-ink">
+                                1. License Key Activation &amp; Device Transfer
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed">
+                                Your ExamGhost license key activates immediately inside the Chrome extension popup under <strong>Settings → License Key</strong>. Monthly ($19/mo) and Yearly ($99/yr) passes support instant laptop transfers, while the Lifetime VIP Pass ($199) supports up to 3 concurrent devices. If you switched laptops or reinstalled Chrome, paste your key or request a 1-click hardware reset in Discord.
+                            </p>
+                        </div>
+
+                        <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs space-y-2">
+                            <h3 className="font-display font-bold text-base text-ink">
+                                2. Canvas New Quizzes &amp; Focus Shield Verification
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed">
+                                ExamGhost automatically neutralizes <code className="font-mono text-ink">window.onblur</code>, <code className="font-mono text-ink">document.visibilitychange</code>, and LTI iframe focus-loss listeners on Canvas Classic, Canvas New Quizzes, Blackboard Ultra, Moodle, and D2L Brightspace. Press <code className="font-mono text-ink">⌘+Shift+U</code> (<code className="font-mono text-ink">Ctrl+Shift+U</code> on Windows) before opening your assessment to confirm the green <strong>Stealth Active</strong> indicator.
+                            </p>
+                        </div>
+
+                        <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs space-y-2">
+                            <h3 className="font-display font-bold text-base text-ink">
+                                3. Snap-It Vision OCR (⌘+Shift+S) on Locked Iframes
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed">
+                                If a question is embedded inside a restricted cross-origin iframe (McGraw-Hill Connect ALEKS, Pearson MyLab, Cengage WebAssign) or rendered as an uncopyable image diagram, press <code className="font-mono text-ink">⌘+Shift+S</code> and drag a crop box around the problem. Our multimodal Vision OCR pipeline extracts LaTeX math, chemical structures, and coordinate graphs in under 0.4 seconds.
+                            </p>
+                        </div>
+
+                        <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs space-y-2">
+                            <h3 className="font-display font-bold text-base text-ink">
+                                4. 14-Day 100% Money-Back Refund Guarantee
+                            </h3>
+                            <p className="text-xs text-ink-muted leading-relaxed">
+                                Every paid plan is backed by our 14-day no-questions-asked refund policy. If ExamGhost does not work on your specific university LMS configuration, submit your order email or license token via the form above or open a billing ticket in Discord for a full refund back to your original payment method within 24 hours.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
             </main>
 

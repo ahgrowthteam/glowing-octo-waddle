@@ -1,42 +1,66 @@
 # ExamGhost
 
-> The invisible AI quiz solver that answers any question in seconds. Double-click any question on Canvas, Moodle, Blackboard or 20+ more and ExamGhost fills in the correct answer right on the page — no tab-switching, no copy-paste, screen-share safe.
+> The invisible AI quiz solver that answers any question in 0.3 seconds. Double-click any question on Canvas, Moodle, Blackboard, D2L Brightspace, or 20+ LMS platforms and ExamGhost fills in, highlights, or copies the verified answer right on the page — zero tab-switching, zero DOM footprints, 100% screen-share safe.
 
 ## Overview
 - **Product**: ExamGhost
-- **Category**: Educational AI Study Extension & Quiz Solver
+- **Category**: Educational AI Study Extension & Invisible LMS Quiz Solver
 - **Official Website**: https://examghost.com
 - **Supported Browsers**: Google Chrome, Microsoft Edge, Brave, Arc Browser
-- **Supported LMS Platforms**: Canvas Classic & New Quizzes, Blackboard Learn & Ultra, Moodle, Google Classroom, D2L Brightspace, Coursera, edX, Quizlet, McGraw-Hill Connect, Pearson MyLab
-- **Community**: https://discord.gg/aCcsyKYJq4
+- **Supported LMS Platforms**: Canvas (Classic & New Quizzes), Blackboard (Learn & Ultra), Moodle, D2L Brightspace, Google Classroom, Schoology, Coursera, edX, Quizlet, McGraw-Hill Connect, Pearson MyLab, WebAssign, ALEKS
+- **Community & 24/7 Support**: https://discord.gg/aCcsyKYJq4 (`support@examghost.com`)
 
-## Core Capabilities
-- **Double-Click Inline Solve**: Double-tap any question on any LMS to solve instantly in place with zero tab-switching and zero copy-pasting.
-- **Snap-It Sniping & Draw to Solve (⌘+Shift+S)**: Draw a rectangle around chemistry structures, calculus equations, diagrams, or locked PDF questions for instant multimodal vision solving.
+## Core Architecture & Stealth Capabilities
+- **0.3-Second Double-Click Inline Solve**: Double-tap any question on any LMS to solve instantly in place with zero tab-switching and zero copy-pasting.
+- **Closed Shadow DOM Isolation (`mode: 'closed'`)**: Renders entirely inside an encapsulated closed Shadow Root with zero host DOM mutations, zero injected `<button>` tags, and zero exposed `web_accessible_resources` signatures.
+- **Focus Shield Telemetry Cloaking**: Intercepts `window.blur`, `document.visibilitychange`, `focusout`, and `document.hasFocus()` polling so Canvas SpeedGrader and Blackboard activity logs record 100% continuous active focus (`0` tab-switch flags).
+- **Snap-It Vision OCR (`⌘+Shift+S` / `Ctrl+Shift+S`)**: Draw a selection rectangle around locked text (`user-select: none`), organic chemistry structures, calculus integrals, physics diagrams, or embedded PDFs for instant multimodal vision solving.
+- **Attempt Memory & Smart Cache**: Automatically records questions, selected choices, and feedback across multi-attempt Canvas and Moodle quizzes.
+- **Emergency Panic Switch (`⌘+Shift+U` or `Esc × 2`)**: Completely unmounts the Shadow DOM HUD and flushes extension state from RAM in under 10ms.
 - **Three Display Modes**:
-  - *Invisible*: Silent answer injection directly into the DOM with zero on-screen traces, popups, or toasts (100% screen-share safe).
-  - *Stealth* (Default): Subtle micro-cursor indicator while reasoning, then seamlessly selects the answer.
-  - *Explain*: Applies the answer and slides open a step-by-step reasoning drawer popover.
+  - *Invisible*: Silent answer delivery directly into the quiz with zero visual UI, popups, or toasts (100% screen-share safe).
+  - *Stealth* (Default): Subtle micro-cursor indicator while reasoning, then seamlessly applies the answer.
+  - *Explain*: Applies the answer and opens a step-by-step pedagogical explanation drawer.
 - **Three Answer Delivery Methods**:
-  - *Auto-fill* (Default): Directly selects the correct radio button or checkbox.
-  - *Highlight*: Illuminates the correct option with a subtle glow for 1–10 seconds (default 4s) so the student clicks it themselves.
-  - *Clipboard*: Copies the verified answer directly to the system clipboard for typed short-answer and essay questions.
-- **Privacy & Safety Architecture**:
-  - Master on/off toggle via **⌘+Shift+U** (Mac) or **Ctrl+Shift+U** (Windows) — completely dormant until turned on; never runs in the background.
-  - Closed-boundary Shadow DOM v1 isolation to prevent host page script inspection.
-  - No account required to start (50 free questions included).
+  - *Auto-fill* (Default): Selects the correct radio button, checkbox, or dropdown option using native human-paced input synthesis.
+  - *Highlight*: Illuminates the correct choice with a subtle glow for 1–10 seconds (default 4s) so the student clicks it manually.
+  - *Clipboard*: Copies the verified answer directly to the system clipboard for short-answer, fill-in-the-blank, and essay prompts.
 
-## Pricing Structure
-- **Free Trial**: $0 forever (50 free questions, all question types, no credit card needed)
-- **Monthly Pass**: $19 / month (Unlimited questions, all modes, cancel anytime in 1 click)
-- **Academic Year Pass**: $99 / year (~$8.25/mo, covers Fall, Spring, Summer & Finals)
-- **Lifetime VIP Pass**: $199 one-time payment (Pay once, own forever across all undergraduate and postgraduate degrees)
+## Pricing Structure (USD)
+- **Free Trial**: **$0.00 forever** (50 free question solves, all question types, zero credit card required)
+- **Monthly Pass**: **$19.00 / month** (Unlimited solves, all 24 features, 1-click cancel anytime)
+- **Academic Year Pass (Best Value)**: **$99.00 / year** ($8.25/month equivalent — save 56%, covers Fall, Spring, Summer & Finals)
+- **Lifetime VIP Pass**: **$199.00 one-time payment** (Own forever across undergraduate and graduate degrees, up to 3 computers)
+- **Refund Policy**: 14-day 100% money-back guarantee.
 
-## Key Documentation & Links
-- [ExamGhost Homepage](https://examghost.com): Official homepage with live interactive double-click demo
-- [Live Interactive Sandbox](https://examghost.com/demo): Safe Canvas quiz simulator to test all 3 modes and 3 answer methods
-- [Features & Specifications](https://examghost.com/features): Comprehensive breakdown of Snap-It OCR, display modes, and privacy
-- [Frequently Asked Questions](https://examghost.com/faq): Troubleshooting, keyboard shortcuts, LMS compatibility, and security
-- [LMS Hack Comparison Hub](https://examghost.com/compare-canvas-hack-extensions): Detailed benchmarks vs CanvasNinja, TestBro, CheatMate, and QuizSolve
-- [Full LLM Knowledge Dossier](https://examghost.com/llms-full.txt): Complete technical dossier for AI agents and LLMs
-- [Official Student Discord](https://discord.gg/aCcsyKYJq4): 24/7 verified community support and study tips
+## Key Documentation & Machine-Readable Endpoints
+- [ExamGhost Homepage](https://examghost.com): Official homepage with interactive double-click Canvas simulator
+- [Machine-Readable Pricing Specification](https://examghost.com/pricing.md): Complete Markdown pricing table & competitor cost matrix
+- [Live Interactive Sandbox Demo](https://examghost.com/canvas-quiz-solver-free-demo): Safe Canvas quiz + SpeedGrader telemetry simulator
+- [All 24 Stealth Features](https://examghost.com/features): Technical breakdown of Focus Shield, Closed Shadow DOM, Snap-It OCR, and Attempt Memory
+- [Frequently Asked Questions](https://examghost.com/faq): Security architecture, keyboard shortcuts, LMS compatibility, and billing FAQ
+- [2026 Canvas Hack & AI Extension Benchmark Hub](https://examghost.com/compare-canvas-hack-extensions): Master teardown comparing all 57 competing study and quiz extensions
+- [Full LLM Knowledge Dossier](https://examghost.com/llms-full.txt): Exhaustive technical reference and 57-competitor audit summary
+
+## Interactive LMS & STEM Product Simulators (One-by-One Double-Click + Alt+S OCR)
+- [Canvas Classic & New Quizzes Solver](https://examghost.com/canvas-lms-quiz-solver): Native `.question_holder` & LTI 1.3 New Quizzes simulator with zero `page_blurred` events
+- [Blackboard Learn & Ultra Solver](https://examghost.com/blackboard-quiz-solver): Native `bb-assessment-player` & MathML/WIRIS simulator
+- [D2L Brightspace Quiz Solver](https://examghost.com/d2l-brightspace-quiz-solver): Native `d2l-quiz-attempt` Shadow DOM & Event Log simulator
+- [Moodle 4.x Quiz Solver](https://examghost.com/moodle-quiz-solver): Native `/mod/quiz/attempt.php`, `.que`, STACK Maxima CAS & `M.mod_quiz.secure_window` simulator
+- [McGraw Hill Connect & ALEKS Solver](https://examghost.com/mcgraw-hill-connect-aleks-solver): Native `ezto.mheducation.com`, SmartBook 2.0 & ALEKS Knowledge Check simulator
+- [Pearson MyLab & Mastering Solver](https://examghost.com/pearson-mylab-mastering-solver): Native `PlayerTest.aspx`, TDX Player & Mastering Physics/Chemistry simulator
+- [Cengage MindTap & WebAssign Solver](https://examghost.com/cengage-mindtap-webassign-solver): Native WebAssign randomized red-variable (`calcPad`/`physPad`) & MindTap dock simulator
+- [Gradescope Online Assignment Solver](https://examghost.com/gradescope-exam-solver): Native Gradescope KaTeX, CS code-trace & weighted graph OCR simulator
+- [Google Forms Quiz Solver](https://examghost.com/google-forms-quiz-solver): Native `docs.google.com/forms` `.Qr7Oae` card & pasted image equation OCR simulator
+- [Schoology Quiz & Assessment Solver](https://examghost.com/schoology-quiz-solver): Native PowerSchool Schoology Classic & Learnosity `.lrn_assess` simulator
+- [DeltaMath Homework & Timed Test Solver](https://examghost.com/deltamath-homework-solver): Native DeltaMath MathQuill, Simplest Radical Form & interactive coordinate graphing simulator
+- [Imagine Edgenuity Quiz Solver](https://examghost.com/edgenuity-quiz-solver): Native `iframe#stageFrame` & `#iFramePreview` simulator with natural Active Time pacing
+
+## Technical Telemetry & Browser Security Audits
+- [Does Canvas Detect Chrome Extensions in 2026?](https://examghost.com/blog/does-canvas-detect-extensions-2026): Technical audit of Chromium Manifest V3 `ISOLATED` worlds, `attachShadow({ mode: 'closed' })`, and `page_blurred` telemetry
+- [Canvas Quiz Log Explained: What Professors Actually See](https://examghost.com/blog/canvas-quiz-log-explained-what-professors-see): Line-by-line analysis of `quiz_submission_events_controller.rb` and why the "15-second tab-switch rule" is a myth
+
+## All 57 Audited Competitor Comparisons (2026 Technical Benchmarks)
+- **LMS-Specific Hack & Quiz Solvers**: [CanvasHack](https://examghost.com/canvashack-vs-examghost), [CanvasCrack](https://examghost.com/canvascrack-vs-examghost), [CanvasNinja](https://examghost.com/canvasninja-vs-examghost), [CanvasPass](https://examghost.com/canvaspass-vs-examghost), [CanvasQuiz](https://examghost.com/canvasquiz-vs-examghost), [Canvas Quiz Loader](https://examghost.com/quizloader-vs-examghost), [Canvas Scholar](https://examghost.com/canvasscholar-vs-examghost), [CanvasWizard](https://examghost.com/canvaswizard-vs-examghost), [CheatMate (Study Buddy)](https://examghost.com/cheatmate-vs-examghost), [Cheatpal](https://examghost.com/cheatpal-vs-examghost), [BetterCampus](https://examghost.com/bettercampus-vs-examghost), [Double Check AI](https://examghost.com/doublecheckai-vs-examghost), [EasySB & SmarterBook](https://examghost.com/easysb-vs-examghost), [ExamClutch](https://examghost.com/examclutch-vs-examghost), [FastSolve](https://examghost.com/fastsolve-vs-examghost), [GetQuizSolve](https://examghost.com/getquizsolve-vs-examghost), [MyLab Solver](https://examghost.com/mylabsolver-vs-examghost), [Quizonator](https://examghost.com/quizonator-vs-examghost), [Quizper AI](https://examghost.com/quizper-vs-examghost), [RightClick AI](https://examghost.com/rightclickai-vs-examghost), [TestBro](https://examghost.com/testbro-vs-examghost), [TestWhiz](https://examghost.com/testwhiz-vs-examghost), [UseQuietly](https://examghost.com/usequietly-vs-examghost), [SnapGPT](https://examghost.com/snapgpt-vs-examghost), [StudyBotPro](https://examghost.com/studybotpro-vs-examghost), [TrustStudy](https://examghost.com/truststudy-vs-examghost), [SchoolCheats](https://examghost.com/schoolcheats-vs-examghost)
+- **AI Chrome Sidebar & Popup Extensions**: [Apex Vision AI](https://examghost.com/apexvision-vs-examghost), [Answer.AI](https://examghost.com/answerai-vs-examghost), [Answerly AI](https://examghost.com/answerly-vs-examghost), [AskSia](https://examghost.com/asksia-vs-examghost), [Campus AI](https://examghost.com/campusai-vs-examghost), [Classology AI](https://examghost.com/classology-vs-examghost), [College Tools](https://examghost.com/collegetools-vs-examghost), [Coursology](https://examghost.com/coursology-vs-examghost), [AI Homework Helper](https://examghost.com/homework-helper-vs-examghost), [Mindko (College Tools)](https://examghost.com/mindko-vs-examghost), [QuestionAI](https://examghost.com/questionai-vs-examghost), [Quizard AI](https://examghost.com/quizard-vs-examghost), [QuizMate](https://examghost.com/quizmate-vs-examghost), [QuizSolver AI](https://examghost.com/quizsolverai-vs-examghost), [Quiz Wizard](https://examghost.com/quizwizard-vs-examghost), [Quizzy App](https://examghost.com/quizzy-vs-examghost), [Solvely](https://examghost.com/solvely-vs-examghost), [StudyFox](https://examghost.com/studyfox-vs-examghost), [StudyMonkey](https://examghost.com/studymonkey-vs-examghost), [StudyX](https://examghost.com/studyx-vs-examghost), [Transcript AI](https://examghost.com/transcript-vs-examghost)
+- **Legacy Homework & STEM Platforms**: [Brainly](https://examghost.com/brainly-vs-examghost), [Course Hero](https://examghost.com/coursehero-vs-examghost), [Cramly AI](https://examghost.com/cramly-vs-examghost), [Gauth](https://examghost.com/gauth-vs-examghost), [Homeworkify](https://examghost.com/homeworkify-vs-examghost), [Knowt](https://examghost.com/knowt-vs-examghost), [Mathos AI](https://examghost.com/mathosai-vs-examghost), [Quizplus](https://examghost.com/quizplus-vs-examghost), [Wolfram|Alpha](https://examghost.com/wolframalpha-vs-examghost)

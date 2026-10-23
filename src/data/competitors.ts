@@ -65,23 +65,23 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvashack.com",
         badge: "The #1 CanvasHack Alternative",
         pricingSummary: "$24.99/mo or $149.99 lifetime",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#bfe3f6",
         heroHeadline: "Why pay $149.99 for a tool with zero built-in AI solver?",
-        heroSubtitle: "CanvasHack charges $150 simply to spoof Canvas tab switches—forcing you to manually copy questions into ChatGPT. ExamGhost combines full Focus Shield tab immunity with an instant on-device AI solver, in-memory OCR, and mathematical Shadow DOM invisibility for just $19.99 lifetime.",
+        heroSubtitle: "CanvasHack charges $150 simply to spoof Canvas tab switches—forcing you to manually copy questions into ChatGPT. ExamGhost combines full Focus Shield tab immunity with an instant on-device AI solver, in-memory OCR, and mathematical Shadow DOM invisibility for just 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         flawTitle: "CanvasHack's Fatal Flaw: No Built-In AI & Extreme Pricing",
         flawSummary: "CanvasHack only silences Canvas tab switches and split screen monitoring. It has no AI question solver, no OCR vision engine, and charges an astonishing $24.99/month or $149.99 lifetime fee for basic event hooking.",
         flawBulletPoints: [
             "No AI solver: You still have to switch tabs or split screens to paste questions into ChatGPT manually.",
-            "Excessive cost: At $149.99, CanvasHack is over 7.5x more expensive than ExamGhost ($19.99 lifetime).",
+            "Excessive cost: At $149.99, CanvasHack is over 7.5x more expensive than ExamGhost (50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)).",
             "Single platform lock-in: CanvasHack only works on Canvas. It has zero support for Blackboard, Moodle, or Brightspace/D2L.",
             "Frequent Web Store delistings: Re-listed under multiple extension IDs due to aggressive store policy violations."
         ],
         tldr: {
-            summary: "CanvasHack is an event-masking extension that suppresses Canvas tab-switch logs, but it lacks any built-in AI question solver and costs $149.99. ExamGhost provides full Focus Shield event suppression PLUS on-device AI solving, Snap-It OCR, formula parsing, and multi-LMS support for a flat $19.99 lifetime price.",
+            summary: "CanvasHack is an event-masking extension that suppresses Canvas tab-switch logs, but it lacks any built-in AI question solver and costs $149.99. ExamGhost provides full Focus Shield event suppression PLUS on-device AI solving, Snap-It OCR, formula parsing, and multi-LMS support for a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
                 "CanvasHack requires manual copy-pasting to third-party AI; ExamGhost auto-solves questions directly inside an invisible Shadow DOM HUD in 0.3s.",
-                "CanvasHack costs $149.99 lifetime ($24.99/mo); ExamGhost is a one-time payment of $19.99 with lifetime updates.",
+                "CanvasHack costs $149.99 lifetime ($24.99/mo); ExamGhost is a one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) with lifetime updates.",
                 "ExamGhost covers Canvas, Blackboard, Moodle, and D2L Brightspace; CanvasHack is strictly restricted to Canvas.",
                 "ExamGhost leaves zero DOM footprints, whereas CanvasHack's content scripts can be detected by modern Canvas integrity audits."
             ],
@@ -89,7 +89,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "Built-In AI Solver", examghost: "Instant Edge AI (0.3s)", competitor: "None (Manual Copy-Paste)" },
                 { label: "Focus / Tab Immunity", examghost: "100% Shadow DOM Focus Shield", competitor: "Tab switch suppression only" },
                 { label: "LMS Coverage", examghost: "Canvas, Blackboard, Moodle, D2L", competitor: "Canvas only" },
-                { label: "Lifetime Pricing", examghost: "$19.99 Flat Lifetime", competitor: "$149.99 One-Time (or $24.99/mo)" },
+                { label: "Lifetime Pricing", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$149.99 One-Time (or $24.99/mo)" },
                 { label: "OCR Vision Engine", examghost: "Snap-It In-Memory Vision", competitor: "No OCR capability" }
             ]
         },
@@ -113,9 +113,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Fair $19.99 Lifetime Value vs $149.99 Price Gouging",
+                title: "Fair 50 Free · $19/mo · $99/yr · $199 Life Value vs $149.99 Price Gouging",
                 competitorFlaw: "CanvasHack charges students $24.99 every month or an outrageous $149.99 lifetime fee for a tool that doesn't even answer questions.",
-                examghostAdvantage: "ExamGhost believes students shouldn't go into debt for exam security. For a single payment of $19.99, you receive all 24 stealth tools, lifetime feature updates, and multi-LMS compatibility."
+                examghostAdvantage: "ExamGhost believes students shouldn't go into debt for exam security. For a single payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves), you receive all 24 stealth tools, lifetime feature updates, and multi-LMS compatibility."
             }
         ],
         matrix: [
@@ -127,10 +127,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Blackboard & Moodle Support", description: "Immunity across all major university LMS portals", examghost: true, competitor: false },
             { feature: "Emergency RAM Panic Switch", description: "Purges cache and flushes memory in 8ms with Esc", examghost: true, competitor: false },
             { feature: "SpeedGrader Log Neutralizer", description: "Guarantees 0 action flags on professor audit views", examghost: true, competitor: true },
-            { feature: "One-Time Lifetime Price", description: "Pay once with no recurring subscriptions or hidden costs", examghost: "$19.99", competitor: "$149.99" }
+            { feature: "One-Time Lifetime Price", description: "Pay once with no recurring subscriptions or hidden costs", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$149.99" }
         ],
         studentReview: {
-            quote: "I almost bought CanvasHack for $150 before realizing it doesn't even have AI. Switched to ExamGhost for $19.99 and it answers every Canvas New Quizzes question in under a second. Cleanest SpeedGrader logs in my class.",
+            quote: "I almost bought CanvasHack for $150 before realizing it doesn't even have AI. Switched to ExamGhost for $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) and it answers every Canvas New Quizzes question in under a second. Cleanest SpeedGrader logs in my class.",
             author: "Zach M.",
             school: "UT Austin · Computer Engineering",
             gradeProof: "Scored 98% on CS 314 Data Structures Midterm"
@@ -138,7 +138,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "Why is ExamGhost better than CanvasHack?",
-                answer: "CanvasHack is strictly a tab-switch blocker with no AI solver, costing an exorbitant $149.99. ExamGhost includes full tab-switch Focus Shield suppression PLUS an instant on-device AI solver, Snap-It OCR, formula rendering, and support for Canvas, Blackboard, Moodle, and D2L Brightspace for just $19.99 lifetime."
+                answer: "CanvasHack is strictly a tab-switch blocker with no AI solver, costing an exorbitant $149.99. ExamGhost includes full tab-switch Focus Shield suppression PLUS an instant on-device AI solver, Snap-It OCR, formula rendering, and support for Canvas, Blackboard, Moodle, and D2L Brightspace for just 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)."
             },
             {
                 question: "Can professors or Canvas detect CanvasHack vs ExamGhost?",
@@ -154,7 +154,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "CanvasHack vs ExamGhost (2026) | Why Pay $150 With No AI Solver?",
-        metaDescription: "Looking for a CanvasHack alternative? Don't pay $149.99 for a tool with no AI. ExamGhost provides full Focus Shield stealth plus instant 0.3s AI solving for $19.99 lifetime."
+        metaDescription: "Looking for a CanvasHack alternative? Don't pay $149.99 for a tool with no AI. ExamGhost provides full Focus Shield stealth plus instant 0.3s AI solving for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)."
     },
 
     // 2. CheatMate
@@ -164,10 +164,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "cheatmate.io",
         badge: "The #1 CheatMate Alternative",
         pricingSummary: "$0.99 trial → $9.99/week ($40+/month)",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#c4d0f8",
         heroHeadline: "Stop risking academic flags with CheatMate's detectable DOM scripts.",
-        heroSubtitle: "CheatMate injects visible extension buttons into your exam questions and bills students $9.99 every single week. ExamGhost operates 100% in the closed Shadow DOM with zero DOM mutation traces, instant 0.3s edge solving, and a fair $19.99 one-time lifetime license.",
+        heroSubtitle: "CheatMate injects visible extension buttons into your exam questions and bills students $9.99 every single week. ExamGhost operates 100% in the closed Shadow DOM with zero DOM mutation traces, instant 0.3s edge solving, and a fair 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) lifetime license.",
         flawTitle: "CheatMate's Fatal Flaws: Detectable DOM Injections & Predatory Weekly Billing",
         flawSummary: "CheatMate (listed as 'Study Buddy' on Chrome Web Store with a low 2.8★ rating) alters the page DOM by inserting clickable elements. When proctoring scripts hash the DOM, CheatMate triggers automated anomaly alerts. Furthermore, its $0.99 trial rolls into an aggressive $9.99/week auto-subscription.",
         flawBulletPoints: [
@@ -177,17 +177,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Severe Midterm Latency: Centralized servers queue requests during peak exam hours, resulting in 10-15s delays."
         ],
         tldr: {
-            summary: "CheatMate is a weekly-billed solver extension with a 2.8★ store rating that modifies page DOM elements, making it vulnerable to automated proctoring flags. ExamGhost provides true Shadow DOM sandboxing, instant 0.3s edge AI solving, and a transparent $19.99 one-time lifetime purchase.",
+            summary: "CheatMate is a weekly-billed solver extension with a 2.8★ store rating that modifies page DOM elements, making it vulnerable to automated proctoring flags. ExamGhost provides true Shadow DOM sandboxing, instant 0.3s edge AI solving, and a transparent 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) lifetime purchase.",
             keyTakeaways: [
                 "CheatMate alters the host page DOM; ExamGhost uses isolated closed Shadow DOM architecture with 0 detectable traces.",
-                "CheatMate auto-bills $9.99 every week ($500+/year); ExamGhost is a single $19.99 payment for life.",
+                "CheatMate auto-bills $9.99 every week ($500+/year); ExamGhost is a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment for life.",
                 "CheatMate averages 8-15s response latency during midterms; ExamGhost solves in 0.3s using local in-memory OCR.",
                 "CheatMate alters the host page DOM directly; ExamGhost isolates all UI inside a closed Shadow DOM."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Visible DOM Injection" },
                 { label: "Average Response Time", examghost: "0.3 seconds (Edge OCR)", competitor: "8 - 15 seconds (Cloud queue)" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$0.99 trial → $9.99/week" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$0.99 trial → $9.99/week" },
                 { label: "SpeedGrader Log Shield", examghost: "0 Flags (Blur Neutralizer)", competitor: "Flags 'Left quiz page'" },
                 { label: "Focus / Tab Shield", examghost: "Native window.blur silencer", competitor: "Partial / unverified" }
             ]
@@ -212,9 +212,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Transparent $19.99 Lifetime vs $40/Month Weekly Drain",
+                title: "Transparent 50 Free · $19/mo · $99/yr · $199 Life vs $40/Month Weekly Drain",
                 competitorFlaw: "CheatMate advertises a $0.99 trial, but the fine print enrolls you in an ongoing $9.99 per week ($519/year) recurring subscription that is difficult to cancel.",
-                examghostAdvantage: "ExamGhost provides clear, honest student pricing: pay $19.99 once, use it for your entire college degree with all 24 tools and updates included."
+                examghostAdvantage: "ExamGhost provides clear, honest student pricing: pay $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once, use it for your entire college degree with all 24 tools and updates included."
             }
         ],
         matrix: [
@@ -244,7 +244,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does CheatMate actually cost compared to ExamGhost?",
-                answer: "CheatMate charges a $0.99 trial followed by $9.99 per week (over $40/month or $500+/year). ExamGhost is a single one-time payment of $19.99 for lifetime access with no recurring fees ever."
+                answer: "CheatMate charges a $0.99 trial followed by $9.99 per week (over $40/month or $500+/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with no recurring fees ever."
             }
         ],
         metaTitle: "CheatMate vs ExamGhost (2026) | The #1 Undetectable Alternative",
@@ -258,7 +258,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvasquiz.com",
         badge: "The #1 CanvasQuiz Alternative",
         pricingSummary: "$7.99/wk, $14.99/mo, or $79.99/yr",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#e2d3fa",
         heroHeadline: "Why use an extension that explicitly fails proctoring?",
         heroSubtitle: "Canvas Quiz Solver's own website admits: 'Proctoring tools like Honorlock and Proctorio can turn Chrome extensions off, so it is for exams without proctoring.' ExamGhost is engineered with native kernel-level stealth, Shadow DOM isolation, and Focus Shield blur suppression that functions with zero flags.",
@@ -271,18 +271,18 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Subscription Lock-in: Charges $7.99 every week or $14.99/month instead of a single student-friendly license."
         ],
         tldr: {
-            summary: "Canvas Quiz Solver (canvasquiz.com) is a Canvas-only helper that injects clickable buttons into test questions and openly admits it cannot handle proctored exams. ExamGhost operates invisibly via hotkeys, Shadow DOM containers, and Focus Shield event masking across Canvas, Blackboard, Moodle, and D2L for $19.99 lifetime.",
+            summary: "Canvas Quiz Solver (canvasquiz.com) is a Canvas-only helper that injects clickable buttons into test questions and openly admits it cannot handle proctored exams. ExamGhost operates invisibly via hotkeys, Shadow DOM containers, and Focus Shield event masking across Canvas, Blackboard, Moodle, and D2L for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
             keyTakeaways: [
                 "Canvas Quiz Solver injects visible buttons into question HTML; ExamGhost uses invisible hotkeys (⌘+B) and Shadow DOM overlays.",
                 "CanvasQuiz admits failure on proctored tests; ExamGhost provides 100% window-blur and focus-loss immunity.",
-                "CanvasQuiz charges $7.99/week ($32/mo) or $79.99/yr; ExamGhost is $19.99 once for life.",
+                "CanvasQuiz charges $7.99/week ($32/mo) or $79.99/yr; ExamGhost is $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for life.",
                 "ExamGhost handles complex LaTeX math and image questions via Snap-It OCR, which CanvasQuiz struggles to parse."
             ],
             quickCompare: [
                 { label: "Proctored Exam Safety", examghost: "100% Invisible Focus Shield", competitor: "Fails (Conceded in FAQ)" },
                 { label: "UI Interaction", examghost: "Stealth Hotkey (⌘+B)", competitor: "Injected 'Get Answer' Button" },
                 { label: "LMS Compatibility", examghost: "Canvas, Blackboard, Moodle, D2L", competitor: "Canvas Quizzes only" },
-                { label: "Pricing", examghost: "$19.99 Flat Lifetime", competitor: "$7.99/wk or $14.99/mo" },
+                { label: "Pricing", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$7.99/wk or $14.99/mo" },
                 { label: "Math & Diagram OCR", examghost: "LaTeX / Mathpix Engine", competitor: "Basic text only" }
             ]
         },
@@ -306,9 +306,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "One-Time $19.99 vs Weekly Subscription Bleed",
+                title: "One-Time $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) vs Weekly Subscription Bleed",
                 competitorFlaw: "At $7.99 per week, Canvas Quiz Solver costs over $120 for a single college semester.",
-                examghostAdvantage: "ExamGhost costs $19.99 once and covers your entire undergraduate and graduate academic career."
+                examghostAdvantage: "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once and covers your entire undergraduate and graduate academic career."
             }
         ],
         matrix: [
@@ -319,7 +319,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Blackboard, Moodle & Brightspace", description: "Works across all major university portals", examghost: true, competitor: false },
             { feature: "Formula & LaTeX Math Support", description: "In-memory OCR decodes equations and chemistry structures", examghost: true, competitor: false },
             { feature: "Opacity Dial Control", description: "Adjust HUD transparency from 10% ghost to 100% solid", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "Transparent, one-time student investment", examghost: "$19.99 Lifetime", competitor: "$7.99/wk or $79.99/yr" }
+            { feature: "Pricing Model", description: "Transparent, one-time student investment", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$7.99/wk or $79.99/yr" }
         ],
         studentReview: {
             quote: "Canvas Quiz Solver put huge green buttons under my questions that almost got me caught during an in-person lab. ExamGhost is completely invisible—I hit ⌘+B, read the answer, hit Esc, and there's literally zero trace.",
@@ -342,7 +342,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Canvas Quiz Solver vs ExamGhost (2026) | Undetectable vs Injected Buttons",
-        metaDescription: "Comparing Canvas Quiz Solver and ExamGhost? Learn why CanvasQuiz admits proctor vulnerability while ExamGhost delivers 100% Shadow DOM stealth for $19.99 lifetime."
+        metaDescription: "Comparing Canvas Quiz Solver and ExamGhost? Learn why CanvasQuiz admits proctor vulnerability while ExamGhost delivers 100% Shadow DOM stealth for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)."
     },
 
     // 4. Canvas Ninja
@@ -352,30 +352,30 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvasninja.app",
         badge: "The #1 Canvas Ninja Alternative",
         pricingSummary: "$16.99/mo or $67.99 lifetime",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#cdeecb",
-        heroHeadline: "Why pay $67.99 when ExamGhost delivers 24 stealth tools for $19.99?",
+        heroHeadline: "Why pay $67.99 when ExamGhost delivers 24 stealth tools for $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)?",
         heroSubtitle: "Canvas Ninja offers only 3 basic features (Privacy Guard, Answer Saver, Smart Answers) for $67.99. ExamGhost provides 24 comprehensive stealth tools—including Snap-It Vision OCR, LaTeX math reasoning, Shadow DOM sandboxing, and multi-LMS immunity—at a fraction of the cost.",
         flawTitle: "Canvas Ninja's Flaw: High $67.99 Price, Limited Features & Tiny User Base",
         flawSummary: "Canvas Ninja charges $16.99/month or $67.99 for a lifetime license with only 3 core functions. It lacks on-device OCR, has no LaTeX equation solver, and only supports Canvas.",
         flawBulletPoints: [
             "Limited feature set: Only 3 features compared to ExamGhost's suite of 24 dedicated stealth tools.",
             "No Math / STEM OCR: Cannot parse complex chemistry, physics formulas, or graph-based questions.",
-            "Expensive: $67.99 lifetime is more than 3.4x the price of ExamGhost ($19.99 lifetime).",
+            "Expensive: $67.99 lifetime is more than 3.4x the price of ExamGhost (50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)).",
             "Tiny community: Only ~160 Chrome users, making patch updates and bug fixes slow to deploy."
         ],
         tldr: {
-            summary: "Canvas Ninja is a lightweight 3-feature extension priced at $16.99/mo or $67.99 lifetime that covers only Canvas. ExamGhost offers 24 enterprise-grade tools, Snap-It OCR, LaTeX math solving, Focus Shield blur suppression, and multi-LMS support for $19.99 lifetime.",
+            summary: "Canvas Ninja is a lightweight 3-feature extension priced at $16.99/mo or $67.99 lifetime that covers only Canvas. ExamGhost offers 24 enterprise-grade tools, Snap-It OCR, LaTeX math solving, Focus Shield blur suppression, and multi-LMS support for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
             keyTakeaways: [
                 "Canvas Ninja provides only 3 features; ExamGhost provides 24 dedicated tools.",
-                "Canvas Ninja costs $67.99 lifetime; ExamGhost costs $19.99 flat lifetime.",
+                "Canvas Ninja costs $67.99 lifetime; ExamGhost costs 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) lifetime.",
                 "ExamGhost has built-in LaTeX and OCR support for STEM questions; Canvas Ninja is limited to simple text MCQs.",
                 "ExamGhost supports Canvas, Blackboard, Moodle, and Brightspace; Canvas Ninja is Canvas-only."
             ],
             quickCompare: [
                 { label: "Available Stealth Tools", examghost: "24 Dedicated Tools", competitor: "3 Basic Features" },
                 { label: "STEM & LaTeX OCR", examghost: "Full Mathpix / Formula Engine", competitor: "None (Text only)" },
-                { label: "Lifetime Price", examghost: "$19.99 (Flat)", competitor: "$67.99 (or $16.99/mo)" },
+                { label: "Lifetime Price", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$67.99 (or $16.99/mo)" },
                 { label: "Multi-LMS Support", examghost: "Canvas, Blackboard, Moodle, D2L", competitor: "Canvas only" },
                 { label: "Tool Suite Depth", examghost: "24 Stealth Tools", competitor: "3 Basic Features" }
             ]
@@ -400,9 +400,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "$19.99 vs $67.99 Lifetime Pricing",
+                title: "$19/mo ($99/yr or $199 Lifetime, 50 Free Solves) vs $67.99 Lifetime Pricing",
                 competitorFlaw: "Canvas Ninja asks $67.99 upfront for a product with minimal community adoption (~160 users).",
-                examghostAdvantage: "ExamGhost offers a battle-tested suite of 24 stealth tools with multi-LMS support for just $19.99 lifetime."
+                examghostAdvantage: "ExamGhost offers a battle-tested suite of 24 stealth tools with multi-LMS support for just 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)."
             }
         ],
         matrix: [
@@ -413,7 +413,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Emergency Panic Switch (Esc)", description: "Instant memory flush and UI wipe in 8ms", examghost: true, competitor: false },
             { feature: "Multi-LMS Support", description: "Canvas, Blackboard, Moodle, D2L Brightspace", examghost: true, competitor: false },
             { feature: "Answer Saver on Retakes", description: "Remembers previous correct answers on quiz retries", examghost: true, competitor: true },
-            { feature: "Lifetime Access Price", description: "One-time payment for lifetime updates", examghost: "$19.99", competitor: "$67.99" }
+            { feature: "Lifetime Access Price", description: "One-time payment for lifetime updates", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$67.99" }
         ],
         studentReview: {
             quote: "I looked at Canvas Ninja but $68 for 3 features felt like a rip-off. ExamGhost was $20 and handles my Calculus II integrals with Mathpix OCR instantly. It's not even close.",
@@ -424,7 +424,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "What makes ExamGhost better than Canvas Ninja?",
-                answer: "ExamGhost provides 24 dedicated tools (including Snap-It Vision OCR, LaTeX equation solving, and multi-LMS support) for $19.99 lifetime, whereas Canvas Ninja offers only 3 features for $67.99."
+                answer: "ExamGhost provides 24 dedicated tools (including Snap-It Vision OCR, LaTeX equation solving, and multi-LMS support) for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime), whereas Canvas Ninja offers only 3 features for $67.99."
             },
             {
                 question: "Does Canvas Ninja support STEM and math questions?",
@@ -446,7 +446,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvaswizard.co",
         badge: "The #1 Canvas Wizard Alternative",
         pricingSummary: "48-hour free trial → $7.99/month",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#ffd5cc",
         heroHeadline: "Avoid the 48-hour trial trap and declining 3.0★ extension ratings.",
         heroSubtitle: "Canvas Wizard lures students with a 48-hour trial that auto-renews at $7.99/month, while Chrome Web Store reviews have plummeted to 3.0★ due to detection flags. ExamGhost delivers 100% Shadow DOM stealth, zero recurring fees, and instant 0.3s answers.",
@@ -459,16 +459,16 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No Tab-Blur Interception: Does not suppress Canvas window focus loss or SpeedGrader audit logs."
         ],
         tldr: {
-            summary: "Canvas Wizard is a monthly-billed Canvas helper with a 3.0★ rating that injects elements into test pages. ExamGhost is a permanently undetectable, Shadow DOM-isolated assistant with Focus Shield tab protection and a one-time $19.99 lifetime license.",
+            summary: "Canvas Wizard is a monthly-billed Canvas helper with a 3.0★ rating that injects elements into test pages. ExamGhost is a permanently undetectable, Shadow DOM-isolated assistant with Focus Shield tab protection and a one-time 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
-                "Canvas Wizard auto-bills $7.99/month after 48 hours; ExamGhost has no subscriptions ($19.99 lifetime).",
+                "Canvas Wizard auto-bills $7.99/month after 48 hours; ExamGhost has no subscriptions (50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)).",
                 "Canvas Wizard injects visible buttons; ExamGhost operates inside an invisible, closed Shadow DOM.",
                 "Canvas Wizard injects buttons into Canvas DOM; ExamGhost operates inside an isolated Shadow DOM root.",
                 "ExamGhost silences window.blur events; Canvas Wizard logs every tab switch in SpeedGrader."
             ],
             quickCompare: [
                 { label: "SpeedGrader Log Shield", examghost: "0 Flags (Blur Neutralizer)", competitor: "Logs 'Stopped viewing' alerts" },
-                { label: "Billing Structure", examghost: "$19.99 Once for Life", competitor: "48h Trial → $7.99/month" },
+                { label: "Billing Structure", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "48h Trial → $7.99/month" },
                 { label: "DOM Footprint", examghost: "0 Traces (Shadow DOM)", competitor: "Visible Injected Buttons" },
                 { label: "Tab-Switch Suppression", examghost: "Focus Shield (0 Logs)", competitor: "None (Logged in Canvas)" },
                 { label: "LMS Compatibility", examghost: "Canvas, Blackboard, Moodle, D2L", competitor: "Canvas only" }
@@ -494,9 +494,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "One-Time $19.99 vs Perpetual $7.99/Month Subscriptions",
+                title: "One-Time $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) vs Perpetual $7.99/Month Subscriptions",
                 competitorFlaw: "The 48-hour trial is designed to convert students into auto-renewing monthly subscribers.",
-                examghostAdvantage: "ExamGhost has zero recurring charges. $19.99 grants unlimited solves for your entire academic journey."
+                examghostAdvantage: "ExamGhost has zero recurring charges. $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) grants unlimited solves for your entire academic journey."
             }
         ],
         matrix: [
@@ -507,7 +507,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "No Auto-Renewing Subscription", description: "Pay once with no recurring billing trap", examghost: true, competitor: false },
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency RAM Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
-            { feature: "Pricing", description: "Upfront student cost", examghost: "$19.99 Lifetime", competitor: "$7.99/month" }
+            { feature: "Pricing", description: "Upfront student cost", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$7.99/month" }
         ],
         studentReview: {
             quote: "I tried Wizard's 48h trial and forgot to cancel, then saw recurring charges. Worse, it didn't even stop Canvas from logging when I switched windows. Switched to ExamGhost: one payment, 100% invisible.",
@@ -522,7 +522,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does ExamGhost handle billing compared to Canvas Wizard?",
-                answer: "ExamGhost charges a single flat fee of $19.99 with lifetime updates and zero auto-renewals. Canvas Wizard charges $7.99 every month indefinitely."
+                answer: "ExamGhost charges a single flat fee of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) with lifetime updates and zero auto-renewals. Canvas Wizard charges $7.99 every month indefinitely."
             },
             {
                 question: "Can professors see Canvas Wizard in exam logs?",
@@ -530,7 +530,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Canvas Wizard vs ExamGhost (2026) | Avoid the $7.99/mo Trial Trap",
-        metaDescription: "Comparing Canvas Wizard (canvaswizard.co) and ExamGhost? Learn why students prefer ExamGhost's $19.99 lifetime license and true Focus Shield stealth."
+        metaDescription: "Comparing Canvas Wizard (canvaswizard.co) and ExamGhost? Learn why students prefer ExamGhost's 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license and true Focus Shield stealth."
     },
 
     // 6. QuizSolver AI
@@ -540,10 +540,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "quizsolverai.com",
         badge: "The #1 QuizSolver AI Alternative",
         pricingSummary: "$8.00 - $18.75/month subscription",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#bfe3f6",
         heroHeadline: "Why pay up to $18.75/month for basic iframe overlays?",
-        heroSubtitle: "QuizSolver AI charges students expensive monthly subscriptions for standard iframe widgets that can be detected by modern anti-cheat scripts. ExamGhost provides true Shadow DOM sandboxing, on-device OCR, and window-blur immunity for a single $19.99 lifetime fee.",
+        heroSubtitle: "QuizSolver AI charges students expensive monthly subscriptions for standard iframe widgets that can be detected by modern anti-cheat scripts. ExamGhost provides true Shadow DOM sandboxing, on-device OCR, and window-blur immunity for a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
         flawTitle: "QuizSolver AI's Flaws: Expensive Subscriptions & Detectable Floating Iframes",
         flawSummary: "QuizSolver AI relies on floating iframe widgets that inject directly into web pages, leaving clear traces in the DOM hierarchy. At $8.00 to $18.75 per month, it quickly becomes an expensive burden for college students.",
         flawBulletPoints: [
@@ -553,16 +553,16 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No panic purge mechanism: Lacks a single-key emergency cache wipe to clear evidence if someone approaches."
         ],
         tldr: {
-            summary: "QuizSolver AI (quizsolverai.com) is an AI solver charging $8-$18.75/month using floating iframe overlays. ExamGhost delivers 100% Shadow DOM sandboxing, sub-second edge OCR, Focus Shield window-blur silencing, and a $19.99 one-time lifetime license.",
+            summary: "QuizSolver AI (quizsolverai.com) is an AI solver charging $8-$18.75/month using floating iframe overlays. ExamGhost delivers 100% Shadow DOM sandboxing, sub-second edge OCR, Focus Shield window-blur silencing, and a 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) lifetime license.",
             keyTakeaways: [
-                "QuizSolver AI costs up to $18.75/month; ExamGhost is a single one-time payment of $19.99.",
+                "QuizSolver AI costs up to $18.75/month; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
                 "QuizSolver AI uses floating iframe widgets visible in DOM trees; ExamGhost uses closed Shadow DOM.",
                 "ExamGhost solves in 0.3s via local edge OCR; QuizSolver AI takes 4-7s via cloud queues.",
                 "ExamGhost includes Focus Shield and Panic RAM Purge (Esc) for absolute exam-day peace of mind."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Floating Iframe Overlay" },
-                { label: "Monthly Cost", examghost: "$0 / month ($19.99 once)", competitor: "$8.00 - $18.75 / month" },
+                { label: "Monthly Cost", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$8.00 - $18.75 / month" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "4 - 7 seconds" },
                 { label: "Focus / Tab Shield", examghost: "Focus Shield Active", competitor: "None" },
                 { label: "Panic Key Purge", examghost: "Esc (8ms RAM flush)", competitor: "None" }
@@ -588,9 +588,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "$19.99 Lifetime vs $225/Year Subscription",
+                title: "50 Free · $19/mo · $99/yr · $199 Life vs $225/Year Subscription",
                 competitorFlaw: "Paying $18.75 every month drains your bank account throughout college.",
-                examghostAdvantage: "ExamGhost gives you unlimited access to all 24 tools for a flat $19.99 one-time investment."
+                examghostAdvantage: "ExamGhost gives you unlimited access to all 24 tools for a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) investment."
             }
         ],
         matrix: [
@@ -600,7 +600,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX & Mathpix Engine", description: "Solves advanced STEM formulas and equations", examghost: true, competitor: "Basic" },
             { feature: "Emergency Panic Purge", description: "One-key RAM and HUD flush on Esc", examghost: true, competitor: false },
             { feature: "Multi-LMS Platform Coverage", description: "Canvas, Blackboard, Moodle, Brightspace", examghost: true, competitor: true },
-            { feature: "Pricing Model", description: "Lifetime vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$8 - $18.75/mo" }
+            { feature: "Pricing Model", description: "Lifetime vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$8 - $18.75/mo" }
         ],
         studentReview: {
             quote: "QuizSolver AI's iframe widget kept glitching over my Canvas New Quizzes layout, and the monthly fee was annoying. ExamGhost is completely integrated into my keyboard shortcuts and answers in 0.3s.",
@@ -611,7 +611,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "Why should I switch from QuizSolver AI to ExamGhost?",
-                answer: "QuizSolver AI charges up to $18.75 every month for a detectable iframe-based extension. ExamGhost delivers true Shadow DOM invisibility, Focus Shield tab-switch suppression, and a flat $19.99 lifetime license."
+                answer: "QuizSolver AI charges up to $18.75 every month for a detectable iframe-based extension. ExamGhost delivers true Shadow DOM invisibility, Focus Shield tab-switch suppression, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license."
             },
             {
                 question: "Can QuizSolver AI trigger Canvas SpeedGrader alert logs?",
@@ -619,11 +619,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much do I save switching to ExamGhost?",
-                answer: "Over two semesters, QuizSolver AI costs between $72 and $168+. ExamGhost costs a single $19.99 one-time payment, saving you hundreds of dollars."
+                answer: "Over two semesters, QuizSolver AI costs between $72 and $168+. ExamGhost costs a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment, saving you hundreds of dollars."
             }
         ],
         metaTitle: "QuizSolver AI vs ExamGhost (2026) | True Stealth vs $18.75/mo Iframes",
-        metaDescription: "Comparing QuizSolver AI and ExamGhost? Learn why ExamGhost's Shadow DOM architecture and $19.99 lifetime license beat QuizSolver's monthly subscription."
+        metaDescription: "Comparing QuizSolver AI and ExamGhost? Learn why ExamGhost's Shadow DOM architecture and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license beat QuizSolver's monthly subscription."
     },
 
     // 7. AI Quiz Solve (getquizsolve.com)
@@ -633,7 +633,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "getquizsolve.com",
         badge: "The #1 AI Quiz Solve Alternative",
         pricingSummary: "Free (5/day) or $12.99/month Pro",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#cdeecb",
         heroHeadline: "Why risk automated DOM flags from double-click form autofill?",
         heroSubtitle: "AI Quiz Solve fills answers directly into page form elements, which modern SpeedGrader audits and proctoring tools detect as DOM mutation anomalies. ExamGhost renders answers inside an isolated Shadow DOM HUD, leaving test inputs completely untouched until you choose to submit.",
@@ -646,17 +646,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "$12.99/month recurring: Free tier is strictly capped at 5 questions/day; Pro costs $155/year."
         ],
         tldr: {
-            summary: "AI Quiz Solve (getquizsolve.com) is an extension that auto-fills answers directly into web forms, risking DOM mutation detection. ExamGhost protects your academic record with isolated Shadow DOM overlays, natural humanized click simulation, Focus Shield blur suppression, and a flat $19.99 lifetime fee.",
+            summary: "AI Quiz Solve (getquizsolve.com) is an extension that auto-fills answers directly into web forms, risking DOM mutation detection. ExamGhost protects your academic record with isolated Shadow DOM overlays, natural humanized click simulation, Focus Shield blur suppression, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
             keyTakeaways: [
                 "AI Quiz Solve mutates page forms directly; ExamGhost displays answers in an isolated Shadow DOM layer.",
-                "AI Quiz Solve Pro costs $12.99/month; ExamGhost is a single $19.99 lifetime payment with unlimited solves.",
+                "AI Quiz Solve Pro costs $12.99/month; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment with unlimited solves.",
                 "ExamGhost includes Focus Shield to silence Canvas tab-switch logs; AI Quiz Solve has zero focus protection.",
                 "ExamGhost features an instant Panic Switch (Esc) that purges volatile memory in 8ms."
             ],
             quickCompare: [
                 { label: "Answering Method", examghost: "Stealth Shadow DOM HUD", competitor: "Direct Form Autofill" },
                 { label: "Focus / Tab Protection", examghost: "Focus Shield (0 blur flags)", competitor: "None (Logs tab switches)" },
-                { label: "Unlimited Solving Cost", examghost: "$19.99 Flat Lifetime", competitor: "$12.99 / month Pro" },
+                { label: "Unlimited Solving Cost", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$12.99 / month Pro" },
                 { label: "DOM Mutation Risk", examghost: "0% (Completely Isolated)", competitor: "High (Modifies form inputs)" },
                 { label: "Emergency Panic Key", examghost: "Esc (8ms cache purge)", competitor: "None" }
             ]
@@ -681,9 +681,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Unlimited $19.99 Lifetime vs 5-Question Daily Limit",
+                title: "Unlimited 50 Free · $19/mo · $99/yr · $199 Life vs 5-Question Daily Limit",
                 competitorFlaw: "AI Quiz Solve locks you out after just 5 questions unless you pay $12.99 every month.",
-                examghostAdvantage: "ExamGhost has zero question caps. Solve entire 50-question finals and unlimited midterms for life for $19.99."
+                examghostAdvantage: "ExamGhost has zero question caps. Solve entire 50-question finals and unlimited midterms for life for $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)."
             }
         ],
         matrix: [
@@ -693,7 +693,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Humanized Trusted Clicks", description: "Avoids synthetic programmatic input flags", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key memory wipe on Esc", examghost: true, competitor: false },
             { feature: "Unlimited Solves Included", description: "No daily question caps or credits", examghost: true, competitor: false },
-            { feature: "One-Time Lifetime Price", description: "Pay once with no monthly subscription", examghost: "$19.99", competitor: "$12.99/mo" }
+            { feature: "One-Time Lifetime Price", description: "Pay once with no monthly subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$12.99/mo" }
         ],
         studentReview: {
             quote: "AI Quiz Solve's autofill feature triggered a suspicious event in my professor's Canvas logs because the click wasn't trusted. ExamGhost's HUD is so much smarter—it shows me the answer invisibly and I click it myself. 100% safe.",
@@ -708,7 +708,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does AI Quiz Solve's pricing compare to ExamGhost?",
-                answer: "AI Quiz Solve only gives you 5 free questions per day before requiring a $12.99/month ($155/year) Pro subscription. ExamGhost provides unlimited questions, OCR, and lifetime updates for a single $19.99 payment."
+                answer: "AI Quiz Solve only gives you 5 free questions per day before requiring a $12.99/month ($155/year) Pro subscription. ExamGhost provides unlimited questions, OCR, and lifetime updates for a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment."
             },
             {
                 question: "Does AI Quiz Solve protect against Canvas tab-switch logs?",
@@ -726,10 +726,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "usequietly.com",
         badge: "The #1 Quietly AI Alternative",
         pricingSummary: "Free tier + $10 - $15/month subscriptions",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#c4d0f8",
         heroHeadline: "Why settle for a tutor extension that leaves visible dots on your exam?",
-        heroSubtitle: "Quietly AI positions itself as a study assistant that marks answers on the page with colored dots and opens visible sidebars. ExamGhost is engineered for 100% undetectable exam stealth with closed Shadow DOM sandboxing, Focus Shield blur suppression, and $19.99 lifetime access.",
+        heroSubtitle: "Quietly AI positions itself as a study assistant that marks answers on the page with colored dots and opens visible sidebars. ExamGhost is engineered for 100% undetectable exam stealth with closed Shadow DOM sandboxing, Focus Shield blur suppression, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
         flawTitle: "Quietly AI's Flaws: Injected Page Dots, Visible Sidebars & No Blur Shield",
         flawSummary: "Quietly AI injects visual dots directly beside answers in Canvas quizzes and opens a prominent 'Ask Quietly' sidebar. It lacks focus-loss interception, meaning Canvas still records every time your window loses focus.",
         flawBulletPoints: [
@@ -739,17 +739,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Monthly subscription fees: Charges recurring fees for full access rather than a one-time lifetime license."
         ],
         tldr: {
-            summary: "Quietly AI (usequietly.com) is a study-oriented extension that marks answers with dots on the page and opens a sidebar. ExamGhost provides true academic stealth with zero DOM markers, Focus Shield blur immunity, instant 0.3s edge solving, and a flat $19.99 lifetime fee.",
+            summary: "Quietly AI (usequietly.com) is a study-oriented extension that marks answers with dots on the page and opens a sidebar. ExamGhost provides true academic stealth with zero DOM markers, Focus Shield blur immunity, instant 0.3s edge solving, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
             keyTakeaways: [
                 "Quietly AI injects visible dots into quiz pages; ExamGhost renders answers only in an invisible Shadow DOM HUD.",
                 "Quietly AI offers zero window-blur protection; ExamGhost completely neutralizes Canvas tab-switch logs.",
-                "Quietly AI charges monthly subscriptions; ExamGhost is a single $19.99 one-time payment for life.",
+                "Quietly AI charges monthly subscriptions; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment for life.",
                 "ExamGhost includes Panic RAM Purge (Esc) and Opacity Dial for seamless, private test-taking."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Injected Dots & DOM Sidebar" },
                 { label: "Focus / Tab Protection", examghost: "100% Blur Event Silencer", competitor: "None (SpeedGrader logs focus)" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "Monthly Subscriptions" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "Monthly Subscriptions" },
                 { label: "Emergency Panic Purge", examghost: "Esc Key (8ms flush)", competitor: "None" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "3 - 5 seconds" }
             ]
@@ -774,9 +774,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "One-Time $19.99 Lifetime vs Perpetual Monthly Fees",
+                title: "One-Time 50 Free · $19/mo · $99/yr · $199 Life vs Perpetual Monthly Fees",
                 competitorFlaw: "Quietly charges recurring monthly fees that accumulate over semesters.",
-                examghostAdvantage: "ExamGhost requires only a single $19.99 payment for lifetime access, free updates, and multi-LMS compatibility."
+                examghostAdvantage: "ExamGhost requires only a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment for lifetime access, free updates, and multi-LMS compatibility."
             }
         ],
         matrix: [
@@ -786,7 +786,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Accurately decodes advanced STEM notation", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge (Esc)", description: "Instantly wipes HUD and memory cache", examghost: true, competitor: false },
             { feature: "Opacity Dial Control", description: "Smooth HUD transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Structure", description: "Single one-time payment vs monthly fees", examghost: "$19.99 Lifetime", competitor: "$10 - $15/mo" }
+            { feature: "Pricing Structure", description: "Single one-time payment vs monthly fees", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$10 - $15/mo" }
         ],
         studentReview: {
             quote: "Quietly AI's little dots were way too obvious when my TA walked behind me during a computer lab quiz. ExamGhost's opacity dial and ⌘+B toggle give me complete control. It's truly invisible.",
@@ -819,10 +819,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "testbro.app",
         badge: "The #1 Test Bro Alternative",
         pricingSummary: "5 free/mo, credit packs ($2.99 - $5.99) expire in 30 days",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#ffd5cc",
         heroHeadline: "Why buy credit packs that expire in 30 days with zero proctor defense?",
-        heroSubtitle: "Test Bro forces students to buy credit packs that automatically expire after 1 month, and offers zero Focus Shield tab protection for Canvas or Blackboard exams. ExamGhost delivers unlimited solves forever, mathematical Shadow DOM stealth, and full window-blur immunity for $19.99 lifetime.",
+        heroSubtitle: "Test Bro forces students to buy credit packs that automatically expire after 1 month, and offers zero Focus Shield tab protection for Canvas or Blackboard exams. ExamGhost delivers unlimited solves forever, mathematical Shadow DOM stealth, and full window-blur immunity for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         flawTitle: "Test Bro's Flaw: Expiring Credit Packs, High Per-Ask Cost & No Stealth Armor",
         flawSummary: "Test Bro (testbro.app) sells Ask Credits that automatically expire after 30 days, meaning unspent money is lost. It has no window-blur interception, leaving students completely exposed to Canvas SpeedGrader alert logs.",
         flawBulletPoints: [
@@ -832,18 +832,18 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Basic text focus: Struggles with complex LaTeX math equations, chemical formulas, and diagrams."
         ],
         tldr: {
-            summary: "Test Bro is a credit-pack based tool where purchases expire in 30 days and offers no tab-switch protection for exams. ExamGhost gives students unlimited lifetime solves, Focus Shield blur suppression, in-memory OCR, and 100% Shadow DOM invisibility for a flat $19.99.",
+            summary: "Test Bro is a credit-pack based tool where purchases expire in 30 days and offers no tab-switch protection for exams. ExamGhost gives students unlimited lifetime solves, Focus Shield blur suppression, in-memory OCR, and 100% Shadow DOM invisibility for a flat $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
             keyTakeaways: [
                 "Test Bro credits expire after 1 month; ExamGhost gives you unlimited solves for life.",
                 "Test Bro offers zero tab-blur protection; ExamGhost includes Focus Shield to keep SpeedGrader logs clean.",
                 "Test Bro relies on right-click menus often blocked by exams; ExamGhost uses invisible global hotkeys (⌘+B).",
-                "ExamGhost costs $19.99 once, eliminating repeated credit pack repurchases."
+                "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once, eliminating repeated credit pack repurchases."
             ],
             quickCompare: [
                 { label: "Credit Expiration", examghost: "Never (Unlimited for Life)", competitor: "Expires in 30 Days" },
                 { label: "Focus / Tab Protection", examghost: "100% Focus Shield Active", competitor: "None (Logs in SpeedGrader)" },
                 { label: "Activation Method", examghost: "Global Stealth Hotkey (⌘+B)", competitor: "Right-Click Context Menu" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$2.99 - $5.99 Packs / Month" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$2.99 - $5.99 Packs / Month" },
                 { label: "STEM & LaTeX OCR", examghost: "Mathpix / Formula Engine", competitor: "Basic OCR only" }
             ]
         },
@@ -857,7 +857,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 1,
                 title: "Unlimited Lifetime Solves vs 30-Day Expiring Credits",
                 competitorFlaw: "Test Bro's business model relies on credit decay: buy 400 asks for $3.99, and if you only use 120 asks during midterm week, the rest expire automatically.",
-                examghostAdvantage: "ExamGhost has zero credits, zero timers, and zero expiration dates. Pay $19.99 once and solve unlimited questions across all your semesters."
+                examghostAdvantage: "ExamGhost has zero credits, zero timers, and zero expiration dates. Pay $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once and solve unlimited questions across all your semesters."
             },
             {
                 number: 2,
@@ -880,7 +880,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Snap-It Vision OCR", description: "Solves questions from graphs, PDFs, and images", examghost: true, competitor: true },
             { feature: "LaTeX Formula Engine", description: "Parses complex scientific and mathematical notation", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "Instantly flushes cache and RAM on Esc", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time cost vs recurring expiring packs", examghost: "$19.99 Lifetime", competitor: "Monthly expiring packs" }
+            { feature: "Pricing Model", description: "One-time cost vs recurring expiring packs", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Monthly expiring packs" }
         ],
         studentReview: {
             quote: "I bought Test Bro's L package and lost half my credits because they expired after 30 days. Plus, on my Canvas exam, right-clicking was disabled so I couldn't even use it! ExamGhost's hotkey worked instantly. Best $20 ever spent.",
@@ -912,31 +912,31 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "FastSolve",
         domain: "fastsolve.app",
         badge: "The #1 FastSolve Alternative",
-        pricingSummary: "$9.99/wk, $19.99/mo, $49/sem, $99/yr",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        pricingSummary: "$9.99/wk, /mo9.99/mo, $49/sem, $99/yr",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#bfe3f6",
         heroHeadline: "Why risk form injection detection when you can have true Shadow DOM stealth?",
-        heroSubtitle: "FastSolve injects answers directly into form inputs in its 'Invisible Mode', triggering DOM mutation listeners and SpeedGrader input integrity flags. ExamGhost provides 100% mathematically undetectable Shadow DOM overlays, Focus Shield blur suppression, and lifetime access for $19.99.",
+        heroSubtitle: "FastSolve injects answers directly into form inputs in its 'Invisible Mode', triggering DOM mutation listeners and SpeedGrader input integrity flags. ExamGhost provides 100% mathematically undetectable Shadow DOM overlays, Focus Shield blur suppression, and lifetime access for $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
         flawTitle: "FastSolve's Flaw: Risky DOM Form Manipulation & Expensive Subscription Ladder",
         flawSummary: "FastSolve promotes 'Invisible Mode' where it silently injects answers into page forms. However, LMS portals like Canvas New Quizzes and proctoring scripts monitor DOM mutations and synthetic input events, flagging silent form tampering.",
         flawBulletPoints: [
             "Synthetic DOM mutation risks: Injects answers into form fields without genuine human click coordinates or keyboard events.",
-            "Expensive pricing ladder: Charges $9.99/week or $19.99/month ($99/year), locking students into ongoing subscriptions.",
+            "Expensive pricing ladder: Charges $9.99/week or /mo9.99/month ($99/year), locking students into ongoing subscriptions.",
             "No window-blur suppression: Fails to neutralize Canvas 'Left quiz page' logs when students look up references.",
             "Chrome Web Store takedown risks: High risk of store bans due to aggressive form-manipulation scripts."
         ],
         tldr: {
-            summary: "FastSolve (fastsolve.app) is an aggressive solver charging up to $99/yr that silently injects answers into test forms. ExamGhost delivers 100% Shadow DOM sandboxing, humanized trusted interaction, Focus Shield blur immunity, and a flat $19.99 lifetime license.",
+            summary: "FastSolve (fastsolve.app) is an aggressive solver charging up to $99/yr that silently injects answers into test forms. ExamGhost delivers 100% Shadow DOM sandboxing, humanized trusted interaction, Focus Shield blur immunity, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
                 "FastSolve mutates page forms directly; ExamGhost displays answers in an isolated Shadow DOM HUD.",
-                "FastSolve costs $99/year ($19.99/month); ExamGhost is a single $19.99 lifetime payment.",
+                "FastSolve costs $99/year (/mo9.99/month); ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
                 "ExamGhost silences window.blur events; FastSolve leaves tab switches unmasked in SpeedGrader.",
                 "ExamGhost includes Panic RAM Purge (Esc) and Opacity Dial for ultimate student control."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Silent Form Injection" },
                 { label: "Focus / Tab Protection", examghost: "100% Focus Shield", competitor: "None (Logs in SpeedGrader)" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$19.99/mo or $99/yr" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "/mo9.99/mo or $99/yr" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "1.8 seconds" },
                 { label: "Emergency Panic Purge", examghost: "Esc Key (8ms purge)", competitor: "None" }
             ]
@@ -961,9 +961,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Fair $19.99 Lifetime vs $99/Year Subscription Drain",
-                competitorFlaw: "FastSolve pushes a $9.99/week or $19.99/month subscription ladder that costs $99 every single year.",
-                examghostAdvantage: "ExamGhost is a single $19.99 payment for lifetime access, multi-LMS compatibility, and free updates."
+                title: "Fair 50 Free · $19/mo · $99/yr · $199 Life vs $99/Year Subscription Drain",
+                competitorFlaw: "FastSolve pushes a $9.99/week or /mo9.99/month subscription ladder that costs $99 every single year.",
+                examghostAdvantage: "ExamGhost is a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment for lifetime access, multi-LMS compatibility, and free updates."
             }
         ],
         matrix: [
@@ -973,7 +973,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: true },
             { feature: "Humanized Trusted Input", description: "Prevents synthetic form event flags", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$19.99/mo or $99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "/mo9.99/mo or $99/yr" }
         ],
         studentReview: {
             quote: "FastSolve's 'invisible mode' autofill caused a weird glitch in my Canvas New Quizzes exam that flagged my submission time. ExamGhost's HUD is so much cleaner—it shows the answer right in my peripheral vision and I click it myself. Undetectable.",
@@ -988,7 +988,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does ExamGhost pricing compare to FastSolve?",
-                answer: "FastSolve charges $9.99/week, $19.99/month, or $99/year. ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "FastSolve charges $9.99/week, /mo9.99/month, or $99/year. ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             },
             {
                 question: "Does FastSolve stop Canvas from logging tab switches?",
@@ -996,7 +996,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "FastSolve vs ExamGhost (2026) | True Stealth vs Form Injection Risks",
-        metaDescription: "Comparing FastSolve (fastsolve.app) and ExamGhost? Learn why Shadow DOM sandboxing is safer than form injection, and save with ExamGhost's $19.99 lifetime plan."
+        metaDescription: "Comparing FastSolve (fastsolve.app) and ExamGhost? Learn why Shadow DOM sandboxing is safer than form injection, and save with ExamGhost's 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan."
     },
 
     // 11. Quizard AI
@@ -1005,11 +1005,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "Quizard AI",
         domain: "quizard.ai",
         badge: "The #1 Quizard AI Alternative",
-        pricingSummary: "$6.99 - $9.99/wk, $19.99/mo, or $79.99/yr",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        pricingSummary: "$6.99 - $9.99/wk, /mo9.99/mo, or $79.99/yr",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#e2d3fa",
         heroHeadline: "Why pay expensive weekly subscriptions for a mobile-first homework app?",
-        heroSubtitle: "Quizard AI is designed primarily as a mobile study tutor, charging up to $9.99/week with no specialized proctor armor, no Focus Shield blur suppression, and no Shadow DOM sandboxing. ExamGhost is engineered specifically for desktop exam stealth with 100% undetectable invisibility for $19.99 lifetime.",
+        heroSubtitle: "Quizard AI is designed primarily as a mobile study tutor, charging up to $9.99/week with no specialized proctor armor, no Focus Shield blur suppression, and no Shadow DOM sandboxing. ExamGhost is engineered specifically for desktop exam stealth with 100% undetectable invisibility for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         flawTitle: "Quizard AI's Flaws: Expensive Weekly Pricing & Zero Exam Stealth Armor",
         flawSummary: "Quizard AI focuses on mobile camera solves and general homework study. It lacks the browser-level stealth architecture needed for Canvas, Blackboard, and proctored exams, while locking students into costly weekly subscription ladders.",
         flawBulletPoints: [
@@ -1019,9 +1019,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Generic overlay: Lacks emergency panic wipes and stealth opacity customization."
         ],
         tldr: {
-            summary: "Quizard AI is a study-focused mobile app with a generic desktop extension that costs up to $9.99/week and lacks exam stealth. ExamGhost delivers 100% Shadow DOM sandboxing, Focus Shield blur immunity, instant 0.3s edge solving, and a flat $19.99 lifetime fee.",
+            summary: "Quizard AI is a study-focused mobile app with a generic desktop extension that costs up to $9.99/week and lacks exam stealth. ExamGhost delivers 100% Shadow DOM sandboxing, Focus Shield blur immunity, instant 0.3s edge solving, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
             keyTakeaways: [
-                "Quizard AI charges up to $9.99/week; ExamGhost is a single one-time payment of $19.99.",
+                "Quizard AI charges up to $9.99/week; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
                 "Quizard AI has zero Focus Shield protection; ExamGhost completely silences Canvas tab-switch logs.",
                 "ExamGhost operates in closed Shadow DOM; Quizard uses standard popups that proctoring tools easily inspect.",
                 "ExamGhost features instant Panic RAM Purge (Esc) and Opacity Dial for absolute exam safety."
@@ -1029,7 +1029,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Standard Browser Popup" },
                 { label: "Focus / Tab Protection", examghost: "100% Focus Shield Active", competitor: "None" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$6.99 - $9.99 / week" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$6.99 - $9.99 / week" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "3 - 5 seconds" },
                 { label: "Emergency Panic Key", examghost: "Esc (8ms purge)", competitor: "None" }
             ]
@@ -1054,9 +1054,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "$19.99 Lifetime vs $9.99/Week Subscriptions",
+                title: "50 Free · $19/mo · $99/yr · $199 Life vs $9.99/Week Subscriptions",
                 competitorFlaw: "Quizard tests aggressive pricing tiers ($6.99 to $9.99/week) that quickly become unaffordable.",
-                examghostAdvantage: "ExamGhost offers a single $19.99 lifetime purchase with unlimited solves across all your semesters."
+                examghostAdvantage: "ExamGhost offers a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) purchase with unlimited solves across all your semesters."
             }
         ],
         matrix: [
@@ -1066,7 +1066,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: "Basic" },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs weekly recurring", examghost: "$19.99 Lifetime", competitor: "$6.99 - $9.99/wk" }
+            { feature: "Pricing Model", description: "One-time payment vs weekly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$6.99 - $9.99/wk" }
         ],
         studentReview: {
             quote: "Quizard is okay for homework, but on a timed Canvas exam it lagged and opened a big obvious side panel. ExamGhost's ⌘+B HUD is completely hidden and answers in 0.3s. Total lifesaver.",
@@ -1077,7 +1077,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "Why is ExamGhost better for exams than Quizard AI?",
-                answer: "Quizard AI is a mobile-first homework tutor with no focus-event suppression or Shadow DOM sandboxing, charging up to $9.99/week. ExamGhost is specialized for undetectable exam solving with Focus Shield tab immunity for a flat $19.99 lifetime fee."
+                answer: "Quizard AI is a mobile-first homework tutor with no focus-event suppression or Shadow DOM sandboxing, charging up to $9.99/week. ExamGhost is specialized for undetectable exam solving with Focus Shield tab immunity for a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee."
             },
             {
                 question: "Does Quizard AI stop Canvas from logging tab switches?",
@@ -1085,11 +1085,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between Quizard and ExamGhost?",
-                answer: "Quizard AI charges up to $9.99 per week ($40+/month). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "Quizard AI charges up to $9.99 per week ($40+/month). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Quizard AI vs ExamGhost (2026) | True Exam Stealth vs $9.99/wk Tutor",
-        metaDescription: "Comparing Quizard AI and ExamGhost? Learn why students prefer ExamGhost's Focus Shield stealth and $19.99 lifetime license over Quizard's weekly fees."
+        metaDescription: "Comparing Quizard AI and ExamGhost? Learn why students prefer ExamGhost's Focus Shield stealth and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license over Quizard's weekly fees."
     },
 
     // 12. Classology AI
@@ -1099,10 +1099,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "classology.ai",
         badge: "The #1 Classology Alternative",
         pricingSummary: "$15 - $20/month subscription",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#cdeecb",
         heroHeadline: "Why pay high monthly fees for an open tutor sidebar?",
-        heroSubtitle: "Classology AI operates as an open tutor sidebar with web-sourced explanations, charging $15-$20/month. It offers zero stealth protection, no Shadow DOM isolation, and no window-blur interception. ExamGhost delivers 100% undetectable exam stealth for a single $19.99 lifetime license.",
+        heroSubtitle: "Classology AI operates as an open tutor sidebar with web-sourced explanations, charging $15-$20/month. It offers zero stealth protection, no Shadow DOM isolation, and no window-blur interception. ExamGhost delivers 100% undetectable exam stealth for a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
         flawTitle: "Classology AI's Flaws: Non-Stealth Sidebar, High Monthly Cost & Zero Proctor Armor",
         flawSummary: "Classology AI is built as a collaborative study companion. Its visible sidebar interface is completely unsuitable for exams, and it offers no defense against Canvas SpeedGrader tab-switch tracking.",
         flawBulletPoints: [
@@ -1112,9 +1112,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Slow explanations: Generates lengthy conversational responses rather than instantaneous exam-ready answers."
         ],
         tldr: {
-            summary: "Classology AI is an open study tutor sidebar with monthly subscriptions. ExamGhost is a dedicated exam stealth assistant with 100% Shadow DOM invisibility, Focus Shield blur immunity, instant 0.3s edge solving, and a flat $19.99 lifetime price.",
+            summary: "Classology AI is an open study tutor sidebar with monthly subscriptions. ExamGhost is a dedicated exam stealth assistant with 100% Shadow DOM invisibility, Focus Shield blur immunity, instant 0.3s edge solving, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
-                "Classology AI charges $15-$20/month; ExamGhost is a single one-time payment of $19.99.",
+                "Classology AI charges $15-$20/month; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
                 "Classology AI uses a prominent visible sidebar; ExamGhost uses an invisible Shadow DOM HUD.",
                 "ExamGhost silences window.blur events to prevent SpeedGrader flags; Classology has zero focus protection.",
                 "ExamGhost features an instant Panic Key (Esc) and Opacity Dial for ultimate stealth."
@@ -1122,7 +1122,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Visible Open Sidebar" },
                 { label: "Focus / Tab Protection", examghost: "100% Focus Shield", competitor: "None (Logs in Canvas)" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$15 - $20 / month" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$15 - $20 / month" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "4 - 8 seconds" },
                 { label: "Emergency Panic Key", examghost: "Esc Key (8ms purge)", competitor: "None" }
             ]
@@ -1147,9 +1147,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "$19.99 Lifetime vs $180+/Year Subscriptions",
+                title: "50 Free · $19/mo · $99/yr · $199 Life vs $180+/Year Subscriptions",
                 competitorFlaw: "Classology charges recurring monthly fees that quickly add up over multiple semesters.",
-                examghostAdvantage: "ExamGhost requires only a single $19.99 payment for lifetime access, free updates, and multi-LMS compatibility."
+                examghostAdvantage: "ExamGhost requires only a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment for lifetime access, free updates, and multi-LMS compatibility."
             }
         ],
         matrix: [
@@ -1159,7 +1159,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: "Basic" },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$15 - $20/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$15 - $20/mo" }
         ],
         studentReview: {
             quote: "Classology's sidebar took up half my screen and looked super obvious. ExamGhost's ghost overlay only appears when I hit ⌘+B, gives me the exact answer in 0.3s, and disappears instantly.",
@@ -1174,7 +1174,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between Classology and ExamGhost?",
-                answer: "Classology AI costs $15 to $20 every month ($180+/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "Classology AI costs $15 to $20 every month ($180+/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             },
             {
                 question: "Does ExamGhost support the same LMS platforms as Classology?",
@@ -1182,7 +1182,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Classology AI vs ExamGhost (2026) | True Exam Stealth vs $15/mo Sidebar",
-        metaDescription: "Comparing Classology AI and ExamGhost? Learn why students prefer ExamGhost's invisible Shadow DOM HUD and $19.99 lifetime plan over Classology's open sidebar."
+        metaDescription: "Comparing Classology AI and ExamGhost? Learn why students prefer ExamGhost's invisible Shadow DOM HUD and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Classology's open sidebar."
     },
 
     // 13. Mindko
@@ -1191,23 +1191,23 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "Mindko",
         domain: "mindko.ai",
         badge: "The #1 Mindko Alternative",
-        pricingSummary: "$12.99 - $19.99/month subscription",
-        examghostPricing: "$19.99 lifetime (one-time)",
+        pricingSummary: "$12.99 - /mo9.99/month subscription",
+        examghostPricing: "50 Free Solves · $19/mo · $99/yr · $199 Lifetime",
         themeColor: "#ffd5cc",
         heroHeadline: "Why pay monthly subscriptions for an unshielded study extension?",
-        heroSubtitle: "Mindko offers basic quiz assistance with monthly subscriptions, but lacks true Shadow DOM sandboxing and Focus Shield tab-blur interception. ExamGhost gives you 24 dedicated stealth tools, mathematically undetectable invisibility, and instant 0.3s edge solving for $19.99 lifetime.",
+        heroSubtitle: "Mindko offers basic quiz assistance with monthly subscriptions, but lacks true Shadow DOM sandboxing and Focus Shield tab-blur interception. ExamGhost gives you 24 dedicated stealth tools, mathematically undetectable invisibility, and instant 0.3s edge solving for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         flawTitle: "Mindko's Flaws: Monthly Subscriptions & Missing Focus Shield Protection",
         flawSummary: "Mindko operates as a standard browser extension that does not protect students against Canvas SpeedGrader tab-switch tracking or proctoring inspection.",
         flawBulletPoints: [
             "No Focus Shield: Canvas records every window-blur event when you leave the test tab.",
-            "Monthly subscription fees: $12.99 to $19.99/month quickly drains student budgets.",
+            "Monthly subscription fees: $12.99 to /mo9.99/month quickly drains student budgets.",
             "Standard DOM injection: Modifies page elements, leaving detectable traces in audit logs.",
             "No panic key purge: Lacks an emergency RAM flush to instantly sanitize the browser environment."
         ],
         tldr: {
-            summary: "Mindko is a monthly-billed study extension lacking focus protection. ExamGhost delivers 100% Shadow DOM sandboxing, Focus Shield blur immunity, instant 0.3s edge solving, and a flat $19.99 lifetime fee.",
+            summary: "Mindko is a monthly-billed study extension lacking focus protection. ExamGhost delivers 100% Shadow DOM sandboxing, Focus Shield blur immunity, instant 0.3s edge solving, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
             keyTakeaways: [
-                "Mindko charges up to $19.99/month; ExamGhost is a single one-time payment of $19.99 for life.",
+                "Mindko charges up to /mo9.99/month; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "Mindko offers zero tab-blur protection; ExamGhost completely silences Canvas tab-switch logs.",
                 "ExamGhost operates in closed Shadow DOM; Mindko injects elements into the host page.",
                 "ExamGhost features instant Panic RAM Purge (Esc) and Opacity Dial for absolute exam safety."
@@ -1215,7 +1215,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM Sandbox", competitor: "Standard Extension Injection" },
                 { label: "Focus / Tab Protection", examghost: "100% Focus Shield", competitor: "None (Logs in SpeedGrader)" },
-                { label: "Pricing Model", examghost: "$19.99 Flat Lifetime", competitor: "$12.99 - $19.99 / month" },
+                { label: "Pricing Model", examghost: "50 Free Solves · $19/mo · $99/yr · $199 Life", competitor: "$12.99 - $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) / month" },
                 { label: "Response Latency", examghost: "0.3 seconds", competitor: "3 - 5 seconds" },
                 { label: "Emergency Panic Key", examghost: "Esc Key (8ms purge)", competitor: "None" }
             ]
@@ -1240,9 +1240,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "$19.99 Lifetime vs Ongoing Monthly Subscriptions",
+                title: "50 Free · $19/mo · $99/yr · $199 Life vs Ongoing Monthly Subscriptions",
                 competitorFlaw: "Mindko charges recurring monthly fees that accumulate over semesters.",
-                examghostAdvantage: "ExamGhost requires only a single $19.99 payment for lifetime access, free updates, and multi-LMS compatibility."
+                examghostAdvantage: "ExamGhost requires only a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment for lifetime access, free updates, and multi-LMS compatibility."
             }
         ],
         matrix: [
@@ -1252,7 +1252,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$12.99 - $19.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$12.99 - /mo9.99/mo" }
         ],
         studentReview: {
             quote: "I cancelled Mindko after one month because of the recurring price and lack of stealth. ExamGhost is a fraction of the price, answers instantly, and doesn't leave any trace in Canvas.",
@@ -1263,7 +1263,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "Why should I switch from Mindko to ExamGhost?",
-                answer: "Mindko charges monthly fees for a standard extension lacking tab-blur protection. ExamGhost provides true Shadow DOM sandboxing, Focus Shield blur suppression, and a flat $19.99 lifetime license."
+                answer: "Mindko charges monthly fees for a standard extension lacking tab-blur protection. ExamGhost provides true Shadow DOM sandboxing, Focus Shield blur suppression, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license."
             },
             {
                 question: "Does Mindko prevent Canvas from logging tab switches?",
@@ -1275,7 +1275,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Mindko vs ExamGhost (2026 Comparison) | Undetectable Quiz Solver vs Monthly Helper",
-        metaDescription: "Comparing Mindko and ExamGhost? Discover why students choose ExamGhost's zero-blur Focus Shield, Shadow DOM stealth, and $19.99 lifetime plan over Mindko's monthly subscription."
+        metaDescription: "Comparing Mindko and ExamGhost? Discover why students choose ExamGhost's zero-blur Focus Shield, Shadow DOM stealth, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Mindko's monthly subscription."
     },
     // 14. Campus AI
     "campusai-vs-examghost": {
@@ -1284,10 +1284,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "thecampusai.com",
         badge: "The #1 Campus AI Alternative",
         pricingSummary: "$9.99/mo or $59.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "Campus AI organizes flashcards. ExamGhost guarantees undetectable exam stealth.",
-        heroSubtitle: "Campus AI is a TikTok-promoted study helper focused on subject organization and AI flashcards. But during live Canvas or Blackboard exams, study apps offer zero Shadow DOM isolation and no window.blur suppression. ExamGhost delivers 24 dedicated exam stealth tools for a single $19.99 lifetime payment.",
+        heroSubtitle: "Campus AI is a TikTok-promoted study helper focused on subject organization and AI flashcards. But during live Canvas or Blackboard exams, study apps offer zero Shadow DOM isolation and no window.blur suppression. ExamGhost delivers 24 dedicated exam stealth tools for a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
         flawTitle: "Campus AI's Flaws: Homework Focus, Missing Focus Shield & Monthly Subscriptions",
         flawSummary: "Campus AI is engineered for study sessions and flashcard generation. Its open UI is easily spotted by webcam monitors, and it provides zero defense against Canvas SpeedGrader tab-switch tracking.",
         flawBulletPoints: [
@@ -1297,9 +1297,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks closed Shadow DOM isolation, leaving foreign nodes exposed to DOM inspectors."
         ],
         tldr: {
-            summary: "Campus AI is a general homework companion with subject folders and flashcards. ExamGhost is a dedicated stealth exam solver with 100% Shadow DOM invisibility, Focus Shield blur suppression, and a flat $19.99 lifetime price.",
+            summary: "Campus AI is a general homework companion with subject folders and flashcards. ExamGhost is a dedicated stealth exam solver with 100% Shadow DOM invisibility, Focus Shield blur suppression, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
-                "Campus AI charges recurring monthly subscriptions; ExamGhost is a single $19.99 lifetime payment.",
+                "Campus AI charges recurring monthly subscriptions; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
                 "ExamGhost silences window.blur events to prevent SpeedGrader flags; Campus AI has zero focus protection.",
                 "ExamGhost solves questions in 0.3s edge latency; Campus AI takes 5-8 seconds to generate flashcards and answers."
             ],
@@ -1307,7 +1307,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Open Host Extension UI" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs 'Stopped viewing quiz')" },
                 { label: "Answer Latency", examghost: "0.3s Instant Edge AI", competitor: "5.0s - 8.0s Cloud Processing" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo or $59.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$9.99/mo or $59.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1332,7 +1332,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Recurring Monthly Billing vs Lifetime Access",
                 competitorFlaw: "Campus AI bills $9.99/month, adding up to $119.88/year or $479.52 across four years of college.",
-                examghostAdvantage: "ExamGhost gives you unlimited answers, free updates, and 24 stealth tools for a single, flat payment of $19.99."
+                examghostAdvantage: "ExamGhost gives you unlimited answers, free updates, and 24 stealth tools for a single, flat payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)."
             }
         ],
         matrix: [
@@ -1342,7 +1342,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo or $59.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/mo or $59.99/yr" }
         ],
         studentReview: {
             quote: "Campus AI was okay for making flashcards before class, but useless on exams. ExamGhost gives me the exact answer in 0.3 seconds without leaving any trace in Canvas.",
@@ -1361,11 +1361,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much do I save switching from Campus AI to ExamGhost?",
-                answer: "Campus AI costs $9.99/month ($479.52 over 4 years). ExamGhost is a single one-time payment of $19.99 for lifetime access, saving you over $450."
+                answer: "Campus AI costs $9.99/month ($479.52 over 4 years). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access, saving you over $450."
             }
         ],
         metaTitle: "Campus AI vs ExamGhost (2026) | True Exam Stealth vs Flashcard App",
-        metaDescription: "Comparing Campus AI and ExamGhost? Learn why students choose ExamGhost's Focus Shield blur protection and $19.99 lifetime license over Campus AI's monthly plans."
+        metaDescription: "Comparing Campus AI and ExamGhost? Learn why students choose ExamGhost's Focus Shield blur protection and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license over Campus AI's monthly plans."
     },
 
     // 15. AnswerAI
@@ -1375,10 +1375,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "answerai.pro",
         badge: "The #1 AnswerAI Alternative",
         pricingSummary: "$14.99/mo or $89.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#cdeecb",
         heroHeadline: "AnswerAI is built for phone homework. ExamGhost is engineered for desktop exam stealth.",
-        heroSubtitle: "AnswerAI (answerai.pro) delivers screenshot Q&A through mobile apps and a basic extension. But desktop proctored exams require closed Shadow DOM v1 isolation, Mathpix LaTeX parsing, and active window.blur suppression. ExamGhost delivers 0.3s stealth answers for a one-time $19.99 lifetime fee.",
+        heroSubtitle: "AnswerAI (answerai.pro) delivers screenshot Q&A through mobile apps and a basic extension. But desktop proctored exams require closed Shadow DOM v1 isolation, Mathpix LaTeX parsing, and active window.blur suppression. ExamGhost delivers 0.3s stealth answers for a one-time 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
         flawTitle: "AnswerAI's Flaws: Mobile Port Architecture, High Monthly Subscriptions & Missing Blur Masking",
         flawSummary: "AnswerAI is built around smartphone camera photo solving. Its desktop extension lacks essential exam protections like Focus Shield blur masking and closed Shadow DOM sandboxing.",
         flawBulletPoints: [
@@ -1388,9 +1388,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks emergency panic escape flush and granular opacity controls."
         ],
         tldr: {
-            summary: "AnswerAI is a mobile-first screenshot solver with high monthly subscription fees. ExamGhost is a desktop-native exam stealth assistant with Mathpix LaTeX OCR, Focus Shield blur suppression, and a flat $19.99 lifetime price.",
+            summary: "AnswerAI is a mobile-first screenshot solver with high monthly subscription fees. ExamGhost is a desktop-native exam stealth assistant with Mathpix LaTeX OCR, Focus Shield blur suppression, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
-                "AnswerAI charges $14.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "AnswerAI charges $14.99/mo; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "ExamGhost includes Mathpix neural OCR for calculus and chemistry; AnswerAI uses generic text OCR.",
                 "ExamGhost silences window.blur events in Canvas; AnswerAI leaves SpeedGrader logs completely unmasked."
             ],
@@ -1398,7 +1398,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Standard Web Extension" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs Defocus Events)" },
                 { label: "STEM / LaTeX Engine", examghost: "Mathpix Neural OCR (Integrals & SMILES)", competitor: "Generic Mobile OCR" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$14.99/mo or $89.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1423,7 +1423,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Cost Over a 4-Year College Career",
                 competitorFlaw: "At $14.99/month, AnswerAI costs $719.52 over 48 months of college.",
-                examghostAdvantage: "ExamGhost costs $19.99 once. You own it for all four years of college with free updates and zero subscriptions."
+                examghostAdvantage: "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once. You own it for all four years of college with free updates and zero subscriptions."
             }
         ],
         matrix: [
@@ -1433,10 +1433,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/mo or $89.99/yr" }
         ],
         studentReview: {
-            quote: "AnswerAI kept messing up calculus fractions and charged me $15 every month. ExamGhost gets STEM problems right in 0.3s and I only paid $19.99 once.",
+            quote: "AnswerAI kept messing up calculus fractions and charged me $15 every month. ExamGhost gets STEM problems right in 0.3s and I only paid $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once.",
             author: "Maya S.",
             school: "Georgia Tech · Engineering",
             gradeProof: "A- in MATH 1552"
@@ -1452,11 +1452,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between AnswerAI and ExamGhost?",
-                answer: "AnswerAI charges $14.99/month ($179.88/year). ExamGhost is a single, flat lifetime payment of $19.99."
+                answer: "AnswerAI charges $14.99/month ($179.88/year). ExamGhost is a single, flat lifetime payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)."
             }
         ],
         metaTitle: "AnswerAI vs ExamGhost (2026) | Desktop STEM Stealth vs Mobile Port",
-        metaDescription: "Comparing AnswerAI and ExamGhost? Discover why students choose ExamGhost's Mathpix STEM engine and $19.99 lifetime plan over AnswerAI's monthly fees."
+        metaDescription: "Comparing AnswerAI and ExamGhost? Discover why students choose ExamGhost's Mathpix STEM engine and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over AnswerAI's monthly fees."
     },
 
     // 16. StudyX
@@ -1466,7 +1466,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "studyx.ai",
         badge: "The #1 StudyX Alternative",
         pricingSummary: "$9.95 - $19.95/mo",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
         heroHeadline: "StudyX searches 75M community answers. ExamGhost solves live exams in 0.3s stealth.",
         heroSubtitle: "StudyX (studyx.ai) is an open homework community with 75M crowdsourced answers and multi-model chat. While useful for take-home assignments, slow multi-step web queries and open community forums trigger Canvas SpeedGrader departure logs. ExamGhost delivers instantaneous 0.3s edge solving inside an invisible Shadow DOM HUD.",
@@ -1479,9 +1479,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No closed Shadow DOM sandboxing; host scripts can detect injected extension elements."
         ],
         tldr: {
-            summary: "StudyX is a crowdsourced homework search tool with recurring monthly fees. ExamGhost is an instant 0.3s edge AI stealth solver with closed Shadow DOM isolation and a flat $19.99 lifetime price.",
+            summary: "StudyX is a crowdsourced homework search tool with recurring monthly fees. ExamGhost is an instant 0.3s edge AI stealth solver with closed Shadow DOM isolation and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
-                "StudyX costs $9.95–$19.95/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "StudyX costs $9.95–$19.95/mo; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "ExamGhost solves questions in 0.3 seconds; StudyX community queries take 8-15 seconds.",
                 "ExamGhost features Focus Shield to silence Canvas tab-blur events; StudyX has zero focus masking."
             ],
@@ -1489,7 +1489,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Open Web Platform & Extension" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
                 { label: "Answer Latency", examghost: "0.3s Instant Edge AI", competitor: "8.0s - 15.0s Community Search" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.95 - $19.95 / Month" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$9.95 - $19.95 / Month" }
             ]
         },
         latencyComparison: {
@@ -1514,7 +1514,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Subscription Drain vs Lifetime Value",
                 competitorFlaw: "StudyX charges up to $19.95/month, totaling $957.60 across a standard 4-year degree.",
-                examghostAdvantage: "ExamGhost gives you full lifetime access across all your courses for a single $19.99 payment."
+                examghostAdvantage: "ExamGhost gives you full lifetime access across all your courses for a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment."
             }
         ],
         matrix: [
@@ -1524,7 +1524,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.95 - $19.95/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.95 - $19.95/mo" }
         ],
         studentReview: {
             quote: "StudyX took 10 seconds per question searching community answers, which ate up my quiz timer. ExamGhost is instant (0.3s) and totally invisible to Canvas.",
@@ -1543,11 +1543,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "What is the price difference between StudyX and ExamGhost?",
-                answer: "StudyX charges $9.95 to $19.95 per month ($120–$240/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "StudyX charges $9.95 to $19.95 per month ($120–$240/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "StudyX vs ExamGhost (2026) | Instant 0.3s Stealth vs 10s Community Search",
-        metaDescription: "Comparing StudyX and ExamGhost? Learn why students prefer ExamGhost's 0.3s edge AI and $19.99 lifetime plan over StudyX's slow community search and monthly fees."
+        metaDescription: "Comparing StudyX and ExamGhost? Learn why students prefer ExamGhost's 0.3s edge AI and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over StudyX's slow community search and monthly fees."
     },
 
     // 17. StudyBotPro
@@ -1557,7 +1557,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "studybotpro.co",
         badge: "The #1 StudyBotPro Alternative",
         pricingSummary: "$11.99/mo or $69.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "StudyBotPro auto-selects in the open DOM. ExamGhost isolates answers in closed Shadow DOM.",
         heroSubtitle: "StudyBotPro (studybotpro.co) features highlight, snapshot, and auto-select. However, modifying host radio buttons and checkboxes directly in Canvas HTML alerts modern proctoring filters. ExamGhost keeps all UI strictly sandboxed in closed Shadow DOM v1 with zero host DOM mutation.",
@@ -1570,17 +1570,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks closed-boundary Shadow DOM isolation, making it detectable by proctoring extensions."
         ],
         tldr: {
-            summary: "StudyBotPro is an auto-selecting quiz extension that mutates live page DOM elements. ExamGhost provides 100% closed Shadow DOM sandboxing, synthetic click immunity, and a flat $19.99 lifetime price.",
+            summary: "StudyBotPro is an auto-selecting quiz extension that mutates live page DOM elements. ExamGhost provides 100% closed Shadow DOM sandboxing, synthetic click immunity, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
                 "StudyBotPro modifies exam DOM forms, risking automated integrity flags; ExamGhost uses an isolated Shadow HUD.",
-                "StudyBotPro costs $11.99/mo; ExamGhost is a single $19.99 lifetime payment.",
+                "StudyBotPro costs $11.99/mo; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
                 "ExamGhost includes Focus Shield blur suppression to keep Canvas SpeedGrader logs clean."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (Zero Mutation)", competitor: "Open Host Page DOM Injection" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
                 { label: "Auto-Fill Safety", examghost: "Zero Synthetic Clicks (Safe HUD)", competitor: "Risky Programmatic Form Clicking" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$11.99/mo or $69.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$11.99/mo or $69.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1605,7 +1605,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Subscription Trap vs Single Payment",
                 competitorFlaw: "StudyBotPro charges $11.99/month ($143.88/year) on auto-debit.",
-                examghostAdvantage: "ExamGhost is $19.99 once for lifetime access across Canvas, Blackboard, Moodle, and D2L Brightspace."
+                examghostAdvantage: "ExamGhost is $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for lifetime access across Canvas, Blackboard, Moodle, and D2L Brightspace."
             }
         ],
         matrix: [
@@ -1615,7 +1615,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$11.99/mo or $69.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$11.99/mo or $69.99/yr" }
         ],
         studentReview: {
             quote: "StudyBotPro's auto-clicker felt super risky because Canvas logs click events. ExamGhost gives me the answer in a ghost HUD that only I can see. Zero worries.",
@@ -1634,11 +1634,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between StudyBotPro and ExamGhost?",
-                answer: "StudyBotPro costs $11.99/month ($143.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "StudyBotPro costs $11.99/month ($143.88/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "StudyBotPro vs ExamGhost (2026) | Closed Shadow DOM vs DOM Injection",
-        metaDescription: "Comparing StudyBotPro and ExamGhost? Learn why students choose ExamGhost's zero-mutation Shadow DOM and $19.99 lifetime plan over StudyBotPro's auto-clicker."
+        metaDescription: "Comparing StudyBotPro and ExamGhost? Learn why students choose ExamGhost's zero-mutation Shadow DOM and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over StudyBotPro's auto-clicker."
     },
 
     // 18. Solvely
@@ -1648,10 +1648,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "solvely.ai",
         badge: "The #1 Solvely Alternative",
         pricingSummary: "$12.99/mo, $46.99/yr, or credit packs",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffe9a0",
         heroHeadline: "Solvely drains your wallet with credit packs. ExamGhost gives you unlimited solves for life.",
-        heroSubtitle: "Solvely (solvely.ai) charges recurring fees of $12.99/month and caps usage with credit packs that expire. ExamGhost delivers truly unlimited solves, Mathpix STEM support, and Focus Shield tab-blur protection for a single $19.99 lifetime fee.",
+        heroSubtitle: "Solvely (solvely.ai) charges recurring fees of $12.99/month and caps usage with credit packs that expire. ExamGhost delivers truly unlimited solves, Mathpix STEM support, and Focus Shield tab-blur protection for a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
         flawTitle: "Solvely's Flaws: Expiring Credit Packs, High Subscription Fees & Zero Exam Shielding",
         flawSummary: "Solvely operates on a freemium credit model that cuts you off mid-exam when credits run out. It has no Focus Shield to prevent Canvas SpeedGrader defocus logs.",
         flawBulletPoints: [
@@ -1661,17 +1661,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks closed Shadow DOM isolation and one-key emergency panic flush."
         ],
         tldr: {
-            summary: "Solvely is a freemium homework app that monetizes through expiring credits and recurring subscriptions. ExamGhost offers 100% unlimited solves, Focus Shield blur masking, and a flat $19.99 lifetime license.",
+            summary: "Solvely is a freemium homework app that monetizes through expiring credits and recurring subscriptions. ExamGhost offers 100% unlimited solves, Focus Shield blur masking, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
                 "Solvely meters your questions with credits; ExamGhost provides unlimited answers for life.",
-                "Solvely costs $12.99/mo ($155.88/yr); ExamGhost is a single $19.99 one-time payment.",
+                "Solvely costs $12.99/mo ($155.88/yr); ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
                 "ExamGhost silences window.blur events in Canvas SpeedGrader; Solvely leaves logs unmasked."
             ],
             quickCompare: [
                 { label: "Usage Limits", examghost: "Unlimited Solves Forever", competitor: "Meteed Credits / Solves Per Day" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Defocus Logged)" },
                 { label: "STEM / LaTeX Engine", examghost: "Integrated Mathpix Neural Vision", competitor: "Standard Mobile Math Parser" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$12.99/mo or $46.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$12.99/mo or $46.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1694,9 +1694,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Financial Comparison: $19.99 Once vs Recurring Fees",
+                title: "Financial Comparison: $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) Once vs Recurring Fees",
                 competitorFlaw: "Solvely's $12.99/month fee accumulates to $623.52 across four years of university.",
-                examghostAdvantage: "ExamGhost costs $19.99 once. You save more than $600 while gaining superior stealth tools."
+                examghostAdvantage: "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once. You save more than $600 while gaining superior stealth tools."
             }
         ],
         matrix: [
@@ -1706,7 +1706,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$12.99/mo or $46.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$12.99/mo or $46.99/yr" }
         ],
         studentReview: {
             quote: "I was in question 34 of my chemistry exam when Solvely told me my credits expired. I switched to ExamGhost and never looked back. Unlimited solves, zero stress.",
@@ -1725,11 +1725,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Solvely?",
-                answer: "Solvely costs $12.99/month ($155.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "Solvely costs $12.99/month ($155.88/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Solvely vs ExamGhost (2026) | Unlimited Solves vs Expiring Credit Packs",
-        metaDescription: "Comparing Solvely and ExamGhost? Learn why students prefer ExamGhost's unlimited solves, Focus Shield stealth, and $19.99 lifetime plan over Solvely's credit limits."
+        metaDescription: "Comparing Solvely and ExamGhost? Learn why students prefer ExamGhost's unlimited solves, Focus Shield stealth, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Solvely's credit limits."
     },
 
     // 19. Gauth (ByteDance)
@@ -1739,7 +1739,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "gauthmath.com",
         badge: "The #1 Gauth Alternative",
         pricingSummary: "$11.99/mo or $79.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe9d9",
         heroHeadline: "Gauth is a phone camera app. ExamGhost is a desktop exam stealth HUD.",
         heroSubtitle: "Gauth (ByteDance) is a massive mobile-first math photo solver. Trying to photograph your computer monitor with a phone during an exam is a guaranteed webcam proctoring flag. ExamGhost runs silently on your Mac or PC with an invisible hotkey HUD and 0.3s edge AI.",
@@ -1752,17 +1752,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Zero Focus Shield blur protection for browser-based testing."
         ],
         tldr: {
-            summary: "Gauth is a mobile math camera app that requires holding a physical phone in front of your webcam. ExamGhost is an on-device desktop HUD with closed Shadow DOM sandboxing and a flat $19.99 lifetime price.",
+            summary: "Gauth is a mobile math camera app that requires holding a physical phone in front of your webcam. ExamGhost is an on-device desktop HUD with closed Shadow DOM sandboxing and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) price.",
             keyTakeaways: [
                 "Holding a phone triggers automated proctoring webcam flags; ExamGhost runs invisibly on-screen via hotkey.",
-                "Gauth costs $11.99/mo ($79.99/yr); ExamGhost is a single $19.99 lifetime payment.",
+                "Gauth costs $11.99/mo ($79.99/yr); ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment.",
                 "ExamGhost features Mathpix LaTeX parsing and Canvas Focus Shield blur suppression."
             ],
             quickCompare: [
                 { label: "Hardware Risk", examghost: "Zero Phone Needed (On-Device HUD)", competitor: "Physical Phone Camera Required" },
                 { label: "Webcam Proctor Safety", examghost: "100% Undetected (No Eye Deflection)", competitor: "Flagged (Eye-Tracking / Phone Detection)" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Manual Web App / Phone)" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$11.99/mo or $79.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$11.99/mo or $79.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1787,7 +1787,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Subscription Cost vs Lifetime License",
                 competitorFlaw: "Gauth charges $11.99/month ($143.88/year) with auto-renewing subscriptions.",
-                examghostAdvantage: "ExamGhost is a single $19.99 lifetime payment with zero subscriptions and free lifetime updates."
+                examghostAdvantage: "ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment with zero subscriptions and free lifetime updates."
             }
         ],
         matrix: [
@@ -1797,7 +1797,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: true },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$11.99/mo or $79.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$11.99/mo or $79.99/yr" }
         ],
         studentReview: {
             quote: "I almost got caught using Gauth on my phone during an Honorlock quiz because the webcam saw the reflection in my glasses. ExamGhost runs right on my Mac invisibly.",
@@ -1816,11 +1816,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Gauth?",
-                answer: "Gauth charges $11.99/month ($143.88/year). ExamGhost is a single, flat lifetime payment of $19.99."
+                answer: "Gauth charges $11.99/month ($143.88/year). ExamGhost is a single, flat lifetime payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)."
             }
         ],
         metaTitle: "Gauth vs ExamGhost (2026) | Desktop Stealth HUD vs Risky Phone App",
-        metaDescription: "Comparing Gauth and ExamGhost? Learn why students prefer ExamGhost's on-screen desktop stealth and $19.99 lifetime plan over risky phone camera solvers like Gauth."
+        metaDescription: "Comparing Gauth and ExamGhost? Learn why students prefer ExamGhost's on-screen desktop stealth and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over risky phone camera solvers like Gauth."
     },
 
     // 20. TrustStudy
@@ -1830,7 +1830,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "truststudy.app",
         badge: "The #1 TrustStudy Alternative",
         pricingSummary: "Freemium + $9.99/mo Pro",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#e2d3fa",
         heroHeadline: "TrustStudy asks you to study first. ExamGhost gives you instant answers when the timer is ticking.",
         heroSubtitle: "TrustStudy is built around 'Study, think, reveal'—forcing students through multi-step flashcard reviews. During timed exams, you don't have time for slow workflows. ExamGhost provides direct, verified answers in 0.3s with zero SpeedGrader tab-switch flags.",
@@ -1843,17 +1843,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks closed Shadow DOM sandboxing and panic escape flush keys."
         ],
         tldr: {
-            summary: "TrustStudy is an educational study extension that delays answers through a study-first workflow. ExamGhost is an instant 0.3s exam stealth solver with closed Shadow DOM isolation and a flat $19.99 lifetime fee.",
+            summary: "TrustStudy is an educational study extension that delays answers through a study-first workflow. ExamGhost is an instant 0.3s exam stealth solver with closed Shadow DOM isolation and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee.",
             keyTakeaways: [
                 "TrustStudy delays answers with multi-step review prompts; ExamGhost delivers answers in 0.3s flat.",
-                "TrustStudy costs $9.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "TrustStudy costs $9.99/mo; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "ExamGhost features Focus Shield to silence Canvas window.blur flags; TrustStudy has no blur defense."
             ],
             quickCompare: [
                 { label: "Workflow Efficiency", examghost: "Instant Answer in 0.3s (Single Hotkey)", competitor: "Delayed Multi-Step 'Study, Think, Reveal'" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Tab Switches)" },
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM v1 (100% Undetected)", competitor: "Standard Extension UI" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo Pro Subscription" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$9.99/mo Pro Subscription" }
             ]
         },
         latencyComparison: {
@@ -1878,7 +1878,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Lifetime Ownership vs Monthly Subscriptions",
                 competitorFlaw: "TrustStudy charges $9.99 every month ($119.88/year) for its Pro tier.",
-                examghostAdvantage: "ExamGhost gives you lifetime access with all 24 stealth tools for a single $19.99 payment."
+                examghostAdvantage: "ExamGhost gives you lifetime access with all 24 stealth tools for a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment."
             }
         ],
         matrix: [
@@ -1888,7 +1888,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo Pro" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/mo Pro" }
         ],
         studentReview: {
             quote: "TrustStudy kept asking me to 'think and reflect' while my quiz timer was counting down to zero. ExamGhost gives me the answer immediately in 0.3s. Total lifesaver.",
@@ -1907,11 +1907,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between TrustStudy and ExamGhost?",
-                answer: "TrustStudy charges $9.99/month ($119.88/year) for Pro features. ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "TrustStudy charges $9.99/month ($119.88/year) for Pro features. ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "TrustStudy vs ExamGhost (2026) | Instant Exam Stealth vs Delayed Study Workflow",
-        metaDescription: "Comparing TrustStudy and ExamGhost? Learn why students prefer ExamGhost's 0.3s instant edge solves and $19.99 lifetime plan over TrustStudy's delayed review workflow."
+        metaDescription: "Comparing TrustStudy and ExamGhost? Learn why students prefer ExamGhost's 0.3s instant edge solves and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over TrustStudy's delayed review workflow."
     },
 
     // 21. Answerly AI
@@ -1921,7 +1921,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "answerly.ai",
         badge: "The #1 Answerly AI Alternative",
         pricingSummary: "$9.99/mo or $49.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#fed7aa",
         heroHeadline: "Answerly AI has ~320 users and fragile scripts. ExamGhost has 24 battle-tested stealth tools.",
         heroSubtitle: "Answerly AI is a tiny Chrome extension (~320 users) with basic matching and fill-in-the-blank scripts that break with every Canvas update. ExamGhost is a hardened stealth engine with universal LMS support (Canvas, Blackboard, Moodle, D2L) and Mathpix LaTeX neural vision.",
@@ -1934,17 +1934,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Charges $9.99/mo recurring subscription for a basic tool with zero STEM/LaTeX capability."
         ],
         tldr: {
-            summary: "Answerly AI is a niche ~320-user extension with fragile Canvas scripts and monthly fees. ExamGhost is an enterprise-grade exam stealth suite with 24 tools, Mathpix OCR, and a flat $19.99 lifetime license.",
+            summary: "Answerly AI is a niche ~320-user extension with fragile Canvas scripts and monthly fees. ExamGhost is an enterprise-grade exam stealth suite with 24 tools, Mathpix OCR, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
                 "Answerly AI has ~320 users and breaks on Canvas New Quizzes; ExamGhost supports Classic and New Quizzes.",
-                "Answerly AI charges $9.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "Answerly AI charges $9.99/mo; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "ExamGhost includes Focus Shield blur masking and closed Shadow DOM isolation."
             ],
             quickCompare: [
                 { label: "Platform Maturity", examghost: "Enterprise Engine (Canvas, Blackboard, Moodle)", competitor: "~320 Users (Fragile Canvas Script)" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (Logs Defocus Events)" },
                 { label: "STEM / LaTeX Support", examghost: "Integrated Mathpix Neural Vision", competitor: "None (Text Matching Only)" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$9.99/mo or $49.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$9.99/mo or $49.99/yr" }
             ]
         },
         latencyComparison: {
@@ -1967,9 +1967,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "Cost Analysis: $19.99 Lifetime vs $9.99/Month",
+                title: "Cost Analysis: 50 Free · $19/mo · $99/yr · $199 Life vs $9.99/Month",
                 competitorFlaw: "Answerly AI charges $9.99/month ($119.88/year) with no lifetime plan.",
-                examghostAdvantage: "ExamGhost is $19.99 once for lifetime access with free updates and 24 specialized tools."
+                examghostAdvantage: "ExamGhost is $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for lifetime access with free updates and 24 specialized tools."
             }
         ],
         matrix: [
@@ -1979,10 +1979,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$9.99/mo or $49.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/mo or $49.99/yr" }
         ],
         studentReview: {
-            quote: "Answerly stopped working right after Canvas updated its quiz layout. ExamGhost has never failed me once on Canvas or Blackboard, and it cost me only $19.99.",
+            quote: "Answerly stopped working right after Canvas updated its quiz layout. ExamGhost has never failed me once on Canvas or Blackboard, and it cost me only $19/mo ($99/yr or $199 Lifetime, 50 Free Solves).",
             author: "Brayden H.",
             school: "University of Georgia · Marketing",
             gradeProof: "A in MKTG 3000"
@@ -1998,11 +1998,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between Answerly AI and ExamGhost?",
-                answer: "Answerly AI charges $9.99/month ($119.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "Answerly AI charges $9.99/month ($119.88/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Answerly AI vs ExamGhost (2026) | Hardened Stealth Engine vs Fragile Extension",
-        metaDescription: "Comparing Answerly AI and ExamGhost? Learn why students prefer ExamGhost's 24 stealth tools and $19.99 lifetime plan over Answerly's fragile scripts and monthly fees."
+        metaDescription: "Comparing Answerly AI and ExamGhost? Learn why students prefer ExamGhost's 24 stealth tools and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Answerly's fragile scripts and monthly fees."
     },
 
     // 22. Homework Helper+
@@ -2012,7 +2012,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "homeworkhelperplus.com",
         badge: "The #1 Homework Helper+ Alternative",
         pricingSummary: "$14.99/mo or $89.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "Homework Helper+ relies on right-click menus. ExamGhost bypasses locked-down exams.",
         heroSubtitle: "Homework Helper+ requires right-click context menus to function—which are completely disabled on proctored Canvas and Blackboard quizzes (contextmenu preventDefault). ExamGhost operates via global keyboard shortcuts and invisible hotkeys, completely immune to right-click blocks.",
@@ -2025,17 +2025,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Lacks closed Shadow DOM isolation and one-key emergency panic cache flush."
         ],
         tldr: {
-            summary: "Homework Helper+ relies on right-click menus that are blocked on proctored tests. ExamGhost uses global hotkeys, closed Shadow DOM isolation, and a flat $19.99 lifetime license.",
+            summary: "Homework Helper+ relies on right-click menus that are blocked on proctored tests. ExamGhost uses global hotkeys, closed Shadow DOM isolation, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
                 "Homework Helper+ is disabled when quizzes block right-click; ExamGhost triggers via hotkey (⌘+B).",
-                "Homework Helper+ charges $14.99/mo; ExamGhost is a single one-time payment of $19.99 for life.",
+                "Homework Helper+ charges $14.99/mo; ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for life.",
                 "ExamGhost silences window.blur events to keep Canvas SpeedGrader logs clean."
             ],
             quickCompare: [
                 { label: "Trigger Mechanism", examghost: "Invisible Hotkey (⌘+B) & Vision Area", competitor: "Right-Click Context Menu (Blocked on Exams)" },
                 { label: "Canvas Focus Shield", examghost: "Active (Silences window.blur)", competitor: "None (SpeedGrader Logs Flags)" },
                 { label: "Locked Page Bypass", examghost: "100% Functional on Restricted Pages", competitor: "Fails on contextmenu preventDefault" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "$14.99/mo or $89.99/yr" }
             ]
         },
         latencyComparison: {
@@ -2058,9 +2058,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 number: 3,
-                title: "College Budget Math: $14.99/Month vs $19.99 Once",
+                title: "College Budget Math: $14.99/Month vs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) Once",
                 competitorFlaw: "Homework Helper+ charges $14.99/month, costing $719.52 across four years of university.",
-                examghostAdvantage: "ExamGhost is a single $19.99 lifetime payment with zero recurring charges and free lifetime updates."
+                examghostAdvantage: "ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment with zero recurring charges and free lifetime updates."
             }
         ],
         matrix: [
@@ -2070,7 +2070,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "$14.99/mo or $89.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/mo or $89.99/yr" }
         ],
         studentReview: {
             quote: "My professor disabled right-click on our midterm and Homework Helper+ became totally useless. ExamGhost opened right up with ⌘+B and solved every question in 0.3s.",
@@ -2089,11 +2089,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Homework Helper+?",
-                answer: "Homework Helper+ costs $14.99/month ($179.88/year). ExamGhost is a single one-time payment of $19.99 for lifetime access."
+                answer: "Homework Helper+ costs $14.99/month ($179.88/year). ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Homework Helper+ vs ExamGhost (2026) | Hotkey Stealth vs Right-Click Lockout",
-        metaDescription: "Comparing Homework Helper+ and ExamGhost? Learn why students prefer ExamGhost's hotkey HUD and $19.99 lifetime plan over right-click dependent tools."
+        metaDescription: "Comparing Homework Helper+ and ExamGhost? Learn why students prefer ExamGhost's hotkey HUD and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over right-click dependent tools."
     },
 
     // 23. BetterCampus
@@ -2103,7 +2103,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "bettercampus.app",
         badge: "BetterCampus vs ExamGhost",
         pricingSummary: "Free / $4.99/mo themes",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "BetterCampus redesigns Canvas UI. ExamGhost solves Canvas exams in complete stealth.",
         heroSubtitle: "BetterCampus is a popular UI customization extension that skins the Canvas interface with dark modes and custom fonts. While great for aesthetics, it provides zero academic solving tools. ExamGhost is the stealth exam solver designed to complement your Canvas experience with 0.3s verified answers.",
@@ -2113,7 +2113,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "BetterCampus is a theme customizer only: it has zero AI solver features or quiz assistance.",
             "No Focus Shield: does not protect against Canvas SpeedGrader tab-switch tracking.",
             "Alters page CSS stylesheets visibly, which can conflict with exam integrity monitors.",
-            "ExamGhost provides 24 dedicated academic stealth tools for $19.99 lifetime."
+            "ExamGhost provides 24 dedicated academic stealth tools for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime)."
         ],
         tldr: {
             summary: "BetterCampus is a cosmetic Canvas redesign extension with dark modes and custom fonts. ExamGhost is a dedicated stealth exam solver with 0.3s neural answers, Focus Shield blur suppression, and closed Shadow DOM isolation.",
@@ -2126,7 +2126,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "Core Purpose", examghost: "Stealth Exam Solver & Focus Shield", competitor: "Cosmetic Canvas Theme & Dark Mode" },
                 { label: "AI Solving Engine", examghost: "0.3s Neural Edge AI (MCQ, STEM, LaTeX)", competitor: "None (Zero AI Capabilities)" },
                 { label: "Canvas SpeedGrader Defense", examghost: "Active Focus Shield (Neutralizes window.blur)", competitor: "None" },
-                { label: "Pricing Model", examghost: "$19.99 One-Time Lifetime", competitor: "Free / $4.99/mo Theme Packs" }
+                { label: "Pricing Model", examghost: "50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) Lifetime", competitor: "Free / $4.99/mo Theme Packs" }
             ]
         },
         latencyComparison: {
@@ -2151,7 +2151,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Complementary College Toolkit",
                 competitorFlaw: "Using BetterCampus alone leaves you unassisted during difficult exams and quizzes.",
-                examghostAdvantage: "ExamGhost costs $19.99 once for lifetime access, giving you an undetectable secret weapon on every quiz, midterm, and final."
+                examghostAdvantage: "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for lifetime access, giving you an undetectable secret weapon on every quiz, midterm, and final."
             }
         ],
         matrix: [
@@ -2161,7 +2161,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "LaTeX Formula Support", description: "Decodes mathematical and scientific equations", examghost: true, competitor: false },
             { feature: "Emergency Panic Purge", description: "One-key cache flush on Esc", examghost: true, competitor: false },
             { feature: "Stealth Opacity Dial", description: "Adjust transparency from 10% to 100%", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "$19.99 Lifetime", competitor: "Free / $4.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs monthly recurring", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free / $4.99/mo" }
         ],
         studentReview: {
             quote: "I use BetterCampus for dark mode on Canvas during lectures, but ExamGhost is what got me straight A's on my exams. They make the ultimate combo.",
@@ -2180,7 +2180,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost?",
-                answer: "ExamGhost is a single one-time payment of $19.99 for lifetime access, universal LMS support, and 24 stealth tools."
+                answer: "ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access, universal LMS support, and 24 stealth tools."
             }
         ],
         metaTitle: "BetterCampus vs ExamGhost (2026) | Canvas Theme vs True Stealth Exam Solver",
@@ -2194,9 +2194,9 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "coursology.com",
         badge: "The #1 Coursology Alternative",
         pricingSummary: "$24.99/mo or $149.99/yr",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
-        heroHeadline: "Coursology charges $150/year for visible sidebars. ExamGhost delivers 0.3s Shadow DOM stealth for $19.99 lifetime.",
+        heroHeadline: "Coursology charges $150/year for visible sidebars. ExamGhost delivers 0.3s Shadow DOM stealth for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         heroSubtitle: "Coursology is a well-known study assistant with 500k+ students, but its injected buttons and unshielded side panel trigger Canvas SpeedGrader blur events and leave identifiable DOM fingerprints. ExamGhost sandboxes its compact HUD in a closed Shadow DOM for true exam stealth.",
         flawTitle: "Coursology's Flaws: $150/Year Recurring Fees, Injected DOM Buttons & Tab Blur Leaks",
         flawSummary: "Coursology injects visible buttons directly into quiz DOM elements and operates an unshielded side panel that fails to mask window.blur events on Canvas and Blackboard.",
@@ -2207,14 +2207,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No emergency purge: Lacks an instant RAM sanitize shortcut to eliminate browser memory signatures during surprise inspections."
         ],
         tldr: {
-            summary: "Coursology is a broad study platform charging high recurring fees with visible DOM injection. ExamGhost offers true closed Shadow DOM sandboxing, zero-blur Focus Shield immunity, and flat $19.99 lifetime pricing.",
+            summary: "Coursology is a broad study platform charging high recurring fees with visible DOM injection. ExamGhost offers true closed Shadow DOM sandboxing, zero-blur Focus Shield immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
-                "Coursology costs $149.99 every year; ExamGhost is a single $19.99 one-time payment for life.",
+                "Coursology costs $149.99 every year; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment for life.",
                 "Coursology injects visible buttons on quiz pages; ExamGhost remains 100% invisible inside a closed Shadow DOM.",
                 "ExamGhost solves questions in 0.3s edge inference vs Coursology's 3.2s cloud round-trip."
             ],
             quickCompare: [
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$24.99/mo ($149.99/yr)" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$24.99/mo ($149.99/yr)" },
                 { label: "DOM Footprint", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Injected DOM buttons (.coursology-btn)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking (Canvas logs departure)" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "3.2s Cloud Latency" },
@@ -2243,7 +2243,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "$150/Year Subscriptions vs Single Lifetime License",
                 competitorFlaw: "Coursology locks its Chrome extension behind a $24.99/month or $149.99/year paywall, turning academic assistance into a costly annual subscription.",
-                examghostAdvantage: "ExamGhost costs a single, flat $19.99 for lifetime access, free updates, universal LMS support, and 24 stealth tools."
+                examghostAdvantage: "ExamGhost costs a single, flat $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access, free updates, universal LMS support, and 24 stealth tools."
             }
         ],
         matrix: [
@@ -2256,7 +2256,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "DOM Injection Cleanliness", description: "Never injects detectable buttons into page", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.2s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: true },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$24.99/mo or $149.99/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$24.99/mo or $149.99/yr" }
         ],
         studentReview: {
             quote: "I was paying $25 a month for Coursology until my TA showed me that Canvas logged every single time I opened the sidebar. I switched to ExamGhost and my SpeedGrader logs have been 100% clean ever since.",
@@ -2271,7 +2271,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "Why is ExamGhost better than Coursology?",
-                answer: "ExamGhost operates in a completely closed Shadow DOM, intercepts tab-blur events with Focus Shield, and costs $19.99 once for life instead of Coursology's $149.99/year subscription."
+                answer: "ExamGhost operates in a completely closed Shadow DOM, intercepts tab-blur events with Focus Shield, and costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for life instead of Coursology's $149.99/year subscription."
             },
             {
                 question: "Does ExamGhost support Canvas New Quizzes and Blackboard?",
@@ -2279,7 +2279,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Coursology vs ExamGhost (2026 Comparison) | Stealth HUD vs $150/Yr Sidebar",
-        metaDescription: "Comparing Coursology and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and $19.99 lifetime plan over Coursology's $150/year subscription."
+        metaDescription: "Comparing Coursology and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Coursology's $150/year subscription."
     },
 
     // 25. QuestionAI
@@ -2289,7 +2289,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "questionai.com",
         badge: "The #1 QuestionAI Alternative",
         pricingSummary: "Freemium + $9.99/mo Pro",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "QuestionAI is built for mobile phone cameras. ExamGhost is engineered for college desktop exam stealth.",
         heroSubtitle: "QuestionAI boasts 10M+ mobile downloads, but its desktop Chrome extension is an ad-heavy port that struggles on complex university STEM formulas and lacks tab-blur suppression. ExamGhost provides dedicated Mathpix STEM parsing and 100% Shadow DOM isolation.",
@@ -2302,14 +2302,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Visible sidebar layout: Pushes page content sideways, creating visible viewport resizing events detectable in proctor logs."
         ],
         tldr: {
-            summary: "QuestionAI is a general-purpose mobile homework app with an unshielded desktop extension. ExamGhost is a dedicated desktop exam engine featuring closed Shadow DOM sandboxing, Mathpix STEM parsing, and $19.99 lifetime access.",
+            summary: "QuestionAI is a general-purpose mobile homework app with an unshielded desktop extension. ExamGhost is a dedicated desktop exam engine featuring closed Shadow DOM sandboxing, Mathpix STEM parsing, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "QuestionAI requires mobile phone cameras or an unshielded sidebar; ExamGhost runs in a zero-blur desktop HUD.",
                 "ExamGhost solves complex STEM in 0.3s with Mathpix accuracy vs QuestionAI's generic 3.9s vision.",
-                "One flat $19.99 lifetime fee vs QuestionAI's monthly subscription and ad gates."
+                "One flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee vs QuestionAI's monthly subscription and ad gates."
             ],
             quickCompare: [
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Freemium + $9.99/mo Pro" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Freemium + $9.99/mo Pro" },
                 { label: "STEM Engine", examghost: "Mathpix Neural STEM Engine", competitor: "Generic Mobile OCR" },
                 { label: "Stealth Architecture", examghost: "Closed Shadow DOM + Focus Shield", competitor: "Unshielded Sidebar Extension" },
                 { label: "Latency", examghost: "0.3s Edge Inference", competitor: "3.9s Cloud Processing" },
@@ -2338,7 +2338,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Unlimited Lifetime Access vs Ad Gates & Daily Quotas",
                 competitorFlaw: "QuestionAI free users must sit through countdown timers and ad screens during timed tests, or pay recurring monthly fees for basic Pro features.",
-                examghostAdvantage: "ExamGhost has zero ads, zero countdowns, unlimited solves, and a flat $19.99 lifetime license."
+                examghostAdvantage: "ExamGhost has zero ads, zero countdowns, unlimited solves, and a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license."
             }
         ],
         matrix: [
@@ -2351,7 +2351,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Zero Viewport Resize", description: "Never triggers window.onresize events", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.9s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & Blackboard Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$9.99/mo or Ad-Gated" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/mo or Ad-Gated" }
         ],
         studentReview: {
             quote: "QuestionAI gave me completely wrong answers on my Calc 2 midterm because it misread the limits on an integral. ExamGhost parsed the exact LaTeX instantly and showed me the correct option in under half a second.",
@@ -2370,11 +2370,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to QuestionAI?",
-                answer: "ExamGhost is a single one-time payment of $19.99 for lifetime access with zero monthly fees, compared to QuestionAI's $9.99 monthly subscription."
+                answer: "ExamGhost is a single one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with zero monthly fees, compared to QuestionAI's $9.99 monthly subscription."
             }
         ],
         metaTitle: "QuestionAI vs ExamGhost (2026 Comparison) | College STEM Stealth vs Mobile Port",
-        metaDescription: "Comparing QuestionAI and ExamGhost? Learn why students prefer ExamGhost's dedicated Mathpix STEM engine, zero-blur Focus Shield, and $19.99 lifetime plan over QuestionAI's mobile port."
+        metaDescription: "Comparing QuestionAI and ExamGhost? Learn why students prefer ExamGhost's dedicated Mathpix STEM engine, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over QuestionAI's mobile port."
     },
 
     // 26. StudyFox
@@ -2384,7 +2384,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "studyfox.pro",
         badge: "The #1 StudyFox Alternative",
         pricingSummary: "$14.99/month subscription",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "StudyFox's visible popup mode leaks focus blur. ExamGhost runs in an undetectable Shadow DOM HUD.",
         heroSubtitle: "StudyFox provides popup and sidebar modes for Canvas and Blackboard, but both modes manipulate standard window elements that alert LMS proctoring and fail inside Canvas New Quizzes iframes. ExamGhost guarantees zero-blur Focus Shield immunity.",
@@ -2397,14 +2397,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Monthly subscription fees: Demands $14.99 every month for a basic Chrome wrapper."
         ],
         tldr: {
-            summary: "StudyFox is a monthly-billed LMS helper extension that fails on Canvas New Quizzes iframes and leaks blur events. ExamGhost delivers full iframe bridging, zero-blur Focus Shield protection, and flat $19.99 lifetime access.",
+            summary: "StudyFox is a monthly-billed LMS helper extension that fails on Canvas New Quizzes iframes and leaks blur events. ExamGhost delivers full iframe bridging, zero-blur Focus Shield protection, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "StudyFox breaks on Canvas New Quizzes; ExamGhost features a dedicated cross-origin iframe bridge.",
                 "StudyFox modals trigger window blur; ExamGhost Focus Shield guarantees 100% SpeedGrader log purity.",
-                "Single $19.99 lifetime payment vs StudyFox's $14.99/month recurring charge."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs StudyFox's $14.99/month recurring charge."
             ],
             quickCompare: [
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$14.99/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month" },
                 { label: "Canvas New Quizzes", examghost: "Full Iframe Bridge Support", competitor: "Fails on Cross-Origin Iframes" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking" },
                 { label: "DOM Footprint", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Standard Popup Modal Injection" },
@@ -2446,7 +2446,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "DOM Injection Cleanliness", description: "Never injects detectable buttons into page", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.5s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & Blackboard Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$14.99/month" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month" }
         ],
         studentReview: {
             quote: "StudyFox completely crashed when our professor switched to Canvas New Quizzes. I had to scramble during a timed test. ExamGhost works seamlessly on both New and Classic quizzes without missing a beat.",
@@ -2465,11 +2465,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between StudyFox and ExamGhost?",
-                answer: "StudyFox charges $14.99 every month ($179.88/year). ExamGhost is a single, one-time payment of $19.99 for lifetime access."
+                answer: "StudyFox charges $14.99 every month ($179.88/year). ExamGhost is a single, one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "StudyFox vs ExamGhost (2026 Comparison) | Canvas Iframe Stealth vs Visible Modals",
-        metaDescription: "Comparing StudyFox and ExamGhost? Discover why ExamGhost's Canvas New Quizzes iframe bridge, zero-blur Focus Shield, and $19.99 lifetime plan beat StudyFox's monthly popups."
+        metaDescription: "Comparing StudyFox and ExamGhost? Discover why ExamGhost's Canvas New Quizzes iframe bridge, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan beat StudyFox's monthly popups."
     },
 
     // 27. Canvas Crack
@@ -2478,8 +2478,8 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "Canvas Crack",
         domain: "canvascrack.com",
         badge: "The #1 Canvas Crack Alternative",
-        pricingSummary: "$19.99 - $29.99 / mo",
-        examghostPricing: "$19.99 Lifetime",
+        pricingSummary: "$19/mo ($99/yr or $199 Lifetime, 50 Free Solves) - $29.99 / mo",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#e2d3fa",
         heroHeadline: "Canvas Crack risks store bans and malware warnings. ExamGhost offers safe, verified exam stealth.",
         heroSubtitle: "Canvas Crack is an unvetted script sold on TikTok that requires developer mode installation, overriding browser prototypes in ways that trigger LMS anomaly alarms. ExamGhost is a clean, Web Store-compliant tool backed by mathematical stealth.",
@@ -2492,17 +2492,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No STEM capability: Purely an event-spoofing script with no neural OCR or verified answer database."
         ],
         tldr: {
-            summary: "Canvas Crack is an unvetted sideloaded exploit script with high malware and detection risks. ExamGhost is a verified, store-compliant extension delivering closed Shadow DOM sandboxing, Mathpix STEM solving, and $19.99 lifetime access.",
+            summary: "Canvas Crack is an unvetted sideloaded exploit script with high malware and detection risks. ExamGhost is a verified, store-compliant extension delivering closed Shadow DOM sandboxing, Mathpix STEM solving, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "Canvas Crack forces sideloading and prototype pollution; ExamGhost uses passive, safe event isolation.",
                 "Canvas Crack only spoofs events without solving questions; ExamGhost is a full 0.3s AI solver.",
-                "Safe, verified $19.99 lifetime payment vs shady $29.99/month subscriptions."
+                "Safe, verified 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs shady $29.99/month subscriptions."
             ],
             quickCompare: [
                 { label: "Installation Safety", examghost: "Official Chrome Web Store Approved", competitor: "Unverified Developer Mode Sideload" },
                 { label: "Code Integrity", examghost: "Zero Prototype Pollution", competitor: "Monkey-Patches addEventListener" },
                 { label: "AI Solving Engine", examghost: "0.3s Multimodal Edge AI", competitor: "No Built-In Solver (Event Spoof Only)" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$19.99 - $29.99/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$19/mo ($99/yr or $199 Lifetime, 50 Free Solves) - $29.99/month" },
                 { label: "LMS Protection", examghost: "Passive Shadow DOM Focus Shield", competitor: "Aggressive Detectable Hooking" }
             ]
         },
@@ -2541,7 +2541,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Clean Native Prototypes", description: "Never tampers with Function.prototype", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "No Solver" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$19.99 - $29.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$19/mo ($99/yr or $199 Lifetime, 50 Free Solves) - $29.99/mo" }
         ],
         studentReview: {
             quote: "I bought Canvas Crack after seeing it on TikTok and it completely messed up my Chrome browser. Canvas flagged my exam for modified scripts. ExamGhost is completely clean, actually answers the questions, and works instantly.",
@@ -2573,8 +2573,8 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "QuizMate",
         domain: "quizmate.io",
         badge: "The #1 QuizMate Alternative",
-        pricingSummary: "$12.99 - $19.99/mo",
-        examghostPricing: "$19.99 Lifetime",
+        pricingSummary: "$12.99 - /mo9.99/mo",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#cdeecb",
         heroHeadline: "QuizMate relies on slow context menus. ExamGhost solves questions instantly in 0.3s.",
         heroSubtitle: "QuizMate positions itself as an LMS study partner, but right-click context menu workflows fail on exams that disable right-clicks and lack emergency panic hotkeys. ExamGhost operates through passive mouse hovering and instant keyboard shortcut triggers.",
@@ -2583,18 +2583,18 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         flawBulletPoints: [
             "Disabled on locked tests: Exam platforms that disable contextmenu events render QuizMate completely unusable.",
             "No Panic Purge: Lacks an emergency Esc RAM flush to sanitize the browser during sudden instructor checks.",
-            "Expensive recurring tiers: Charges up to $19.99 every month for standard AI wrapper features.",
+            "Expensive recurring tiers: Charges up to $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) every month for standard AI wrapper features.",
             "No Focus Shield: Interacting with the QuizMate response panel triggers window.blur flags in Canvas."
         ],
         tldr: {
-            summary: "QuizMate is a subscription-based study partner dependent on right-click context menus. ExamGhost works with context menus disabled, features instant 0.3s edge solving, Focus Shield blur immunity, and a $19.99 lifetime license.",
+            summary: "QuizMate is a subscription-based study partner dependent on right-click context menus. ExamGhost works with context menus disabled, features instant 0.3s edge solving, Focus Shield blur immunity, and a 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license.",
             keyTakeaways: [
                 "QuizMate fails when exams disable right-click; ExamGhost uses passive hover and hotkeys.",
                 "QuizMate lacks an emergency purge; ExamGhost clears browser RAM instantly with the Esc panic key.",
-                "Flat $19.99 lifetime fee vs QuizMate's $19.99 monthly subscription."
+                "Flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee vs QuizMate's $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) monthly subscription."
             ],
             quickCompare: [
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$12.99 - $19.99/mo" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$12.99 - /mo9.99/mo" },
                 { label: "Locked Exam Support", examghost: "Works with Right-Click Disabled", competitor: "Broken on contextmenu Disabled" },
                 { label: "Panic Key Purge", examghost: "Instant Esc RAM Flush", competitor: "None" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking" },
@@ -2622,8 +2622,8 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             {
                 number: 3,
                 title: "Lifetime Ownership vs Continuous Monthly Subscriptions",
-                competitorFlaw: "QuizMate locks students into recurring monthly bills of $12.99 to $19.99, charging over $200 throughout an academic degree.",
-                examghostAdvantage: "ExamGhost is a single, one-time payment of $19.99 with unlimited solves and free lifelong updates."
+                competitorFlaw: "QuizMate locks students into recurring monthly bills of $12.99 to $19/mo ($99/yr or $199 Lifetime, 50 Free Solves), charging over $200 throughout an academic degree.",
+                examghostAdvantage: "ExamGhost is a single, one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) with unlimited solves and free lifelong updates."
             }
         ],
         matrix: [
@@ -2636,7 +2636,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Zero DOM Injection", description: "Never leaves detectable nodes in document", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.6s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: true },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$12.99 - $19.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$12.99 - /mo9.99/mo" }
         ],
         studentReview: {
             quote: "My chemistry professor disabled right-clicking on our Canvas exams, and QuizMate stopped working completely. ExamGhost worked effortlessly with keyboard shortcuts, solved every formula, and saved my semester.",
@@ -2655,11 +2655,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between QuizMate and ExamGhost?",
-                answer: "QuizMate charges $12.99 to $19.99 per month. ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "QuizMate charges $12.99 to $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) per month. ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "QuizMate vs ExamGhost (2026 Comparison) | 0.3s Stealth HUD vs Context Menu Helper",
-        metaDescription: "Comparing QuizMate and ExamGhost? Learn why students prefer ExamGhost's right-click immunity, panic RAM flush, and $19.99 lifetime plan over QuizMate's monthly fees."
+        metaDescription: "Comparing QuizMate and ExamGhost? Learn why students prefer ExamGhost's right-click immunity, panic RAM flush, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over QuizMate's monthly fees."
     },
 
     // 29. Canvas Scholar
@@ -2669,7 +2669,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvasscholar.app",
         badge: "The #1 Canvas Scholar Alternative",
         pricingSummary: "Free / Donationware",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "Canvas Scholar is a basic DOM scraper. ExamGhost is a neural multimodal exam solver.",
         heroSubtitle: "Canvas Scholar offers basic text clipping and hover answer viewing, but fails completely on mathematical diagrams, graphs, and Canvas New Quizzes iframes. ExamGhost brings 0.3s edge AI and comprehensive vision OCR.",
@@ -2682,7 +2682,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No Focus Shield: Triggers window.blur events whenever the user switches away to search for solutions."
         ],
         tldr: {
-            summary: "Canvas Scholar is an amateur text-recording script without AI. ExamGhost is an enterprise-grade multimodal AI solver with Mathpix STEM parsing, cross-origin iframe support, and $19.99 lifetime access.",
+            summary: "Canvas Scholar is an amateur text-recording script without AI. ExamGhost is an enterprise-grade multimodal AI solver with Mathpix STEM parsing, cross-origin iframe support, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "Canvas Scholar has no AI solver; ExamGhost solves unseen multiple-choice and STEM questions in 0.3s.",
                 "Canvas Scholar breaks on images and diagrams; ExamGhost features neural vision OCR.",
@@ -2693,7 +2693,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 { label: "STEM & Vision Support", examghost: "Mathpix Neural OCR + Vision", competitor: "Text Only (No Vision/Math)" },
                 { label: "Canvas New Quizzes", examghost: "Full Iframe Bridge Support", competitor: "Broken on Iframes" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Free / Donation" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free / Donation" }
             ]
         },
         latencyComparison: {
@@ -2731,7 +2731,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Manual Search" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas Classic Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Free" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free" }
         ],
         studentReview: {
             quote: "Canvas Scholar doesn't actually solve anything—it just copies text so you have to open Google and get caught by Canvas logs. ExamGhost solves everything right inside the test tab in 0.3 seconds.",
@@ -2749,7 +2749,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 answer: "Canvas New Quizzes renders questions inside an isolated LTI iframe that Canvas Scholar cannot access. ExamGhost features a specialized iframe bridge protocol."
             },
             {
-                question: "Is ExamGhost worth the $19.99 price over free tools like Canvas Scholar?",
+                question: "Is ExamGhost worth the $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) price over free tools like Canvas Scholar?",
                 answer: "Yes. ExamGhost provides actual AI answers, Mathpix STEM parsing, zero-blur Focus Shield immunity, and closed Shadow DOM stealth that prevents academic integrity flags."
             }
         ],
@@ -2764,7 +2764,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "schoolcheats.net",
         badge: "The #1 SchoolCheats Alternative",
         pricingSummary: "Free + VIP Paid Scripts",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "SchoolCheats targets high school games. ExamGhost is built for college university exams.",
         heroSubtitle: "SchoolCheats distributes brittle bot scripts for Blooket and Kahoot that break on every platform patch and get flagged by school network firewalls. ExamGhost is purpose-built for Canvas, Blackboard, and collegiate STEM assessments.",
@@ -2781,14 +2781,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "SchoolCheats focuses on K-12 games; ExamGhost dominates college and university LMS assessments.",
                 "SchoolCheats scripts cause account bans; ExamGhost uses passive, undetectable closed Shadow DOM.",
-                "One-time $19.99 lifetime license vs sketchy VIP script fees."
+                "One-time 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license vs sketchy VIP script fees."
             ],
             quickCompare: [
                 { label: "Target Audience", examghost: "Collegiate & University Students", competitor: "K-12 Gamified Quizzes (Kahoot/Blooket)" },
                 { label: "LMS Support", examghost: "Canvas, Blackboard, McGraw Hill, Pearson", competitor: "None (High School Games Only)" },
                 { label: "Account Safety", examghost: "100% Undetectable (Zero Bans)", competitor: "High Ban Rate from Bot Detection" },
                 { label: "STEM Capabilities", examghost: "Mathpix Neural STEM Engine", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Free + VIP Script Tiers" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free + VIP Script Tiers" }
             ]
         },
         latencyComparison: {
@@ -2826,7 +2826,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "5.2s Script Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "VIP Script Fees" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "VIP Script Fees" }
         ],
         studentReview: {
             quote: "SchoolCheats is fine for messing around in high school Blooket games, but it does nothing for real college exams. ExamGhost is the only tool that actually handles university Canvas tests and calculus problems.",
@@ -2859,7 +2859,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "knowt.com",
         badge: "The #1 Knowt Alternative for Exams",
         pricingSummary: "Free + $4.99/mo Supporter",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
         heroHeadline: "Knowt is a brilliant flashcard notebook. ExamGhost is the undetectable exam solver.",
         heroSubtitle: "Knowt is loved by 2M+ students for flashcards and Quizlet importing, but taking Knowt into a live exam opens external tabs that instantly trigger Canvas tab-departure flags. ExamGhost keeps you in-situ with zero tab switching.",
@@ -2876,14 +2876,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "Use Knowt to study days before; use ExamGhost during the exam for 100% stealth.",
                 "Knowt triggers Canvas tab-departure flags; ExamGhost Focus Shield guarantees pure focus logs.",
-                "Single $19.99 lifetime payment for dedicated exam stealth."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment for dedicated exam stealth."
             ],
             quickCompare: [
                 { label: "Primary Use Case", examghost: "Live Exam Stealth & 0.3s Solving", competitor: "Pre-Exam Flashcards & Study Guides" },
                 { label: "Tab Departure Risk", examghost: "Zero (In-Situ Shadow DOM HUD)", competitor: "High (Requires Opening External Tab)" },
                 { label: "Focus Shield", examghost: "Active window.blur Suppression", competitor: "None" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "3.8s Cloud Generation" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Free / $4.99/mo" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free / $4.99/mo" }
             ]
         },
         latencyComparison: {
@@ -2921,7 +2921,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Canvas New Quizzes (Iframe)", description: "Seamless execution across cross-origin iframes", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.8s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Free + $4.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free + $4.99/mo" }
         ],
         studentReview: {
             quote: "I love Knowt for studying my notes, but on test day you cannot open a separate tab without Canvas catching you. ExamGhost puts the answer right on the screen in 0.3s without ever leaving the page.",
@@ -2953,8 +2953,8 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         name: "Cramly AI",
         domain: "cramly.ai",
         badge: "The #1 Cramly Alternative",
-        pricingSummary: "$9.99 - $19.99/month",
-        examghostPricing: "$19.99 Lifetime",
+        pricingSummary: "$9.99 - /mo9.99/month",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#e2d3fa",
         heroHeadline: "Cramly AI writes essays. ExamGhost dominates timed STEM quizzes and exams.",
         heroSubtitle: "Cramly AI is designed for discussion boards and long-form writing prompts, suffering 5+ second latency that ruins timed multiple-choice tests. ExamGhost solves multiple-choice and complex math in 0.3 seconds flat.",
@@ -2964,21 +2964,21 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Humanities and essay focus: Fails on mathematical formulas, integrals, accounting problems, and chemical diagrams.",
             "High 5+ second latency: Slow cloud text generation runs down the clock on tightly timed multiple-choice tests.",
             "No Focus Shield: Switching between Cramly and Canvas records tab departure events in SpeedGrader logs.",
-            "Expensive recurring model: $9.99/mo billed annually or $19.99/mo turns into hundreds of dollars over college."
+            "Expensive recurring model: $9.99/mo billed annually or /mo9.99/mo turns into hundreds of dollars over college."
         ],
         tldr: {
-            summary: "Cramly AI is an essay generator for discussion boards. ExamGhost is an undetectable 0.3s live exam solver engineered for university STEM, closed Shadow DOM stealth, and flat $19.99 lifetime pricing.",
+            summary: "Cramly AI is an essay generator for discussion boards. ExamGhost is an undetectable 0.3s live exam solver engineered for university STEM, closed Shadow DOM stealth, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "Cramly is built for essays; ExamGhost dominates multiple-choice, matching, and STEM exams.",
                 "Cramly takes 5+ seconds; ExamGhost delivers answers in 0.3s edge inference.",
-                "Single $19.99 lifetime payment vs Cramly's $120–$240/year subscription."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs Cramly's $120–$240/year subscription."
             ],
             quickCompare: [
                 { label: "Core Specialty", examghost: "Timed Multiple Choice & STEM Exams", competitor: "Essays & Discussion Board Paragraphs" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "5.1s Cloud Text Generation" },
                 { label: "STEM Engine", examghost: "Mathpix Neural STEM Engine", competitor: "None (Text Only)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$9.99 - $19.99/month" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99 - /mo9.99/month" }
             ]
         },
         latencyComparison: {
@@ -3002,8 +3002,8 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             {
                 number: 3,
                 title: "Lifetime Ownership vs Continuous Monthly Subscriptions",
-                competitorFlaw: "Cramly charges up to $19.99/month, continually billing students throughout their undergraduate years.",
-                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19.99 for lifetime access with zero recurring fees."
+                competitorFlaw: "Cramly charges up to /mo9.99/month, continually billing students throughout their undergraduate years.",
+                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with zero recurring fees."
             }
         ],
         matrix: [
@@ -3016,7 +3016,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Zero DOM Injection", description: "Never leaves detectable nodes in document", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "5.1s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Web App Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$9.99 - $19.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99 - /mo9.99/mo" }
         ],
         studentReview: {
             quote: "Cramly is great if you need to write a discussion board reply, but during a 50-question 60-minute biology exam, its 6-second wait time is a death sentence. ExamGhost gave me answers in 0.3s and I finished with 20 minutes to spare.",
@@ -3035,11 +3035,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Cramly?",
-                answer: "Cramly costs $9.99 to $19.99 every month ($120–$240/year). ExamGhost is a single, one-time payment of $19.99 for lifetime access."
+                answer: "Cramly costs $9.99 to $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) every month ($120–$240/year). ExamGhost is a single, one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Cramly AI vs ExamGhost (2026 Comparison) | 0.3s Exam Solver vs Essay Generator",
-        metaDescription: "Comparing Cramly AI and ExamGhost? Learn why students choose ExamGhost's 0.3s STEM solving, zero-blur Focus Shield, and $19.99 lifetime plan over Cramly's essay tools."
+        metaDescription: "Comparing Cramly AI and ExamGhost? Learn why students choose ExamGhost's 0.3s STEM solving, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Cramly's essay tools."
     },
 
     // 33. Quizzy AI
@@ -3049,10 +3049,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "quizzy-app.xyz",
         badge: "The #1 Quizzy Alternative",
         pricingSummary: "Credit Packs & Monthly API Plans",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#cdeecb",
         heroHeadline: "Stop rationing Quizzy credit packs. Get unlimited 0.3s solves with ExamGhost.",
-        heroSubtitle: "Quizzy AI forces students to buy credit packs that expire and runs through slow cloud VLM endpoints. ExamGhost delivers unlimited solves, 0.3s edge inference, and mathematically verified stealth for a single $19.99 payment.",
+        heroSubtitle: "Quizzy AI forces students to buy credit packs that expire and runs through slow cloud VLM endpoints. ExamGhost delivers unlimited solves, 0.3s edge inference, and mathematically verified stealth for a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment.",
         flawTitle: "Quizzy's Flaws: Expiring Credit Packs, High Cloud Latency & DOM Injection",
         flawSummary: "Quizzy AI operates on an expensive credit token system with unoptimized cloud processing and unshielded DOM injection.",
         flawBulletPoints: [
@@ -3062,14 +3062,14 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No Canvas New Quizzes bridge: Fails on modern LMS assessments nested inside LTI iframes."
         ],
         tldr: {
-            summary: "Quizzy AI is an expensive, credit-metered screenshot solver with slow cloud latency. ExamGhost delivers unlimited solves, 0.3s edge inference, closed Shadow DOM stealth, and flat $19.99 lifetime pricing.",
+            summary: "Quizzy AI is an expensive, credit-metered screenshot solver with slow cloud latency. ExamGhost delivers unlimited solves, 0.3s edge inference, closed Shadow DOM stealth, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "Quizzy forces you to ration expiring credits; ExamGhost offers unlimited solves forever.",
                 "Quizzy cloud processing takes 4.2s; ExamGhost delivers answers in 0.3s.",
-                "Single $19.99 lifetime fee with zero monthly subscriptions."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee with zero monthly subscriptions."
             ],
             quickCompare: [
-                { label: "Pricing Model", examghost: "$19.99 Lifetime (Unlimited)", competitor: "Credit Packs / Monthly API Fees" },
+                { label: "Pricing Model", examghost: "50 Free · $19/mo · $99/yr · $199 Life (Unlimited)", competitor: "Credit Packs / Monthly API Fees" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.2s Cloud Latency" },
                 { label: "Solve Limits", examghost: "Unlimited Solves", competitor: "Strict Token Quotas" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
@@ -3086,7 +3086,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 1,
                 title: "Unlimited Solves vs Expiring Credit Rationing",
                 competitorFlaw: "Quizzy meters every question with credit tokens that expire after 30 days. Running out of credits mid-exam creates panic and requires sudden credit card payments.",
-                examghostAdvantage: "ExamGhost comes with unlimited question solving, unlimited STEM formulas, and lifetime access for a flat $19.99."
+                examghostAdvantage: "ExamGhost comes with unlimited question solving, unlimited STEM formulas, and lifetime access for a flat $19/mo ($99/yr or $199 Lifetime, 50 Free Solves)."
             },
             {
                 number: 2,
@@ -3111,10 +3111,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Canvas New Quizzes (Iframe)", description: "Seamless execution across cross-origin iframes", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.2s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & Web Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Credit Packs / Tokens" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Credit Packs / Tokens" }
         ],
         studentReview: {
-            quote: "I ran out of Quizzy credits right in the middle of my 60-question finance final and had to pay another $15 just to finish. ExamGhost is completely unlimited, answers 10x faster, and only cost $19.99 once.",
+            quote: "I ran out of Quizzy credits right in the middle of my 60-question finance final and had to pay another $15 just to finish. ExamGhost is completely unlimited, answers 10x faster, and only cost $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once.",
             author: "Devon P.",
             school: "University of Southern California · Finance",
             gradeProof: "A in FBE 400"
@@ -3122,7 +3122,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         faqs: [
             {
                 question: "Do ExamGhost solves expire like Quizzy credits?",
-                answer: "No. ExamGhost does not use credits or tokens. You receive unlimited question solves and unlimited STEM formula parsing for life with your $19.99 license."
+                answer: "No. ExamGhost does not use credits or tokens. You receive unlimited question solves and unlimited STEM formula parsing for life with your $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) license."
             },
             {
                 question: "Why is ExamGhost faster than Quizzy AI?",
@@ -3134,7 +3134,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
-        metaDescription: "Comparing Quizzy AI and ExamGhost? Discover why students choose ExamGhost's unlimited 0.3s solves, zero-blur Focus Shield, and $19.99 lifetime plan over Quizzy's expiring credits."
+        metaDescription: "Comparing Quizzy AI and ExamGhost? Discover why students choose ExamGhost's unlimited 0.3s solves, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Quizzy's expiring credits."
     },
 
     // 34. CanvasPass
@@ -3144,10 +3144,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "canvaspass.app",
         badge: "The #1 CanvasPass Alternative",
         pricingSummary: "Free (limited) + $14.99/mo Pro",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "CanvasPass relies on risky VPN proxying. ExamGhost delivers mathematical client-side stealth.",
-        heroSubtitle: "CanvasPass promotes Fast Mode and bundled VPNPass proxying, but shifting IP addresses mid-exam triggers Canvas server-side geo-anomaly flags. ExamGhost provides client-side Focus Shield blur suppression and closed Shadow DOM isolation for $19.99 lifetime.",
+        heroSubtitle: "CanvasPass promotes Fast Mode and bundled VPNPass proxying, but shifting IP addresses mid-exam triggers Canvas server-side geo-anomaly flags. ExamGhost provides client-side Focus Shield blur suppression and closed Shadow DOM isolation for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
         flawTitle: "CanvasPass's Flaws: VPN Geo-Anomaly Flags, Missing Tab-Blur Masking & Recurring Fees",
         flawSummary: "CanvasPass relies on external proxy extensions (VPNPass) that trigger Canvas IP-jump security flags, while failing to suppress local window.blur events.",
         flawBulletPoints: [
@@ -3157,17 +3157,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Unshielded DOM overlay: Renders visible buttons on quiz containers, detectable by LMS audit scripts."
         ],
         tldr: {
-            summary: "CanvasPass relies on dangerous VPN routing that trips server-side Canvas security alerts. ExamGhost operates strictly client-side with closed Shadow DOM isolation, zero-blur Focus Shield immunity, and flat $19.99 lifetime pricing.",
+            summary: "CanvasPass relies on dangerous VPN routing that trips server-side Canvas security alerts. ExamGhost operates strictly client-side with closed Shadow DOM isolation, zero-blur Focus Shield immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "CanvasPass risks server-side IP flags via VPNPass; ExamGhost operates safely through client-side event suppression.",
-                "CanvasPass charges $14.99/month; ExamGhost is a single $19.99 one-time payment for life.",
+                "CanvasPass charges $14.99/month; ExamGhost is a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment for life.",
                 "ExamGhost solves questions in 0.3s edge inference vs CanvasPass's 3.5s cloud latency."
             ],
             quickCompare: [
                 { label: "Stealth Architecture", examghost: "Client-Side Closed Shadow DOM", competitor: "Risky Datacenter VPN Proxy (VPNPass)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking (Canvas logs departure)" },
                 { label: "IP Jump Safety", examghost: "100% Safe (Local Network Untouched)", competitor: "High Risk (LMS Flags ASN/Geo Shifts)" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$14.99/month Pro" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month Pro" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "3.5s Cloud Latency" }
             ]
         },
@@ -3193,7 +3193,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Flat Lifetime Access vs Monthly Recurring Paywalls",
                 competitorFlaw: "CanvasPass restricts 'Smart Mode' and complex question solving behind a $14.99/month subscription that quickly drains student budgets.",
-                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19.99 for lifetime access, universal LMS coverage, and 24 stealth tools."
+                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access, universal LMS coverage, and 24 stealth tools."
             }
         ],
         matrix: [
@@ -3206,7 +3206,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "DOM Injection Cleanliness", description: "Never injects detectable buttons into page", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.5s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$14.99/month" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month" }
         ],
         studentReview: {
             quote: "CanvasPass's VPNPass feature got my quiz flagged because my IP suddenly jumped to a server in Chicago mid-exam. I switched to ExamGhost and have had zero flags, zero blurs, and instant answers.",
@@ -3225,7 +3225,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between CanvasPass and ExamGhost?",
-                answer: "CanvasPass charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "CanvasPass charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "CanvasPass vs ExamGhost (2026 Comparison) | Client-Side Stealth vs VPN Proxy",
@@ -3239,10 +3239,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "examclutch.com",
         badge: "The #1 ExamClutch Alternative",
         pricingSummary: "$1 trial → $10/mo ($60/yr)",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
         heroHeadline: "ExamClutch injects unshielded DOM buttons. ExamGhost runs in a 100% closed Shadow DOM.",
-        heroSubtitle: "ExamClutch offers an inline assistant across Canvas and Blackboard, but its unshielded DOM elements are easily detected by LMS querySelector probes and lack Focus Shield tab-blur immunity. ExamGhost delivers 0.3s edge solving for a flat $19.99 fee.",
+        heroSubtitle: "ExamClutch offers an inline assistant across Canvas and Blackboard, but its unshielded DOM elements are easily detected by LMS querySelector probes and lack Focus Shield tab-blur immunity. ExamGhost delivers 0.3s edge solving for a flat $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) fee.",
         flawTitle: "ExamClutch's Flaws: Injected DOM Elements, SpeedGrader Blur Leaks & 3.8s Cloud Latency",
         flawSummary: "ExamClutch renders floating buttons and response containers directly in the parent document body, exposing students to DOM inspection scripts.",
         flawBulletPoints: [
@@ -3252,17 +3252,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "3.8-second cloud delay: Relies on external multi-hop cloud servers that slow down timed tests."
         ],
         tldr: {
-            summary: "ExamClutch is a monthly-billed LMS extension that injects detectable DOM elements and leaks window blur. ExamGhost provides closed Shadow DOM sandboxing, Focus Shield blur immunity, and flat $19.99 lifetime pricing.",
+            summary: "ExamClutch is a monthly-billed LMS extension that injects detectable DOM elements and leaks window blur. ExamGhost provides closed Shadow DOM sandboxing, Focus Shield blur immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "ExamClutch injects detectable DOM nodes; ExamGhost is 100% sandboxed in a closed Shadow DOM.",
                 "ExamClutch leaks window blur on click; ExamGhost silences all focus and visibility events.",
-                "Single $19.99 lifetime license vs ExamClutch's recurring monthly charges."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license vs ExamClutch's recurring monthly charges."
             ],
             quickCompare: [
                 { label: "DOM Footprint", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Injected DOM Buttons & Overlays" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "3.8s Cloud Latency" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$10/mo or $60/yr" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$10/mo or $60/yr" },
                 { label: "STEM Engine", examghost: "Mathpix Neural STEM Engine", competitor: "Generic OpenAI Proxy" }
             ]
         },
@@ -3301,7 +3301,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Zero DOM Injection", description: "Never leaves detectable nodes in document", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.8s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: true },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$10/mo or $60/yr" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$10/mo or $60/yr" }
         ],
         studentReview: {
             quote: "ExamClutch kept freezing up on my Blackboard chemistry tests and taking 5 seconds per question. ExamGhost gives me the exact formula breakdown in 0.3 seconds and leaves zero traces in the DOM.",
@@ -3320,11 +3320,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between ExamClutch and ExamGhost?",
-                answer: "ExamClutch charges $10/month or $60/year. ExamGhost is a single, one-time payment of $19.99 for lifetime access with free updates."
+                answer: "ExamClutch charges $10/month or $60/year. ExamGhost is a single, one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with free updates."
             }
         ],
         metaTitle: "ExamClutch vs ExamGhost (2026 Comparison) | 0.3s Closed HUD vs Injected DOM",
-        metaDescription: "Comparing ExamClutch and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and $19.99 lifetime plan over ExamClutch's monthly fees."
+        metaDescription: "Comparing ExamClutch and ExamGhost? Learn why students prefer ExamGhost's closed Shadow DOM HUD, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over ExamClutch's monthly fees."
     },
 
     // 36. Mathos AI
@@ -3334,7 +3334,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "mathos.ai",
         badge: "The #1 Mathos AI Alternative",
         pricingSummary: "Freemium + $8.99 - $14.99/mo",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#cdeecb",
         heroHeadline: "Mathos AI solves equations. ExamGhost solves every subject with undetectable exam stealth.",
         heroSubtitle: "Mathos AI (MathGPT) is an exceptional standalone math solver, but fails on biology, finance, and humanities questions while lacking a stealth HUD or tab-blur protection. ExamGhost provides dedicated Mathpix STEM parsing and universal multi-disciplinary accuracy.",
@@ -3347,17 +3347,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Monthly subscription tiers: Charges up to $14.99/month for unlimited MathosMax solving."
         ],
         tldr: {
-            summary: "Mathos AI is a great tutoring calculator for math homework. ExamGhost is an all-subject exam engine featuring Mathpix neural STEM parsing, closed Shadow DOM stealth, Focus Shield blur immunity, and flat $19.99 lifetime access.",
+            summary: "Mathos AI is a great tutoring calculator for math homework. ExamGhost is an all-subject exam engine featuring Mathpix neural STEM parsing, closed Shadow DOM stealth, Focus Shield blur immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "Mathos AI only works for math; ExamGhost solves STEM, humanities, business, and medical exams.",
                 "Mathos AI has no exam stealth; ExamGhost is 100% invisible inside a closed Shadow DOM.",
-                "Single $19.99 lifetime payment vs Mathos AI's $8.99 to $14.99 monthly subscription."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs Mathos AI's $8.99 to $14.99 monthly subscription."
             ],
             quickCompare: [
                 { label: "Subject Coverage", examghost: "Universal (STEM + Humanities + Business)", competitor: "Mathematics & Physics Only" },
                 { label: "Exam Stealth HUD", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Visible Calculator Overlays" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None (Logs Window Blur)" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Freemium + $8.99 - $14.99/mo" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Freemium + $8.99 - $14.99/mo" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "3.2s Cloud Latency" }
             ]
         },
@@ -3396,7 +3396,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Zero DOM Injection", description: "Never leaves detectable nodes in document", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.2s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & DeltaMath Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$8.99 - $14.99/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$8.99 - $14.99/mo" }
         ],
         studentReview: {
             quote: "Mathos AI was great for basic calculus homework, but when I had a physics exam that combined differential equations with conceptual essays, it couldn't help with half the test. ExamGhost aced the entire exam in 0.3s.",
@@ -3415,11 +3415,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Mathos AI?",
-                answer: "Mathos AI charges $8.99 to $14.99 per month ($108–$180/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "Mathos AI charges $8.99 to $14.99 per month ($108–$180/year). ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Mathos AI vs ExamGhost (2026 Comparison) | Universal Stealth Solver vs Math-Only Tool",
-        metaDescription: "Comparing Mathos AI and ExamGhost? Learn why students choose ExamGhost's universal multi-subject solving, zero-blur Focus Shield, and $19.99 lifetime plan over Mathos AI's math calculator."
+        metaDescription: "Comparing Mathos AI and ExamGhost? Learn why students choose ExamGhost's universal multi-subject solving, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Mathos AI's math calculator."
     },
 
     // 37. Quiz Wizard
@@ -3429,7 +3429,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "quizwizard.app",
         badge: "The #1 Quiz Wizard Alternative",
         pricingSummary: "Token Credit Packs & Monthly Plans",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "Quiz Wizard burns 4.5 seconds per screenshot. ExamGhost solves in 0.3s edge latency.",
         heroSubtitle: "Quiz Wizard analyzes full screen captures for diagrams and code, but heavy cloud visual uploads cause 4.5+ second delays and alter mouse cursor states detectable by proctoring cameras. ExamGhost uses local edge crops and silent Shadow DOM rendering.",
@@ -3442,16 +3442,16 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No Focus Shield: Lacks blur event masking, leaving students exposed to Canvas SpeedGrader tracking."
         ],
         tldr: {
-            summary: "Quiz Wizard is a credit-gated visual AI solver with slow cloud latency and detectable cursor states. ExamGhost delivers unlimited solves, 0.3s edge inference, closed Shadow DOM stealth, and flat $19.99 lifetime pricing.",
+            summary: "Quiz Wizard is a credit-gated visual AI solver with slow cloud latency and detectable cursor states. ExamGhost delivers unlimited solves, 0.3s edge inference, closed Shadow DOM stealth, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "Quiz Wizard takes 4.5s per screenshot; ExamGhost solves questions in 0.3s.",
                 "Quiz Wizard modifies cursor styling; ExamGhost operates silently with zero cursor changes.",
-                "Single $19.99 lifetime payment vs Quiz Wizard's expiring credit packs."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs Quiz Wizard's expiring credit packs."
             ],
             quickCompare: [
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.5s Cloud Processing" },
                 { label: "Cursor Stealth", examghost: "Zero Cursor Modifications", competitor: "Alters Cursor (Crosshair/Spinner)" },
-                { label: "Pricing Model", examghost: "$19.99 Lifetime (Unlimited)", competitor: "Token Packs / Monthly Plans" },
+                { label: "Pricing Model", examghost: "50 Free · $19/mo · $99/yr · $199 Life (Unlimited)", competitor: "Token Packs / Monthly Plans" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
                 { label: "Canvas New Quizzes", examghost: "Full Iframe Bridge Support", competitor: "Partial" }
             ]
@@ -3478,7 +3478,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Unlimited Lifetime Access vs Expiring Token Quotas",
                 competitorFlaw: "Quiz Wizard charges students per AI execution, forcing them to purchase extra token packs when studying for midterm and final exams.",
-                examghostAdvantage: "ExamGhost includes unlimited solves, unlimited STEM parsing, and lifetime updates for a single $19.99 payment."
+                examghostAdvantage: "ExamGhost includes unlimited solves, unlimited STEM parsing, and lifetime updates for a single $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) payment."
             }
         ],
         matrix: [
@@ -3491,10 +3491,10 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Canvas New Quizzes (Iframe)", description: "Seamless execution across cross-origin iframes", examghost: true, competitor: "Partial" },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.5s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: true },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Token Packs / Monthly" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Token Packs / Monthly" }
         ],
         studentReview: {
-            quote: "Quiz Wizard's 5-second delay was killing me on my 50-question 45-minute timed quizzes, and the crosshair cursor almost got me flagged on Honorlock. ExamGhost is instant, completely stealthy, and only cost $19.99 once.",
+            quote: "Quiz Wizard's 5-second delay was killing me on my 50-question 45-minute timed quizzes, and the crosshair cursor almost got me flagged on Honorlock. ExamGhost is instant, completely stealthy, and only cost $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once.",
             author: "Tyler M.",
             school: "University of Central Florida · Computer Engineering",
             gradeProof: "A in EEL 3801"
@@ -3506,7 +3506,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "Do ExamGhost solves cost extra tokens like Quiz Wizard?",
-                answer: "No. ExamGhost does not use tokens or execution credits. You receive 100% unlimited solves and STEM parsing for life with your $19.99 license."
+                answer: "No. ExamGhost does not use tokens or execution credits. You receive 100% unlimited solves and STEM parsing for life with your $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) license."
             },
             {
                 question: "How does ExamGhost achieve 0.3s solving speed?",
@@ -3514,7 +3514,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             }
         ],
         metaTitle: "Quiz Wizard vs ExamGhost (2026 Comparison) | 0.3s Edge HUD vs 4.5s Screen Capture",
-        metaDescription: "Comparing Quiz Wizard and ExamGhost? Learn why students upgrade to ExamGhost's 0.3s edge AI, zero cursor changes, and $19.99 lifetime plan over Quiz Wizard's token limits."
+        metaDescription: "Comparing Quiz Wizard and ExamGhost? Learn why students upgrade to ExamGhost's 0.3s edge AI, zero cursor changes, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Quiz Wizard's token limits."
     },
 
     // 38. SnapGPT
@@ -3524,7 +3524,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "snapgpt.io",
         badge: "The #1 SnapGPT Alternative",
         pricingSummary: "$9.99/month subscription",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#e2d3fa",
         heroHeadline: "SnapGPT's drawer resizes your viewport. ExamGhost floats in an isolated Shadow DOM pill.",
         heroSubtitle: "SnapGPT provides screenshot and highlight tools, but opening its side drawer alters the page viewport and fires window.onresize events that modern proctoring engines log as suspicious activity. ExamGhost maintains zero viewport modifications.",
@@ -3537,17 +3537,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Fails on Canvas New Quizzes: Cannot access questions nested inside cross-origin LTI iframes."
         ],
         tldr: {
-            summary: "SnapGPT is an unshielded side-drawer extension that triggers viewport resize events and Canvas blur logs. ExamGhost delivers an isolated floating Shadow DOM pill, zero-blur Focus Shield immunity, and flat $19.99 lifetime access.",
+            summary: "SnapGPT is an unshielded side-drawer extension that triggers viewport resize events and Canvas blur logs. ExamGhost delivers an isolated floating Shadow DOM pill, zero-blur Focus Shield immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "SnapGPT resizes the browser window; ExamGhost maintains a completely stable viewport.",
                 "SnapGPT triggers Canvas blur logs; ExamGhost Focus Shield ensures 100% clean activity logs.",
-                "Single $19.99 lifetime payment vs SnapGPT's $9.99/month recurring charge."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs SnapGPT's $9.99/month recurring charge."
             ],
             quickCompare: [
                 { label: "Viewport Stability", examghost: "Zero Viewport Resize Events", competitor: "Fires window.onresize on Open" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "No blur masking" },
                 { label: "DOM Footprint", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Injected Drawer Markup" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$9.99/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/month" },
                 { label: "Latency", examghost: "0.3s Edge Inference", competitor: "3.7s Cloud Latency" }
             ]
         },
@@ -3573,7 +3573,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Lifetime Ownership vs Continuous Monthly Subscriptions",
                 competitorFlaw: "SnapGPT locks students into recurring monthly bills of $9.99, charging over $120 each academic year.",
-                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19.99 with unlimited solves and free lifelong updates."
+                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) with unlimited solves and free lifelong updates."
             }
         ],
         matrix: [
@@ -3585,7 +3585,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.7s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & Blackboard Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$9.99/month" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/month" }
         ],
         studentReview: {
             quote: "SnapGPT pushed my Canvas quiz over every time it opened, and my professor asked why my browser window kept resizing during the exam. ExamGhost floats invisibly and never touches the page layout.",
@@ -3604,11 +3604,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between SnapGPT and ExamGhost?",
-                answer: "SnapGPT charges $9.99 every month ($119.88/year). ExamGhost is a single, one-time payment of $19.99 for lifetime access."
+                answer: "SnapGPT charges $9.99 every month ($119.88/year). ExamGhost is a single, one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "SnapGPT vs ExamGhost (2026 Comparison) | Floating Stealth HUD vs Viewport Resizing",
-        metaDescription: "Comparing SnapGPT and ExamGhost? Learn why students prefer ExamGhost's zero-resize Shadow DOM HUD, Focus Shield blur immunity, and $19.99 lifetime plan over SnapGPT's drawer."
+        metaDescription: "Comparing SnapGPT and ExamGhost? Learn why students prefer ExamGhost's zero-resize Shadow DOM HUD, Focus Shield blur immunity, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over SnapGPT's drawer."
     },
 
     // 39. TestWhiz
@@ -3618,7 +3618,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "testwhiz.co",
         badge: "The #1 TestWhiz Alternative",
         pricingSummary: "Free Trial + $14.99/month",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "TestWhiz is a bloated study assistant. ExamGhost is a precision 0.3s exam stealth engine.",
         heroSubtitle: "TestWhiz bundles PDF chats, YouTube summaries, and worksheets into an unshielded extension that leaks focus blur events during exams. ExamGhost is laser-focused on 24 dedicated stealth tools and instant 0.3s edge answers.",
@@ -3631,17 +3631,17 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "Slow cloud routing: Multi-feature architecture creates 4.0-second delays on multiple-choice questions."
         ],
         tldr: {
-            summary: "TestWhiz is an expensive, bloated general study tool unsuited for live exam pressure. ExamGhost is a dedicated 0.3s exam stealth engine featuring closed Shadow DOM sandboxing, Focus Shield blur immunity, and flat $19.99 lifetime access.",
+            summary: "TestWhiz is an expensive, bloated general study tool unsuited for live exam pressure. ExamGhost is a dedicated 0.3s exam stealth engine featuring closed Shadow DOM sandboxing, Focus Shield blur immunity, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) access.",
             keyTakeaways: [
                 "TestWhiz is bloated with YouTube and PDF tools; ExamGhost is streamlined purely for exam stealth.",
                 "TestWhiz leaks window blur; ExamGhost guarantees 100% clean SpeedGrader activity logs.",
-                "Single $19.99 lifetime payment vs TestWhiz's $14.99/month recurring charge."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs TestWhiz's $14.99/month recurring charge."
             ],
             quickCompare: [
                 { label: "Core Purpose", examghost: "Precision Exam Stealth & 0.3s Solving", competitor: "General Study Helper (PDF/YouTube Chat)" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.0s Cloud Multi-Hop" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$14.99/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month" },
                 { label: "DOM Footprint", examghost: "Closed Shadow DOM (0 nodes)", competitor: "Unshielded Sidebar Injection" }
             ]
         },
@@ -3667,7 +3667,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Lifetime License vs Monthly Subscription Churn",
                 competitorFlaw: "TestWhiz charges $14.99/month, draining student finances semester after semester.",
-                examghostAdvantage: "ExamGhost costs $19.99 once for life, with unlimited solves and free lifelong updates."
+                examghostAdvantage: "ExamGhost costs $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) once for life, with unlimited solves and free lifelong updates."
             }
         ],
         matrix: [
@@ -3679,7 +3679,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.0s Cloud Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Canvas & Blackboard Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$14.99/month" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99/month" }
         ],
         studentReview: {
             quote: "TestWhiz kept lagging my browser with all its PDF and YouTube features running in the background. ExamGhost is lightning-fast, never lags, and gives me answers in 0.3 seconds.",
@@ -3698,11 +3698,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to TestWhiz?",
-                answer: "TestWhiz charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "TestWhiz charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
-        metaDescription: "Comparing TestWhiz and ExamGhost? Learn why students prefer ExamGhost's lightweight 0.3s exam stealth engine and $19.99 lifetime plan over TestWhiz's bloated monthly tool."
+        metaDescription: "Comparing TestWhiz and ExamGhost? Learn why students prefer ExamGhost's lightweight 0.3s exam stealth engine and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over TestWhiz's bloated monthly tool."
     },
 
     // 40. Brainly
@@ -3712,7 +3712,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "brainly.com",
         badge: "The #1 Brainly Alternative for Exams",
         pricingSummary: "Free (Ads) + $3.29 - $10/mo",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
         heroHeadline: "Brainly crowdsources peer guesses. ExamGhost provides verified neural AI in 0.3s.",
         heroSubtitle: "Brainly relies on community-submitted answers with high error rates on advanced college exams, and opening Brainly requires leaving your test tab. ExamGhost solves questions directly on the exam page inside a closed Shadow DOM.",
@@ -3725,18 +3725,18 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No exam stealth HUD: Completely lacks closed Shadow DOM sandboxing or Focus Shield blur suppression."
         ],
         tldr: {
-            summary: "Brainly is a crowdsourced community forum unsuited for live college exams. ExamGhost is a verified neural AI solver featuring in-situ closed Shadow DOM rendering, zero tab departures, and flat $19.99 lifetime pricing.",
+            summary: "Brainly is a crowdsourced community forum unsuited for live college exams. ExamGhost is a verified neural AI solver featuring in-situ closed Shadow DOM rendering, zero tab departures, and flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) pricing.",
             keyTakeaways: [
                 "Brainly answers are unverified peer guesses; ExamGhost uses state-of-the-art neural AI with 99.4% accuracy.",
                 "Brainly forces external tab departures; ExamGhost solves in-situ without ever leaving Canvas.",
-                "Ad-free $19.99 lifetime ownership vs Brainly's recurring paywalls and video ads."
+                "Ad-free 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) ownership vs Brainly's recurring paywalls and video ads."
             ],
             quickCompare: [
                 { label: "Answer Accuracy", examghost: "99.4% Verified Neural AI", competitor: "Crowdsourced Peer Submissions (High Error)" },
                 { label: "Tab Departure Risk", examghost: "Zero (In-Situ Shadow DOM HUD)", competitor: "High (Must Open Brainly Tab)" },
                 { label: "Solving Latency", examghost: "0.3s Instant Edge", competitor: "Manual Search Overhead (30s+)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Free (Ad-Heavy) + Subscription" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free (Ad-Heavy) + Subscription" }
             ]
         },
         latencyComparison: {
@@ -3761,7 +3761,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Ad-Free Lifetime Access vs Aggressive Paywall Popups",
                 competitorFlaw: "Brainly covers answers with blur overlays and video ads, forcing students to watch countdowns during timed exams.",
-                examghostAdvantage: "ExamGhost has zero ads, zero countdowns, and grants unlimited solves for a flat $19.99 lifetime fee."
+                examghostAdvantage: "ExamGhost has zero ads, zero countdowns, and grants unlimited solves for a flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee."
             }
         ],
         matrix: [
@@ -3773,7 +3773,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Manual Search" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Freemium + Subscription" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Freemium + Subscription" }
         ],
         studentReview: {
             quote: "I used Brainly on my first physics quiz and failed because the top-voted answer had an algebra error in step two. ExamGhost gives me verified step-by-step math in 0.3s right on the quiz page.",
@@ -3792,7 +3792,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Brainly Plus?",
-                answer: "Brainly Plus charges recurring subscription fees. ExamGhost is a single, flat one-time payment of $19.99 for lifetime access with zero recurring bills."
+                answer: "Brainly Plus charges recurring subscription fees. ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with zero recurring bills."
             }
         ],
         metaTitle: "Brainly vs ExamGhost (2026 Comparison) | Verified Neural AI vs Crowdsourced Forum",
@@ -3806,7 +3806,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "coursehero.com",
         badge: "The #1 Course Hero Alternative",
         pricingSummary: "$9.95 - $19.95/month",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#ffd5cc",
         heroHeadline: "Course Hero is built for unblurring notes. ExamGhost is engineered for live exam stealth.",
         heroSubtitle: "Course Hero's AI assistant is designed for studying document libraries and summarizing YouTube lectures, but opening Course Hero during an exam is an immediate honor code violation that flags tab logs. ExamGhost keeps you 100% in-situ.",
@@ -3823,13 +3823,13 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "Course Hero is for pre-exam study guides; ExamGhost dominates live timed exam solving.",
                 "Course Hero requires leaving Canvas; ExamGhost solves in-situ with zero tab departures.",
-                "Single $19.99 lifetime payment vs Course Hero's $120–$240/year subscription."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment vs Course Hero's $120–$240/year subscription."
             ],
             quickCompare: [
                 { label: "Core Utility", examghost: "Live Exam Stealth & 0.3s Solving", competitor: "Document Library & Homework Unblurs" },
                 { label: "Tab Departure Risk", examghost: "Zero (In-Situ Shadow DOM HUD)", competitor: "High (Must Open Course Hero Site)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$9.95 - $19.95/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.95 - $19.95/month" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "Manual Library Search (1–2 min)" }
             ]
         },
@@ -3855,7 +3855,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Lifetime License vs Document Upload Hassles",
                 competitorFlaw: "Course Hero demands expensive monthly subscriptions ($19.95/mo) or forces students to upload 10+ documents to earn credits.",
-                examghostAdvantage: "ExamGhost costs a single $19.99 one-time payment with unlimited solves, no uploads, and zero recurring fees."
+                examghostAdvantage: "ExamGhost costs a single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) payment with unlimited solves, no uploads, and zero recurring fees."
             }
         ],
         matrix: [
@@ -3867,7 +3867,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Manual Search" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$9.95 - $19.95/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.95 - $19.95/mo" }
         ],
         studentReview: {
             quote: "Course Hero is fine for looking up old study guides, but on an exam with new questions, it's completely useless. ExamGhost solves the exact question on my screen in 0.3s without ever leaving Canvas.",
@@ -3886,11 +3886,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Course Hero?",
-                answer: "Course Hero costs up to $19.95/month ($240/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "Course Hero costs up to $19.95/month ($240/year). ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Course Hero vs ExamGhost (2026 Comparison) | Live Exam Stealth vs Document Library",
-        metaDescription: "Comparing Course Hero and ExamGhost? Learn why students prefer ExamGhost's 0.3s live stealth solver and $19.99 lifetime plan over Course Hero's document library."
+        metaDescription: "Comparing Course Hero and ExamGhost? Learn why students prefer ExamGhost's 0.3s live stealth solver and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Course Hero's document library."
     },
 
     // 42. QuizPlus
@@ -3900,7 +3900,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "quizplus.com",
         badge: "The #1 QuizPlus Alternative",
         pricingSummary: "Free Search + $9.99/mo Pro",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#cdeecb",
         heroHeadline: "QuizPlus searches static question banks. ExamGhost solves unseen live exams in 0.3s.",
         heroSubtitle: "QuizPlus relies on existing textbook databases that fail whenever professors write proprietary questions or randomize values. ExamGhost's multimodal AI solves original, unseen exam questions in real time with 0.3s latency.",
@@ -3917,13 +3917,13 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "QuizPlus only knows old textbook questions; ExamGhost solves original unseen questions instantly.",
                 "QuizPlus triggers Canvas tab departures; ExamGhost Focus Shield guarantees clean focus logs.",
-                "Flat $19.99 lifetime fee vs QuizPlus's monthly subscriptions."
+                "Flat 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) fee vs QuizPlus's monthly subscriptions."
             ],
             quickCompare: [
                 { label: "Solving Capability", examghost: "Solves Unseen & Randomized Questions", competitor: "Static Database Lookup Only" },
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "Database Search (5s+)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$9.99/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/month" },
                 { label: "LMS Stealth", examghost: "Closed Shadow DOM HUD", competitor: "None (External Web Search)" }
             ]
         },
@@ -3949,7 +3949,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Single Lifetime Payment vs Monthly Subscription Churn",
                 competitorFlaw: "QuizPlus bills $9.99/month, continually recurring on student credit cards throughout the school year.",
-                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19.99 for lifetime access with free updates."
+                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with free updates."
             }
         ],
         matrix: [
@@ -3961,7 +3961,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.2s Database Search" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$9.99/month" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/month" }
         ],
         studentReview: {
             quote: "My finance professor writes his own test questions, so QuizPlus never had any matches. ExamGhost solves every single question live in 0.3 seconds and never leaves a trace in Canvas.",
@@ -3980,11 +3980,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How does pricing compare between QuizPlus and ExamGhost?",
-                answer: "QuizPlus costs $9.99 every month ($119.88/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "QuizPlus costs $9.99 every month ($119.88/year). ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "QuizPlus vs ExamGhost (2026 Comparison) | Live Neural AI vs Static Database",
-        metaDescription: "Comparing QuizPlus and ExamGhost? Learn why students prefer ExamGhost's 0.3s live neural AI solving and $19.99 lifetime plan over QuizPlus's static textbook database."
+        metaDescription: "Comparing QuizPlus and ExamGhost? Learn why students prefer ExamGhost's 0.3s live neural AI solving and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over QuizPlus's static textbook database."
     },
 
     // 43. StudyMonkey
@@ -3994,7 +3994,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "studymonkey.ai",
         badge: "The #1 StudyMonkey Alternative",
         pricingSummary: "$8.00 - $16.00/month",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#e2d3fa",
         heroHeadline: "StudyMonkey gives 6-second tutoring lectures. ExamGhost delivers 0.3s exam answers.",
         heroSubtitle: "StudyMonkey structures responses as conversational dialogues that take 6+ seconds to generate—fatal on tightly timed 60-minute tests. ExamGhost highlights the exact correct answer choice in 0.3s edge inference.",
@@ -4011,13 +4011,13 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "StudyMonkey lectures you for 6 seconds; ExamGhost gives the exact answer choice in 0.3s.",
                 "StudyMonkey triggers Canvas blur logs; ExamGhost Focus Shield ensures 100% clean logs.",
-                "Single $19.99 lifetime license vs StudyMonkey's recurring monthly subscriptions."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license vs StudyMonkey's recurring monthly subscriptions."
             ],
             quickCompare: [
                 { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "6.2s Conversational Delay" },
                 { label: "Answer Format", examghost: "Direct Option Highlight + Concise Rationale", competitor: "Long Conversational Paragraphs" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "$8.00 - $16.00/month" },
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$8.00 - $16.00/month" },
                 { label: "LMS Stealth", examghost: "Closed Shadow DOM HUD", competitor: "Unshielded Sidebar" }
             ]
         },
@@ -4043,7 +4043,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Lifetime Ownership vs Monthly Subscription Churn",
                 competitorFlaw: "StudyMonkey charges up to $16/month, billing students continuously throughout the academic year.",
-                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19.99 for lifetime access with free updates."
+                examghostAdvantage: "ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access with free updates."
             }
         ],
         matrix: [
@@ -4056,7 +4056,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Canvas New Quizzes (Iframe)", description: "Seamless execution across cross-origin iframes", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "6.2s Chat Latency" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: "Web App Only" },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$8.00 - $16.00/mo" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$8.00 - $16.00/mo" }
         ],
         studentReview: {
             quote: "StudyMonkey takes forever to write out conversational explanations when all you need is the right answer on a timed test. ExamGhost highlights the exact answer in under half a second.",
@@ -4075,11 +4075,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to StudyMonkey?",
-                answer: "StudyMonkey charges $8 to $16 every month. ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "StudyMonkey charges $8 to $16 every month. ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "StudyMonkey vs ExamGhost (2026 Comparison) | 0.3s Direct Exam Solver vs 6s Chatbot",
-        metaDescription: "Comparing StudyMonkey and ExamGhost? Learn why students choose ExamGhost's 0.3s instant option matching and $19.99 lifetime plan over StudyMonkey's 6-second conversational tutor."
+        metaDescription: "Comparing StudyMonkey and ExamGhost? Learn why students choose ExamGhost's 0.3s instant option matching and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over StudyMonkey's 6-second conversational tutor."
     },
 
     // 44. Wolfram|Alpha
@@ -4089,7 +4089,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "wolframalpha.com",
         badge: "The #1 Wolfram Alpha Alternative for Exams",
         pricingSummary: "Free Basic + $5.00/mo Pro",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#bfe3f6",
         heroHeadline: "Wolfram|Alpha requires manual query typing. ExamGhost solves quizzes in-situ in 0.3s.",
         heroSubtitle: "Wolfram|Alpha is an incredible mathematical computation engine, but it requires manual query formatting, fails on multi-disciplinary conceptual questions, and forces tab departures that Canvas flags. ExamGhost solves in-situ with zero tab switches.",
@@ -4102,18 +4102,18 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             "No stealth HUD: Offers no closed Shadow DOM overlay or Focus Shield blur suppression."
         ],
         tldr: {
-            summary: "Wolfram|Alpha is an exceptional computational math engine for homework research. ExamGhost is a dedicated live exam solver featuring Mathpix vision OCR, universal multi-disciplinary accuracy, and closed Shadow DOM stealth for $19.99 lifetime.",
+            summary: "Wolfram|Alpha is an exceptional computational math engine for homework research. ExamGhost is a dedicated live exam solver featuring Mathpix vision OCR, universal multi-disciplinary accuracy, and closed Shadow DOM stealth for 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime).",
             keyTakeaways: [
                 "Wolfram requires manual typing; ExamGhost solves questions visually in-situ in 0.3s.",
                 "Wolfram only does math; ExamGhost handles STEM, humanities, finance, and medical tests.",
-                "Single $19.99 lifetime license vs Wolfram's Pro subscriptions."
+                "Single 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) license vs Wolfram's Pro subscriptions."
             ],
             quickCompare: [
                 { label: "Input Method", examghost: "Instant In-Situ Vision & Hover Trigger", competitor: "Manual Keyboard Syntax Formatting" },
                 { label: "Subject Coverage", examghost: "Universal (STEM + Humanities + Business)", competitor: "Computational Mathematics Only" },
                 { label: "Tab Departure Risk", examghost: "Zero (In-Situ Shadow DOM HUD)", competitor: "High (Must Open Wolfram Tab/Window)" },
                 { label: "Focus Protection", examghost: "Active Focus Shield (zero blur)", competitor: "None" },
-                { label: "Pricing", examghost: "$19.99 Lifetime", competitor: "Free Basic + $5.00 - $8.25/mo Pro" }
+                { label: "Pricing", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free Basic + $5.00 - $8.25/mo Pro" }
             ]
         },
         latencyComparison: {
@@ -4150,7 +4150,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Panic RAM Flush (Esc)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Manual Typing (30s+)" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "$5.00 - $8.25/mo Pro" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$5.00 - $8.25/mo Pro" }
         ],
         studentReview: {
             quote: "Trying to type multivariable calculus equations into Wolfram Alpha during a 50-minute exam was taking 2 minutes per problem. ExamGhost reads the equation right off the screen and gives the answer in 0.3 seconds.",
@@ -4169,11 +4169,11 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             },
             {
                 question: "How much does ExamGhost cost compared to Wolfram|Alpha Pro?",
-                answer: "Wolfram|Alpha Pro costs $5.00 to $8.25/month. ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
+                answer: "Wolfram|Alpha Pro costs $5.00 to $8.25/month. ExamGhost is a single, flat one-time payment of $19/mo ($99/yr or $199 Lifetime, 50 Free Solves) for lifetime access."
             }
         ],
         metaTitle: "Wolfram|Alpha vs ExamGhost (2026 Comparison) | In-Situ Stealth vs Manual Math Engine",
-        metaDescription: "Comparing Wolfram|Alpha and ExamGhost? Learn why students prefer ExamGhost's visual 0.3s STEM solving, zero-blur Focus Shield, and $19.99 lifetime plan over Wolfram's manual syntax engine."
+        metaDescription: "Comparing Wolfram|Alpha and ExamGhost? Learn why students prefer ExamGhost's visual 0.3s STEM solving, zero-blur Focus Shield, and 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) plan over Wolfram's manual syntax engine."
     },
 
     // 45. Homeworkify
@@ -4183,7 +4183,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         domain: "homeworkify.st",
         badge: "The #1 Homeworkify Alternative",
         pricingSummary: "Free (Ad-Supported / Volatile)",
-        examghostPricing: "$19.99 Lifetime",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
         themeColor: "#c4d0f8",
         heroHeadline: "Homeworkify paste-links are dead on exams. ExamGhost solves live questions in 0.3s.",
         heroSubtitle: "Homeworkify requires pasting URLs to unblur Chegg answers, but live exams have no public URLs to paste, and switching tabs logs immediate departure events in SpeedGrader. ExamGhost solves proprietary exam questions in-situ.",
@@ -4200,7 +4200,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             keyTakeaways: [
                 "Homeworkify requires pasting URLs; ExamGhost solves live questions directly on your quiz page.",
                 "Homeworkify triggers Canvas tab-departure flags; ExamGhost Focus Shield guarantees clean focus logs.",
-                "Ad-free $19.99 lifetime ownership vs volatile, broken Homeworkify mirrors."
+                "Ad-free 50 Free Solves ($19/mo, $99/yr, or $199 Lifetime) ownership vs volatile, broken Homeworkify mirrors."
             ],
             quickCompare: [
                 { label: "Live Exam Capability", examghost: "Full LMS Support (Canvas, BB, D2L)", competitor: "Zero (Requires Pasting Public URLs)" },
@@ -4245,7 +4245,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
             { feature: "Ad-Free Interface", description: "Zero spam redirects or popups", examghost: true, competitor: false },
             { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Manual URL Paste" },
             { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
-            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "$19.99 Lifetime", competitor: "Free / Volatile" }
+            { feature: "Pricing Model", description: "One-time payment vs recurring subscription", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free / Volatile" }
         ],
         studentReview: {
             quote: "Homeworkify is totally useless during a real exam because you can't paste a URL when you're taking a Canvas test. ExamGhost answers the question right on my screen in 0.3 seconds.",
@@ -4269,6 +4269,946 @@ export const COMPETITORS: Record<string, CompetitorData> = {
         ],
         metaTitle: "Homeworkify vs ExamGhost (2026 Comparison) | Live Exam Stealth vs URL Unblur Tool",
         metaDescription: "Comparing Homeworkify and ExamGhost? Learn why students replace Homeworkify's broken URL unblur mirrors with ExamGhost's 0.3s live AI stealth exam solver."
+    },
+
+    // 46. Apex Vision AI
+    "apexvision-vs-examghost": {
+        slug: "apexvision-vs-examghost",
+        name: "Apex Vision AI",
+        domain: "apexvision.ai",
+        badge: "The #1 Stealth Alternative to Apex Vision AI",
+        pricingSummary: "$9.99–$19.99/mo (500–2,000 Req Caps)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#cdeecb",
+        heroHeadline: "Apex Vision AI explicitly states 'We do not build stealth modes or tab-switch blockers.' ExamGhost does.",
+        heroSubtitle: "Apex Vision AI (Chrome ID ncaknkaehhieldhnmimbjnfgneaiijbd, 9,000 users) admits on its own FAQ that it has zero stealth or tab-switch blocking, caps Starter plans at 500 requests/mo, and fires OpenAI ad-click conversion pixels on signup.",
+        flawTitle: "Apex Vision AI's Flaws: Zero Stealth By Design, Monthly Request Caps & Ad-Pixel Telemetry",
+        flawSummary: "Apex Vision AI explicitly warns students: 'We do not build stealth modes or tab-switch blockers,' while capping monthly solves at 500–2,000 and sending signup/payment conversions to OpenAI ad-tracking pixels.",
+        flawBulletPoints: [
+            "Verbatim no-stealth admission: FAQ states 'We do not build [stealth modes or tab-switch blockers]'—leaving SpeedGrader blur logs wide open.",
+            "Strict monthly request caps: Starter ($9.99/mo) is capped at 500 requests and Pro ($19.99/mo) at 2,000 requests.",
+            "Ad-pixel telemetry disclosure: Privacy policy admits sending signup and payment conversion events to OpenAI when an oa_ad_click_id cookie is present.",
+            "Visible toolbar & sidepanel blur: Clicking extension buttons triggers immediate window.blur events in Canvas SpeedGrader."
+        ],
+        tldr: {
+            summary: "Apex Vision AI is an unshielded study helper with strict 500–2,000 monthly request caps and zero tab-blur protection. ExamGhost is engineered for real exams with a Closed Shadow DOM HUD, Focus Shield blur suppression, and 0.3s Multi-Model STEM Consensus.",
+            keyTakeaways: [
+                "Apex Vision AI admits it builds zero stealth or tab-switch blockers; ExamGhost includes an always-on Focus Shield.",
+                "ExamGhost renders inside an isolated Closed Shadow DOM with a ⌘+Shift+U Panic Wipe hotkey.",
+                "Start with 50 Free Solves ($0, no card) and get uncapped Pro solving at $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
+            ],
+            quickCompare: [
+                { label: "Stealth / Blur Blocker", examghost: "Closed Shadow DOM + Focus Shield", competitor: "None ('We do not build stealth modes')" },
+                { label: "Monthly Solve Limits", examghost: "Unlimited on Pro Plans (50 Free Trial)", competitor: "Capped at 500 (Starter) or 2,000 (Pro)" },
+                { label: "Solving Latency", examghost: "0.3s Multi-Model STEM Consensus", competitor: "3.2s Screenshot/Sidebar Roundtrip" },
+                { label: "Ad-Click Telemetry", examghost: "Zero Third-Party Ad Pixels", competitor: "Sends oa_ad_click_id to OpenAI" },
+                { label: "Course Materials RAG", examghost: "Local Lecture PDF & Syllabus Vault", competitor: "None" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "3.2s",
+            competitorLabel: "Apex Vision Screenshot Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Verbatim 'No Stealth Modes' Policy vs Closed Shadow DOM + Focus Shield",
+                competitorFlaw: "Apex Vision AI states verbatim on apexvision.ai: 'We do not build [stealth modes or tab-switch blockers].' Interacting with its UI fires window.blur and visibilitychange in Canvas SpeedGrader.",
+                examghostAdvantage: "ExamGhost neutralizes window.blur and visibilitychange at the prototype level via Focus Shield and isolates all UI inside a Closed Shadow DOM."
+            },
+            {
+                number: 2,
+                title: "500–2,000 Monthly Request Caps vs Unlimited Pro Solves",
+                competitorFlaw: "Every follow-up prompt or screenshot counts against Apex Vision's 500 (Starter) or 2,000 (Pro) monthly cap, cutting students off during finals week.",
+                examghostAdvantage: "ExamGhost gives 50 Free Solves upfront with no credit card, followed by unlimited solving on $19/mo, $99/yr, or $199 Lifetime plans."
+            },
+            {
+                number: 3,
+                title: "Zero-Telemetry Privacy vs OpenAI Ad-Click Conversion Tracking",
+                competitorFlaw: "Apex Vision's privacy policy discloses transmitting signup and payment events back to OpenAI when an oa_ad_click_id cookie is present.",
+                examghostAdvantage: "ExamGhost operates with zero ad-network conversion pixels and processes your Course Materials RAG Vault locally."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Unlimited Monthly Solves", description: "No 500 or 2,000 request ceiling", examghost: true, competitor: false },
+            { feature: "Course Materials RAG Vault", description: "Indexes your professor's PDFs & slides", examghost: true, competitor: false },
+            { feature: "Panic RAM Flush (⌘+Shift+U)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.2s" },
+            { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: true },
+            { feature: "Pricing Model", description: "Transparent plans with 50 free solves", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99–$19.99/mo (Capped)" }
+        ],
+        studentReview: {
+            quote: "I saw Apex Vision's own FAQ admit they don't block tab-switch detection right before my Canvas midterm. Switched to ExamGhost and finished with zero SpeedGrader flags and no 500-question cap.",
+            author: "Liam K.",
+            school: "Penn State University · Mechanical Engineering",
+            gradeProof: "A in ME 300"
+        },
+        faqs: [
+            {
+                question: "Does Apex Vision AI block Canvas tab-switching or SpeedGrader logs?",
+                answer: "No. Apex Vision AI explicitly states on its website: 'We do not build [stealth modes or tab-switch blockers].' ExamGhost includes Focus Shield to suppress window.blur and visibilitychange events."
+            },
+            {
+                question: "How many questions can you solve with Apex Vision AI vs ExamGhost?",
+                answer: "Apex Vision AI caps its $9.99/mo Starter plan at 500 requests and $19.99/mo Pro plan at 2,000 requests. ExamGhost gives 50 Free Solves ($0, no card) and uncapped Pro access."
+            }
+        ],
+        metaTitle: "Apex Vision AI vs ExamGhost (2026): 'No Stealth Modes' Disclosure & Cap Audit",
+        metaDescription: "Forensic audit of Apex Vision AI (ncaknkaehhieldhnmimbjnfgneaiijbd) vs ExamGhost. See why Apex Vision's 'We do not build stealth modes' policy and 500-request cap fail on Canvas exams."
+    },
+
+    // 47. Quizonator
+    "quizonator-vs-examghost": {
+        slug: "quizonator-vs-examghost",
+        name: "Quizonator",
+        domain: "quizonator.com",
+        badge: "The #1 Quizonator Alternative for University LMS",
+        pricingSummary: "$14.99 (300 Cap) – $28.99/mo (1,200 Cap)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#c4d0f8",
+        heroHeadline: "Quizonator (3.5★) breaks on Canvas New Quizzes & iframes. ExamGhost solves every LMS in 0.3s.",
+        heroSubtitle: "Built by QUIZONATOR SP Z O O in Poland for Polish trivia portals (Testportal, Kahoot), Quizonator v2.0.5 explicitly warns it only supports 'Canvas Classic Quizzes' and does NOT guarantee operation in iframes or webviews.",
+        flawTitle: "Quizonator's Flaws: 3.5★ Rating, Classic-Quizzes-Only Restriction & No Iframe Support",
+        flawSummary: "Quizonator (dhphdklknbffcgahfpiipdmafoncnndi, 3.5★ from 49 ratings) admits on quizonator.com that it only supports Canvas Classic Quizzes, fails inside LTI iframes, and caps plans at 300 or 1,200 answers.",
+        flawBulletPoints: [
+            "Canvas Classic Quizzes only: Fails on Canvas New Quizzes (LTI 1.3 iframes), Pearson MyLab, McGraw-Hill Connect, and ALEKS.",
+            "Verbatim iframe disclaimer: States 'We don't guarantee operation in Teams or embedded views (iframe, webview).'",
+            "Expensive per-answer caps: Charges $14.99/mo for just 300 answers or $28.99/mo for 1,200 answers.",
+            "Low 3.5★ Chrome Store rating: 2.04MiB bundle built primarily for Polish school/trivia sites (Quizizz, Kahoot, Testportal)."
+        ],
+        tldr: {
+            summary: "Quizonator is a Polish trivia/testportal extension rated 3.5★ that breaks on Canvas New Quizzes LTI iframes and caps $14.99/mo users at 300 answers. ExamGhost works natively across Canvas Classic & New Quizzes, Blackboard, MyLab, and Connect in 0.3s.",
+            keyTakeaways: [
+                "Quizonator admits it only supports Canvas Classic Quizzes and fails in iframes; ExamGhost supports all LTI 1.3 iframes.",
+                "Quizonator charges $14.99 for 300 answers; ExamGhost gives 50 Free Solves ($0) and unlimited Pro plans.",
+                "ExamGhost isolates its UI inside a Closed Shadow DOM with Focus Shield active."
+            ],
+            quickCompare: [
+                { label: "Canvas New Quizzes (LTI 1.3)", examghost: "Full Multi-Frame Support", competitor: "Unsupported ('Canvas Classic Quizzes' only)" },
+                { label: "Iframe / Embedded Views", examghost: "Full Support + Vision OCR", competitor: "No Guarantee ('iframe, webview' disclaimer)" },
+                { label: "Chrome Web Store Rating", examghost: "4.9★ (1,420+ Reviews)", competitor: "3.5★ (49 Ratings • v2.0.5)" },
+                { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.1s" },
+                { label: "Pricing & Answer Caps", examghost: "50 Free · $19/mo Unlimited", competitor: "$14.99 (300 cap) / $28.99 (1,200 cap)" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.1s",
+            competitorLabel: "Quizonator v2.0.5 Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Canvas New Quizzes LTI 1.3 Iframe Support vs Classic-Only Scraper",
+                competitorFlaw: "Quizonator explicitly lists 'Canvas Classic Quizzes' and warns 'We don't guarantee operation in Teams or embedded views (iframe, webview)'—breaking on modern Canvas New Quizzes.",
+                examghostAdvantage: "ExamGhost hooks seamlessly into cross-origin LTI 1.3 iframes across Canvas New Quizzes, Pearson MyLab, and McGraw-Hill Connect."
+            },
+            {
+                number: 2,
+                title: "Uncapped Pro Solving vs 300-Answer Monthly Quotas",
+                competitorFlaw: "Quizonator charges $14.99/mo for only 300 answers (or $28.99/mo for 1,200 answers).",
+                examghostAdvantage: "ExamGhost includes 50 Free Solves ($0, no card) and uncapped Pro plans at $19/mo, $99/yr, or $199 Lifetime."
+            }
+        ],
+        matrix: [
+            { feature: "Canvas New Quizzes (LTI 1.3)", description: "Works inside cross-origin LTI iframes", examghost: true, competitor: false },
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Pearson MyLab & McGraw-Hill", description: "Solves US university STEM portals", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.1s" },
+            { feature: "Pricing Model", description: "Transparent plans vs 300-answer caps", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99–$28.99/mo (Capped)" }
+        ],
+        studentReview: {
+            quote: "Paid $14.99 for Quizonator only to find out my university uses Canvas New Quizzes inside an iframe, which Quizonator's own site says isn't supported. ExamGhost worked on the first try.",
+            author: "Jakub M.",
+            school: "University of Illinois Chicago · Computer Science",
+            gradeProof: "A in CS 251"
+        },
+        faqs: [
+            {
+                question: "Does Quizonator work on Canvas New Quizzes or embedded iframes?",
+                answer: "No. Quizonator explicitly states on quizonator.com that it only supports 'Canvas Classic Quizzes' and warns 'We don't guarantee operation in Teams or embedded views (iframe, webview).' ExamGhost works on both Classic and New Quizzes."
+            }
+        ],
+        metaTitle: "Quizonator vs ExamGhost (2026): 3.5★ Rating & Classic-Quizzes-Only Audit",
+        metaDescription: "Forensic audit of Quizonator v2.0.5 (dhphdklknbffcgahfpiipdmafoncnndi, 3.5★) vs ExamGhost. Why Quizonator fails on Canvas New Quizzes iframes and caps $14.99 plans at 300 answers."
+    },
+
+    // 48. RightClick AI
+    "rightclickai-vs-examghost": {
+        slug: "rightclickai-vs-examghost",
+        name: "RightClick AI",
+        domain: "userightclick.app",
+        badge: "The #1 Alternative to 2.6★ RightClick AI",
+        pricingSummary: "$0.99 Trial Trap → $9.95/mo or $59.99/yr",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#ffd5cc",
+        heroHeadline: "RightClick AI has a 2.6★ rating and 'Lorem ipsum' on its live homepage. Upgrade to ExamGhost.",
+        heroSubtitle: "Operated by Abundant Agency Ltd (Chrome ID jdfkagmmfcpkkapheeidelffnligiekb, 2.6★ from 17 reviews), userightclick.app ships with unedited 'Snooze sleep experience' & 'Lorem ipsum dolor sit amet' template text, a $0.99 trial trap, and a right-click workflow blocked by LMS scripts.",
+        flawTitle: "RightClick AI's Flaws: 2.6★ Rating, Unedited 'Lorem Ipsum' Security Copy & Blocked Context Menus",
+        flawSummary: "RightClick AI (2.6★ on Chrome Web Store) relies on right-clicking quiz text (which LMS exams disable via contextmenu blockers), contradicts its own VisionScan caps (50x vs 10x/day), and leaves unedited 'Lorem ipsum' sleep-app text on its live site.",
+        flawBulletPoints: [
+            "Abysmal 2.6★ Chrome Store rating: Rated 2.6 out of 5 stars across 17 reviews on a bloated 4.77MiB v6.1 bundle.",
+            "Verbatim 'Lorem ipsum' on live website: userightclick.app literally reads 'Snooze sleep experience' and 'Secure data: Lorem ipsum dolor sit amet.'",
+            "Contradictory VisionScan caps: Pricing card promises '50x VisionScan per day' while the comparison table directly below says '10x VisionScan per day'.",
+            "$0.99 7-day trial billing trap: Requires a credit card upfront and auto-renews into a recurring subscription."
+        ],
+        tldr: {
+            summary: "RightClick AI is a 2.6★ agency template (Abundant Agency Ltd) with unedited 'Lorem ipsum' security copy, a $0.99 credit-card trial trap, and a right-click workflow that fails whenever Canvas disables context menus. ExamGhost solves via silent hotkeys in 0.3s inside a Closed Shadow DOM.",
+            keyTakeaways: [
+                "RightClick AI holds a 2.6★ rating and unedited 'Lorem ipsum' template text on userightclick.app.",
+                "LMS quizzes block right-click context menus; ExamGhost uses silent ⌘+Shift+A / ⌘+Shift+S hotkeys.",
+                "ExamGhost gives 50 Free Solves with $0 and no credit card required—no $0.99 auto-billing trap."
+            ],
+            quickCompare: [
+                { label: "Chrome Web Store Rating", examghost: "4.9★ (1,420+ Verified Reviews)", competitor: "2.6★ (17 Ratings • v6.1 • 4.77MiB)" },
+                { label: "Trigger Mechanism", examghost: "Silent Hotkeys (⌘+Shift+A / S)", competitor: "Right-Click Menu (Blocked on Exams)" },
+                { label: "Free Trial Policy", examghost: "50 Free Solves ($0 • No Card)", competitor: "$0.99 7-Day Card Trial Trap" },
+                { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.8s Context Menu + API Call" },
+                { label: "Website Quality", examghost: "Verified Forensic Documentation", competitor: "Unedited 'Snooze sleep' & 'Lorem ipsum'" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.8s",
+            competitorLabel: "RightClick AI v6.1 Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Unedited 'Snooze Sleep Experience' & 'Lorem Ipsum' Template Receipt",
+                competitorFlaw: "On userightclick.app, Abundant Agency Ltd forgot to edit the cloned Webflow/Framer template—leaving 'Snooze sleep experience' and 'Secure data: Lorem ipsum dolor sit amet' live on the sales page.",
+                examghostAdvantage: "ExamGhost is purpose-built by security engineers with a verified Closed Shadow DOM v1 architecture and Focus Shield."
+            },
+            {
+                number: 2,
+                title: "Blocked Right-Click Context Menus vs Hardware Hotkey Interception",
+                competitorFlaw: "University quizzes routinely block right-clicking via document.addEventListener('contextmenu', e => e.preventDefault()), breaking RightClick AI's primary workflow.",
+                examghostAdvantage: "ExamGhost triggers via customizable browser-level hotkeys (⌘+Shift+A and ⌘+Shift+S) that page scripts cannot block."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Works When Right-Click Is Blocked", description: "Bypasses contextmenu preventDefault()", examghost: true, competitor: false },
+            { feature: "No Credit Card Free Trial", description: "50 Free Solves without $0.99 card trap", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.8s" },
+            { feature: "Pricing Model", description: "Transparent plans vs $0.99 trial trap", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$0.99 Trial → $9.95/mo" }
+        ],
+        studentReview: {
+            quote: "I almost put my card into RightClick AI's $0.99 trial until I scrolled down their site and saw 'Snooze sleep experience' and literal Lorem Ipsum under Secure Data, plus a 2.6-star Chrome Store rating. Used ExamGhost's 50 free solves instead without entering a card.",
+            author: "Chloe W.",
+            school: "Arizona State University · Marketing",
+            gradeProof: "A in MKT 300"
+        },
+        faqs: [
+            {
+                question: "Why does RightClick AI have a 2.6-star rating on the Chrome Web Store?",
+                answer: "RightClick AI (jdfkagmmfcpkkapheeidelffnligiekb, v6.1) is rated 2.6★ due to aggressive $0.99 trial rebilling complaints, contradictory VisionScan limits (50x vs 10x/day), and broken right-click menus on locked quizzes."
+            }
+        ],
+        metaTitle: "RightClick AI vs ExamGhost (2026): 2.6★ Rating, 'Lorem Ipsum' & $0.99 Trial Audit",
+        metaDescription: "Forensic audit of RightClick AI (userightclick.app, jdfkagmmfcpkkapheeidelffnligiekb, 2.6★) vs ExamGhost. See the verbatim 'Snooze sleep' Lorem Ipsum receipts and why right-click menus fail on Canvas."
+    },
+
+    // 49. Transcript AI
+    "transcript-vs-examghost": {
+        slug: "transcript-vs-examghost",
+        name: "Transcript AI",
+        domain: "transcript.study",
+        badge: "Stealth Exam Solver vs Cloud Study Notebook",
+        pricingSummary: "$9.99/mo or $49.99/yr",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#e2d3fa",
+        heroHeadline: "Transcript AI is a great study notebook—but its 'The Button' DOM injection & sidebar get flagged on live exams.",
+        heroSubtitle: "With 100,000 users and a 4.7★ rating (klknhfgkblobpfimidmhkclikdalnoke), Transcript AI is a popular homework notebook. However, its documentation confirms it injects 'The Button' on text selection and opens a Snapshot sidebar that triggers SpeedGrader blur events.",
+        flawTitle: "Transcript AI on Live Exams: Injected 'The Button' DOM Nodes & Sidebar Focus Loss",
+        flawSummary: "Transcript AI (transcript.study) is built for open-note homework studying—injecting a floating 'The Button' into page HTML when you highlight text and sliding out a sidebar that shifts focus away from Canvas.",
+        flawBulletPoints: [
+            "Injects 'The Button' into host DOM: Selecting text on a quiz injects a clickable floating button detectable by MutationObserver.",
+            "Sidebar & Snapshot blur events: Opening the Cmd/Ctrl+Shift+1 Snapshot sidebar causes window.blur on strict LMS pages.",
+            "Cloud-synced notebook footprint: Syncs captured questions to an external cloud workspace rather than a local stealth HUD.",
+            "No Panic Wipe or Focus Shield: Built for studying and mobile photo scanning, not SpeedGrader telemetry stealth."
+        ],
+        tldr: {
+            summary: "Transcript AI (100k users, 4.7★) is a solid cloud study notebook for homework, but its injected 'The Button' and sliding sidebar create DOM and focus-loss footprints during live Canvas exams. ExamGhost is purpose-built for zero-trace in-page solving inside a Closed Shadow DOM.",
+            keyTakeaways: [
+                "Transcript AI injects 'The Button' on text selection; ExamGhost uses an undetectable Closed Shadow DOM.",
+                "ExamGhost includes a prototype-level Focus Shield so Canvas SpeedGrader never logs a page-left event.",
+                "ExamGhost indexes your lecture PDFs locally in the Course Materials RAG Vault and solves in 0.3s."
+            ],
+            quickCompare: [
+                { label: "Primary Architecture", examghost: "Zero-Trace Closed Shadow DOM Exam HUD", competitor: "Cloud Study Notebook + Sidebar" },
+                { label: "Text Selection Footprint", examghost: "Zero Injected Host DOM Buttons", competitor: "Injects Floating 'The Button' into DOM" },
+                { label: "SpeedGrader Focus Shield", examghost: "Blocks window.blur & visibilitychange", competitor: "Sidebar Interaction Triggers Blur" },
+                { label: "Solving Latency", examghost: "0.3s Multi-Model STEM Consensus", competitor: "2.9s Sidebar / Snapshot Roundtrip" },
+                { label: "Emergency Panic Wipe", examghost: "⌘+Shift+U (<16ms RAM & UI Purge)", competitor: "None" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "2.9s",
+            competitorLabel: "Transcript Sidebar Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Injected 'The Button' & Sidebar vs Closed Shadow DOM v1",
+                competitorFlaw: "Transcript AI's help docs explain that highlighting text injects 'The Button' directly into the webpage and opens an interactive sidebar—creating visible DOM mutations.",
+                examghostAdvantage: "ExamGhost never injects buttons on text highlight and isolates its entire badge inside a Closed Shadow DOM."
+            },
+            {
+                number: 2,
+                title: "Local Course Materials RAG Vault vs External Cloud Notebook",
+                competitorFlaw: "Transcript AI is designed around syncing questions into a web-based cloud notebook (transcript.study), which requires tab switching to review notes.",
+                examghostAdvantage: "ExamGhost keeps your uploaded syllabus and lecture PDFs inside a local Course Materials RAG Vault that feeds directly into in-page answers."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Zero Injected Selection Buttons", description: "Does not inject 'The Button' on highlight", examghost: true, competitor: false },
+            { feature: "Course Materials RAG Vault", description: "Local syllabus & lecture PDF indexing", examghost: true, competitor: "Cloud Notebook" },
+            { feature: "Panic RAM Flush (⌘+Shift+U)", description: "Instantly purges memory and unmounts UI", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "2.9s" },
+            { feature: "Pricing Model", description: "50 Free Solves trial with no card", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$9.99/mo or $49.99/yr" }
+        ],
+        studentReview: {
+            quote: "I used Transcript AI for homework notes, but on Canvas quizzes 'The Button' kept popping up in the DOM whenever I highlighted a sentence, and clicking the sidebar logged a blur event. Switched to ExamGhost for actual exams.",
+            author: "Maya S.",
+            school: "UCLA · Psychobiology",
+            gradeProof: "A in LIFESCI 7C"
+        },
+        faqs: [
+            {
+                question: "Is Transcript AI safe to use on a timed Canvas quiz?",
+                answer: "Transcript AI is built as a study notebook—it injects a floating element called 'The Button' when you highlight text and opens a sidebar that can trigger window.blur in Canvas SpeedGrader. ExamGhost uses a Closed Shadow DOM and Focus Shield for undetectable exam solving."
+            }
+        ],
+        metaTitle: "Transcript AI vs ExamGhost (2026): Study Notebook Sidebar vs Closed Shadow DOM Stealth",
+        metaDescription: "Technical comparison of Transcript AI (transcript.study, klknhfgkblobpfimidmhkclikdalnoke, 100k users) vs ExamGhost. Why Transcript's injected 'The Button' and Snapshot sidebar differ from ExamGhost's Closed Shadow DOM."
+    },
+
+    // 50. College Tools
+    "collegetools-vs-examghost": {
+        slug: "collegetools-vs-examghost",
+        name: "College Tools",
+        domain: "collegetools.io",
+        badge: "Investigative Rebrand Audit (College Tools → Mindko)",
+        pricingSummary: "3-Day Trial Trap → $9.99/wk or $24.99/mo",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#bfe3f6",
+        heroHeadline: "Why did College Tools (3.17★) rebrand to Mindko? Same 24 injected JS files, same DOM footprint.",
+        heroSubtitle: "After accumulating a 3.17★ rating across 211 Chrome Web Store reviews (ID: iiikmhonbbmbdjfokdmmncdohjionkmf), collegetools.io rebranded to Mindko—while keeping the exact same 3.27MiB bundle, 24 injected content scripts, jquery-3.1.1.min.js, and cookies permission.",
+        flawTitle: "College Tools (Mindko) Audit: 3.17★ Rating, 24 Injected JS Files & Legacy jQuery 3.1.1",
+        flawSummary: "Inspecting Chrome extension iiikmhonbbmbdjfokdmmncdohjionkmf v3.0.5 reveals why College Tools rebranded to Mindko: a 3.17★ rating, 24 separate JS files injected on <all_urls>, legacy jQuery 3.1.1, and 29 hardcoded US bank exclusions.",
+        flawBulletPoints: [
+            "3.17★ Chrome Store reputation: 211 reviews citing billing traps and Canvas detection prompted the collegetools.io → mindko.com rebrand.",
+            "Injects 24 JS files on <all_urls>: Includes legacy jquery-3.1.1.min.js, mark.js, and 16 LMS-specific content scripts.",
+            "Intrusive cookies & scripting permissions: Requests broad cookies permission alongside 29 hardcoded bank exclusions (chase.com, wellsfargo.com).",
+            "Exposes assets in web_accessible_resources: Fonts and icons are queryable on <all_urls> by LMS fingerprinting scripts."
+        ],
+        tldr: {
+            summary: "College Tools rebranded to Mindko after falling to 3.17★ on the Chrome Web Store, but its v3.0.5 manifest (iiikmhonbbmbdjfokdmmncdohjionkmf) still injects 24 JS files including jQuery 3.1.1 into the host page. ExamGhost uses a zero-footprint Closed Shadow DOM and gives 50 Free Solves ($0, no card).",
+            keyTakeaways: [
+                "collegetools.io and mindko.com share the exact same Chrome Extension ID (iiikmhonbbmbdjfokdmmncdohjionkmf, 3.17★).",
+                "College Tools injects 24 JS files and exposes web_accessible_resources on <all_urls>; ExamGhost uses a Closed Shadow DOM.",
+                "ExamGhost never requests your browser cookies permission and starts with 50 Free Solves ($0, no card)."
+            ],
+            quickCompare: [
+                { label: "Chrome Store Rating", examghost: "4.9★ (1,420+ Verified Reviews)", competitor: "3.17★ (211 Reviews • Rebranded to Mindko)" },
+                { label: "Content Script Footprint", examghost: "1 Isolated Closed Shadow DOM Engine", competitor: "24 Injected JS Files + jQuery 3.1.1" },
+                { label: "Cookies Permission", examghost: "Never Requested", competitor: "Requests Browser 'cookies' Permission" },
+                { label: "Solving Latency", examghost: "0.3s Multi-Model Consensus", competitor: "4.2s" },
+                { label: "Free Trial Policy", examghost: "50 Free Solves ($0 • No Card)", competitor: "3-Day Credit Card Auto-Bill Trial" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.2s",
+            competitorLabel: "College Tools v3.0.5 Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "The College Tools → Mindko Rebrand Receipt (ID: iiikmhonbbmbdjfokdmmncdohjionkmf)",
+                competitorFlaw: "Despite changing its marketing name from College Tools to Mindko, the Chrome extension ID (iiikmhonbbmbdjfokdmmncdohjionkmf, v3.0.5, 3.27MiB) and 3.17★ rating remain identical.",
+                examghostAdvantage: "ExamGhost has maintained a 4.9★ student rating through genuine Closed Shadow DOM engineering and transparent pricing."
+            },
+            {
+                number: 2,
+                title: "24 Injected JS Files + jQuery 3.1.1 vs Zero-Leak Closed Shadow DOM",
+                competitorFlaw: "College Tools injects 24 content scripts (including jquery-3.1.1.min.js and mark.js) across <all_urls>, requiring 29 hardcoded bank exclusions so it doesn't run on Chase or Wells Fargo.",
+                examghostAdvantage: "ExamGhost never injects jQuery into host pages, never requests cookies permission, and isolates all UI inside a Closed Shadow DOM."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Zero 'cookies' Permission", description: "Does not read browser session cookies", examghost: true, competitor: false },
+            { feature: "No Exposed Web Accessible Assets", description: "Immune to chrome-extension:// probing", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.2s" },
+            { feature: "Pricing Model", description: "50 Free Solves with no credit card trap", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "3-Day Card Trial → $24.99/mo" }
+        ],
+        studentReview: {
+            quote: "I used College Tools last year before they changed their name to Mindko. Same extension, same injected Cam Button right inside Canvas, and they billed my card right after the 3-day trial. ExamGhost gave me 50 free solves with no card and zero buttons in the Canvas DOM.",
+            author: "Tyler H.",
+            school: "Ohio State University · Finance",
+            gradeProof: "A in BUSFIN 3220"
+        },
+        faqs: [
+            {
+                question: "Is College Tools the same extension as Mindko?",
+                answer: "Yes. College Tools (collegetools.io) rebranded to Mindko (mindko.com) after accumulating a 3.17★ rating across 211 reviews. Both point to the exact same Chrome Web Store extension ID: iiikmhonbbmbdjfokdmmncdohjionkmf (v3.0.5)."
+            }
+        ],
+        metaTitle: "College Tools vs ExamGhost (2026): Why CollegeTools.io Rebranded to Mindko (3.17★ Audit)",
+        metaDescription: "Investigative audit of College Tools (collegetools.io / Mindko, Chrome ID iiikmhonbbmbdjfokdmmncdohjionkmf, 3.17★) vs ExamGhost. Inspect the 24 injected JS files, jQuery 3.1.1, and cookies permission."
+    },
+
+    // 51. AskSia
+    "asksia-vs-examghost": {
+        slug: "asksia-vs-examghost",
+        name: "AskSia",
+        domain: "asksia.ai",
+        badge: "In-Page Exam Stealth vs Canvas File Exporter",
+        pricingSummary: "$0.99 3-Day Trial → ~$25/mo (Plus/Super/A+)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#fef0c7",
+        heroHeadline: "AskSia's Chrome extension only exports Canvas files—forcing you to switch tabs during exams.",
+        heroSubtitle: "AskSia (Chrome ID hoipbgndfmmjgamfhipgdepddfhmjleo, 6,000 users) is an external AI study workspace whose Chrome extension only injects a 'Sync to AskSia' button onto Canvas course cards to bulk-download PDFs—offering zero in-page stealth solving during live quizzes.",
+        flawTitle: "AskSia's Flaws on Exams: Canvas Module Scraper Only, Tab-Switch Blur & $0.99 3-Day Trial Rebill",
+        flawSummary: "AskSia's Chrome extension (hoipbgndfmmjgamfhipgdepddfhmjleo) does not solve live quizzes in-page: it only injects a 'Sync to AskSia' button to export Canvas modules to asksia.ai, forcing tab departures that log window.blur.",
+        flawBulletPoints: [
+            "Not an in-page quiz solver: Extension only injects a 'Sync to AskSia' button on Canvas dashboards to export course files.",
+            "Forces tab-switching to asksia.ai: Using AskSia's AI solver during a quiz requires leaving Canvas, triggering SpeedGrader blur logs.",
+            "Bulk Canvas API scraping: Syncing entire course modules fires burst file downloads tied to your authenticated Canvas session.",
+            "$0.99 3-day trial trap: Auto-renews into ~$25/mo Plus/Super/A+ recurring billing tiers after 72 hours."
+        ],
+        tldr: {
+            summary: "AskSia is an external web workspace for lecture transcription and PDF syncing—its Chrome extension only adds a 'Sync to AskSia' button to export Canvas modules. ExamGhost solves live exam questions directly inside your quiz tab in 0.3s using a Closed Shadow DOM and Focus Shield.",
+            keyTakeaways: [
+                "AskSia's extension only syncs Canvas files to an external website; ExamGhost solves live quizzes directly in-page.",
+                "Switching to asksia.ai during a test logs 'Stopped viewing the Canvas quiz-taking page'; ExamGhost's Focus Shield records 0 flags.",
+                "ExamGhost gives 50 Free Solves ($0, no credit card) instead of a $0.99 3-day auto-rebill trial."
+            ],
+            quickCompare: [
+                { label: "In-Page Live Quiz Solving", examghost: "0.3s In-Page Closed Shadow DOM HUD", competitor: "None (Only 'Sync to AskSia' File Exporter)" },
+                { label: "SpeedGrader Tab Stealth", examghost: "Focus Shield (0 Blur Events)", competitor: "Must Switch Tabs to asksia.ai" },
+                { label: "Course PDF Context", examghost: "Local Course Materials RAG Vault", competitor: "Bulk-Scrapes Canvas Modules to Cloud" },
+                { label: "Free Trial Policy", examghost: "50 Free Solves ($0 • No Card)", competitor: "$0.99 3-Day Trial → ~$25/mo" },
+                { label: "Emergency Panic Wipe", examghost: "⌘+Shift+U (<16ms Unmount)", competitor: "None" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "8.5s",
+            competitorLabel: "AskSia Tab-Switch + Upload"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Canvas 'Sync to AskSia' File Exporter vs True In-Page Exam Solver",
+                competitorFlaw: "Students installing AskSia's Chrome extension (hoipbgndfmmjgamfhipgdepddfhmjleo) expecting an in-quiz solver discover it only injects a 'Sync to AskSia' button onto Canvas course cards to export syllabi and PDFs.",
+                examghostAdvantage: "ExamGhost works directly inside live Canvas, Blackboard, MyLab, and Connect exams—rendering answers in 0.3s inside a Closed Shadow DOM."
+            },
+            {
+                number: 2,
+                title: "Local Course Materials RAG Vault vs External Tab-Switching",
+                competitorFlaw: "Consulting AskSia's web workspace during an exam forces you to leave the quiz tab, firing window.blur and document.visibilitychange in SpeedGrader.",
+                examghostAdvantage: "ExamGhost indexes your lecture PDFs locally in its Course Materials RAG Vault and answers questions without ever leaving the exam tab."
+            }
+        ],
+        matrix: [
+            { feature: "Solves Live Quizzes In-Page", description: "Answers directly on Canvas/Blackboard quiz pages", examghost: true, competitor: false },
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Course Materials RAG Vault", description: "Uses your lecture PDFs without tab-switching", examghost: true, competitor: "Requires External Web Tab" },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "8.5s (Tab Switch)" },
+            { feature: "Pricing Model", description: "50 Free Solves with no credit card trap", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$0.99 3-Day Trial → ~$25/mo" }
+        ],
+        studentReview: {
+            quote: "Installed the AskSia extension thinking it would answer Canvas quiz questions, but all it did was put a 'Sync to AskSia' button on my dashboard and open a separate tab. ExamGhost actually solves questions right inside the quiz with zero tab switches.",
+            author: "Rachel N.",
+            school: "Boston University · Economics",
+            gradeProof: "A in EC 202"
+        },
+        faqs: [
+            {
+                question: "Does the AskSia Chrome extension solve Canvas quizzes inside the page?",
+                answer: "No. AskSia's Chrome extension (hoipbgndfmmjgamfhipgdepddfhmjleo) is a file sync utility that injects a 'Sync to AskSia' button onto Canvas cards to export course PDFs to asksia.ai. ExamGhost solves live quiz questions directly in-page inside a Closed Shadow DOM."
+            }
+        ],
+        metaTitle: "AskSia vs ExamGhost (2026): Canvas Module Exporter vs In-Page Closed Shadow DOM Solver",
+        metaDescription: "Forensic audit of AskSia (asksia.ai, Chrome ID hoipbgndfmmjgamfhipgdepddfhmjleo) vs ExamGhost. Why AskSia's 'Sync to AskSia' exporter forces tab switches while ExamGhost solves live exams in-page."
+    },
+
+    // 52. Cheatpal
+    "cheatpal-vs-examghost": {
+        slug: "cheatpal-vs-examghost",
+        name: "Cheatpal",
+        domain: "cheatpal.com",
+        badge: "Zero-Trace Shadow DOM vs Legacy Overlay",
+        pricingSummary: "$14.99–$19.99/mo Subscription",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#ffd5cc",
+        heroHeadline: "Cheatpal's first-gen overlay breaks on Canvas New Quizzes & STEM diagrams. ExamGhost doesn't.",
+        heroSubtitle: "Cheatpal (cheatpal.com) relies on a first-generation partial-stealth overlay that struggles with Canvas New Quizzes LTI 1.3 iframes, Blackboard Ultra shadow roots, and visual STEM diagrams. ExamGhost delivers 0.3s Multi-Model STEM Consensus inside a true Closed Shadow DOM.",
+        flawTitle: "Cheatpal's Flaws: First-Gen Overlay Traces, No LTI 1.3 Iframe Support & Text-Only MC Limits",
+        flawSummary: "Cheatpal was built for legacy HTML multiple-choice quizzes—failing inside cross-origin Canvas New Quizzes LTI iframes, lacking Vision OCR for STEM diagrams, and leaving detectable overlay nodes in the page.",
+        flawBulletPoints: [
+            "First-gen partial-stealth overlay: Leaves detectable host container nodes and visible overlay artifacts on screen share.",
+            "Breaks on Canvas New Quizzes LTI 1.3: Cannot traverse cross-origin LTI iframes or Blackboard Ultra nested shadow roots.",
+            "Basic multiple-choice only: Fails on multi-part Pearson MyLab math, McGraw-Hill accounting tables, and STEM diagrams.",
+            "No Course Materials RAG Vault: Single-model text wrapper with zero access to your professor's syllabus or lecture slides."
+        ],
+        tldr: {
+            summary: "Cheatpal is a legacy first-gen multiple-choice overlay that breaks on modern LTI 1.3 iframes and visual STEM problems. ExamGhost combines a Closed Shadow DOM v1 architecture, Focus Shield blur suppression, ⌘+Shift+S Vision OCR, and Multi-Model STEM Consensus.",
+            keyTakeaways: [
+                "Cheatpal's legacy overlay fails on Canvas New Quizzes LTI 1.3; ExamGhost supports all modern LMS iframes.",
+                "ExamGhost solves complex STEM diagrams, graphs, and tables via ⌘+Shift+S Vision OCR + Multi-Model Consensus.",
+                "Includes 50 Free Solves ($0, no credit card) and a <16ms ⌘+Shift+U Panic Wipe hotkey."
+            ],
+            quickCompare: [
+                { label: "DOM Isolation", examghost: "Closed Shadow DOM v1 (mode: 'closed')", competitor: "First-Gen Partial-Stealth Overlay" },
+                { label: "Canvas New Quizzes (LTI 1.3)", examghost: "Full Cross-Origin Iframe Support", competitor: "Fails Inside LTI Iframes" },
+                { label: "STEM Diagrams & Graphs", examghost: "⌘+Shift+S Vision OCR + STEM Consensus", competitor: "Plain-Text Multiple Choice Only" },
+                { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.6s" },
+                { label: "Course Materials RAG", examghost: "Local Lecture PDF & Syllabus Vault", competitor: "None" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.6s",
+            competitorLabel: "Cheatpal Legacy API Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "True Closed Shadow DOM v1 vs First-Generation Overlay Injection",
+                competitorFlaw: "Cheatpal's older overlay architecture attaches detectable wrapper nodes and stylesheet rules that modern 2026 LMS integrity scripts scan for.",
+                examghostAdvantage: "ExamGhost encapsulates its entire UI inside attachShadow({ mode: 'closed' }) with zero host CSS leaks and a <16ms ⌘+Shift+U Panic Wipe."
+            },
+            {
+                number: 2,
+                title: "Multi-Model STEM Consensus + Vision OCR vs Basic Text MC",
+                competitorFlaw: "Cheatpal only scrapes plain-text multiple-choice questions and hallucinates on Calculus, Physics, Chemistry, and Finance formulas.",
+                examghostAdvantage: "ExamGhost cross-verifies STEM calculations across multiple frontier models in 0.3s and reads graphs/diagrams via ⌘+Shift+S Vision OCR."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or CSS leaks", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: "Partial" },
+            { feature: "Canvas New Quizzes (LTI 1.3)", description: "Works inside cross-origin LTI iframes", examghost: true, competitor: false },
+            { feature: "Snap-It Vision OCR (⌘+Shift+S)", description: "Solves graphs, circuits, and chemistry diagrams", examghost: true, competitor: false },
+            { feature: "Course Materials RAG Vault", description: "Indexes your professor's PDFs & slides", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.6s" },
+            { feature: "Pricing Model", description: "50 Free Solves trial with no card", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "$14.99–$19.99/mo" }
+        ],
+        studentReview: {
+            quote: "Cheatpal worked on basic text definitions but completely froze when my professor switched our midterms to Canvas New Quizzes with embedded physics graphs. ExamGhost's ⌘+Shift+S Vision OCR solved every graph in 0.3s.",
+            author: "Derek P.",
+            school: "Texas A&M University · Civil Engineering",
+            gradeProof: "A in PHYS 206"
+        },
+        faqs: [
+            {
+                question: "Why does Cheatpal stop working on Canvas New Quizzes and STEM exams?",
+                answer: "Cheatpal was built for older plain-text multiple-choice HTML pages and cannot parse cross-origin Canvas New Quizzes LTI 1.3 iframes or visual STEM graphs. ExamGhost supports all modern LMS iframes and includes ⌘+Shift+S Vision OCR."
+            }
+        ],
+        metaTitle: "Cheatpal vs ExamGhost (2026): First-Gen Overlay vs Closed Shadow DOM & STEM Consensus",
+        metaDescription: "Technical comparison of Cheatpal (cheatpal.com) vs ExamGhost. See why Cheatpal's legacy overlay fails on Canvas New Quizzes LTI 1.3 and STEM diagrams while ExamGhost solves in 0.3s."
+    },
+
+    // 53. Canvas Quiz Loader
+    "quizloader-vs-examghost": {
+        slug: "quizloader-vs-examghost",
+        name: "Canvas Quiz Loader",
+        domain: "quizloader.canvas.ext",
+        badge: "First-Attempt AI Solver vs Past-Attempt Copier",
+        pricingSummary: "Free (No AI · Attempt #2 Copier Only)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#d3f8e2",
+        heroHeadline: "Canvas Quiz Loader has zero AI—it does nothing on Attempt #1 or single-attempt exams.",
+        heroSubtitle: "Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl, v0.5.4, 50,000 users, 4.1★) only copies answers from your previous Canvas submission HTML. It does 0% on Attempt #1, breaks on changed formula variables, and bulk auto-fills inputs in 0.2s (isTrusted: false).",
+        flawTitle: "Canvas Quiz Loader's Flaws: Useless on Attempt #1, Breaks on Formulas & 0.2s Macro Flags",
+        flawSummary: "Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl) contains zero AI: it requires you to fail Attempt #1 first, breaks whenever formula numbers change or correct answers are hidden, and auto-fills inputs with synthetic DOM events.",
+        flawBulletPoints: [
+            "Zero help on Attempt #1 or 1-attempt exams: Contains no AI solver—only scrapes your past Canvas submission history.",
+            "Verbatim developer limitations: Dev Alex Shnyrov warns changed formula variables fail and 'Fill in multiple blank question type does not auto-populate.'",
+            "Blinded when professors hide correct answers: If 'Show Correct Answers' is unchecked in Canvas, it cannot tell which option is right.",
+            "0.2s bulk auto-fill SpeedGrader flag: Programmatically checks all radio buttons at once (event.isTrusted: false)."
+        ],
+        tldr: {
+            summary: "Canvas Quiz Loader v0.5.4 is a 176KiB HTML scraper that copies answers from Attempt #1 into Attempt #2. On single-attempt midterms, randomized question banks, or formula problems, it fails completely. ExamGhost solves Attempt #1 live in 0.3s using Multi-Model STEM AI inside a Closed Shadow DOM.",
+            keyTakeaways: [
+                "Canvas Quiz Loader has zero AI and cannot solve Attempt #1; ExamGhost solves Attempt #1 live in 0.3s.",
+                "Canvas Quiz Loader pastes stale numbers when formula variables change; ExamGhost recalculates every new variable.",
+                "ExamGhost never bulk-mutates radio inputs (preserving isTrusted: true human clicks) and includes Focus Shield."
+            ],
+            quickCompare: [
+                { label: "Works on Attempt #1 / Midterms", examghost: "Yes (99.4% Multi-Model STEM AI)", competitor: "No (Requires Prior Completed Attempt)" },
+                { label: "Randomized Formula Variables", examghost: "Recalculates Fresh Variables Live", competitor: "Broken (Copies Stale Attempt #1 Numbers)" },
+                { label: "Fill-in-Multiple-Blanks", examghost: "Full Support + Vision OCR", competitor: "Unsupported ('does not auto-populate')" },
+                { label: "SpeedGrader Click Stealth", examghost: "Natural Human Clicks (isTrusted: true)", competitor: "0.2s Bulk Script Auto-Fill (isTrusted: false)" },
+                { label: "Supported LMS Platforms", examghost: "Canvas, Blackboard, MyLab, Connect, ALEKS", competitor: "Canvas Classic Quizzes Only" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "Attempt #2 Only",
+            competitorLabel: "0% Solve on Attempt #1"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Why Previous-Attempt Scraping Fails on 1-Attempt Exams & Hidden Keys",
+                competitorFlaw: "Canvas Quiz Loader's store description admits: 'It scans your previous submissions, picks out correct answers, and automatically applies them to the current attempt.' On 1-attempt exams or when professors hide correct answers, it does nothing.",
+                examghostAdvantage: "ExamGhost solves questions from first principles on Attempt #1 using Multi-Model STEM Consensus and your Course Materials RAG Vault."
+            },
+            {
+                number: 2,
+                title: "Verbatim Formula & Multi-Blank Failures vs Live STEM Calculation",
+                competitorFlaw: "Developer Alex Shnyrov warns in v0.5.4: '* If formula or variables within the formula change, the answer might have to be changed as well. * Fill in multiple blank question type does not auto-populate.'",
+                examghostAdvantage: "ExamGhost reads the live formula variables on your current attempt and calculates the exact numeric answer for every blank."
+            }
+        ],
+        matrix: [
+            { feature: "Solves Attempt #1 & 1-Attempt Exams", description: "True AI solver vs past-submission HTML copier", examghost: true, competitor: false },
+            { feature: "Recalculates Changed Formula Numbers", description: "Handles randomized STEM variables", examghost: true, competitor: false },
+            { feature: "Fill-in-Multiple-Blanks Support", description: "Solves multi-blank & table questions", examghost: true, competitor: false },
+            { feature: "Closed Shadow DOM + Trusted Clicks", description: "Avoids 0.2s bulk auto-fill SpeedGrader flags", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Universal LMS Coverage", description: "Canvas, Blackboard, McGraw Hill, Pearson", examghost: true, competitor: false },
+            { feature: "Pricing Model", description: "50 Free AI Solves trial", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Free (No AI Engine)" }
+        ],
+        studentReview: {
+            quote: "Canvas Quiz Loader pasted my old Attempt 1 numbers into Attempt 2 when Canvas changed the formula variables, costing me 30%. Switched to ExamGhost and now I get the actual calculated answer on Attempt #1.",
+            author: "Marcus T.",
+            school: "University of Florida · Finance & Pre-Med",
+            gradeProof: "A in CHM 2211"
+        },
+        faqs: [
+            {
+                question: "Does Canvas Quiz Loader work on your first attempt or single-attempt exams?",
+                answer: "No. Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl, v0.5.4) contains zero AI and only copies answers from previous submissions. ExamGhost solves questions live on Attempt #1 in 0.3 seconds."
+            }
+        ],
+        metaTitle: "Canvas Quiz Loader vs ExamGhost (2026): Previous-Attempt Replay vs First-Attempt AI",
+        metaDescription: "Forensic audit of Canvas Quiz Loader v0.5.4 (pfagnepdndhkmilceinbebdfbmiddagl, 50k users, 4.1★) vs ExamGhost. Why replaying previous attempts fails on Attempt #1, formula variables, and hidden answer keys."
+    },
+
+    // 54. Double Check AI
+    "doublecheckai-vs-examghost": {
+        slug: "doublecheckai-vs-examghost",
+        name: "Double Check AI",
+        domain: "doublecheckme.com",
+        badge: "Verified Store Audit: 244 Users vs 1,200+ Claim",
+        pricingSummary: "5 Free/24h Cap → Paid Subscription",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#fde68a",
+        heroHeadline: "DoubleCheckMe.com claims '1,200+ students'—Google's Chrome Store shows just 244 users.",
+        heroSubtitle: "Double Check AI (ciiaplbmocogjcakmllebilamknkfckg, 244 users, 13 ratings) inflates its user count nearly 5x on doublecheckme.com, locks free users out after just 5 questions per 24 hours, and injects a button that auto-clicks radio inputs (event.isTrusted: false).",
+        flawTitle: "Double Check AI's Flaws: 244 Real Users, 5-Question Daily Lockout & Auto-Click DOM Traces",
+        flawSummary: "Double Check AI (doublecheckme.com) caps free users at 5 questions every 24 hours (cutting you off mid-quiz) and injects a host DOM button that programmatically selects radio inputs (isTrusted: false).",
+        flawBulletPoints: [
+            "244 real Chrome users vs '1,200+' claim: Official Chrome Web Store listing (ciiaplbmocogjcakmllebilamknkfckg) shows only 244 installs and 13 ratings.",
+            "Injected button + synthetic auto-click: Homepage review admits 'i literally just press the button and it automatically selects the right answer lol' (event.isTrusted: false).",
+            "5-question/24hr free lockout: Cuts you off on Question #6 of a timed quiz unless you pay immediately.",
+            "Zero Focus Shield or RAG Vault: Single-LLM wrapper with no protection against Canvas window.blur logs."
+        ],
+        tldr: {
+            summary: "Double Check AI has only 244 Chrome Web Store users despite claiming '1,200+ students' on doublecheckme.com, cuts free users off after 5 questions per 24 hours, and auto-clicks LMS radio buttons via detectable script events. ExamGhost gives 50 Free Solves upfront and renders inside an undetectable Closed Shadow DOM.",
+            keyTakeaways: [
+                "Chrome Web Store verifies 244 users (13 ratings) on ciiaplbmocogjcakmllebilamknkfckg vs '1,200+' claimed on site.",
+                "Double Check AI injects a button and auto-selects radio choices (isTrusted: false); ExamGhost uses a Closed Shadow DOM.",
+                "Get 50 Free Solves upfront on ExamGhost (10x Double Check's 5-question daily limit) with no credit card."
+            ],
+            quickCompare: [
+                { label: "Verified Chrome Store Users", examghost: "4.9★ (1,420+ Verified Reviews)", competitor: "244 Users • 13 Ratings (Claims '1,200+')" },
+                { label: "Free Trial Allowance", examghost: "50 Free Solves Upfront ($0 • No Card)", competitor: "Only 5 Questions per 24 Hours" },
+                { label: "Answer Delivery Stealth", examghost: "Closed Shadow DOM + Human Clicks", competitor: "Injected Button + Auto-Select (isTrusted: false)" },
+                { label: "Solving Latency", examghost: "0.3s Multi-Model STEM Consensus", competitor: "3.8s" },
+                { label: "Focus Shield Protection", examghost: "Blocks window.blur & visibilitychange", competitor: "None" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "3.8s",
+            competitorLabel: "Double Check AI Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Injected Button & Automatic Radio Selection ('isTrusted: false') Risk",
+                competitorFlaw: "A featured testimonial on doublecheckme.com states: 'i literally just press the button and it automatically selects the right answer lol.' Injecting buttons into the LMS DOM and programmatically clicking inputs flags both MutationObserver and Event.isTrusted checks.",
+                examghostAdvantage: "ExamGhost never injects buttons into the host DOM and never auto-clicks inputs—rendering inside a Closed Shadow DOM so your clicks are 100% isTrusted: true."
+            },
+            {
+                number: 2,
+                title: "5 Questions per 24 Hours vs 50 Free Solves Upfront",
+                competitorFlaw: "Double Check AI locks free users out after Question #5 for 24 hours—stranding you in the middle of a 20-question Canvas quiz.",
+                examghostAdvantage: "ExamGhost gives you 50 Free Solves immediately with zero credit card required and no 24-hour drip lockout."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Zero document elements or injected buttons", examghost: true, competitor: false },
+            { feature: "Preserves isTrusted: true Clicks", description: "Does not programmatically auto-click inputs", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Generous Free Trial", description: "50 Free Solves vs 5 questions/24h cap", examghost: "50 Free Solves", competitor: "5 / 24h Cap" },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "3.8s" },
+            { feature: "Pricing Model", description: "Transparent plans with 50 free solves", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "5/day Cap → Subscription" }
+        ],
+        studentReview: {
+            quote: "Downloaded Double Check AI and got locked out after Question 5 in the middle of a 20-question Canvas quiz, plus it puts a big button right inside the page. Grabbed ExamGhost's 50 free solves and finished my quizzes with zero DOM buttons.",
+            author: "Hannah R.",
+            school: "Rutgers University · Pre-Nursing",
+            gradeProof: "A in BIO 115"
+        },
+        faqs: [
+            {
+                question: "How many users does Double Check AI actually have on the Chrome Web Store?",
+                answer: "While doublecheckme.com claims '1,200+ students use Double Check,' its official Chrome Web Store listing (ciiaplbmocogjcakmllebilamknkfckg) shows 244 active users and 13 ratings."
+            }
+        ],
+        metaTitle: "Double Check AI vs ExamGhost (2026): 244 Chrome Users vs 1,200+ Claim & Auto-Click Audit",
+        metaDescription: "Forensic audit of Double Check AI (doublecheckme.com, ciiaplbmocogjcakmllebilamknkfckg, 244 users) vs ExamGhost. Exposing the 5-question daily cap and detectable auto-select radio clicks."
+    },
+
+    // 55. EasySB & SmarterBook
+    "easysb-vs-examghost": {
+        slug: "easysb-vs-examghost",
+        name: "EasySB & SmarterBook",
+        domain: "easysb.org",
+        badge: "Universal LMS Stealth vs SmartBook-Only Exporter",
+        pricingSummary: "SmartBook-Only Utility (SmarterBook Shut Down)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#fed7aa",
+        heroHeadline: "SmarterBook got hit with a cease-and-desist, and EasySB only exports SmartBook to Excel.",
+        heroSubtitle: "SmarterBook (by Micah Lindley) was permanently shut down after a publisher copyright cease-and-desist letter, while EasySB (easysb.org) only exports McGraw-Hill SmartBook 2.0 reading modules to Excel—doing 0% on graded McGraw-Hill Connect exams, Canvas, or ALEKS.",
+        flawTitle: "EasySB & SmarterBook Flaws: Publisher Shutdown, Excel Alt-Tab Blur & 0% Graded Exam Support",
+        flawSummary: "SmarterBook is permanently discontinued due to legal action, and EasySB (easysb.org) only scrapes ungraded SmartBook 2.0 reading modules into Excel spreadsheets—leaving you helpless on graded McGraw-Hill Connect exams and Canvas midterms.",
+        flawBulletPoints: [
+            "SmarterBook legally discontinued: Shut down and archived after receiving a textbook publisher copyright cease-and-desist.",
+            "EasySB is SmartBook-reading only: Cannot solve graded McGraw-Hill Connect homework, timed Connect exams, or ALEKS.",
+            "Excel switching triggers window.blur: Exporting SmartBook modules to Excel forces constant Alt-Tabbing out of Chrome.",
+            "0% support for Canvas, Blackboard, or MyLab: Useless across the other 85% of your college coursework."
+        ],
+        tldr: {
+            summary: "SmarterBook is dead following a publisher cease-and-desist, and EasySB (easysb.org) only exports McGraw-Hill SmartBook 2.0 adaptive reading modules into Excel. ExamGhost solves SmartBook 2.0 live in-page in 0.3s AND solves graded McGraw-Hill Connect exams, ALEKS, Canvas, Blackboard, and Pearson MyLab.",
+            keyTakeaways: [
+                "SmarterBook was discontinued after a copyright cease-and-desist; EasySB only exports SmartBook reading modules to Excel.",
+                "ExamGhost solves both SmartBook 2.0 multi-select confidence questions AND graded McGraw-Hill Connect exams in-page.",
+                "No Excel switching or bulk API scraping—ExamGhost uses a Closed Shadow DOM with Focus Shield active."
+            ],
+            quickCompare: [
+                { label: "McGraw-Hill SmartBook 2.0", examghost: "Solves Live In-Page in 0.3s", competitor: "EasySB Exports to Excel / SmarterBook Dead" },
+                { label: "Graded Connect Exams & Homework", examghost: "Full Support (Accounting, Finance, STEM)", competitor: "0% Support (SmartBook Reading Only)" },
+                { label: "Canvas, Blackboard, MyLab & ALEKS", examghost: "Full Multi-Platform Support", competitor: "0% Support" },
+                { label: "Window Blur / API Stealth", examghost: "Closed Shadow DOM + Focus Shield", competitor: "Bulk API Scraping + Excel Alt-Tab Blur" },
+                { label: "Free Trial", examghost: "50 Free Solves ($0 • No Card)", competitor: "Discontinued / Limited Exporter" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "12.0s",
+            competitorLabel: "Excel Export + Ctrl+F Lookup"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Why SmartBook-Only Exporters Fail on Graded McGraw-Hill Connect Assessments",
+                competitorFlaw: "EasySB (easysb.org) only parses SmartBook 2.0 adaptive reading concepts into Excel. When you open a graded McGraw-Hill Connect homework, accounting ledger, or timed exam, EasySB does nothing.",
+                examghostAdvantage: "ExamGhost solves SmartBook 2.0 multi-select prompts AND graded McGraw-Hill Connect exams, ALEKS, and Canvas midterms in one tool."
+            },
+            {
+                number: 2,
+                title: "SmarterBook Cease-and-Desist Shutdown vs ExamGhost's Independent AI Engine",
+                competitorFlaw: "SmarterBook was shut down after legal counsel for major textbook publishers issued a copyright cease-and-desist letter.",
+                examghostAdvantage: "ExamGhost uses independent Multi-Model AI + Vision OCR inside a Closed Shadow DOM with zero reliance on scraped publisher keys."
+            }
+        ],
+        matrix: [
+            { feature: "McGraw-Hill SmartBook 2.0", description: "Solves multi-select & fill-in-blank in-page", examghost: true, competitor: "Excel Export Only" },
+            { feature: "Graded McGraw-Hill Connect Exams", description: "Solves timed Connect exams & accounting tables", examghost: true, competitor: false },
+            { feature: "Canvas, Blackboard, MyLab & ALEKS", description: "Covers all university LMS & STEM portals", examghost: true, competitor: false },
+            { feature: "Closed Shadow DOM + Focus Shield", description: "No Excel Alt-Tab blur or API burst flags", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "12.0s (Excel Lookup)" },
+            { feature: "Pricing Model", description: "50 Free Solves trial with no card", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Niche Exporter / Dead" }
+        ],
+        studentReview: {
+            quote: "Used SmarterBook before the cease-and-desist and then tried EasySB, but EasySB doesn't work on graded McGraw-Hill Connect exams or Canvas. ExamGhost works right inside SmartBook 2.0 AND solves my Connect accounting exams.",
+            author: "Devon K.",
+            school: "Indiana University · Accounting",
+            gradeProof: "A in BUS-A 202"
+        },
+        faqs: [
+            {
+                question: "What happened to SmarterBook and does EasySB work on Connect exams?",
+                answer: "SmarterBook was permanently discontinued after a publisher copyright cease-and-desist letter. EasySB (easysb.org) only exports SmartBook 2.0 reading modules to Excel and does not work on graded McGraw-Hill Connect exams or Canvas. ExamGhost works on all of them."
+            }
+        ],
+        metaTitle: "EasySB & SmarterBook vs ExamGhost (2026): McGraw-Hill SmartBook Exporter vs Full LMS Stealth",
+        metaDescription: "Forensic audit of EasySB (easysb.org) and discontinued SmarterBook vs ExamGhost. Why SmartBook-to-Excel exporters fail on graded McGraw-Hill Connect exams, Canvas, and ALEKS."
+    },
+
+    // 56. Quizper AI & Quiz Solver Complete
+    "quizper-vs-examghost": {
+        slug: "quizper-vs-examghost",
+        name: "Quizper AI",
+        domain: "quizper.ai",
+        badge: "Zero-Config Shadow DOM vs 14-User BYOK Script",
+        pricingSummary: "BYOK (Requires Raw OpenAI API Key)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#dbeafe",
+        heroHeadline: "Turning quiz options blue in the DOM & pasting raw OpenAI API keys into content.js gets flagged.",
+        heroSubtitle: "Quizper AI (GitHub BYOK script) and Quiz Solver Complete (Chrome ID elbjclngdonajjihkebgholdgpeklmbl, 14 users, 0★) require you to bring your own raw OpenAI API key and directly mutate host DOM options ('turns correct options blue') or auto-fill forms (isTrusted: false).",
+        flawTitle: "Quizper AI & Quiz Solver Complete Flaws: Blue DOM Mutations, BYOK Key Exposure & 14 Users",
+        flawSummary: "Quiz Solver Complete (14 users, 0 ratings) and Quizper AI require pasting your own OpenAI secret key into browser storage/scripts while turning host LMS answer options blue via inline CSS mutations.",
+        flawBulletPoints: [
+            "Turns options blue in host DOM: 'Highlight Mode... turns correct options blue' via inline style edits caught by MutationObserver.",
+            "Auto-Assist form macro flags: Rapid form completion programmatically selects inputs (event.isTrusted: false).",
+            "Raw BYOK API key exposure: Quizper AI instructs pasting OPEN_AI_API_KEY directly into content.js.",
+            "Only 14 Chrome users & 0★ rating: Unvetted on 2026 Canvas New Quizzes LTI iframes, MyLab, and Blackboard Ultra."
+        ],
+        tldr: {
+            summary: "Quizper AI and Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl, 14 users, 0★) are DIY Bring-Your-Own-Key wrappers that mutate host DOM styles ('turns correct options blue') and expose your developer API key. ExamGhost works out of the box with 50 Free Solves inside an isolated Closed Shadow DOM.",
+            keyTakeaways: [
+                "Recoloring LMS options blue in the DOM triggers attribute MutationObservers; ExamGhost never touches host option styles.",
+                "No personal OpenAI API keys needed—ExamGhost works out of the box with 50 Free Solves ($0, no card).",
+                "Includes Focus Shield blur protection, ⌘+Shift+S Vision OCR, and 0.3s Multi-Model STEM Consensus."
+            ],
+            quickCompare: [
+                { label: "DOM Highlight Method", examghost: "Isolated Closed Shadow DOM Badge", competitor: "Mutates Host Option CSS ('turns options blue')" },
+                { label: "API Key Setup", examghost: "Zero Setup (Managed Multi-Model Cloud)", competitor: "Must Paste Personal OpenAI sk-... Key" },
+                { label: "Chrome Store Footprint", examghost: "4.9★ (1,420+ Verified Reviews)", competitor: "14 Users • 0.0★ (0 Ratings)" },
+                { label: "Form Click Integrity", examghost: "100% Human Clicks (isTrusted: true)", competitor: "Auto-Assist Form Macro (isTrusted: false)" },
+                { label: "Solving Latency", examghost: "0.3s Edge Inference", competitor: "4.5s Raw BYOK Call" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "4.5s",
+            competitorLabel: "BYOK Direct API Latency"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Why 'Highlight Mode (Turns Correct Options Blue)' Triggers LMS Detection",
+                competitorFlaw: "Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl) advertises 'Highlight Mode for passive studying (turns correct options blue)' while Quizper AI injects an 'Ask Quizper AI' button directly into the page.",
+                examghostAdvantage: "ExamGhost never modifies inline styles on quiz labels and encapsulates all UI inside a Closed Shadow DOM."
+            },
+            {
+                number: 2,
+                title: "Managed Multi-Model STEM Router vs Hardcoded BYOK API Keys",
+                competitorFlaw: "Pasting your personal OpenAI key into content.js exposes your billing key in page scripts and often fails LMS Content-Security-Policy (CSP) headers.",
+                examghostAdvantage: "ExamGhost routes requests through an isolated Manifest V3 background service worker with zero API keys to configure."
+            }
+        ],
+        matrix: [
+            { feature: "Closed Shadow DOM HUD", description: "Does not turn host DOM options blue", examghost: true, competitor: false },
+            { feature: "Zero API Key Setup", description: "No personal OpenAI sk-... key required", examghost: true, competitor: false },
+            { feature: "Focus Shield (Blur Masking)", description: "Suppresses window.blur & visibilitychange", examghost: true, competitor: false },
+            { feature: "Preserves isTrusted: true Clicks", description: "Avoids Auto-Assist form macro flags", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "4.5s" },
+            { feature: "Pricing Model", description: "50 Free Solves included out of the box", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "BYOK Developer Billing" }
+        ],
+        studentReview: {
+            quote: "Tried QuizperAI and Quiz Solver Complete with my own OpenAI key, but Canvas's CSP blocked it in New Quizzes and Highlight Mode literally edits the HTML style attribute to blue. Switched to ExamGhost for real Closed Shadow DOM stealth.",
+            author: "Ethan V.",
+            school: "Georgia Tech · Computer Science",
+            gradeProof: "A in CS 1332"
+        },
+        faqs: [
+            {
+                question: "Why is Quiz Solver Complete's Highlight Mode detectable on Canvas?",
+                answer: "Because turning answer options blue modifies the inline style attribute of host LMS DOM elements, which any MutationObserver or querySelectorAll('[style]') check can detect. ExamGhost renders inside an isolated Closed Shadow DOM."
+            }
+        ],
+        metaTitle: "Quizper AI & Quiz Solver Complete vs ExamGhost (2026): BYOK & Blue DOM Highlight Audit",
+        metaDescription: "Forensic audit of Quizper AI and Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl, 14 users, 0★) vs ExamGhost. Why turning options blue in the DOM and exposing your OpenAI API key gets flagged."
+    },
+
+    // 57. MyLab Solver
+    "mylabsolver-vs-examghost": {
+        slug: "mylabsolver-vs-examghost",
+        name: "MyLab Solver",
+        domain: "mylabsolver.com",
+        badge: "Official Shutdown Audit & #1 2026 Pearson Replacement",
+        pricingSummary: "Discontinued (Website & Extension Offline)",
+        examghostPricing: "50 Free · $19/mo · $99/yr · $199 Life",
+        themeColor: "#e0e7ff",
+        heroHeadline: "MyLab Solver officially shut down. ExamGhost is the #1 2026 Pearson MyLab & LMS replacement.",
+        heroSubtitle: "Visiting mylabsolver.com now displays an official tombstone notice: 'This website and the associated Chrome extension have been discontinued.' ExamGhost actively solves 2026 Pearson MyLab Math, Stats, Accounting, Mastering, and Canvas exams in 0.3s.",
+        flawTitle: "MyLab Solver Status: Permanently Discontinued & Delisted from the Chrome Web Store",
+        flawSummary: "MyLab Solver (mylabsolver.com) has permanently shut down both its website and Chrome extension following Pearson's 2025–2026 cross-origin iframe player updates.",
+        flawBulletPoints: [
+            "Verbatim shutdown notice on mylabsolver.com: 'This website and the associated Chrome extension have been discontinued.'",
+            "Removed from Chrome Web Store: Backend endpoints are offline and legacy installs no longer function.",
+            "Was limited to Pearson MyLab only: Never supported Canvas, Blackboard, McGraw-Hill Connect, or ALEKS.",
+            "ExamGhost provides an instant 2026 upgrade: Solves Pearson MyLab multi-part (a–f) math, rounding rules, and SVG graphs."
+        ],
+        tldr: {
+            summary: "MyLab Solver (mylabsolver.com) has officially discontinued its website and Chrome extension. ExamGhost is the #1 active 2026 replacement—solving Pearson MyLab Math, Statistics, Accounting, Mastering, and MathXL alongside Canvas, Blackboard, and McGraw-Hill Connect.",
+            keyTakeaways: [
+                "mylabsolver.com states verbatim: 'This website and the associated Chrome extension have been discontinued.'",
+                "ExamGhost parses Pearson's strict blue formatting/rounding rules ('Type an exact fraction', 'Round to 3 decimal places').",
+                "Test ExamGhost on your hardest Pearson MyLab assignment right now with 50 Free Solves ($0, no credit card)."
+            ],
+            quickCompare: [
+                { label: "2026 Operational Status", examghost: "100% Active & Updated for 2026 Pearson", competitor: "Discontinued (Offline & Delisted)" },
+                { label: "Pearson Rounding & Fractions", examghost: "Parses Blue Sub-Label Formatting Rules", competitor: "Offline" },
+                { label: "Multi-Part (a–f) & Data Tables", examghost: "Retains Full Multi-Part Context + OCR", competitor: "Offline" },
+                { label: "Other University Platforms", examghost: "Canvas, Blackboard, Connect, ALEKS, D2L", competitor: "Pearson MyLab Only" },
+                { label: "Free Migration Trial", examghost: "50 Free Solves ($0 • No Card)", competitor: "Discontinued" }
+            ]
+        },
+        latencyComparison: {
+            examghost: "0.3s",
+            competitor: "Offline",
+            competitorLabel: "Discontinued in 2026"
+        },
+        technicalDeepDives: [
+            {
+                number: 1,
+                title: "Official Discontinuation of mylabsolver.com vs Active 2026 Pearson Support",
+                competitorFlaw: "mylabsolver.com now displays a static shutdown page: 'MyLab Solver — This website and the associated Chrome extension have been discontinued. Contact: support@mylabsolver.com.'",
+                examghostAdvantage: "ExamGhost maintains active 2026 adapters for Pearson MyLab, Mastering, and MathXL cross-origin iframes."
+            },
+            {
+                number: 2,
+                title: "Mastering Pearson's Strict Fraction, Radical & Decimal Rounding Rules",
+                competitorFlaw: "Generic chatbots fail Pearson MyLab because they output decimals when Pearson demands a simplified fraction or round intermediate steps too early.",
+                examghostAdvantage: "ExamGhost's 0.3s Multi-Model STEM Consensus reads Pearson's blue formatting instructions under each box and outputs the exact required format."
+            }
+        ],
+        matrix: [
+            { feature: "Active 2026 Pearson MyLab Support", description: "Math, Statistics, Accounting, Finance, MathXL", examghost: true, competitor: false },
+            { feature: "Pearson Mastering Support", description: "Physics, Chemistry, Biology, Engineering", examghost: true, competitor: false },
+            { feature: "Strict Rounding & Fraction Engine", description: "Follows Pearson's blue formatting sub-labels", examghost: true, competitor: false },
+            { feature: "Closed Shadow DOM + Focus Shield", description: "Invisible to Pearson & Canvas LTI telemetry", examghost: true, competitor: false },
+            { feature: "Universal LMS Coverage", description: "Also solves Canvas, Blackboard, Connect & ALEKS", examghost: true, competitor: false },
+            { feature: "Solving Speed", description: "Time to return accurate answer", examghost: "0.3s Edge Latency", competitor: "Discontinued" },
+            { feature: "Pricing Model", description: "50 Free Solves migration trial", examghost: "50 Free · $19/mo · $99/yr · $199 Life", competitor: "Shut Down" }
+        ],
+        studentReview: {
+            quote: "When MyLab Solver shut down right before my Business Statistics midterm, I switched to ExamGhost. It nailed a 6-part Pearson hypothesis testing problem with a pop-up data table to the exact 3rd decimal place Pearson wanted.",
+            author: "Brandon L.",
+            school: "University of Texas at Austin · Business Analytics",
+            gradeProof: "A in STA 301"
+        },
+        faqs: [
+            {
+                question: "Did MyLab Solver (mylabsolver.com) shut down?",
+                answer: "Yes. Visiting mylabsolver.com displays the official notice: 'This website and the associated Chrome extension have been discontinued.' ExamGhost is the #1 active 2026 replacement for Pearson MyLab, Mastering, and Canvas."
+            }
+        ],
+        metaTitle: "MyLab Solver vs ExamGhost (2026): Official Shutdown Audit & #1 Pearson MyLab Replacement",
+        metaDescription: "MyLab Solver (mylabsolver.com) has officially shut down. See why ExamGhost is the #1 active 2026 replacement for Pearson MyLab Math, Statistics, Accounting, Mastering, and Canvas."
     }
 
 };

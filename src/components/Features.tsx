@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { 
     Shield, ScanLine, Sparkles, Layers, Eye, 
-    Check, Lock, ArrowRight, Zap, CheckCircle2,
-    Camera, Terminal, MonitorCheck, KeyRound, Cpu, Sliders
+    Check, Lock, Zap, CheckCircle2,
+    Camera, MonitorCheck, KeyRound, Sliders
 } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 
@@ -145,7 +145,6 @@ export default function Features() {
     const [activeToolIndex, setActiveToolIndex] = useState(0);
 
     const activeCategory = CATEGORIES[activeCategoryIndex];
-    const activeTool = activeCategory.tools[activeToolIndex] || activeCategory.tools[0];
 
     const handleTabChange = (index: number) => {
         setActiveCategoryIndex(index);
@@ -198,119 +197,129 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* 2-Column Layout (macOS Sidebar on Left + Editorial Details on Right) */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-
-                        {/* Left Column: macOS Native App Window Sidebar (OneMacApp Layout) */}
-                        <div className="lg:col-span-5">
-                            <div className="bg-white rounded-3xl border border-black/10 shadow-lift overflow-hidden">
-                                
-                                {/* macOS Window Title Bar */}
-                                <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-5 py-3.5 flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
-                                        <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
-                                        <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
-                                        <span className="text-xs font-bold text-ink ml-2">
-                                            {activeCategory.label}
-                                        </span>
-                                    </div>
-                                    <span className="text-[11px] font-bold text-ink bg-black/10 px-2.5 py-0.5 rounded-full">
-                                        {activeCategory.count}
-                                    </span>
-                                </div>
-
-                                {/* Sidebar Tool Items List */}
-                                <div className="p-3 sm:p-4 space-y-1.5 bg-[#faf8f5]/80">
-                                    {activeCategory.tools.map((tool, tIdx) => {
-                                        const Icon = tool.icon;
-                                        const isToolActive = tIdx === activeToolIndex;
-                                        return (
-                                            <button
-                                                key={tool.id}
-                                                onClick={() => setActiveToolIndex(tIdx)}
-                                                className={`w-full text-left p-3 rounded-2xl transition-all duration-200 flex items-center justify-between gap-3 ${
-                                                    isToolActive
-                                                        ? 'bg-white shadow-soft border border-black/10 text-ink scale-[1.01]'
-                                                        : 'hover:bg-white/60 text-ink/75 border border-transparent'
-                                                }`}
-                                            >
-                                                <div className="flex items-center gap-3 min-w-0">
-                                                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
-                                                        isToolActive ? 'bg-ink text-white' : 'bg-black/5 text-ink'
-                                                    }`}>
-                                                        <Icon className="w-4 h-4" />
-                                                    </div>
-                                                    <div className="min-w-0">
-                                                        <div className="text-xs font-bold truncate text-ink">
-                                                            {tool.name}
-                                                        </div>
-                                                        <div className="text-[11px] text-ink-muted truncate">
-                                                            {tool.sub}
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${
-                                                    isToolActive 
-                                                        ? 'bg-ink/5 text-ink' 
-                                                        : 'bg-black/5 text-ink-muted'
-                                                }`}>
-                                                    {tool.badge}
+                    {/* All 5 Categories Mounted in SSR DOM for Search & AI Crawlers */}
+                    {CATEGORIES.map((category, cIdx) => {
+                        const isCurrentCat = cIdx === activeCategoryIndex;
+                        return (
+                            <div
+                                key={category.id}
+                                className={
+                                    isCurrentCat
+                                        ? 'grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center'
+                                        : 'hidden'
+                                }
+                            >
+                                {/* Left Column: macOS Native App Window Sidebar (OneMacApp Layout) */}
+                                <div className="lg:col-span-5">
+                                    <div className="bg-white rounded-3xl border border-black/10 shadow-lift overflow-hidden">
+                                        
+                                        {/* macOS Window Title Bar */}
+                                        <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-5 py-3.5 flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
+                                                <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
+                                                <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
+                                                <span className="text-xs font-bold text-ink ml-2">
+                                                    {category.label}
                                                 </span>
-                                            </button>
-                                        );
-                                    })}
+                                            </div>
+                                            <span className="text-[11px] font-bold text-ink bg-black/10 px-2.5 py-0.5 rounded-full">
+                                                {category.count}
+                                            </span>
+                                        </div>
+
+                                        {/* Sidebar Tool Items List */}
+                                        <div className="p-3 sm:p-4 space-y-1.5 bg-[#faf8f5]/80">
+                                            {category.tools.map((tool, tIdx) => {
+                                                const Icon = tool.icon;
+                                                const isToolActive = isCurrentCat && tIdx === activeToolIndex;
+                                                return (
+                                                    <button
+                                                        key={tool.id}
+                                                        onClick={() => setActiveToolIndex(tIdx)}
+                                                        className={`w-full text-left p-3 rounded-2xl transition-all duration-200 flex items-center justify-between gap-3 ${
+                                                            isToolActive
+                                                                ? 'bg-white shadow-soft border border-black/10 text-ink scale-[1.01]'
+                                                                : 'hover:bg-white/60 text-ink/75 border border-transparent'
+                                                        }`}
+                                                    >
+                                                        <div className="flex items-center gap-3 min-w-0">
+                                                            <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
+                                                                isToolActive ? 'bg-ink text-white' : 'bg-black/5 text-ink'
+                                                            }`}>
+                                                                <Icon className="w-4 h-4" />
+                                                            </div>
+                                                            <div className="min-w-0">
+                                                                <div className="text-xs font-bold truncate text-ink">
+                                                                    {tool.name}
+                                                                </div>
+                                                                <div className="text-[11px] text-ink-muted truncate">
+                                                                    {tool.sub}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${
+                                                            isToolActive 
+                                                                ? 'bg-ink/5 text-ink' 
+                                                                : 'bg-black/5 text-ink-muted'
+                                                        }`}>
+                                                            {tool.badge}
+                                                        </span>
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Column: Category Details & Bullets (OneMacApp Layout) */}
+                                <div className="lg:col-span-7 flex flex-col justify-center">
+                                    
+                                    {/* Eyebrow Category Tag */}
+                                    <div className="text-xs font-bold tracking-widest uppercase text-ink/70 mb-3">
+                                        {category.tagline}
+                                    </div>
+
+                                    {/* Big Bold Headline */}
+                                    <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-5">
+                                        {category.headline}
+                                    </h3>
+
+                                    {/* Descriptive Paragraph */}
+                                    <p className="text-base sm:text-lg text-ink/80 leading-relaxed font-normal mb-8 max-w-xl">
+                                        {category.description}
+                                    </p>
+
+                                    {/* 2x2 Grid of Checkmarks (OneMacApp Style) */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-9 max-w-lg">
+                                        {category.bullets.map((bullet, bIdx) => (
+                                            <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-ink">
+                                                <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-xs shrink-0">
+                                                    <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" />
+                                                </div>
+                                                <span>{bullet}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Dark CTA Button */}
+                                    <div>
+                                        <a
+                                            href="https://discord.gg/aCcsyKYJq4"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift inline-flex items-center gap-2"
+                                        >
+                                            <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                                            <span>Get Extension</span>
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Right Column: Category Details & Bullets (OneMacApp Layout) */}
-                        <div className="lg:col-span-7 flex flex-col justify-center">
-                            
-                            {/* Eyebrow Category Tag */}
-                            <div className="text-xs font-bold tracking-widest uppercase text-ink/70 mb-3">
-                                {activeCategory.tagline}
-                            </div>
-
-                            {/* Big Bold Headline */}
-                            <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-5">
-                                {activeCategory.headline}
-                            </h3>
-
-                            {/* Descriptive Paragraph */}
-                            <p className="text-base sm:text-lg text-ink/80 leading-relaxed font-normal mb-8 max-w-xl">
-                                {activeCategory.description}
-                            </p>
-
-                            {/* 2x2 Grid of Checkmarks (OneMacApp Style) */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-9 max-w-lg">
-                                {activeCategory.bullets.map((bullet, bIdx) => (
-                                    <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-ink">
-                                        <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-xs shrink-0">
-                                            <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" />
-                                        </div>
-                                        <span>{bullet}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Dark CTA Button */}
-                            <div>
-                                <a
-                                    href="https://discord.gg/aCcsyKYJq4"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift inline-flex items-center gap-2"
-                                >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                                    <span>Get Extension</span>
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
+                        );
+                    })}
                 </div>
 
             </div>

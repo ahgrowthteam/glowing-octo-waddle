@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Star, CheckCircle2, GraduationCap } from 'lucide-react';
 
@@ -124,6 +122,10 @@ export default function Reviews() {
                                         <img 
                                             src={r.avatar} 
                                             alt={r.name} 
+                                            width={48}
+                                            height={48}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-full h-full object-cover" 
                                         />
                                     </div>

@@ -1,777 +1,1111 @@
-import React from 'react';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
-    CheckCircle2,
-    XCircle,
-    EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
-    FileText,
-    BookOpen,
-    ExternalLink
-} from 'lucide-react';
-import { FaChrome, FaDiscord } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import Link from "next/link";
+import { Metadata } from "next";
+import {
+  ShieldCheck,
+  Zap,
+  Clock,
+  DollarSign,
+  ChevronDown,
+  ArrowRight,
+  Sparkles,
+  AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  EyeOff,
+  HelpCircle,
+  Layers,
+  FileText,
+  Code2,
+} from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
-    description: "Comparing TestWhiz and ExamGhost? Learn why students prefer ExamGhost's lightweight 0.3s exam stealth engine and $19.99 lifetime plan over TestWhiz's bloated monthly tool.",
+    title: {
+        absolute: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
+    },
+    description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/testwhiz-vs-examghost",
     },
     openGraph: {
-        title: "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
-        description: "TestWhiz bundles PDF chats, YouTube summaries, and worksheets into an unshielded extension that leaks focus blur events during exams. ExamGhost is laser-focused on 24 dedicated stealth tools and instant 0.3s edge answers.",
+        title: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
+        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 50 Free Solves.",
         url: "https://examghost.com/testwhiz-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "TestWhiz vs ExamGhost Review",
+                alt: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
-        description: "TestWhiz is a bloated study assistant. ExamGhost is a precision 0.3s exam stealth engine.",
+        title: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
+        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
 
 export default function TestwhizVsExamghostPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@graph": [
-                {
-                        "@type": "WebPage",
-                        "@id": "https://examghost.com/testwhiz-vs-examghost#webpage",
-                        "url": "https://examghost.com/testwhiz-vs-examghost",
-                        "name": "TestWhiz vs ExamGhost (2026 Comparison) | Dedicated Exam Engine vs Bloated Study Tool",
-                        "description": "Comparing TestWhiz and ExamGhost? Learn why students prefer ExamGhost's lightweight 0.3s exam stealth engine and $19.99 lifetime plan over TestWhiz's bloated monthly tool.",
-                        "breadcrumb": {
-                                "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb"
-                        },
-                        "about": [
-                                {
-                                        "@type": "SoftwareApplication",
-                                        "name": "ExamGhost",
-                                        "applicationCategory": "EducationalApplication",
-                                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                                        "offers": {
-                                                "@type": "Offer",
-                                                "price": "19.99",
-                                                "priceCurrency": "USD"
-                                        }
-                                },
-                                {
-                                        "@type": "SoftwareApplication",
-                                        "name": "TestWhiz",
-                                        "applicationCategory": "EducationalApplication",
-                                        "operatingSystem": "Web Application / Chrome Extension",
-                                        "offers": {
-                                                "@type": "Offer",
-                                                "price": "14.99",
-                                                "priceCurrency": "USD"
-                                        }
-                                }
-                        ]
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+                "datePublished": "2026-01-25",
+                "dateModified": "2026-03-24",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                {
-                        "@type": "BreadcrumbList",
-                        "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb",
-                        "itemListElement": [
-                                {
-                                        "@type": "ListItem",
-                                        "position": 1,
-                                        "name": "Home",
-                                        "item": "https://examghost.com"
-                                },
-                                {
-                                        "@type": "ListItem",
-                                        "position": 2,
-                                        "name": "Comparisons",
-                                        "item": "https://examghost.com/compare"
-                                },
-                                {
-                                        "@type": "ListItem",
-                                        "position": 3,
-                                        "name": "TestWhiz vs ExamGhost",
-                                        "item": "https://examghost.com/testwhiz-vs-examghost"
-                                }
-                        ]
-                },
-                {
-                        "@type": "FAQPage",
-                        "@id": "https://examghost.com/testwhiz-vs-examghost#faq",
-                        "mainEntity": [
-                                {
-                                        "@type": "Question",
-                                        "name": "Why is ExamGhost better suited for exams than TestWhiz?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "TestWhiz is a bloated general study tool with slow cloud response times and no focus protection. ExamGhost is engineered strictly for live exams with 0.3s edge solving and Focus Shield blur immunity."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "Can professors detect TestWhiz during a Canvas test?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "Yes. TestWhiz triggers window.blur events in Canvas SpeedGrader whenever you interact with its interface. ExamGhost operates invisibly in a closed Shadow DOM."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "How much does ExamGhost cost compared to TestWhiz?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "TestWhiz charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
-                                        }
-                                }
-                        ]
-                }
-        ]
-};
+        "@id": "https://examghost.com/testwhiz-vs-examghost#webpage",
+        url: "https://examghost.com/testwhiz-vs-examghost",
+        name: "TestWhiz vs ExamGhost (2026 Audit) | 6-in-1 Study Portal vs 0.3s Canvas Stealth",
+        description:
+          "Independent 2026 technical audit of TestWhiz (testwhiz.co) vs ExamGhost. Compare TestWhiz's replaced extension, 3-day trial ($5.99/wk or $12.99/mo), and PDF/YouTube chat bundle against ExamGhost's 4-Layer Focus Shield and 50 Free Solves.",
+        breadcrumb: {
+          "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb",
+        },
+        about: [
+          {
+            "@type": "SoftwareApplication",
+            name: "ExamGhost",
+            applicationCategory: "EducationalApplication",
+            operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Free Trial (50 Solves)",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              {
+                "@type": "Offer",
+                name: "Monthly Pass",
+                price: "19.00",
+                priceCurrency: "USD",
+              },
+              {
+                "@type": "Offer",
+                name: "Academic Year Pass",
+                price: "99.00",
+                priceCurrency: "USD",
+              },
+              {
+                "@type": "Offer",
+                name: "Lifetime Degree Pass",
+                price: "199.00",
+                priceCurrency: "USD",
+              },
+            ],
+          },
+          {
+            "@type": "SoftwareApplication",
+            name: "TestWhiz",
+            url: "https://testwhiz.co",
+            applicationCategory: "EducationalApplication",
+            operatingSystem: "Web Application, Chrome Extension",
+            offers: [
+              {
+                "@type": "Offer",
+                name: "TestWhiz Weekly",
+                price: "5.99",
+                priceCurrency: "USD",
+              },
+              {
+                "@type": "Offer",
+                name: "TestWhiz Monthly",
+                price: "12.99",
+                priceCurrency: "USD",
+              },
+              {
+                "@type": "Offer",
+                name: "TestWhiz Semester",
+                price: "39.99",
+                priceCurrency: "USD",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://examghost.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Compare Extensions",
+            item: "https://examghost.com/compare-canvas-hack-extensions",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "TestWhiz vs ExamGhost",
+            item: "https://examghost.com/testwhiz-vs-examghost",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://examghost.com/testwhiz-vs-examghost#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Why did TestWhiz replace its old AI solver Chrome extension?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "On the live testwhiz.co homepage, a banner announces: 'New Feature Alert: We replaced our old AI solver extension with a new one!' While its rebuilt extension adds basic highlight-and-screenshot solving, it remains coupled to a generic 6-tool web portal (PDF Chat, YouTube Chat, Flashcards, Notes, Worksheets, Quizzes) rather than a dedicated LMS stealth engine.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does TestWhiz's 'Incognito mode' stop Canvas Quiz Logs from detecting tab switches?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No. While TestWhiz's FAQ states that 'Incognito mode ensures your activity remains private,' hiding extension popup history or toggling a visual mode does not intercept browser-level focus telemetry. When you click outside the active quiz DOM or switch to the TestWhiz dashboard to chat with a PDF or YouTube video, Canvas LMS fires window.blur and visibilitychange events ('Stopped viewing the Canvas quiz-taking page'). ExamGhost neutralizes these telemetry listeners at the JavaScript execution layer via its 4-Layer Focus Shield.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does TestWhiz actually cost after its 3-day free trial?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "According to testwhiz.co/pricing, TestWhiz offers a 3-day free trial ('Try TestWhiz for FREE for 3 days. Cancel anytime') that converts into paid recurring tiers: $5.99/week ($311.48/year), $12.99/month ($155.88/year), or $39.99/semester ($79.98–$119.97/year). ExamGhost provides 50 Free Question Solves with no credit card required and no 72-hour expiration timer, plus $19/month, $99/year ($8.25/mo), or a $199 one-time Lifetime Degree Pass.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Why do TestWhiz's homepage counters render as '0+ Problems Solved' in the source HTML?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "In our 2026 source audit of testwhiz.co, the social proof section ships in the server-rendered HTML as '0+ Problems Solved', '0+ Flashcards Generated', '0+ Notes Generated', and '0+ Worksheets Generated' (with inline style='opacity:0'), relying on client-side JavaScript number tickers rather than audited telemetry.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When should a student use TestWhiz vs ExamGhost?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "If you want an all-in-one web workspace to chat with YouTube lecture videos, generate printable study worksheets, and create flashcards from PDFs before exam week, TestWhiz's $12.99/month or $39.99/semester dashboard covers those study workflows. However, if you are taking live, timed assessments on Canvas, Blackboard, Moodle, D2L Brightspace, or McGraw-Hill SmartBook and require 0.3s Vision OCR, closed Shadow DOM isolation, and verified Focus Shield protection, ExamGhost is purpose-built for the job.",
+            },
+          },
+        ],
+      },
+    ],
+  };
 
-    return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
+  return (
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111] font-sans selection:bg-emerald-900 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
 
-            <main id="main-content">
+      <main className="pt-28 pb-24">
+        {/* Breadcrumb & Split Hero */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-600 mb-6"
+          >
+            <Link prefetch={false} href="/" className="hover:text-emerald-800 transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link prefetch={false}
+              href="/compare-canvas-hack-extensions"
+              className="hover:text-emerald-800 transition-colors"
+            >
+              Compare Extensions
+            </Link>
+            <span>/</span>
+            <span className="text-emerald-900 font-semibold">
+              TestWhiz vs ExamGhost
+            </span>
+          </nav>
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">TestWhiz vs ExamGhost</span>
-                </nav>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column: High-Converting SaaS Copy & Hero CTAs */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-mono uppercase tracking-widest mb-5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+                <span>2026 Study Portal &amp; Trial Audit • testwhiz.co</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111111] leading-[1.08] mb-5">
+                Why Risk a{" "}
+                <span className="text-amber-800 underline decoration-amber-400/70 decoration-wavy underline-offset-4">
+                  72-Hour Auto-Billing Trial
+                </span>{" "}
+                ($5.99/Wk) and an Unshielded Study Wrapper?
+              </h1>
+
+              <p className="aeo-summary text-base sm:text-lg text-neutral-700 leading-relaxed mb-6">
+                <strong>TestWhiz</strong> (
+                <code className="font-mono text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded">
+                  testwhiz.co
+                </code>
+                ) bundles 6 study tools—PDF Chat, YouTube Video Chat,
+                Flashcards, Notes, Worksheets, and Quizzes—behind a{" "}
+                <strong>3-day free trial</strong> that auto-converts into{" "}
+                <strong>$5.99/week ($311.48/year)</strong> or{" "}
+                <strong>$12.99/month</strong>. While its homepage announces{" "}
+                <em>&ldquo;We replaced our old AI solver extension with a new one!&rdquo;</em>{" "}
+                and promises an <em>&ldquo;Incognito mode,&rdquo;</em> it still
+                lacks a Canvas{" "}
+                <code className="font-mono text-sm bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                  window.blur
+                </code>{" "}
+                Focus Shield. Here is how it compares to{" "}
+                <strong>ExamGhost AI</strong>.
+              </p>
+
+              {/* 3 Fast Scannable Stat Pills */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Free Trial Policy
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-rose-700 line-through mr-1.5">72h Timer</span>
+                    <span className="text-emerald-800">50 Free Solves</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    $0 upfront • No credit card
+                  </div>
+                </div>
+
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Canvas Telemetry
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-emerald-800">4-Layer Focus Shield</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    vs Vague &ldquo;Incognito&rdquo; claim
+                  </div>
+                </div>
+
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Annual / Weekly Math
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-rose-700 line-through mr-1.5">$311/yr</span>
+                    <span className="text-emerald-800">$99/yr Pass</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    $8.25/mo vs $5.99/wk auto-bill
+                  </div>
+                </div>
+              </div>
+
+              {/* Above-the-Fold Hero CTAs */}
+              <div className="flex flex-wrap items-center gap-3.5">
+                <Link prefetch={false}
+                  href="/#pricing"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
+                >
+                  Claim 50 Free Solves ($0)
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link prefetch={false}
+                  href="/canvas-quiz-solver-free-demo"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] font-semibold text-sm border-2 border-[#111111] hover:bg-neutral-100 transition-colors"
+                >
+                  Try Live Canvas Sandbox
+                </Link>
+                <a
+                  href="#testwhiz-audit"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-900 font-bold hover:underline px-2 py-2"
+                >
+                  Inspect 3-Day Trial Math ↓
+                </a>
+              </div>
             </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 TestWhiz Alternative</span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        TestWhiz is a bloated study assistant. ExamGhost is a precision 0.3s exam stealth engine.
-                    </h1>
-
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        TestWhiz bundles PDF chats, YouTube summaries, and worksheets into an unshielded extension that leaks focus blur events during exams. ExamGhost is laser-focused on 24 dedicated stealth tools and instant 0.3s edge answers.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-                        <a
-                            href="https://chromewebstore.google.com/detail/examghost"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
-                        >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
-                    </div>
-
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Lifetime</div>
-                            <div className="text-xs text-ink-muted line-through">TestWhiz: Free Trial + $14.99/month</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">TestWhiz: 4.0s</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">TestWhiz: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">TestWhiz: Canvas Logs Blurs</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace TestWhiz with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            TestWhiz is an expensive, bloated general study tool unsuited for live exam pressure. ExamGhost is a dedicated 0.3s exam stealth engine featuring closed Shadow DOM sandboxing, Focus Shield blur immunity, and flat $19.99 lifetime access.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>TestWhiz is bloated with YouTube and PDF tools; ExamGhost is streamlined purely for exam stealth.</span>
-                            </div>
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>TestWhiz leaks window blur; ExamGhost guarantees 100% clean SpeedGrader activity logs.</span>
-                            </div>
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Single $19.99 lifetime payment vs TestWhiz&apos;s $14.99/month recurring charge.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        TestWhiz&apos;s Flaws: Bloated Multitool Architecture, Missing Blur Masking & Monthly Paywalls
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        TestWhiz tries to be an all-in-one study helper, resulting in a bloated browser footprint that leaks focus events and slows down live quiz solving.
-                    </p>
+            {/* Right Column: Bespoke 72-Hour Trial & Replaced Extension vs 4-Layer Shield Simulator */}
+            <div className="lg:col-span-5">
+              <div className="bg-white border-2 border-[#111111] rounded-3xl p-5 sm:p-6 shadow-[6px_6px_0px_0px_#111111]">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 ml-1">
+                      Trial Timer &amp; Canvas Focus Monitor
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-semibold">
+                    Live Audit
+                  </span>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of TestWhiz</span>
-                        </h3>
-                        <div className="space-y-3">
+                {/* Top Simulator Card: TestWhiz */}
+                <div className="rounded-2xl bg-rose-50/80 border border-rose-200 p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-xs font-mono font-bold uppercase text-rose-900 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3.5 h-3.5 text-rose-700" />
+                      TestWhiz.co (6-in-1 Study Wrapper)
+                    </span>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-rose-200/80 text-rose-950">
+                      72h Auto-Bill
+                    </span>
+                  </div>
 
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Bloated multi-feature payload: Heavy extension bundle with PDF and YouTube chat tools slows browser performance.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No Focus Shield: Interacting with TestWhiz logs window.blur in Canvas SpeedGrader.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Expensive recurring plans: Demands $14.99 every month after a brief trial.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Slow cloud routing: Multi-feature architecture creates 4.0-second delays on multiple-choice questions.
-                                </p>
-                            </div>
-                        </div>
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="bg-white/90 rounded-lg p-2.5 border border-rose-200/80 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        1. Free Trial Countdown:
+                      </span>
+                      <span className="text-rose-800 font-bold">
+                        3 Days → $5.99/wk ($311/yr)
+                      </span>
                     </div>
-
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    TestWhiz: Heavy Telemetry Scripts & High RAM Footprint
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Loads heavy external telemetry &amp; tracker scripts:</div>
-                                <div className="text-rose-300">import &quot;https://cdn.testwhiz.co/analytics.js&quot;; // Violates strict LMS CSP</div>
-                                <div className="text-rose-300">// 2. Heavy memory footprint (120MB+ RAM):</div>
-                                <div className="text-rose-300">testwhizRuntime.initializeAllTrackers();</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> TestWhiz bundles third-party analytics trackers that violate LMS Content Security Policies and hog student system memory during high-stakes exams.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-400">const shadowRoot = hostElement.attachShadow(&#123; mode: &apos;closed&apos; &#125;);</div>
-                                <div className="text-emerald-400">// 2. Focus Shield traps all blur &amp; visibility events:</div>
-                                <div className="text-emerald-400">window.addEventListener(&apos;blur&apos;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Advantage:</strong> Operates entirely inside an undetectable closed Shadow DOM with active Focus Shield event suppression, zero window blurs, and instant 0.3s edge solving.
-                            </p>
-                        </div>
+                    <div className="bg-white/90 rounded-lg p-2.5 border border-rose-200/80 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        2. Extension Status:
+                      </span>
+                      <span className="text-amber-900 font-bold">
+                        &ldquo;Replaced Old Extension&rdquo;
+                      </span>
                     </div>
+                    <div className="bg-rose-950 text-rose-100 rounded-lg p-2.5 flex items-center justify-between">
+                      <span>Canvas Quiz Log:</span>
+                      <span className="text-rose-300 font-bold">
+                        window.blur Not Blocked ⚠️
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* 3 TECHNICAL DEEP DIVES */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
+                {/* Bottom Simulator Card: ExamGhost AI */}
+                <div className="rounded-2xl bg-emerald-50/90 border-2 border-emerald-700 p-4">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-xs font-mono font-bold uppercase text-emerald-950 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                      ExamGhost AI v4.2 (24-Tool Stealth)
+                    </span>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-200 text-emerald-950">
+                      0.3s Instant
+                    </span>
+                  </div>
 
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Streamlined Exam Stealth vs Bloated All-in-One Payloads
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">TestWhiz Flaw:</span>
-                                        TestWhiz bundles PDF parsers, YouTube transcribers, and flashcard generators into its content script, consuming 150MB+ of browser RAM and causing noticeable UI stutter during tests.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost is engineered strictly for exam execution: an ultra-lean 1.8MB bundle that executes in under 12 milliseconds without taxing browser memory.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Focus Shield Blur Interception vs Unshielded Defocus
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">TestWhiz Flaw:</span>
-                                        TestWhiz does not block focus events. Any click on its sidebar registers as an exam departure in Canvas SpeedGrader.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost&apos;s Focus Shield silences window.blur and document.visibilitychange events, maintaining unbroken focus telemetry.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Lifetime License vs Monthly Subscription Churn
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">TestWhiz Flaw:</span>
-                                        TestWhiz charges $14.99/month, draining student finances semester after semester.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost costs $19.99 once for life, with unlimited solves and free lifelong updates.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="bg-white rounded-lg p-2.5 border border-emerald-200 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        1. Free Trial Quota:
+                      </span>
+                      <span className="text-emerald-800 font-bold">
+                        50 Solves ($0 • No Card) ✓
+                      </span>
                     </div>
+                    <div className="bg-white rounded-lg p-2.5 border border-emerald-200 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        2. UI Encapsulation:
+                      </span>
+                      <span className="text-emerald-800 font-bold">
+                        Closed Shadow DOM + Opacity
+                      </span>
+                    </div>
+                    <div className="bg-emerald-950 text-emerald-100 rounded-lg p-2.5 flex items-center justify-between">
+                      <span>Canvas Quiz Log:</span>
+                      <span className="text-emerald-300 font-bold">
+                        4-Layer Focus Shield Active ✓
+                      </span>
+                    </div>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
-                        </h2>
-                        <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against TestWhiz across 10 mission-critical exam dimensions.
-                        </p>
-                    </div>
+        {/* Interactive Pure-CSS 3-Tab Audit Explorer */}
+        <section
+          id="testwhiz-audit"
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24"
+        >
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              01 // Interactive Architecture &amp; Billing Explorer
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Click Any Tab to Inspect TestWhiz.co vs ExamGhost AI
+            </h2>
+            <p className="text-neutral-700 mt-2 max-w-3xl text-sm sm:text-base">
+              We audited the live Next.js application at{" "}
+              <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                testwhiz.co
+              </code>{" "}
+              and{" "}
+              <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                testwhiz.co/pricing
+              </code>
+              . Choose a tab below to explore its 3-day trial math, its{" "}
+              &ldquo;Incognito mode&rdquo; limitations, and its 6-in-1 study
+              dashboard.
+            </p>
+          </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">TestWhiz</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
+          <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+            {/* Pure CSS Radio Inputs */}
+            <input
+              type="radio"
+              name="tw-tabs"
+              id="tab-tw-trial"
+              className="sr-only peer/tw-trial"
+              defaultChecked
+            />
+            <input
+              type="radio"
+              name="tw-tabs"
+              id="tab-tw-stealth"
+              className="sr-only peer/tw-stealth"
+            />
+            <input
+              type="radio"
+              name="tw-tabs"
+              id="tab-tw-suite"
+              className="sr-only peer/tw-suite"
+            />
 
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Lightweight Exam Engine</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Under 2MB RAM footprint vs 150MB bundle</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        4.0s Cloud Latency
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Canvas & Blackboard Only
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        $14.99/month
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            {/* Tab Labels */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
+              <label
+                htmlFor="tab-tw-trial"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/tw-trial:border-[#111111] peer-checked/tw-trial:bg-emerald-950 peer-checked/tw-trial:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <DollarSign className="w-4 h-4" />
+                  <span>Tab 01 • 72h Trial &amp; Cost</span>
                 </div>
-            </section>
-
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;TestWhiz kept lagging my browser with all its PDF and YouTube features running in the background. ExamGhost is lightning-fast, never lags, and gives me answers in 0.3 seconds.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Samir G.</div>
-                            <div className="text-xs text-ink-muted">Rutgers University · Finance</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in FIN 300
-                        </div>
-                    </div>
+                <div className="font-bold text-sm sm:text-base">
+                  3-Day Trial ($311/yr Weekly) vs 50 Free
                 </div>
-            </section>
+              </label>
 
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>TestWhiz (TestWhiz Cloud Latency)</span>
-                                <span className="text-rose-800">4.0s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
-                            </div>
-                        </div>
-                    </div>
+              <label
+                htmlFor="tab-tw-stealth"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/tw-stealth:border-[#111111] peer-checked/tw-stealth:bg-emerald-950 peer-checked/tw-stealth:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <EyeOff className="w-4 h-4" />
+                  <span>Tab 02 • Canvas Stealth</span>
                 </div>
-            </section>
-
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
+                <div className="font-bold text-sm sm:text-base">
+                  &ldquo;Incognito Mode&rdquo; vs Focus Shield
                 </div>
-            </section>
+              </label>
 
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from TestWhiz to ExamGhost.
-                    </p>
+              <label
+                htmlFor="tab-tw-suite"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/tw-suite:border-[#111111] peer-checked/tw-suite:bg-emerald-950 peer-checked/tw-suite:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <Layers className="w-4 h-4" />
+                  <span>Tab 03 • Study Suite vs Solver</span>
+                </div>
+                <div className="font-bold text-sm sm:text-base">
+                  6-Tool Web Wrapper vs 0.3s Vision OCR
+                </div>
+              </label>
+            </div>
+
+            {/* Panel 1: 3-Day Trial & Cost */}
+            <div className="hidden peer-checked/tw-trial:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
+                  72-Hour Auto-Conversion Audit
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  What Happens When TestWhiz&apos;s 3-Day Free Trial Expires?
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  On{" "}
+                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                    testwhiz.co/pricing
+                  </code>
+                  , every tier—Weekly (<strong>$5.99/week</strong>), Monthly (
+                  <strong>$12.99/month</strong>), and Semester (
+                  <strong>$39.99/semester</strong>)—gates access behind a{" "}
+                  <strong>3-day free trial</strong> (
+                  <em>&ldquo;Try TestWhiz for FREE for 3 days. Cancel anytime.&rdquo;</em>
+                  ). If you forget to cancel within 72 hours on the Weekly plan,
+                  you are billed $5.99 every 7 days—which equals{" "}
+                  <strong>$23.96/month or $311.48/year</strong>.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  <strong>ExamGhost AI</strong> never puts a 72-hour ticking
+                  clock on your trial. You get{" "}
+                  <strong>50 Free Question Solves ($0)</strong> with no credit
+                  card required. When you want unlimited access, our{" "}
+                  <strong>$19/month Monthly Pass</strong>,{" "}
+                  <strong>$99/year Academic Year Pass ($8.25/mo)</strong>, and{" "}
+                  <strong>$199 one-time Lifetime Degree Pass</strong> are backed
+                  by an unconditional{" "}
+                  <strong>14-day 100% money-back guarantee</strong>.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4">
+                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-base text-rose-950">
+                      TestWhiz.co Pricing
+                    </span>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-rose-200 text-rose-950 font-bold">
+                      3-Day Trial Only
+                    </span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                    <li>• <strong>Weekly Plan:</strong> $5.99/wk ($23.96/mo • $311.48/yr)</li>
+                    <li>• <strong>Monthly Plan:</strong> $12.99/mo ($155.88/yr)</li>
+                    <li>• <strong>Semester Plan:</strong> $39.99/semester</li>
+                    <li>• <strong>Lifetime Option:</strong> None (recurring billing only)</li>
+                  </ul>
                 </div>
 
-                <div className="space-y-4">
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Why is ExamGhost better suited for exams than TestWhiz?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            TestWhiz is a bloated general study tool with slow cloud response times and no focus protection. ExamGhost is engineered strictly for live exams with 0.3s edge solving and Focus Shield blur immunity.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect TestWhiz during a Canvas test?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. TestWhiz triggers window.blur events in Canvas SpeedGrader whenever you interact with its interface. ExamGhost operates invisibly in a closed Shadow DOM.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How much does ExamGhost cost compared to TestWhiz?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            TestWhiz charges $14.99 every month ($179.88/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
+                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-base text-emerald-950">
+                      ExamGhost AI Passes
+                    </span>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-800 text-white font-bold">
+                      50 Free Solves
+                    </span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                    <li>• <strong>Free Trial:</strong> 50 Free Solves ($0 • No 72h timer)</li>
+                    <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited)</li>
+                    <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo — Fall, Spring &amp; Summer)</li>
+                    <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
+                  </ul>
                 </div>
-            </section>
+              </div>
+            </div>
 
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
-                        </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
-                        </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
-                        </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
-                        </Link>
+            {/* Panel 2: Incognito Mode vs Focus Shield */}
+            <div className="hidden peer-checked/tw-stealth:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
+                  Canvas Telemetry &amp; Extension Audit
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  Why TestWhiz&apos;s &ldquo;Incognito Mode&rdquo; Doesn&apos;t Stop Canvas Quiz Logs
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  At the top of <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">testwhiz.co</code>,
+                  a banner announces:{" "}
+                  <em>
+                    &ldquo;New Feature Alert: We replaced our old AI solver
+                    extension with a new one!&rdquo;
+                  </em>{" "}
+                  In its FAQ, TestWhiz states that{" "}
+                  <em>&ldquo;Incognito mode ensures your activity remains private.&rdquo;</em>
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  However, Canvas, Blackboard, and D2L Brightspace do not check
+                  your local extension history—they monitor{" "}
+                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                    window.onblur
+                  </code>
+                  ,{" "}
+                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                    document.visibilityState
+                  </code>
+                  , and{" "}
+                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                    document.hasFocus()
+                  </code>
+                  . Clicking outside the active quiz DOM or switching tabs to
+                  use TestWhiz&apos;s PDF/YouTube chat immediately logs{" "}
+                  <em>&ldquo;Stopped viewing the Canvas quiz-taking page.&rdquo;</em>{" "}
+                  <strong>ExamGhost AI&apos;s 4-Layer Focus Shield</strong>{" "}
+                  neutralizes those exact event listeners in memory and renders
+                  inside a closed Shadow DOM root.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
+                <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
+                  <div className="text-rose-300 font-bold uppercase">
+                    TestWhiz Replaced Extension
+                  </div>
+                  <div className="text-rose-100/90">
+                    • Visual &quot;Incognito mode&quot; toggle only
+                  </div>
+                  <div className="text-rose-100/90">
+                    • No <code>window.blur</code> or <code>visibilitychange</code> interception
+                  </div>
+                  <div className="text-rose-100/90">
+                    • Standard overlay without closed Shadow DOM isolation
+                  </div>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
+                  <div className="text-emerald-300 font-bold uppercase">
+                    ExamGhost 4-Layer Focus Shield
+                  </div>
+                  <div className="text-emerald-100/90">
+                    • Spoofs <code>document.hasFocus() === true</code>
+                  </div>
+                  <div className="text-emerald-100/90">
+                    • Traps <code>window.blur</code> &amp; <code>visibilitychange</code>
+                  </div>
+                  <div className="text-emerald-100/90">
+                    • 100% isolated <code>mode: &apos;closed&apos;</code> Shadow Root
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Panel 3: 6-Tool Web Wrapper vs 0.3s Vision OCR */}
+            <div className="hidden peer-checked/tw-suite:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
+                  Product Focus &amp; Speed Comparison
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  6-in-1 Pre-Exam Study Dashboard vs Dedicated 0.3s Exam Solver
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  TestWhiz is designed primarily as a 6-tool web portal where you
+                  upload syllabus PDFs or paste YouTube lecture URLs to generate
+                  flashcards, study notes, printable worksheets, and practice
+                  quizzes. While those features are handy for pre-exam review,
+                  you can already summarize PDFs and YouTube transcripts for free
+                  in standard AI chat tools.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Instead of padding our dashboard with worksheet generators,{" "}
+                  <strong>ExamGhost AI</strong> dedicates 100% of its engineering
+                  to <strong>24 live LMS stealth and solving capabilities</strong>—delivering{" "}
+                  <strong>0.3s Multimodal Vision OCR</strong> for Calculus
+                  integrals, Organic Chemistry structures, circuit schematics,
+                  and McGraw-Hill SmartBook prompts directly inside your active
+                  exam tab.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4">
+                <div className="bg-[#FAF8F5] border border-neutral-300 rounded-2xl p-5">
+                  <div className="text-xs font-mono uppercase font-bold text-neutral-600 mb-2">
+                    When TestWhiz.co Makes Sense
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-700">
+                    <li>• Chatting with YouTube lecture videos and generating printable study worksheets before exam week</li>
+                    <li>• Using a basic highlight/screenshot helper on unmonitored homework where tab switches aren&apos;t logged</li>
+                  </ul>
+                </div>
+
+                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                  <div className="text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
+                    When ExamGhost AI Wins
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                    <li>• Live timed midterms &amp; finals on Canvas, Blackboard, Moodle, D2L &amp; SmartBook</li>
+                    <li>• 0.3s Snap-It Vision OCR for complex STEM diagrams, graphs, and locked iframes</li>
+                    <li>• Zero-trace closed Shadow DOM HUD + 4-Layer Focus Shield</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive Feature & Pricing Comparison Table + Collapsible Technical Drawer */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              02 // Head-to-Head Technical Matrix
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              TestWhiz.co vs ExamGhost: 2026 Feature &amp; Pricing Breakdown
+            </h2>
+          </div>
+
+          <div className="bg-white border-2 border-[#111111] rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_#111111]">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-neutral-800 bg-[#111111] text-white text-xs font-mono uppercase tracking-wider">
+                    <th className="py-4 px-5 w-1/4 border-r border-neutral-800">
+                      Evaluation Criteria
+                    </th>
+                    <th className="py-4 px-5 text-emerald-300 w-[37.5%] border-r border-neutral-800">
+                      ExamGhost (v4.2 Stealth Engine)
+                    </th>
+                    <th className="py-4 px-5 text-neutral-300 w-[37.5%]">
+                      TestWhiz (testwhiz.co)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 text-xs sm:text-sm">
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Primary Product Architecture
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-medium">
+                      Dedicated 24-Tool LMS Stealth &amp; 0.3s Multimodal Exam
+                      Solver
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      6-in-1 Web Study Portal (PDF Chat, YouTube Chat,
+                      Flashcards, Notes, Worksheets, Quizzes) + Replaced
+                      Extension
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Free Tier / Trial Policy
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-semibold">
+                      50 Free Question Solves ($0, no credit card, never expires
+                      after 72h)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-medium">
+                      3-Day Free Trial only (&ldquo;Try TestWhiz for FREE for 3
+                      days&rdquo; then auto-bills)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Weekly / Short-Term Pricing
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-medium">
+                      No $5.99/wk trap — Full Monthly Pass is $19/mo (14-day
+                      refund guarantee)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-medium">
+                      $5.99 / week (&ldquo;Give it a try&rdquo; — equals
+                      $23.96/mo or $311.48/year)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Monthly &amp; Annual / Semester Pricing
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-semibold">
+                      $19/month or $99/year Academic Year Pass ($8.25/mo —
+                      covers Fall, Spring &amp; Summer)
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      $12.99/month ($155.88/yr) or $39.99/semester
+                      ($79.98–$119.97/yr)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Lifetime Ownership Option
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-semibold">
+                      $199 One-Time Lifetime Degree Pass (3 devices, all future
+                      LMS updates)
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      None (recurring weekly, monthly, or semester billing only)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Canvas Quiz Log Protection
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-semibold">
+                      4-Layer Focus Shield (spoofs{" "}
+                      <code className="font-mono text-xs">window.blur</code>,{" "}
+                      <code className="font-mono text-xs">
+                        visibilitychange
+                      </code>
+                      , <code className="font-mono text-xs">hasFocus()</code>)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-medium">
+                      Vague &ldquo;Incognito mode&rdquo; claim; does not
+                      intercept Canvas focus-loss telemetry
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      DOM Injection Footprint
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-medium">
+                      Closed Shadow DOM root + Ghost Opacity slider (down to 10%
+                      transparency)
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      Standard extension overlay / screenshot cropper without
+                      Shadow DOM isolation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      STEM &amp; Diagram OCR Speed
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200 text-emerald-900 font-semibold">
+                      0.3s Multimodal Vision Edge Compute (LaTeX, graphs,
+                      circuits, SmartBook)
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      2.5s–4.5s general AI Problem Solver response time
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Collapsible Technical Source & Tracker Audit Drawer */}
+            <details className="group border-t-2 border-[#111111] bg-[#FAF8F5]">
+              <summary className="cursor-pointer px-6 py-4 flex items-center justify-between text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-neutral-800 hover:bg-neutral-200/60 transition-colors">
+                <h3 className="flex items-center gap-2 m-0 inline">
+                  <Code2 className="w-4 h-4 text-emerald-800" />
+                  Technical SSR HTML, Banner &amp; Tracker Audit (testwhiz.co)
+                </h3>
+                <span className="text-emerald-800 group-open:rotate-180 transition-transform">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-6 pb-6 pt-2 text-xs font-mono text-neutral-700 space-y-3 border-t border-neutral-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-xl border border-neutral-200 space-y-1.5">
+                    <div className="font-bold text-[#111111] uppercase">
+                      SSR Payload &amp; Banner Inspection
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
+                    <div>
+                      • Top Alert Banner:{" "}
+                      <code>
+                        &quot;New Feature Alert: We replaced our old AI solver
+                        extension with a new one!&quot;
+                      </code>
                     </div>
+                    <div>
+                      • Initial SSR Social Proof Counters:{" "}
+                      <code>0+ Problems Solved</code>,{" "}
+                      <code>0+ Flashcards Generated</code>,{" "}
+                      <code>0+ Notes Generated</code>,{" "}
+                      <code>0+ Worksheets Generated</code> (rendered with{" "}
+                      <code>style=&quot;opacity:0&quot;</code> prior to client
+                      ticker hydration)
+                    </div>
+                    <div>
+                      • Footer Cross-Links:{" "}
+                      <code>21st.tools/tools/testwhiz</code>,{" "}
+                      <code>findproductized.co</code>,{" "}
+                      <code>opensourceboilerplates.com</code> (static{" "}
+                      <code>© 2025 TestWhiz.co</code>)
+                    </div>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-neutral-200 space-y-1.5">
+                    <div className="font-bold text-[#111111] uppercase">
+                      Third-Party Auth &amp; Analytics Stack
+                    </div>
+                    <div>
+                      • Authentication: Clerk (<code>clerk.testwhiz.co</code>)
+                      required before starting the 3-day trial
+                    </div>
+                    <div>
+                      • Embedded Analytics Scripts:{" "}
+                      <code>cloud.umami.is/script.js</code>,{" "}
+                      <code>analytics.ahrefs.com</code>,{" "}
+                      <code>piqo.app/piqo.js</code>
+                    </div>
+                    <div>
+                      • Extension Title:{" "}
+                      <code>TestWhiz: AI for quizzes and assignments</code>
+                    </div>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </details>
+          </div>
+        </section>
 
-            </main>
+        {/* FAQ Section */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              03 // Verified 2026 FAQ
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Frequently Asked Questions: TestWhiz vs ExamGhost
+            </h2>
+          </div>
 
-            <Footer />
-        </div>
-    );
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Why did TestWhiz replace its old AI solver Chrome extension?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                On the live{" "}
+                <code className="font-mono text-xs">testwhiz.co</code> homepage,
+                a prominent banner announces:{" "}
+                <em>
+                  &ldquo;New Feature Alert: We replaced our old AI solver
+                  extension with a new one!&rdquo;
+                </em>{" "}
+                While the replacement extension restores basic text-highlight
+                and screenshot solving, it remains a companion to a 6-tool study
+                dashboard rather than a dedicated LMS stealth engine.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Does TestWhiz&apos;s &ldquo;Incognito mode&rdquo; stop Canvas Quiz Logs from detecting tab switches?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                No. While TestWhiz&apos;s FAQ claims that{" "}
+                <em>&ldquo;Incognito mode ensures your activity remains private,&rdquo;</em>{" "}
+                hiding local popup state does not block browser focus telemetry.
+                When you click outside the active quiz DOM or switch tabs to use
+                TestWhiz&apos;s PDF Chat or YouTube Video Chat, Canvas LMS fires{" "}
+                <code className="font-mono text-xs">window.blur</code> and{" "}
+                <code className="font-mono text-xs">visibilitychange</code>{" "}
+                events. ExamGhost blocks those telemetry listeners via its
+                4-Layer Focus Shield.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                How much does TestWhiz actually cost after its 3-day free trial?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                According to{" "}
+                <code className="font-mono text-xs">testwhiz.co/pricing</code>,
+                TestWhiz offers a <strong>3-day free trial</strong> that
+                converts into recurring plans: <strong>$5.99/week</strong>{" "}
+                ($311.48/year), <strong>$12.99/month</strong> ($155.88/year), or{" "}
+                <strong>$39.99/semester</strong>. ExamGhost gives you{" "}
+                <strong>50 Free Question Solves ($0)</strong> with no credit
+                card and no 72-hour expiration timer, followed by{" "}
+                <strong>$19/month</strong>, <strong>$99/year ($8.25/mo)</strong>,
+                or a <strong>$199 one-time Lifetime Degree Pass</strong>.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Can I test ExamGhost&apos;s Focus Shield before installing anything?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                Yes. You can launch our interactive{" "}
+                <Link prefetch={false}
+                  href="/canvas-quiz-solver-free-demo"
+                  className="underline font-semibold text-emerald-800"
+                >
+                  Live Canvas Quiz Log Sandbox Demo
+                </Link>{" "}
+                right in your browser to watch how Canvas records{" "}
+                <code className="font-mono text-xs">window.blur</code> and{" "}
+                <code className="font-mono text-xs">visibilitychange</code>{" "}
+                events when Focus Shield is OFF versus when ExamGhost&apos;s
+                4-Layer Focus Shield is ON.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bespoke Pastel Conversion Strip + Related Comparisons (No Stacked Dark Box) */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-amber-50 via-[#FAF8F5] to-emerald-50 border-2 border-[#111111] rounded-3xl p-8 sm:p-10 shadow-[6px_6px_0px_0px_#111111] mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <span className="inline-block text-xs font-mono uppercase tracking-widest text-emerald-900 font-bold mb-2">
+                  Upgrade From 6-in-1 Study Wrappers • Zero 72h Trial Trap
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-3">
+                  Ready for True 0.3s Canvas Stealth?
+                </h2>
+                <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                  Skip the 3-day auto-billing trial trap and unshielded study
+                  portals. Start with{" "}
+                  <strong>50 Free Question Solves ($0)</strong>—including our
+                  4-Layer Focus Shield and 10 Snap-It Vision OCR snips—or lock
+                  in the <strong>$99/yr Academic Year Pass ($8.25/mo)</strong>.
+                </p>
+                <div className="flex flex-wrap items-center gap-3.5">
+                  <Link prefetch={false}
+                    href="/#pricing"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
+                  >
+                    Claim 50 Free Solves ($0)
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/canvas-quiz-solver-free-demo"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] font-semibold text-sm border-2 border-[#111111] hover:bg-neutral-100 transition-colors"
+                  >
+                    Try Live Sandbox Demo
+                  </Link>
+                  <a
+                    href="https://discord.gg/aCcsyKYJq4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#3b47d6] text-white font-semibold text-sm hover:bg-[#2f3ab0] transition-colors"
+                  >
+                    Join Student Discord
+                  </a>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 bg-white rounded-2xl p-5 border border-neutral-200">
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-500 font-bold mb-3">
+                  Related Extension Audits
+                </div>
+                <div className="space-y-2.5 text-sm font-medium">
+                  <Link prefetch={false}
+                    href="/snapgpt-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>SnapGPT vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/studyfox-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>StudyFox vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/mindko-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>Mindko vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/compare-canvas-hack-extensions"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-950 text-white hover:bg-emerald-900 transition-colors"
+                  >
+                    <span>View All 57 LMS Audits</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-300" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

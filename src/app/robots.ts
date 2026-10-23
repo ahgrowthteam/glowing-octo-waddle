@@ -6,13 +6,26 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: '/',
+                disallow: ['/api/'],
             },
             {
-                userAgent: ['GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Applebot'],
+                userAgent: [
+                    'GPTBot',
+                    'OAI-SearchBot',
+                    'ChatGPT-User',
+                    'PerplexityBot',
+                    'Perplexity-User',
+                    'ClaudeBot',
+                    'Claude-SearchBot',
+                    'Claude-User',
+                    'Google-Extended',
+                    'Applebot',
+                    'Applebot-Extended',
+                    'CCBot',
+                ],
                 allow: '/',
-            }
+            },
         ],
         sitemap: 'https://examghost.com/sitemap.xml',
-        host: 'https://examghost.com',
     };
 }

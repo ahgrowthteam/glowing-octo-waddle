@@ -36,17 +36,18 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                 return comp.name.toLowerCase().includes('canvas') || comp.domain.toLowerCase().includes('canvas');
             }
             if (selectedCategory === 'solvers') {
-                const solvers = ['fastsolve', 'quizard', 'quietly', 'testbro', 'quizsolve', 'classology', 'mindko', 'campus', 'answerai', 'solvely', 'gauth', 'truststudy', 'answerly', 'questionai', 'studyfox'];
+                const solvers = ['fastsolve', 'quizard', 'quietly', 'testbro', 'quizsolve', 'classology', 'mindko', 'collegetools', 'college tools', 'campus', 'answerai', 'solvely', 'gauth', 'truststudy', 'answerly', 'questionai', 'studyfox', 'apex', 'quizonator', 'rightclick', 'cheatpal', 'doublecheck', 'double check', 'quizper', 'mylab'];
                 return solvers.some(s => comp.name.toLowerCase().includes(s) || comp.domain.toLowerCase().includes(s));
             }
             if (selectedCategory === 'study') {
-                const studyTools = ['brainly', 'coursehero', 'knowt', 'cramly', 'wolfram', 'homeworkify', 'quizplus', 'studymonkey', 'studyx', 'schoolcheats'];
+                const studyTools = ['brainly', 'coursehero', 'knowt', 'cramly', 'wolfram', 'homeworkify', 'quizplus', 'studymonkey', 'studyx', 'schoolcheats', 'transcript', 'asksia', 'easysb', 'smarterbook'];
                 return studyTools.some(s => comp.name.toLowerCase().includes(s) || comp.domain.toLowerCase().includes(s));
             }
             if (selectedCategory === 'traps') {
                 return comp.pricingSummary.toLowerCase().includes('/wk') || 
                        comp.pricingSummary.toLowerCase().includes('/mo') || 
                        comp.pricingSummary.toLowerCase().includes('$149') ||
+                       comp.pricingSummary.toLowerCase().includes('trial') ||
                        comp.pricingSummary.toLowerCase().includes('subscription');
             }
             return true;
@@ -237,11 +238,11 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                         </div>
                                         <div className="space-y-1">
                                             <div className="flex items-center gap-2 text-[10px] font-mono">
-                                                <span className="w-16 font-bold text-emerald-700">ExamGhost</span>
+                                                <span className="w-16 font-bold text-emerald-800">ExamGhost</span>
                                                 <div className="flex-1 h-2 bg-black/5 rounded-full overflow-hidden">
                                                     <div className="h-full bg-emerald-500 rounded-full" style={{ width: '8%' }} />
                                                 </div>
-                                                <span className="text-emerald-700 font-bold">0.3s</span>
+                                                <span className="text-emerald-800 font-bold">0.3s</span>
                                             </div>
                                             <div className="flex items-center gap-2 text-[10px] font-mono">
                                                 <span className="w-16 text-rose-800 truncate">{comp.name}</span>
@@ -258,7 +259,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                     href={`/${comp.slug}`}
                                     className="w-full py-3 px-4 rounded-xl bg-[#f7f4ee] hover:bg-[#111111] hover:text-white text-ink text-xs font-bold transition-all flex items-center justify-center gap-2 border border-black/10 group-hover:border-black shadow-xs"
                                 >
-                                    <span>Read Full Teardown & DOM Audit</span>
+                                    <span>Read Full Teardown &amp; DOM Audit</span>
                                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
@@ -287,7 +288,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                         Master 12-Point Technical Matrix
                     </div>
                     <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        2026 Stealth & Architecture Matrix
+                        2026 Stealth &amp; Architecture Matrix
                     </h2>
                     <p className="text-sm text-ink-muted">
                         Filtering {categorizedList.length} extensions by DOM isolation, blur shield, and SpeedGrader immunity.
@@ -315,41 +316,49 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                                         <span className="text-sm">ExamGhost (Stealth Suite)</span>
                                     </td>
-                                    <td className="py-4 px-4 text-center text-emerald-700">✓ Instant 0.3s</td>
-                                    <td className="py-4 px-4 text-center text-emerald-700">✓ 100% Isolated</td>
-                                    <td className="py-4 px-4 text-center text-emerald-700">✓ Focus Shield</td>
-                                    <td className="py-4 px-4 text-center text-indigo-900 font-semibold">Canvas, BB, Moodle, D2L</td>
-                                    <td className="py-4 px-4 font-extrabold text-emerald-700 text-sm">$19.99 Lifetime</td>
-                                    <td className="py-4 px-4 text-right text-indigo-700 font-bold">Recommended</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">✓ Instant 0.3s</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">✓ 100% Isolated</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">✓ Focus Shield</td>
+                                    <td className="py-4 px-4 text-center text-indigo-950 font-semibold">Canvas, BB, Moodle, D2L</td>
+                                    <td className="py-4 px-4 font-extrabold text-emerald-800 text-xs sm:text-sm">50 Free · $19/mo · $99/yr · $199 Life</td>
+                                    <td className="py-4 px-4 text-right text-indigo-900 font-bold">Recommended</td>
                                 </tr>
 
                                 {/* Competitors */}
                                 {categorizedList.map((comp) => (
                                     <tr key={comp.slug} className="hover:bg-[#fcf9f5] transition-colors">
                                         <td className="py-3.5 px-5 font-medium text-ink">
-                                            <Link href={`/${comp.slug}`} className="hover:text-indigo-700 hover:underline flex items-center gap-1.5">
+                                            <Link href={`/${comp.slug}`} className="hover:text-indigo-800 hover:underline flex items-center gap-1.5">
                                                 <span>{comp.name}</span>
                                             </Link>
                                         </td>
                                         <td className="py-3.5 px-4 text-center">
-                                            {comp.name === 'CanvasHack' ? (
-                                                <span className="text-rose-800 font-bold">✗ None</span>
+                                            {['CanvasHack', 'Canvas Crack', 'BetterCampus', 'Canvas Scholar', 'Canvas Quiz Loader', 'AskSia'].includes(comp.name) ? (
+                                                <span className="text-rose-800 font-bold">✗ No In-Page AI</span>
+                                            ) : ['MyLab Solver', 'Homeworkify', 'TrustStudy'].includes(comp.name) ? (
+                                                <span className="text-rose-800 font-bold">✗ Offline / Dead</span>
                                             ) : (
                                                 <span className="text-amber-800 font-bold">Slow ({comp.latencyComparison.competitor})</span>
                                             )}
                                         </td>
                                         <td className="py-3.5 px-4 text-center">
-                                            <span className="text-rose-800 font-bold">✗ Injects DOM</span>
+                                            <span className="text-rose-800 font-bold">✗ Injects DOM / Tab</span>
                                         </td>
                                         <td className="py-3.5 px-4 text-center">
-                                            {comp.name === 'CanvasHack' ? (
-                                                <span className="text-emerald-700 font-semibold">Partial (Canvas)</span>
+                                            {['CanvasHack', 'Canvas Crack', 'Cheatpal'].includes(comp.name) ? (
+                                                <span className="text-emerald-800 font-semibold">Partial (Canvas)</span>
                                             ) : (
                                                 <span className="text-rose-800 font-bold">✗ Leaks Focus</span>
                                             )}
                                         </td>
                                         <td className="py-3.5 px-4 text-center text-ink-muted">
-                                            {comp.name.includes('Canvas') ? 'Canvas only' : 'Limited'}
+                                            {comp.name.includes('Canvas') || comp.name === 'Quizonator' || comp.name === 'AskSia'
+                                                ? 'Canvas only'
+                                                : comp.name === 'MyLab Solver'
+                                                ? 'Pearson only (Dead)'
+                                                : comp.name === 'EasySB & SmarterBook'
+                                                ? 'SmartBook only'
+                                                : 'Limited'}
                                         </td>
                                         <td className="py-3.5 px-4 text-xs font-medium text-ink-muted">
                                             {comp.pricingSummary}
@@ -357,7 +366,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                         <td className="py-3.5 px-4 text-right">
                                             <Link 
                                                 href={`/${comp.slug}`}
-                                                className="text-xs font-bold text-indigo-600 hover:text-indigo-800"
+                                                className="text-xs font-bold text-indigo-800 hover:text-indigo-950"
                                             >
                                                 Compare →
                                             </Link>

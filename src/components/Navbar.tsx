@@ -18,7 +18,7 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: 'Live Demo', href: '/demo', isLive: true },
+        { name: 'Live Demo', href: '/canvas-quiz-solver-free-demo', isLive: true },
         { name: 'Tools', href: '/#tools' },
         { name: 'Sniping', href: '/#demo' },
         { name: 'Pricing', href: '/#pricing' },
@@ -38,7 +38,7 @@ export default function Navbar() {
                 aria-label="Main Navigation"
             >
                 {/* Brand */}
-                <Link href="/" className="flex items-center gap-2.5 pl-2 sm:pl-3 group shrink-0">
+                <Link href="/" prefetch={false} className="flex items-center gap-2.5 pl-2 sm:pl-3 group shrink-0">
                     <div className="w-8 h-8 rounded-full overflow-hidden border border-black/10 transition-transform duration-200 group-hover:scale-110 shadow-sm bg-[#c4d0f8] shrink-0">
                         <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={32} height={32} className="w-full h-full object-cover scale-110" />
                     </div>
@@ -56,6 +56,7 @@ export default function Navbar() {
                         <li key={link.name}>
                             <Link
                                 href={link.href}
+                                prefetch={false}
                                 className={`px-3 lg:px-3.5 py-2 min-h-[32px] rounded-full transition-colors whitespace-nowrap flex items-center gap-1.5 ${
                                     link.isLive 
                                         ? 'bg-emerald-500/10 text-emerald-800 font-bold border border-emerald-500/30 hover:bg-emerald-500/20' 

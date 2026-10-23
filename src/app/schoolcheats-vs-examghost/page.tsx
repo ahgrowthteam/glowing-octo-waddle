@@ -1,747 +1,887 @@
-import React from 'react';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
-    CheckCircle2,
-    XCircle,
-    EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
-    FileText,
-    BookOpen,
-    ExternalLink
-} from 'lucide-react';
-import { FaChrome, FaDiscord } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import { Metadata } from "next";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  CheckCircle2,
+  XCircle,
+  ShieldCheck,
+  Zap,
+  ArrowRight,
+  Lock,
+  Sparkles,
+  BookOpen,
+  Gamepad2,
+  EyeOff,
+  Server,
+  ExternalLink,
+  ChevronDown,
+  AlertTriangle,
+  Layers,
+  Terminal,
+  CreditCard,
+} from "lucide-react";
+import { FaChrome, FaDiscord } from "react-icons/fa";
 
 export const metadata: Metadata = {
-    title: "SchoolCheats vs ExamGhost (2026 Comparison) | College Exam Stealth vs Game Scripts",
-    description: "Comparing SchoolCheats and ExamGhost? Discover why university students choose ExamGhost's undetectable Canvas HUD and STEM engine over fragile K-12 game scripts.",
+    title: {
+        absolute: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
+    },
+    description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/schoolcheats-vs-examghost",
     },
     openGraph: {
-        title: "SchoolCheats vs ExamGhost (2026 Comparison) | College Exam Stealth vs Game Scripts",
-        description: "SchoolCheats distributes brittle bot scripts for Blooket and Kahoot that break on every platform patch and get flagged by school network firewalls. ExamGhost is purpose-built for Canvas, Blackboard, and collegiate STEM assessments.",
+        title: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
+        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
         url: "https://examghost.com/schoolcheats-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "SchoolCheats vs ExamGhost Review",
+                alt: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "SchoolCheats vs ExamGhost (2026 Comparison) | College Exam Stealth vs Game Scripts",
-        description: "SchoolCheats targets high school games. ExamGhost is built for college university exams.",
+        title: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
+        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
 
-export default function SchoolcheatsVsExamghostPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebPage",
-                "@id": "https://examghost.com/schoolcheats-vs-examghost#webpage",
-                "url": "https://examghost.com/schoolcheats-vs-examghost",
-                "name": "SchoolCheats vs ExamGhost (2026 Comparison) | College Exam Stealth vs Game Scripts",
-                "description": "Comparing SchoolCheats and ExamGhost? Discover why university students choose ExamGhost's undetectable Canvas HUD and STEM engine over fragile K-12 game scripts.",
-                "breadcrumb": { "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb" },
-                "about": [
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "ExamGhost",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
-                    },
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "SchoolCheats",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome Extension",
-                        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
-                    }
-                ]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
-                    { "@type": "ListItem", "position": 3, "name": "SchoolCheats vs ExamGhost", "item": "https://examghost.com/schoolcheats-vs-examghost" }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://examghost.com/schoolcheats-vs-examghost#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Does SchoolCheats work on Canvas or Blackboard exams?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "No. SchoolCheats only provides scripts for trivia games like Kahoot, Blooket, and Edpuzzle. ExamGhost is built specifically for collegiate platforms like Canvas, Blackboard, and McGraw Hill."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can using SchoolCheats get your school account banned?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. SchoolCheats uses aggressive packet injection and bot flooding that triggers automated security filters. ExamGhost uses passive closed Shadow DOM technology with zero ban risk."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How does ExamGhost handle complex STEM college exams?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "ExamGhost incorporates the Mathpix neural engine to parse advanced mathematical formulas, matrices, integrals, and chemical structures with 99.4% accuracy."
-                        }
-                    }
-                ]
-            }
-        ]
-    };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+                "datePublished": "2026-01-23",
+                "dateModified": "2026-03-07",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
+      "@id": "https://examghost.com/schoolcheats-vs-examghost#webpage",
+      url: "https://examghost.com/schoolcheats-vs-examghost",
+      name: "SchoolCheats.net vs ExamGhost (2026): K-12 Game Scripts vs University LMS Stealth",
+      description:
+        "Comprehensive 2026 audit comparing SchoolCheats.net's 7-platform script library and $25/mo pricing against ExamGhost's Canvas/Blackboard Shadow DOM stealth and 0.3s Vision OCR.",
+      breadcrumb: {
+        "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://examghost.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Compare Extensions",
+          item: "https://examghost.com/compare-canvas-hack-extensions",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "SchoolCheats vs ExamGhost",
+          item: "https://examghost.com/schoolcheats-vs-examghost",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/schoolcheats-vs-examghost#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Does SchoolCheats.net work on Canvas, Blackboard, or Moodle?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. According to SchoolCheats.net's live 2026 platform catalog, it only supports 7 platforms: DeltaMath, ZyBooks, Wayground (formerly Quizizz), Blooket, Edpuzzle, Edmentum, and Lexia Learning. It has zero support for Canvas, Blackboard Ultra, Moodle, D2L Brightspace, McGraw Hill Connect, or Pearson MyLab. ExamGhost works across all university LMS platforms.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does SchoolCheats.net retrieve answers, and is it detectable?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "On SchoolCheats.net's homepage ('How it Works — Step 3'), the workflow explicitly states: 'Launch the cheat and get automatically sent to School Cheats for answer retrieval,' alongside 'Auto Complete' scripts. Being redirected to schoolcheats.net triggers immediate window.blur and visibilitychange events, while Auto Complete scripts complete 20-minute assignments in under 3 seconds—flagging teacher analytics logs immediately.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Are Answer Retrieval and Auto Complete free on SchoolCheats.net?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. On SchoolCheats.net's pricing matrix, the Free Plan disables ('X') both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground, leaving only basic client-side tweaks. Unlocking Answer Retrieval requires a paid Premium Membership at $8.99/week ($35.96/mo) or $25.00/month. ExamGhost includes 50 free full AI & OCR solves ($0, no card required) and costs $19/mo, $99/yr, or $199 Lifetime.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the SchoolCheats Cloud VM Desktop (vm.schoolcheats.net)?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "SchoolCheats offers a browser-hosted virtual machine (vm.schoolcheats.net) designed to help K-12 students bypass school Chromebook network blocks. However, using a remote cloud VM to log into a university Canvas account logs a datacenter IP address right in your university's IT security audit trail and triggers institutional 2FA/Duo location alerts.",
+          },
+        },
+      ],
+    },
+  ],
+};
 
-    return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
+export default function SchoolCheatsVsExamGhostPage() {
+  return (
+    <div className="min-h-screen bg-cream text-ink font-sans selection:bg-mint/40 selection:text-ink">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
 
-            <main id="main-content">
+      <main id="main-content">
+        {/* Breadcrumb */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-xs text-ink-muted"
+          >
+            <Link prefetch={false} href="/" className="hover:text-ink transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link prefetch={false}
+              href="/compare-canvas-hack-extensions"
+              className="hover:text-ink transition-colors"
+            >
+              Comparisons
+            </Link>
+            <span>/</span>
+            <span className="text-ink font-semibold">
+              SchoolCheats.net vs ExamGhost
+            </span>
+          </nav>
+        </div>
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">SchoolCheats vs ExamGhost</span>
-                </nav>
+        {/* BESPOKE HERO: 7 K-12 GAME SCRIPTS VS UNIVERSAL UNIVERSITY LMS STEALTH */}
+        <header className="relative pt-4 pb-16 sm:pb-20 overflow-hidden border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-xs font-mono font-bold text-rose-900 mb-6 shadow-sm">
+              <Gamepad2 className="w-3.5 h-3.5 text-rose-700" />
+              <span>2026 Platform &amp; Pricing Audit · schoolcheats.net vs ExamGhost</span>
             </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 SchoolCheats Alternative</span>
+            <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-ink font-display leading-[1.08] mb-6 max-w-4xl">
+              SchoolCheats only works on 7 K-12 &amp; drill sites for $25/mo. ExamGhost protects Canvas, Blackboard &amp; Moodle.
+            </h1>
+
+            <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-3xl leading-relaxed mb-8">
+              SchoolCheats (<code className="text-ink font-mono text-sm bg-sand/70 px-1.5 py-0.5 rounded">schoolcheats.net</code>) is a collection of hardcoded scripts for just <strong>7 platforms</strong> (Blooket, Wayground/Quizizz, Edpuzzle, DeltaMath, ZyBooks, Edmentum, and Lexia)—with <strong>zero support for Canvas, Blackboard, Moodle, or D2L</strong>. Worse, its Free tier disables Answer Retrieval with a red <strong>&ldquo;X&rdquo;</strong>, its workflow redirects your tab to <code className="text-ink font-mono text-sm bg-sand/70 px-1.5 py-0.5 rounded">schoolcheats.net</code>, and unlocking answers costs <strong>$8.99/week ($35.96/mo) or $25/month</strong>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-12">
+              <a
+                href="https://discord.gg/aCcsyKYJq4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
+              >
+                <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
+                <span>Start 50 Free University LMS Solves ($0)</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <Link prefetch={false}
+                href="/canvas-quiz-solver-free-demo"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface hover:bg-sand border border-sand-dark/40 text-ink font-semibold transition-all text-sm sm:text-base shadow-sm"
+              >
+                <span>Try Interactive Live Demo</span>
+              </Link>
+              <Link prefetch={false}
+                href="/#pricing"
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-sand/50 hover:bg-sand border border-sand-dark/30 text-ink-muted hover:text-ink font-medium transition-all text-sm"
+              >
+                <span>See Passes ($19/mo · $99/yr)</span>
+              </Link>
+            </div>
+
+            {/* HERO SIDE-BY-SIDE VISUAL MOCKUP */}
+            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+              {/* Left Card: SchoolCheats.net */}
+              <div className="rounded-2xl bg-surface border-2 border-rose-200/90 p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-sand-dark/20">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-600" />
+                      <span className="font-display font-bold text-sm text-ink">SchoolCheats.net (7-Site Script Catalog)</span>
                     </div>
+                    <span className="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-mono font-bold text-rose-800">
+                      $8.99/wk or $25/mo
+                    </span>
+                  </div>
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        SchoolCheats targets high school games. ExamGhost is built for college university exams.
-                    </h1>
-
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        SchoolCheats distributes brittle bot scripts for Blooket and Kahoot that break on every platform patch and get flagged by school network firewalls. ExamGhost is purpose-built for Canvas, Blackboard, and collegiate STEM assessments.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-                        <a
-                            href="https://chromewebstore.google.com/detail/examghost"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
-                        >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
+                  {/* Platform & Workflow Box */}
+                  <div className="rounded-xl bg-sand/40 border border-sand-dark/30 p-4 mb-4">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-2">
+                      <span>Supported Platforms (7 Total)</span>
+                      <span className="text-rose-700 font-bold">0% Canvas / Blackboard</span>
                     </div>
-
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Once</div>
-                            <div className="text-xs text-ink-muted line-through">SchoolCheats: Free + VIP Paid Scripts</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">SchoolCheats: 5.2s (SchoolCheats Script Latency)</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">SchoolCheats: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">SchoolCheats: Canvas Logs Blurs</div>
-                        </div>
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {["Blooket", "Wayground (Quizizz)", "Edpuzzle", "DeltaMath", "ZyBooks", "Edmentum", "Lexia"].map((p) => (
+                        <span key={p} className="px-2 py-0.5 rounded bg-surface border border-sand-dark/30 text-[11px] font-mono text-ink-muted">
+                          {p}
+                        </span>
+                      ))}
                     </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace SchoolCheats with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            SchoolCheats is an amateur script repository for games like Blooket and Kahoot. ExamGhost is an enterprise collegiate exam solver built for Canvas, Blackboard, and STEM tests with verified mathematical stealth.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                            
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>SchoolCheats focuses on K-12 games; ExamGhost dominates college and university LMS assessments.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>SchoolCheats scripts cause account bans; ExamGhost uses passive, undetectable closed Shadow DOM.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>One-time $19.99 lifetime license vs sketchy VIP script fees.</span>
-                            </div>
-                        </div>
+                    <div className="p-2.5 rounded-lg bg-rose-100/80 border border-rose-300 text-xs text-rose-950 font-medium flex items-center justify-between gap-2">
+                      <span>Step 3: &ldquo;Automatically sent to School Cheats for answer retrieval&rdquo;</span>
+                      <span className="text-[10px] font-mono bg-white px-2 py-0.5 rounded border border-rose-200 text-rose-800 shrink-0">
+                        Tab Redirect!
+                      </span>
                     </div>
-                </div>
-            </section>
+                  </div>
 
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <XCircle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>Zero University LMS Support:</strong> Does nothing on Canvas, Blackboard Ultra, Moodle, D2L, McGraw Hill Connect, or Pearson.</span>
                     </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        SchoolCheats&apos;s Flaws: Fragile WebSocket Scripts, High School Gamification & Account Bans
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        SchoolCheats focuses on high-school gamified platforms using brittle WebSocket exploits that frequently lead to permanent account bans.
-                    </p>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>1.2s &ldquo;Auto Complete&rdquo; Anomaly Flag:</strong> Blasting API completions in 1 second paints a red bot flag in ZyBooks/DeltaMath teacher logs.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <Lock className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>Free Tier Blocks Answers:</strong> Answer Retrieval is marked with a red <strong>X</strong> on the Free plan ($8.99/wk or $25/mo required).</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of SchoolCheats</span>
-                        </h3>
-                        <div className="space-y-3">
-                            
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Brittle WebSocket tampering: Manipulates network sockets in ways easily detected and patched by platforms.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    High-school focus only: Zero support for university LMS platforms like Canvas, Blackboard, or Pearson.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    High account ban rate: Automated flood bots and answer spam trigger instant automated security flags.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Malicious script distribution: Bundles third-party user-scripts that pose significant device security risks.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mt-4 pt-3 border-t border-sand-dark/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                  <span>Cloud VM: Datacenter IP Logged</span>
+                  <span className="text-rose-800 font-bold">Redirect Blur: Triggered</span>
+                </div>
+              </div>
 
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    SchoolCheats: High-Risk WebSocket Bot Spamming
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Tampering with game WebSocket socket:</div>
-                                <div className="text-rose-300">ws.send(JSON.stringify(&#123; type: &quot;submit_answer&quot;, answer: 1, delay: 5 &#125;));</div>
-                                <div className="text-rose-300">// 2. Anti-cheat rate limiter trips:</div>
-                                <div className="text-rose-300">if (packetsPerSec &gt; 10) &#123; banUser(&quot;Automated Bot Client Detected&quot;); &#125;</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> SchoolCheats floods game servers with automated WebSocket payloads that trigger instant IP and account bans on educational platforms.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield suppresses blur events:</div>
-                                <div className="text-emerald-300">window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                                <div className="text-emerald-400 mt-2">// 3. Mathpix Neural OCR: 0.3s edge inference</div>
-                                <div className="text-emerald-300">const ans = await EdgeSolver.solve(mathpixTokens); // 280ms</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Guarantee:</strong> Your host page DOM remains 100% unaltered. SpeedGrader logs continuous, unbroken exam presence with zero blur notifications.
-                            </p>
-                        </div>
+              {/* Right Card: ExamGhost */}
+              <div className="rounded-2xl bg-surface border-2 border-emerald-500/40 p-5 sm:p-6 shadow-md flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-sand-dark/20">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+                      <span className="font-display font-bold text-sm text-ink">ExamGhost Universal LMS Stealth Suite</span>
                     </div>
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
+                      50 Free Solves ($0)
+                    </span>
+                  </div>
+
+                  {/* Platform & Workflow Box */}
+                  <div className="rounded-xl bg-sand/40 border border-sand-dark/30 p-4 mb-4">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-2">
+                      <span>Universal LMS + STEM Drill Coverage</span>
+                      <span className="text-emerald-800 font-bold">100% In-Tab Stealth</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {["Canvas LMS", "Blackboard Ultra", "Moodle", "D2L Brightspace", "DeltaMath", "ZyBooks", "McGraw Hill Connect"].map((p) => (
+                        <span key={p} className="px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-semibold text-emerald-900">
+                          {p}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="p-2.5 rounded-lg bg-emerald-950 text-white border border-emerald-700 text-xs font-medium flex items-center justify-between gap-2">
+                      <span className="text-emerald-100">In-Tab Closed ShadowRoot HUD · 0 Tab Redirects</span>
+                      <span className="text-[10px] font-mono bg-emerald-900 px-2 py-0.5 rounded border border-emerald-700 text-emerald-200 shrink-0">
+                        0.3s Vision OCR
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>Built for College Exams &amp; STEM Drills:</strong> Solves Canvas, Blackboard, Moodle, plus DeltaMath graphs &amp; ZyBooks code via 0.3s Vision OCR.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>Natural Human Pacing + Focus Shield:</strong> Never bot-submits in 1 second or redirects your tab; blocks <code className="font-mono text-[11px]">window.blur</code> events.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>50 Free Solves + Lower Pricing:</strong> Test 50 real AI solves &amp; 10 OCR snips for $0, then pay $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* 3 Technical Deep Dives */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    University LMS Architecture vs Gamified WebSocket Exploits
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">SchoolCheats Flaw:</span>
-                                        SchoolCheats relies on client-side WebSocket packet injection tailored for trivia games like Blooket and Kahoot. It has zero capability on Canvas or Blackboard.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost is engineered specifically for university LMS environments, handling complex question types, shuffled choices, and proctored sessions.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Passive Stealth vs High-Risk Network Bot Flooding
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">SchoolCheats Flaw:</span>
-                                        SchoolCheats scripts inject dozens of automated answers per second, instantly tripping automated rate limiters and heuristic anti-cheat filters.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost operates with passive visual overlay principles, never transmitting detectable network packets or automated DOM inputs.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Advanced Collegiate STEM vs Elementary Trivia
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">SchoolCheats Flaw:</span>
-                                        SchoolCheats answers are hardcoded or scraped from public trivia databases. It cannot solve university-level physics, calculus, or accounting problems.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost leverages the Mathpix neural engine and state-of-the-art multimodal AI to solve advanced college STEM exams.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mt-4 pt-3 border-t border-sand-dark/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                  <span className="text-emerald-800 font-bold">Local Browser IP (No VM Alert)</span>
+                  <span className="text-emerald-800 font-bold">Panic Purge: ⌘+Shift+U</span>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </header>
 
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
-                        </h2>
-                        <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against SchoolCheats across 10 mission-critical exam dimensions.
-                        </p>
-                    </div>
+        {/* INTERACTIVE PURE-CSS 3-TAB ARCHITECTURE & TELEMETRY BREAKDOWN */}
+        <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
+                <Layers className="w-3.5 h-3.5 text-emerald-800" />
+                <span>Interactive Audit · Click Any Tab Below</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
+                Why College Students Switch From SchoolCheats to ExamGhost
+              </h2>
+              <p className="text-sm sm:text-base text-ink-muted">
+                Compare platform compatibility, teacher gradebook timestamp logs, and Cloud VM vs local Shadow DOM security.
+              </p>
+            </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">SchoolCheats</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
-                                
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">In-Situ Option Matching</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Matches exact option text under shuffling</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Zero Network Packet Injection</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Never tampers with WebSockets or APIs</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        5.2s Script Latency
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        VIP Script Fees
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+            <div>
+              <input type="radio" name="sc-tabs" id="sc-tab-sites" className="sr-only peer/sites" defaultChecked />
+              <input type="radio" name="sc-tabs" id="sc-tab-flags" className="sr-only peer/flags" />
+              <input type="radio" name="sc-tabs" id="sc-tab-vm" className="sr-only peer/vm" />
 
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;SchoolCheats is fine for messing around in high school Blooket games, but it does nothing for real college exams. ExamGhost is the only tool that actually handles university Canvas tests and calculus problems.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Logan T.</div>
-                            <div className="text-xs text-ink-muted">University of Michigan · Computer Science</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in EECS 280
-                        </div>
-                    </div>
-                </div>
-            </section>
+              {/* Tab Navigation */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
+                <label
+                  htmlFor="sc-tab-sites"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/sites:bg-ink peer-checked/sites:text-white peer-checked/sites:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <Gamepad2 className="w-4 h-4 shrink-0" />
+                  <span>1. 7 Game Sites vs All LMS</span>
+                </label>
+                <label
+                  htmlFor="sc-tab-flags"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/flags:bg-ink peer-checked/flags:text-white peer-checked/flags:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <AlertTriangle className="w-4 h-4 shrink-0" />
+                  <span>2. Redirect &amp; Bot Time Flags</span>
+                </label>
+                <label
+                  htmlFor="sc-tab-vm"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/vm:bg-ink peer-checked/vm:text-white peer-checked/vm:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <Server className="w-4 h-4 shrink-0" />
+                  <span>3. Cloud VM IP &amp; $25/Mo Price</span>
+                </label>
+              </div>
 
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>SchoolCheats (SchoolCheats Script Latency)</span>
-                                <span className="text-rose-800">5.2s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
-                </div>
-            </section>
-
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from SchoolCheats to ExamGhost.
-                    </p>
+              {/* TAB 1: 7 K-12 GAME SITES VS ALL UNIVERSITY LMS */}
+              <div className="hidden peer-checked/sites:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <XCircle className="w-3.5 h-3.5" />
+                    <span>SchoolCheats.net: Hardcoded for 7 Sites Only</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Built for Blooket, Quizizz &amp; Edpuzzle—not Canvas or Blackboard
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    Originally started as a K-12 bookmarklet server for classroom trivia games, SchoolCheats relies on platform-specific API hooks for only seven domains:
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">1. Blooket (Game)</div>
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">2. Wayground / Quizizz</div>
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">3. Edpuzzle (Video)</div>
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">4. DeltaMath</div>
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">5. ZyBooks</div>
+                    <div className="p-2.5 rounded-xl bg-sand/50 border border-sand-dark/25 text-ink">6. Edmentum &amp; 7. Lexia</div>
+                  </div>
+                  <p className="text-xs text-rose-800 font-medium leading-relaxed">
+                    Open a university Canvas quiz, Blackboard Ultra test, Moodle exam, D2L Brightspace assessment, or McGraw Hill Connect module, and SchoolCheats has zero functionality.
+                  </p>
                 </div>
 
                 <div className="space-y-4">
-                    
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does SchoolCheats work on Canvas or Blackboard exams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. SchoolCheats only provides scripts for trivia games like Kahoot, Blooket, and Edpuzzle. ExamGhost is built specifically for collegiate platforms like Canvas, Blackboard, and McGraw Hill.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can using SchoolCheats get your school account banned?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. SchoolCheats uses aggressive packet injection and bot flooding that triggers automated security filters. ExamGhost uses passive closed Shadow DOM technology with zero ban risk.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How does ExamGhost handle complex STEM college exams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost incorporates the Mathpix neural engine to parse advanced mathematical formulas, matrices, integrals, and chemical structures with 99.4% accuracy.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
-                </div>
-            </section>
-
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
-                        </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
-                        </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
-                        </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
-                        </Link>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>ExamGhost: Universal University LMS + STEM Drills</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Works on every university portal, iframe, and STEM platform
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    Instead of brittle game bookmarklets, ExamGhost combines DOM extraction with an in-browser <strong>0.3s Snap-It Vision OCR crosshair</strong> that solves questions on any webpage:
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>Core University LMS:</strong> Canvas (Classic &amp; LTI 1.3 New Quizzes), Blackboard Ultra, Moodle, and D2L Brightspace.
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
+                    <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>STEM &amp; Publisher Portals:</strong> DeltaMath graphs, ZyBooks coding labs, McGraw Hill Connect, Pearson MyLab, WebAssign, and Cengage MindTap.
                     </div>
+                  </div>
                 </div>
-            </section>
+              </div>
 
-            </main>
+              {/* TAB 2: TAB REDIRECT & AUTO COMPLETE FLAGS */}
+              <div className="hidden peer-checked/flags:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>SchoolCheats: Step 3 Redirect + 1.2s Auto Complete</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Why &ldquo;Auto Complete&rdquo; gets flagged in DeltaMath &amp; ZyBooks gradebooks
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    On SchoolCheats.net&apos;s homepage, <strong>How it Works — Step 3</strong> explicitly states: <em>&ldquo;Launch the cheat and get automatically sent to School Cheats for answer retrieval.&rdquo;</em>
+                  </p>
+                  <div className="space-y-2.5 text-xs sm:text-sm text-ink-muted">
+                    <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>1. Automatic Tab Redirection (<code className="font-mono">window.blur</code>):</strong> Sending your browser to <code className="font-mono">schoolcheats.net</code> to view answers fires immediate focus-loss and visibility telemetry on monitored portals.
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>2. Sub-Second Bot Timestamp Anomalies:</strong> DeltaMath and ZyBooks record exact per-question completion times for instructors. Clicking SchoolCheats&apos; &ldquo;Auto Complete&rdquo; finishes a 25-minute problem set in 1.2 seconds—an instant automated cheating flag.
+                    </div>
+                  </div>
+                </div>
 
-            <Footer />
-        </div>
-    );
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>ExamGhost: In-Tab Shadow HUD + Human Pacing</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Zero tab redirects and realistic human submission timestamps
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    ExamGhost never redirects your browser to an external dashboard and never blasts automated 1-second API submissions:
+                  </p>
+                  <div className="bg-emerald-950 text-emerald-100 rounded-2xl p-4 font-mono text-xs overflow-x-auto leading-relaxed border border-emerald-800">
+                    <div className="text-emerald-400">// 1. Focus Shield blocks window.blur &amp; visibilitychange:</div>
+                    <div>window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
+                    <div className="text-emerald-400 mt-2">// 2. Solves DeltaMath/ZyBooks/Canvas in-tab in 0.3s:</div>
+                    <div>const solution = await EdgeVision.solveRegion(rect);</div>
+                    <div className="text-emerald-400 mt-2">// 3. Student submits at natural human cadence</div>
+                  </div>
+                  <p className="text-xs text-ink-muted leading-relaxed">
+                    Your instructor&apos;s analytics log shows zero tab departures and normal human problem-solving durations.
+                  </p>
+                </div>
+              </div>
+
+              {/* TAB 3: CLOUD VM & PRICING */}
+              <div className="hidden peer-checked/vm:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <Server className="w-3.5 h-3.5" />
+                    <span>SchoolCheats Cloud VM &amp; $8.99/Wk Paywall</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Why Cloud VMs trigger university IT alerts—and Free blocks answers
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    SchoolCheats markets <code className="font-mono text-xs bg-sand px-1 rounded">vm.schoolcheats.net</code> (a browser-hosted Linux virtual desktop) to help K-12 students bypass Chromebook filters, and gates Answer Retrieval behind a paid tier:
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Datacenter IP Flag in University SSO:</strong> Logging into a university Canvas or Duo 2FA account from a shared commercial cloud VM logs a hosting datacenter IP in your Canvas session audit trail.
+                    </div>
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Free Plan Disables Answer Retrieval (&ldquo;X&rdquo;):</strong> On <code className="font-mono">schoolcheats.net/pricing</code>, the Free tier puts a red <strong>X</strong> on Answer Retrieval. Unlocking answers costs <strong>$8.99/week ($35.96/mo)</strong> or <strong>$25.00/month</strong>.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <CreditCard className="w-3.5 h-3.5" />
+                    <span>ExamGhost Local Browser Stealth &amp; 50 Free Solves</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Runs on your real residential/campus IP with 50 free solves
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    ExamGhost runs natively inside your own Chrome, Edge, or Brave browser—preserving your normal campus or home IP address while isolating all UI inside a closed Shadow DOM.
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                      <span className="font-semibold text-emerald-950">Free Starter Trial (Full AI + OCR)</span>
+                      <span className="font-mono font-bold text-emerald-800">50 Free Solves ($0)</span>
+                    </div>
+                    <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                      <span className="font-semibold text-emerald-950">Monthly Pass (vs SchoolCheats $25/mo)</span>
+                      <span className="font-mono font-bold text-emerald-800">$19.00 / month</span>
+                    </div>
+                    <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                      <span className="font-semibold text-emerald-950">Academic Year Pass ($8.25/mo)</span>
+                      <span className="font-mono font-bold text-emerald-800">$99 / year</span>
+                    </div>
+                    <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                      <span className="font-semibold text-emerald-950">Lifetime Degree Pass (3 Devices)</span>
+                      <span className="font-mono font-bold text-emerald-800">$199 One-Time</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HONEST USE-CASE GUIDANCE */}
+        <section className="py-16 max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 sm:p-7 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
+              <h2 className="font-display font-bold text-lg sm:text-xl text-ink mb-3 flex items-center gap-2">
+                <Gamepad2 className="w-5 h-5 text-ink-muted" />
+                <span>When SchoolCheats.net Fits Best</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-ink-muted leading-relaxed mb-4">
+                SchoolCheats was built for K-12 classroom games and specific high school drill sites:
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                  <span><strong>Classroom Trivia Games (Blooket &amp; Wayground/Quizizz):</strong> If you want token multipliers, chest revealers, or client-side game mods during ungraded classroom trivia.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                  <span><strong>Bypassing K-12 Chromebook Filters:</strong> If you are on a school-issued Chromebook that blocks gaming sites and want to use <code className="font-mono text-xs">vm.schoolcheats.net</code>.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-6 sm:p-7 rounded-2xl bg-emerald-950 text-white border border-emerald-800 shadow-sm">
+              <h2 className="font-display font-bold text-lg sm:text-xl text-emerald-300 mb-3 flex items-center gap-2">
+                <EyeOff className="w-5 h-5 text-emerald-300" />
+                <span>When University Students Choose ExamGhost</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed mb-4">
+                If you are in college taking graded quizzes and exams on Canvas, Blackboard, Moodle, D2L, DeltaMath, or ZyBooks:
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-100 leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Universal University LMS Coverage:</strong> Works natively on Canvas, Blackboard Ultra, Moodle, D2L Brightspace, McGraw Hill Connect, Pearson, DeltaMath, and ZyBooks.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>In-Tab Closed Shadow DOM + Focus Shield:</strong> Never redirects your tab to an external website or trips 1-second bot completion flags.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>50 Free Solves ($0, No Card):</strong> Verify real AI + Vision OCR accuracy before paying $19/mo, $99/yr, or $199 Lifetime.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* SIDE-BY-SIDE COMPARISON MATRIX + COLLAPSIBLE MANIFEST DRAWER */}
+        <section className="py-16 bg-surface border-y border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
+                2026 Feature &amp; Architecture Matrix
+              </h2>
+              <p className="text-xs sm:text-sm text-ink-muted">
+                Verified directly against <code className="font-mono text-xs">schoolcheats.net</code> and <code className="font-mono text-xs">schoolcheats.net/pricing</code>.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-sand-dark/30">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[680px]">
+                <thead>
+                  <tr className="border-b border-sand-dark/30 bg-sand/40">
+                    <th className="py-3.5 px-4 font-bold text-ink">Capability / Metric</th>
+                    <th className="py-3.5 px-4 font-bold text-ink-muted">Why It Matters in College</th>
+                    <th className="py-3.5 px-4 font-bold text-emerald-800">ExamGhost</th>
+                    <th className="py-3.5 px-4 font-bold text-rose-800">SchoolCheats.net</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-sand-dark/20">
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Canvas, Blackboard, Moodle &amp; D2L</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Core university exam &amp; quiz portals</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      100% Native Support
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800 font-medium">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      None (0% Supported)
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">DeltaMath &amp; ZyBooks Support</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Solving math graphs &amp; coding labs safely</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      0.3s Vision OCR + Human Pacing
+                    </td>
+                    <td className="py-3.5 px-4 text-ink-muted">
+                      $25/mo Premium required; Auto-Complete risks bot time flags
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">How Answers Load</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Avoiding tab switches during monitored tests</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      In-Tab Closed ShadowRoot HUD
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      Redirects tab to schoolcheats.net
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Blocks window.blur &amp; visibilitychange logs</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      3-Layer Capture-Phase Shield
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      None (Redirect fires blur logs)
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Vision OCR for Diagrams &amp; PDFs</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Reads non-selectable graphs, circuits &amp; iframes</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      0.3s Crosshair Region Snip
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      Static script hooks only
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Free Tier Answer Retrieval</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Can you get real answers for $0?</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      50 Free Solves + 10 OCR Snips ($0)
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      Disabled (&ldquo;X&rdquo;) on Free Plan
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Paid Pricing Tiers</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Monthly, annual &amp; lifetime cost</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      $19/mo · $99/yr ($8.25/mo) · $199 Life
+                    </td>
+                    <td className="py-3.5 px-4 text-ink-muted">
+                      $8.99/wk ($35.96/mo) · $25/mo · $100/yr
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Emergency Panic Kill Switch</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">1ms RAM &amp; UI purge if a TA walks by</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      ⌘+Shift+U / Esc Instant Purge
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      None
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Collapsible Technical Chrome Web Store & Domain Audit Drawer */}
+            <details className="mt-6 group rounded-2xl bg-sand/40 border border-sand-dark/30 p-4 sm:p-5 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer text-xs sm:text-sm font-mono font-bold text-ink">
+                <span className="flex items-center gap-2 m-0 inline">
+                  <Terminal className="w-4 h-4 text-emerald-800" />
+                  <h3 className="font-bold m-0 inline">Technical Chrome Web Store Manifest &amp; Domain Audit (schoolcheats.net)</h3>
+                </span>
+                <ChevronDown className="w-4 h-4 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-4 pt-4 border-t border-sand-dark/20 grid sm:grid-cols-2 gap-4 text-xs font-mono text-ink-muted">
+                <div className="p-3 rounded-xl bg-surface border border-sand-dark/20">
+                  <div className="text-ink font-bold mb-1">SchoolCheats Verified Identifiers</div>
+                  <div>Primary Domain: <span className="text-ink">schoolcheats.net</span></div>
+                  <div>Cloud VM Subdomain: <span className="text-rose-800">vm.schoolcheats.net (Datacenter IP)</span></div>
+                  <div>Chrome Extension ID: <span className="text-ink">dcecjjjnjecoiehclollekjmfgblkkha</span></div>
+                  <div>Supported Catalog: <span className="text-ink">7 sites (0 university LMS portals)</span></div>
+                </div>
+                <div className="p-3 rounded-xl bg-surface border border-sand-dark/20">
+                  <div className="text-ink font-bold mb-1">ExamGhost Stealth Architecture</div>
+                  <div>UI Isolation: <span className="text-emerald-800">attachShadow(&#123; mode: &apos;closed&apos; &#125;)</span></div>
+                  <div>Network Footprint: <span className="text-emerald-800">Local Browser (Residential/Campus IP)</span></div>
+                  <div>Focus Shield: <span className="text-emerald-800">window.blur / visibilitychange capture</span></div>
+                  <div>Screen OCR: <span className="text-emerald-800">0.3s Edge Vision Crosshair</span></div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-14">
+          <div className="rounded-[32px] bg-[#3b47d6] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                <FaDiscord className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h2 className="font-display font-bold text-lg sm:text-xl text-white">
+                  Join the ExamGhost Student Discord
+                </h2>
+                <p className="text-xs sm:text-sm text-white/90">
+                  Claim 50 free AI question solves for Canvas, Blackboard, Moodle, DeltaMath &amp; ZyBooks.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://discord.gg/aCcsyKYJq4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+            >
+              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </section>
+
+        {/* FAQ ACCORDION */}
+        <section className="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
+              SchoolCheats.net vs ExamGhost: Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-ink-muted">
+              Direct answers verified against SchoolCheats.net&apos;s live 2026 platform catalog and pricing tiers.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden" open>
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Does SchoolCheats.net work on Canvas, Blackboard, or Moodle?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                No. According to SchoolCheats.net&apos;s live 2026 platform catalog, it only supports 7 specific platforms: <strong>DeltaMath, ZyBooks, Wayground (Quizizz), Blooket, Edpuzzle, Edmentum, and Lexia Learning</strong>. It has zero support for Canvas, Blackboard Ultra, Moodle, D2L Brightspace, McGraw Hill Connect, or Pearson MyLab. ExamGhost works across all university LMS platforms as well as DeltaMath and ZyBooks.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">How does SchoolCheats.net retrieve answers, and is it detectable?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                On SchoolCheats.net&apos;s homepage (&ldquo;How it Works — Step 3&rdquo;), the workflow states: <em>&ldquo;Launch the cheat and get automatically sent to School Cheats for answer retrieval,&rdquo;</em> alongside &ldquo;Auto Complete&rdquo; scripts. Being redirected to <code className="font-mono text-xs">schoolcheats.net</code> triggers immediate <code className="font-mono text-xs">window.blur</code> and <code className="font-mono text-xs">visibilitychange</code> events, while Auto Complete scripts finish 20-minute modules in under 2 seconds—flagging teacher analytics logs immediately.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Are Answer Retrieval and Auto Complete free on SchoolCheats.net?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                No. On SchoolCheats.net&apos;s pricing matrix, the Free Plan disables (<strong>X</strong>) both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground. Unlocking Answer Retrieval requires a paid Premium Membership at <strong>$8.99/week ($35.96/mo)</strong> or <strong>$25.00/month</strong>. ExamGhost includes <strong>50 free full AI &amp; OCR solves ($0)</strong> and costs <strong>$19/mo, $99/yr ($8.25/mo), or $199 Lifetime</strong>.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">What is the SchoolCheats Cloud VM Desktop (vm.schoolcheats.net)?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                SchoolCheats offers a browser-hosted virtual machine designed to help K-12 students bypass school Chromebook network blocks. However, using a remote cloud VM to log into a university Canvas account logs a commercial datacenter IP address in your university&apos;s security audit trail and triggers institutional Duo/2FA location alerts. ExamGhost runs locally inside your own Chrome browser on your residential/campus IP.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        {/* BESPOKE PASTEL CONVERSION STRIP + RELATED COMPARISONS */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+          <div className="rounded-3xl bg-gradient-to-br from-emerald-50 via-mint/25 to-amber-50/70 border border-emerald-200/80 p-6 sm:p-10 shadow-sm mb-12">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-emerald-200 text-xs font-mono font-bold text-emerald-900 mb-3">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>Built for University Courses, Not Just Blooket</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-2">
+                  Solve Canvas, Blackboard, DeltaMath &amp; ZyBooks in 0.3s.
+                </h2>
+                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                  Start with 50 Free Question Solves + 10 Vision OCR Snips ($0, no credit card required). Zero tab redirects, zero bot completion flags.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                <a
+                  href="https://discord.gg/aCcsyKYJq4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
+                >
+                  <FaChrome className="w-4 h-4 text-mint" />
+                  <span>Claim 50 Free Solves</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link prefetch={false}
+                  href="/#pricing"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-sand/60 text-ink font-semibold border border-sand-dark/30 transition-all text-sm"
+                >
+                  <span>View Passes ($19/mo · $99/yr)</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-sand-dark/20 pt-8">
+            <h2 className="font-display font-bold text-base sm:text-lg text-ink mb-4">
+              Compare Other Homework &amp; LMS Extensions (2026)
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+              <Link prefetch={false}
+                href="/canvasscholar-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">Canvas Scholar vs ExamGhost</span>
+                <span className="text-ink-muted">Past Retake Viewer vs Live AI Solver</span>
+              </Link>
+              <Link prefetch={false}
+                href="/canvascrack-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">CanvasCrack vs ExamGhost</span>
+                <span className="text-ink-muted">Tab-Blocker Only vs Full AI + Stealth</span>
+              </Link>
+              <Link prefetch={false}
+                href="/quizmate-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">QuizMate vs ExamGhost</span>
+                <span className="text-ink-muted">Injected LMS Button vs Shadow DOM</span>
+              </Link>
+              <Link prefetch={false}
+                href="/coursology-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">Coursology vs ExamGhost</span>
+                <span className="text-ink-muted">Coursey AI Suite vs Exam Stealth</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

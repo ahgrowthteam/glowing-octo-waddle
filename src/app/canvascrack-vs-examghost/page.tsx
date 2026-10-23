@@ -1,57 +1,53 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
+import {
+    ShieldCheck,
+    ShieldAlert,
+    Zap,
+    ChevronDown,
+    ArrowRight,
+    Sparkles,
     CheckCircle2,
     XCircle,
-    EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
-    FileText,
-    BookOpen,
-    ExternalLink
+    ExternalLink,
+    Code2,
+    Copy,
+    ScanLine,
+    CreditCard
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: "Canvas Crack vs ExamGhost (2026 Comparison) | Safe Verified Stealth vs Shady Script",
-    description: "Comparing Canvas Crack and ExamGhost? Learn why students avoid Canvas Crack's prototype pollution and malware risks in favor of ExamGhost's verified 0.3s AI stealth solver.",
+    title: {
+        absolute: "CanvasCrack vs ExamGhost (2026) — $139 Tab Blocker Audit",
+    },
+    description: "CanvasCrack charges $19.99/mo or $139.99 with zero AI solver. ExamGhost combines Focus Shield tab cloaking with 0.3s AI answers and 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/canvascrack-vs-examghost",
     },
     openGraph: {
-        title: "Canvas Crack vs ExamGhost (2026 Comparison) | Safe Verified Stealth vs Shady Script",
-        description: "Canvas Crack is an unvetted script sold on TikTok that requires developer mode installation, overriding browser prototypes in ways that trigger LMS anomaly alarms. ExamGhost is a clean, Web Store-compliant tool backed by mathematical stealth.",
+        title: "CanvasCrack vs ExamGhost (2026) — $139 Tab Blocker Audit",
+        description: "CanvasCrack charges $19.99/mo or $139.99 with zero AI solver. ExamGhost combines Focus Shield tab cloaking with 0.3s AI answers and 50 Free Solves.",
         url: "https://examghost.com/canvascrack-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Canvas Crack vs ExamGhost Review",
+                alt: "CanvasCrack vs ExamGhost (2026) — $139 Tab Blocker Audit",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Canvas Crack vs ExamGhost (2026 Comparison) | Safe Verified Stealth vs Shady Script",
-        description: "Canvas Crack risks store bans and malware warnings. ExamGhost offers safe, verified exam stealth.",
+        title: "CanvasCrack vs ExamGhost (2026) — $139 Tab Blocker Audit",
+        description: "CanvasCrack charges $19.99/mo or $139.99 with zero AI solver. ExamGhost combines Focus Shield tab cloaking with 0.3s AI answers and 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
@@ -62,10 +58,16 @@ export default function CanvascrackVsExamghostPage() {
         "@graph": [
             {
                 "@type": "WebPage",
+                "datePublished": "2026-02-19",
+                "dateModified": "2026-03-15",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
                 "@id": "https://examghost.com/canvascrack-vs-examghost#webpage",
                 "url": "https://examghost.com/canvascrack-vs-examghost",
-                "name": "Canvas Crack vs ExamGhost (2026 Comparison) | Safe Verified Stealth vs Shady Script",
-                "description": "Comparing Canvas Crack and ExamGhost? Learn why students avoid Canvas Crack's prototype pollution and malware risks in favor of ExamGhost's verified 0.3s AI stealth solver.",
+                "name": "CanvasCrack vs ExamGhost (2026 Comparison) | $139.99 Tab Blocker vs Complete AI Exam Solver",
+                "description": "In-depth technical and pricing comparison between CanvasCrack (canvascrack.com) and ExamGhost for Canvas, Blackboard, Moodle, and D2L Brightspace exams.",
                 "breadcrumb": { "@id": "https://examghost.com/canvascrack-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -73,14 +75,23 @@ export default function CanvascrackVsExamghostPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
-                        "name": "Canvas Crack",
+                        "name": "CanvasCrack",
+                        "url": "https://canvascrack.com",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome Extension",
-                        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
+                        "offers": [
+                            { "@type": "Offer", "name": "Monthly", "price": "19.99", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Access", "price": "139.99", "priceCurrency": "USD" }
+                        ]
                     }
                 ]
             },
@@ -89,8 +100,8 @@ export default function CanvascrackVsExamghostPage() {
                 "@id": "https://examghost.com/canvascrack-vs-examghost#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
-                    { "@type": "ListItem", "position": 3, "name": "Canvas Crack vs ExamGhost", "item": "https://examghost.com/canvascrack-vs-examghost" }
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasCrack vs ExamGhost", "item": "https://examghost.com/canvascrack-vs-examghost" }
                 ]
             },
             {
@@ -99,26 +110,34 @@ export default function CanvascrackVsExamghostPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Is Canvas Crack safe to install?",
+                        "name": "Does CanvasCrack (canvascrack.com) solve quiz questions with AI?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Canvas Crack is not hosted on the Chrome Web Store and requires Developer Mode sideloading. It tampers with native browser JavaScript prototypes in ways that can be detected by LMS security tools."
+                            "text": "No. CanvasCrack is strictly a Canvas tab-switching blocker. It contains zero AI models, zero OCR tools, and zero inline question solvers—meaning you still have to manually copy questions and switch tabs to ChatGPT during your exam. ExamGhost includes full Focus Shield tab-blur suppression PLUS a 0.3s inline AI solver and Snap-It OCR directly on the page."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Does Canvas Crack solve exam questions?",
+                        "name": "Does CanvasCrack offer a free trial?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Canvas Crack is merely an event-spoofing script that attempts to block tab logs. ExamGhost is a complete AI solution that provides instant 0.3s answers, LaTeX STEM parsing, and mathematically verified stealth."
+                            "text": "No. CanvasCrack's official FAQ states: 'We don't offer a free trial.' You must pay $19.99/month (listed as 30% off $28.55) or $139.99 upfront before testing it. By contrast, ExamGhost gives every student 50 Free Question Solves with Focus Shield and Snap-It OCR included—no credit card required."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What makes ExamGhost safer than Canvas Crack?",
+                        "name": "Why is manually switching tabs to ChatGPT with CanvasCrack still risky?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost does not pollute native JavaScript prototypes or require developer mode. It runs inside a closed Shadow DOM container with active Focus Shield event masking."
+                            "text": "Even when a script blocks window.blur, highlighting question text and pressing Ctrl+C/Cmd+C fires document.oncopy events, and leaving the Canvas tab for 30+ seconds leaves an unnatural gap in mouse movement and question interaction cadence. Because ExamGhost solves questions inline via Double-Click in 0.3 seconds, you never copy text to the clipboard or leave the exam tab."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does CanvasCrack work on Blackboard, Moodle, or D2L Brightspace?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. CanvasCrack is hardcoded solely for Instructure Canvas LMS. ExamGhost works universally across 20+ platforms including Canvas Classic, Canvas New Quizzes (LTI 1.3), Blackboard Ultra, Moodle, D2L Brightspace, McGraw-Hill Connect, and Pearson MyLab."
                         }
                     }
                 ]
@@ -127,623 +146,652 @@ export default function CanvascrackVsExamghostPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
+        <div className="min-h-screen bg-cream text-ink selection:bg-[#bfe3f6] selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">Canvas Crack vs ExamGhost</span>
-                </nav>
-            </div>
+                {/* Breadcrumb Navigation */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
+                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
+                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                        <span>/</span>
+                        <span className="text-ink font-semibold">CanvasCrack vs ExamGhost</span>
+                    </nav>
+                </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 Canvas Crack Alternative</span>
+                {/* BESPOKE HERO: $139.99 Tab Blocker Only vs Focus Shield + 0.3s Inline AI Solver */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+                    <div className="rounded-[36px] sm:rounded-[44px] bg-gradient-to-br from-[#f0f9ff] via-[#bfe3f6]/65 to-[#ecfdf5] p-6 sm:p-10 md:p-14 border border-black/10 shadow-card relative overflow-hidden">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-4 border-b border-black/10 relative z-10">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/10 border border-sky-950/20 text-xs font-bold text-sky-950">
+                                <Sparkles className="w-3.5 h-3.5 text-sky-800" aria-hidden="true" />
+                                <span>2026 Feature &amp; Pricing Audit: Tab Blocker Only vs Complete AI Exam Solver</span>
+                            </div>
+                            <span className="px-3 py-1 rounded-full bg-white/90 border border-black/10 text-[11px] font-bold text-sky-950 uppercase tracking-wider">
+                                Updated April 2026 · canvascrack.com
+                            </span>
+                        </div>
+
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                            <div className="lg:col-span-7">
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-ink leading-[1.06] mb-5">
+                                    CanvasCrack charges $139.99 just to hide tab switches—with <span className="underline decoration-rose-500/60 decoration-wavy underline-offset-4">zero AI solver</span> and no free trial.
+                                </h1>
+
+                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl">
+                                    <strong>CanvasCrack</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">canvascrack.com</code>) charges <strong>$19.99/month</strong> or <strong>$139.99 one-time</strong> for an extension that <em>only</em> blocks Canvas tab-switching logs—and its FAQ explicitly states: <em>&quot;We don&apos;t offer a free trial.&quot;</em> Because it has zero AI capabilities, you still have to manually copy-paste every question into ChatGPT. <strong>ExamGhost</strong> gives you <strong>both</strong> Focus Shield tab-blur immunity <em>and</em> a 0.3s inline AI solver inside a closed Shadow DOM—starting with <strong>50 Free Solves</strong>.
+                                </p>
+
+                                <div className="flex flex-wrap items-center gap-3 mb-6">
+                                    <a
+                                        href="/#pricing"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
+                                    >
+                                        <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                    </a>
+                                    <Link prefetch={false}
+                                        href="/canvas-quiz-solver-free-demo"
+                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-sm inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+                                    >
+                                        <span>Try Live Canvas Sandbox</span>
+                                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                                    </Link>
+                                    <a
+                                        href="#canvascrack-audit"
+                                        className="px-4 py-4 rounded-full text-xs sm:text-sm font-semibold text-sky-950 hover:text-ink inline-flex items-center gap-1"
+                                    >
+                                        <span>Inspect What $139.99 Buys</span>
+                                        <ChevronDown className="w-4 h-4" />
+                                    </a>
+                                </div>
+
+                                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-secondary font-medium">
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        Includes Focus Shield + 0.3s Inline AI Solver
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        50 Free Solves (vs &quot;No free trial&quot;)
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        Works on 20+ LMS Platforms
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Right Side Bespoke Visual: "What $139.99 Actually Buys" Receipt Card */}
+                            <div className="lg:col-span-5">
+                                <div className="rounded-[28px] bg-[#0f172a] text-white p-5 sm:p-6 border border-white/15 shadow-lift">
+                                    <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-white/10">
+                                        <span className="font-mono text-xs font-bold text-slate-200">2026 Feature Receipt Comparison</span>
+                                        <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 font-mono text-[10px] font-bold">
+                                            NO AI IN CANVASCRACK
+                                        </span>
+                                    </div>
+
+                                    {/* CanvasCrack Receipt */}
+                                    <div className="p-3.5 rounded-2xl bg-rose-950/45 border border-rose-500/30 mb-3.5">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-bold text-rose-200">CanvasCrack (canvascrack.com)</span>
+                                            <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-rose-900/70 text-rose-200">
+                                                $19.99/mo · $139.99
+                                            </span>
+                                        </div>
+                                        <div className="space-y-1.5 font-mono text-[11px]">
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-emerald-300">
+                                                <span>Canvas Tab-Blur Blocker</span>
+                                                <span>✓ Included</span>
+                                            </div>
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-rose-300">
+                                                <span>Built-In AI Question Solver</span>
+                                                <span className="font-bold">✗ NONE</span>
+                                            </div>
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-rose-300">
+                                                <span>Mathpix / Diagram OCR</span>
+                                                <span className="font-bold">✗ NONE</span>
+                                            </div>
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-amber-300">
+                                                <span>Free Trial</span>
+                                                <span className="font-bold">&quot;No free trial&quot;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* ExamGhost Full Suite */}
+                                    <div className="p-3.5 rounded-2xl bg-emerald-950/50 border border-emerald-500/30">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-bold text-emerald-200">ExamGhost v4.2 Complete Suite</span>
+                                            <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-900/70 text-emerald-200">
+                                                50 Free Solves
+                                            </span>
+                                        </div>
+                                        <div className="space-y-1.5 font-mono text-[11px]">
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-emerald-200">
+                                                <span>Focus Shield + 0.3s Inline AI + OCR</span>
+                                                <span className="text-emerald-400 font-bold">✓ All Included</span>
+                                            </div>
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1 rounded text-emerald-200">
+                                                <span>Plans After 50 Free Solves</span>
+                                                <span className="text-emerald-400 font-bold">$19/mo · $99/yr</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </header>
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        Canvas Crack risks store bans and malware warnings. ExamGhost offers safe, verified exam stealth.
-                    </h1>
+                {/* QUICK METRIC RIBBON */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Built-In AI Solver</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">0.3s Inline AI + OCR</div>
+                            <div className="text-xs text-rose-800 mt-1">CanvasCrack: None (Tab Blocker Only)</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Free Trial</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">50 Free Solves</div>
+                            <div className="text-xs text-rose-800 mt-1">CanvasCrack: &quot;No free trial&quot;</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">LMS Platform Support</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">20+ LMS Portals</div>
+                            <div className="text-xs text-ink-secondary mt-1">CanvasCrack: Canvas Only</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Annual / Full-Year Cost</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">$99/yr ($8.25/mo)</div>
+                            <div className="text-xs text-rose-800 mt-1">CanvasCrack: $139.99 or $240/yr</div>
+                        </div>
+                    </div>
+                </section>
 
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        Canvas Crack is an unvetted script sold on TikTok that requires developer mode installation, overriding browser prototypes in ways that trigger LMS anomaly alarms. ExamGhost is a clean, Web Store-compliant tool backed by mathematical stealth.
-                    </p>
+                {/* INTERACTIVE 3-TAB AUDIT: Why Tab-Switching Alone Is Obsolete */}
+                <section id="canvascrack-audit" className="max-w-6xl mx-auto px-4 sm:px-6 mb-20 scroll-mt-24">
+                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                        <div className="max-w-2xl mb-8">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-950 text-xs font-bold mb-3">
+                                <Zap className="w-3.5 h-3.5" />
+                                Interactive Workflow &amp; Pricing Audit
+                            </div>
+                            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
+                                Why Paying $139.99 Just to Switch Tabs to ChatGPT Is Obsolete in 2026
+                            </h2>
+                            <p className="text-sm text-ink-secondary">
+                                Select any tab below to see why CanvasCrack&apos;s manual copy-pasting workflow, lack of OCR, and strict upfront paywall fall short of ExamGhost.
+                            </p>
+                        </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+                        {/* Pure CSS Radio Tabs */}
+                        <input type="radio" name="canvascrack_tab" id="tab-copy" className="sr-only peer/copy" defaultChecked />
+                        <input type="radio" name="canvascrack_tab" id="tab-ocr" className="sr-only peer/ocr" />
+                        <input type="radio" name="canvascrack_tab" id="tab-paywall" className="sr-only peer/paywall" />
+
+                        <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
+                            <label
+                                htmlFor="tab-copy"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/copy:bg-white peer-checked/copy:text-ink peer-checked/copy:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <Copy className="w-4 h-4 text-rose-600" />
+                                <span>1. Zero AI (Manual Copy-Paste)</span>
+                            </label>
+                            <label
+                                htmlFor="tab-ocr"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/ocr:bg-white peer-checked/ocr:text-ink peer-checked/ocr:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <ScanLine className="w-4 h-4 text-sky-700" />
+                                <span>2. No OCR for Graphs &amp; Math</span>
+                            </label>
+                            <label
+                                htmlFor="tab-paywall"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/paywall:bg-white peer-checked/paywall:text-ink peer-checked/paywall:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <CreditCard className="w-4 h-4 text-emerald-700" />
+                                <span>3. &quot;No Free Trial&quot; vs 50 Free</span>
+                            </label>
+                        </div>
+
+                        {/* TAB 1: Zero AI (Manual Copy-Paste) */}
+                        <div className="hidden peer-checked/copy:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #1 · Manual Tab Flipping &amp; Clipboard Events
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    CanvasCrack Forces You to Manually Copy-Paste Into ChatGPT on Every Question
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    CanvasCrack&apos;s own 3-step guide instructs students to <em>&quot;Switch between tabs freely during the test&quot;</em> to look up answers. On a 50-question timed exam, highlighting text and pressing <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">⌘+C</code> fires <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">document.oncopy</code> listeners, switching to an external ChatGPT tab leaves 30+ seconds of dead mouse activity in Canvas, and wastes 25–45 seconds per question.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">CanvasCrack Workflow</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            Highlight text -&gt; Press <code className="text-[11px]">⌘+C</code> -&gt; Switch tab to ChatGPT -&gt; Paste -&gt; Read -&gt; Switch back (~35s/Q).
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Inline Solver</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            Includes Focus Shield <strong>plus</strong> a 0.3s Double-Click inline AI solver inside a closed Shadow DOM—never leave your exam tab.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // 50-Question Exam Time &amp; Telemetry
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>CanvasCrack + External ChatGPT Tab:</div>
+                                        <div className="text-white/80">• Fires document.oncopy on every question</div>
+                                        <div className="text-white/80">• 32s mouse inactivity gap per question</div>
+                                        <div className="text-rose-400 font-bold">• ~29 minutes wasted flipping tabs</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div>ExamGhost Focus Shield + Inline AI:</div>
+                                        <div className="text-emerald-400 font-bold">• 0.3s direct solve · 0 tab switches</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 2: No OCR for Graphs & Math */}
+                        <div className="hidden peer-checked/ocr:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-sky-100 text-sky-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #2 · Diagrams, Graphs &amp; Locked Text
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    What Happens When a Question Is an Image or Blocks Copy-Paste?
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    On STEM, Economics, and Chemistry exams, professors routinely embed circuit schematics, supply-and-demand curves, organic chemistry rings, or enable <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">user-select: none</code>. Because CanvasCrack has zero OCR engine, you have to take OS screenshots, save image files, and manually upload them to ChatGPT. ExamGhost&apos;s <strong>Snap-It Vision OCR</strong> (<code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">⌘+Shift+S</code>) parses any region in-memory in 0.3 seconds.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">CanvasCrack on Diagrams</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            Zero optical capture tool—requires manual OS screenshots and file uploads to an external AI tab.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Snap-It OCR</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            Press <code className="text-[11px]">⌘+Shift+S</code> to crop any graph, equation, or LTI iframe in-memory in 0.3s.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // Image &amp; Diagram Capability Check
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>CanvasCrack:</div>
+                                        <div className="text-white/80">• Optical Character Recognition: None</div>
+                                        <div className="text-white/80">• Mathpix LaTeX Extraction: None</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div>ExamGhost v4.2:</div>
+                                        <div className="text-emerald-400 font-bold">• Built-in ⌘+Shift+S Mathpix Neural OCR</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 3: "We don't offer a free trial" vs 50 Free Solves */}
+                        <div className="hidden peer-checked/paywall:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #3 · Upfront Paywall &amp; Single-LMS Lock-In
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    CanvasCrack&apos;s FAQ: <em>&quot;We don&apos;t offer a free trial&quot;</em> vs. 50 Free Solves
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    CanvasCrack requires you to pay <strong>$19.99/month</strong> (listed as 30% off $28.55) or <strong>$139.99 upfront</strong> before you can test whether it even works on your university&apos;s Canvas setup—and it does nothing on Blackboard, Moodle, D2L Brightspace, or McGraw-Hill Connect. ExamGhost gives every student <strong>50 Free Solves</strong> ($0 trial, no credit card required) and supports 20+ LMS platforms.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">CanvasCrack Pricing</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            $19.99/mo or $139.99 upfront, zero free trial, Canvas-only, 7-day refund window.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Pricing</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            <strong>50 Free Solves</strong> ($0 trial, no card), then $19/mo, $99/yr ($8.25/mo), or $199 Lifetime with a 14-day refund guarantee.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // Verbatim FAQ Quote (canvascrack.com)
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>Q: Do you offer a free trial?</div>
+                                        <div className="text-white/90 font-bold">A: &quot;We don&apos;t offer a free trial.&quot;</div>
+                                        <div className="text-amber-300 pt-1">Price: $19.99/mo or $139.99 (No AI Solver)</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div>ExamGhost Trial:</div>
+                                        <div className="text-emerald-400 font-bold">✓ 50 Free Solves (Focus Shield + AI + OCR)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SPEEDGRADER ACTIVITY LOG COMPARISON */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-[32px] bg-[#111111] text-white p-6 sm:p-10 border border-white/10 shadow-lift">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-white/10">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-400/20 text-sky-300 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                                    <ShieldAlert className="w-3.5 h-3.5" aria-hidden="true" />
+                                    <span>SpeedGrader &amp; Behavioral Telemetry</span>
+                                </div>
+                                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
+                                    Why Staying Inside the Exam Tab Beats Switching Tabs to ChatGPT
+                                </h2>
+                            </div>
+                            <span className="text-xs font-mono text-white/80">Canvas Quiz Attempt Log</span>
+                        </div>
+
+                        <div className="grid lg:grid-cols-2 gap-6">
+                            <div className="rounded-2xl bg-black/60 border border-rose-500/40 p-5">
+                                <div className="flex items-center justify-between mb-4 pb-3 border-b border-rose-500/20">
+                                    <span className="font-mono text-xs font-bold text-rose-300 uppercase">
+                                        CanvasCrack ($139.99 Tab Switcher + External ChatGPT)
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-rose-500/20 text-rose-300">
+                                        CLIPBOARD &amp; CADENCE GAPS
+                                    </span>
+                                </div>
+                                <div className="space-y-2.5 font-mono text-xs text-white/90">
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>00:12 — Viewed Question #2 (Tab blur masked)</span>
+                                        <span className="text-white/75">Masked</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-rose-500/15 border-l-2 border-rose-500 flex items-center justify-between">
+                                        <span>00:13 — Highlighted text &amp; fired document.oncopy</span>
+                                        <span className="text-rose-300 font-bold">COPY EVENT</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-rose-500/15 border-l-2 border-rose-500 flex items-center justify-between">
+                                        <span>00:14–00:46 — 0 mouse events inside Canvas (In ChatGPT tab)</span>
+                                        <span className="text-rose-300 font-bold">32s DEAD AIR</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-white/30 flex items-center justify-between">
+                                        <span>00:47 — Returned to tab &amp; clicked answer in 0.2s</span>
+                                        <span className="text-white/75">Anomalous</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="rounded-2xl bg-black/60 border border-emerald-500/40 p-5">
+                                <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-500/20">
+                                    <span className="font-mono text-xs font-bold text-emerald-300 uppercase">
+                                        ExamGhost (Focus Shield + 0.3s Inline Solver)
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-500/20 text-emerald-300">
+                                        0 FLAGS · NATURAL CADENCE
+                                    </span>
+                                </div>
+                                <div className="space-y-2.5 font-mono text-xs text-white/90">
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>00:12 — Viewed Question #2</span>
+                                        <span className="text-white/75">Normal</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
+                                        <span>00:14 — [Double-Click Inline Solve · 0.3s Edge AI]</span>
+                                        <span className="text-emerald-300 font-bold">No Copy Event</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
+                                        <span>00:15 — Cursor remained inside quiz viewport</span>
+                                        <span className="text-emerald-300 font-bold">Continuous Focus</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>00:17 — Answered Question #2</span>
+                                        <span className="text-white/75">100% Clean</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 10-POINT COMPARISON MATRIX + COLLAPSIBLE TECHNICAL DRAWER */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-3xl bg-white border border-black/10 overflow-hidden shadow-card">
+                        <div className="bg-[#f7f4ee] px-6 py-4 border-b border-black/10 flex flex-wrap items-center justify-between gap-2">
+                            <h2 className="font-display font-bold text-base sm:text-lg text-ink">
+                                CanvasCrack vs ExamGhost: 10-Point Technical Matrix
+                            </h2>
+                            <span className="text-xs text-ink-muted font-mono">Verified April 2026</span>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[640px]">
+                                <thead>
+                                    <tr className="bg-[#faf8f4] border-b border-black/10">
+                                        <th className="py-4 px-5 font-bold text-ink">Feature / Capability</th>
+                                        <th className="py-4 px-5 font-bold text-ink-muted">Why It Matters on Exam Day</th>
+                                        <th className="py-4 px-5 font-extrabold text-emerald-950 bg-[#cdeecb]/35">ExamGhost v4.2</th>
+                                        <th className="py-4 px-5 font-bold text-ink">CanvasCrack (canvascrack.com)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-black/5">
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Built-In AI Question Solver</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Answers questions without switching tabs</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 0.3s Double-Click Inline AI</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None (Must Use External ChatGPT)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Focus Shield (Tab-Blur Masking)</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Prevents &quot;Left exam tab&quot; SpeedGrader logs</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Included in All Plans</td>
+                                        <td className="py-3.5 px-5 text-emerald-800 font-bold">✓ Core Feature (Canvas Only)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Snap-It Vision OCR (<code className="font-mono">⌘+Shift+S</code>)</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Solves graphs, integrals, and locked images</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Built-In Mathpix Neural OCR</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Closed Shadow DOM HUD</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">3 Display Modes + 10%–100% Opacity Slider</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Invisible, Stealth &amp; Explain</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ No In-Page Answer HUD</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Multi-LMS Compatibility</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Blackboard, Moodle, D2L, McGraw-Hill</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Universal (20+ LMS Platforms)</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ Canvas LMS Only</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Master Panic Kill Switch (<code className="font-mono">⌘+Shift+U</code>)</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Instant &lt;8ms UI and memory purge</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Instant Hardware Hotkey</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Free Trial Before Buying</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Verify on a practice quiz for $0</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 50 Free Solves (No Card Needed)</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None (&quot;We don&apos;t offer a free trial&quot;)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Monthly Plan Pricing</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Flexible finals/midterm sprint option</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo (Includes AI Solver + Shield)</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">$19.99/mo (Tab Blocker Only)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Academic Year / Long-Term Value</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Full-year or degree coverage</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$99/yr ($8.25/mo) or $199 Lifetime</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">$139.99 One-Time (No AI Included)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Money-Back Guarantee Window</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Risk-free student protection</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 14-Day 100% Honor Guarantee</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">7-Day Refund Window</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        {/* Collapsible Technical Audit Drawer */}
+                        <details className="group border-t border-black/10 bg-[#faf8f4]">
+                            <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none text-xs font-mono font-bold text-ink-secondary hover:text-ink">
+                                <h3 className="inline-flex items-center gap-2 m-0 inline">
+                                    <Code2 className="w-4 h-4 text-sky-900" />
+                                    Technical Storefront &amp; Feature Audit Log (canvascrack.com)
+                                </h3>
+                                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                            </summary>
+                            <div className="px-6 pb-6 pt-2 text-xs font-mono text-ink-secondary space-y-2 border-t border-black/5 bg-white">
+                                <div><strong className="text-ink">Audited Storefront:</strong> CanvasCrack (<code className="bg-slate-100 px-1.5 py-0.5 rounded">https://canvascrack.com</code>)</div>
+                                <div><strong className="text-ink">Published Pricing &amp; Trial Policy:</strong> $19.99/month (listed as 30% off $28.55) or $139.99 one-time (listed as 30% off $199.99); FAQ explicitly states <code className="bg-rose-50 text-rose-900 px-1.5 py-0.5 rounded">&quot;We don&apos;t offer a free trial.&quot;</code></div>
+                                <div><strong className="text-ink">Functional Scope:</strong> Single-purpose Canvas tab-switch event blocker with zero integrated AI solver, zero OCR engine, and zero support for Blackboard, Moodle, or D2L Brightspace.</div>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                {/* OFFICIAL STUDENT DISCORD BANNER */}
+                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="rounded-[32px] bg-[#3b47d6] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                                <FaDiscord className="w-7 h-7 text-white" aria-hidden="true" />
+                            </div>
+                            <div>
+                                <h2 className="font-display font-bold text-lg sm:text-xl text-white">
+                                    Why Pay Before Testing? Claim 50 Free Solves on Discord
+                                </h2>
+                                <p className="text-xs sm:text-sm text-white font-medium mt-0.5">
+                                    Unlike CanvasCrack, ExamGhost lets you test Focus Shield and 0.3s AI solving on 50 questions for free.
+                                </p>
+                            </div>
+                        </div>
                         <a
-                            href="https://chromewebstore.google.com/detail/examghost"
+                            href="https://discord.gg/aCcsyKYJq4"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
+                            className="px-6 py-3.5 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
                         >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            <span>Join Discord &amp; Get 50 Free Solves</span>
+                            <ExternalLink className="w-4 h-4" aria-hidden="true" />
                         </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
                     </div>
+                </section>
 
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Once</div>
-                            <div className="text-xs text-ink-muted line-through">Canvas Crack: $19.99 - $29.99 / mo</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">Canvas Crack: 4.1s (Canvas Crack Script Delay)</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">Canvas Crack: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">Canvas Crack: Canvas Logs Blurs</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace Canvas Crack with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            Canvas Crack is an unvetted sideloaded exploit script with high malware and detection risks. ExamGhost is a verified, store-compliant extension delivering closed Shadow DOM sandboxing, Mathpix STEM solving, and $19.99 lifetime access.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                            
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Canvas Crack forces sideloading and prototype pollution; ExamGhost uses passive, safe event isolation.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Canvas Crack only spoofs events without solving questions; ExamGhost is a full 0.3s AI solver.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Safe, verified $19.99 lifetime payment vs shady $29.99/month subscriptions.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        Canvas Crack&apos;s Flaws: Sideloaded Developer Mode Risks, Prototype Pollution & Store Bans
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        Canvas Crack is not approved on the Chrome Web Store. It relies on dangerous JavaScript prototype overrides that trigger anomaly detection in modern LMS anti-cheat engines.
-                    </p>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of Canvas Crack</span>
-                        </h3>
-                        <div className="space-y-3">
-                            
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Banned from Chrome Web Store: Requires sideloading via Developer Mode, exposing your browser to unvetted code.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Dangerous prototype pollution: Monkey-patches window.addEventListener, triggering heuristic alarms in Canvas SpeedGrader.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    High price & shady billing: Charges up to $29.99/mo through unverified payment processors with zero refund protection.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No STEM capability: Purely an event-spoofing script with no neural OCR or verified answer database.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Canvas Crack: Sideloaded Prototype Tampering
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Monkey-patches native EventTarget prototype:</div>
-                                <div className="text-rose-300">const originalAdd = EventTarget.prototype.addEventListener;</div>
-                                <div className="text-rose-300">EventTarget.prototype.addEventListener = function(type, fn) &#123; /* tampered */ &#125;;</div>
-                                <div className="text-rose-300">// 2. Heuristic check catches native tampering:</div>
-                                <div className="text-rose-300">if (!EventTarget.prototype.addEventListener.toString().includes(&quot;[native code]&quot;)) &#123;</div>
-                                <div className="text-rose-300">    ProctorEngine.flagTampering(&quot;Modified EventTarget Prototype&quot;);</div>
-                                <div className="text-rose-300">&#125;</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> Canvas Crack overrides native JavaScript prototypes, triggering anti-cheat heuristic alarms that detect tampered EventTarget methods.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield suppresses blur events:</div>
-                                <div className="text-emerald-300">window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                                <div className="text-emerald-400 mt-2">// 3. Mathpix Neural OCR: 0.3s edge inference</div>
-                                <div className="text-emerald-300">const ans = await EdgeSolver.solve(mathpixTokens); // 280ms</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Guarantee:</strong> Your host page DOM remains 100% unaltered. SpeedGrader logs continuous, unbroken exam presence with zero blur notifications.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* 3 Technical Deep Dives */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Passive Focus Shield vs Dangerous Prototype Pollution
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Canvas Crack Flaw:</span>
-                                        Canvas Crack attempts to override EventTarget.prototype.addEventListener and window.onblur. Modern LMS monitoring scripts inspect Function.prototype.toString.call(window.addEventListener) to detect native tampering.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost preserves native prototypes untouched. It operates through passive event cancellation and internal state isolation, leaving zero traces of code modification.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Official Store Security vs Developer Mode Sideloading
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Canvas Crack Flaw:</span>
-                                        Because Canvas Crack violates Google policies, it cannot be hosted on the Chrome Web Store. Installing unpacked extensions bypasses Google&apos;s malware and security scanning.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost complies with Google Manifest V3 security standards and is verified for user safety and privacy.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Full 0.3s Neural Solver vs Empty Event Spoof
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Canvas Crack Flaw:</span>
-                                        Canvas Crack does not actually solve quiz questions. It only attempts to hide tab switches, forcing you to find answers elsewhere.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost provides instant answers, step-by-step explanations, and Mathpix STEM parsing in 0.3s directly on the page.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
+                {/* FAQ SECTION */}
+                <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 mb-12">
+                    <div className="text-center mb-10">
                         <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
+                            Frequently Asked Questions: CanvasCrack vs ExamGhost
                         </h2>
                         <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against Canvas Crack across 10 mission-critical exam dimensions.
+                            Everything students ask when comparing CanvasCrack (<code className="font-mono text-xs">canvascrack.com</code>) with ExamGhost.
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">Canvas Crack</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
-                                
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Tampered Hooks (Detectable)
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">In-Situ Option Matching</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Matches exact option text under shuffling</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Chrome Store Verified</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Safe from malware and developer mode risks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Built-In AI Solver</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Solves questions directly in 0.3s</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Clean Native Prototypes</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Never tampers with Function.prototype</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        No Solver
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Canvas Only
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        $19.99 - $29.99/mo
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;I bought Canvas Crack after seeing it on TikTok and it completely messed up my Chrome browser. Canvas flagged my exam for modified scripts. ExamGhost is completely clean, actually answers the questions, and works instantly.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Zachary D.</div>
-                            <div className="text-xs text-ink-muted">Arizona State University · Business</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in CIS 105
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
                     <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
+                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                            <details key={index} className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden" open={index === 0}>
+                                <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
+                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180 shrink-0 ml-2" aria-hidden="true" />
+                                </summary>
+                                <p className="mt-3 text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                    {faq.acceptedAnswer.text}
+                                </p>
+                            </details>
+                        ))}
+                    </div>
+                </section>
+
+                {/* BESPOKE INLINE CONVERSION STRIP + RELATED COMPARISONS */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-[32px] bg-gradient-to-br from-[#f0f9ff] via-[#bfe3f6]/55 to-[#ecfdf5] border border-black/10 p-8 sm:p-12 shadow-card mb-12">
+                        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                            <div className="max-w-xl">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/10 text-sky-950 text-xs font-bold mb-3">
+                                    <Sparkles className="w-3.5 h-3.5" />
+                                    Focus Shield + 0.3s Inline AI · 50 Free Solves
+                                </div>
+                                <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
+                                    Don&apos;t pay $139.99 just to switch tabs to ChatGPT.
+                                </h2>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    Get Focus Shield tab-blur immunity <strong>plus</strong> a 0.3s inline AI solver and Snap-It OCR—starting with <strong>50 Free Solves</strong> ($0 trial, no credit card required).
+                                </p>
                             </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>Canvas Crack (Canvas Crack Script Delay)</span>
-                                <span className="text-rose-800">4.1s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
+                            <div className="flex flex-wrap items-center gap-3 shrink-0">
+                                <a
+                                    href="/#pricing"
+                                    className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
+                                >
+                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                                    <span>Start 50 Free Solves</span>
+                                </a>
+                                <Link prefetch={false}
+                                    href="/canvas-quiz-solver-free-demo"
+                                    className="px-5 py-4 rounded-full text-sm font-semibold bg-white hover:bg-slate-50 text-ink border border-black/10 shadow-sm inline-flex items-center gap-1.5"
+                                >
+                                    <span>Try Live Demo</span>
+                                    <ArrowRight className="w-4 h-4" />
+                                </Link>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
-                </div>
-            </section>
-
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
+                    <h2 className="text-lg font-bold font-display text-ink mb-4">
+                        Compare More Canvas Stealth Extensions
                     </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from Canvas Crack to ExamGhost.
-                    </p>
-                </div>
-
-                <div className="space-y-4">
-                    
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Is Canvas Crack safe to install?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. Canvas Crack is not hosted on the Chrome Web Store and requires Developer Mode sideloading. It tampers with native browser JavaScript prototypes in ways that can be detected by LMS security tools.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does Canvas Crack solve exam questions?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. Canvas Crack is merely an event-spoofing script that attempts to block tab logs. ExamGhost is a complete AI solution that provides instant 0.3s answers, LaTeX STEM parsing, and mathematically verified stealth.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What makes ExamGhost safer than Canvas Crack?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost does not pollute native JavaScript prototypes or require developer mode. It runs inside a closed Shadow DOM container with active Focus Shield event masking.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
-                </div>
-            </section>
-
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <Link prefetch={false} href="/canvashack-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs CanvasHack</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
+                        <Link prefetch={false} href="/canvasninja-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs Canvas Ninja</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
+                        <Link prefetch={false} href="/canvaspass-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs CanvasPass</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="p-4 rounded-2xl bg-ink text-white hover:bg-black text-xs font-bold flex items-center justify-between transition-all shadow-sm">
+                            <span>All 57 Teardowns</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-[#bfe3f6]" aria-hidden="true" />
                         </Link>
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
-                    </div>
-                </div>
-            </section>
+                </section>
 
             </main>
-
             <Footer />
         </div>
     );

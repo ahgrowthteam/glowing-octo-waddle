@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { FaDiscord } from 'react-icons/fa';
 import { MessageSquare, Shield, Users, Bell, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -129,7 +127,7 @@ export default function DiscordSection() {
                                             </p>
                                             <div className="flex items-center gap-2.5">
                                                 <div className="w-6 h-6 rounded-full overflow-hidden border border-black/10 shrink-0 bg-[#e2d3fa]">
-                                                    <img src={item.avatar} alt={item.author} className="w-full h-full object-cover" />
+                                                    <img src={item.avatar} alt={item.author} width={24} height={24} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                                                 </div>
                                                 <div className="flex items-center justify-between flex-1 min-w-0">
                                                     <span className="font-bold text-ink truncate">{item.author}</span>

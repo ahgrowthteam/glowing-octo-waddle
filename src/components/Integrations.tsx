@@ -1,9 +1,8 @@
-'use client';
-
 import React from 'react';
+import Link from 'next/link';
 import { 
-    Shield, Sparkles, Cpu, Lock, Eye, CheckCircle2, 
-    Layers, ScanLine, KeyRound, MonitorCheck, Zap, Check
+    Shield, Sparkles, Lock, Eye, CheckCircle2, 
+    Layers, ScanLine, Crop
 } from 'lucide-react';
 import { 
     SiCanvas, SiLinkedin, SiMoodle, SiPearson, SiCoursera 
@@ -79,6 +78,138 @@ export default function Integrations() {
         }
     ];
 
+    const platforms = [
+        {
+            id: 'canvas',
+            name: 'Canvas',
+            subtitle: 'Classic & New Quizzes',
+            href: '/canvas-lms-quiz-solver',
+            badge: '0 Flags',
+            badgeBg: '#cdeecb',
+            badgeText: '#14532d',
+            feature: 'Zero SpeedGrader blur logs',
+            iconBg: '#fff1f2',
+            iconBorder: '#fecdd3',
+            renderIcon: () => <SiCanvas className="w-5 h-5 text-[#E63946]" aria-hidden="true" />
+        },
+        {
+            id: 'blackboard',
+            name: 'Blackboard',
+            subtitle: 'Learn & Blackboard Ultra',
+            href: '/blackboard-quiz-solver',
+            badge: 'Shielded',
+            badgeBg: '#ffe9a0',
+            badgeText: '#713f12',
+            feature: 'No tab-switch warnings',
+            iconBg: '#1c1917',
+            iconBorder: '#292524',
+            renderIcon: () => <span className="font-display font-black text-sm tracking-tight text-[#E5A823]">Bb</span>
+        },
+        {
+            id: 'mcgrawhill',
+            name: 'McGraw Hill',
+            subtitle: 'Connect & ALEKS',
+            href: '/mcgraw-hill-connect-aleks-solver',
+            badge: 'Math & Chem',
+            badgeBg: '#e2d3fa',
+            badgeText: '#4c1d95',
+            feature: 'Reads LaTeX & graph figures',
+            iconBg: '#D6001C',
+            iconBorder: '#b91c1c',
+            renderIcon: () => <span className="font-display font-black text-xs tracking-tighter text-white">MH</span>
+        },
+        {
+            id: 'pearson',
+            name: 'Pearson',
+            subtitle: 'MyLab & Mastering',
+            href: '/pearson-mylab-mastering-solver',
+            badge: 'Multi-Part',
+            badgeBg: '#bfe9d9',
+            badgeText: '#115e59',
+            feature: 'Step-by-step part breakdowns',
+            iconBg: '#ecfeff',
+            iconBorder: '#a5f3fc',
+            renderIcon: () => <SiPearson className="w-5 h-5 text-[#00778B]" aria-hidden="true" />
+        },
+        {
+            id: 'moodle',
+            name: 'Moodle',
+            subtitle: 'Moodle 3.x, 4.x & Cloud',
+            href: '/moodle-quiz-solver',
+            badge: '1-Click',
+            badgeBg: '#ffedd5',
+            badgeText: '#9a3412',
+            feature: 'Double-click .que solving',
+            iconBg: '#fff7ed',
+            iconBorder: '#fed7aa',
+            renderIcon: () => <SiMoodle className="w-5 h-5 text-[#F98012]" aria-hidden="true" />
+        },
+        {
+            id: 'd2l',
+            name: 'D2L Brightspace',
+            subtitle: 'Quizzes & Assessments',
+            href: '/d2l-brightspace-quiz-solver',
+            badge: 'In-Window',
+            badgeBg: '#ffd5cc',
+            badgeText: '#7f1d1d',
+            feature: 'Stays inside quiz iframes',
+            iconBg: '#fff7ed',
+            iconBorder: '#fdba74',
+            renderIcon: () => (
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" aria-hidden="true">
+                    <rect width="24" height="24" rx="6" fill="#F15A24" />
+                    <path d="M12 4.5l2.2 4.5 4.8.7-3.5 3.4.8 4.9-4.3-2.3-4.3 2.3.8-4.9-3.5-3.4 4.8-.7L12 4.5z" fill="#FFFFFF" />
+                </svg>
+            )
+        },
+        {
+            id: 'gradescope',
+            name: 'Gradescope',
+            subtitle: 'Online Exams & PDFs',
+            href: '/gradescope-exam-solver',
+            badge: 'Vision OCR',
+            badgeBg: '#c4d0f8',
+            badgeText: '#1e3a8a',
+            feature: 'Code & diagram auto-parse',
+            iconBg: '#006e5d',
+            iconBorder: '#047857',
+            renderIcon: () => <span className="font-display font-black text-xs text-white">GS</span>
+        },
+        {
+            id: 'cengage',
+            name: 'Cengage',
+            subtitle: 'MindTap & WebAssign',
+            href: '/cengage-mindtap-webassign-solver',
+            badge: 'Red Vars',
+            badgeBg: '#bfe3f6',
+            badgeText: '#0c4a6e',
+            feature: 'Solves red-number variants',
+            iconBg: '#eff6ff',
+            iconBorder: '#bfdbfe',
+            renderIcon: () => <SiCoursera className="w-5 h-5 text-[#0056D2]" aria-hidden="true" />
+        },
+        {
+            id: 'googleforms',
+            name: 'Google Forms',
+            subtitle: 'Classroom & Quizzes',
+            href: '/google-forms-quiz-solver',
+            badge: 'Image OCR',
+            badgeBg: '#c4d0f8',
+            badgeText: '#1e3a8a',
+            feature: 'Double-click & Alt+S cards',
+            iconBg: '#673ab7',
+            iconBorder: '#5b21b6',
+            renderIcon: () => <SiLinkedin className="w-4 h-4 text-white" aria-hidden="true" />
+        }
+    ];
+
+    const extraPortalLinks = [
+        { label: 'Schoology Assessments', href: '/schoology-quiz-solver' },
+        { label: 'DeltaMath Graphing', href: '/deltamath-homework-solver' },
+        { label: 'Imagine Edgenuity', href: '/edgenuity-quiz-solver' },
+        { label: 'Free Canvas Simulator', href: '/canvas-quiz-solver-free-demo' },
+    ];
+
     return (
         <section className="py-20 md:py-32 bg-cream text-ink border-b border-black/5" id="all-in-one">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -99,41 +230,45 @@ export default function Integrations() {
                 </div>
 
                 {/* Categories Grid (OneMacApp 6 Pastel Cards with 3D Ghost Characters) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {categories.map((cat, idx) => {
-                        const Icon = cat.icon;
+                        const IconComponent = cat.icon;
                         return (
                             <div
                                 key={idx}
-                                className="group relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 border border-white/80 shadow-[0_4px_20px_rgba(40,30,10,0.04)] hover:shadow-[0_16px_40px_rgba(40,30,10,0.1)]"
+                                className="rounded-3xl p-6 sm:p-7 border border-black/5 shadow-card hover:shadow-lift transition-all duration-300 flex flex-col justify-between group overflow-hidden relative"
                                 style={{ backgroundColor: cat.bg }}
                             >
-                                {/* Top Meta */}
+                                {/* Top Header */}
                                 <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/70 backdrop-blur-sm border border-black/5 text-ink shadow-xs">
+                                    <div className="flex items-center justify-between gap-2 mb-4">
+                                        <span className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm text-ink border border-black/5">
                                             {cat.count}
                                         </span>
-                                        <span className="text-[11px] font-semibold text-ink/75 bg-black/5 px-2.5 py-0.5 rounded-full">
-                                            {cat.badge}
+                                        <span className="text-xs font-medium text-ink-secondary bg-black/5 px-2.5 py-1 rounded-full flex items-center gap-1">
+                                            <IconComponent className="w-3.5 h-3.5 text-ink" />
+                                            <span>{cat.badge}</span>
                                         </span>
                                     </div>
 
-                                    <h3 className="font-display text-2xl font-bold text-ink mb-2">
+                                    <h3 className="font-display text-2xl font-bold text-ink mb-2 tracking-tight">
                                         {cat.title}
                                     </h3>
-
-                                    <p className="text-xs sm:text-sm text-ink/80 leading-relaxed font-normal mb-5">
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-5">
                                         {cat.desc}
                                     </p>
                                 </div>
 
-                                {/* 3D Ghost Character Graphic Box (Replacing OneMacApp toolbox with Ghost character) */}
-                                <div className="mt-2 mb-4 rounded-2xl overflow-hidden border border-black/5 shadow-soft bg-cream/70 relative aspect-[4/3] flex items-center justify-center group-hover:shadow-lift transition-all duration-300">
+                                {/* 3D Character Image Card */}
+                                <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-5 border-2 border-white/90 shadow-soft bg-cream/60">
                                     <img 
                                         src={cat.image} 
-                                        alt={`${cat.title} Ghost character`}
-                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                                        alt={`${cat.title} — ${cat.badge} in ExamGhost AI`} 
+                                        width={360}
+                                        height={200}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                                     />
                                 </div>
 
@@ -157,319 +292,131 @@ export default function Integrations() {
                 </div>
 
                 {/* =========================================================================
-                    UPGRADED PLATFORM COMPATIBILITY MATRIX & UNIVERSAL ANY-WEBSITE SHOWCASE
+                    SCHOOL PORTAL COMPATIBILITY GRID (CLEAN 3x3 BENTO + UNIVERSAL OCR BAR)
                    ========================================================================= */}
-                <div className="mt-16 sm:mt-20 max-w-5xl mx-auto">
+                <div className="mt-24 sm:mt-28 max-w-5xl mx-auto scroll-mt-28" id="platforms">
                     
-                    {/* Compatibility Card Frame */}
-                    <div className="rounded-3xl bg-white/90 backdrop-blur-xl border border-black/10 p-6 sm:p-8 md:p-10 shadow-soft relative overflow-hidden">
+                    <div className="rounded-[32px] bg-white border border-black/8 p-6 sm:p-10 shadow-card">
                         
-                        {/* Ambient Glow Circles */}
-                        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-emerald-100/40 via-blue-100/30 to-purple-100/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-                        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-amber-100/40 via-pink-100/20 to-transparent rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+                        {/* Compact Header Row */}
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-black/6">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold uppercase tracking-wider text-emerald-900 mb-3">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                    <span>20+ School Portals Supported</span>
+                                </div>
+                                <h3 className="font-display font-bold text-2xl sm:text-3xl text-ink tracking-tight">
+                                    Works inside your school portal.
+                                </h3>
+                                <p className="text-sm text-ink-muted mt-1 max-w-xl">
+                                    Zero tab-switching and zero clipboard flags across major university LMS platforms.
+                                </p>
+                            </div>
 
-                        <div className="relative z-10">
-                            
-                            {/* Header Row */}
-                            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-black/5">
-                                <div>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-3 shadow-2xs">
-                                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                        <span>LIVE COMPATIBILITY MATRIX · 100% STEALTH VERIFIED</span>
+                            <div className="flex flex-wrap items-center gap-2 shrink-0">
+                                <span className="px-3 py-1.5 rounded-full bg-[#faf8f5] border border-black/8 text-xs font-semibold text-ink flex items-center gap-1.5">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                                    <span>Double-Click Inline</span>
+                                </span>
+                                <span className="px-3 py-1.5 rounded-full bg-[#faf8f5] border border-black/8 text-xs font-semibold text-ink flex items-center gap-1.5">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                                    <span>Closed Shadow DOM</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Clean 3x3 Platform Cards Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+                            {platforms.map((platform) => (
+                                <Link
+                                    prefetch={false}
+                                    key={platform.id}
+                                    href={platform.href}
+                                    className="p-4 sm:p-5 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/6 hover:border-black/15 transition-all duration-200 hover:shadow-soft flex items-start gap-3.5 group"
+                                >
+                                    <div
+                                        className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 shadow-2xs"
+                                        style={{
+                                            backgroundColor: platform.iconBg,
+                                            border: `1px solid ${platform.iconBorder}`
+                                        }}
+                                    >
+                                        {platform.renderIcon()}
                                     </div>
-                                    <h3 className="font-display font-black text-2xl sm:text-3xl text-ink tracking-tight">
-                                        Native LMS Hooks + Universal Any-Platform Mode
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-muted mt-1.5 max-w-2xl leading-relaxed">
-                                        Engineered with native zero-DOM telemetry hooks for major universities, plus in-memory computer vision that solves questions across <strong>LinkedIn skill assessments</strong>, certification exams, and custom school portals.
+
+                                    <div className="min-w-0 flex-1">
+                                        <div className="flex items-center justify-between gap-2 mb-0.5">
+                                            <h4 className="font-display font-bold text-[15px] text-ink group-hover:text-black truncate">
+                                                {platform.name}
+                                            </h4>
+                                            <span
+                                                className="text-[10px] font-bold px-2 py-0.5 rounded-md shrink-0"
+                                                style={{
+                                                    backgroundColor: platform.badgeBg,
+                                                    color: platform.badgeText
+                                                }}
+                                            >
+                                                {platform.badge}
+                                            </span>
+                                        </div>
+
+                                        <div className="text-xs text-ink-secondary font-medium">
+                                            {platform.subtitle}
+                                        </div>
+
+                                        <div className="text-[11px] text-ink-muted mt-1.5 flex items-center gap-1.5">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                                            <span>{platform.feature}</span>
+                                        </div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Interactive Demo Links for Additional Portals */}
+                        <div className="flex flex-wrap items-center gap-2 mb-6">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted mr-1">
+                                Live Interactive Demos:
+                            </span>
+                            {extraPortalLinks.map((item) => (
+                                <Link
+                                    prefetch={false}
+                                    key={item.href}
+                                    href={item.href}
+                                    className="px-3 py-1 rounded-full bg-[#faf8f5] hover:bg-ink hover:text-white border border-black/8 text-xs font-semibold text-ink transition-colors"
+                                >
+                                    {item.label} →
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Compact Universal Snap-It Vision OCR Banner */}
+                        <div className="rounded-2xl bg-[#141413] text-white p-5 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="flex items-start gap-4">
+                                <div className="w-11 h-11 rounded-xl bg-[#e2d3fa] text-ink flex items-center justify-center shrink-0 mt-0.5">
+                                    <Crop className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <h4 className="font-display font-bold text-base sm:text-lg text-white leading-snug">
+                                        Works on any website, locked PDF, or custom portal
+                                    </h4>
+                                    <p className="text-xs sm:text-[13px] text-white/70 mt-1 max-w-xl leading-relaxed">
+                                        Taking a quiz on Google Classroom, WileyPLUS, Cengage WebAssign, Schoology, or a locked PDF? Drag a Snap-It box over any question or graph to solve it in 0.3s.
                                     </p>
                                 </div>
-                                <div className="flex items-center gap-2 self-start md:self-end shrink-0">
-                                    <span className="px-3 py-1 rounded-full bg-black/5 border border-black/5 text-[11px] font-semibold text-ink flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                                        <span>Canvas 2026 Ready</span>
-                                    </span>
-                                    <span className="px-3 py-1 rounded-full bg-black/5 border border-black/5 text-[11px] font-semibold text-ink flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                                        <span>Closed Shadow DOM</span>
-                                    </span>
-                                </div>
                             </div>
 
-                            {/* The 9 Specific Tested Platform Cards */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 mb-6">
-                                
-                                {/* 1. CANVAS */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#E63946]/10 border border-[#E63946]/20 flex items-center justify-center text-[#E63946] shrink-0 group-hover:scale-105 transition-transform">
-                                        <SiCanvas className="w-5 h-5" aria-hidden="true" />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#E63946] transition-colors">
-                                                Canvas
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                0 Flags
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Classic &amp; New Quizzes
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Zero SpeedGrader blur logs</span>
-                                        </div>
-                                    </div>
+                            <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-2.5 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
+                                <div className="font-mono text-xs font-bold text-white flex items-center gap-1.5">
+                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-[#e2d3fa]">⌘ + Shift + S</kbd>
+                                    <span className="text-white/75 text-[11px]">or</span>
+                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-white/90">Ctrl + Shift + S</kbd>
                                 </div>
-
-                                {/* 2. BLACKBOARD */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#222222] border border-black/20 flex items-center justify-center text-[#E5A823] shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                                        <span className="font-display font-black text-sm tracking-tight">Bb</span>
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-amber-800 transition-colors">
-                                                Blackboard
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                Shielded
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Learn &amp; Blackboard Ultra
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>SafeAssign &amp; telemetry blocked</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 3. LINKEDIN LEARNING & ASSESSMENTS */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-[#0A66C2]/20 hover:border-[#0A66C2]/40 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5 ring-1 ring-[#0A66C2]/10">
-                                    <div className="w-10 h-10 rounded-xl bg-[#0A66C2] flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                                        <SiLinkedin className="w-5 h-5" aria-hidden="true" />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#0A66C2] transition-colors">
-                                                LinkedIn
-                                            </h4>
-                                            <span className="text-[10px] font-black uppercase tracking-tight px-2 py-0.5 rounded-md bg-blue-100 text-[#0A66C2]">
-                                                Top 5%
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Skill Assessments &amp; Learning
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Earn verified skill badges in 2 min</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 4. MOODLE */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#F98012]/10 border border-[#F98012]/20 flex items-center justify-center text-[#F98012] shrink-0 group-hover:scale-105 transition-transform">
-                                        <SiMoodle className="w-6 h-6" aria-hidden="true" />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#F98012] transition-colors">
-                                                Moodle
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                Active
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Moodle 3.x, 4.x &amp; Workplace
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Full quiz navigation hook</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 5. D2L BRIGHTSPACE */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#F15A24]/10 border border-[#F15A24]/20 flex items-center justify-center text-[#F15A24] shrink-0 group-hover:scale-105 transition-transform">
-                                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" aria-hidden="true">
-                                            <rect width="24" height="24" rx="5" fill="#F15A24" />
-                                            <path d="M12 4.5l2.2 4.5 4.8.7-3.5 3.4.8 4.9-4.3-2.3-4.3 2.3.8-4.9-3.5-3.4 4.8-.7L12 4.5z" fill="#FFFFFF" />
-                                            <circle cx="12" cy="12" r="2.2" fill="#FFE082" />
-                                        </svg>
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#F15A24] transition-colors">
-                                                D2L Brightspace
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                Active
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            All Quizzes &amp; Assessments
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Full event loop suppression</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 6. MCGRAW HILL */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#D6001C] flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                                        <span className="font-display font-black text-xs tracking-tighter">MH</span>
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#D6001C] transition-colors">
-                                                McGraw Hill
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                LaTeX
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Connect &amp; ALEKS
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Mathpix equation parser ready</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 7. PEARSON */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#00778B]/10 border border-[#00778B]/20 flex items-center justify-center text-[#00778B] shrink-0 group-hover:scale-105 transition-transform">
-                                        <SiPearson className="w-5 h-5" aria-hidden="true" />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#00778B] transition-colors">
-                                                Pearson
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                Verified
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            MyLab &amp; Mastering
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Multi-part problem breakdown</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 8. GRADESCOPE */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#006e5d] flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                                        <span className="font-display font-black text-xs">GS</span>
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#00A78E] transition-colors">
-                                                Gradescope
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                OCR
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Online Exams &amp; Quizzes
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Code &amp; diagram OCR auto-parse</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 9. COURSERA & EDX */}
-                                <div className="p-4 rounded-2xl bg-[#faf8f5] hover:bg-white border border-black/5 hover:border-black/15 shadow-xs hover:shadow-soft transition-all group flex items-start gap-3.5">
-                                    <div className="w-10 h-10 rounded-xl bg-[#0056D2]/10 border border-[#0056D2]/20 flex items-center justify-center text-[#0056D2] shrink-0 group-hover:scale-105 transition-transform">
-                                        <SiCoursera className="w-5 h-5" aria-hidden="true" />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                                            <h4 className="font-display font-bold text-sm text-ink group-hover:text-[#0056D2] transition-colors">
-                                                Coursera &amp; edX
-                                            </h4>
-                                            <span className="text-[10px] font-extrabold uppercase tracking-tight px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">
-                                                1-Click
-                                            </span>
-                                        </div>
-                                        <div className="text-xs text-ink-secondary font-medium">
-                                            Graded Certification Quizzes
-                                        </div>
-                                        <div className="text-[11px] text-ink-muted mt-1 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                            <span>Instant MCQ answer injection</span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <span className="text-[11px] font-semibold text-emerald-300 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-400/20 px-3 py-1 rounded-full whitespace-nowrap">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                                    <span>100% of Webpages Covered</span>
+                                </span>
                             </div>
-
-                            {/* =========================================================
-                                SHOWSTOPPER: THE "✦ ANY PLATFORM / WEBSITE" HIGHLIGHT CARD
-                               ========================================================= */}
-                            <div className="rounded-2xl bg-gradient-to-br from-[#0c1322] via-[#091526] to-[#050c18] border-2 border-emerald-400/40 p-5 sm:p-7 text-white shadow-lift relative overflow-hidden group">
-                                
-                                {/* Background Ambient Ray */}
-                                <div className="absolute top-0 right-1/4 w-96 h-32 bg-emerald-500/15 blur-3xl pointer-events-none rounded-full group-hover:bg-emerald-500/25 transition-all duration-700" />
-
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
-                                    
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-black shrink-0 shadow-md group-hover:scale-105 transition-transform">
-                                            <Sparkles className="w-6 h-6 fill-black" />
-                                        </div>
-                                        <div>
-                                            <div className="flex flex-wrap items-center gap-2 mb-1">
-                                                <h4 className="font-display font-black text-lg sm:text-xl text-white tracking-tight">
-                                                    ✦ Works on ANY Website, Exam Portal or LMS
-                                                </h4>
-                                                <span className="px-2.5 py-0.5 rounded-full bg-emerald-400 text-black text-[10px] font-black uppercase tracking-wider shadow-xs">
-                                                    UNIVERSAL VISION MODE
-                                                </span>
-                                            </div>
-                                            <p className="text-xs sm:text-sm text-[#b8ccdf] leading-relaxed max-w-2xl">
-                                                Taking an exam on a proprietary university portal, Google Classroom, WileyPLUS, Cengage, Kahoot, or a corporate screening test? ExamGhost&apos;s <strong>Snap-It Vision OCR</strong> runs completely in-memory. If a question appears on your screen, ExamGhost decodes and solves it instantly—zero LMS API access required.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-3 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
-                                        <div className="text-left md:text-right">
-                                            <div className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold">
-                                                Instant Global Shortcut
-                                            </div>
-                                            <div className="font-mono text-xs sm:text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
-                                                <span className="px-2 py-0.5 rounded-md bg-white/10 border border-white/20">⌘ + B</span>
-                                                <span className="text-[#89a2be] text-xs">or</span>
-                                                <span className="px-2 py-0.5 rounded-md bg-white/10 border border-white/20">Ctrl + B</span>
-                                            </div>
-                                        </div>
-                                        <span className="text-[11px] font-semibold text-emerald-300 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-400/20 px-3 py-1 rounded-full whitespace-nowrap">
-                                            <Check className="w-3 h-3 text-emerald-400" />
-                                            <span>100% of Webpages Covered</span>
-                                        </span>
-                                    </div>
-
-                                </div>
-                            </div>
-
                         </div>
 
                     </div>

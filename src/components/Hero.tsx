@@ -86,7 +86,7 @@ export default function Hero() {
                     viewBox="0 0 1440 800" 
                     preserveAspectRatio="xMidYMax slice"
                 >
-                    <g filter="url(#torn)">
+                    <g>
                         <path 
                             d="M-80 520 C 60 440, 180 480, 300 430 C 420 380, 540 450, 590 570 C 640 680, 560 760, 600 850 L -80 850 Z" 
                             fill="#c4d0f8" 
@@ -126,7 +126,7 @@ export default function Hero() {
                 <div className="flex justify-center mb-6">
                     <span className="eyebrow bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-black/5 shadow-sm text-xs flex items-center gap-2">
                         <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
-                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="Ghost" className="w-full h-full object-cover scale-110" />
+                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={20} height={20} className="w-full h-full object-cover scale-110" />
                         </span>
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span className="font-semibold">THE INVISIBLE AI QUIZ SOLVER · CANVAS, BLACKBOARD, MOODLE & 20+ MORE</span>
@@ -141,14 +141,15 @@ export default function Hero() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-base sm:text-lg md:text-xl text-ink-muted text-center max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                <p className="aeo-summary text-base sm:text-lg md:text-xl text-ink-muted text-center max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
                     Double-click any question on Canvas, Moodle, Blackboard or 20+ more and ExamGhost fills in the correct answer right on the page — no tab-switching, no copy-paste, and 100% screen-share safe.
                 </p>
 
                 {/* Live Demo Callout Pill */}
                 <div className="flex justify-center mb-6">
                     <Link
-                        href="/demo"
+                        href="/canvas-quiz-solver-free-demo"
+                        prefetch={false}
                         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-300 text-xs sm:text-[13px] font-semibold text-emerald-900 transition-all hover:scale-[1.02] shadow-xs group"
                     >
                         <span className="flex h-2 w-2 relative">
@@ -173,7 +174,8 @@ export default function Hero() {
                     </a>
 
                     <Link
-                        href="/demo"
+                        href="/canvas-quiz-solver-free-demo"
+                        prefetch={false}
                         className="btn-soft px-6 py-3.5 text-base group inline-flex items-center gap-2 bg-white border border-black/10 text-ink shadow-xs hover:bg-[#faf8f4]"
                     >
                         <span>Live Sandbox Demo</span>
@@ -210,7 +212,7 @@ export default function Hero() {
                     {/* Floating 3D Ghost Mascot (Left): Peace Sign Ghost */}
                     <div className="hidden xl:flex absolute -left-44 top-1/4 z-30 flex-col items-center pointer-events-none animate-float-left">
                         <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-white shadow-lift bg-cream pointer-events-auto group cursor-pointer transition-transform duration-300 hover:scale-105">
-                            <img src="/images/ghost/ghost_peace.jpg" alt="ExamGhost Peace Mascot" className="w-full h-full object-cover" />
+                            <img src="/images/ghost/ghost_peace.jpg" alt="ExamGhost Peace Mascot" width={128} height={128} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                         </div>
                         <div className="mt-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/5 text-[11px] font-bold text-ink shadow-soft flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -221,7 +223,7 @@ export default function Hero() {
                     {/* Floating 3D Ghost Mascot (Right): Grad A+ Star Ghost */}
                     <div className="hidden xl:flex absolute -right-44 top-1/3 z-30 flex-col items-center pointer-events-none animate-float-right">
                         <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-white shadow-lift bg-cream pointer-events-auto group cursor-pointer transition-transform duration-300 hover:scale-105">
-                            <img src="/images/ghost/ghost_grad.jpg" alt="ExamGhost Grad Mascot" className="w-full h-full object-cover" />
+                            <img src="/images/ghost/ghost_grad.jpg" alt="ExamGhost Grad Mascot" width={128} height={128} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                         </div>
                         <div className="mt-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/5 text-[11px] font-bold text-ink shadow-soft flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-amber-400" />

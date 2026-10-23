@@ -445,8 +445,7 @@ export default function Pricing() {
                         )}
                     </button>
 
-                    {showComparison && (
-                        <div className="mt-3 rounded-3xl bg-white border border-black/10 p-5 sm:p-7 shadow-xs overflow-x-auto">
+                    <div className={showComparison ? "mt-3 rounded-3xl bg-white border border-black/10 p-5 sm:p-7 shadow-xs overflow-x-auto block" : "hidden"}>
                             <table className="w-full text-xs text-left">
                                 <thead>
                                     <tr className="border-b border-black/10 text-ink-muted">
@@ -510,7 +509,6 @@ export default function Pricing() {
                                 </tbody>
                             </table>
                         </div>
-                    )}
                 </div>
 
                 {/* Trust, Security & Discretion Assurances */}
@@ -553,12 +551,12 @@ export default function Pricing() {
                             <FaDiscord className="w-5 h-5" aria-hidden="true" />
                         </div>
                         <div>
-                            <h4 className="font-display font-bold text-sm text-ink flex items-center gap-2">
+                            <h3 className="font-display font-bold text-sm text-ink flex items-center gap-2">
                                 <span>Join the ExamGhost Student Study Guild</span>
                                 <span className="text-[10px] bg-emerald-100 text-emerald-950 font-bold px-2 py-0.5 rounded-full border border-emerald-300">
                                     2,400+ Students
                                 </span>
-                            </h4>
+                            </h3>
                             <p className="text-xs text-ink-muted mt-0.5">
                                 Live Canvas update alerts, syllabus guides, test-taking strategies &amp; free beta keys.
                             </p>

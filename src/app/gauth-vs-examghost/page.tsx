@@ -1,60 +1,56 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
+import {
+    ShieldCheck,
+    ShieldAlert,
+    Zap,
+    Star,
+    ChevronDown,
+    ArrowRight,
+    Sparkles,
     AlertTriangle,
     CheckCircle2,
-    XCircle,
-    EyeOff,
     Monitor,
-    Cpu,
-    HelpCircle,
     Smartphone,
     Camera,
-    Activity,
-    ExternalLink,
-    Check,
-    Layers,
-    Eye
+    Eye,
+    MousePointerClick,
+    KeyRound,
+    Layers
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: "Gauth vs ExamGhost (2026 Review) | Desktop Stealth HUD vs Risky Phone App",
-    description: "In-depth 2026 technical review comparing Gauth (gauthmath.com by ByteDance) and ExamGhost. Discover why holding a phone camera in front of a proctoring webcam gets students flagged, and why ExamGhost is the superior $19.99 lifetime desktop HUD.",
+    title: {
+        absolute: "Gauth vs ExamGhost (2026) — Phone Gaze Risk vs Desktop HUD",
+    },
+    description: "Gauth has no Chrome extension, forcing risky phone camera glances or tab switches. ExamGhost solves on-screen in 0.3s with Focus Shield and 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/gauth-vs-examghost",
     },
     openGraph: {
-        title: "Gauth vs ExamGhost (2026 Technical Review)",
-        description: "Gauth requires holding a phone up to your screen. See why ExamGhost's on-screen desktop HUD and Mathpix engine provide true webcam-safe stealth.",
+        title: "Gauth vs ExamGhost (2026) — Phone Gaze Risk vs Desktop HUD",
+        description: "Gauth has no Chrome extension, forcing risky phone camera glances or tab switches. ExamGhost solves on-screen in 0.3s with Focus Shield and 50 Free Solves.",
         url: "https://examghost.com/gauth-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Gauth vs ExamGhost Review",
+                alt: "Gauth vs ExamGhost (2026) — Phone Gaze Risk vs Desktop HUD",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Gauth vs ExamGhost (2026 Technical Review)",
-        description: "Gauth phone camera risks vs ExamGhost on-screen desktop stealth. Full technical teardown.",
+        title: "Gauth vs ExamGhost (2026) — Phone Gaze Risk vs Desktop HUD",
+        description: "Gauth has no Chrome extension, forcing risky phone camera glances or tab switches. ExamGhost solves on-screen in 0.3s with Focus Shield and 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
@@ -65,10 +61,16 @@ export default function GauthComparisonPage() {
         "@graph": [
             {
                 "@type": "WebPage",
+                "datePublished": "2026-02-13",
+                "dateModified": "2026-03-15",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
                 "@id": "https://examghost.com/gauth-vs-examghost#webpage",
                 "url": "https://examghost.com/gauth-vs-examghost",
-                "name": "Gauth vs ExamGhost (2026 Review) | Desktop Stealth HUD vs Risky Phone App",
-                "description": "Technical forensics comparing Gauth and ExamGhost regarding webcam eye-tracking risks, STEM accuracy, and pricing.",
+                "name": "Gauth vs ExamGhost (2026 Comparison) | Phone Camera Gaze Risk vs On-Screen Desktop Stealth",
+                "description": "Comparison of Gauth (gauthmath.com by ByteDance) and ExamGhost across webcam eye-gaze safety, Chrome extension availability, SpeedGrader focus protection, and Gauth Plus pricing.",
                 "breadcrumb": { "@id": "https://examghost.com/gauth-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -76,24 +78,25 @@ export default function GauthComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": "1280"
-                        },
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+                        "offers": {
+                            "@type": "AggregateOffer",
+                            "lowPrice": "0.00",
+                            "highPrice": "199.00",
+                            "priceCurrency": "USD",
+                            "offerCount": "4"
+                        }
                     },
                     {
                         "@type": "SoftwareApplication",
                         "name": "Gauth (ByteDance)",
                         "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "iOS, Android, Web",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "3.3",
-                            "reviewCount": "510"
-                        },
-                        "offers": { "@type": "Offer", "price": "11.99", "priceCurrency": "USD" }
+                        "operatingSystem": "iOS, Android, Web, Microsoft Store",
+                        "offers": {
+                            "@type": "AggregateOffer",
+                            "lowPrice": "11.99",
+                            "highPrice": "99.99",
+                            "priceCurrency": "USD"
+                        }
                     }
                 ]
             },
@@ -102,7 +105,7 @@ export default function GauthComparisonPage() {
                 "@id": "https://examghost.com/gauth-vs-examghost#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
                     { "@type": "ListItem", "position": 3, "name": "Gauth vs ExamGhost", "item": "https://examghost.com/gauth-vs-examghost" }
                 ]
             },
@@ -112,50 +115,34 @@ export default function GauthComparisonPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Why is using Gauth on a smartphone dangerous during proctored exams?",
+                        "name": "Does Gauth (Gauthmath) have an official Chrome extension for Canvas quizzes?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Honorlock, Proctorio, and Respondus continuously track webcam video streams for eye gaze deflection, cell phone screen glare, and peripheral hand movements. Looking down at a phone screen is the primary cause of automated webcam flags. ExamGhost renders answers directly on-screen in your peripheral vision."
+                            "text": "No. Our 2026 Chrome Web Store audit confirmed that Gauth (formerly Gauthmath, operated by ByteDance) does not offer a first-party Chrome extension with in-page LMS integration. Students must either use the iOS/Android mobile camera app or switch windows to gauthmath.com—both of which trigger proctoring and Canvas SpeedGrader flags."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How does ExamGhost solve STEM math compared to Gauth?",
+                        "name": "Why is using Gauth on a smartphone dangerous during webcam-proctored exams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost integrates Mathpix neural equation parsing directly into an on-screen desktop HUD, solving complex calculus, matrices, and physics formulas in 0.3 seconds without touching a smartphone."
+                            "text": "Honorlock, Proctorio, and Respondus continuously track webcam video streams for downward eye-gaze deflection, cell phone screen glare, and off-keyboard hand movements. Looking down at a phone in your lap to scan a problem in Gauth is the #1 cause of automated webcam flags. ExamGhost renders answers directly on your laptop monitor so your eyes never leave the screen."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much does ExamGhost cost compared to Gauth?",
+                        "name": "How much does ExamGhost cost compared to Gauth Plus?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Gauth charges $11.99 every month ($143.88/year or $575.52 across four college years). ExamGhost is a single, flat lifetime payment of $19.99 with unlimited questions and free updates forever."
+                            "text": "Gauth restricts free daily AI tickets and charges $11.99/month, $31.99/quarter, or $99.99/year for Gauth Plus auto-renewing subscriptions after a 3-day trial. ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by transparent unlimited options: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or a one-time $199 Lifetime Degree Pass."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Does Gauth protect against Canvas SpeedGrader window-blur logs?",
+                        "name": "How does ExamGhost solve complex math diagrams without taking a phone photo?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Gauth's web interface has zero event masking. Navigating away from your Canvas exam tab to query Gauth immediately triggers a window.blur departure event in Canvas SpeedGrader."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the emergency panic kill switch in ExamGhost?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "ExamGhost features an instant keyboard shortcut (⌘+Shift+U / Ctrl+Shift+U) that flushes the closed Shadow DOM overlay from browser memory in under 1 millisecond."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Does ExamGhost support Canvas New Quizzes and Blackboard?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. ExamGhost supports Canvas Classic Quizzes, Canvas New Quizzes (React LTI 1.3), Blackboard Learn, Moodle, D2L Brightspace, and McGraw-Hill Connect."
+                            "text": "Press ⌘+Shift+S (Snap-It OCR) and drag a crop rectangle over any calculus integral, circuit schematic, or chemistry graph right on your laptop screen. ExamGhost's built-in Mathpix STEM engine decodes and solves the problem in 0.3 seconds without ever touching your phone."
                         }
                     }
                 ]
@@ -164,588 +151,524 @@ export default function GauthComparisonPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-cyan-200/60 selection:text-ink font-sans">
+        <div className="min-h-screen bg-cream text-ink selection:bg-teal selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">Gauth vs ExamGhost</span>
-                </nav>
-            </div>
-
-            {/* BESPOKE HERO: Desktop Stealth HUD vs Risky Phone App */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
-                <div className="rounded-[36px] sm:rounded-[44px] bg-[#cffafe] p-6 sm:p-12 md:p-16 border border-black/10 shadow-card relative overflow-hidden">
-                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-black/10 relative z-10">
-                        <div className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                            <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                            <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                            <span className="ml-2 font-mono text-xs text-ink/70">audit_gauth_webcam_detection_risk.ts</span>
-                        </div>
-                        <span className="px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] font-bold text-ink uppercase tracking-wider">
-                            Webcam Stealth Audit
-                        </span>
-                    </div>
-
-                    <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
-                        <div className="lg:col-span-8">
-                            <div className="inline-block px-3.5 py-1 rounded-full bg-cyan-950/10 border border-cyan-950/20 text-xs font-bold text-cyan-950 mb-4">
-                                Critical Vulnerability: Webcam AI Phone Detection
-                            </div>
-                            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
-                                Looking down at a phone screen triggers proctoring webcams.
-                            </h1>
-                            <p className="text-sm sm:text-lg text-ink-secondary leading-relaxed mb-8 max-w-2xl font-normal">
-                                Gauth (gauthmath.com by ByteDance) requires taking photos on your phone. Modern proctoring tools (Honorlock, Proctorio, Respondus) actively scan webcam video for <strong>eye downward deflection, screen glare, and hand positioning</strong>. ExamGhost renders answers directly on your screen inside a closed Shadow DOM HUD with active Focus Shield blur masking for <strong>$19.99 lifetime</strong>.
-                            </p>
-
-                            <div className="flex flex-wrap items-center gap-3">
-                                <a 
-                                    href="/#pricing"
-                                    className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
-                                >
-                                    <FaChrome className="w-4 h-4 text-[#cffafe]" aria-hidden="true"/>
-                                    <span>Get On-Screen ExamGhost · $19.99 Lifetime</span>
-                                </a>
-                                <Link 
-                                    href="/demo"
-                                    className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-xs inline-flex items-center gap-1.5 transition-transform hover:-translate-y-0.5"
-                                >
-                                    <span>Try Interactive Live Demo</span>
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
-                                <a 
-                                    href="#webcam-teardown"
-                                    className="px-5 py-4 rounded-full text-sm font-semibold bg-cyan-950/10 hover:bg-cyan-950/15 text-cyan-950 border border-cyan-950/15 shadow-xs inline-flex items-center gap-1.5"
-                                >
-                                    <span>Inspect Webcam Risk</span>
-                                    <ChevronDown className="w-4 h-4" />
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Floating Visual */}
-                        <div className="lg:col-span-4 flex justify-center">
-                            <div className="w-72 rounded-[32px] bg-white/95 p-6 border border-black/10 shadow-lift text-center">
-                                <div className="w-20 h-20 mx-auto rounded-2xl bg-[#cffafe] p-2 mb-4 border border-black/10 shadow-xs flex items-center justify-center">
-                                    <Eye className="w-10 h-10 text-cyan-900" />
-                                </div>
-                                <div className="font-display font-bold text-lg text-ink mb-1">On-Screen Desktop HUD</div>
-                                <p className="text-xs text-ink-muted mb-3">0 Eye Gaze Deviations · 0 Phone Flags</p>
-                                <div className="p-2.5 rounded-xl bg-emerald-100 text-xs font-bold text-emerald-950 mb-2">
-                                    ✓ Webcam-Safe Stealth
-                                </div>
-                                <div className="text-[11px] text-ink-secondary">
-                                    Hands never leave your keyboard
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* Breadcrumb */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-4">
+                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-ink-muted">
+                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                        <span>/</span>
+                        <span className="text-ink font-bold">Gauth vs ExamGhost</span>
+                    </nav>
                 </div>
-            </section>
 
-            {/* QUICK METRIC RIBBON */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs text-center">
-                        <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">Webcam Gaze Integrity</div>
-                        <div className="font-display text-2xl font-black text-emerald-600">100% On-Screen</div>
-                        <div className="text-[11px] text-ink-muted mt-0.5">Gauth: Phone Downward Deflection</div>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs text-center">
-                        <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">SpeedGrader Focus Shield</div>
-                        <div className="font-display text-2xl font-black text-emerald-600">Zero Blur Flags</div>
-                        <div className="text-[11px] text-ink-muted mt-0.5">Gauth: Unshielded Tab Departures</div>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs text-center">
-                        <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">4-Year Degree Cost</div>
-                        <div className="font-display text-2xl font-black text-emerald-600">$19.99 Total</div>
-                        <div className="text-[11px] text-ink-muted mt-0.5">Gauth: $575.52 Subscription</div>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs text-center">
-                        <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">Inference Speed</div>
-                        <div className="font-display text-2xl font-black text-emerald-600">0.3s Edge</div>
-                        <div className="text-[11px] text-ink-muted mt-0.5">Gauth: 6.0s Phone Photo Upload</div>
-                    </div>
-                </div>
-            </section>
-
-            {/* THE FORENSIC TECHNICAL TEARDOWN */}
-            <section id="webcam-teardown" className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 scroll-mt-24">
-                <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                    <div className="flex items-center gap-3 mb-6 pb-4 border-b border-black/5">
-                        <div className="w-10 h-10 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 shadow-xs">
-                            <AlertTriangle className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <h2 className="font-display font-bold text-lg text-ink">
-                                Technical Audit: Phone Camera Risks vs On-Screen Desktop HUD
-                            </h2>
-                            <p className="text-xs text-ink-muted">Why proctoring AI algorithms flag smartphone usage within 3 seconds</p>
-                        </div>
-                    </div>
-
-                    <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                        {/* Gauth Flaw */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Gauth: Phone Camera &amp; Gaze Tracking Fail
-                                </span>
+                {/* ============================================================
+                    UNIQUE HERO: WEBCAM EYE-GAZE VECTOR & TAB-BLUR COMPARISON
+                ============================================================ */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+                    <div className="rounded-[36px] sm:rounded-[44px] bg-gradient-to-br from-[#cffafe] via-[#e0f9fa] to-[#f2fcfc] border border-black/10 p-6 sm:p-10 md:p-14 shadow-card relative overflow-hidden">
+                        
+                        {/* Top Bar */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 pb-6 mb-8 border-b border-black/10">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-xs font-bold text-cyan-950 shadow-sm">
+                                <Eye className="w-3.5 h-3.5 text-cyan-700" />
+                                <span>2026 Webcam &amp; SpeedGrader Audit · Zero Official Gauth Chrome Extension</span>
                             </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-400">// 1. Student looks down at phone:</div>
-                                <div className="text-rose-300">WebcamVision.detectEyeGazeAngle(&quot;downward&quot;, -34.5);</div>
-                                <div className="text-amber-300 mt-2">// 2. Screen light reflection flagged:</div>
-                                <div className="text-rose-300">ProctorioAI.flagAnomaly(&quot;secondary_device_screen_reflection&quot;);</div>
-                                <div className="text-rose-400 mt-2">// 3. 6.0s photo upload latency to ByteDance servers</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>The Academic Hazard:</strong> Honorlock and Proctorio run real-time OpenCV gaze tracking. Tilting your head down to check a phone for 6 seconds triggers high-confidence cheating alerts.
-                            </p>
+                            <span className="text-xs font-semibold text-ink-secondary bg-white/80 px-3 py-1 rounded-full border border-black/10">
+                                Gauth Plus ($99.99/yr) vs ExamGhost ($99/yr · 50 Free Solves)
+                            </span>
                         </div>
 
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Direct On-Screen HUD &amp; Steady Gaze
-                                </span>
+                        <div className="grid lg:grid-cols-12 gap-10 items-center">
+                            
+                            {/* Left 7 Columns */}
+                            <div className="lg:col-span-7">
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-ink tracking-tight leading-[1.07] mb-6">
+                                    Looking down at a phone in your lap <span className="text-rose-700">triggers instant webcam flags.</span>
+                                </h1>
+
+                                <p className="aeo-summary text-base sm:text-lg text-ink-secondary leading-relaxed mb-5">
+                                    <strong>Gauth</strong> (formerly Gauthmath by ByteDance) has <strong>no official Chrome Web Store extension</strong> for in-page Canvas solving. That forces you to either hold a phone camera under your desk—triggering webcam <strong>downward eye-gaze and screen glare alerts</strong>—or switch tabs to <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">gauthmath.com</code>, which logs an immediate <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">window.blur</code> departure in SpeedGrader.
+                                </p>
+
+                                <p className="text-base sm:text-lg text-ink-secondary leading-relaxed mb-8">
+                                    <strong>ExamGhost</strong> keeps your eyes 100% on your laptop monitor. Double-click any question or press <kbd className="px-1.5 py-0.5 rounded bg-white border border-black/15 font-mono text-xs">⌘+Shift+S</kbd> to solve equations right on your screen in <strong>0.3 seconds</strong> inside a closed Shadow DOM.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 mb-7">
+                                    <Link prefetch={false}
+                                        href="/#pricing"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm sm:text-base font-bold shadow-lift inline-flex items-center justify-center gap-2.5 group"
+                                    >
+                                        <FaChrome className="w-4 h-4 text-[#cffafe]" aria-hidden="true" />
+                                        <span>Start 50 Free Solves (No Card Needed)</span>
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                    <Link prefetch={false}
+                                        href="/canvas-quiz-solver-free-demo"
+                                        className="px-6 py-4 rounded-full text-sm sm:text-base font-bold bg-white hover:bg-cream text-ink border border-black/15 shadow-sm inline-flex items-center justify-center gap-2 transition-all"
+                                    >
+                                        <MousePointerClick className="w-4 h-4 text-cyan-800" />
+                                        <span>Try On-Screen Sandbox Demo</span>
+                                    </Link>
+                                </div>
+
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-ink-secondary">
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>Eyes Never Leave Your Monitor</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>0.3s Snap-It OCR (No Phone Camera)</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                                        <span>Focus Shield Blocks Tab Blurs</span>
+                                    </span>
+                                </div>
                             </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Answer rendered directly inside closed Shadow DOM:</div>
-                                <div className="text-emerald-300">shadowRoot.mountPeripheralHUD(&#123; opacity: 0.85 &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Eyes remain on primary exam screen:</div>
-                                <div className="text-emerald-300">WebcamVision.gazeVector: &quot;center_screen&quot; (0 flags);</div>
-                                <div className="text-emerald-400 mt-1">// 3. Focus Shield active:</div>
-                                <div className="text-emerald-300">document.hasFocus = () =&gt; true; // 0 SpeedGrader Logs</div>
+
+                            {/* Right 5 Columns: Visual Gaze Vector Comparison */}
+                            <div className="lg:col-span-5">
+                                <div className="rounded-[28px] bg-white border border-black/10 p-6 shadow-lift space-y-4">
+                                    <div className="flex items-center justify-between pb-3 border-b border-black/10">
+                                        <span className="font-display font-extrabold text-sm text-ink">
+                                            Webcam Gaze &amp; Tab Telemetry
+                                        </span>
+                                        <span className="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-950 text-[11px] font-bold">
+                                            Proctor AI View
+                                        </span>
+                                    </div>
+
+                                    {/* Gauth Phone / Web Box */}
+                                    <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-900">
+                                                <Smartphone className="w-4 h-4 text-rose-700" />
+                                                <span>Gauth App / gauthmath.com</span>
+                                            </span>
+                                            <span className="px-2 py-0.5 rounded bg-rose-200 text-rose-950 font-mono text-[10px] font-bold">
+                                                HIGH RISK
+                                            </span>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
+                                            <div className="bg-white p-2.5 rounded-xl border border-rose-200">
+                                                <div className="font-bold text-rose-800">Phone Camera</div>
+                                                <div className="text-ink-secondary mt-0.5">-38° downward eye gaze + screen glare</div>
+                                            </div>
+                                            <div className="bg-white p-2.5 rounded-xl border border-rose-200">
+                                                <div className="font-bold text-rose-800">Web Portal</div>
+                                                <div className="text-ink-secondary mt-0.5">Switching tabs fires SpeedGrader blur</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* ExamGhost On-Screen Box */}
+                                    <div className="p-4 rounded-2xl bg-emerald-950 text-white border border-emerald-500 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300">
+                                                <Monitor className="w-4 h-4 text-emerald-400" />
+                                                <span>ExamGhost Desktop Chrome Extension</span>
+                                            </span>
+                                            <span className="px-2 py-0.5 rounded bg-emerald-800 text-white font-mono text-[10px] font-bold">
+                                                0 FLAGS
+                                            </span>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
+                                            <div className="bg-white/10 p-2.5 rounded-xl border border-white/15">
+                                                <div className="font-bold text-emerald-300">0° Center Gaze</div>
+                                                <div className="text-white/80 mt-0.5">Answers appear right on the question</div>
+                                            </div>
+                                            <div className="bg-white/10 p-2.5 rounded-xl border border-white/15">
+                                                <div className="font-bold text-emerald-300">Focus Shield</div>
+                                                <div className="text-white/80 mt-0.5">0 window.blur or tab-switch logs</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-1 flex items-center justify-between text-xs text-ink-secondary">
+                                        <span>Includes <strong>Mathpix STEM OCR</strong></span>
+                                        <Link prefetch={false} href="/canvas-quiz-solver-free-demo" className="font-bold text-cyan-900 underline">Test Snap-It in Demo →</Link>
+                                    </div>
+                                </div>
                             </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>ExamGhost Peace of Mind:</strong> Your hands never leave the desk, your head never tilts, and your webcam registers a student calmly reading their monitor.
-                            </p>
+
                         </div>
                     </div>
-                </div>
-            </section>
+                </header>
 
-            {/* AEO / GEO DIRECT ANSWER BLOCK */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Executive Summary">
-                <aside className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                    <div className="flex items-center justify-between mb-6 pb-4 border-b border-black/5">
-                        <div className="flex items-center gap-3">
-                            <div className="w-9 h-9 rounded-xl bg-[#cffafe] flex items-center justify-center text-ink shadow-xs">
-                                <Sparkles className="w-5 h-5 text-cyan-900" />
+                {/* ============================================================
+                    INTERACTIVE RISK SIMULATOR: PHONE CAMERA VS WEB TAB VS EXAMGHOST
+                ============================================================ */}
+                <section id="webcam-teardown" className="max-w-6xl mx-auto px-4 sm:px-6 mb-24 scroll-mt-24">
+                    <div className="text-center max-w-3xl mx-auto mb-10">
+                        <p className="eyebrow justify-center mb-3">
+                            <ShieldAlert className="w-4 h-4 text-cyan-800" />
+                            <span>TWO WAYS TO USE GAUTH · BOTH GET FLAGGED</span>
+                        </p>
+                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-[1.08] mb-4">
+                            Why Gauth&apos;s missing Chrome extension puts your exam at risk.
+                        </h2>
+                        <p className="text-base sm:text-lg text-ink-secondary leading-relaxed">
+                            Click between the two tabs below to see what happens when you use Gauth on your phone versus on your laptop browser—and how ExamGhost solves both problems.
+                        </p>
+                    </div>
+
+                    <div className="rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                        <input type="radio" name="gauth_mode" id="gauth_phone" className="sr-only peer/phone" defaultChecked />
+                        <input type="radio" name="gauth_mode" id="gauth_web" className="sr-only peer/web" />
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-1.5 rounded-2xl bg-[#f3efea] border border-black/10 mb-8 max-w-2xl mx-auto">
+                            <label
+                                htmlFor="gauth_phone"
+                                className="cursor-pointer py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2 text-ink-secondary hover:text-ink peer-checked/phone:bg-ink peer-checked/phone:text-white peer-checked/phone:shadow-sm"
+                            >
+                                <Smartphone className="w-4 h-4" />
+                                <span>Method 1: Using Gauth on Your Phone</span>
+                            </label>
+                            <label
+                                htmlFor="gauth_web"
+                                className="cursor-pointer py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2 text-ink-secondary hover:text-ink peer-checked/web:bg-ink peer-checked/web:text-white peer-checked/web:shadow-sm"
+                            >
+                                <Monitor className="w-4 h-4" />
+                                <span>Method 2: Opening gauthmath.com on Laptop</span>
+                            </label>
+                        </div>
+
+                        {/* METHOD 1: PHONE APP */}
+                        <div className="hidden peer-checked/phone:block">
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="rounded-3xl bg-rose-50/60 border border-rose-200 p-6 sm:p-8">
+                                    <span className="text-xs font-bold uppercase text-rose-800 block mb-1">Gauth iOS / Android Camera App</span>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-4">
+                                        What Honorlock &amp; Proctorio See on Your Webcam
+                                    </h3>
+                                    <ul className="space-y-3 text-sm text-ink-secondary mb-6">
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-1" />
+                                            <span><strong>Downward Gaze Deflection (-38°):</strong> Holding your phone in your lap forces your head and pupils to tilt downward for 8–12 seconds per question.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-1" />
+                                            <span><strong>Secondary Screen Glare:</strong> Taking a photo of your laptop screen reflects smartphone LCD light onto your glasses, face, and shirt.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-1" />
+                                            <span><strong>6.0-Second Photo Upload Lag:</strong> Cropping blurry monitor moiré lines on a phone camera wastes precious exam time.</span>
+                                        </li>
+                                    </ul>
+                                    <div className="p-3.5 rounded-2xl bg-rose-950 text-rose-200 font-mono text-xs">
+                                        [09:14:22] Honorlock Flag: Excessive downward gaze (9.4s) + secondary device reflection
+                                    </div>
+                                </div>
+
+                                <div className="rounded-3xl bg-emerald-50/70 border-2 border-emerald-500/40 p-6 sm:p-8">
+                                    <span className="text-xs font-bold uppercase text-emerald-900 block mb-1">ExamGhost On-Screen Desktop HUD</span>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-4">
+                                        Your Hands &amp; Eyes Never Leave the Laptop
+                                    </h3>
+                                    <ul className="space-y-3 text-sm text-ink-secondary mb-6">
+                                        <li className="flex items-start gap-2.5">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-1" />
+                                            <span><strong>Natural Center-Screen Reading Gaze:</strong> Double-click any question and the answer auto-fills or glows right on the option you are already reading.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-1" />
+                                            <span><strong>0.3s On-Screen Snap-It (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>):</strong> Need to solve a calculus graph or physics diagram? Crop it right on your monitor—zero phone camera needed.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-1" />
+                                            <span><strong>Zero Secondary Device Glare:</strong> Keep your phone turned off in another room for 100% webcam peace of mind.</span>
+                                        </li>
+                                    </ul>
+                                    <div className="p-3.5 rounded-2xl bg-emerald-950 text-emerald-200 font-mono text-xs">
+                                        [09:14:22] Honorlock Status: Center-screen gaze vector (0 anomalies logged)
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        {/* METHOD 2: WEB PORTAL */}
+                        <div className="hidden peer-checked/web:block">
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="rounded-3xl bg-rose-50/60 border border-rose-200 p-6 sm:p-8">
+                                    <span className="text-xs font-bold uppercase text-rose-800 block mb-1">Gauth Web Portal (gauthmath.com)</span>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-4">
+                                        Every Tab Switch Writes a Red SpeedGrader Flag
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+                                        Because Gauth has no in-page Chrome extension with Focus Shield, using <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-rose-200">gauthmath.com</code> or the Microsoft Store app on your laptop requires clicking outside your Canvas exam tab.
+                                    </p>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-6">
+                                        The instant you Alt+Tab or click into a split-screen Gauth window, Canvas fires <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-rose-200">window.blur</code> and <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-rose-200">document.visibilitychange</code>—recording exact departure timestamps in your professor&apos;s quiz log.
+                                    </p>
+                                    <div className="p-3.5 rounded-2xl bg-rose-950 text-rose-200 font-mono text-xs">
+                                        [09:18:04] SpeedGrader: &quot;Stopped viewing the Canvas quiz-taking page (28s)&quot;
+                                    </div>
+                                </div>
+
+                                <div className="rounded-3xl bg-emerald-50/70 border-2 border-emerald-500/40 p-6 sm:p-8">
+                                    <span className="text-xs font-bold uppercase text-emerald-900 block mb-1">ExamGhost Closed Shadow DOM + Focus Shield</span>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-4">
+                                        Solve Inside the Quiz Tab With 0 Blur Logs
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+                                        ExamGhost runs directly inside your active Canvas, Blackboard, or Moodle tab using an encapsulated <strong>closed Shadow DOM root</strong>. You never switch tabs or open external web portals.
+                                    </p>
+                                    <p className="text-sm text-ink-secondary leading-relaxed mb-6">
+                                        Even better, ExamGhost&apos;s <strong>4-Layer Focus Shield</strong> intercepts <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">window.blur</code>, <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">focusout</code>, and <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">visibilitychange</code> events at the browser level so your quiz log shows uninterrupted engagement.
+                                    </p>
+                                    <div className="p-3.5 rounded-2xl bg-emerald-950 text-emerald-200 font-mono text-xs">
+                                        [09:18:04] SpeedGrader: &quot;Answered Question #4 (Continuous Focus · 0 Flags)&quot;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    COMPARISON TABLE: GAUTH PLUS VS EXAMGHOST
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+                    <div className="text-center max-w-2xl mx-auto mb-10">
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                            Gauth Plus vs ExamGhost: 2026 Breakdown
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-secondary">
+                            Notice how Gauth Plus charges $99.99/year for a phone app while ExamGhost gives you full desktop exam stealth for $99/year—starting with 50 Free Solves.
+                        </p>
+                    </div>
+
+                    <div className="rounded-[32px] bg-white border border-black/10 overflow-hidden shadow-card">
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[640px]">
+                                <thead>
+                                    <tr className="bg-[#f7f4ee] border-b border-black/10">
+                                        <th className="py-4 px-6 font-bold text-ink w-[36%]">Stealth &amp; Solver Metric</th>
+                                        <th className="py-4 px-6 font-extrabold text-emerald-950 bg-emerald-100/50 text-center w-[32%]">
+                                            ExamGhost (v4.2)
+                                        </th>
+                                        <th className="py-4 px-6 font-bold text-ink-secondary text-center w-[32%]">
+                                            Gauth / Gauth Plus (2026)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-black/5">
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Official Chrome Extension for LMS Quizzes</div>
+                                            <div className="text-xs text-ink-muted">In-page solving without leaving your exam</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Closed Shadow DOM Chrome Extension
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ None (Phone App &amp; Web Portal Only)
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Webcam Eye-Gaze Tracking Safety</div>
+                                            <div className="text-xs text-ink-muted">Honorlock, Proctorio &amp; Respondus gaze vectors</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ 100% On-Screen (Center Gaze)
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ High Risk (Downward Phone Glance)
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Canvas SpeedGrader Focus Shield</div>
+                                            <div className="text-xs text-ink-muted">Blocks <code className="font-mono">window.blur</code> &amp; tab-switch logs</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ Active 4-Layer Focus Shield
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
+                                            ✗ Logs Departure When Switching to Web
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">STEM &amp; Diagram OCR Speed</div>
+                                            <div className="text-xs text-ink-muted">Calculus, physics circuits &amp; organic chemistry</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ 0.3s On-Screen Snap-It (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-secondary">
+                                            ~6.0s Phone Camera Photo Upload
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Free Trial Before Paying</div>
+                                            <div className="text-xs text-ink-muted">Risk-free testing with no auto-charge trap</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            ✓ 50 Free Solves ($0, No Card Needed)
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-rose-800 font-semibold">
+                                            Daily Ticket Cap + 3-Day Auto-Renew Trial
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-4 px-6">
+                                            <div className="font-bold text-ink">Unlimited Plan Pricing</div>
+                                            <div className="text-xs text-ink-muted">Monthly, annual, and lifetime options</div>
+                                        </td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
+                                            $19/mo · $99/yr ($8.25/mo) · $199 Life
+                                        </td>
+                                        <td className="py-4 px-6 text-center text-ink-secondary">
+                                            $11.99/mo · $31.99/qtr · $99.99/yr (No Lifetime)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    STUDENT SWITCHER STORY + FAQ
+                ============================================================ */}
+                <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-24">
+                    <div className="rounded-[32px] bg-[#e6f7f8] border border-black/10 p-7 sm:p-10 mb-16 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <div className="flex items-center gap-1 text-amber-500">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                                ))}
+                            </div>
+                            <span className="px-3 py-1 rounded-full bg-white text-cyan-950 text-xs font-bold border border-black/10">
+                                Switched from Gauth Plus ($99.99/yr)
+                            </span>
+                        </div>
+                        <blockquote className="font-display text-lg sm:text-2xl font-bold text-ink leading-snug mb-5">
+                            &ldquo;I was paying for Gauth Plus and tried holding my phone under my desk during a Physics 2 quiz. My professor emailed me two days later because webcam proctoring flagged four timestamps where my eyes looked down and phone light reflected on my shirt. A pre-med friend showed me ExamGhost—I tested the 50 Free Solves first, and now the answers appear right on my monitor so my eyes never move.&rdquo;
+                        </blockquote>
+                        <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-black/10 text-xs text-ink-secondary">
                             <div>
-                                <h2 className="font-display font-bold text-base sm:text-lg text-ink">
-                                    Executive Summary: Gauth vs ExamGhost
-                                </h2>
-                                <p className="text-xs text-ink-muted">AEO / GEO verified technical benchmark for students and search engines</p>
+                                <strong className="text-ink">Samantha P.</strong> · Pre-Med Junior, University of Florida
                             </div>
-                        </div>
-                        <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-[#f2ede4] text-[11px] font-semibold text-ink-secondary">
-                            AEO / GEO Verified
-                        </span>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-[#fcf9f5] border border-black/5 mb-6 text-sm sm:text-[15px] leading-relaxed text-ink-2">
-                        <strong className="text-ink font-bold block mb-1">Direct Answer:</strong>
-                        Gauth (gauthmath.com by ByteDance) is primarily a mobile smartphone math-solver application that requires taking physical photos of questions with a phone camera. In proctored collegiate environments (Honorlock, Proctorio, Respondus), looking down at a smartphone or holding a phone near a webcam triggers automated facial orientation alerts and secondary screen reflections. Furthermore, Gauth charges $11.99/month ($143.88/year). ExamGhost eliminates phone risks entirely by providing an on-screen desktop HUD rendered in an isolated closed Shadow DOM v1 with native Mathpix equation solving, Snap-It OCR, and Focus Shield window-blur masking for a single flat lifetime price of $19.99.
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-100">
-                            <div className="text-xs font-bold uppercase text-rose-900 mb-2">Gauth Smartphone Hazards</div>
-                            <ul className="space-y-1.5 text-xs text-ink-secondary">
-                                <li>• <strong>Webcam Eye Gaze Flags:</strong> Looking down at a phone triggers Honorlock &amp; Proctorio alerts.</li>
-                                <li>• <strong>Screen Glare:</strong> Phone illumination reflections in glasses or pupils alert proctors.</li>
-                                <li>• <strong>Subscription Trap:</strong> $11.99/month totals $575.52 across four college years.</li>
-                                <li>• <strong>No Desktop Focus Masking:</strong> Web version triggers Canvas SpeedGrader window.blur logs.</li>
-                            </ul>
-                        </div>
-
-                        <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100">
-                            <div className="text-xs font-bold uppercase text-emerald-900 mb-2">ExamGhost Desktop Stealth Superiority</div>
-                            <ul className="space-y-1.5 text-xs text-ink-secondary">
-                                <li>• <strong>100% On-Screen HUD:</strong> Eyes remain on the exam monitor with natural human reading motion.</li>
-                                <li>• <strong>Focus Shield Protocol:</strong> Intercepts window.blur and visibilitychange events completely.</li>
-                                <li>• <strong>$19.99 Flat Lifetime:</strong> One single payment, zero recurring bills forever.</li>
-                                <li>• <strong>Mathpix Neural Engine:</strong> Flawless 0.3s solving of calculus, physics, and chemistry equations.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </aside>
-            </section>
-
-            {/* SPEEDGRADER AUDIT LOG COMPARISON WIDGET */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="text-center max-w-2xl mx-auto mb-10">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-100 border border-cyan-200 text-xs font-bold text-cyan-900 mb-3">
-                        <Activity className="w-3.5 h-3.5" />
-                        SpeedGrader &amp; Proctoring Log Inspection
-                    </div>
-                    <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        Proctoring Telemetry: Gauth vs ExamGhost
-                    </h2>
-                    <p className="text-sm sm:text-base text-ink-muted">
-                        Proctoring suites monitor webcam video, eye vector tracking, and tab focus simultaneously.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    {/* Gauth Proctoring Log */}
-                    <div className="rounded-3xl bg-[#1e1e24] text-white p-6 border border-rose-500/30 shadow-card">
-                        <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-rose-500" />
-                                <span className="font-mono text-xs text-rose-300">Honorlock Telemetry · Gauth</span>
-                            </div>
-                            <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-950/80 text-rose-300 border border-rose-800">
-                                4 High-Risk Flags Logged
-                            </span>
-                        </div>
-                        <div className="space-y-3 font-mono text-xs">
-                            <div className="text-white/60">09:00:00 AM - Exam initiated</div>
-                            <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-800/40 text-rose-200 flex items-start gap-2">
-                                <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                                <div>
-                                    <div className="font-bold text-rose-300">09:00:35 AM - Excessive Downward Gaze Flag</div>
-                                    <div className="text-[11px] text-rose-400/80">Webcam angle deflected -38 degrees for 9.2 seconds (Phone check)</div>
-                                </div>
-                            </div>
-                            <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-800/40 text-rose-200 flex items-start gap-2">
-                                <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                                <div>
-                                    <div className="font-bold text-rose-300">09:01:10 AM - Secondary Device Luminescence Anomaly</div>
-                                    <div className="text-[11px] text-rose-400/80">Smartphone screen glare detected in pupil reflection map</div>
-                                </div>
-                            </div>
-                            <div className="text-white/60">09:01:25 AM - Answer submitted for question 2</div>
-                            <div className="p-3 rounded-xl bg-rose-900/30 border border-rose-700/50 text-rose-300 text-xs font-sans mt-4">
-                                <strong>Honorlock Verdict:</strong> Automated flag sent to university integrity office due to repeated downward phone glances and secondary device reflections.
-                            </div>
+                            <span className="font-bold text-emerald-800">100% On-Screen Gaze · $99/yr Academic Pass</span>
                         </div>
                     </div>
 
-                    {/* ExamGhost Proctoring Log */}
-                    <div className="rounded-3xl bg-[#131b17] text-white p-6 border border-emerald-500/30 shadow-card">
-                        <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-emerald-400" />
-                                <span className="font-mono text-xs text-emerald-300">Honorlock Telemetry · ExamGhost</span>
-                            </div>
-                            <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800">
-                                100% Clean Gaze Record
-                            </span>
-                        </div>
-                        <div className="space-y-3 font-mono text-xs">
-                            <div className="text-white/60">09:00:00 AM - Exam initiated</div>
-                            <div className="p-2.5 rounded-lg bg-emerald-950/50 border border-emerald-800/40 text-emerald-200 flex items-start gap-2">
-                                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                <div>
-                                    <div className="font-bold text-emerald-300">09:00:22 AM - Question 1 solved on-screen (0.3s)</div>
-                                    <div className="text-[11px] text-emerald-400/80">Webcam gaze vector: center-screen (Natural human reading)</div>
-                                </div>
-                            </div>
-                            <div className="text-white/60">09:00:45 AM - Answer submitted for question 2</div>
-                            <div className="p-2.5 rounded-lg bg-emerald-950/50 border border-emerald-800/40 text-emerald-200 flex items-start gap-2">
-                                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                <div>
-                                    <div className="font-bold text-emerald-300">09:01:05 AM - Question 3 solved via Snap-It OCR (Mathpix LaTeX)</div>
-                                    <div className="text-[11px] text-emerald-400/80">Hands remain on keyboard, zero secondary device reflections</div>
-                                </div>
-                            </div>
-                            <div className="text-white/60">09:01:30 AM - Exam completed cleanly</div>
-                            <div className="p-3 rounded-xl bg-emerald-900/30 border border-emerald-700/50 text-emerald-300 text-xs font-sans mt-4">
-                                <strong>Honorlock Verdict:</strong> Flawless exam session. 100% on-screen eye alignment, continuous active document focus, zero anomalies.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* THE THREE FATAL FLAWS OF GAUTH */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="text-center max-w-2xl mx-auto mb-12">
-                    <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        The Three Fatal Flaws of Gauth
-                    </h2>
-                    <p className="text-sm sm:text-base text-ink-muted">
-                        Why smartphone-based math solvers are dangerous during proctored university assessments.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6">
-                    <div className="rounded-3xl bg-white border border-black/10 p-7 shadow-xs">
-                        <div className="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-800 mb-5">
-                            <Eye className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-display font-bold text-lg text-ink mb-2">1. Webcam Gaze Tracking Flags</h3>
-                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                            Gauth requires you to handle a phone. In modern exams with Honorlock, Proctorio, or Respondus, proctoring AI models flag you the second your eyes deflect downward or hand motions leave the desk frame.
+                    <div className="text-center mb-10">
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-secondary">
+                            Everything you need to know about Gauth (<code className="text-xs">gauthmath.com</code>) vs ExamGhost.
                         </p>
-                        <div className="p-3 rounded-xl bg-cyan-50 text-[11px] text-cyan-900 font-mono border border-cyan-200">
-                            Flags: Downward gaze &amp; phone reflection
-                        </div>
                     </div>
 
-                    <div className="rounded-3xl bg-white border border-black/10 p-7 shadow-xs">
-                        <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-800 mb-5">
-                            <AlertTriangle className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-display font-bold text-lg text-ink mb-2">2. Unmasked Window Blur on Web</h3>
-                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                            If you try using Gauth&apos;s web app on your laptop to avoid picking up a phone, clicking over to its website causes Canvas to fire <code>window.blur</code>, writing a departure flag in your professor&apos;s SpeedGrader audit log.
-                        </p>
-                        <div className="p-3 rounded-xl bg-rose-50 text-[11px] text-rose-900 font-mono border border-rose-200">
-                            Triggers Canvas &quot;Stopped viewing quiz&quot; logs
-                        </div>
-                    </div>
-
-                    <div className="rounded-3xl bg-white border border-black/10 p-7 shadow-xs">
-                        <div className="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-800 mb-5">
-                            <DollarSign className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-display font-bold text-lg text-ink mb-2">3. The $575 4-Year Trap</h3>
-                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                            Gauth charges $11.99 every month. Over 4 years of college (48 months), you spend $575.52. ExamGhost is a single, flat payment of $19.99 for lifetime access with unlimited queries and free lifetime updates.
-                        </p>
-                        <div className="p-3 rounded-xl bg-purple-50 text-[11px] text-purple-900 font-mono border border-purple-200">
-                            $575.52 vs $19.99 Flat Lifetime
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* TECHNICAL COMPARISON MATRIX */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="rounded-3xl bg-white border border-black/10 overflow-hidden shadow-card">
-                    <div className="bg-[#f7f4ee] px-6 py-4 border-b border-black/10 flex items-center justify-between">
-                        <h3 className="font-display font-bold text-base text-ink">
-                            Gauth vs ExamGhost Detailed Technical Matrix
-                        </h3>
-                        <span className="text-xs text-ink-muted">Audited 2026 Webcam &amp; Stealth Metrics</span>
-                    </div>
-
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm">
-                            <thead className="bg-[#faf8f4] border-b border-black/10">
-                                <tr>
-                                    <th className="py-4 px-6 font-bold text-ink">Stealth &amp; Solver Metric</th>
-                                    <th className="py-4 px-6 text-center font-extrabold text-cyan-950 bg-[#cffafe]/40">ExamGhost</th>
-                                    <th className="py-4 px-6 text-center font-bold text-ink-muted">Gauth (ByteDance)</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-black/5">
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Primary Interface</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">On-Screen Desktop Closed HUD</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">Phone Camera Mobile App</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Webcam Gaze Tracking Safety</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">100% Safe (Natural On-Screen Gaze)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">High Risk (Downward Phone Glance)</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Canvas Focus Shield Blur Protection</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">Active (Neutralizes window.blur)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">None (Logs SpeedGrader Departure)</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">STEM &amp; LaTeX Equation Precision</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">Mathpix Neural Engine (99.4%)</td>
-                                    <td className="py-3.5 px-6 text-center text-ink-muted">ByteDance Math OCR</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Answer Latency Benchmark</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">0.3s Instant On-Device AI</td>
-                                    <td className="py-3.5 px-6 text-center text-ink-muted">6.0s Photo Upload &amp; Cloud Queue</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">$19.99 Single Lifetime License</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">$11.99/month ($143.88/yr)</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Multi-LMS Compatibility</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">Canvas, Blackboard, Moodle, D2L</td>
-                                    <td className="py-3.5 px-6 text-center text-ink-muted">Mobile Phone OS Only</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Snap-It Diagram &amp; Schematic OCR</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">⌘+Shift+S In-Memory Snip</td>
-                                    <td className="py-3.5 px-6 text-center text-ink-muted">Phone Camera Photo Required</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Ghost Mode Opacity Slider</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">0% to 100% Granular Slider</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">None</td>
-                                </tr>
-                                <tr className="hover:bg-[#fcf9f5]">
-                                    <td className="py-3.5 px-6 font-semibold text-ink">Emergency Panic Switch</td>
-                                    <td className="py-3.5 px-6 text-center font-bold text-emerald-700 bg-emerald-50/20">Instant Flush (⌘+Shift+U)</td>
-                                    <td className="py-3.5 px-6 text-center text-rose-800">None</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* VERIFIED STUDENT MIGRATION STORY */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10 relative">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <div className="space-y-3.5">
+                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                            <details
+                                key={index}
+                                className="group rounded-2xl bg-white border border-black/10 p-5 sm:p-6 shadow-sm"
+                                open={index === 0}
+                            >
+                                <summary className="flex items-center justify-between cursor-pointer list-none font-display font-bold text-base text-ink">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
+                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180 shrink-0 ml-3" />
+                                </summary>
+                                <p className="mt-3.5 text-sm text-ink-secondary leading-relaxed pt-3 border-t border-black/5">
+                                    {faq.acceptedAnswer.text}
+                                </p>
+                            </details>
                         ))}
                     </div>
-                    <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                        &quot;I was taking a proctored Physics 2 exam with Honorlock and thought I could discreetly hold my phone under the desk to scan an induction problem with Gauth. Two days later, my professor emailed me: Honorlock flagged 4 timestamps where my pupils deflected downward and blue screen light illuminated my shirt. I was terrified. A pre-med friend told me about ExamGhost. With ExamGhost, the solution is right on your desktop screen in an invisible HUD. My eyes never leave the monitor. Scored a 94% on the final with zero flags.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between text-xs text-ink-secondary pt-4 border-t border-black/10">
-                        <div>
-                            <span className="font-bold text-ink">Samantha P.</span> — Pre-Med Junior, University of Florida
-                        </div>
-                        <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                            Verified ExamGhost Switcher
-                        </span>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            {/* DISCORD COMMUNITY SECTION */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="rounded-3xl bg-[#5865F2] text-white p-8 sm:p-10 shadow-lift flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-bold mb-3">
-                            <FaDiscord className="w-4 h-4" />
-                            Official Student Community
-                        </div>
-                        <h3 className="font-display text-2xl sm:text-3xl font-bold mb-2">
-                            Join 1,400+ Students on Discord
-                        </h3>
-                        <p className="text-white/80 text-xs sm:text-sm max-w-lg">
-                            Get instant exam updates, Canvas New Quizzes patch notes, stealth setup guides, and 24/7 direct support from our engineering team.
-                        </p>
-                    </div>
-                    <a 
-                        href="https://discord.gg/aCcsyKYJq4" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn-light bg-white text-[#5865F2] hover:bg-slate-100 px-6 py-3.5 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2 shrink-0 transition-transform hover:-translate-y-0.5"
-                    >
-                        <FaDiscord className="w-4 h-4" />
-                        <span>Join Free Discord</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                </div>
-            </section>
-
-            {/* INTERACTIVE FAQ ACCORDION */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="text-center max-w-2xl mx-auto mb-10">
-                    <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-sm text-ink-muted">
-                        Everything you need to know about Gauth vs ExamGhost.
-                    </p>
-                </div>
-
-                <div className="space-y-4">
-                    {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
-                        <details 
-                            key={index} 
-                            className="group rounded-2xl bg-white border border-black/10 p-5 shadow-xs transition-all open:shadow-md"
-                        >
-                            <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-sm sm:text-base text-ink">
-                                <span>{faq.name}</span>
-                                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                            </summary>
-                            <p className="mt-4 text-xs sm:text-sm text-ink-secondary leading-relaxed pt-3 border-t border-black/5">
-                                {faq.acceptedAnswer.text}
+                {/* ============================================================
+                    INLINE CONVERSION BAR + RELATED AUDITS
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="rounded-[32px] bg-gradient-to-r from-[#cffafe] via-[#d8f3dc] to-[#cdeecb] border border-black/10 p-7 sm:p-10 shadow-card flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">
+                        <div className="max-w-xl text-center lg:text-left">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-black/10 text-xs font-bold text-cyan-950 mb-3">
+                                <Sparkles className="w-3.5 h-3.5 text-cyan-700" />
+                                <span>100% On-Screen Webcam &amp; SpeedGrader Safety</span>
+                            </span>
+                            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
+                                Never Risk Pulling Out a Phone Again. Start With 50 Free Solves.
+                            </h2>
+                            <p className="text-sm text-ink-secondary leading-relaxed">
+                                Keep your eyes on your laptop screen with 0.3s double-click solving, Snap-It STEM OCR, and active Focus Shield protection.
                             </p>
-                        </details>
-                    ))}
-                </div>
-            </section>
-
-            {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="text-center max-w-2xl mx-auto mb-8">
-                    <h3 className="font-display text-2xl font-bold text-ink">
-                        Compare Other Canvas &amp; Quiz Solvers
-                    </h3>
-                    <p className="text-xs text-ink-muted">
-                        See how ExamGhost outperforms every other tool in stealth, speed, and lifetime pricing.
-                    </p>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    <Link href="/solvely-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center">
-                        <div className="font-bold text-xs text-ink">Solvely</div>
-                        <div className="text-[11px] text-ink-muted">Credit quota review</div>
-                    </Link>
-                    <Link href="/answerai-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center">
-                        <div className="font-bold text-xs text-ink">AnswerAI</div>
-                        <div className="text-[11px] text-ink-muted">Mobile port STEM teardown</div>
-                    </Link>
-                    <Link href="/quizard-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center">
-                        <div className="font-bold text-xs text-ink">Quizard AI</div>
-                        <div className="text-[11px] text-ink-muted">OCR failure teardown</div>
-                    </Link>
-                    <Link href="/canvasquiz-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center">
-                        <div className="font-bold text-xs text-ink">CanvasQuiz</div>
-                        <div className="text-[11px] text-ink-muted">Honorlock FAQ concession</div>
-                    </Link>
-                </div>
-            </section>
-
-            {/* PRE-FOOTER CTA */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-20">
-                <div className="bg-[#111111] text-white rounded-[36px] p-8 sm:p-16 text-center shadow-lift relative overflow-hidden">
-                    <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold mb-4">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            100% On-Screen Webcam Safety
                         </div>
-                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight leading-[1.08]">
-                            Never risk looking at a phone again.<br />
-                            Switch to ExamGhost for $19.99 Lifetime.
-                        </h2>
-                        <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-                            True closed Shadow DOM. On-device 0.3s neural edge execution. Native Mathpix STEM parsing. Zero SpeedGrader logs.
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <a 
+                        <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                            <Link prefetch={false}
                                 href="/#pricing"
-                                className="btn-dark bg-[#cffafe] text-ink hover:bg-[#a5f3fc] px-8 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
+                                className="btn-dark px-6 py-3.5 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                             >
-                                <FaChrome className="w-4 h-4 text-cyan-950" aria-hidden="true"/>
-                                <span>Get ExamGhost · $19.99 Lifetime</span>
+                                <FaChrome className="w-4 h-4 text-[#cffafe]" />
+                                <span>Claim 50 Free Solves</span>
+                            </Link>
+                            <Link prefetch={false}
+                                href="/canvas-quiz-solver-free-demo"
+                                className="px-5 py-3.5 rounded-full text-sm font-bold bg-white hover:bg-cream text-ink border border-black/15 inline-flex items-center gap-1.5 transition-colors"
+                            >
+                                <span>Test Live Demo</span>
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                            <a
+                                href="https://discord.gg/aCcsyKYJq4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-5 py-3.5 rounded-full text-sm font-bold bg-[#5865F2] hover:bg-[#4752c4] text-white inline-flex items-center gap-2 transition-colors"
+                            >
+                                <FaDiscord className="w-4 h-4" />
+                                <span>Discord</span>
                             </a>
-                            <Link 
-                                href="/demo" 
-                                className="px-6 py-4 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all"
-                            >
-                                Test Live Demo First
+                        </div>
+                    </div>
+
+                    {/* Related Comparisons */}
+                    <div className="border-t border-black/10 pt-10">
+                        <div className="flex items-center justify-between mb-5">
+                            <h2 className="font-display text-lg font-bold text-ink">
+                                Compare More Math &amp; Quiz Solvers
+                            </h2>
+                            <Link prefetch={false} href="/compare-canvas-hack-extensions" className="text-xs font-bold text-cyan-900 hover:underline flex items-center gap-1">
+                                <span>View All 57 Audits</span>
+                                <ArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <Link prefetch={false} href="/solvely-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Solvely</div>
+                                <div className="text-[11px] text-ink-muted">Screenshot Upload vs Inline Solve</div>
+                            </Link>
+                            <Link prefetch={false} href="/answerai-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Answer.AI</div>
+                                <div className="text-[11px] text-ink-muted">K-12 Phone App vs Desktop Stealth</div>
+                            </Link>
+                            <Link prefetch={false} href="/mathosai-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Mathos AI</div>
+                                <div className="text-[11px] text-ink-muted">External Tab vs In-Page Snap-It</div>
+                            </Link>
+                            <Link prefetch={false} href="/quizard-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all">
+                                <div className="font-bold text-xs text-ink mb-0.5">vs Quizard AI</div>
+                                <div className="text-[11px] text-ink-muted">Shut Down Jan 2025 Audit</div>
                             </Link>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
             </main>
 

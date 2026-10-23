@@ -46,4 +46,6 @@ out.zip
 .agents/
 .bin/
 .windsurf/
+film/audio/*.wav
+
 

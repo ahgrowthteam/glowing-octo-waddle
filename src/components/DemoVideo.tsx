@@ -118,7 +118,7 @@ export default function DemoVideo() {
                         {/* Top Bar inside simulated quiz */}
                         <div className="relative z-0 flex items-center justify-between border-b border-white/10 pb-3 mb-5">
                             <div>
-                                <span className="text-xs font-mono text-white/50 block">Organic Chemistry II · Final Exam</span>
+                                <span className="text-xs font-mono text-white/75 block">Organic Chemistry II · Final Exam</span>
                                 <span className="text-sm font-semibold text-white">Question 23 of 40 (3.0 pts)</span>
                             </div>
                             <span className="text-xs font-mono px-2.5 py-1 rounded bg-white/10 text-white/80">
@@ -224,7 +224,7 @@ export default function DemoVideo() {
 
                                 <div className="space-y-2.5 text-left mb-4">
                                     <div>
-                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/40 block mb-1">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/75 block mb-1">
                                             Correct Choice
                                         </span>
                                         <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-300 flex items-center gap-2">
@@ -234,10 +234,10 @@ export default function DemoVideo() {
                                     </div>
 
                                     <div>
-                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/40 block mb-1">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/75 block mb-1">
                                             Step-by-Step Reasoning
                                         </span>
-                                        <p className="text-xs text-white/70 leading-relaxed bg-white/5 p-2.5 rounded-xl border border-white/5">
+                                        <p className="text-xs text-white/80 leading-relaxed bg-white/5 p-2.5 rounded-xl border border-white/5">
                                             PCC is a mild oxidizing agent that selectively oxidizes secondary alcohols to ketones. Unlike KMnO₄ or Jones reagent, PCC halts at the ketone stage without cleaving C-C bonds or causing over-oxidation. LiAlH₄ is a reducing agent.
                                         </p>
                                     </div>
@@ -246,7 +246,7 @@ export default function DemoVideo() {
                                 <div className="flex items-center gap-2">
                                     <button 
                                         onClick={() => setStep(2)}
-                                        className="flex-1 py-2 text-xs font-semibold rounded-xl bg-white/10 text-white/70 hover:bg-white/15 transition-colors"
+                                        className="flex-1 py-2 text-xs font-semibold rounded-xl bg-white/10 text-white/80 hover:bg-white/15 transition-colors"
                                     >
                                         Close
                                     </button>
@@ -278,7 +278,7 @@ export default function DemoVideo() {
                                                 ? 'text-emerald-400 font-bold' 
                                                 : step > item.s 
                                                     ? 'text-white/80' 
-                                                    : 'text-white/40'
+                                                    : 'text-white/75'
                                         }`}
                                     >
                                         <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${
@@ -286,7 +286,7 @@ export default function DemoVideo() {
                                                 ? 'bg-emerald-400 text-black' 
                                                 : step > item.s 
                                                     ? 'bg-white/20 text-white' 
-                                                    : 'bg-white/5 text-white/40'
+                                                    : 'bg-white/10 text-white/80'
                                         }`}>
                                             {item.s}
                                         </span>
@@ -297,7 +297,7 @@ export default function DemoVideo() {
 
                             <button
                                 onClick={handleTriggerSnip}
-                                className="flex items-center gap-1 text-[11px] text-white/50 hover:text-white transition-colors"
+                                className="flex items-center gap-1 text-[11px] text-white/75 hover:text-white transition-colors"
                             >
                                 <RotateCcw className="w-3 h-3" />
                                 <span>Replay</span>
@@ -327,7 +327,7 @@ export default function DemoVideo() {
                 {/* Sub-banner linking to full Interactive /demo */}
                 <div className="mt-8 text-center">
                     <Link
-                        href="/demo"
+                        href="/canvas-quiz-solver-free-demo"
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-500/30 text-emerald-800 text-xs sm:text-sm font-semibold shadow-xs hover:bg-emerald-50 hover:border-emerald-500/50 transition-all group"
                     >
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

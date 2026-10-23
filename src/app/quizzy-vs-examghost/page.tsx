@@ -1,747 +1,863 @@
-import React from 'react';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
-    CheckCircle2,
-    XCircle,
-    EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
-    FileText,
-    BookOpen,
-    ExternalLink
-} from 'lucide-react';
-import { FaChrome, FaDiscord } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import { Metadata } from "next";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  CheckCircle2,
+  XCircle,
+  ShieldCheck,
+  Zap,
+  ArrowRight,
+  Lock,
+  Sparkles,
+  EyeOff,
+  Coins,
+  Cpu,
+  AlertTriangle,
+  ExternalLink,
+  ChevronDown,
+  Layers,
+  Terminal,
+  CreditCard,
+} from "lucide-react";
+import { FaChrome, FaDiscord } from "react-icons/fa";
 
 export const metadata: Metadata = {
-    title: "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
-    description: "Comparing Quizzy AI and ExamGhost? Discover why students choose ExamGhost's unlimited 0.3s solves, zero-blur Focus Shield, and $19.99 lifetime plan over Quizzy's expiring credits.",
+    title: {
+        absolute: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
+    },
+    description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/quizzy-vs-examghost",
     },
     openGraph: {
-        title: "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
-        description: "Quizzy AI forces students to buy credit packs that expire and runs through slow cloud VLM endpoints. ExamGhost delivers unlimited solves, 0.3s edge inference, and mathematically verified stealth for a single $19.99 payment.",
+        title: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
+        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
         url: "https://examghost.com/quizzy-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Quizzy AI vs ExamGhost Review",
+                alt: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
-        description: "Stop rationing Quizzy credit packs. Get unlimited 0.3s solves with ExamGhost.",
+        title: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
+        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
 
-export default function QuizzyVsExamghostPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebPage",
-                "@id": "https://examghost.com/quizzy-vs-examghost#webpage",
-                "url": "https://examghost.com/quizzy-vs-examghost",
-                "name": "Quizzy AI vs ExamGhost (2026 Comparison) | Unlimited 0.3s Stealth vs Credit Packs",
-                "description": "Comparing Quizzy AI and ExamGhost? Discover why students choose ExamGhost's unlimited 0.3s solves, zero-blur Focus Shield, and $19.99 lifetime plan over Quizzy's expiring credits.",
-                "breadcrumb": { "@id": "https://examghost.com/quizzy-vs-examghost#breadcrumb" },
-                "about": [
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "ExamGhost",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
-                    },
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "Quizzy AI",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome Extension",
-                        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
-                    }
-                ]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/quizzy-vs-examghost#breadcrumb",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
-                    { "@type": "ListItem", "position": 3, "name": "Quizzy AI vs ExamGhost", "item": "https://examghost.com/quizzy-vs-examghost" }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://examghost.com/quizzy-vs-examghost#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Do ExamGhost solves expire like Quizzy credits?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "No. ExamGhost does not use credits or tokens. You receive unlimited question solves and unlimited STEM formula parsing for life with your $19.99 license."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Why is ExamGhost faster than Quizzy AI?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Quizzy routes full screenshots through slow cloud VLM APIs. ExamGhost utilizes edge inference and local preprocessing, delivering answers in 0.3s."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Does Quizzy protect against Canvas tab-switch logs?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "No. Quizzy lacks focus-event masking. ExamGhost's Focus Shield silences window.blur events to keep your SpeedGrader logs completely clean."
-                        }
-                    }
-                ]
-            }
-        ]
-    };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+                "datePublished": "2026-01-11",
+                "dateModified": "2026-03-02",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
+      "@id": "https://examghost.com/quizzy-vs-examghost#webpage",
+      url: "https://examghost.com/quizzy-vs-examghost",
+      name: "Quizzy App (quizzy-app.xyz) vs ExamGhost (2026): Metered Credits & Lite AI vs Unlimited Stealth",
+      description:
+        "2026 live audit comparing Quizzy App (quizzy-app.xyz, 370+ users, QuizForge + MCQ solver) against ExamGhost's unlimited 0.3s Vision OCR and Canvas Focus Shield.",
+      breadcrumb: {
+        "@id": "https://examghost.com/quizzy-vs-examghost#breadcrumb",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/quizzy-vs-examghost#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://examghost.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Compare Extensions",
+          item: "https://examghost.com/compare-canvas-hack-extensions",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Quizzy App vs ExamGhost",
+          item: "https://examghost.com/quizzy-vs-examghost",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/quizzy-vs-examghost#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Why does Quizzy App charge extra for its 'Expert' AI model?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "On quizzy-app.xyz/#pricing, Quizzy splits its AI accuracy across three monthly tiers: Monthly Starter ($3.99/mo, 250 credits) only gives you the 'Quizzy AI Lite Model,' and Monthly Standard ($5.99/mo, 700 credits) uses the 'Standard Model.' To unlock the 'Quizzy AI Expert Model (highest accuracy),' you must pay $19.99/month—and you are still capped at 1,500 credits. ExamGhost gives every user our highest-accuracy STEM & Vision model on every tier, with unlimited solves.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Quizzy App offer a free trial or refund guarantee?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. Quizzy's setup instructions state: 'Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,' and its FAQ explicitly states: 'Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.' ExamGhost includes 50 Free Question Solves + 10 Vision OCR Snips ($0, no card required) plus a 14-day 100% refund guarantee.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Quizzy App protect against Canvas Quiz Log Auditing (window.blur)?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. Quizzy (~370 active users) is a general right-click and hotkey (Opt+Maj+H / Ctrl+Shift+H) MCQ extension with no Canvas Focus Shield. It does not intercept window.blur, focusout, or visibilitychange events in Canvas or Blackboard.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is QuizForge inside Quizzy App?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "QuizForge (quizzy-app.xyz/quizforge) is Quizzy's companion web tool that generates custom practice quizzes when you type in a study topic and question count. While helpful for self-testing before class, it does not assist with live timed exams inside Canvas, Blackboard, or McGraw Hill Connect.",
+          },
+        },
+      ],
+    },
+  ],
+};
 
-    return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
+export default function QuizzyVsExamGhostPage() {
+  return (
+    <div className="min-h-screen bg-cream text-ink font-sans selection:bg-mint/40 selection:text-ink">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
 
-            <main id="main-content">
+      <main id="main-content">
+        {/* Breadcrumb */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-xs text-ink-muted"
+          >
+            <Link prefetch={false} href="/" className="hover:text-ink transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link prefetch={false}
+              href="/compare-canvas-hack-extensions"
+              className="hover:text-ink transition-colors"
+            >
+              Comparisons
+            </Link>
+            <span>/</span>
+            <span className="text-ink font-semibold">
+              Quizzy App vs ExamGhost
+            </span>
+          </nav>
+        </div>
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">Quizzy AI vs ExamGhost</span>
-                </nav>
+        {/* BESPOKE HERO: METERED LITE/EXPERT CREDITS VS UNLIMITED FLAGSHIP STEALTH */}
+        <header className="relative pt-4 pb-16 sm:pb-20 overflow-hidden border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-xs font-mono font-bold text-rose-900 mb-6 shadow-sm">
+              <Coins className="w-3.5 h-3.5 text-rose-700" />
+              <span>2026 Pricing &amp; Model Audit · quizzy-app.xyz vs ExamGhost</span>
             </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 Quizzy Alternative</span>
+            <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-ink font-display leading-[1.08] mb-6 max-w-4xl">
+              Quizzy puts accurate AI behind a $19.99/mo credit cap. ExamGhost gives you flagship stealth for free.
+            </h1>
+
+            <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-3xl leading-relaxed mb-8">
+              Quizzy App (<code className="text-ink font-mono text-sm bg-sand/70 px-1.5 py-0.5 rounded">quizzy-app.xyz</code>) lures students with a $3.99/mo entry price—but restricts that plan to <strong>250 credits on a downgraded &ldquo;Quizzy AI Lite Model&rdquo;</strong>. To get its <strong>&ldquo;Expert Model (highest accuracy)&rdquo;</strong>, you must pay <strong>$19.99/month</strong> (still capped at 1,500 credits) with <strong>zero free trial</strong>, a verbatim <strong>no-refund policy</strong>, and no Canvas Focus Shield.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-12">
+              <a
+                href="https://discord.gg/aCcsyKYJq4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
+              >
+                <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
+                <span>Claim 50 Free Flagship AI Solves ($0)</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <Link prefetch={false}
+                href="/canvas-quiz-solver-free-demo"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface hover:bg-sand border border-sand-dark/40 text-ink font-semibold transition-all text-sm sm:text-base shadow-sm"
+              >
+                <span>Try Interactive Live Demo</span>
+              </Link>
+              <Link prefetch={false}
+                href="/#pricing"
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-sand/50 hover:bg-sand border border-sand-dark/30 text-ink-muted hover:text-ink font-medium transition-all text-sm"
+              >
+                <span>See Unlimited Passes ($19/mo · $99/yr)</span>
+              </Link>
+            </div>
+
+            {/* HERO SIDE-BY-SIDE VISUAL MOCKUP */}
+            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+              {/* Left Card: Quizzy App */}
+              <div className="rounded-2xl bg-surface border-2 border-rose-200/90 p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-sand-dark/20">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-600" />
+                      <span className="font-display font-bold text-sm text-ink">Quizzy App (quizzy-app.xyz)</span>
                     </div>
+                    <span className="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-mono font-bold text-rose-800">
+                      Strict No-Refund Policy
+                    </span>
+                  </div>
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        Stop rationing Quizzy credit packs. Get unlimited 0.3s solves with ExamGhost.
-                    </h1>
-
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        Quizzy AI forces students to buy credit packs that expire and runs through slow cloud VLM endpoints. ExamGhost delivers unlimited solves, 0.3s edge inference, and mathematically verified stealth for a single $19.99 payment.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-                        <a
-                            href="https://chromewebstore.google.com/detail/examghost"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
-                        >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
+                  {/* Visual Model & Credit Cap Table */}
+                  <div className="rounded-xl bg-sand/40 border border-sand-dark/30 p-3.5 mb-4 space-y-2 text-xs">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted pb-1 border-b border-sand-dark/20">
+                      <span>Quizzy Tiered AI Model Paywall</span>
+                      <span className="text-rose-700 font-bold">Credit Metered</span>
                     </div>
-
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Once</div>
-                            <div className="text-xs text-ink-muted line-through">Quizzy AI: Credit Packs & Monthly API Plans</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">Quizzy AI: 4.2s (Quizzy Cloud Processing)</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">Quizzy AI: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">Quizzy AI: Canvas Logs Blurs</div>
-                        </div>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-surface border border-sand-dark/20">
+                      <span><strong>$3.99/mo Starter:</strong> &ldquo;Quizzy AI Lite Model&rdquo;</span>
+                      <span className="font-mono text-rose-800 font-bold">250 Credits</span>
                     </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace Quizzy AI with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            Quizzy AI is an expensive, credit-metered screenshot solver with slow cloud latency. ExamGhost delivers unlimited solves, 0.3s edge inference, closed Shadow DOM stealth, and flat $19.99 lifetime pricing.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                            
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Quizzy forces you to ration expiring credits; ExamGhost offers unlimited solves forever.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Quizzy cloud processing takes 4.2s; ExamGhost delivers answers in 0.3s.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Single $19.99 lifetime fee with zero monthly subscriptions.</span>
-                            </div>
-                        </div>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-surface border border-sand-dark/20">
+                      <span><strong>$5.99/mo Standard:</strong> &ldquo;Standard Model&rdquo;</span>
+                      <span className="font-mono text-rose-800 font-bold">700 Credits</span>
                     </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-rose-100/80 border border-rose-300">
+                      <span className="text-rose-950"><strong>$19.99/mo Premium:</strong> &ldquo;Expert Model&rdquo;</span>
+                      <span className="font-mono text-rose-900 font-bold">1,500 Cap</span>
                     </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        Quizzy&apos;s Flaws: Expiring Credit Packs, High Cloud Latency & DOM Injection
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        Quizzy AI operates on an expensive credit token system with unoptimized cloud processing and unshielded DOM injection.
-                    </p>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <Cpu className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>Lite AI Hallucinates on STEM:</strong> Cheap tiers use downgraded mini models that fail on college calculus, chemistry &amp; finance.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <Lock className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>No Free Trial &amp; Non-Refundable:</strong> Must pay before testing; FAQ states purchases are <em>&ldquo;final and non-refundable.&rdquo;</em></span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-rose-50/60 border border-rose-200/70 text-rose-950">
+                      <EyeOff className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                      <span><strong>Zero Canvas Focus Shield:</strong> Generic right-click &amp; <code className="font-mono text-[11px]">Ctrl+Shift+H</code> wrapper (~370 users) with no <code className="font-mono text-[11px]">window.blur</code> masking.</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of Quizzy AI</span>
-                        </h3>
-                        <div className="space-y-3">
-                            
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Expiring credit limits: Forces students to buy extra credit tokens during finals week when usage peaks.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    High cloud latency: Visual language models take 4+ seconds to process screenshots.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No Focus Shield: Lacks blur event masking, leaving students exposed to Canvas SpeedGrader tab tracking.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No Canvas New Quizzes bridge: Fails on modern LMS assessments nested inside LTI iframes.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mt-4 pt-3 border-t border-sand-dark/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                  <span>CWS Users: ~370 Active</span>
+                  <span className="text-rose-800 font-bold">Screenshot Upload: ~3.8s–4.2s</span>
+                </div>
+              </div>
 
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Quizzy AI: Credit Metering & Slow Cloud VLM
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Token quota check halts test progress:</div>
-                                <div className="text-rose-300">if (user.creditBalance &lt;= 0) &#123; throw new Error(&quot;Out of credits. Please purchase pack.&quot;); &#125;</div>
-                                <div className="text-rose-300">// 2. Uncompressed screenshot upload delay:</div>
-                                <div className="text-rose-300">uploadFullScreenshot(screenData); // 4,200ms upload + VLM inference</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> Quizzy rations question solves behind expiring credit packs and uploads heavy full-screen images to cloud VLM endpoints with 4+ second delays.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield suppresses blur events:</div>
-                                <div className="text-emerald-300">window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                                <div className="text-emerald-400 mt-2">// 3. Mathpix Neural OCR: 0.3s edge inference</div>
-                                <div className="text-emerald-300">const ans = await EdgeSolver.solve(mathpixTokens); // 280ms</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Guarantee:</strong> Your host page DOM remains 100% unaltered. SpeedGrader logs continuous, unbroken exam presence with zero blur notifications.
-                            </p>
-                        </div>
+              {/* Right Card: ExamGhost */}
+              <div className="rounded-2xl bg-surface border-2 border-emerald-500/40 p-5 sm:p-6 shadow-md flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-sand-dark/20">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+                      <span className="font-display font-bold text-sm text-ink">ExamGhost Flagship Stealth Suite</span>
                     </div>
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
+                      14-Day 100% Refund Guarantee
+                    </span>
+                  </div>
+
+                  {/* Visual Flagship Model & Unlimited Table */}
+                  <div className="rounded-xl bg-sand/40 border border-sand-dark/30 p-3.5 mb-4 space-y-2 text-xs">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted pb-1 border-b border-sand-dark/20">
+                      <span>ExamGhost Unified Flagship AI</span>
+                      <span className="text-emerald-800 font-bold">Zero Credit Caps</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-50/80 border border-emerald-200">
+                      <span className="text-emerald-950"><strong>$0 Starter Trial:</strong> Flagship STEM + Vision AI</span>
+                      <span className="font-mono text-emerald-800 font-bold">50 Free Solves</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-50/80 border border-emerald-200">
+                      <span className="text-emerald-950"><strong>$19/mo or $99/yr ($8.25/mo):</strong> Flagship AI</span>
+                      <span className="font-mono text-emerald-800 font-bold">Unlimited</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-950 text-white border border-emerald-700">
+                      <span className="text-emerald-100"><strong>$199 Lifetime Pass:</strong> 3 Devices Through Graduation</span>
+                      <span className="font-mono text-mint font-bold">Unlimited</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>Never Downgraded to a &ldquo;Lite&rdquo; Model:</strong> Every solve—including your 50 free trial solves—uses our highest-accuracy STEM &amp; Vision model.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>Closed Shadow DOM + Focus Shield:</strong> Blocks <code className="font-mono text-[11px]">window.blur</code> and <code className="font-mono text-[11px]">visibilitychange</code> events on Canvas &amp; Blackboard.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span><strong>0.3s Edge Vision OCR + Panic Purge:</strong> Snips graphs &amp; locked iframes in 300ms and wipes all UI in 1ms via <code className="font-mono text-[11px]">⌘+Shift+U</code>.</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* 3 Technical Deep Dives */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Unlimited Solves vs Expiring Credit Rationing
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Quizzy AI Flaw:</span>
-                                        Quizzy meters every question with credit tokens that expire after 30 days. Running out of credits mid-exam creates panic and requires sudden credit card payments.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost comes with unlimited question solving, unlimited STEM formulas, and lifetime access for a flat $19.99.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    0.3s Edge AI vs 4.2s Cloud VLM Pipeline
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Quizzy AI Flaw:</span>
-                                        Quizzy uploads full-size screenshots to generic cloud visual endpoints, creating 4+ seconds of latency per question.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost compresses and parses question regions locally on the edge, returning verified solutions in 0.3 seconds.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Focus Shield Blur Immunity vs SpeedGrader Flags
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Quizzy AI Flaw:</span>
-                                        Quizzy does not mask browser focus events, allowing Canvas to log every interaction with the extension.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost silences window.blur and document.visibilitychange events to guarantee 100% clean activity logs.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mt-4 pt-3 border-t border-sand-dark/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                  <span className="text-emerald-800 font-bold">Focus Shield: 3-Layer Active</span>
+                  <span className="text-emerald-800 font-bold">Edge Vision OCR: 0.3s</span>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </header>
 
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
-                        </h2>
-                        <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against Quizzy AI across 10 mission-critical exam dimensions.
-                        </p>
-                    </div>
+        {/* INTERACTIVE PURE-CSS 3-TAB COMPARISON */}
+        <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
+                <Layers className="w-3.5 h-3.5 text-emerald-800" />
+                <span>Interactive Audit · Click Any Tab Below</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
+                Inside Quizzy-App.xyz vs ExamGhost Architecture
+              </h2>
+              <p className="text-sm sm:text-base text-ink-muted">
+                Inspect Quizzy&apos;s Lite/Standard/Expert model segmentation, no-refund policy, and live LMS stealth gaps.
+              </p>
+            </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">Quizzy AI</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
-                                
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">In-Situ Option Matching</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Matches exact option text under shuffling</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Unlimited Question Solves</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">No expiring credit packs or tokens</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        4.2s Cloud Latency
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Canvas & Web Only
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Credit Packs / Tokens
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+            <div>
+              <input type="radio" name="qz-tabs" id="qz-tab-models" className="sr-only peer/models" defaultChecked />
+              <input type="radio" name="qz-tabs" id="qz-tab-refund" className="sr-only peer/refund" />
+              <input type="radio" name="qz-tabs" id="qz-tab-stealth" className="sr-only peer/stealth" />
 
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;I ran out of Quizzy credits right in the middle of my 60-question finance final and had to pay another $15 just to finish. ExamGhost is completely unlimited, answers 10x faster, and only cost $19.99 once.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Devon P.</div>
-                            <div className="text-xs text-ink-muted">University of Southern California · Finance</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in FBE 400
-                        </div>
-                    </div>
-                </div>
-            </section>
+              {/* Tab Navigation */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
+                <label
+                  htmlFor="qz-tab-models"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/models:bg-ink peer-checked/models:text-white peer-checked/models:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <Cpu className="w-4 h-4 shrink-0" />
+                  <span>1. Lite vs Expert AI Paywall</span>
+                </label>
+                <label
+                  htmlFor="qz-tab-refund"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/refund:bg-ink peer-checked/refund:text-white peer-checked/refund:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <CreditCard className="w-4 h-4 shrink-0" />
+                  <span>2. No-Refund Policy &amp; Credits</span>
+                </label>
+                <label
+                  htmlFor="qz-tab-stealth"
+                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/stealth:bg-ink peer-checked/stealth:text-white peer-checked/stealth:shadow-sm flex items-center justify-center gap-2"
+                >
+                  <EyeOff className="w-4 h-4 shrink-0" />
+                  <span>3. Right-Click vs Shadow DOM</span>
+                </label>
+              </div>
 
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>Quizzy AI (Quizzy Cloud Processing)</span>
-                                <span className="text-rose-800">4.2s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
-                            </div>
-                        </div>
+              {/* TAB 1: LITE VS EXPERT AI PAYWALL */}
+              <div className="hidden peer-checked/models:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <Cpu className="w-3.5 h-3.5" />
+                    <span>Quizzy App: Accuracy Gated by Price Tier</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Why $3.99 gets you a &ldquo;Lite Model&rdquo; that fails college STEM
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    On <code className="font-mono text-xs bg-sand px-1 rounded">quizzy-app.xyz/#pricing</code>, Quizzy segments its underlying AI accuracy across three monthly subscriptions:
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Monthly Starter ($3.99/mo · 250 Credits):</strong> Restricted to the <em>&ldquo;Quizzy AI Lite Model&rdquo;</em>—a lightweight mini model that works on basic definitions (like Quizzy&apos;s homepage mitochondria question) but hallucinates on multi-step calculus, physics, or accounting.
                     </div>
-                </div>
-            </section>
-
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Monthly Standard ($5.99/mo · 700 Credits):</strong> Uses the mid-tier <em>&ldquo;Standard Model.&rdquo;</em>
                     </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
-                </div>
-            </section>
-
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from Quizzy AI to ExamGhost.
-                    </p>
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Monthly Premium ($19.99/mo · 1,500 Credits):</strong> Required to unlock the <em>&ldquo;Quizzy AI Expert Model (highest accuracy)&rdquo;</em>—and you are still capped at 1,500 credits/month.
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-4">
-                    
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Do ExamGhost solves expire like Quizzy credits?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. ExamGhost does not use credits or tokens. You receive unlimited question solves and unlimited STEM formula parsing for life with your $19.99 license.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Why is ExamGhost faster than Quizzy AI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Quizzy routes full screenshots through slow cloud VLM APIs. ExamGhost utilizes edge inference and local preprocessing, delivering answers in 0.3s.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does Quizzy protect against Canvas tab-switch logs?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. Quizzy lacks focus-event masking. ExamGhost&apos;s Focus Shield silences window.blur events to keep your SpeedGrader logs completely clean.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
-                </div>
-            </section>
-
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
-                        </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
-                        </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
-                        </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
-                        </Link>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>ExamGhost: Flagship STEM &amp; Vision AI for Everyone</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    100% flagship reasoning accuracy—even on your 50 free solves
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    We never bait-and-switch students with a downgraded &ldquo;Lite&rdquo; model on lower tiers. Every single ExamGhost solve runs on our full-power multimodal STEM &amp; Vision OCR pipeline:
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>Unlimited Solves on Every Paid Pass:</strong> No 250, 700, or 1,500 credit meters counting down during midterms or finals week.
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
+                    <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>Cheaper Than Quizzy Expert:</strong> ExamGhost Monthly is $19.00/mo (unlimited), Academic Year is $99/yr ($8.25/mo), and Lifetime is $199 once.
                     </div>
+                  </div>
                 </div>
-            </section>
+              </div>
 
-            </main>
+              {/* TAB 2: NO-REFUND POLICY & CREDITS */}
+              <div className="hidden peer-checked/refund:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <Lock className="w-3.5 h-3.5" />
+                    <span>Quizzy App: Pay First, Zero Refunds</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Verbatim FAQ: &ldquo;Once a purchase is made, it is final and non-refundable&rdquo;
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    Quizzy&apos;s onboarding instructions require you to choose and pay for a subscription plan before using the Chrome extension. Worse, its official FAQ states:
+                  </p>
+                  <blockquote className="p-4 rounded-xl bg-rose-50/80 border-l-4 border-rose-600 text-xs sm:text-sm italic text-rose-950">
+                    &ldquo;Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.&rdquo;
+                  </blockquote>
+                  <p className="text-xs text-ink-muted leading-relaxed">
+                    If you subscribe and discover that your professor disabled right-click on Canvas or that the Lite model gets your STEM homework wrong, you cannot get your money back.
+                  </p>
+                </div>
 
-            <Footer />
-        </div>
-    );
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>ExamGhost: 50 Free Solves + 14-Day Refund Guarantee</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Test on your actual course portal for $0 before paying
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    We believe you should verify both stealth and accuracy on your own university LMS before spending a dollar:
+                  </p>
+                  <div className="space-y-2.5 text-xs">
+                    <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>1. 50 Free Question Solves + 10 OCR Snips ($0):</strong> Claim your free starter pass on Discord with zero credit card required.
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                      <strong>2. 14-Day 100% Money-Back Guarantee:</strong> Every paid ExamGhost pass is backed by a straightforward 14-day refund policy.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* TAB 3: RIGHT-CLICK WRAPPER VS CLOSED SHADOW DOM */}
+              <div className="hidden peer-checked/stealth:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                    <AlertTriangle className="w-3.5 h-3.5" />
+                    <span>Quizzy App: Unshielded Right-Click &amp; Screenshot Wrapper</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    No Canvas Focus Shield and 3.8s–4.2s screenshot latency
+                  </h3>
+                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                    Quizzy triggers via right-click context menu or <code className="font-mono text-xs bg-sand px-1 rounded">Opt+Maj+H</code> / <code className="font-mono text-xs bg-sand px-1 rounded">Ctrl+Shift+H</code> screenshot capture, with no LMS anti-detection layer:
+                  </p>
+                  <div className="space-y-2 text-xs">
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>Blocked by Disabled Context Menus:</strong> When Canvas, Blackboard, or McGraw Hill Connect disables right-click and text selection, Quizzy&apos;s primary text workflow fails.
+                    </div>
+                    <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                      <strong>No <code className="font-mono">window.blur</code> Interception:</strong> Does not spoof <code className="font-mono">document.visibilityState</code> or block focus-loss telemetry in Canvas SpeedGrader.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>ExamGhost: 0.3s Closed ShadowRoot + Focus Shield</span>
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-ink">
+                    Engineered specifically for monitored university portals
+                  </h3>
+                  <div className="bg-emerald-950 text-emerald-100 rounded-2xl p-4 font-mono text-xs overflow-x-auto leading-relaxed border border-emerald-800">
+                    <div className="text-emerald-400">// 1. 3-Layer Focus Shield at document_start:</div>
+                    <div>window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
+                    <div className="text-emerald-400 mt-2">// 2. Closed ShadowRoot + 0.3s Edge Vision OCR:</div>
+                    <div>const hud = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
+                    <div className="text-emerald-400 mt-2">// 3. ⌘+Shift+U wipes HUD &amp; RAM in &lt;1ms</div>
+                  </div>
+                  <p className="text-xs text-ink-muted leading-relaxed">
+                    Works seamlessly even when right-click is blocked or questions are locked inside cross-origin Canvas New Quizzes (<code className="font-mono text-xs bg-sand px-1 rounded">LTI 1.3</code>) iframes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HONEST USE-CASE GUIDANCE */}
+        <section className="py-16 max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 sm:p-7 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
+              <h2 className="font-display font-bold text-lg sm:text-xl text-ink mb-3 flex items-center gap-2">
+                <Coins className="w-5 h-5 text-ink-muted" />
+                <span>When Quizzy App Fits Best</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-ink-muted leading-relaxed mb-4">
+                Quizzy is a small indie Chrome extension (~370 users) that can work for casual, unmonitored study sessions:
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                  <span><strong>QuizForge Practice Quizzes:</strong> Using <code className="font-mono text-xs">quizzy-app.xyz/quizforge</code> to generate self-test multiple-choice questions on a general topic before class.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                  <span><strong>Light Unproctored Trivia Lookup:</strong> Where a 250-credit cap on a Lite AI model and lack of Canvas Focus Shield do not affect your grade.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-6 sm:p-7 rounded-2xl bg-emerald-950 text-white border border-emerald-800 shadow-sm">
+              <h2 className="font-display font-bold text-lg sm:text-xl text-emerald-300 mb-3 flex items-center gap-2">
+                <EyeOff className="w-5 h-5 text-emerald-300" />
+                <span>When Students Choose ExamGhost</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed mb-4">
+                For college midterms, finals, and weekly STEM problem sets on Canvas, Blackboard, Moodle, D2L, and Connect:
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-100 leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Flagship STEM &amp; Vision AI on Every Tier:</strong> Never lose exam points to a downgraded &ldquo;Lite&rdquo; model or run out of monthly credits mid-test.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Closed Shadow DOM + Focus Shield:</strong> Keeps your Canvas SpeedGrader action log 100% clean with zero <code className="font-mono text-xs text-emerald-300">window.blur</code> flags.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>50 Free Solves + 14-Day Refund Guarantee:</strong> Zero upfront risk compared to Quizzy&apos;s strict no-refund policy.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* SIDE-BY-SIDE COMPARISON MATRIX + COLLAPSIBLE MANIFEST DRAWER */}
+        <section className="py-16 bg-surface border-y border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
+                2026 Feature &amp; Pricing Matrix
+              </h2>
+              <p className="text-xs sm:text-sm text-ink-muted">
+                Verified directly against <code className="font-mono text-xs">quizzy-app.xyz</code> across 8 key criteria.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-sand-dark/30">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[680px]">
+                <thead>
+                  <tr className="border-b border-sand-dark/30 bg-sand/40">
+                    <th className="py-3.5 px-4 font-bold text-ink">Capability / Metric</th>
+                    <th className="py-3.5 px-4 font-bold text-ink-muted">Why It Matters</th>
+                    <th className="py-3.5 px-4 font-bold text-emerald-800">ExamGhost</th>
+                    <th className="py-3.5 px-4 font-bold text-rose-800">Quizzy App (quizzy-app.xyz)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-sand-dark/20">
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">AI Model Accuracy by Tier</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Avoiding hallucinations on college STEM</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      Flagship STEM &amp; Vision AI on All Tiers
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      Lite ($3.99) &amp; Standard ($5.99); Expert requires $19.99/mo
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Monthly Question / Credit Cap</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Running out of credits during finals week</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      100% Unlimited Solves &amp; OCR Snips
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      Capped at 250, 700, or 1,500 credits/mo
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Free Trial Access</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Testing on your LMS before paying</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      50 Free Solves + 10 OCR Snips ($0, No CC)
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      None (Must subscribe first)
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Refund Guarantee</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Protection if it doesn&apos;t fit your courses</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      14-Day 100% Money-Back Guarantee
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      Strict No-Refund Policy (&ldquo;Final&rdquo;)
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Canvas Focus Shield</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Blocks window.blur &amp; visibilitychange logs</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      3-Layer Capture-Phase Shield
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      None
+                    </td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Zero host DOM mutation footprint</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-800 inline mr-1" />
+                      100% Isolated Closed ShadowRoot
+                    </td>
+                    <td className="py-3.5 px-4 text-rose-800">
+                      <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
+                      Unshielded DOM / Right-Click Menu
+                    </td>
+                  </tr>
+                  <tr className="bg-cream/40">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Solving Speed</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Latency during timed exams</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">0.3s Edge Vision Compute</td>
+                    <td className="py-3.5 px-4 text-ink-muted">3.8s – 4.2s Screenshot Upload</td>
+                  </tr>
+                  <tr className="bg-surface">
+                    <td className="py-3.5 px-4 font-semibold text-ink">Highest-Accuracy Pricing</td>
+                    <td className="py-3.5 px-4 text-ink-muted text-xs">Cost for flagship AI accuracy</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                    <td className="py-3.5 px-4 text-ink-muted">$19.99/mo (Capped at 1,500 credits)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Collapsible Technical Chrome Web Store & Domain Audit Drawer */}
+            <details className="mt-6 group rounded-2xl bg-sand/40 border border-sand-dark/30 p-4 sm:p-5 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer text-xs sm:text-sm font-mono font-bold text-ink">
+                <span className="flex items-center gap-2 m-0 inline">
+                  <Terminal className="w-4 h-4 text-emerald-800" />
+                  <h3 className="font-bold m-0 inline">Technical Chrome Web Store Manifest &amp; Domain Audit (quizzy-app.xyz)</h3>
+                </span>
+                <ChevronDown className="w-4 h-4 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-4 pt-4 border-t border-sand-dark/20 grid sm:grid-cols-2 gap-4 text-xs font-mono text-ink-muted">
+                <div className="p-3 rounded-xl bg-surface border border-sand-dark/20">
+                  <div className="text-ink font-bold mb-1">Quizzy App Verified Metadata</div>
+                  <div>Primary Domain: <span className="text-ink">quizzy-app.xyz ( &amp; /quizforge )</span></div>
+                  <div>Chrome Extension ID: <span className="text-ink">oofhfhmonpoolbbmakdgnafmnlomfkfn</span></div>
+                  <div>Publisher / Adoption: <span className="text-ink">@julesgiraud · ~370 active users</span></div>
+                  <div>Default Hotkeys: <span className="text-rose-800">Opt+Maj+H (Mac) / Ctrl+Shift+H (Win)</span></div>
+                </div>
+                <div className="p-3 rounded-xl bg-surface border border-sand-dark/20">
+                  <div className="text-ink font-bold mb-1">ExamGhost Stealth Architecture</div>
+                  <div>UI Isolation: <span className="text-emerald-800">attachShadow(&#123; mode: &apos;closed&apos; &#125;)</span></div>
+                  <div>Focus Shield: <span className="text-emerald-800">window.blur / visibilitychange capture</span></div>
+                  <div>AI Compute: <span className="text-emerald-800">0.3s Flagship STEM + Vision OCR</span></div>
+                  <div>Panic Hotkey: <span className="text-emerald-800">⌘+Shift+U (&lt;1ms RAM &amp; DOM wipe)</span></div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-14">
+          <div className="rounded-[32px] bg-[#3b47d6] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                <FaDiscord className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h2 className="font-display font-bold text-lg sm:text-xl text-white">
+                  Join the ExamGhost Student Discord
+                </h2>
+                <p className="text-xs sm:text-sm text-white/90">
+                  Claim 50 free flagship AI solves ($0, no card), check live Canvas stealth status, and get 24/7 engineering support.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://discord.gg/aCcsyKYJq4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+            >
+              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </section>
+
+        {/* FAQ ACCORDION */}
+        <section className="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
+              Quizzy App vs ExamGhost: Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-ink-muted">
+              Direct answers verified against <code className="font-mono text-xs">quizzy-app.xyz</code> in 2026.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden" open>
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Why does Quizzy App charge extra for its &ldquo;Expert&rdquo; AI model?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                On <code className="font-mono text-xs">quizzy-app.xyz/#pricing</code>, Quizzy splits its AI accuracy across three monthly tiers: Monthly Starter ($3.99/mo, 250 credits) only gives you the <strong>&ldquo;Quizzy AI Lite Model,&rdquo;</strong> and Monthly Standard ($5.99/mo, 700 credits) uses the <strong>&ldquo;Standard Model.&rdquo;</strong> To unlock the <strong>&ldquo;Quizzy AI Expert Model (highest accuracy),&rdquo;</strong> you must pay <strong>$19.99/month</strong>—and you are still capped at 1,500 credits. ExamGhost gives every user our highest-accuracy STEM &amp; Vision model on every tier, with unlimited solves.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Does Quizzy App offer a free trial or refund guarantee?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                No. Quizzy&apos;s setup instructions state: <em>&ldquo;Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,&rdquo;</em> and its FAQ explicitly states: <em>&ldquo;Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.&rdquo;</em> ExamGhost includes <strong>50 Free Question Solves + 10 Vision OCR Snips ($0)</strong> with no card required, plus a <strong>14-day 100% refund guarantee</strong>.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Does Quizzy App protect against Canvas Quiz Log Auditing (window.blur)?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                No. Quizzy (~370 active users) is a general right-click and hotkey (<code className="font-mono text-xs">Opt+Maj+H</code> / <code className="font-mono text-xs">Ctrl+Shift+H</code>) MCQ extension with no Canvas Focus Shield. It does not intercept <code className="font-mono text-xs">window.blur</code>, <code className="font-mono text-xs">focusout</code>, or <code className="font-mono text-xs">visibilitychange</code> events in Canvas or Blackboard.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">What is QuizForge inside Quizzy App?</h3>
+                <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
+                QuizForge (<code className="font-mono text-xs">quizzy-app.xyz/quizforge</code>) is Quizzy&apos;s companion web tool that generates custom practice quizzes when you type in a study topic and question count. While helpful for self-testing before class, it does not assist with live timed exams inside Canvas, Blackboard, or McGraw Hill Connect.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        {/* BESPOKE PASTEL CONVERSION STRIP + RELATED COMPARISONS */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+          <div className="rounded-3xl bg-gradient-to-br from-emerald-50 via-mint/25 to-amber-50/70 border border-emerald-200/80 p-6 sm:p-10 shadow-sm mb-12">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-emerald-200 text-xs font-mono font-bold text-emerald-900 mb-3">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>Zero Credit Meters · Zero &ldquo;Lite&rdquo; Models</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-2">
+                  Get 50 Free Flagship AI Solves before spending a cent.
+                </h2>
+                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                  Test ExamGhost&apos;s closed Shadow DOM HUD, Focus Shield, and 0.3s Vision OCR risk-free—backed by our 14-day 100% money-back guarantee.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                <a
+                  href="https://discord.gg/aCcsyKYJq4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
+                >
+                  <FaChrome className="w-4 h-4 text-mint" />
+                  <span>Claim 50 Free Solves</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link prefetch={false}
+                  href="/#pricing"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-sand/60 text-ink font-semibold border border-sand-dark/30 transition-all text-sm"
+                >
+                  <span>View Passes ($19/mo · $99/yr)</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-sand-dark/20 pt-8">
+            <h2 className="font-display font-bold text-base sm:text-lg text-ink mb-4">
+              Compare Other Homework &amp; LMS Extensions (2026)
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+              <Link prefetch={false}
+                href="/cramly-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">Cramly.ai vs ExamGhost</span>
+                <span className="text-ink-muted">Essay Drafter vs 0.3s Live STEM Solver</span>
+              </Link>
+              <Link prefetch={false}
+                href="/quizmate-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">QuizMate vs ExamGhost</span>
+                <span className="text-ink-muted">Injected LMS Button vs Shadow DOM</span>
+              </Link>
+              <Link prefetch={false}
+                href="/canvasscholar-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">Canvas Scholar vs ExamGhost</span>
+                <span className="text-ink-muted">Past Retake Viewer vs Live AI Solver</span>
+              </Link>
+              <Link prefetch={false}
+                href="/studyfox-vs-examghost"
+                className="p-3.5 rounded-xl bg-surface border border-sand-dark/20 hover:border-ink/40 transition-colors shadow-sm"
+              >
+                <span className="font-semibold block text-ink">StudyFox vs ExamGhost</span>
+                <span className="text-ink-muted">Toolbar Popup Blur vs Focus Shield</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

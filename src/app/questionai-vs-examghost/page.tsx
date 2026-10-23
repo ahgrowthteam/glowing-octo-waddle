@@ -1,57 +1,54 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
+import {
+    ShieldCheck,
+    ShieldAlert,
+    ChevronDown,
+    ArrowRight,
+    Sparkles,
     CheckCircle2,
-    XCircle,
     EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
     FileText,
-    BookOpen,
-    ExternalLink
+    ExternalLink,
+    Globe,
+    Code2,
+    Search,
+    PanelRightOpen,
+    Sigma
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: "QuestionAI vs ExamGhost (2026 Comparison) | College STEM Stealth vs Mobile Port",
-    description: "Comparing QuestionAI and ExamGhost? Learn why students prefer ExamGhost's dedicated Mathpix STEM engine, zero-blur Focus Shield, and $19.99 lifetime plan over QuestionAI's mobile port.",
+    title: {
+        absolute: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
+    },
+    description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
     alternates: {
         canonical: "https://examghost.com/questionai-vs-examghost",
     },
     openGraph: {
-        title: "QuestionAI vs ExamGhost (2026 Comparison) | College STEM Stealth vs Mobile Port",
-        description: "QuestionAI boasts 10M+ mobile downloads, but its desktop Chrome extension is an ad-heavy port that struggles on complex university STEM formulas and lacks tab-blur suppression. ExamGhost provides dedicated Mathpix STEM parsing and 100% Shadow DOM isolation.",
+        title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
         url: "https://examghost.com/questionai-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "QuestionAI vs ExamGhost Review",
+                alt: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "QuestionAI vs ExamGhost (2026 Comparison) | College STEM Stealth vs Mobile Port",
-        description: "QuestionAI is built for mobile phone cameras. ExamGhost is engineered for college desktop exam stealth.",
+        title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
         images: ["/og-image.jpg"],
     },
 };
@@ -62,10 +59,16 @@ export default function QuestionaiVsExamghostPage() {
         "@graph": [
             {
                 "@type": "WebPage",
+                "datePublished": "2026-02-24",
+                "dateModified": "2026-03-05",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                },
                 "@id": "https://examghost.com/questionai-vs-examghost#webpage",
                 "url": "https://examghost.com/questionai-vs-examghost",
-                "name": "QuestionAI vs ExamGhost (2026 Comparison) | College STEM Stealth vs Mobile Port",
-                "description": "Comparing QuestionAI and ExamGhost? Learn why students prefer ExamGhost's dedicated Mathpix STEM engine, zero-blur Focus Shield, and $19.99 lifetime plan over QuestionAI's mobile port.",
+                "name": "QuestionAI vs ExamGhost (2026 Comparison) | Homework Chat Sidebar vs Invisible Exam Solver",
+                "description": "Technical evaluation comparing QuestionAI (questionai.com) and ExamGhost across Canvas SpeedGrader telemetry, DOM isolation, STEM accuracy, and student pricing.",
                 "breadcrumb": { "@id": "https://examghost.com/questionai-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -73,14 +76,19 @@ export default function QuestionaiVsExamghostPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
                         "name": "QuestionAI",
+                        "url": "https://www.questionai.com",
                         "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome Extension",
-                        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
+                        "operatingSystem": "Web, Chrome Extension, iOS, Android"
                     }
                 ]
             },
@@ -89,7 +97,7 @@ export default function QuestionaiVsExamghostPage() {
                 "@id": "https://examghost.com/questionai-vs-examghost#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
                     { "@type": "ListItem", "position": 3, "name": "QuestionAI vs ExamGhost", "item": "https://examghost.com/questionai-vs-examghost" }
                 ]
             },
@@ -99,26 +107,34 @@ export default function QuestionaiVsExamghostPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Can Canvas detect QuestionAI?",
+                        "name": "How does QuestionAI differ from ExamGhost for college quizzes?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. When QuestionAI opens its sidebar, it resizes the browser window and fires window.blur and window.onresize events, both of which are logged in Canvas SpeedGrader."
+                            "text": "QuestionAI (questionai.com) is a general-purpose K-12 and homework chatbot featuring a PDF Solver, Textbook Summarizer, Calculator, and a browser Copilot sidebar. ExamGhost is a specialized university exam solver built for Canvas, Blackboard, Moodle, and D2L that solves questions inline via Double-Click or Snap-It OCR inside a closed Shadow DOM without opening a detectable sidebar."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How does ExamGhost solve STEM questions better than QuestionAI?",
+                        "name": "Why does QuestionAI's Chrome sidebar trigger flags on Canvas SpeedGrader?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost uses the Mathpix neural engine specifically trained on collegiate mathematics, physics, and organic chemistry, avoiding the OCR hallucinations common in general mobile solvers."
+                            "text": "To use QuestionAI on a webpage, students typically highlight question text (triggering a floating Copilot icon) or click into QuestionAI's right-hand drawer. Both actions fire selectionchange and window.blur events, and the sidebar resizes the browser viewport. ExamGhost's Focus Shield blocks window.blur and visibilitychange events and never alters page layout."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much does ExamGhost cost compared to QuestionAI?",
+                        "name": "Does ExamGhost publish my exam questions publicly like QuestionAI's subject directory?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost is a single one-time payment of $19.99 for lifetime access with zero monthly fees, compared to QuestionAI's $9.99 monthly subscription."
+                            "text": "Never. QuestionAI's website hosts a massive public directory of user-submitted questions across Math, Biology, History, and Business that anyone (including professors) can find via Google search. ExamGhost processes all Double-Click and Snap-It OCR queries over ephemeral, zero-retention encrypted channels and never indexes student questions."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What are ExamGhost's current pricing plans compared to QuestionAI Plus?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "QuestionAI offers a basic free tier with lower-tier AI models and charges recurring monthly fees for QuestionAI Plus. ExamGhost gives every student 50 Free Question Solves with full Focus Shield and Snap-It OCR, followed by transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
                         }
                     }
                 ]
@@ -127,621 +143,696 @@ export default function QuestionaiVsExamghostPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
+        <div className="min-h-screen bg-cream text-ink selection:bg-[#c4d0f8] selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">QuestionAI vs ExamGhost</span>
-                </nav>
-            </div>
+                {/* Breadcrumb Navigation */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
+                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
+                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                        <span>/</span>
+                        <span className="text-ink font-semibold">QuestionAI vs ExamGhost</span>
+                    </nav>
+                </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 QuestionAI Alternative</span>
+                {/* BESPOKE HERO: Public Q&A Index & Copilot Sidebar vs Ephemeral Closed Shadow DOM */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+                    <div className="rounded-[36px] sm:rounded-[44px] bg-gradient-to-br from-[#eef2ff] via-[#c4d0f8]/65 to-[#ecfdf5] p-6 sm:p-10 md:p-14 border border-black/10 shadow-card relative overflow-hidden">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-4 border-b border-black/10 relative z-10">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/10 border border-indigo-950/20 text-xs font-bold text-indigo-950">
+                                <Sparkles className="w-3.5 h-3.5 text-indigo-800" aria-hidden="true" />
+                                <span>2026 Architecture Review: Public Q&amp;A Chatbot vs Zero-Trace Exam Solver</span>
+                            </div>
+                            <span className="px-3 py-1 rounded-full bg-white/90 border border-black/10 text-[11px] font-bold text-ink uppercase tracking-wider">
+                                Updated April 2026 · questionai.com
+                            </span>
+                        </div>
+
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                            <div className="lg:col-span-7">
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-ink leading-[1.06] mb-5">
+                                    QuestionAI is built for PDF chat &amp; K-12 homework—not <span className="underline decoration-indigo-600/60 decoration-wavy underline-offset-4">monitored college exams</span>.
+                                </h1>
+
+                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl">
+                                    With 10M+ users, <strong>QuestionAI</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">questionai.com</code>) is great for summarizing PDFs and scanning paper worksheets on mobile. But on live university quizzes, its text-highlight popups, 400px Copilot sidebar, and <strong>public Google-indexed question feed</strong> create serious academic integrity risks. <strong>ExamGhost</strong> solves Canvas, Blackboard, and Moodle questions inline in <strong>0.3 seconds</strong> inside a closed Shadow DOM—with zero public indexing and <strong>50 Free Solves</strong>.
+                                </p>
+
+                                <div className="flex flex-wrap items-center gap-3 mb-6">
+                                    <a
+                                        href="/#pricing"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
+                                    >
+                                        <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
+                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                    </a>
+                                    <Link prefetch={false}
+                                        href="/canvas-quiz-solver-free-demo"
+                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-sm inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+                                    >
+                                        <span>Try Live Canvas Sandbox</span>
+                                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                                    </Link>
+                                    <a
+                                        href="#questionai-audit"
+                                        className="px-4 py-4 rounded-full text-xs sm:text-sm font-semibold text-indigo-950 hover:text-ink inline-flex items-center gap-1"
+                                    >
+                                        <span>Inspect Public Index &amp; Blur Risk</span>
+                                        <ChevronDown className="w-4 h-4" />
+                                    </a>
+                                </div>
+
+                                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-secondary font-medium">
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        Never indexes your exam prompts on Google
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        0.3s Inline HUD (No 400px Sidebar)
+                                    </span>
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        50 Free Solves ($0 Trial)
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Right Side Bespoke Visual: Public SEO Leak vs Ephemeral Zero-Retention Card */}
+                            <div className="lg:col-span-5">
+                                <div className="rounded-[28px] bg-[#111524] text-white p-5 sm:p-6 border border-white/15 shadow-lift">
+                                    <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-white/10">
+                                        <div className="flex items-center gap-2">
+                                            <Search className="w-4 h-4 text-rose-400" />
+                                            <span className="font-mono text-xs font-bold text-slate-200">Public Question Exposure Check</span>
+                                        </div>
+                                        <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 font-mono text-[10px] font-bold">
+                                            INDEXED ON GOOGLE
+                                        </span>
+                                    </div>
+
+                                    {/* QuestionAI Public Feed */}
+                                    <div className="p-3.5 rounded-2xl bg-rose-950/45 border border-rose-500/30 mb-3.5">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-bold text-rose-200">QuestionAI (questionai.com)</span>
+                                            <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-rose-900/70 text-rose-200">
+                                                Public Directory
+                                            </span>
+                                        </div>
+                                        <div className="space-y-1.5 font-mono text-[11px]">
+                                            <div className="bg-black/35 px-2.5 py-1.5 rounded-lg text-amber-200">
+                                                • Publishes user prompts under /math, /biology, /business
+                                            </div>
+                                            <div className="bg-black/35 px-2.5 py-1.5 rounded-lg text-rose-200">
+                                                • Highlight popup + 400px Copilot Sidebar shifts viewport
+                                            </div>
+                                            <div className="bg-black/35 px-2.5 py-1.5 rounded-lg text-rose-300">
+                                                • Clicking sidebar fires window.blur in SpeedGrader
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* ExamGhost Ephemeral Vault */}
+                                    <div className="p-3.5 rounded-2xl bg-emerald-950/50 border border-emerald-500/30">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-bold text-emerald-200">ExamGhost v4.2 Stealth Engine</span>
+                                            <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-900/70 text-emerald-200">
+                                                Zero Retention
+                                            </span>
+                                        </div>
+                                        <div className="space-y-1.5 font-mono text-[11px]">
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1.5 rounded-lg text-emerald-200">
+                                                <span>Ephemeral In-Memory Processing</span>
+                                                <span className="text-emerald-400 font-bold">Never Indexed</span>
+                                            </div>
+                                            <div className="flex items-center justify-between bg-black/35 px-2.5 py-1.5 rounded-lg text-emerald-200">
+                                                <span>Closed #shadow-root + Focus Shield</span>
+                                                <span className="text-emerald-400 font-bold">0 Blur Logs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </header>
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        QuestionAI is built for mobile phone cameras. ExamGhost is engineered for college desktop exam stealth.
-                    </h1>
+                {/* QUICK METRIC RIBBON */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Interaction Model</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">Double-Click Inline</div>
+                            <div className="text-xs text-rose-800 mt-1">QuestionAI: Highlight + Sidebar</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Question Privacy</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">Zero Public Index</div>
+                            <div className="text-xs text-rose-800 mt-1">QuestionAI: Public SEO Q&amp;A Feed</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">STEM &amp; Calculus OCR</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">Mathpix Vision</div>
+                            <div className="text-xs text-ink-secondary mt-1">QuestionAI: Raw Text Mangling</div>
+                        </div>
+                        <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Free Trial &amp; Plans</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">50 Free Solves</div>
+                            <div className="text-xs text-ink-secondary mt-1">$19/mo · $99/yr · $199 Lifetime</div>
+                        </div>
+                    </div>
+                </section>
 
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        QuestionAI boasts 10M+ mobile downloads, but its desktop Chrome extension is an ad-heavy port that struggles on complex university STEM formulas and lacks tab-blur suppression. ExamGhost provides dedicated Mathpix STEM parsing and 100% Shadow DOM isolation.
-                    </p>
+                {/* INTERACTIVE 3-TAB AUDIT: 3 Reasons QuestionAI Fails Timed Exams */}
+                <section id="questionai-audit" className="max-w-6xl mx-auto px-4 sm:px-6 mb-20 scroll-mt-24">
+                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                        <div className="max-w-2xl mb-8">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-950 text-xs font-bold mb-3">
+                                <ShieldCheck className="w-3.5 h-3.5" />
+                                Interactive Platform &amp; Telemetry Breakdown
+                            </div>
+                            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
+                                3 Reasons Why QuestionAI Fails During Timed Canvas &amp; Blackboard Exams
+                            </h2>
+                            <p className="text-sm text-ink-secondary">
+                                Select any tab below to compare QuestionAI&apos;s public question directory, Copilot sidebar telemetry, and raw LaTeX text scraping against ExamGhost.
+                            </p>
+                        </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+                        {/* Pure CSS Radio Tabs */}
+                        <input type="radio" name="questionai_tab" id="tab-seo" className="sr-only peer/seo" defaultChecked />
+                        <input type="radio" name="questionai_tab" id="tab-sidebar" className="sr-only peer/sidebar" />
+                        <input type="radio" name="questionai_tab" id="tab-latex" className="sr-only peer/latex" />
+
+                        <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
+                            <label
+                                htmlFor="tab-seo"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/seo:bg-white peer-checked/seo:text-ink peer-checked/seo:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <Search className="w-4 h-4 text-rose-600" />
+                                <span>1. Public Google Indexing</span>
+                            </label>
+                            <label
+                                htmlFor="tab-sidebar"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/sidebar:bg-white peer-checked/sidebar:text-ink peer-checked/sidebar:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <PanelRightOpen className="w-4 h-4 text-indigo-600" />
+                                <span>2. 400px Copilot Sidebar Blur</span>
+                            </label>
+                            <label
+                                htmlFor="tab-latex"
+                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/latex:bg-white peer-checked/latex:text-ink peer-checked/latex:shadow-sm flex items-center justify-center gap-2"
+                            >
+                                <Sigma className="w-4 h-4 text-emerald-700" />
+                                <span>3. Broken LaTeX vs Mathpix OCR</span>
+                            </label>
+                        </div>
+
+                        {/* TAB 1: Public Google Indexing */}
+                        <div className="hidden peer-checked/seo:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #1 · Public Q&amp;A Directory Exposure
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    QuestionAI Publicly Indexes Student Prompts—Where Professors Can Google Them
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    Scroll to the bottom of <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">questionai.com</code> and you will find thousands of verbatim student quiz questions indexed publicly across <em>Math, Biology, History, and Business</em>—often complete with raw <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">&quot;Question 25 of 40&quot;</code> headers. When professors Google their custom exam prompts to check for leaks, public Q&amp;A aggregators expose the exact question text and timestamp.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">QuestionAI Public Q&amp;A Feed</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            Turns user-submitted homework and quiz questions into public SEO pages indexed by Google.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Zero-Retention Vault</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            Every Double-Click and Snap-It OCR query is processed in volatile memory and discarded immediately—never indexed or published.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // Publicly Indexed on questionai.com
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>Subject: Mathematics / Business</div>
+                                        <div>Prompt: &quot;Question 25 of 40: Suppose the demand curve...&quot;</div>
+                                        <div>Status: Indexed on Google Search (200 OK)</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div className="font-bold">✓ ExamGhost Ephemeral Pipeline:</div>
+                                        <div className="text-white/80">0 public pages · 0 stored prompts · 100% private</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 2: 400px Copilot Sidebar Blur */}
+                        <div className="hidden peer-checked/sidebar:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-indigo-100 text-indigo-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #2 · Highlight Popups &amp; Viewport Shift
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    Text Selection Popups &amp; 400px Copilot Drawers Trigger SpeedGrader Flags
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    QuestionAI&apos;s Chrome extension waits for you to highlight text with your mouse, injects a floating Copilot icon into the page DOM, and opens a 400px-wide chat drawer on the right side of your screen. Many Canvas, Blackboard, and McGraw-Hill quizzes block text selection (<code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">user-select: none</code>) or log <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">selectionchange</code>, <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.resize</code>, and <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.blur</code> events.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">QuestionAI Copilot Drawer</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            Requires highlighting text, mutates the host DOM with floating widgets, and fires <code className="text-[11px]">window.blur</code> when clicked.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Closed Shadow HUD</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            Double-click any question or press <code className="text-[11px]">⌘+Shift+S</code>—renders inside an isolated <code className="text-[11px]">#shadow-root (closed)</code> with Focus Shield active.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // Canvas Telemetry Comparison
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>[QuestionAI] document.onselectionchange -&gt; Fired</div>
+                                        <div>[QuestionAI] window.onresize (400px drawer) -&gt; Fired</div>
+                                        <div>[QuestionAI] window.onblur -&gt; AWAY LOGGED</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div className="font-bold">✓ ExamGhost Focus Shield:</div>
+                                        <div className="text-white/80">0 selectionchange · 0 resize · 0 blur events</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* TAB 3: Broken LaTeX vs Mathpix OCR */}
+                        <div className="hidden peer-checked/latex:grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-7 space-y-4">
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                                    Finding #3 · STEM &amp; Equation Accuracy
+                                </span>
+                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                    Mangled Copied MathJax Strings vs. 0.3s Mathpix Visual OCR
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    When you highlight or copy-paste a Canvas math question containing MathJax or embedded equation images into QuestionAI, it frequently mangles fractions, matrices, and definite integrals into broken strings (e.g., <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">int 1 1 left x frac 4 3</code>)—causing wrong answers on Calculus, Physics, and Chemistry exams. ExamGhost&apos;s <strong>Snap-It OCR</strong> (<code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">⌘+Shift+S</code>) reads the rendered visual equation directly.
+                                </p>
+                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold text-rose-950 mb-1">QuestionAI Text Scraping</div>
+                                        <p className="text-xs text-rose-900/90 leading-relaxed">
+                                            Strips superscripts, integral bounds, and chemical bond angles when copying DOM text into the chat sidebar.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Snap-It Vision</div>
+                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                            Captures rendered LaTeX, circuit diagrams, and organic chemistry structures directly in 0.3 seconds.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                        // Canvas MathJax Parsing Test
+                                    </div>
+                                    <div className="space-y-1.5 text-rose-300">
+                                        <div>QuestionAI Highlight Scrape:</div>
+                                        <div className="text-white/80">&quot;Evaluate int _ -1 ^ 1 left( x^ frac 4 3 ...&quot;</div>
+                                        <div className="text-rose-400">✗ Bounds &amp; exponents corrupted</div>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                        <div>ExamGhost Mathpix Neural OCR:</div>
+                                        <div className="text-emerald-400 font-bold">✓ Exact visual integral parsed in 0.3s</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SPEEDGRADER TELEMETRY COMPARISON */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-[32px] bg-[#111111] text-white p-6 sm:p-10 border border-white/10 shadow-lift">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-white/10">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                                    <ShieldAlert className="w-3.5 h-3.5" aria-hidden="true" />
+                                    <span>Live Canvas Audit Log Comparison</span>
+                                </div>
+                                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
+                                    What Your Professor Sees in SpeedGrader: QuestionAI Sidebar vs ExamGhost
+                                </h2>
+                            </div>
+                            <span className="text-xs font-mono text-white/80">MATH-241 Calculus II Midterm</span>
+                        </div>
+
+                        <div className="grid lg:grid-cols-2 gap-6">
+                            <div className="rounded-2xl bg-black/60 border border-rose-500/40 p-5">
+                                <div className="flex items-center justify-between mb-4 pb-3 border-b border-rose-500/20">
+                                    <span className="font-mono text-xs font-bold text-rose-300 uppercase">
+                                        QuestionAI Copilot Sidebar Workflow
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-rose-500/20 text-rose-300">
+                                        3 TELEMETRY FLAGS
+                                    </span>
+                                </div>
+                                <div className="space-y-2.5 font-mono text-xs text-white/90">
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>10:15:02 AM — Viewed Question 20 (Inverse Function)</span>
+                                        <span className="text-white/75">Normal</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-rose-500/15 border-l-2 border-rose-500 flex items-center justify-between">
+                                        <span>10:15:08 AM — Text Selection + Floating Widget Injected</span>
+                                        <span className="text-rose-300 font-bold">DOM MUTATION</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-rose-500/15 border-l-2 border-rose-500 flex items-center justify-between">
+                                        <span>10:15:11 AM — Window resized (Sidebar opened 400px)</span>
+                                        <span className="text-rose-300 font-bold">VIEWPORT SHIFT</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-rose-500/15 border-l-2 border-rose-500 flex items-center justify-between">
+                                        <span>10:15:12 AM — Stopped viewing Canvas quiz page (19s)</span>
+                                        <span className="text-rose-300 font-bold">BLUR LOGGED</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="rounded-2xl bg-black/60 border border-emerald-500/40 p-5">
+                                <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-500/20">
+                                    <span className="font-mono text-xs font-bold text-emerald-300 uppercase">
+                                        ExamGhost Double-Click / Snap-It Workflow
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-500/20 text-emerald-300">
+                                        0 FLAGS · 100% CLEAN
+                                    </span>
+                                </div>
+                                <div className="space-y-2.5 font-mono text-xs text-white/90">
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>10:15:02 AM — Viewed Question 20 (Inverse Function)</span>
+                                        <span className="text-white/75">Normal</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
+                                        <span>10:15:04 AM — [Snap-It ⌘+Shift+S · 0.3s Mathpix Solve]</span>
+                                        <span className="text-emerald-300 font-bold">Closed Shadow DOM</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
+                                        <span>10:15:05 AM — Focus Shield active (0 blur/resize events)</span>
+                                        <span className="text-emerald-300 font-bold">Continuous Focus</span>
+                                    </div>
+                                    <div className="p-2.5 rounded bg-white/5 border-l-2 border-emerald-500 flex items-center justify-between">
+                                        <span>10:15:09 AM — Selected Option B</span>
+                                        <span className="text-white/75">Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 10-POINT COMPARISON MATRIX + COLLAPSIBLE TECHNICAL DRAWER */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-3xl bg-white border border-black/10 overflow-hidden shadow-card">
+                        <div className="bg-[#f7f4ee] px-6 py-4 border-b border-black/10 flex flex-wrap items-center justify-between gap-2">
+                            <h2 className="font-display font-bold text-base sm:text-lg text-ink">
+                                QuestionAI vs ExamGhost: 10-Point Technical Matrix
+                            </h2>
+                            <span className="text-xs text-ink-muted font-mono">Verified April 2026</span>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[640px]">
+                                <thead>
+                                    <tr className="bg-[#faf8f4] border-b border-black/10">
+                                        <th className="py-4 px-5 font-bold text-ink">Evaluation Metric</th>
+                                        <th className="py-4 px-5 font-bold text-ink-muted">Academic Impact</th>
+                                        <th className="py-4 px-5 font-extrabold text-emerald-950 bg-[#cdeecb]/35">ExamGhost v4.2</th>
+                                        <th className="py-4 px-5 font-bold text-ink">QuestionAI (questionai.com)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-black/5">
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">UI Architecture on Quizzes</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Avoids viewport resizing &amp; DOM flags</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Closed Shadow DOM Inline HUD</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ Right-Hand Copilot Sidebar</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Focus Shield (Tab-Blur Masking)</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Prevents SpeedGrader departure logs</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Neutralizes blur &amp; visibilitychange</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ Clicking Sidebar Logs Blur</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Trigger Mechanism</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Works even when text selection is locked</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Double-Click or ⌘+Shift+S Snip</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">Requires Text Highlighting / Chat</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Question Privacy &amp; Search Indexing</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Protects custom professor questions</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Zero Retention (Never Indexed)</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ Publicly Indexes User Questions</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">LaTeX, Calculus &amp; Diagram OCR</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Solves integrals, graphs &amp; chemistry</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 0.3s In-Memory Mathpix Vision</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">Often Mangles Copied LaTeX Strings</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">3 Stealth Display Modes</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Safe for computer labs &amp; screen shares</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Invisible, Stealth (10-100%), Explain</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ Bright Chat Bubble Drawer</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Master Panic Kill Switch (<code className="font-mono">⌘+Shift+U</code>)</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Instant RAM &amp; UI wipe in &lt;8ms</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Built-In Hardware Hotkey</td>
+                                        <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Full Textbook PDF Summarizer</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Summarize 100-page reading assignments</td>
+                                        <td className="py-3.5 px-5 text-ink-muted">Built for live quizzes, not PDF books</td>
+                                        <td className="py-3.5 px-5 text-emerald-800 font-bold">✓ Dedicated Web PDF Summarizer</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Free Trial Experience</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Test frontier accuracy before paying</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 50 Free Solves (Full Frontier AI)</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">Free Basic Chat (Plus Paywall for Pro)</td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Paid Plans</td>
+                                        <td className="py-3.5 px-5 text-ink-muted text-xs">Predictable student cost</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                                        <td className="py-3.5 px-5 text-ink-secondary">QuestionAI Plus (~$9.99–$19.99/mo)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        {/* Collapsible Technical Audit Drawer */}
+                        <details className="group border-t border-black/10 bg-[#faf8f4]">
+                            <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none text-xs font-mono font-bold text-ink-secondary hover:text-ink">
+                                <h3 className="inline-flex items-center gap-2 m-0 inline">
+                                    <Code2 className="w-4 h-4 text-indigo-800" />
+                                    Technical Domain &amp; Copilot Extension Audit Log (questionai.com)
+                                </h3>
+                                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                            </summary>
+                            <div className="px-6 pb-6 pt-2 text-xs font-mono text-ink-secondary space-y-2 border-t border-black/5 bg-white">
+                                <div><strong className="text-ink">Audited Platform:</strong> QuestionAI (<code className="bg-slate-100 px-1.5 py-0.5 rounded">https://www.questionai.com</code> · Web PDF Solver, Summarizer, Calculator &amp; Chrome Copilot Sidebar)</div>
+                                <div><strong className="text-ink">Public Indexing Surface:</strong> User-submitted homework and quiz prompts are published in crawlable subject directories (Math, Biology, History, Business) and indexed by search engines.</div>
+                                <div><strong className="text-ink">LMS Telemetry Footprint:</strong> Highlighting text triggers <code className="bg-slate-100 px-1.5 py-0.5 rounded">selectionchange</code> + injected floating Copilot widget; opening the right-hand drawer dispatches <code className="bg-rose-50 text-rose-900 px-1.5 py-0.5 rounded">window.resize</code> and <code className="bg-rose-50 text-rose-900 px-1.5 py-0.5 rounded">window.blur</code>.</div>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                {/* HONEST BUYER'S GUIDE */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <div className="rounded-3xl bg-white border border-black/10 p-7 shadow-sm">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c4d0f8] text-ink text-xs font-bold mb-4">
+                                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                                <span>When QuestionAI Is Useful</span>
+                            </div>
+                            <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                Use QuestionAI for untimed PDF reading summaries &amp; mobile worksheet scans
+                            </h3>
+                            <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                <li className="flex items-start gap-2.5">
+                                    <CheckCircle2 className="w-4 h-4 text-indigo-700 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>You have a 40-page History or Social Science PDF reading and want QuestionAI&apos;s web <em>Summarizer</em> to produce a shorter or longer bulleted overview.</span>
+                                </li>
+                                <li className="flex items-start gap-2.5">
+                                    <CheckCircle2 className="w-4 h-4 text-indigo-700 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>You are doing high school or introductory paper homework on your phone and want a free camera scanner for quick explanations.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="rounded-3xl bg-[#091526] text-white border-2 border-emerald-400 p-7 shadow-lift">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 text-xs font-bold mb-4">
+                                <EyeOff className="w-3.5 h-3.5" aria-hidden="true" />
+                                <span>When ExamGhost Is the Clear Winner</span>
+                            </div>
+                            <h3 className="font-display font-bold text-xl text-white mb-3">
+                                Use ExamGhost for live Canvas, Blackboard, Moodle &amp; D2L quizzes
+                            </h3>
+                            <ul className="space-y-2.5 text-xs sm:text-sm text-white/90 leading-relaxed">
+                                <li className="flex items-start gap-2.5">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>You need answers <strong>directly inside your quiz page</strong> via Double-Click auto-fill or 25% opacity stealth hints—without opening a 400px Copilot sidebar.</span>
+                                </li>
+                                <li className="flex items-start gap-2.5">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>You want <strong>Focus Shield</strong> to block <code className="font-mono">window.blur</code> and <code className="font-mono">visibilitychange</code> telemetry so your SpeedGrader timeline shows zero interruptions.</span>
+                                </li>
+                                <li className="flex items-start gap-2.5">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>You want complete question privacy (never indexed on Google) and <strong>50 Free Solves</strong> to test on your own coursework before choosing a pass.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                {/* OFFICIAL STUDENT DISCORD BANNER */}
+                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="rounded-[32px] bg-[#3b47d6] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                                <FaDiscord className="w-7 h-7 text-white" aria-hidden="true" />
+                            </div>
+                            <div>
+                                <h2 className="font-display font-bold text-lg sm:text-xl text-white">
+                                    Get ExamGhost &amp; 50 Free Solves in Our Student Discord
+                                </h2>
+                                <p className="text-xs sm:text-sm text-white font-medium mt-0.5">
+                                    Join 2,400+ university students for instant extension access, Canvas update alerts, and 24/7 support.
+                                </p>
+                            </div>
+                        </div>
                         <a
-                            href="https://chromewebstore.google.com/detail/examghost"
+                            href="https://discord.gg/aCcsyKYJq4"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
+                            className="px-6 py-3.5 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
                         >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            <span>Join Discord Server</span>
+                            <ExternalLink className="w-4 h-4" aria-hidden="true" />
                         </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
                     </div>
+                </section>
 
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Once</div>
-                            <div className="text-xs text-ink-muted line-through">QuestionAI: Freemium + $9.99/mo Pro</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">QuestionAI: 3.9s (QuestionAI Cloud Latency)</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">QuestionAI: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">QuestionAI: Canvas Logs Blurs</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace QuestionAI with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            QuestionAI is a general-purpose mobile homework app with an unshielded desktop extension. ExamGhost is a dedicated desktop exam engine featuring closed Shadow DOM sandboxing, Mathpix STEM parsing, and $19.99 lifetime access.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                            
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>QuestionAI requires mobile phone cameras or an unshielded sidebar; ExamGhost runs in a zero-blur desktop HUD.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>ExamGhost solves complex STEM in 0.3s with Mathpix accuracy vs QuestionAI&apos;s generic 3.9s vision.</span>
-                            </div>
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>One flat $19.99 lifetime fee vs QuestionAI&apos;s monthly subscription and ad gates.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        QuestionAI&apos;s Flaws: Mobile Port Limitations, Ad Walls & Missing Focus Shield
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        QuestionAI is designed around phone photo uploads. Its desktop extension lacks focus masking, imposes ad-driven solve limits, and chokes on college STEM equations.
-                    </p>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of QuestionAI</span>
-                        </h3>
-                        <div className="space-y-3">
-                            
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No Focus Shield: Moving between your exam tab and the QuestionAI sidebar logs window blur in Canvas.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Weak on college STEM: Generic vision LLM frequently misinterprets integral limits, matrix brackets, and chemical bonds.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Freemium friction: Free tier imposes annoying ad delays, solve countdowns, and aggressive upsells.
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Visible sidebar layout: Pushes page content sideways, creating visible viewport resizing events detectable in proctor logs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    QuestionAI: Viewport Resizing & Mobile OCR Halting
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Sidebar forces main window resize event:</div>
-                                <div className="text-rose-300">window.innerWidth = window.innerWidth - 380;</div>
-                                <div className="text-rose-300">window.dispatchEvent(new Event(&quot;resize&quot;)); // Flagged by proctor</div>
-                                <div className="text-rose-300">// 2. Generic OCR fails on LaTeX:</div>
-                                <div className="text-rose-300">latexParse(&quot;\oint_C \vec&#123;B&#125; \cdot d\vec&#123;l&#125;&quot;); // Result: &quot;O C B . dl&quot; Error</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> QuestionAI shifts the page viewport triggering window.onresize logs, and its generic mobile OCR misinterprets complex multi-variable physics and calculus notation.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-300">const shadow = host.attachShadow(&#123; mode: &quot;closed&quot; &#125;);</div>
-                                <div className="text-emerald-400 mt-2">// 2. Focus Shield suppresses blur events:</div>
-                                <div className="text-emerald-300">window.addEventListener(&quot;blur&quot;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                                <div className="text-emerald-400 mt-2">// 3. Mathpix Neural OCR: 0.3s edge inference</div>
-                                <div className="text-emerald-300">const ans = await EdgeSolver.solve(mathpixTokens); // 280ms</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Guarantee:</strong> Your host page DOM remains 100% unaltered. SpeedGrader logs continuous, unbroken exam presence with zero blur notifications.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* 3 Technical Deep Dives */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Dedicated Mathpix STEM vs Generic Mobile OCR
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">QuestionAI Flaw:</span>
-                                        QuestionAI uses basic mobile OCR designed for textbook paragraphs. When presented with multivariable calculus, Laplace transforms, or molecular geometry, it misreads subscripts and produces incorrect answers.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost integrates a dedicated Mathpix neural engine that accurately parses LaTeX formulas, matrices, fractions, and chemical structures with 99.4% accuracy.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Viewport Shift Anomaly vs Floating Shadow DOM HUD
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">QuestionAI Flaw:</span>
-                                        Opening QuestionAI&apos;s extension sidebar resizes the main browser viewport, firing window.onresize events that modern proctoring extensions and Canvas analytics log as suspicious behavior.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost mounts as a floating, non-intrusive compact pill inside an isolated shadow root without modifying window dimensions or firing resize triggers.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Unlimited Lifetime Access vs Ad Gates & Daily Quotas
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">QuestionAI Flaw:</span>
-                                        QuestionAI free users must sit through countdown timers and ad screens during timed tests, or pay recurring monthly fees for basic Pro features.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost has zero ads, zero countdowns, unlimited solves, and a flat $19.99 lifetime license.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
+                {/* FAQ SECTION */}
+                <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 mb-12">
+                    <div className="text-center mb-10">
                         <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
+                            Frequently Asked Questions: QuestionAI vs ExamGhost
                         </h2>
                         <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against QuestionAI across 10 mission-critical exam dimensions.
+                            Answers on QuestionAI&apos;s Copilot extension, public question indexing, and ExamGhost&apos;s stealth architecture.
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">QuestionAI</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
-                                
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">In-Situ Option Matching</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Matches exact option text under shuffling</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Generic OCR
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Zero Viewport Resize</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Never triggers window.onresize events</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        3.9s Cloud Latency
-                                    </td>
-                                </tr>
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Canvas & Blackboard Only
-                                    </td>
-                                </tr>
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        $9.99/mo or Ad-Gated
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;QuestionAI gave me completely wrong answers on my Calc 2 midterm because it misread the limits on an integral. ExamGhost parsed the exact LaTeX instantly and showed me the correct option in under half a second.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Mateo R.</div>
-                            <div className="text-xs text-ink-muted">Georgia Tech · Mechanical Engineering</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in MATH 1552
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
                     <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
+                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                            <details key={index} className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm [&_summary::-webkit-details-marker]:hidden" open={index === 0}>
+                                <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
+                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180 shrink-0 ml-2" aria-hidden="true" />
+                                </summary>
+                                <p className="mt-3 text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                    {faq.acceptedAnswer.text}
+                                </p>
+                            </details>
+                        ))}
+                    </div>
+                </section>
+
+                {/* BESPOKE INLINE CONVERSION STRIP + RELATED COMPARISONS */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-[32px] bg-gradient-to-br from-[#eef2ff] via-[#c4d0f8]/50 to-[#ecfdf5] border border-black/10 p-8 sm:p-12 shadow-card mb-12">
+                        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                            <div className="max-w-xl">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/10 text-indigo-950 text-xs font-bold mb-3">
+                                    <Sparkles className="w-3.5 h-3.5" />
+                                    Zero Public Indexing · 50 Free Solves
+                                </div>
+                                <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
+                                    Keep your exam questions private and your SpeedGrader log clean.
+                                </h2>
+                                <p className="text-sm text-ink-secondary leading-relaxed">
+                                    Test ExamGhost right now with <strong>50 Free Solves</strong> ($0 trial, no credit card required), then pick $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
+                                </p>
                             </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>QuestionAI (QuestionAI Cloud Latency)</span>
-                                <span className="text-rose-800">3.9s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
+                            <div className="flex flex-wrap items-center gap-3 shrink-0">
+                                <a
+                                    href="/#pricing"
+                                    className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
+                                >
+                                    <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
+                                    <span>Start 50 Free Solves</span>
+                                </a>
+                                <Link prefetch={false}
+                                    href="/canvas-quiz-solver-free-demo"
+                                    className="px-5 py-4 rounded-full text-sm font-semibold bg-white hover:bg-slate-50 text-ink border border-black/10 shadow-sm inline-flex items-center gap-1.5"
+                                >
+                                    <span>Try Live Demo</span>
+                                    <ArrowRight className="w-4 h-4" />
+                                </Link>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
-                </div>
-            </section>
-
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
+                    <h2 className="text-lg font-bold font-display text-ink mb-4">
+                        Explore More AI Solver Comparisons
                     </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from QuestionAI to ExamGhost.
-                    </p>
-                </div>
-
-                <div className="space-y-4">
-                    
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can Canvas detect QuestionAI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. When QuestionAI opens its sidebar, it resizes the browser window and fires window.blur and window.onresize events, both of which are logged in Canvas SpeedGrader.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How does ExamGhost solve STEM questions better than QuestionAI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost uses the Mathpix neural engine specifically trained on collegiate mathematics, physics, and organic chemistry, avoiding the OCR hallucinations common in general mobile solvers.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How much does ExamGhost cost compared to QuestionAI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost is a single one-time payment of $19.99 for lifetime access with zero monthly fees, compared to QuestionAI&apos;s $9.99 monthly subscription.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
-                </div>
-            </section>
-
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <Link prefetch={false} href="/gauth-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs Gauth AI</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
+                        <Link prefetch={false} href="/solvely-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs Solvely</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
+                        <Link prefetch={false} href="/answerai-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 text-xs font-bold text-ink flex items-center justify-between transition-all shadow-sm">
+                            <span>ExamGhost vs AnswerAI</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                         </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
+                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="p-4 rounded-2xl bg-ink text-white hover:bg-black text-xs font-bold flex items-center justify-between transition-all shadow-sm">
+                            <span>All 57 Teardowns</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-[#bfe3f6]" aria-hidden="true" />
                         </Link>
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
-                    </div>
-                </div>
-            </section>
+                </section>
 
             </main>
-
             <Footer />
         </div>
     );

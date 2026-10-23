@@ -42,12 +42,16 @@ export default function QuestionExamples() {
                                         <img 
                                             src="/images/ghost/ghost_privacy.jpg" 
                                             alt="Privacy Ghost Mascot" 
+                                            width={224}
+                                            height={224}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                                         />
                                     </div>
-                                    <h4 className="font-display font-bold text-xl text-ink mb-1">
+                                    <div className="font-display font-bold text-xl text-ink mb-1">
                                         Client-Side Isolation
-                                    </h4>
+                                    </div>
                                     <p className="text-xs text-ink-muted max-w-[260px]">
                                         Runs 100% inside your local browser memory space.
                                     </p>

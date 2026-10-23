@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ChevronDown, Search, HelpCircle, Shield, Zap, Sparkles, MessageSquare, ArrowRight } from 'lucide-react';
+import { ChevronDown, Search, ShieldCheck, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface FAQItem {
@@ -125,15 +125,44 @@ export default function FAQPage() {
 
     const faqJsonLd = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://examghost.com/faq#webpage",
+                "url": "https://examghost.com/faq",
+                "name": "FAQ — Stealth Architecture, Pricing & LMS Setup | ExamGhost",
+                "description": "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 50 free solves.",
+                "datePublished": "2026-01-15",
+                "dateModified": "2026-03-29",
+                "inLanguage": "en-US",
+                "isPartOf": { "@id": "https://examghost.com/#website" },
+                "breadcrumb": { "@id": "https://examghost.com/faq#breadcrumb" },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "h2"]
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://examghost.com/faq#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "FAQ & Knowledge Base", "item": "https://examghost.com/faq" }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://examghost.com/faq#faqpage",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.a
+                    }
+                }))
             }
-        }))
+        ]
     };
 
     return (
@@ -150,13 +179,32 @@ export default function FAQPage() {
                 <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-2 h-2 rounded-full bg-ink" />
-                        <span>KNOWLEDGE BASE & FAQ</span>
+                        <span>KNOWLEDGE BASE &amp; FAQ</span>
                     </p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-4">
                         Frequently asked questions.
                     </h1>
                     <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-normal">
                         Everything you need to know about SpeedGrader audit stealth, Focus Shield, pricing plans, and install setup.
+                    </p>
+                </div>
+
+                {/* Self-Contained GEO / AEO Technical Summary Block (144 Words) */}
+                <div className="aeo-summary mb-8 p-6 sm:p-7 rounded-3xl bg-white border border-black/10 shadow-xs">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                        <div className="flex items-center gap-2 text-xs font-bold text-emerald-800 uppercase tracking-wider">
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                            <span>Verified Technical Brief · Updated 2026</span>
+                        </div>
+                        <span className="text-[11px] text-ink-muted font-medium">
+                            Reviewed by ExamGhost Security Engineering Team
+                        </span>
+                    </div>
+                    <h2 className="font-display font-bold text-base sm:text-lg text-ink mb-2">
+                        Can Canvas or Blackboard detect the ExamGhost Chrome extension?
+                    </h2>
+                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                        Standard LMS quiz logs on Canvas, Blackboard, Moodle, and D2L Brightspace track student activity through three browser APIs: DOM mutation observers that scan for unauthorized page elements, document.visibilitychange events triggered when switching tabs, and window.blur or document.hasFocus() listeners that record when the quiz window loses focus. Traditional AI extensions trigger these flags because they require copying text to external tabs or mounting unshielded iframe sidebars inside the quiz DOM. ExamGhost prevents all three detection vectors simultaneously: its closed Shadow DOM isolation keeps every UI node invisible to host-page DOM scripts, its Focus Shield intercepts blur and visibility events before LMS telemetry scripts can log them, and its Manifest V3 background service worker routes encrypted AI requests off-thread in 0.3 seconds so the student never leaves the active exam tab.
                     </p>
                 </div>
 
@@ -189,7 +237,7 @@ export default function FAQPage() {
                     ))}
                 </div>
 
-                {/* FAQ Accordion List */}
+                {/* FAQ Accordion List — All answers mounted in SSR DOM */}
                 <div className="space-y-3.5 mb-14">
                     {filteredFaqs.length === 0 ? (
                         <div className="text-center py-12 rounded-3xl bg-white border border-black/10 p-8">
@@ -198,7 +246,7 @@ export default function FAQPage() {
                                 onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}
                                 className="text-xs font-bold text-emerald-700 underline"
                             >
-                                Clear search & view all questions
+                                Clear search &amp; view all questions
                             </button>
                         </div>
                     ) : (
@@ -226,11 +274,15 @@ export default function FAQPage() {
                                         </button>
                                     </h2>
 
-                                    {isOpen && (
-                                        <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-ink-secondary leading-relaxed border-t border-black/5 mt-1">
-                                            <p>{faq.a}</p>
-                                        </div>
-                                    )}
+                                    <div
+                                        className={
+                                            isOpen
+                                                ? 'px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-ink-secondary leading-relaxed border-t border-black/5 mt-1 block'
+                                                : 'hidden'
+                                        }
+                                    >
+                                        <p>{faq.a}</p>
+                                    </div>
                                 </div>
                             );
                         })

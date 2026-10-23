@@ -1,0 +1,61 @@
+================================================================================
+MOTION STUDIO BRIEF — EXAMGHOST EXPLAINER & PRODUCT DEMO FILMS (2026)
+================================================================================
+
+1. Type:
+   Hybrid Motion-Graphic Explainer + 2.5D Product Demo (inspired by awesome-opus5-5-videos explainers & motion graphics).
+   Decision Rationale: Viewers searching for LMS/STEM quiz solvers need both instant visual proof of the one-by-one double-click workflow AND a clear visual explainer of how Closed Shadow DOM stealth & Alt+S Vision OCR work on their specific portal.
+
+2. Product URL & Topics (14 Unique Platform Films — 11 Primary Requested + 3 Core LMS):
+   - https://examghost.com/moodle-quiz-solver
+   - https://examghost.com/mcgraw-hill-connect-aleks-solver
+   - https://examghost.com/pearson-mylab-mastering-solver
+   - https://examghost.com/cengage-mindtap-webassign-solver
+   - https://examghost.com/gradescope-exam-solver
+   - https://examghost.com/google-forms-quiz-solver
+   - https://examghost.com/schoology-quiz-solver
+   - https://examghost.com/deltamath-homework-solver
+   - https://examghost.com/edgenuity-quiz-solver
+   - https://examghost.com/blog/does-canvas-detect-extensions-2026
+   - https://examghost.com/blog/canvas-quiz-log-explained-what-professors-see
+   (Plus bonus coverage for canvas-lms-quiz-solver, blackboard-quiz-solver, d2l-brightspace-quiz-solver)
+
+3. Audience & Final-Second Action:
+   University & K-12 STEM students taking timed assessments on Moodle, ALEKS, MyLab, WebAssign, Gradescope, Google Forms, Schoology, DeltaMath, Edgenuity, and Canvas.
+   Last-second action: Install ExamGhost from the Chrome Web Store to claim 50 free trial solves at examghost.com/<slug>.
+
+4. Length & Format:
+   16.0 seconds (480 frames @ 30fps output, supersampled from 120fps physics/motion steps), 16:9 widescreen (1280x720 HD, H.264 yuv420p, +faststart, AAC 48kHz stereo).
+   Decision Rationale: 16 seconds (= 32 beats at 120 BPM) hits the sweet spot for muted X/web autoplay retention while giving every caption >= 0.7s hold and zero dead frames.
+
+5. Frame Rate:
+   120Hz internal physics & cursor emission trail evaluation -> 30fps progressive H.264 delivery.
+
+6. Brand & Color System (Locked to 6 Core Palette Tokens + Platform Accent):
+   - Background Cream: #FCF9F5 (Paper: #FFFFFF)
+   - Deep Ink: #141413 (Contrast on #FCF9F5 = 17.8:1, Contrast of #FFFFFF on #141413 = 18.5:1)
+   - Secondary Ink: #2B2926 (Contrast on #FCF9F5 = 13.6:1)
+   - Pastel Mint Surface: #CDEECB (Paired with #064E3B dark emerald text = 8.9:1 contrast)
+   - Pastel Periwinkle Surface: #C4D0F8 (Paired with #141413 ink text = 13.2:1 contrast)
+   - Pastel Lilac Surface: #E2D3FA (Paired with #141413 ink text = 14.1:1 contrast)
+   Note: Brand pastels (#CDEECB, #C4D0F8, #E2D3FA, #FFD23F) are used strictly as surface fills, badges, and bloom emission shapes—never as light text on light backgrounds. All text maintains >= 7.2:1 WCAG AAA contrast.
+
+7. Visual & Motion Rules Applied:
+   - Frame 0 is a complete, finished composition with the product name, 3D Ghost mascot, and platform title visible immediately at t=0.0s.
+   - Bottom 8% safe area respected across all frames so mobile video controls never obscure captions or key action.
+   - 2.5D Perspective Camera Tracking: OpenCV 3D homography tilt + smooth focal zoom transitions between isometric wide shots, close-up double-click action, OCR diagram scan, and telemetry proof.
+   - Physical Motion & Easing: All animations driven by cubic-bezier(0.22, 1, 0.36, 1) and damped spring dynamics; continuous micro-float during holds so no frame is ever static for > 0.5s.
+   - HDR Multi-Scale Bloom: Additive Gaussian bloom applied to all light-emitting elements (status LEDs, cursor click ripples, laser OCR scan beam, checkmark badges).
+   - Bitmap / Halftone Reveal & Emission Trails: Cards and AI answers materialize via a progressive dot-matrix bitmap sweep; the cursor leaves a glowing multi-sample emission ribbon.
+   - Clean, Minimal Extension UI: Matches ExamGhost's OneMacApp aesthetic—strictly one-by-one double-click solving (no "Solve All" button).
+
+8. Sound Design:
+   Synthesized in Python at 48,000 Hz stereo (`./film/audio/`):
+   - 120 BPM warm electronic pulse & sub-bass beat grid (beat every 0.50s / 15 frames).
+   - Hard scene cuts aligned strictly on beats (0.0s, 3.0s, 6.5s, 10.0s, 13.5s).
+   - Custom physical foley SFX synced within 1 frame of visual actions:
+     * Tactile dual-transient double-click (`t = 4.0s`)
+     * Warm harmonic solve chime (`t = 4.3s`)
+     * Soft air whoosh on each 2.5D camera cut (`t = 3.0s, 6.5s, 10.0s, 13.5s`)
+     * Crystalline laser scan sweep on `Alt+S` Vision OCR (`t = 7.5s`)
+   - Normalized to -14.0 LUFS integrated loudness, true peak <= -1.0 dBTP.

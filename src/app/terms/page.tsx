@@ -6,22 +6,66 @@ import { FileText, ShieldAlert, Check, RefreshCw, HelpCircle, ArrowRight } from 
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "Terms of Service | ExamGhost Educational Licensing",
-    description: "Terms of service, educational usage policies, subscription terms, and 14-day refund guarantee for ExamGhost.",
+    title: "Terms of Service & 14-Day Refund Guarantee",
+    description: "Official terms of service, educational usage guidelines, subscription billing policies, and our 14-day 100% money-back refund guarantee for ExamGhost.",
     alternates: {
         canonical: "https://examghost.com/terms",
     },
     openGraph: {
-        title: "Terms of Service | ExamGhost",
+        type: "website",
+        locale: "en_US",
+        title: "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
         description: "Official licensing terms, academic usage guidelines, and 14-day money-back guarantee for ExamGhost.",
         url: "https://examghost.com/terms",
         siteName: "ExamGhost",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "ExamGhost Terms of Service & Refund Guarantee",
+            },
+        ],
     },
 };
 
 export default function TermsPage() {
+    const termsJsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://examghost.com/terms#webpage",
+                "url": "https://examghost.com/terms",
+                "name": "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
+                "description": "Terms of service, educational usage policies, subscription terms, and 14-day 100% money-back refund guarantee for ExamGhost.",
+                "datePublished": "2026-01-15",
+                "dateModified": "2026-03-01",
+                "inLanguage": "en-US",
+                "isPartOf": { "@id": "https://examghost.com/#website" },
+                "breadcrumb": { "@id": "https://examghost.com/terms#breadcrumb" },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary"]
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://examghost.com/terms#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://examghost.com/terms" }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-cream text-ink flex flex-col justify-between">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(termsJsonLd) }}
+            />
             <Navbar />
 
             <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20 w-full">
@@ -35,8 +79,8 @@ export default function TermsPage() {
                     <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
                         Terms of Service
                     </h1>
-                    <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                        Last modified: October 2026 · Please read these terms carefully before installing or activating ExamGhost.
+                    <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
+                        Last modified: March 1, 2026 · ExamGhost provides a 50-question free trial with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day 100% money-back refund guarantee.
                     </p>
                 </div>
 

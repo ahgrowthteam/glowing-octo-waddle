@@ -92,6 +92,14 @@ export default function FeaturesPage() {
             description: 'Pops up full step-by-step logic, explaining why the correct choice is true and specifically why each distractor is wrong.',
             icon: Bot
         },
+        {
+            category: 'modes',
+            title: '3 Answer Delivery Methods (Auto-Fill, Highlight & Silent Clipboard)',
+            badge: 'Flexible Output',
+            bg: '#c4d0f8',
+            description: 'Independent of your display mode, choose whether ExamGhost selects the option automatically, glows on the right choice for 1–10 seconds, or copies the answer silently to your clipboard.',
+            icon: Command
+        },
 
         // Snap-It Vision
         {
@@ -117,6 +125,14 @@ export default function FeaturesPage() {
             bg: '#c4d0f8',
             description: 'Reads LaTeX symbols, integrals, limits, derivatives, coordinate planes, and matrices directly from image crops or PDF exam elements.',
             icon: Layers
+        },
+        {
+            category: 'vision',
+            title: 'Cross-Origin Iframe & Canvas Element Sniping',
+            badge: 'Iframe Bypass',
+            bg: '#cdeecb',
+            description: 'Extracts visual questions inside restricted cross-origin iframes (McGraw-Hill ALEKS, Pearson MyLab, Cengage WebAssign) and HTML5 canvas widgets where DOM selection is blocked.',
+            icon: Maximize2
         },
 
         // Question Types
@@ -152,6 +168,14 @@ export default function FeaturesPage() {
             description: 'Maps complex relationships, definitions, and chemical formulas across dual-column matching tables in one pass.',
             icon: Layers
         },
+        {
+            category: 'formats',
+            title: 'Short-Answer, Code Block & Essay Outline Synthesis',
+            badge: 'Written & Code',
+            bg: '#c4d0f8',
+            description: 'Generates concise rubric-aligned short answers, verified Python/Java/C++ code snippets, and structured essay outlines ready for instant clipboard paste.',
+            icon: Award
+        },
 
         // Attempt Memory
         {
@@ -169,6 +193,14 @@ export default function FeaturesPage() {
             bg: '#bfe9d9',
             description: 'Tracks which options resulted in lost points during previous attempts, pruning them to guarantee higher accuracy on re-takes.',
             icon: Check
+        },
+        {
+            category: 'memory',
+            title: 'Master Hotkey Toggle (⌘+Shift+U) & Zero-Idle Architecture',
+            badge: 'Dormant Mode',
+            bg: '#e2d3fa',
+            description: 'Stays 100% dormant with zero background scripts or network requests until you explicitly activate it via ⌘+Shift+U (Ctrl+Shift+U on Windows).',
+            icon: Command
         },
 
         // Security & Privacy
@@ -225,7 +257,7 @@ export default function FeaturesPage() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
-                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="Ghost" className="w-full h-full object-cover scale-110" />
+                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={20} height={20} loading="eager" decoding="async" className="w-full h-full object-cover scale-110" />
                         </span>
                         <span>ALL 24 FEATURES</span>
                     </p>
@@ -233,8 +265,8 @@ export default function FeaturesPage() {
                         Every tool you could ever need,<br />
                         in one calm app.
                     </h1>
-                    <p className="text-base sm:text-lg text-ink-muted max-w-2xl mx-auto leading-relaxed font-normal mb-8">
-                        We analyzed every existing tool—CanvasHack, Cheatmate, TestBro, Canvas Ninja—and engineered every feature into one unified, 100% invisible architecture.
+                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto leading-relaxed font-normal mb-8">
+                        ExamGhost combines 24 specialized stealth and AI solving capabilities—including Focus Shield window.onblur interception, Closed Shadow DOM v1 isolation, Snap-It Vision OCR (⌘+Shift+S), 3 display modes, 3 answer delivery methods, and a 10ms emergency panic switch—into one client-side Chrome extension.
                     </p>
 
                     {/* Search & Category Filter Pills */}

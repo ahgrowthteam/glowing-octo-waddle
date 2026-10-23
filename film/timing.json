@@ -1,0 +1,80 @@
+{
+  "fps": 30,
+  "physics_substeps": 4,
+  "effective_motion_fps": 120,
+  "duration_sec": 16.0,
+  "total_frames": 480,
+  "width": 1280,
+  "height": 720,
+  "bpm": 120,
+  "beat_interval_sec": 0.5,
+  "beat_frames": [
+    0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225,
+    240, 255, 270, 285, 300, 315, 330, 345, 360, 375, 390, 405, 420, 435, 450, 465
+  ],
+  "scenes": [
+    {
+      "id": "scene_1_hook_explainer",
+      "name": "Frame 0 Hook & 2.5D Architecture Overview",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "start_frame": 0,
+      "end_frame": 90,
+      "camera_mode": "isometric_wide_tilt",
+      "what_viewer_learns": "ExamGhost solves questions inside the target LMS using a Closed Shadow DOM with zero tab-switching or focus-blur telemetry."
+    },
+    {
+      "id": "scene_2_double_click_solve",
+      "name": "One-by-One Double-Click & Bitmap Answer Reveal",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "start_frame": 90,
+      "end_frame": 210,
+      "camera_mode": "dynamic_zoom_push_left_to_right",
+      "what_viewer_learns": "Double-clicking any question triggers a 0.3s in-page solve with a subtle checkmark badge and high-contrast step-by-step derivation."
+    },
+    {
+      "id": "scene_3_alt_s_vision_ocr",
+      "name": "Alt+S Snap-It Vision OCR & Diagram Extraction",
+      "start_sec": 7.0,
+      "end_sec": 10.5,
+      "start_frame": 210,
+      "end_frame": 315,
+      "camera_mode": "close_up_diagram_tilt",
+      "what_viewer_learns": "Pressing Alt+S snips locked graphs, canvas plots, and scanned equations directly on screen with a laser OCR sweep."
+    },
+    {
+      "id": "scene_4_telemetry_benchmark",
+      "name": "Stealth Telemetry Audit vs Tab-Switching",
+      "start_sec": 10.5,
+      "end_sec": 13.5,
+      "start_frame": 315,
+      "end_frame": 405,
+      "camera_mode": "split_25d_comparison",
+      "what_viewer_learns": "While ChatGPT tab-switching triggers page_blurred warnings, ExamGhost maintains 0 blur events and natural per-question pacing."
+    },
+    {
+      "id": "scene_5_cta_outro",
+      "name": "Brand Lockup & 50 Free Solves CTA",
+      "start_sec": 13.5,
+      "end_sec": 16.0,
+      "start_frame": 405,
+      "end_frame": 480,
+      "camera_mode": "center_hero_lockup",
+      "what_viewer_learns": "Try 50 free solves on Chrome with no credit card required at examghost.com/<slug>."
+    }
+  ],
+  "sfx_events": [
+    { "type": "whoosh", "sec": 0.05, "frame": 2, "note": "Opening 2.5D card elevation" },
+    { "type": "whoosh", "sec": 3.0, "frame": 90, "note": "Beat 6 cut to close-up question & extension HUD" },
+    { "type": "double_click", "sec": 4.0, "frame": 120, "note": "Beat 8 physical double-click on question text" },
+    { "type": "chime_solve", "sec": 4.5, "frame": 135, "note": "Beat 9 0.3s AI bitmap answer reveal + checkmark bloom" },
+    { "type": "whoosh", "sec": 7.0, "frame": 210, "note": "Beat 14 cut to Alt+S Vision OCR diagram" },
+    { "type": "laser_scan", "sec": 7.5, "frame": 225, "note": "Beat 15 Alt+S bounding box laser OCR sweep" },
+    { "type": "chime_solve", "sec": 8.5, "frame": 255, "note": "Beat 17 OCR formula extraction lock" },
+    { "type": "whoosh", "sec": 10.5, "frame": 315, "note": "Beat 21 cut to 2.5D Telemetry Benchmark" },
+    { "type": "pulse_lock", "sec": 11.5, "frame": 345, "note": "Beat 23 Zero Blur / Closed Shadow DOM verification" },
+    { "type": "whoosh", "sec": 13.5, "frame": 405, "note": "Beat 27 cut to Outro CTA" },
+    { "type": "resolve_chord", "sec": 14.0, "frame": 420, "note": "Beat 28 Final harmonic resolve on examghost.com URL" }
+  ]
+}

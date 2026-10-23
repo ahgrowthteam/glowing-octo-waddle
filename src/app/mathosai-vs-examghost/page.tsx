@@ -1,788 +1,1145 @@
-import React from 'react';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { 
-    ShieldCheck, 
-    ShieldAlert, 
-    Zap, 
-    Clock, 
-    DollarSign, 
-    Star, 
-    ChevronDown, 
-    ArrowRight, 
-    Sparkles, 
-    Lock, 
-    AlertTriangle,
-    CheckCircle2,
-    XCircle,
-    EyeOff,
-    Monitor,
-    Cpu,
-    HelpCircle,
-    Layers,
-    FileText,
-    BookOpen,
-    ExternalLink
-} from 'lucide-react';
-import { FaChrome, FaDiscord } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  Check,
+  X,
+  ShieldAlert,
+  Sparkles,
+  ArrowRight,
+  Calculator,
+  FileText,
+  Video,
+  EyeOff,
+  BookOpen,
+  DollarSign,
+  Code2,
+  CheckCircle2,
+  AlertTriangle,
+  Layers,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Mathos AI vs ExamGhost (2026 Comparison) | Universal Stealth Solver vs Math-Only Tool",
-    description: "Comparing Mathos AI and ExamGhost? Learn why students choose ExamGhost's universal multi-subject solving, zero-blur Focus Shield, and $19.99 lifetime plan over Mathos AI's math calculator.",
+    title: {
+        absolute: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
+    },
+    description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
     alternates: {
         canonical: "https://examghost.com/mathosai-vs-examghost",
     },
     openGraph: {
-        title: "Mathos AI vs ExamGhost (2026 Comparison) | Universal Stealth Solver vs Math-Only Tool",
-        description: "Mathos AI (MathGPT) is an exceptional standalone math solver, but fails on biology, finance, and humanities questions while lacking a stealth HUD or tab-blur protection. ExamGhost provides dedicated Mathpix STEM parsing and universal multi-disciplinary accuracy.",
+        title: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
+        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
         url: "https://examghost.com/mathosai-vs-examghost",
         siteName: "ExamGhost",
+        type: "website",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Mathos AI vs ExamGhost Review",
+                alt: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Mathos AI vs ExamGhost (2026 Comparison) | Universal Stealth Solver vs Math-Only Tool",
-        description: "Mathos AI solves equations. ExamGhost solves every subject with undetectable exam stealth.",
+        title: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
+        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
         images: ["/og-image.jpg"],
     },
 };
 
-export default function MathosaiVsExamghostPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@graph": [
-                {
-                        "@type": "WebPage",
-                        "@id": "https://examghost.com/mathosai-vs-examghost#webpage",
-                        "url": "https://examghost.com/mathosai-vs-examghost",
-                        "name": "Mathos AI vs ExamGhost (2026 Comparison) | Universal Stealth Solver vs Math-Only Tool",
-                        "description": "Comparing Mathos AI and ExamGhost? Learn why students choose ExamGhost's universal multi-subject solving, zero-blur Focus Shield, and $19.99 lifetime plan over Mathos AI's math calculator.",
-                        "breadcrumb": {
-                                "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb"
-                        },
-                        "about": [
-                                {
-                                        "@type": "SoftwareApplication",
-                                        "name": "ExamGhost",
-                                        "applicationCategory": "EducationalApplication",
-                                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                                        "offers": {
-                                                "@type": "Offer",
-                                                "price": "19.99",
-                                                "priceCurrency": "USD"
-                                        }
-                                },
-                                {
-                                        "@type": "SoftwareApplication",
-                                        "name": "Mathos AI",
-                                        "applicationCategory": "EducationalApplication",
-                                        "operatingSystem": "Web Application / Chrome Extension",
-                                        "offers": {
-                                                "@type": "Offer",
-                                                "price": "8.99",
-                                                "priceCurrency": "USD"
-                                        }
-                                }
-                        ]
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+                "datePublished": "2026-01-13",
+                "dateModified": "2026-03-05",
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                {
-                        "@type": "BreadcrumbList",
-                        "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb",
-                        "itemListElement": [
-                                {
-                                        "@type": "ListItem",
-                                        "position": 1,
-                                        "name": "Home",
-                                        "item": "https://examghost.com"
-                                },
-                                {
-                                        "@type": "ListItem",
-                                        "position": 2,
-                                        "name": "Comparisons",
-                                        "item": "https://examghost.com/compare"
-                                },
-                                {
-                                        "@type": "ListItem",
-                                        "position": 3,
-                                        "name": "Mathos AI vs ExamGhost",
-                                        "item": "https://examghost.com/mathosai-vs-examghost"
-                                }
-                        ]
-                },
-                {
-                        "@type": "FAQPage",
-                        "@id": "https://examghost.com/mathosai-vs-examghost#faq",
-                        "mainEntity": [
-                                {
-                                        "@type": "Question",
-                                        "name": "Can I use Mathos AI safely during a proctored Canvas exam?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "No. Mathos AI opens large visible calculator windows and triggers window.blur events in Canvas SpeedGrader. ExamGhost provides true closed Shadow DOM stealth with active blur suppression."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "How does ExamGhost's STEM engine compare to Mathos AI?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "Both tools handle advanced mathematics, but ExamGhost also parses organic chemistry structures, engineering circuit diagrams, and all non-STEM subjects with 0.3s edge latency."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "How much does ExamGhost cost compared to Mathos AI?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "Mathos AI charges $8.99 to $14.99 per month ($108–$180/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access."
-                                        }
-                                }
-                        ]
-                }
-        ]
+      "@id": "https://examghost.com/mathosai-vs-examghost#webpage",
+      url: "https://examghost.com/mathosai-vs-examghost",
+      name: "Mathos AI (MathGPTPro) vs ExamGhost AI (2026): PDF Helper, Video Lessons & Canvas Stealth",
+      description:
+        "Detailed 2026 audit comparing Mathos AI (mathos.ai / MathGPTPro) and ExamGhost AI across STEM accuracy, PDF homework workflows, AI video generation, LMS tab-switch protection, and weekly vs semester pricing.",
+      inLanguage: "en-US",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "ExamGhost AI",
+        url: "https://examghost.com",
+      },
+      breadcrumb: {
+        "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://examghost.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Compare LMS Extensions",
+          item: "https://examghost.com/compare-canvas-hack-extensions",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Mathos AI vs ExamGhost AI",
+          item: "https://examghost.com/mathosai-vs-examghost",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/mathosai-vs-examghost#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is Mathos AI the same as MathGPTPro?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Mathos AI (operated by Mathos, Inc. in San Francisco, CA and founded in July 2023 by TianWei Yue) is the rebranded name of MathGPTPro. It serves 5M+ students across its web workspace (mathos.ai/app/ask) and iOS/Android mobile apps.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Canvas, Blackboard, or WebAssign detect if I switch tabs to Mathos AI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Mathos AI is built around an external web workspace (mathos.ai/app/ask) and mobile camera apps rather than a stealth in-tab LMS anti-detection layer. Whenever you click outside your Canvas or Blackboard quiz tab to paste a question or upload a screenshot into Mathos AI, the browser fires visibilitychange and window.blur events that log 'stopped viewing the Canvas quiz-taking page' on your professor's dashboard. ExamGhost AI solves questions directly inside your active LMS tab using a closed Shadow DOM HUD and blocks focus-loss telemetry.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does Mathos AI cost per week vs ExamGhost AI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Mathos AI bills primarily on weekly or annual tiers: Basic costs ~$5.98/week (~$23.92/month equivalent, capping MathosMax at 100 solves/day) and Prime costs ~$9.98/week (~$39.92/month equivalent, or ~$98.80/year billed annually) for unlimited MathosMax and 20x PDF Helper quota. ExamGhost AI gives you 50 Free Question Solves ($0, no credit card required), a $19/month Monthly Pass (more than 50% cheaper than paying Mathos AI Prime weekly), a $99/year Academic Year Pass ($8.25/month), and a $199 Lifetime Degree Pass.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "When is Mathos AI a better fit than ExamGhost AI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Mathos AI is an excellent choice when you are studying offline from downloadable PDF problem sets (using its circle-to-solve PDF Homework Helper) or when you want AI-generated animated video lessons (/feature/video-generation) to visualize Calculus or Linear Algebra concepts. ExamGhost AI is the superior choice for live, timed online quizzes and midterms across Canvas, Blackboard, Moodle, D2L, WebAssign, ALEKS, McGraw Hill Connect, and Pearson MyLab.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
-    return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-mint/40 selection:text-ink font-sans">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
+export default function MathosAiVsExamGhostPage() {
+  return (
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111] font-sans selection:bg-emerald-900 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
 
-            <main id="main-content">
+      <main className="pt-28 pb-24">
+        {/* Breadcrumb & Split Hero */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-600 mb-6"
+          >
+            <Link prefetch={false} href="/" className="hover:text-emerald-800 transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link prefetch={false}
+              href="/compare-canvas-hack-extensions"
+              className="hover:text-emerald-800 transition-colors"
+            >
+              Compare LMS Extensions
+            </Link>
+            <span>/</span>
+            <span className="text-emerald-900 font-semibold">
+              Mathos AI vs ExamGhost AI
+            </span>
+          </nav>
 
-            {/* Breadcrumb Navigation */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                    <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-                    <span>/</span>
-                    <Link href="/compare" className="hover:text-ink transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-ink font-semibold">Mathos AI vs ExamGhost</span>
-                </nav>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column: High-Converting SaaS Copy & Hero CTAs */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100 border border-indigo-300 text-indigo-950 text-xs font-mono uppercase tracking-widest mb-5">
+                <Sparkles className="w-3.5 h-3.5 text-indigo-700" />
+                <span>2026 STEM Solver &amp; Canvas Stealth Comparison</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111111] leading-[1.08] mb-5">
+                Mathos AI (MathGPTPro) Excels at PDF Study—Until You{" "}
+                <span className="text-indigo-800 underline decoration-indigo-400/70 decoration-wavy underline-offset-4">
+                  Leave a Live Exam Tab
+                </span>
+              </h1>
+
+              <p className="aeo-summary text-base sm:text-lg text-neutral-700 leading-relaxed mb-6">
+                Backed by Y Combinator, <strong>Mathos AI</strong> (formerly{" "}
+                <strong>MathGPTPro</strong> at{" "}
+                <code className="font-mono text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded">
+                  mathos.ai
+                </code>
+                ) serves 5M+ students with an awesome <strong>PDF Homework Helper</strong>{" "}
+                and AI animated math videos. The catch? Mathos AI is an{" "}
+                <strong>external web workspace</strong>. Clicking over to{" "}
+                <code className="font-mono text-sm bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                  mathos.ai/app/ask
+                </code>{" "}
+                during a live Canvas, WebAssign, or ALEKS quiz immediately logs a{" "}
+                <strong>tab-switch blur event</strong> on your professor&apos;s
+                timeline—and unlocking unlimited <em>MathosMax</em> costs{" "}
+                <strong>~$9.98/week (~$40/mo)</strong>. Here is how it compares to{" "}
+                <strong>ExamGhost AI</strong>.
+              </p>
+
+              {/* 3 Fast Scannable Stat Pills */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Live Quiz Stealth
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-emerald-800">In-Tab Focus Shield</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    vs External mathos.ai tab blur
+                  </div>
+                </div>
+
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Course Coverage
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-emerald-800">All College Majors</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    STEM + Nursing, Biz &amp; Gen-Ed
+                  </div>
+                </div>
+
+                <div className="bg-white border border-neutral-200 rounded-xl p-3.5 shadow-sm">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                    Unlimited Best Model
+                  </div>
+                  <div className="text-sm font-bold text-[#111111]">
+                    <span className="text-rose-700 line-through mr-1.5">$39.92/mo</span>
+                    <span className="text-emerald-800">$19/mo</span>
+                  </div>
+                  <div className="text-xs text-neutral-600 mt-0.5">
+                    + 50 Free Solves ($0 upfront)
+                  </div>
+                </div>
+              </div>
+
+              {/* Above-the-Fold Hero CTAs */}
+              <div className="flex flex-wrap items-center gap-3.5">
+                <Link prefetch={false}
+                  href="/#pricing"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
+                >
+                  Claim 50 Free Solves ($0)
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link prefetch={false}
+                  href="/canvas-quiz-solver-free-demo"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] font-semibold text-sm border-2 border-[#111111] hover:bg-neutral-100 transition-colors"
+                >
+                  Try Live STEM Sandbox
+                </Link>
+                <a
+                  href="#interactive-comparison"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-900 font-bold hover:underline px-2 py-2"
+                >
+                  Compare PDF vs In-Tab OCR ↓
+                </a>
+              </div>
             </div>
 
-            {/* BESPOKE HERO */}
-            <header className="relative pt-6 pb-16 sm:pb-24 overflow-hidden border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand/80 border border-sand-dark/30 text-xs font-mono font-medium text-ink-muted mb-6">
-                        <Sparkles className="w-3.5 h-3.5 text-mint-dark" />
-                        <span>The #1 Mathos AI Alternative</span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-display leading-[1.1] mb-6">
-                        Mathos AI solves equations. ExamGhost solves every subject with undetectable exam stealth.
-                    </h1>
-
-                    <p className="text-base sm:text-xl text-ink-muted max-w-3xl leading-relaxed mb-8">
-                        Mathos AI (MathGPT) is an exceptional standalone math solver, but fails on biology, finance, and humanities questions while lacking a stealth HUD or tab-blur protection. ExamGhost provides dedicated Mathpix STEM parsing and universal multi-disciplinary accuracy.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-                        <a
-                            href="https://chromewebstore.google.com/detail/examghost"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-ink text-white font-medium hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
-                        >
-                            <FaChrome className="w-4 h-4 text-mint"  aria-hidden="true"/>
-                            <span>Get ExamGhost Lifetime — $19.99</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <Link
-                            href="/compare"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sand/60 hover:bg-sand border border-sand-dark/30 text-ink font-medium transition-all text-sm sm:text-base"
-                        >
-                            <span>View All 45 Competitors</span>
-                        </Link>
-                    </div>
-
-                    {/* Quick Stat Pill Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-sand-dark/20">
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Pricing Model</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">ExamGhost: $19.99 Lifetime</div>
-                            <div className="text-xs text-ink-muted line-through">Mathos AI: Freemium + $8.99 - $14.99/mo</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Solving Latency</div>
-                            <div className="text-sm sm:text-base font-bold text-ink">0.3s Instant Edge</div>
-                            <div className="text-xs text-rose-800">Mathos AI: 3.2s</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Shadow DOM HUD</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">100% Closed Tree</div>
-                            <div className="text-xs text-ink-muted">Mathos AI: Unshielded DOM</div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-surface border border-sand-dark/20">
-                            <div className="text-xs text-ink-muted font-medium mb-1">Focus Shield</div>
-                            <div className="text-sm sm:text-base font-bold text-mint-dark">Zero Window Blur</div>
-                            <div className="text-xs text-rose-800">Mathos AI: Canvas Logs Blurs</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* TL;DR EXECUTIVE SUMMARY */}
-            <section className="py-12 sm:py-16 bg-sand/30 border-b border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm">
-                        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-mint-dark mb-3">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>TL;DR Executive Technical Summary</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-bold font-display text-ink mb-4">
-                            Why collegiate students replace Mathos AI with ExamGhost
-                        </h2>
-                        <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-6">
-                            Mathos AI is a great tutoring calculator for math homework. ExamGhost is an all-subject exam engine featuring Mathpix neural STEM parsing, closed Shadow DOM stealth, Focus Shield blur immunity, and flat $19.99 lifetime access.
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3">
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Mathos AI only works for math; ExamGhost solves STEM, humanities, business, and medical exams.</span>
-                            </div>
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Mathos AI has no exam stealth; ExamGhost is 100% invisible inside a closed Shadow DOM.</span>
-                            </div>
-
-                            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-sand/40 border border-sand-dark/20 text-xs sm:text-sm text-ink font-medium">
-                                <CheckCircle2 className="w-4 h-4 text-mint-dark flex-shrink-0 mt-0.5" />
-                                <span>Single $19.99 lifetime payment vs Mathos AI&apos;s $8.99 to $14.99 monthly subscription.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FATAL FLAW TEARDOWN */}
-            <section className="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-700 uppercase tracking-wider mb-4">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-800" />
-                        <span>Architectural Analysis</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-4">
-                        Mathos AI&apos;s Flaws: Math-Only Scope, Zero Live Exam Stealth HUD & Visible Overlays
-                    </h2>
-                    <p className="text-ink-muted text-sm sm:text-base leading-relaxed">
-                        Mathos AI is limited strictly to mathematics and physics, with no stealth HUD, no focus event masking, and visible overlays that alert proctors.
-                    </p>
+            {/* Right Column: Bespoke PDF Workspace vs In-Tab STEM Exam Simulator */}
+            <div className="lg:col-span-5">
+              <div className="bg-white border-2 border-[#111111] rounded-3xl p-5 sm:p-6 shadow-[6px_6px_0px_0px_#111111]">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 ml-1">
+                      Calculus II Midterm • Canvas + WebAssign
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-50 text-indigo-900 font-semibold">
+                    ∫ Surface Integral
+                  </span>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Flaws List */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-bold font-display text-ink flex items-center gap-2">
-                            <XCircle className="w-5 h-5 text-rose-800" />
-                            <span>Documented Limitations of Mathos AI</span>
-                        </h3>
-                        <div className="space-y-3">
+                {/* Top Simulator Card: Mathos AI Workspace */}
+                <div className="rounded-2xl bg-amber-50/80 border border-amber-200 p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3.5 h-3.5 text-amber-700" />
+                      Mathos AI (mathos.ai/app/ask)
+                    </span>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-amber-200/80 text-amber-950">
+                      External Tab Required
+                    </span>
+                  </div>
 
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Narrow academic scope: Completely unable to solve biology, psychology, accounting, business law, or humanities exams.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No stealth HUD: Renders prominent calculator popups across the screen, visible to webcam and screen recording proctors.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    No Focus Shield: Interacting with Mathos AI triggers window.blur events logged in Canvas SpeedGrader.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-xl bg-surface border border-rose-200/70 flex items-start gap-3">
-                                <XCircle className="w-4 h-4 text-rose-800 flex-shrink-0 mt-0.5" />
-                                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Monthly subscription tiers: Charges up to $14.99/month for unlimited MathosMax solving.
-                                </p>
-                            </div>
-                        </div>
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="bg-white/90 rounded-lg p-2.5 border border-amber-200/80 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        Offline PDF &amp; Video Lessons:
+                      </span>
+                      <span className="text-emerald-800 font-bold">
+                        5-Stage Workspace ✓
+                      </span>
                     </div>
-
-                    {/* Interactive Code Mockup */}
-                    <div className="p-6 rounded-2xl bg-surface border border-sand-dark/30 shadow-sm space-y-6">
-                        {/* Competitor Code Mock */}
-                        <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-rose-800 uppercase tracking-wider">
-                                    Mathos AI: Window Blur Crop & Monthly Billing
-                                </span>
-                            </div>
-                            <div className="bg-rose-950 text-rose-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-rose-300">// 1. Screenshot drag capture forces window unfocus:</div>
-                                <div className="text-rose-300">window.dispatchEvent(new Event(&quot;blur&quot;)); // Canvas logs: Student unfocused quiz</div>
-                                <div className="text-rose-300">// 2. Cloud LaTeX OCR computation delay:</div>
-                                <div className="text-rose-300">await fetch(&quot;https://api.mathos.ai/solve&quot;, &#123; body: fullPageScreenshot &#125;);</div>
-                            </div>
-                            <p className="text-xs text-rose-900 leading-relaxed">
-                                <strong>Technical Reality:</strong> Mathos AI requires manual drag-to-crop screenshotting which triggers window.blur events in Canvas, while locking unlimited STEM formulas behind an $8.99/mo subscription.
-                            </p>
-                        </div>
-
-                        {/* ExamGhost Shield */}
-                        <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="font-mono text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                                    ExamGhost: Closed Shadow DOM &amp; Focus Shield
-                                </span>
-                            </div>
-                            <div className="bg-emerald-950 text-emerald-100 rounded-xl p-4 font-mono text-xs mb-4 overflow-x-auto leading-relaxed">
-                                <div className="text-emerald-400">// 1. Mounts closed shadow tree (Mode: &quot;closed&quot;):</div>
-                                <div className="text-emerald-400">const shadowRoot = hostElement.attachShadow(&#123; mode: &apos;closed&apos; &#125;);</div>
-                                <div className="text-emerald-400">// 2. Focus Shield traps all blur &amp; visibility events:</div>
-                                <div className="text-emerald-400">window.addEventListener(&apos;blur&apos;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
-                            </div>
-                            <p className="text-xs text-emerald-900 leading-relaxed">
-                                <strong>The ExamGhost Advantage:</strong> Operates entirely inside an undetectable closed Shadow DOM with active Focus Shield event suppression, zero window blurs, and instant 0.3s edge solving.
-                            </p>
-                        </div>
+                    <div className="bg-white/90 rounded-lg p-2.5 border border-amber-200/80 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        Live Canvas Quiz Tab Switch:
+                      </span>
+                      <span className="text-rose-800 font-bold">
+                        window.onblur Logged ⚠️
+                      </span>
                     </div>
+                    <div className="bg-rose-950 text-rose-100 rounded-lg p-2.5 flex items-center justify-between">
+                      <span>Unlimited MathosMax Cost:</span>
+                      <span className="text-rose-300 font-bold">
+                        $9.98/wk (~$39.92/mo)
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* 3 TECHNICAL DEEP DIVES */}
-                <div className="space-y-6">
-                    <h3 className="text-xl font-bold font-display text-ink text-center">
-                        Side-by-Side Architectural Deep Dive
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
+                {/* Bottom Simulator Card: ExamGhost AI */}
+                <div className="rounded-2xl bg-emerald-50/90 border-2 border-emerald-700 p-4">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-xs font-mono font-bold uppercase text-emerald-950 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                      ExamGhost AI v4.2 (In-Tab STEM OCR)
+                    </span>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-200 text-emerald-950">
+                      0.3s In-Tab HUD
+                    </span>
+                  </div>
 
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    01
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Universal Multi-Disciplinary AI vs Math-Only Models
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Mathos AI Flaw:</span>
-                                        Mathos AI uses models trained solely on symbolic mathematics. When given a clinical nursing case study or a business law contract problem, it hallucinates or errors out completely.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost deploys multimodal routing: Mathpix neural models for LaTeX/calculus, and advanced vision LLMs for conceptual, humanities, and business assessments.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    02
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Closed Shadow DOM Stealth vs Screen-Filling Calculator Overlays
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Mathos AI Flaw:</span>
-                                        Mathos AI opens large side panels with interactive graphs and calculators that occupy half the screen, creating an immediate visual flag for proctors.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost renders a compact, floating pill within a closed Shadow DOM, completely invisible to DOM inspection and subtle on screen.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-6 rounded-2xl bg-surface border border-sand-dark/20 flex flex-col justify-between">
-                            <div>
-                                <div className="w-8 h-8 rounded-lg bg-mint/30 text-ink font-bold font-mono text-xs flex items-center justify-center mb-4">
-                                    03
-                                </div>
-                                <h4 className="font-bold font-display text-base text-ink mb-3">
-                                    Focus Shield Blur Suppression vs Canvas Departure Logs
-                                </h4>
-                                <div className="space-y-3 text-xs leading-relaxed">
-                                    <div className="p-3 rounded-lg bg-rose-50/50 border border-rose-100 text-rose-900">
-                                        <span className="font-bold text-rose-700 block mb-1">Mathos AI Flaw:</span>
-                                        Mathos AI does not intercept browser focus events. Clicking on its equation solver logs window.blur in Canvas SpeedGrader.
-                                    </div>
-                                    <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100 text-emerald-900">
-                                        <span className="font-bold text-emerald-700 block mb-1">ExamGhost Solution:</span>
-                                        ExamGhost&apos;s Focus Shield silences all focus and visibility changes, guaranteeing clean exam activity logs.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="bg-white rounded-lg p-2.5 border border-emerald-200 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        Drag-to-Snip Integral / Matrix:
+                      </span>
+                      <span className="text-emerald-800 font-bold">
+                        LaTeX Steps in 0.3s ✓
+                      </span>
                     </div>
+                    <div className="bg-white rounded-lg p-2.5 border border-emerald-200 flex items-center justify-between">
+                      <span className="text-neutral-700">
+                        Canvas &amp; WebAssign Telemetry:
+                      </span>
+                      <span className="text-emerald-800 font-bold">
+                        0 Tab Leaves Logged ✓
+                      </span>
+                    </div>
+                    <div className="bg-emerald-950 text-emerald-100 rounded-lg p-2.5 flex items-center justify-between">
+                      <span>All-Majors Unlimited Pass:</span>
+                      <span className="text-emerald-300 font-bold">
+                        $19/mo or $99/yr ($8.25/mo)
+                      </span>
+                    </div>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            {/* 10-POINT COMPARISON MATRIX */}
-            <section className="py-16 bg-surface border-y border-sand-dark/20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                            Direct Feature &amp; Stealth Comparison
-                        </h2>
-                        <p className="text-xs sm:text-sm text-ink-muted">
-                            Comparing ExamGhost against Mathos AI across 10 mission-critical exam dimensions.
-                        </p>
-                    </div>
+        {/* Interactive Pure-CSS 3-Tab Comparison Explorer */}
+        <section
+          id="interactive-comparison"
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24"
+        >
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              01 // Interactive Architecture &amp; Pricing Explorer
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Where Mathos AI Shines vs Where ExamGhost AI Wins
+            </h2>
+            <p className="text-neutral-700 mt-2 max-w-3xl text-sm sm:text-base">
+              Unlike generic review sites, we tested Mathos AI&apos;s 5-stage
+              learning workspace, its PDF Homework Helper, and its weekly billing
+              tiers alongside ExamGhost AI. Click any tab below to compare.
+            </p>
+          </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
-                            <thead>
-                                <tr className="border-b border-sand-dark/30 bg-sand/30">
-                                    <th className="py-3.5 px-4 font-bold text-ink">Feature &amp; Stealth Capability</th>
-                                    <th className="py-3.5 px-4 font-bold text-ink-muted">Technical Significance</th>
-                                    <th className="py-3.5 px-4 font-bold text-mint-dark">ExamGhost</th>
-                                    <th className="py-3.5 px-4 font-bold text-rose-700">Mathos AI</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-sand-dark/20">
+          <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+            {/* Pure CSS Radio Inputs */}
+            <input
+              type="radio"
+              name="ma-tabs"
+              id="tab-ma-workflow"
+              className="sr-only peer/ma-workflow"
+              defaultChecked
+            />
+            <input
+              type="radio"
+              name="ma-tabs"
+              id="tab-ma-models"
+              className="sr-only peer/ma-models"
+            />
+            <input
+              type="radio"
+              name="ma-tabs"
+              id="tab-ma-pricing"
+              className="sr-only peer/ma-pricing"
+            />
 
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Closed Shadow DOM HUD</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Zero document elements or CSS leaks</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Focus Shield (Blur Masking)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Suppresses window.blur & visibilitychange</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal Subject Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">STEM, Humanities, Business, Medical</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Math & Physics Only
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Mathpix Neural STEM OCR</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Flawless LaTeX, integrals, and chemistry diagrams</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Canvas New Quizzes (Iframe)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Seamless execution across cross-origin iframes</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Panic RAM Flush (Esc)</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Instantly purges memory and unmounts UI</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Zero DOM Injection</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Never leaves detectable nodes in document</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        <XCircle className="w-4 h-4 text-rose-800 inline" />
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Solving Speed</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Time to return accurate answer</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        0.3s Edge Latency
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        3.2s Cloud Latency
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-cream/40">
-                                    <td className="py-3 px-4 font-semibold text-ink">Universal LMS Coverage</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">Canvas, Blackboard, McGraw Hill, Pearson</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline" />
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        Canvas & DeltaMath Only
-                                    </td>
-                                </tr>
-
-                                <tr className="bg-surface">
-                                    <td className="py-3 px-4 font-semibold text-ink">Pricing Model</td>
-                                    <td className="py-3 px-4 text-ink-muted text-xs">One-time payment vs recurring subscription</td>
-                                    <td className="py-3 px-4 text-emerald-700 font-bold">
-                                        $19.99 Lifetime
-                                    </td>
-                                    <td className="py-3 px-4 text-ink-muted">
-                                        $8.99 - $14.99/mo
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            {/* Tab Labels */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
+              <label
+                htmlFor="tab-ma-workflow"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-workflow:border-[#111111] peer-checked/ma-workflow:bg-emerald-950 peer-checked/ma-workflow:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <FileText className="w-4 h-4" />
+                  <span>Tab 01 • Study vs Live Exam</span>
                 </div>
-            </section>
-
-            {/* VERIFIED STUDENT PROOF */}
-            <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="p-8 rounded-3xl bg-sand/40 border border-sand-dark/30 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-1 text-amber-500 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                        <span className="text-xs font-mono font-bold text-ink ml-2">Verified Student Switcher</span>
-                    </div>
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
-                        &quot;Mathos AI was great for basic calculus homework, but when I had a physics exam that combined differential equations with conceptual essays, it couldn&apos;t help with half the test. ExamGhost aced the entire exam in 0.3s.&quot;
-                    </blockquote>
-                    <div className="flex items-center justify-between border-t border-sand-dark/20 pt-4">
-                        <div>
-                            <div className="font-bold text-ink text-sm">Elena N.</div>
-                            <div className="text-xs text-ink-muted">Purdue University · Civil Engineering</div>
-                        </div>
-                        <div className="px-3 py-1 rounded-full bg-mint/30 text-mint-dark font-mono text-xs font-bold">
-                            A in PHYS 172
-                        </div>
-                    </div>
+                <div className="font-bold text-sm sm:text-base">
+                  PDF Helper &amp; Videos vs In-Tab OCR
                 </div>
-            </section>
+              </label>
 
-            {/* LATENCY BENCHMARK */}
-            <section className="py-12 bg-cream border-t border-sand-dark/20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-ink mb-6">
-                        Response Latency Benchmark
-                    </h3>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>ExamGhost (Edge Inference Engine)</span>
-                                <span className="text-emerald-600">0.3s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-emerald-500 rounded-full w-[10%]" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flex justify-between text-xs font-bold text-ink mb-1">
-                                <span>Mathos AI (Mathos AI Cloud Processing)</span>
-                                <span className="text-rose-800">3.2s</span>
-                            </div>
-                            <div className="w-full h-3 bg-sand-dark/20 rounded-full overflow-hidden">
-                                <div className="h-full bg-rose-500 rounded-full w-[80%]" />
-                            </div>
-                        </div>
-                    </div>
+              <label
+                htmlFor="tab-ma-models"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-models:border-[#111111] peer-checked/ma-models:bg-emerald-950 peer-checked/ma-models:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <Layers className="w-4 h-4" />
+                  <span>Tab 02 • AI Models &amp; Majors</span>
                 </div>
-            </section>
-
-                        {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="rounded-[32px] bg-[#5865F2] text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-                            <FaDiscord className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="font-display font-bold text-lg sm:text-xl text-white">
-                                Join the ExamGhost Student Community
-                            </h3>
-                            <p className="text-xs sm:text-sm text-white/80">
-                                Connect with thousands of verified university students. Get 24/7 stealth updates, LMS bypass logs, and direct engineering support.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white text-[#5865F2] hover:bg-white/90 text-sm font-bold shadow-xs whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
-                    >
-                        <span>Join Discord Community</span>
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
+                <div className="font-bold text-sm sm:text-base">
+                  MathosMax Caps &amp; All-Major Coverage
                 </div>
-            </section>
+              </label>
 
-            {/* FREQUENTLY ASKED QUESTIONS */}
-            <section className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-xs sm:text-sm text-ink-muted">
-                        Everything you need to know about switching from Mathos AI to ExamGhost.
-                    </p>
+              <label
+                htmlFor="tab-ma-pricing"
+                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-pricing:border-[#111111] peer-checked/ma-pricing:bg-emerald-950 peer-checked/ma-pricing:text-white"
+              >
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
+                  <DollarSign className="w-4 h-4" />
+                  <span>Tab 03 • Semester Cost Math</span>
+                </div>
+                <div className="font-bold text-sm sm:text-base">
+                  $9.98/wk (~$160/Sem) vs $99/yr Pass
+                </div>
+              </label>
+            </div>
+
+            {/* Panel 1: PDF Helper & Videos vs In-Tab OCR */}
+            <div className="hidden peer-checked/ma-workflow:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-900 text-xs font-mono font-bold uppercase">
+                  Workflow Architecture Comparison
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  &quot;One Prompt Becomes a Lesson&quot; vs Zero-Trace Live Portal Solving
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Mathos AI genuinely stands out when you are studying offline the
+                  night before a test. Inside{" "}
+                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                    mathos.ai/app/ask
+                  </code>
+                  , a single question opens five study tabs:{" "}
+                  <strong>Ask</strong>, <strong>Solution</strong>,{" "}
+                  <strong>Video</strong> (which generates Manim-style animated
+                  visual explanations), <strong>Flashcards</strong>, and{" "}
+                  <strong>Quizzes</strong>. And if your professor hands out
+                  downloadable <code className="font-mono text-xs">.pdf</code>{" "}
+                  worksheets, its <strong>PDF Homework Helper</strong> lets you
+                  circle equations right on the document.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  The problem happens when your graded work is hosted inside{" "}
+                  <strong>Canvas Quizzes</strong>, <strong>Cengage WebAssign</strong>,{" "}
+                  <strong>McGraw Hill ALEKS</strong>, or{" "}
+                  <strong>Pearson MyLab Math</strong>. Because Mathos AI has no
+                  in-tab Focus Shield, every time you click outside your quiz tab
+                  to paste or upload a screenshot into{" "}
+                  <code className="font-mono text-xs">mathos.ai</code>, the LMS
+                  records a <code className="font-mono text-xs">window.blur</code>{" "}
+                  and <code className="font-mono text-xs">visibilitychange</code>{" "}
+                  violation.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4">
+                <div className="bg-[#FAF8F5] border border-neutral-200 rounded-2xl p-5">
+                  <div className="text-xs font-mono uppercase font-bold text-indigo-900 mb-2">
+                    When Mathos AI Fits Best
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-700">
+                    <li>• Annotating downloadable <code className="font-mono text-xs">.pdf</code> math problem sets offline</li>
+                    <li>• Watching AI-generated animated visual math videos (<code className="font-mono text-xs">/feature/video-generation</code>)</li>
+                    <li>• Scanning paper homework with the iOS/Android camera app</li>
+                  </ul>
                 </div>
 
-                <div className="space-y-4">
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can I use Mathos AI safely during a proctored Canvas exam?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            No. Mathos AI opens large visible calculator windows and triggers window.blur events in Canvas SpeedGrader. ExamGhost provides true closed Shadow DOM stealth with active blur suppression.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How does ExamGhost&apos;s STEM engine compare to Mathos AI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Both tools handle advanced mathematics, but ExamGhost also parses organic chemistry structures, engineering circuit diagrams, and all non-STEM subjects with 0.3s edge latency.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>How much does ExamGhost cost compared to Mathos AI?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Mathos AI charges $8.99 to $14.99 per month ($108–$180/year). ExamGhost is a single, flat one-time payment of $19.99 for lifetime access.
-                        </p>
-                    </details>
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>What is ExamGhost&apos;s emergency panic kill switch?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Pressing ⌘+Shift+U (or Ctrl+Shift+U on Windows) instantly purges the closed Shadow DOM overlay, active AI web workers, and all cached answers from memory in under 1 millisecond.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Does ExamGhost work on Canvas New Quizzes (LTI 1.3)?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            Yes. While basic extensions fail because Canvas New Quizzes isolates test questions inside sandboxed iframes, ExamGhost uses universal cross-origin screen OCR and multi-frame listeners to solve questions across Canvas, Blackboard, Moodle, and D2L.
-                        </p>
-                    </details>
-
-                    <details className="group rounded-2xl bg-surface border border-sand-dark/20 p-5 shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="flex items-center justify-between cursor-pointer font-display font-bold text-base text-ink">
-                            <span>Can professors detect ExamGhost via screen recordings or webcams?</span>
-                            <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
-                        </summary>
-                        <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                            ExamGhost operates within hardware overlay space and features an opacity slider allowing 0% to 100% ghost transparency, ensuring that answers remain completely unnoticeable during webcam or desk inspection.
-                        </p>
-                    </details>
+                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                  <div className="text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
+                    When ExamGhost AI Wins
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                    <li>• Live timed quizzes on Canvas, Blackboard, Moodle &amp; D2L</li>
+                    <li>• Multi-part WebAssign, ALEKS &amp; MyLab Math portals</li>
+                    <li>• Zero tab switches—Snap-It OCR snips graphs in 0.3s inside a closed Shadow DOM HUD with Focus Shield active</li>
+                  </ul>
                 </div>
-            </section>
+              </div>
+            </div>
 
-                        {/* RELATED COMPETITORS GRID */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="border-t border-sand-dark/20 pt-10">
-                    <h3 className="font-display font-bold text-lg text-ink mb-6">
-                        Explore Other Technical Comparisons
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                        <Link href="/homework-helper-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Homework Helper+ vs ExamGhost</span>
-                            <span className="text-ink-muted">Right-Click Lockout vs Hotkey</span>
-                        </Link>
-                        <Link href="/answerly-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">Answerly vs ExamGhost</span>
-                            <span className="text-ink-muted">DOM Fragility vs Hardened</span>
-                        </Link>
-                        <Link href="/canvaswizard-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">CanvasWizard vs ExamGhost</span>
-                            <span className="text-ink-muted">Subscription Trap vs Lifetime</span>
-                        </Link>
-                        <Link href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white border border-black/5 hover:border-black/20 transition-colors">
-                            <span className="font-semibold block text-ink">BetterCampus vs ExamGhost</span>
-                            <span className="text-ink-muted">Canvas Theming vs AI Stealth</span>
-                        </Link>
+            {/* Panel 2: MathosMax Caps & All-Major Coverage */}
+            <div className="hidden peer-checked/ma-models:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
+                  Model Tiering &amp; Subject Scope
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  Why Split MathosPro vs MathosMax—And What About Your Non-Math Classes?
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Mathos AI divides its solver into two accuracy tiers:{" "}
+                  <strong>MathosPro</strong> (standard model) and{" "}
+                  <strong>MathosMax</strong> (its flagship STEM reasoning model).
+                  On the Free plan, daily solves and image uploads are tightly
+                  capped. Even if you pay <strong>~$5.98/week</strong> for the
+                  Basic plan, <em>MathosMax</em> is still capped at 100 queries
+                  per day—forcing heavy users onto the{" "}
+                  <strong>~$9.98/week Prime plan</strong> for unlimited{" "}
+                  <em>MathosMax</em> and the 20× PDF Helper quota.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Furthermore, Mathos AI is engineered specifically around 7 math
+                  disciplines (Algebra, Calculus, Differential Equations,
+                  Geometry, Linear Algebra, Trigonometry, and Statistics) plus
+                  introductory Physics. <strong>ExamGhost AI</strong> never
+                  gates its frontier reasoning model and covers{" "}
+                  <strong>every class on your college schedule</strong>—from
+                  Vector Calculus and Circuit Analysis to Organic Chemistry,
+                  Nursing (NCLEX), Financial Accounting, Computer Science, and
+                  Gen-Ed Humanities.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 space-y-4">
+                <div className="text-xs font-mono uppercase tracking-wider text-emerald-300 font-bold">
+                  Full Semester Course Load Coverage
+                </div>
+                <div className="space-y-3 text-xs sm:text-sm">
+                  <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-between">
+                    <span>Calculus I/II/III, Linear Algebra &amp; DiffEq</span>
+                    <span className="font-mono text-emerald-300 font-bold">Both ✓</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-between">
+                    <span>Organic Chemistry Rings &amp; Reaction Mechanisms</span>
+                    <span className="font-mono text-emerald-300 font-bold">ExamGhost Only ✓</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-between">
+                    <span>Accounting Balance Sheets &amp; Finance Tables</span>
+                    <span className="font-mono text-emerald-300 font-bold">ExamGhost Only ✓</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-between">
+                    <span>Nursing (ATI / Pharmacology), Bio &amp; Gen-Eds</span>
+                    <span className="font-mono text-emerald-300 font-bold">ExamGhost Only ✓</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Panel 3: Semester Cost Math */}
+            <div className="hidden peer-checked/ma-pricing:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
+                  16-Week Semester Billing Audit
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                  How $9.98/Week Quietly Turns Into $159.68 Per Semester
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Weekly pricing looks small at checkout, but college semesters
+                  last 16 weeks. Paying Mathos AI Prime&apos;s{" "}
+                  <strong>$9.98/week</strong> rate adds up to{" "}
+                  <strong>$39.92 every 4 weeks</strong>—or{" "}
+                  <strong>$159.68 over a single 16-week semester</strong> (unless
+                  you commit to its annual billing tier at ~$98.80/yr). Even
+                  Mathos AI Basic at <strong>$5.98/week</strong> costs{" "}
+                  <strong>~$23.92/month</strong> while still capping{" "}
+                  <em>MathosMax</em>.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  <strong>ExamGhost AI</strong> keeps pricing simple and
+                  student-friendly: start with{" "}
+                  <strong>50 Free Question Solves ($0, no card required)</strong>,
+                  upgrade to a single <strong>$19/month Monthly Pass</strong>{" "}
+                  during midterms or finals, or lock in a full year (Fall + Spring
+                  + Summer) for <strong>$99/year ($8.25/month)</strong> backed by
+                  our <strong>14-day 100% money-back guarantee</strong>.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4">
+                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-base text-rose-950">
+                      Mathos AI Weekly Billing
+                    </span>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-rose-200 text-rose-950 font-bold">
+                      Up to $39.92/mo
+                    </span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                    <li>• <strong>Basic Plan:</strong> ~$5.98/wk (~$23.92/mo eq., 100 MathosMax/day cap)</li>
+                    <li>• <strong>Prime Plan:</strong> ~$9.98/wk (~$39.92/mo eq., or ~$98.80/yr annual)</li>
+                    <li>• <strong>16-Week Semester on Prime Weekly:</strong> $159.68</li>
+                  </ul>
+                </div>
+
+                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-base text-emerald-950">
+                      ExamGhost AI Transparent Passes
+                    </span>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-800 text-white font-bold">
+                      50 Free Solves
+                    </span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                    <li>• <strong>Free Trial:</strong> 50 Free Solves + 10 OCR Snips ($0)</li>
+                    <li>• <strong>Monthly Pass:</strong> $19/month (cancel anytime)</li>
+                    <li>• <strong>Academic Year Pass:</strong> $99/year ($8.25/mo)</li>
+                    <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Side-by-Side Comparison Matrix + Collapsible Technical Architecture Drawer */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              02 // Head-to-Head Specification Matrix
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Mathos AI vs ExamGhost AI: 2026 Feature &amp; Pricing Matrix
+            </h2>
+          </div>
+
+          <div className="bg-white rounded-2xl border-2 border-[#111111] overflow-hidden shadow-[6px_6px_0px_0px_#111111]">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#111111] text-white text-xs font-mono uppercase tracking-wider">
+                    <th className="py-4 px-5 border-r border-neutral-800 w-1/4">
+                      Evaluation Dimension
+                    </th>
+                    <th className="py-4 px-5 border-r border-neutral-800 w-[37.5%] text-emerald-300">
+                      ExamGhost AI (2026 v4.2)
+                    </th>
+                    <th className="py-4 px-5 w-[37.5%] text-neutral-300">
+                      Mathos AI / MathGPTPro (mathos.ai)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 text-sm">
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Primary Architecture
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>Stealth In-Tab LMS Extension:</strong>{" "}
+                          isolated Shadow DOM HUD +{" "}
+                          <code className="font-mono text-xs">0.3s</code>{" "}
+                          Snap-It Vision OCR inside your active quiz tab
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      Standalone Web Workspace (
+                      <code className="font-mono text-xs">
+                        mathos.ai/app/ask
+                      </code>
+                      ), PDF Uploader &amp; iOS/Android Mobile Apps
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Canvas &amp; LMS Focus Shield
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>Built-in Focus Shield:</strong> blocks{" "}
+                          <code className="font-mono text-xs">
+                            visibilitychange
+                          </code>
+                          , <code className="font-mono text-xs">window.blur</code>
+                          , <code className="font-mono text-xs">focusout</code>,
+                          and mouse-leave tracking across all LMS portals
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      <div className="flex items-start gap-2">
+                        <X className="w-4 h-4 text-red-700 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>None:</strong> switching tabs to{" "}
+                          <code className="font-mono text-xs">mathos.ai</code>{" "}
+                          is immediately logged by Canvas &amp; Blackboard
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Subject Coverage
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>All University Majors:</strong> Calculus,
+                          Physics, Chemistry, Organic Chem, Nursing (NCLEX),
+                          Accounting, Finance, CS, Biology &amp; Humanities
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      Focused on <strong>Math, Physics &amp; Engineering</strong>{" "}
+                      (Algebra, Calculus, DiffEq, Geometry, Linear Algebra,
+                      Trig, Statistics)
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Live WebAssign, ALEKS &amp; MyLab Support
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>In-place region OCR:</strong> snips multi-part
+                          WebAssign/ALEKS matrices &amp; graphs directly over
+                          the portal without leaving the page
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      Requires screenshotting/clipping and routing into the
+                      Mathos AI web dashboard or mobile camera app
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      PDF Worksheet &amp; Video Generation
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      Step-by-step LaTeX derivations &amp; instant concept
+                      explanations inside the in-page Tutor Panel
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>Full PDF Homework Helper</strong> + AI
+                          animated video lessons, flashcards &amp; graphing
+                          calculator
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Free Trial Offer
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>50 Free Question Solves ($0)</strong> + 10
+                          Snap-It OCR snips + Focus Shield (no credit card
+                          required)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      Free tier with strict daily caps on{" "}
+                      <em>MathosPro</em>/image uploads; 3-day trial on weekly
+                      auto-renewing plans
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 px-5 font-bold bg-[#FAF8F5] border-r border-neutral-200">
+                      Pricing Structure (2026)
+                    </td>
+                    <td className="py-4 px-5 border-r border-neutral-200">
+                      <div className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                        <span>
+                          <strong>$19/month</strong> Monthly •{" "}
+                          <strong>$99/year</strong> Academic Year ($8.25/mo) •{" "}
+                          <strong>$199 Lifetime</strong> •{" "}
+                          <strong>14-day 100% refund guarantee</strong>
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-5 text-neutral-700">
+                      <strong>Basic:</strong> ~$5.98/wk (~$23.92/mo eq., 100
+                      MathosMax/day) • <strong>Prime:</strong> ~$9.98/wk
+                      (~$39.92/mo eq., or ~$98.80/yr)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Collapsible Technical Schema & Domain Audit Drawer */}
+            <details className="group border-t-2 border-[#111111] bg-[#FAF8F5]">
+              <summary className="cursor-pointer px-6 py-4 flex items-center justify-between text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-neutral-800 hover:bg-neutral-200/60 transition-colors">
+                <h3 className="flex items-center gap-2 m-0 inline">
+                  <Code2 className="w-4 h-4 text-emerald-800" />
+                  Technical Domain, Schema &amp; App Audit (mathos.ai / MathGPTPro)
+                </h3>
+                <span className="text-emerald-800 group-open:rotate-180 transition-transform">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-6 pb-6 pt-2 text-xs font-mono text-neutral-700 space-y-3 border-t border-neutral-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-xl border border-neutral-200 space-y-1.5">
+                    <div className="font-bold text-[#111111] uppercase">
+                      Corporate &amp; App Store Footprint
                     </div>
-                </div>
-            </section>
-
-            {/* FINAL CTA BANNER */}
-            <section className="py-16 bg-ink text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold font-display mb-4">
-                        Ready to upgrade to undetectable exam stealth?
-                    </h2>
-                    <p className="text-cream/70 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                        Trade expensive monthly subscriptions and unshielded sidebars for ExamGhost&apos;s $19.99 lifetime stealth engine.
-                    </p>
-                    <a
-                        href="https://chromewebstore.google.com/detail/examghost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-mint text-ink font-bold hover:bg-mint-light transition-all shadow-lg text-base"
-                    >
-                        <FaChrome className="w-5 h-5 text-ink"  aria-hidden="true"/>
-                        <span>Get ExamGhost Lifetime for $19.99</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <div className="mt-4 text-xs text-cream/50">
-                        30-Day Money-Back Guarantee · Instant Chrome Web Store Access · Lifetime Updates
+                    <div>
+                      • Entity: Mathos, Inc. (San Francisco, CA • Founded July
+                      2023 by TianWei Yue • Y Combinator backed)
                     </div>
+                    <div>• Legacy / Alternate Brand: MathGPTPro</div>
+                    <div>
+                      • iOS App Listing: <code>id6755861373</code> (Mathos AI:
+                      Math Solver &amp; Tutor)
+                    </div>
+                    <div>
+                      • Web Workspace Endpoint: <code>mathos.ai/app/ask</code>
+                    </div>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-neutral-200 space-y-1.5">
+                    <div className="font-bold text-[#111111] uppercase">
+                      Structured Data &amp; Telemetry Inspection
+                    </div>
+                    <div>
+                      • Schema Type: <code>MathSolver</code> with{" "}
+                      <code>SolveMathAction</code> declaring 7 math disciplines
+                      (Algebra, Calculus, Differential Equations, Geometry,
+                      Linear Algebra, Trigonometry, Statistics)
+                    </div>
+                    <div>
+                      • Feature Routes: <code>/feature/pdf-homework-helper</code>
+                      , <code>/feature/video-generation</code>,{" "}
+                      <code>/feature/adaptive-learning</code>
+                    </div>
+                    <div>
+                      • Marketing Telemetry: Facebook Pixel (
+                      <code>997678555628412</code>) active on{" "}
+                      <code>mathos.ai</code>
+                    </div>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </details>
+          </div>
+        </section>
 
-            </main>
+        {/* Honest Buyer's Guide */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              03 // When to Use Which Tool
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Which AI Solver Should You Use in 2026?
+            </h2>
+          </div>
 
-            <Footer />
-        </div>
-    );
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-emerald-800 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 text-xs font-mono uppercase font-bold mb-4">
+                Best for Live Online Quizzes &amp; Full Course Loads
+              </div>
+              <h3 className="text-2xl font-bold text-[#111111] mb-4">
+                Choose ExamGhost AI If You Need:
+              </h3>
+              <ul className="space-y-3 text-sm text-neutral-800">
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-1" />
+                  <span>
+                    <strong>In-Tab Stealth &amp; Focus Shield:</strong> Solve
+                    questions directly inside Canvas, Blackboard, Moodle, D2L,
+                    WebAssign, ALEKS, and Pearson MyLab without triggering
+                    tab-switch logs.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-1" />
+                  <span>
+                    <strong>0.3s Snap-It Vision OCR Across All Subjects:</strong>{" "}
+                    Snip integrals, circuit diagrams, organic chemistry rings,
+                    accounting ledgers, and nursing case studies in one drag.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-1" />
+                  <span>
+                    <strong>50 Free Trial Solves &amp; Transparent Passes:</strong>{" "}
+                    Start with 50 free solves ($0), then choose{" "}
+                    <strong>$19/month</strong>, <strong>$99/year</strong>{" "}
+                    ($8.25/mo), or <strong>$199 Lifetime</strong> with a 14-day
+                    100% refund guarantee.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-300 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-200 text-neutral-800 text-xs font-mono uppercase font-bold mb-4">
+                Best for Offline PDF Problem Sets &amp; Video Visuals
+              </div>
+              <h3 className="text-2xl font-bold text-[#111111] mb-4">
+                Choose Mathos AI (MathGPTPro) If You Need:
+              </h3>
+              <ul className="space-y-3 text-sm text-neutral-700">
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-neutral-700 shrink-0 mt-1" />
+                  <span>
+                    <strong>Interactive PDF Worksheet Annotation:</strong> You
+                    primarily study from downloadable{" "}
+                    <code className="font-mono text-xs">.pdf</code> math packets
+                    and want to circle equations inside a digital notebook.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-neutral-700 shrink-0 mt-1" />
+                  <span>
+                    <strong>AI-Generated Animated Math Videos:</strong> You want
+                    custom visual video walkthroughs (
+                    <code className="font-mono text-xs">
+                      /feature/video-generation
+                    </code>
+                    ) to understand Calculus or Linear Algebra intuition outside
+                    of exam hours.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-neutral-700 shrink-0 mt-1" />
+                  <span>
+                    <strong>Mobile Phone Camera Scanning:</strong> You solve
+                    paper-and-pencil homework on an iPhone or Android phone
+                    rather than in a desktop browser.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
+              04 // Frequently Asked Questions
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
+              Mathos AI vs ExamGhost AI: Student FAQ
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Is Mathos AI the same platform as MathGPTPro?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                Yes. MathGPTPro rebranded to <strong>Mathos AI</strong> (
+                <code className="font-mono text-xs">mathos.ai</code>), operated
+                by Y Combinator–backed Mathos, Inc. in San Francisco, CA. Its
+                structured data still lists{" "}
+                <code className="font-mono text-xs">MathGPTPro</code> as its
+                official alternate name.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Does Mathos AI prevent Canvas from logging tab switches?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                No. Mathos AI is an external study workspace and does not
+                include a browser Focus Shield. Leaving your Canvas or
+                Blackboard quiz tab to use{" "}
+                <code className="font-mono text-xs">mathos.ai/app/ask</code>{" "}
+                triggers browser <code className="font-mono text-xs">blur</code>{" "}
+                and <code className="font-mono text-xs">visibilitychange</code>{" "}
+                events that are logged in your professor&apos;s quiz moderation
+                view. ExamGhost AI intercepts those focus-loss events and keeps
+                everything inside your active exam tab.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                What is the difference between MathosPro and MathosMax?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                Mathos AI splits its solver into a base model (
+                <em>MathosPro</em>) and its highest-accuracy STEM reasoning
+                model (<em>MathosMax</em>). While the Basic plan (~$5.98/wk)
+                caps <em>MathosMax</em> at 100 solves per day, unlimited{" "}
+                <em>MathosMax</em> and the 20× PDF Helper quota require the
+                Prime plan (~$9.98/wk). ExamGhost AI gives every user its
+                highest-accuracy reasoning model on every solve, including all
+                50 free trial solves.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-neutral-200">
+              <h3 className="text-lg font-bold text-[#111111] mb-2">
+                Can ExamGhost AI solve Calculus, Linear Algebra, and Physics graphs like Mathos AI?
+              </h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                Yes. ExamGhost AI&apos;s <strong>Snap-It Vision OCR</strong>{" "}
+                reads LaTeX equations, matrices, Bode plots, free-body physics
+                diagrams, and multi-part WebAssign/ALEKS prompts directly on
+                your screen in ~0.3 seconds, returning both the exact final
+                answer and the step-by-step derivation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bespoke Pastel Conversion Strip + Related Comparisons (No Stacked Dark Box) */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-indigo-50 via-[#FAF8F5] to-emerald-50 border-2 border-[#111111] rounded-3xl p-8 sm:p-10 shadow-[6px_6px_0px_0px_#111111] mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <span className="inline-block text-xs font-mono uppercase tracking-widest text-indigo-900 font-bold mb-2">
+                  Built for Live Canvas, WebAssign &amp; ALEKS Exams
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-3">
+                  Solve Math &amp; Every Other Major Without Leaving Your Tab
+                </h2>
+                <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                  Don&apos;t risk tab-switching to an external math workspace
+                  during a timed quiz. Test ExamGhost AI with{" "}
+                  <strong>50 free solves ($0)</strong> in our sandbox or unlock
+                  unlimited access for <strong>$19/month</strong> or{" "}
+                  <strong>$99/year ($8.25/mo)</strong>.
+                </p>
+                <div className="flex flex-wrap items-center gap-3.5">
+                  <Link prefetch={false}
+                    href="/#pricing"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
+                  >
+                    Claim 50 Free Solves ($0)
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/canvas-quiz-solver-free-demo"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] font-semibold text-sm border-2 border-[#111111] hover:bg-neutral-100 transition-colors"
+                  >
+                    Try Live STEM Sandbox
+                  </Link>
+                  <a
+                    href="https://discord.gg/aCcsyKYJq4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#3b47d6] text-white font-semibold text-sm hover:bg-[#2f3ab0] transition-colors"
+                  >
+                    Join STEM Discord
+                  </a>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 bg-white rounded-2xl p-5 border border-neutral-200">
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-500 font-bold mb-3">
+                  Related STEM &amp; LMS Audits
+                </div>
+                <div className="space-y-2.5 text-sm font-medium">
+                  <Link prefetch={false}
+                    href="/quizwizard-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>Solvely AI vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/gauth-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>Gauth AI vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/wolframalpha-vs-examghost"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-emerald-50 transition-colors"
+                  >
+                    <span>WolframAlpha vs ExamGhost AI</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-800" />
+                  </Link>
+                  <Link prefetch={false}
+                    href="/compare-canvas-hack-extensions"
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-950 text-white hover:bg-emerald-900 transition-colors"
+                  >
+                    <span>View All 57 LMS Audits</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-300" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

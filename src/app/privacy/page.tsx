@@ -6,22 +6,66 @@ import { Shield, Lock, EyeOff, FileText, CheckCircle2, AlertCircle, ArrowRight }
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | ExamGhost Zero-Telemetry Stealth Architecture",
+    title: "Privacy Policy — Zero-Telemetry Architecture",
     description: "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
     alternates: {
         canonical: "https://examghost.com/privacy",
     },
     openGraph: {
-        title: "Privacy Policy | ExamGhost",
+        type: "website",
+        locale: "en_US",
+        title: "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
         description: "Zero server logs, zero LMS telemetry, and zero tracking. Your academic data stays private on your local machine.",
         url: "https://examghost.com/privacy",
         siteName: "ExamGhost",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "ExamGhost Zero-Telemetry Privacy Policy",
+            },
+        ],
     },
 };
 
 export default function PrivacyPage() {
+    const privacyJsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://examghost.com/privacy#webpage",
+                "url": "https://examghost.com/privacy",
+                "name": "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
+                "description": "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
+                "datePublished": "2026-01-15",
+                "dateModified": "2026-03-01",
+                "inLanguage": "en-US",
+                "isPartOf": { "@id": "https://examghost.com/#website" },
+                "breadcrumb": { "@id": "https://examghost.com/privacy#breadcrumb" },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".aeo-summary"]
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://examghost.com/privacy#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://examghost.com/privacy" }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-cream text-ink flex flex-col justify-between">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(privacyJsonLd) }}
+            />
             <Navbar />
 
             <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20 w-full">
@@ -35,8 +79,8 @@ export default function PrivacyPage() {
                     <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
                         Privacy Policy
                     </h1>
-                    <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                        Last updated: October 2026 · Effective immediately for all ExamGhost users worldwide.
+                    <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
+                        Last updated: March 1, 2026 · ExamGhost operates with a strict zero-telemetry architecture: quiz questions and Snap-It OCR crops are processed ephemerally in RAM with zero remote query logs, zero school credential harvesting, and zero third-party ad trackers.
                     </p>
                 </div>
 

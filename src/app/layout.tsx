@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://examghost.com'),
   title: {
-    default: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+    default: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
     template: "%s | ExamGhost"
   },
-  description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ platforms for instant answers right on the page. Screen-share safe, Snap-It sniping OCR, 3 stealth modes, and zero tab-switching.",
+  description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 50 free solves.",
   keywords: [
     "ai quiz solver",
     "canvas quiz solver",
@@ -31,32 +28,37 @@ export const metadata: Metadata = {
     "screen share safe exam helper",
     "examghost"
   ],
-  authors: [{ name: "ExamGhost Labs" }],
+  authors: [{ name: "ExamGhost Security Engineering Team", url: "https://examghost.com" }],
   creator: "ExamGhost",
   publisher: "ExamGhost",
   alternates: {
     canonical: "https://examghost.com",
+    types: {
+      "text/markdown": [
+        { url: "https://examghost.com/llms.txt", title: "ExamGhost LLM Summary" },
+        { url: "https://examghost.com/llms-full.txt", title: "ExamGhost Full LLM Dossier" },
+        { url: "https://examghost.com/pricing.md", title: "ExamGhost Pricing & Plans" },
+      ],
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://examghost.com",
     siteName: "ExamGhost",
-    title: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
-    description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
+    title: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
+    description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 50 free solves.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+        alt: "ExamGhost — Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ExamGhost — The Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
-    description: "Double-click any question on Canvas, Moodle, Blackboard and 20+ more for instant answers right on the page. Screen-share safe with Snap-It sniping.",
     images: ["/og-image.jpg"],
     creator: "@examghost",
   },
@@ -90,16 +92,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen`}>
-        {/* SVG Filter for OneMacApp Torn Paper Deckle Edges */}
-        <svg className="sr-only" aria-hidden="true" width="0" height="0">
-          <defs>
-            <filter id="torn" x="-5%" y="-5%" width="110%" height="110%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-          </defs>
-        </svg>
+      <body className="font-sans bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen">
         {children}
       </body>
     </html>
