@@ -14,7 +14,7 @@ const FILM_SCENES = [
     { id: 1, time: 3.0, code: '0:03', label: '1-by-1 Double-Click Solve' },
     { id: 2, time: 7.0, code: '0:07', label: 'Alt+S Vision OCR Scan' },
     { id: 3, time: 10.5, code: '0:10', label: 'Stealth Telemetry Audit' },
-    { id: 4, time: 13.5, code: '0:13', label: '50 Free Solves CTA' },
+    { id: 4, time: 13.5, code: '0:13', label: '5 Free Solves/Day CTA' },
 ];
 
 export default function LmsExplainerFilmCard({
@@ -23,15 +23,48 @@ export default function LmsExplainerFilmCard({
     heroDotColor,
 }: LmsExplainerFilmCardProps) {
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
     const [currentTime, setCurrentTime] = useState(0);
+    // Defer the ~2.7 MB MP4 until the film card scrolls near the viewport (protects mobile LCP / TBT)
+    const [isInView, setIsInView] = useState(false);
 
     // Normalize blog/* slugs to match film/facts.json keys
     const filmKey = slug.startsWith('blog/') ? slug.replace('blog/', '') : slug;
     const safeSlug = filmKey.replace(/\//g, '-');
     const videoSrc = `/videos/${safeSlug}.mp4`;
     const posterSrc = `/videos/posters/${safeSlug}-poster.jpg`;
+
+    useEffect(() => {
+        const vid = videoRef.current;
+        if (!vid) return;
+        if (typeof IntersectionObserver === 'undefined') {
+            setIsInView(true);
+            return;
+        }
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (!entry) return;
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    vid.play().catch(() => {});
+                } else if (!vid.paused) {
+                    vid.pause();
+                }
+            },
+            { rootMargin: '200px 0px', threshold: 0.25 }
+        );
+        observer.observe(vid);
+        return () => observer.disconnect();
+    }, []);
+
+    // Start playback once the deferred source has been attached
+    useEffect(() => {
+        if (!isInView) return;
+        const vid = videoRef.current;
+        if (vid && vid.paused) vid.play().catch(() => {});
+    }, [isInView]);
 
     useEffect(() => {
         const vid = videoRef.current;
@@ -63,6 +96,7 @@ export default function LmsExplainerFilmCard({
     const handleSeek = (sec: number) => {
         const vid = videoRef.current;
         if (!vid) return;
+        if (!isInView) setIsInView(true);
         vid.currentTime = sec;
         setCurrentTime(sec);
         if (vid.paused) {
@@ -73,6 +107,10 @@ export default function LmsExplainerFilmCard({
     const togglePlay = () => {
         const vid = videoRef.current;
         if (!vid) return;
+        if (!isInView) {
+            setIsInView(true);
+            return;
+        }
         if (vid.paused) {
             vid.play().catch(() => {});
         } else {
@@ -187,13 +225,13 @@ export default function LmsExplainerFilmCard({
             <div className="relative rounded-[24px] overflow-hidden border border-black/12 bg-[#fcf9f5] shadow-card">
                 <video
                     ref={videoRef}
-                    src={videoSrc}
+                    src={isInView ? videoSrc : undefined}
                     poster={posterSrc}
-                    autoPlay
                     loop
                     muted={isMuted}
                     playsInline
-                    preload="metadata"
+                    preload="none"
+                    aria-label={`${platformName} ExamGhost 16-second explainer film`}
                     onClick={togglePlay}
                     className="w-full h-auto block cursor-pointer aspect-video object-cover"
                 />

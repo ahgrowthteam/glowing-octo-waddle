@@ -203,7 +203,7 @@ export default function ContactPage() {
                                                 className="w-full px-4 py-2.5 rounded-xl border border-black/10 bg-[#faf8f4] text-ink text-sm focus:outline-none focus:border-ink transition-colors"
                                             >
                                                 <option value="License Key Help">License Key Help</option>
-                                                <option value="Free 50-Solve Trial Question">Free 50-Solve Trial</option>
+                                                <option value="5 Free Solves / Day Trial Question">5 Free Solves / Day Trial</option>
                                                 <option value="Refund Request (14-Day Guarantee)">14-Day Refund Request</option>
                                                 <option value="Canvas / Quiz Bug Report">Canvas / Quiz Bug Report</option>
                                                 <option value="Feature Suggestion">Feature Suggestion</option>
@@ -309,10 +309,10 @@ export default function ContactPage() {
 
                         <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs space-y-2">
                             <h3 className="font-display font-bold text-base text-ink">
-                                3. Snap-It Vision OCR (⌘+Shift+S) on Locked Iframes
+                                3. Snap-It Vision OCR (Alt+S) on Locked Iframes
                             </h3>
                             <p className="text-xs text-ink-muted leading-relaxed">
-                                If a question is embedded inside a restricted cross-origin iframe (McGraw-Hill Connect ALEKS, Pearson MyLab, Cengage WebAssign) or rendered as an uncopyable image diagram, press <code className="font-mono text-ink">⌘+Shift+S</code> and drag a crop box around the problem. Our multimodal Vision OCR pipeline extracts LaTeX math, chemical structures, and coordinate graphs in under 0.4 seconds.
+                                If a question is embedded inside a restricted cross-origin iframe (McGraw-Hill Connect ALEKS, Pearson MyLab, Cengage WebAssign) or rendered as an uncopyable image diagram, press <code className="font-mono text-ink">Alt+S</code> and drag a crop box around the problem. Our multimodal Vision OCR pipeline extracts LaTeX math, chemical structures, and coordinate graphs in under 0.4 seconds.
                             </p>
                         </div>
 

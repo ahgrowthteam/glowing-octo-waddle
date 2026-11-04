@@ -21,18 +21,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { HomeworkifyDeadMirrorDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Homeworkify vs ExamGhost (2026) — Shutdown & Stealth Audit",
     },
-    description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (50 Free Solves).",
+    description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (5 Free Solves / Day).",
     alternates: {
         canonical: "https://examghost.com/homeworkify-vs-examghost",
     },
     openGraph: {
         title: "Homeworkify vs ExamGhost (2026) — Shutdown & Stealth Audit",
-        description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (50 Free Solves).",
+        description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (5 Free Solves / Day).",
         url: "https://examghost.com/homeworkify-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Homeworkify vs ExamGhost (2026) — Shutdown & Stealth Audit",
-        description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (50 Free Solves).",
+        description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (5 Free Solves / Day).",
         images: ["/og-image.jpg"],
     },
 };
@@ -82,7 +84,7 @@ export default function HomeworkifyVsExamghostPage() {
                         "offers": [
                             {
                                 "@type": "Offer",
-                                "name": "Free Trial (50 Question Solves)",
+                                "name": "Free Tier (5 Free Solves / Day)",
                                 "price": "0.00",
                                 "priceCurrency": "USD"
                             },
@@ -171,7 +173,7 @@ export default function HomeworkifyVsExamghostPage() {
                         "name": "What is the safest 2026 alternative to Homeworkify for live exams and homework?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost replaces dead URL unblurring with live 0.3s multimodal AI + STEM Vision OCR inside an undetectable closed Shadow DOM. You never leave your active Canvas or Blackboard tab, never paste public URLs, and can test it risk-free with 50 Free Question Solves (no credit card required) before choosing $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
+                            "text": "ExamGhost replaces dead URL unblurring with live 0.3s multimodal AI + STEM Vision OCR inside an undetectable closed Shadow DOM. You never leave your active Canvas or Blackboard tab, never paste public URLs, and can test it risk-free with 5 Free Solves / Day (no credit card required) before choosing $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
                         }
                     }
                 ]
@@ -205,7 +207,7 @@ export default function HomeworkifyVsExamghostPage() {
                                 <span>2026 Security Advisory · homeworkify.st &amp; homeworkify.eu Permanently Deleted</span>
                             </div>
                             <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-[11px] font-bold uppercase tracking-wider">
-                                Safe 2026 Alternative: 50 Free Solves
+                                Safe 2026 Alternative: 5 Free Solves / Day
                             </span>
                         </div>
 
@@ -235,7 +237,7 @@ export default function HomeworkifyVsExamghostPage() {
                                     </div>
                                     <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
                                         <div className="text-[11px] font-bold uppercase tracking-wider text-[#cdeecb] mb-0.5">Free Evaluation</div>
-                                        <div className="font-display font-extrabold text-base text-white">50 Free Solves</div>
+                                        <div className="font-display font-extrabold text-base text-white">5 Free Solves / Day</div>
                                         <div className="text-[11px] text-white/60">$0 · Zero adware or cards</div>
                                     </div>
                                 </div>
@@ -246,7 +248,7 @@ export default function HomeworkifyVsExamghostPage() {
                                         className="px-7 py-4 rounded-full text-sm font-bold bg-[#cdeecb] hover:bg-[#bae3b7] text-ink shadow-lift inline-flex items-center gap-2.5 transition-transform hover:-translate-y-0.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-emerald-950" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 · No Card)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 · No Card)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -297,7 +299,7 @@ export default function HomeworkifyVsExamghostPage() {
                                         <div className="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-200 font-sans text-xs flex items-start gap-2">
                                             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                                             <div>
-                                                <strong>Don&apos;t risk malware clones:</strong> ExamGhost runs inside a sandboxed Chrome extension with 0 ads, 0 popups, and 50 Free Solves.
+                                                <strong>Don&apos;t risk malware clones:</strong> ExamGhost runs inside a sandboxed Chrome extension with 0 ads, 0 popups, and 5 Free Solves / Day.
                                             </div>
                                         </div>
                                     </div>
@@ -307,51 +309,67 @@ export default function HomeworkifyVsExamghostPage() {
                     </div>
                 </section>
 
-                {/* INTERACTIVE 2-TAB COMPARISON: OLD URL UNBLUR WORKFLOW VS 2026 CLONE SCAMS */}
+        <HomeworkifyDeadMirrorDemo />
+
+                {/* MODERN HOTKEYS SUITE */}
+                <section className="py-8 bg-[#f5f1ea] border-y border-black/10 mb-16">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center mb-6">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISIBLE 2-PILLAR COMPARISON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="text-center max-w-2xl mx-auto mb-8">
+                    <div className="text-center max-w-2xl mx-auto mb-10">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-xs font-bold text-rose-900 mb-3">
                             <Sparkles className="w-3.5 h-3.5" />
-                            Interactive Breakdown · Why ExamGhost Is Better Than Homeworkify Ever Was
+                            <span>Architecture &amp; Security Teardown</span>
                         </div>
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
                             Why URL Unblurring Was Always Broken for Live Exams
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
-                            Even before Homeworkify shut down, pasting Chegg links never worked on timed Canvas quizzes. Click either tab below to see why.
+                            Even before Homeworkify shut down, pasting Chegg links never worked on timed Canvas quizzes. Here is how modern in-tab stealth solves the problem.
                         </p>
                     </div>
 
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="hw_tabs" id="hw-workflow" className="sr-only peer/workflow" defaultChecked />
-                        <input type="radio" name="hw_tabs" id="hw-clones" className="sr-only peer/clones" />
-
-                        {/* Tab Headers */}
-                        <div className="grid sm:grid-cols-2 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="hw-workflow"
-                                className="cursor-pointer rounded-xl py-3.5 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/workflow:bg-ink peer-checked/workflow:text-white peer-checked/workflow:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <RefreshCw className="w-4 h-4" />
-                                <span>1. Old Chegg URL Unblur vs 0.3s Live AI Solve</span>
-                            </label>
-                            <label
-                                htmlFor="hw-clones"
-                                className="cursor-pointer rounded-xl py-3.5 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/clones:bg-ink peer-checked/clones:text-white peer-checked/clones:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <AlertTriangle className="w-4 h-4" />
-                                <span>2. How Fake 2026 &quot;Homeworkify&quot; Clones Trap You</span>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: WORKFLOW */}
-                        <div className="hidden peer-checked/workflow:block">
+                    <div className="space-y-8">
+                        {/* PILLAR 1: WORKFLOW */}
+                        <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                             <div className="grid lg:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
                                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-rose-200">
                                         <div>
-                                            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-800 block">The Old Homeworkify Way</span>
+                                            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-800 block">Pillar 1 · The Old Homeworkify Way</span>
                                             <h3 className="font-display font-bold text-lg text-ink">5 Steps + Tab-Switch Flags + Wrong Numbers</h3>
                                         </div>
                                         <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 font-mono text-xs font-bold">
@@ -381,7 +399,7 @@ export default function HomeworkifyVsExamghostPage() {
                                 <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
                                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-200">
                                         <div>
-                                            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block">The ExamGhost Way</span>
+                                            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block">Pillar 1 · The ExamGhost Way</span>
                                             <h3 className="font-display font-bold text-lg text-ink">Double-Click In-Tab · Computes Your Exact Numbers</h3>
                                         </div>
                                         <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 font-mono text-xs font-bold">
@@ -391,7 +409,7 @@ export default function HomeworkifyVsExamghostPage() {
                                     <ol className="space-y-3 text-xs sm:text-sm text-ink-secondary mb-5">
                                         <li className="flex items-start gap-3">
                                             <span className="w-6 h-6 rounded-full bg-emerald-200 text-emerald-950 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
-                                            <div><strong>Stay inside your exam tab:</strong> Double-click any question or press <code>⌘+Shift+S</code> to crop any diagram, graph, or circuit schematic.</div>
+                                            <div><strong>Stay inside your exam tab:</strong> Double-click any question or press <code>Alt+S</code> to crop any diagram, graph, or circuit schematic.</div>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="w-6 h-6 rounded-full bg-emerald-200 text-emerald-950 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
@@ -410,8 +428,12 @@ export default function HomeworkifyVsExamghostPage() {
                             </div>
                         </div>
 
-                        {/* TAB 2: CLONE SCAMS */}
-                        <div className="hidden peer-checked/clones:block">
+                        {/* PILLAR 2: CLONE SCAMS */}
+                        <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                            <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-2">Pillar 2 · 2026 Clone Scams &amp; The Safe Solution</div>
+                            <h3 className="font-display font-bold text-xl text-ink mb-6">
+                                Why Fake &quot;Homeworkify&quot; Clones Trap You and How ExamGhost Protects You
+                            </h3>
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
                                     <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-2">Clone Trap #1</div>
@@ -436,10 +458,10 @@ export default function HomeworkifyVsExamghostPage() {
                                 <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
                                     <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-2">The Safe Solution</div>
                                     <h3 className="font-display font-bold text-lg text-ink mb-2">
-                                        Sandboxed Chrome Extension + 50 Free Solves
+                                        Sandboxed Chrome Extension + 5 Free Solves / Day
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        ExamGhost is a verified Manifest V3 extension with zero ads, zero notification spam, and <strong>50 Free Solves ($0, no credit card required)</strong> so you can verify accuracy on your own coursework immediately.
+                                        ExamGhost is a verified Manifest V3 extension with zero ads, zero notification spam, and <strong>5 Free Solves / Day ($0, no credit card required)</strong> on Monthly ($19/mo or $19.00 / month), Annual ($99/yr / $8.25/mo), or Lifetime ($199 Lifetime).
                                     </p>
                                 </div>
                             </div>
@@ -494,10 +516,18 @@ export default function HomeworkifyVsExamghostPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial &amp; Transparent Pricing</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0) · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0) · $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">Discontinued / Unofficial Scam Clones</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
                     </div>
@@ -539,13 +569,13 @@ export default function HomeworkifyVsExamghostPage() {
                             <div className="max-w-xl text-center lg:text-left">
                                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>No Chegg Links · Zero Malware Clones · 50 Free Solves</span>
+                                    <span>No Chegg Links · Zero Malware Clones · 5 Free Solves / Day</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
                                     Stop hunting for dead Homeworkify mirrors.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Solve any Canvas, Blackboard, McGraw-Hill, or Pearson question directly in your exam tab in 0.3 seconds. Start free with 50 solves ($0, no card required).
+                                    Solve any Canvas, Blackboard, McGraw-Hill, or Pearson question directly in your exam tab in 0.3 seconds. Start free with 5 Free Solves / Day ($0, no card required).
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -554,7 +584,7 @@ export default function HomeworkifyVsExamghostPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -596,7 +626,10 @@ export default function HomeworkifyVsExamghostPage() {
                         </Link>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

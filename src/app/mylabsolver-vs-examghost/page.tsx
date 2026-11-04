@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaChrome } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { MyLabSolverCollegeAlgebraDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
   title: {
@@ -40,107 +42,127 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'WebPage',
-      '@id': 'https://examghost.com/mylabsolver-vs-examghost#webpage',
-      name: 'MyLab Solver vs ExamGhost (2026): Discontinuation Audit & Pearson MyLab Alternative',
-      description:
-        'Forensic report on the shutdown of MyLab Solver (mylabsolver.com) and technical comparison with ExamGhost for Pearson MyLab Math, Statistics, Accounting, Mastering, and Canvas LMS.',
-      url: 'https://examghost.com/mylabsolver-vs-examghost',
-      datePublished: '2026-01-22',
-      dateModified: '2026-03-28',
-      breadcrumb: { '@id': 'https://examghost.com/mylabsolver-vs-examghost#breadcrumb' },
-      author: {
-        '@type': 'Organization',
-        name: 'ExamGhost Security Engineering Team',
-        url: 'https://examghost.com',
+      "@type": "WebPage",
+      "@id": "https://examghost.com/mylabsolver-vs-examghost#webpage",
+      "name": "MyLab Solver vs ExamGhost (2026): Discontinuation Audit & Pearson MyLab Alternative",
+      "description":
+        "Forensic report on the shutdown of MyLab Solver (mylabsolver.com) and technical comparison with ExamGhost for Pearson MyLab Math, Statistics, Accounting, Mastering, and Canvas LMS.",
+      "url": "https://examghost.com/mylabsolver-vs-examghost",
+      "datePublished": "2026-01-22",
+      "dateModified": "2026-03-28",
+      "breadcrumb": { "@id": "https://examghost.com/mylabsolver-vs-examghost#breadcrumb" },
+      "author": {
+        "@type": "Organization",
+        "name": "ExamGhost Security Engineering Team",
+        "url": "https://examghost.com",
       },
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', 'h2', 'summary'],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "summary"],
       },
-      about: [
+      "about": [
         {
-          '@type': 'SoftwareApplication',
-          name: 'ExamGhost',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome, Edge, Brave, macOS, Windows',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '199.00',
-            priceCurrency: 'USD',
-            offerCount: '4',
-          },
+          "@type": "SoftwareApplication",
+          "name": "ExamGhost",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free Daily Solves",
+              "price": "0.00",
+              "priceCurrency": "USD",
+              "description": "5 Free Solves / Day"
+            },
+            {
+              "@type": "Offer",
+              "name": "Monthly Pass",
+              "price": "19.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Academic Year Pass",
+              "price": "99.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Lifetime Pass",
+              "price": "199.00",
+              "priceCurrency": "USD"
+            }
+          ],
         },
         {
-          '@type': 'SoftwareApplication',
-          name: 'MyLab Solver',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome Extension (Discontinued)',
+          "@type": "SoftwareApplication",
+          "name": "MyLab Solver",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome Extension (Discontinued)",
         },
       ],
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://examghost.com/mylabsolver-vs-examghost#breadcrumb',
-      itemListElement: [
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/mylabsolver-vs-examghost#breadcrumb",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://examghost.com',
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://examghost.com",
         },
         {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Competitor Comparisons',
-          item: 'https://examghost.com/compare-canvas-hack-extensions',
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Competitor Comparisons",
+          "item": "https://examghost.com/compare-canvas-hack-extensions",
         },
         {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'MyLab Solver vs ExamGhost',
-          item: 'https://examghost.com/mylabsolver-vs-examghost',
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MyLab Solver vs ExamGhost",
+          "item": "https://examghost.com/mylabsolver-vs-examghost",
         },
       ],
     },
     {
-      '@type': 'FAQPage',
-      '@id': 'https://examghost.com/mylabsolver-vs-examghost#faq',
-      mainEntity: [
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/mylabsolver-vs-examghost#faq",
+      "mainEntity": [
         {
-          '@type': 'Question',
-          name: 'Did MyLab Solver (mylabsolver.com) shut down?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Visiting https://mylabsolver.com displays a permanent discontinuation notice: "MyLab Solver — This website and the associated Chrome extension have been discontinued. Contact: support@mylabsolver.com." The extension has also been removed from the Chrome Web Store.',
+          "@type": "Question",
+          "name": "Did MyLab Solver (mylabsolver.com) shut down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Visiting https://mylabsolver.com displays a permanent discontinuation notice: \"MyLab Solver — This website and the associated Chrome extension have been discontinued. Contact: support@mylabsolver.com.\" The extension has also been removed from the Chrome Web Store.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'What is the best working replacement for MyLab Solver in 2026?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'ExamGhost is the #1 active 2026 replacement for MyLab Solver. It supports Pearson MyLab Math, MyLab Statistics, MyLab Accounting, MyLab Finance, Pearson Mastering (Physics, Chemistry, Biology), and MathXL—plus Canvas, Blackboard, McGraw-Hill Connect, and ALEKS.',
+          "@type": "Question",
+          "name": "What is the best working replacement for MyLab Solver in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ExamGhost is the #1 active 2026 replacement for MyLab Solver. It supports Pearson MyLab Math, MyLab Statistics, MyLab Accounting, MyLab Finance, Pearson Mastering (Physics, Chemistry, Biology), and MathXL—plus Canvas, Blackboard, McGraw-Hill Connect, and ALEKS.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'How does ExamGhost handle Pearson MyLab’s strict rounding rules and multi-part math questions?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Pearson MyLab is notorious for marking answers wrong if you enter a decimal instead of an exact simplified fraction or miss rounding instructions ("Round to three decimal places as needed"). ExamGhost’s 0.3s Multi-Model STEM Consensus engine explicitly parses Pearson’s blue formatting instructions under each input box and outputs the exact required format.',
+          "@type": "Question",
+          "name": "How does ExamGhost handle Pearson MyLab’s strict rounding rules and multi-part math questions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pearson MyLab is notorious for marking answers wrong if you enter a decimal instead of an exact simplified fraction or miss rounding instructions (\"Round to three decimal places as needed\"). ExamGhost’s 0.3s Multi-Model STEM Consensus engine explicitly parses Pearson’s blue formatting instructions under each input box and outputs the exact required format.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'Can Pearson MyLab or Canvas detect ExamGhost during timed quizzes and tests?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Unlike older MyLab extensions that injected visible buttons directly into Pearson’s player iframe, ExamGhost renders inside an isolated Closed Shadow DOM (mode: "closed"), includes a prototype-level Focus Shield that blocks window.blur and visibilitychange telemetry, and features ⌘+Shift+S Snap-It Vision OCR for complex graphs.',
+          "@type": "Question",
+          "name": "Can Pearson MyLab or Canvas detect ExamGhost during timed quizzes and tests?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Unlike older MyLab extensions that injected visible buttons directly into Pearson’s player iframe, ExamGhost renders inside an isolated Closed Shadow DOM (mode: \"closed\"), includes a prototype-level Focus Shield that blocks window.blur and visibilitychange telemetry, and features Alt+S Snap-It Vision OCR for complex graphs.",
           },
         },
       ],
@@ -150,14 +172,15 @@ const jsonLd = {
 
 export default function MyLabSolverVsExamGhostPage() {
   return (
-    <main className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#e0e7ff] selection:text-[#111]">
+    <div className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#e0e7ff] selection:text-[#111]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
 
-      {/* Top Forensic Banner */}
+      <main id="main-content">
+        {/* Top Forensic Banner */}
       <div className="bg-[#111] text-white border-b-2 border-[#111] px-4 py-2.5 text-xs font-mono mt-20">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -253,7 +276,7 @@ export default function MyLabSolverVsExamGhostPage() {
                   <div className="text-[11px] font-mono uppercase text-neutral-500 font-bold">
                     Free Migration Trial
                   </div>
-                  <div className="text-lg font-black text-indigo-700 mt-0.5">50 Free Solves</div>
+                  <div className="text-lg font-black text-indigo-700 mt-0.5">5 Free Solves / Day</div>
                   <p className="text-xs text-neutral-600 mt-1">
                     Test on your hardest Pearson MyLab assignment right now ($0, no card)
                   </p>
@@ -266,7 +289,7 @@ export default function MyLabSolverVsExamGhostPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111] text-white font-bold text-sm shadow-[4px_4px_0px_#3730a3] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   <FaChrome className="w-4 h-4 text-[#e0e7ff]" aria-hidden="true" />
-                  <span>Start 50 Free Solves · $0 No Card</span>
+                  <span>Start 5 Free Solves / Day · $0 No Card</span>
                 </Link>
                 <a
                   href="#shutdown-receipts"
@@ -335,7 +358,9 @@ export default function MyLabSolverVsExamGhostPage() {
         </div>
       </section>
 
-      {/* Section 2: Interactive 4-Tab Pearson MyLab Engineering Breakdown */}
+        <MyLabSolverCollegeAlgebraDemo />
+
+      {/* Section 2: Visible 4-Pillar Pearson MyLab Engineering Breakdown & 6-Hotkey Suite */}
       <section id="shutdown-receipts" className="py-14 px-4 border-b-2 border-[#111]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-8">
@@ -348,244 +373,231 @@ export default function MyLabSolverVsExamGhostPage() {
             <p className="text-neutral-700 text-sm sm:text-base">
               Pearson MyLab (`tdx.acs.pearson.com`) is one of the hardest platforms for ordinary AI
               extensions because of multi-part progressive prompts, strict rounding tolerances, SVG
-              coordinate graphs, and cross-origin iframe isolation. Click through the 4 tabs below
-              to see how ExamGhost handles every Pearson challenge.
+              coordinate graphs, and cross-origin iframe isolation. Here is the 4-pillar architectural autopsy.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111]">
-            <input
-              type="radio"
-              name="mls-audit-tabs"
-              id="mls-tab-1"
-              className="peer/tab1 hidden"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="mls-audit-tabs"
-              id="mls-tab-2"
-              className="peer/tab2 hidden"
-            />
-            <input
-              type="radio"
-              name="mls-audit-tabs"
-              id="mls-tab-3"
-              className="peer/tab3 hidden"
-            />
-            <input
-              type="radio"
-              name="mls-audit-tabs"
-              id="mls-tab-4"
-              className="peer/tab4 hidden"
-            />
-
-            {/* Tab Headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-6 border-b-2 border-[#111] pb-4">
-              <label
-                htmlFor="mls-tab-1"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#e0e7ff]/60 peer-checked/tab1:bg-[#e0e7ff] peer-checked/tab1:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Pearson Challenge 01
-                </span>
-                Strict Fractions &amp; Rounding Rules
-              </label>
-
-              <label
-                htmlFor="mls-tab-2"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#e0e7ff]/60 peer-checked/tab2:bg-[#e0e7ff] peer-checked/tab2:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Pearson Challenge 02
-                </span>
-                Multi-Part (a–f) &amp; StatCrunch Tables
-              </label>
-
-              <label
-                htmlFor="mls-tab-3"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#e0e7ff]/60 peer-checked/tab3:bg-[#e0e7ff] peer-checked/tab3:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Pearson Challenge 03
-                </span>
-                Cross-Origin Iframe &amp; SVG Graphs
-              </label>
-
-              <label
-                htmlFor="mls-tab-4"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#e0e7ff]/60 peer-checked/tab4:bg-[#e0e7ff] peer-checked/tab4:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Pearson Challenge 04
-                </span>
-                MyLab + Canvas Midterms in 1 Tool
-              </label>
-            </div>
-
-            {/* Tab 1 */}
-            <div className="hidden peer-checked/tab1:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  WHY GENERIC AI FAILS PEARSON MYLAB
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Pearson Marks You Wrong If Formatting Is Off by 1 Decimal
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  Every Pearson student knows the pain: the math is right, but Pearson says{' '}
-                  <em>
-                    &ldquo;Type an exact answer, using radicals as needed&rdquo;
-                  </em>{' '}
-                  and a generic chatbot gives you <code>1.414</code> instead of{' '}
-                  <code>√2</code>—or rounds intermediate steps too early in Statistics z-score and
-                  p-value calculations.
-                </p>
-                <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
-                  <div>Pearson Prompt: (Type an integer or a simplified fraction.)</div>
-                  <div>Generic AI Output: 0.375</div>
-                  <div className="font-bold text-red-600 mt-1">
-                    → Pearson Grader: Incorrect! Expected 3/8.
+          <div className="space-y-6 mb-8">
+            {/* Pillar 1 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    WHY GENERIC AI FAILS PEARSON MYLAB
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Pearson Marks You Wrong If Formatting Is Off by 1 Decimal
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    Every Pearson student knows the pain: the math is right, but Pearson says{' '}
+                    <em>
+                      &ldquo;Type an exact answer, using radicals as needed&rdquo;
+                    </em>{' '}
+                    and a generic chatbot gives you <code>1.414</code> instead of{' '}
+                    <code>√2</code>—or rounds intermediate steps too early in Statistics z-score and
+                    p-value calculations.
+                  </p>
+                  <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
+                    <div>Pearson Prompt: (Type an integer or a simplified fraction.)</div>
+                    <div>Generic AI Output: 0.375</div>
+                    <div className="font-bold text-red-600 mt-1">
+                      → Pearson Grader: Incorrect! Expected 3/8.
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST PEARSON FORMAT ENGINE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Explicitly Parses Pearson&apos;s Blue Formatting Sub-Labels
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost&apos;s Multi-Model STEM Consensus engine reads both the mathematical
-                  expression and Pearson&apos;s blue parenthetical formatting instruction underneath
-                  each answer box—providing both the exact symbolic fraction/radical AND the rounded
-                  decimal to the exact specified precision.
-                </p>
-                <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
-                  <div>✓ Outputs exact simplified fractions, radicals (√, π, e), &amp; intervals</div>
-                  <div>✓ Preserves full floating-point precision until final rounding step</div>
-                  <div className="font-bold text-emerald-700 mt-1">
-                    ✓ Multi-Model Consensus cross-checks every step in 0.3s
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST PEARSON FORMAT ENGINE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Explicitly Parses Pearson&apos;s Blue Formatting Sub-Labels
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost&apos;s Multi-Model STEM Consensus engine reads both the mathematical
+                    expression and Pearson&apos;s blue parenthetical formatting instruction underneath
+                    each answer box—providing both the exact symbolic fraction/radical AND the rounded
+                    decimal to the exact specified precision.
+                  </p>
+                  <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
+                    <div>✓ Outputs exact simplified fractions, radicals (√, π, e), &amp; intervals</div>
+                    <div>✓ Preserves full floating-point precision until final rounding step</div>
+                    <div className="font-bold text-emerald-700 mt-1">
+                      ✓ Multi-Model Consensus cross-checks every step in 0.3s
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Tab 2 */}
-            <div className="hidden peer-checked/tab2:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  LEGACY MYLAB SOLVER LIMITATION
+            {/* Pillar 2 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    LEGACY MYLAB SOLVER LIMITATION
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Lost Context on Progressive Part (a), Part (b), Part (c) Questions
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    In MyLab Statistics, Accounting, and Calculus, a single question often has 4 to 8
+                    sequential parts (<em>&ldquo;4 parts remaining&rdquo;</em>) where Part (c) depends
+                    on the exact numbers computed in Part (a) and Part (b), plus pop-up data tables
+                    (<em>&ldquo;Click the icon to view the data table&rdquo;</em>).
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
+                    <li>✗ Discontinued MyLab Solver can no longer parse 2026 multi-part players</li>
+                    <li>✗ Basic extensions ignore pop-up critical value / ANOVA data modals</li>
+                    <li>✗ Re-entering data manually into external calculators wastes exam time</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Lost Context on Progressive Part (a), Part (b), Part (c) Questions
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  In MyLab Statistics, Accounting, and Calculus, a single question often has 4 to 8
-                  sequential parts (<em>&ldquo;4 parts remaining&rdquo;</em>) where Part (c) depends
-                  on the exact numbers computed in Part (a) and Part (b), plus pop-up data tables
-                  (<em>&ldquo;Click the icon to view the data table&rdquo;</em>).
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
-                  <li>✗ Discontinued MyLab Solver can no longer parse 2026 multi-part players</li>
-                  <li>✗ Basic extensions ignore pop-up critical value / ANOVA data modals</li>
-                  <li>✗ Re-entering data manually into external calculators wastes exam time</li>
-                </ul>
-              </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST MULTI-PART CONTINUITY
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST MULTI-PART CONTINUITY
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Retains Full Context Across Parts (a)–(f) &amp; Pop-Up Data Tables
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost captures your previously completed sub-parts on the screen along with
+                    any open Pearson data table modal or Accounting ledger so every subsequent part is
+                    calculated with 100% mathematical consistency.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
+                    <li>✓ Reads completed Part (a)/(b) values to solve Part (c)/(d) accurately</li>
+                    <li>✓ Parses MyLab Statistics regression tables, t-tables, &amp; z-tables</li>
+                    <li>✓ Solves MyLab Accounting journal entries, T-accounts, &amp; balance sheets</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Retains Full Context Across Parts (a)–(f) &amp; Pop-Up Data Tables
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost captures your previously completed sub-parts on the screen along with
-                  any open Pearson data table modal or Accounting ledger so every subsequent part is
-                  calculated with 100% mathematical consistency.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Reads completed Part (a)/(b) values to solve Part (c)/(d) accurately</li>
-                  <li>✓ Parses MyLab Statistics regression tables, t-tables, &amp; z-tables</li>
-                  <li>✓ Solves MyLab Accounting journal entries, T-accounts, &amp; balance sheets</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Tab 3 */}
-            <div className="hidden peer-checked/tab3:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  WHY MYLAB SOLVER BROKE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Pearson&apos;s Cross-Origin Iframe &amp; SVG Canvas Player Updates
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  When universities embed Pearson MyLab inside Canvas or Blackboard, the actual math
-                  player runs inside nested cross-origin iframes (<code>tdx.acs.pearson.com</code>)
-                  and renders graphs as dynamic HTML5 Canvas/SVG paths rather than plain text.
-                  Extensions that relied on hardcoded top-window DOM selectors broke and shut down.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
-                  <li>✗ Top-frame DOM scrapers cannot see inside cross-origin Pearson iframes</li>
-                  <li>✗ Text-only scrapers are blind to parabola/trig graphs &amp; chemical rings</li>
-                </ul>
-              </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST IFRAME + VISION ENGINE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Deep Iframe Support + `⌘+Shift+S` Snap-It Vision OCR
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost works inside embedded Pearson iframes AND lets you press{' '}
-                  <code>⌘+Shift+S</code> to snap any graph, piecewise function, Lewis structure, or
-                  free-body diagram directly from screen pixels—solving visual STEM problems in
-                  0.3 seconds without touching Pearson&apos;s DOM.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Works whether MyLab is opened standalone or embedded inside Canvas</li>
-                  <li>✓ ⌘+Shift+S Vision OCR reads coordinate planes, vectors, &amp; molecules</li>
-                  <li>✓ Closed Shadow DOM + Focus Shield keeps your session invisible</li>
-                </ul>
               </div>
             </div>
 
-            {/* Tab 4 */}
-            <div className="hidden peer-checked/tab4:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  SINGLE-PORTAL LIMITATION
+            {/* Pillar 3 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    WHY MYLAB SOLVER BROKE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Pearson&apos;s Cross-Origin Iframe &amp; SVG Canvas Player Updates
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    When universities embed Pearson MyLab inside Canvas or Blackboard, the actual math
+                    player runs inside nested cross-origin iframes (<code>tdx.acs.pearson.com</code>)
+                    and renders graphs as dynamic HTML5 Canvas/SVG paths rather than plain text.
+                    Extensions that relied on hardcoded top-window DOM selectors broke and shut down.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
+                    <li>✗ Top-frame DOM scrapers cannot see inside cross-origin Pearson iframes</li>
+                    <li>✗ Text-only scrapers are blind to parabola/trig graphs &amp; chemical rings</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  MyLab Solver Only Worked on Pearson—Not Your Other 4 Classes
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  Even before <code>mylabsolver.com</code> shut down, it was restricted to Pearson
-                  MyLab. If your Biology class used McGraw-Hill Connect, your Chemistry class used
-                  ALEKS, and your History class used Canvas Quizzes, you had to pay for multiple
-                  different extensions.
-                </p>
-              </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST ALL-PLATFORM SUITE
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST IFRAME + VISION ENGINE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Deep Iframe Support + `Alt+S` Snap-It Vision OCR
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost works inside embedded Pearson iframes AND lets you press{' '}
+                    <code>Alt+S</code> to snap any graph, piecewise function, Lewis structure, or
+                    free-body diagram directly from screen pixels—solving visual STEM problems in
+                    0.3 seconds without touching Pearson&apos;s DOM. Powered by Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
+                    <li>✓ Works whether MyLab is opened standalone or embedded inside Canvas</li>
+                    <li>✓ Alt+S Vision OCR reads coordinate planes, vectors, &amp; molecules</li>
+                    <li>✓ Closed Shadow DOM + Focus Shield keeps your session invisible</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Pearson MyLab + Mastering + Canvas + Blackboard + ALEKS + Connect
+              </div>
+            </div>
+
+            {/* Pillar 4 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    SINGLE-PORTAL LIMITATION
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    MyLab Solver Only Worked on Pearson—Not Your Other 4 Classes
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    Even before <code>mylabsolver.com</code> shut down, it was restricted to Pearson
+                    MyLab. If your Biology class used McGraw-Hill Connect, your Chemistry class used
+                    ALEKS, and your History class used Canvas Quizzes, you had to pay for multiple
+                    different extensions.
+                  </p>
+                </div>
+
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST ALL-PLATFORM SUITE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Pearson MyLab + Mastering + Canvas + Blackboard + ALEKS + Connect
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost replaces MyLab Solver while simultaneously covering every other LMS and
+                    publisher portal on your university schedule—starting with{' '}
+                    <strong>5 Free Solves / Day ($0, no credit card required)</strong>. All plans include full STEM models: $19/mo, $99/yr [$8.25/mo], or $199 Lifetime.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ExamGhost Complete 6-Hotkey Execution Suite */}
+          <div className="bg-[#111] text-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#3730a3]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-neutral-800">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-wider text-indigo-400 font-bold block mb-1">
+                  UNIVERSAL STEALTH SHORTCUTS
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white">
+                  ExamGhost 6-Hotkey Hardware Controls
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost replaces MyLab Solver while simultaneously covering every other LMS and
-                  publisher portal on your university schedule—starting with{' '}
-                  <strong>50 Free Solves ($0, no credit card required)</strong>.
-                </p>
+              </div>
+              <span className="text-xs font-mono text-neutral-400 bg-neutral-900 px-3 py-1.5 rounded-lg border border-neutral-800 w-fit">
+                Zero Host DOM Trace
+              </span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-indigo-400 mb-1">Double-Click</div>
+                <div className="text-xs font-bold text-neutral-200">Instant Solve</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Solve selected question</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-indigo-400 mb-1">Alt+S</div>
+                <div className="text-xs font-bold text-neutral-200">Snap-It Vision</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Snip diagrams &amp; OCR</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-indigo-400 mb-1">Alt+1</div>
+                <div className="text-xs font-bold text-neutral-200">Stealth Mode</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">5% to 100% opacity</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-indigo-400 mb-1">Alt+2</div>
+                <div className="text-xs font-bold text-neutral-200">Split Screen</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Side-by-side study</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-indigo-400 mb-1">Alt+3</div>
+                <div className="text-xs font-bold text-neutral-200">Full Breakdown</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Step-by-step reasoning</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-red-900/50">
+                <div className="font-mono text-xs font-bold text-red-400 mb-1">⌘+Shift+U</div>
+                <div className="text-xs font-bold text-neutral-200">Panic Purge</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">0.05s RAM &amp; DOM wipe</div>
               </div>
             </div>
           </div>
@@ -667,7 +679,7 @@ export default function MyLabSolverVsExamGhostPage() {
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
                   <span className="text-emerald-300 font-bold">[00:38s • Vision OCR]</span>{' '}
-                  <code>⌘+Shift+S</code> captures Pearson SVG graph &amp; StatCrunch pop-up table in
+                  <code>Alt+S</code> captures Pearson SVG graph &amp; StatCrunch pop-up table in
                   0.3s with 99.4% accuracy.
                 </div>
               </div>
@@ -731,7 +743,7 @@ export default function MyLabSolverVsExamGhostPage() {
                     ✗ Offline
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ Full support + ⌘+Shift+S Vision OCR for diagrams &amp; molecules
+                    ✓ Full support + Alt+S Vision OCR for diagrams &amp; molecules
                   </td>
                 </tr>
                 <tr>
@@ -764,8 +776,27 @@ export default function MyLabSolverVsExamGhostPage() {
                     Discontinued
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ 50 Free Solves ($0, No Credit Card Required)
+                    ✓ 5 Free Solves / Day ($0, No Credit Card Required)
                   </td>
+                </tr>
+              
+                <tr>
+                  <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
+                    Pricing Model
+                  </td>
+                  <td className="p-4 text-neutral-500 border-r-2 border-[#111]">
+                    Discontinued ($14.99/mo)
+                  </td>
+                  <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
+                    ✓ 5 Free Solves / Day · $19/mo · $99/yr [$8.25/mo] · $199 Lifetime
+                  </td>
+                </tr>
+                <tr className="bg-emerald-50/20">
+                  <td className="py-4 px-5 font-bold text-ink">
+                    2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                  </td>
+                  <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                 </tr>
               </tbody>
             </table>
@@ -800,12 +831,12 @@ Store:   Removed from Chrome Web Store`}
                   Pro Tip for Pearson MyLab Students Using ExamGhost:
                 </div>
                 <p>
-                  For text-based Pearson MyLab problems, press <code>⌘+Shift+A</code> to extract the
+                  For text-based Pearson MyLab problems, <code>Double-Click</code> the question to extract the
                   question and Pearson&apos;s blue rounding rule automatically.
                 </p>
                 <p>
                   For Pearson coordinate graphs, StatCrunch pop-ups, or Mastering Chemistry
-                  structures, press <code>⌘+Shift+S</code> and drag a box around the problem—our
+                  structures, press <code>Alt+S</code> and drag a box around the problem—our
                   Vision OCR + STEM Consensus engine solves both the graph and the exact formatting
                   instruction in 0.3 seconds.
                 </p>
@@ -831,7 +862,7 @@ Store:   Removed from Chrome Web Store`}
             <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
               &ldquo;When MyLab Solver shut down right before my Business Statistics midterm, I
               panicked because ChatGPT kept rounding z-scores wrong and getting marked incorrect by
-              Pearson&apos;s 3-decimal-place rule. Found ExamGhost, tested the 50 free solves on a
+              Pearson&apos;s 3-decimal-place rule. Found ExamGhost, tested the 5 free solves / day on a
               6-part MyLab hypothesis testing problem with a pop-up data table, and it nailed every
               single part to the exact decimal place Pearson wanted—plus it works on my Canvas
               quizzes too.&rdquo;
@@ -930,7 +961,7 @@ Store:   Removed from Chrome Web Store`}
                 Pearson&apos;s player iframe, ExamGhost renders inside an isolated Closed Shadow DOM
                 (<code>mode: &quot;closed&quot;</code>), includes a prototype-level Focus Shield
                 that blocks <code>window.blur</code> and <code>visibilitychange</code> telemetry,
-                and features <code>⌘+Shift+S</code> Snap-It Vision OCR for complex graphs.
+                and features <code>Alt+S</code> Snap-It Vision OCR for complex graphs.
               </p>
             </details>
           </div>
@@ -944,7 +975,7 @@ Store:   Removed from Chrome Web Store`}
             THE #1 ACTIVE 2026 PEARSON MYLAB &amp; CANVAS SOLVER
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Switch to ExamGhost With 50 Free Solves ($0, No Card)
+            Switch to ExamGhost With 5 Free Solves / Day ($0, No Card)
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
             MyLab Solver is gone, but ExamGhost is faster, stealthier, and works across Pearson
@@ -957,7 +988,7 @@ Store:   Removed from Chrome Web Store`}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-indigo-400 text-[#111] font-black text-sm hover:bg-indigo-300 transition-all"
             >
               <FaChrome className="w-4 h-4" aria-hidden="true" />
-              <span>Start 50 Free Solves · $0 No Card</span>
+              <span>Start 5 Free Solves / Day · $0 No Card</span>
             </Link>
             <Link prefetch={false}
               href="/compare-canvas-hack-extensions"
@@ -1012,7 +1043,13 @@ Store:   Removed from Chrome Web Store`}
           </div>
         </div>
       </section>
-      <Footer />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+        <StudyAiHubShowcase compact />
+      </div>
     </main>
+
+    <Footer />
+  </div>
   );
 }

@@ -21,18 +21,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { FastsolveBraytonCycleDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
     },
-    description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/fastsolve-vs-examghost",
     },
     openGraph: {
         title: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
-        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/fastsolve-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
-        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -77,13 +79,32 @@ export default function FastSolveComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -142,7 +163,7 @@ export default function FastSolveComparisonPage() {
                         "name": "How does FastSolve pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "FastSolve offers 10 free multiple-choice solves per day, then charges $9.99/week ($39.96/mo), $19.99/month, $49/semester, or $99/year with refunds handled only case-by-case via email. ExamGhost gives you 50 Free Solves upfront (no card required), plus transparent options: $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
+                            "text": "FastSolve offers 10 free multiple-choice solves per day, then charges $9.99/week ($39.96/mo), $19.99/month, $49/semester, or $99/year with refunds handled only case-by-case via email. ExamGhost gives you 5 Free Solves / Day upfront (no card required), plus transparent options: $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
                         }
                     }
                 ]
@@ -198,7 +219,7 @@ export default function FastSolveComparisonPage() {
                                     Before you pay <strong>$9.99/week ($39.96/mo)</strong> for FastSolve, read what their own docs admit: (1) even their <em>&ldquo;Invisible&rdquo;</em> mode <strong>forcibly auto-fills host LMS inputs</strong> (<code>isTrusted: false</code>); (2) math and science are routed to lightweight <strong>Gemini Flash</strong> for speed (admitting ALEKS multi-step math is <em>&ldquo;not perfect&rdquo;</em>); and (3) they retain your quiz questions and answers <strong>without automatic expiration</strong>.
                                 </p>
                                 <p className="text-sm sm:text-base text-sky-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost runs full-reasoning Multi-Model STEM Consensus inside a zero-retention Closed Shadow DOM HUD—starting with <strong>50 Free Solves ($0, no credit card)</strong>.
+                                    ExamGhost runs full-reasoning Multi-Model STEM Consensus inside a zero-retention Closed Shadow DOM HUD—starting with <strong>5 Free Solves / Day ($0, no credit card)</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -207,7 +228,7 @@ export default function FastSolveComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -234,7 +255,7 @@ export default function FastSolveComparisonPage() {
                                     <div className="flex items-center justify-between border-b border-black/10 pb-3">
                                         <span className="text-xs font-bold text-rose-800 uppercase tracking-wider flex items-center gap-1.5">
                                             <FileWarning className="w-4 h-4 text-rose-600" />
-                                            3 Verbatim FastSolve Disclosures
+                                            FastSolve Official Policy Audit
                                         </span>
                                         <span className="text-[11px] font-mono text-ink-muted">fastsolve.app</span>
                                     </div>
@@ -291,12 +312,14 @@ export default function FastSolveComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Pricing Model</span>
-                                <span className="font-bold text-emerald-800">50 Free · $19/mo · $99/yr · $199 Life</span>
+                                <span className="font-bold text-emerald-800">5 Free/Day · $19/mo · $99/yr · $199 Lifetime</span>
                                 <span className="text-ink-muted block text-[10px] mt-0.5">FastSolve: $9.99/wk ($39.96/mo)</span>
                             </div>
                         </div>
                     </div>
                 </header>
+
+                <FastsolveBraytonCycleDemo />
 
                 {/* INTERACTIVE 3-TAB FASTSOLVE REALITY SWITCHER (Pure CSS peer-checked) */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive FastSolve Breakdown">
@@ -314,9 +337,9 @@ export default function FastSolveComparisonPage() {
                         </div>
 
                         {/* Hidden Radio Inputs */}
-                        <input type="radio" name="fs_tabs" id="fs_modes" className="sr-only peer/fsmodes" defaultChecked />
-                        <input type="radio" name="fs_tabs" id="fs_stem" className="sr-only peer/fsstem" />
-                        <input type="radio" name="fs_tabs" id="fs_privacy" className="sr-only peer/fsprivacy" />
+                        
+                        
+                        
 
                         {/* Tab Labels */}
                         <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#eef6fb] border border-sky-950/10 mb-8">
@@ -344,7 +367,7 @@ export default function FastSolveComparisonPage() {
                         </div>
 
                         {/* TAB 1: Forced Auto-Fill in All 3 Modes */}
-                        <div className="hidden peer-checked/fsmodes:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -396,7 +419,7 @@ export default function FastSolveComparisonPage() {
                         </div>
 
                         {/* TAB 2: Gemini Flash STEM Shortcut */}
-                        <div className="hidden peer-checked/fsstem:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -428,7 +451,7 @@ export default function FastSolveComparisonPage() {
                                         Verified symbolic math &amp; Snap-It Vision OCR in 0.3s
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never downgrades your STEM problems to a cheap Flash model. Every calculus, physics, chemistry, and statistics question is verified across our flagship multi-model STEM consensus pipeline—including locked diagrams snipped with <code>⌘+Shift+S</code>.
+                                        ExamGhost never downgrades your STEM problems to a cheap Flash model. Every calculus, physics, chemistry, and statistics question is verified across our flagship multi-model STEM consensus pipeline—including locked diagrams snipped with <code>Alt+S</code>.
                                     </p>
                                     <ul className="space-y-2 text-xs text-ink-secondary mb-4">
                                         <li className="flex items-start gap-2">
@@ -437,7 +460,7 @@ export default function FastSolveComparisonPage() {
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Included on All 50 Free Solves:</strong> Test our full STEM accuracy before spending a dollar.</span>
+                                            <span><strong>Included on All 5 Free Solves / Day:</strong> Test our full STEM accuracy before spending a dollar.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -448,7 +471,7 @@ export default function FastSolveComparisonPage() {
                         </div>
 
                         {/* TAB 3: Permanent Logs & $9.99/Wk Billing */}
-                        <div className="hidden peer-checked/fsprivacy:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -477,7 +500,7 @@ export default function FastSolveComparisonPage() {
                                         ExamGhost: Zero-Retention Ephemeral RAM + Fair Pricing
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Zero stored exam questions. 50 Free Solves upfront.
+                                        Zero stored exam questions. 5 Free Solves / Day upfront.
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
                                         ExamGhost processes every text and screenshot query in ephemeral memory and immediately purges the payload once your answer renders—leaving zero permanent database trail of your university exams.
@@ -631,7 +654,7 @@ export default function FastSolveComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves (All question types, no card)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day (All question types, no card)</td>
                                         <td className="py-3.5 px-4 text-ink-muted">10 multiple-choice questions/day</td>
                                     </tr>
                                     <tr>
@@ -639,7 +662,24 @@ export default function FastSolveComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 14-Day Guarantee</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Case-by-case only via email</td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -681,7 +721,7 @@ export default function FastSolveComparisonPage() {
                             <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I paid $9.99 a week for FastSolve thinking its &lsquo;Invisible&rsquo; mode wouldn&apos;t touch the page, but it still forcibly auto-filled radio buttons on Canvas and got two multi-step ALEKS chemistry problems wrong because it routes science to Gemini Flash. Switching to ExamGhost gave me 50 free solves to test, accurate STEM steps inside a subtle Shadow DOM dot, and zero SpeedGrader flags.&rdquo;
+                            &ldquo;I paid $9.99 a week for FastSolve thinking its &lsquo;Invisible&rsquo; mode wouldn&apos;t touch the page, but it still forcibly auto-filled radio buttons on Canvas and got two multi-step ALEKS chemistry problems wrong because it routes science to Gemini Flash. Switching to ExamGhost gave me 5 free solves / day to test, accurate STEM steps inside a subtle Shadow DOM dot, and zero SpeedGrader flags.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-sky-900 text-white font-bold flex items-center justify-center text-sm">
@@ -737,7 +777,7 @@ export default function FastSolveComparisonPage() {
                                     Speed without stealth or STEM accuracy is a trap.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Start with 50 Free Solves on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -746,7 +786,7 @@ export default function FastSolveComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -780,7 +820,10 @@ export default function FastSolveComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

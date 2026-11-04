@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { QuizmateNavierStokesDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "QuizMate vs ExamGhost (2026) — $7.99/Wk Portal Button Audit",
     },
-    description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+    description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/quizmate-vs-examghost",
     },
     openGraph: {
         title: "QuizMate vs ExamGhost (2026) — $7.99/Wk Portal Button Audit",
-        description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/quizmate-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "QuizMate vs ExamGhost (2026) — $7.99/Wk Portal Button Audit",
-        description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -79,7 +81,7 @@ export default function QuizmateVsExamghostPage() {
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
                         "offers": [
-                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
@@ -125,7 +127,7 @@ export default function QuizmateVsExamghostPage() {
                         "name": "How much does QuizMate actually cost compared to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "On quizmate.io, 'The Tuition' is priced at $7.99/week (which equals $31.96/month if left on weekly billing), $19.99/month on the Monthly Plan, or $10.99/month billed yearly ($131.88/year), with no free trial solves listed on the pricing page. ExamGhost gives every student 50 Free Question Solves ($0, no credit card required), followed by $19/month, $99/year ($8.25/mo — saving $32.88/year vs QuizMate Yearly), or a $199 one-time Lifetime Degree Pass."
+                            "text": "On quizmate.io, 'The Tuition' is priced at $7.99/week (which equals $31.96/month if left on weekly billing), $19.99/month on the Monthly Plan, or $10.99/month billed yearly ($131.88/year), with no free trial solves listed on the pricing page. ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required), followed by $19/month, $99/year ($8.25/mo — saving $32.88/year vs QuizMate Yearly), or a $199 one-time Lifetime Degree Pass."
                         }
                     },
                     {
@@ -191,7 +193,7 @@ export default function QuizmateVsExamghostPage() {
                                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
                             >
                                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                                <span>Claim 50 Free Solves ($0, No Card)</span>
+                                <span>Claim 5 Free Solves / Day ($0, No Card)</span>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </a>
                             <Link prefetch={false}
@@ -277,7 +279,7 @@ export default function QuizmateVsExamghostPage() {
                                             <span className="font-display font-bold text-sm text-ink">ExamGhost Closed Shadow HUD</span>
                                         </div>
                                         <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                                            50 Free Solves ($0)
+                                            5 Free Solves / Day ($0)
                                         </span>
                                     </div>
 
@@ -329,55 +331,61 @@ export default function QuizmateVsExamghostPage() {
                     </div>
                 </header>
 
-                {/* INTERACTIVE PURE-CSS 3-TAB WORKFLOW & BILLING BREAKDOWN */}
+                <QuizmateNavierStokesDemo />
+
+                {/* MODERN HOTKEYS SUITE */}
+                <section className="py-8 bg-sand/20 border-b border-sand-dark/20 max-w-6xl mx-auto px-4 sm:px-6 mb-12">
+                    <div className="text-center mb-6">
+                        <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+                        <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                            <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+                        </div>
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                            <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+                        </div>
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                            <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+                        </div>
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                            <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+                        </div>
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                            <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+                        </div>
+                        <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                            <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISIBLE SEQUENTIAL WORKFLOW & BILLING BREAKDOWN */}
                 <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center max-w-3xl mx-auto mb-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
                                 <Layers className="w-3.5 h-3.5 text-emerald-800" />
-                                <span>Interactive Breakdown · Click Any Tab Below</span>
+                                <span>Architecture Audit · 3 Critical Differences</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
                                 How QuizMate Works vs How ExamGhost Protects Your Exam
                             </h2>
                             <p className="text-sm sm:text-base text-ink-muted">
-                                Switch between tabs to inspect the DOM footprint, diagram OCR workflow, and semester billing math.
+                                Detailed technical breakdown comparing the DOM footprint, diagram OCR workflow, and semester billing math.
                             </p>
                         </div>
 
-                        {/* Pure CSS Radio Tabs */}
-                        <div>
-                            <input type="radio" name="qm-tabs" id="qm-tab-dom" className="sr-only peer/dom" defaultChecked />
-                            <input type="radio" name="qm-tabs" id="qm-tab-ocr" className="sr-only peer/ocr" />
-                            <input type="radio" name="qm-tabs" id="qm-tab-price" className="sr-only peer/price" />
-
-                            {/* Tab Labels */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
-                                <label
-                                    htmlFor="qm-tab-dom"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/dom:bg-ink peer-checked/dom:text-white peer-checked/dom:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Lock className="w-4 h-4 shrink-0" />
-                                    <span>1. Portal Button vs Shadow DOM</span>
-                                </label>
-                                <label
-                                    htmlFor="qm-tab-ocr"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/ocr:bg-ink peer-checked/ocr:text-white peer-checked/ocr:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Smartphone className="w-4 h-4 shrink-0" />
-                                    <span>2. iPhone App vs Desktop OCR</span>
-                                </label>
-                                <label
-                                    htmlFor="qm-tab-price"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/price:bg-ink peer-checked/price:text-white peer-checked/price:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <CreditCard className="w-4 h-4 shrink-0" />
-                                    <span>3. $7.99/Wk Tuition vs Fair Passes</span>
-                                </label>
-                            </div>
-
-                            {/* TAB 1 CONTENT: DOM INJECTION VS CLOSED SHADOW DOM */}
-                            <div className="hidden peer-checked/dom:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                        <div className="space-y-8">
+                            {/* PILLAR 1: DOM INJECTION VS CLOSED SHADOW DOM */}
+                            <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                                         <XCircle className="w-3.5 h-3.5" />
@@ -429,12 +437,12 @@ export default function QuizmateVsExamghostPage() {
                                 </div>
                             </div>
 
-                            {/* TAB 2 CONTENT: IPHONE CAMERA APP VS DESKTOP SNAP-IT OCR */}
-                            <div className="hidden peer-checked/ocr:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                            {/* PILLAR 2 CONTENT: IPHONE CAMERA APP VS DESKTOP SNAP-IT OCR */}
+                            <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                                         <Smartphone className="w-3.5 h-3.5" />
-                                        <span>QuizMate Mobile App: iOS App Store Only</span>
+                                        <span>Pillar 2 · QuizMate Mobile App: iOS App Store Only</span>
                                     </div>
                                     <h3 className="text-xl font-bold font-display text-ink">
                                         Why raising an iPhone to your laptop screen fails on live exams
@@ -474,12 +482,12 @@ export default function QuizmateVsExamghostPage() {
                                 </div>
                             </div>
 
-                            {/* TAB 3 CONTENT: $7.99/WK TUITION VS FAIR PASSES */}
-                            <div className="hidden peer-checked/price:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                            {/* PILLAR 3 CONTENT: $7.99/WK TUITION VS FAIR PASSES */}
+                            <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                                         <CreditCard className="w-3.5 h-3.5" />
-                                        <span>QuizMate &ldquo;The Tuition&rdquo; Pricing</span>
+                                        <span>Pillar 3 · QuizMate &ldquo;The Tuition&rdquo; Pricing</span>
                                     </div>
                                     <h3 className="text-xl font-bold font-display text-ink">
                                         $7.99/week equals $31.96/month ($127.84 per semester)
@@ -513,7 +521,7 @@ export default function QuizmateVsExamghostPage() {
                                         <span>ExamGhost Student-First Pricing</span>
                                     </div>
                                     <h3 className="text-xl font-bold font-display text-ink">
-                                        Start with 50 Free Solves ($0), then save on every tier
+                                        Start with 5 Free Solves / Day ($0), then save on every tier
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                         We don&apos;t trap students in weekly auto-renewals or inflate prices with resume builders. Test ExamGhost on your real LMS first for free:
@@ -521,7 +529,7 @@ export default function QuizmateVsExamghostPage() {
                                     <div className="space-y-2 text-xs">
                                         <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                                             <span className="font-semibold text-emerald-950">Starter Trial (No Credit Card)</span>
-                                            <span className="font-mono font-bold text-emerald-800">50 Free Solves ($0)</span>
+                                            <span className="font-mono font-bold text-emerald-800">5 Free Solves / Day ($0)</span>
                                         </div>
                                         <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                                             <span className="font-semibold text-emerald-950">Monthly Pass (Cancel Anytime)</span>
@@ -533,7 +541,7 @@ export default function QuizmateVsExamghostPage() {
                                         </div>
                                         <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                                             <span className="font-semibold text-emerald-950">Lifetime Degree Pass (Pay Once)</span>
-                                            <span className="font-mono font-bold text-emerald-800">$199 One-Time</span>
+                                            <span className="font-mono font-bold text-emerald-800">$199 Lifetime</span>
                                         </div>
                                     </div>
                                 </div>
@@ -588,7 +596,7 @@ export default function QuizmateVsExamghostPage() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span><strong>50 Free Solves + Fair Pricing:</strong> Verify accuracy on your actual course portal for $0 before choosing $19/mo, $99/yr, or $199 Lifetime.</span>
+                                    <span><strong>5 Free Solves / Day + Fair Pricing:</strong> Verify accuracy on your actual course portal for $0 before choosing $19/mo, $99/yr, or $199 Lifetime.</span>
                                 </li>
                             </ul>
                         </div>
@@ -621,7 +629,7 @@ export default function QuizmateVsExamghostPage() {
                                     <tr className="bg-cream/40">
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Trial / Starter Tier</td>
                                         <td className="py-3.5 px-4 text-ink-muted text-xs">Test accuracy on your actual LMS before paying</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">50 Free Solves ($0, No CC)</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">5 Free Solves / Day ($0, No CC)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">No free plan listed ($7.99/wk min)</td>
                                     </tr>
                                     <tr className="bg-surface">
@@ -708,7 +716,18 @@ export default function QuizmateVsExamghostPage() {
                                         <td className="py-3.5 px-4 text-emerald-800 font-bold">14-Day 100% Money-Back Guarantee</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Standard subscription cancellation</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -782,7 +801,7 @@ export default function QuizmateVsExamghostPage() {
                                     Join the ExamGhost Student Discord
                                 </h2>
                                 <p className="text-xs sm:text-sm text-white/90">
-                                    Claim your 50 free question solves, check live Canvas &amp; Blackboard stealth status, and get 24/7 engineering support.
+                                    Claim your 5 free solves per day, check live Canvas &amp; Blackboard stealth status, and get 24/7 engineering support.
                                 </p>
                             </div>
                         </div>
@@ -792,7 +811,7 @@ export default function QuizmateVsExamghostPage() {
                             rel="noopener noreferrer"
                             className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
                         >
-                            <span>Join Discord &amp; Get 50 Free Solves</span>
+                            <span>Join Discord &amp; Get 5 Free Solves / Day</span>
                             <ExternalLink className="w-4 h-4" />
                         </a>
                     </div>
@@ -826,7 +845,7 @@ export default function QuizmateVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                On <code className="font-mono text-xs">quizmate.io</code>, &ldquo;The Tuition&rdquo; is priced at <strong>$7.99/week</strong> (which equals $31.96/month if left on weekly billing), <strong>$19.99/month</strong> on the Monthly Plan, or <strong>$10.99/month billed yearly ($131.88/year)</strong>, with no free trial solves listed on the pricing page. ExamGhost gives every student <strong>50 Free Question Solves ($0, no credit card required)</strong>, followed by <strong>$19/month</strong>, <strong>$99/year ($8.25/mo)</strong>, or a <strong>$199 one-time Lifetime Degree Pass</strong>.
+                                On <code className="font-mono text-xs">quizmate.io</code>, &ldquo;The Tuition&rdquo; is priced at <strong>$7.99/week</strong> (which equals $31.96/month if left on weekly billing), <strong>$19.99/month</strong> on the Monthly Plan, or <strong>$10.99/month billed yearly ($131.88/year)</strong>, with no free trial solves listed on the pricing page. ExamGhost gives every student <strong>5 Free Solves / Day ($0, no credit card required)</strong>, followed by <strong>$19/month</strong>, <strong>$99/year ($8.25/mo)</strong>, or a <strong>$199 one-time Lifetime Degree Pass</strong>.
                             </p>
                         </details>
 
@@ -862,7 +881,7 @@ export default function QuizmateVsExamghostPage() {
                                     <span>Skip the $7.99/Week Portal Button</span>
                                 </div>
                                 <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-2">
-                                    Test ExamGhost&apos;s closed Shadow HUD with 50 free solves.
+                                    Test ExamGhost&apos;s closed Shadow HUD with 5 free solves / day.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                                     No injected portal buttons, no iPhone camera required, and zero <code className="font-mono text-xs">window.blur</code> logs in Canvas SpeedGrader.
@@ -876,7 +895,7 @@ export default function QuizmateVsExamghostPage() {
                                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                                 >
                                     <FaChrome className="w-4 h-4 text-mint" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
                                 <Link prefetch={false}
@@ -914,7 +933,10 @@ export default function QuizmateVsExamghostPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

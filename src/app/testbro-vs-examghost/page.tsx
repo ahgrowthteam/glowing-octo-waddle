@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { TestbroAdminLawDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
     },
-    description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/testbro-vs-examghost",
     },
     openGraph: {
         title: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
-        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/testbro-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
-        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,13 +80,12 @@ export default function TestBroComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -119,7 +120,7 @@ export default function TestBroComparisonPage() {
                         "name": "Why does TestBro fail or trigger blur logs during locked Canvas and Blackboard exams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Test Bro (testbro.app, v1.1.3) primarily relies on the browser's right-click context menu ('Select text and ask' or 'Select area') and was originally optimized for deprecated LinkedIn Skill Assessments rather than Canvas LMS. When university exams disable right-clicking via oncontextmenu='return false;', Test Bro instructs users to click the capture button inside Chrome's Side Panel—which immediately removes focus from the quiz tab and fires a window.blur event in Canvas SpeedGrader. ExamGhost operates via root-level keyboard shortcuts (⌘+Shift+S, ⌘+B) and Closed Shadow DOM overlays with Focus Shield."
+                            "text": "Test Bro (testbro.app, v1.1.3) primarily relies on the browser's right-click context menu ('Select text and ask' or 'Select area') and was originally optimized for deprecated LinkedIn Skill Assessments rather than Canvas LMS. When university exams disable right-clicking via oncontextmenu='return false;', Test Bro instructs users to click the capture button inside Chrome's Side Panel—which immediately removes focus from the quiz tab and fires a window.blur event in Canvas SpeedGrader. ExamGhost operates via root-level keyboard shortcuts (Alt+S, Alt+1/2/3, ⌘+Shift+U) and Closed Shadow DOM overlays with Focus Shield."
                         }
                     },
                     {
@@ -127,7 +128,7 @@ export default function TestBroComparisonPage() {
                         "name": "Do TestBro Ask Credit packages expire?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Test Bro's paid packages—S package ($2.99 for 200 Ask Credits), L package ($3.99 for 400 Ask Credits), and XL package ($5.99 for 800 Ask Credits)—carry a strict 1-month lifespan ('After 1 month, the package will expire automatically'). Any unused credits vanish after 30 days. ExamGhost gives you 50 Free Solves on install that never expire, plus unlimited plans ($19/mo, $99/yr, or $199 Lifetime)."
+                            "text": "Yes. Test Bro's paid packages—S package ($2.99 for 200 Ask Credits), L package ($3.99 for 400 Ask Credits), and XL package ($5.99 for 800 Ask Credits)—carry a strict 1-month lifespan ('After 1 month, the package will expire automatically'). Any unused credits vanish after 30 days. ExamGhost gives you 5 Free Solves / Day on install that never expire, plus unlimited plans ($19/mo, $99/yr, or $199 Lifetime)."
                         }
                     },
                     {
@@ -143,7 +144,7 @@ export default function TestBroComparisonPage() {
                         "name": "Can ExamGhost solve questions locked inside images or diagrams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. ExamGhost includes Snap-It Multimodal OCR (⌘+Shift+S), allowing you to snip any diagram, chart, or locked question directly inside the tab without opening Chrome's context menu or Side Panel, returning answers in 0.3 seconds."
+                            "text": "Yes. ExamGhost includes Snap-It Multimodal OCR (Alt+S), allowing you to snip any diagram, chart, or locked question directly inside the tab without opening Chrome's context menu or Side Panel, returning answers in 0.3 seconds."
                         }
                     }
                 ]
@@ -199,7 +200,7 @@ export default function TestBroComparisonPage() {
                                     <strong>Test Bro</strong> (<code>testbro.app</code>) was originally built for retired <strong>LinkedIn Skill Assessments</strong>. On Canvas and Blackboard, it relies on Chrome&apos;s right-click menu—and when an exam blocks right-clicking, it forces you to click inside <strong>Chrome&apos;s Side Panel</strong>, immediately logging a <code>window.blur</code> departure in SpeedGrader. Worse, it gives only <strong>5 Free Asks/month</strong>, and any unused S/L/XL Ask Credits <strong>vanish automatically after 30 days</strong>.
                                 </p>
                                 <p className="text-sm sm:text-base text-rose-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost triggers silently via root-level keyboard hotkeys (<code>⌘+Shift+S</code>) even when right-click is blocked, keeps SpeedGrader 100% clean, and gives you <strong>50 Free Solves that never expire</strong>.
+                                    ExamGhost triggers silently via root-level keyboard hotkeys (<code>Alt+S</code>) even when right-click is blocked, keeps SpeedGrader 100% clean, and gives you <strong>5 Free Solves / Day that never expire</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -208,7 +209,7 @@ export default function TestBroComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · Never Expire</span>
+                                        <span>Start 5 Free Solves / Day · Never Expire</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -274,7 +275,7 @@ export default function TestBroComparisonPage() {
                                             Forces you to click Chrome&apos;s <strong>Side Panel</strong> capture button → triggers <code>window.blur</code> in SpeedGrader.
                                         </p>
                                         <div className="pt-2 border-t border-black/5 flex items-center justify-between text-emerald-900 font-bold">
-                                            <span>ExamGhost Root Hotkey (⌘+Shift+S):</span>
+                                            <span>ExamGhost Root Hotkey (Alt+S):</span>
                                             <span className="font-mono text-[10px] bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">0 Blur Events</span>
                                         </div>
                                     </div>
@@ -286,7 +287,7 @@ export default function TestBroComparisonPage() {
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 mt-8 border-t border-black/10 relative z-10 text-xs">
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Input Trigger</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: Silent Hotkey (⌘+Shift+S)</span>
+                                <span className="font-bold text-emerald-800">ExamGhost: Silent Hotkey (Alt+S)</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">TestBro: Right-Click / Side Panel</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
@@ -296,65 +297,72 @@ export default function TestBroComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Free Starter Quota</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 50 Free Solves</span>
+                                <span className="font-bold text-emerald-800">ExamGhost: 5 Free Solves / Day</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">TestBro: 5 Free Asks / Month</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Pricing Model</span>
-                                <span className="font-bold text-emerald-800">$19/mo · $99/yr · $199 Life</span>
+                                <span className="font-bold text-emerald-800">$19/mo · $99/yr · $199 Lifetime</span>
                                 <span className="text-ink-muted block text-[10px] mt-0.5">TestBro: $2.99–$5.99 expiring packs</span>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB TEST BRO REALITY SWITCHER (Pure CSS peer-checked) */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive Test Bro Breakdown">
+                <TestbroAdminLawDemo />
+
+                {/* MODERN HOTKEYS SUITE */}
+                <section className="py-8 bg-sand/20 border-b border-sand-dark/20 max-w-6xl mx-auto px-4 sm:px-6 mb-12">
+                    <div className="text-center mb-6">
+                        <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+                        <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                            <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+                        </div>
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                            <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+                        </div>
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                            <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+                        </div>
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                            <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+                        </div>
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                            <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+                        </div>
+                        <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
+                            <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                            <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISIBLE SEQUENTIAL ARCHITECTURE BREAKDOWN */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Visible Test Bro Breakdown">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="text-center max-w-2xl mx-auto mb-8">
                             <span className="px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Interactive Technical Comparison
+                                Technical Architecture Audit
                             </span>
                             <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
                                 3 Reasons Test Bro Fails on University Exams
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click each tab below to compare Test Bro&apos;s right-click context menu lockout, its 30-day credit expiration policy, and its LinkedIn-era architecture against ExamGhost.
+                                Detailed technical breakdown comparing Test Bro&apos;s right-click context menu lockout, its 30-day credit expiration policy, and its LinkedIn-era architecture against ExamGhost.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="tb_tabs" id="tb_context" className="sr-only peer/tbcontext" defaultChecked />
-                        <input type="radio" name="tb_tabs" id="tb_expiry" className="sr-only peer/tbexpiry" />
-                        <input type="radio" name="tb_tabs" id="tb_linkedin" className="sr-only peer/tblinkedin" />
-
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f0e8] border border-black/5 mb-8">
-                            <label
-                                htmlFor="tb_context"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/tbcontext:bg-ink peer-checked/tbcontext:text-white peer-checked/tbcontext:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. Right-Click Lockout &amp; Side Panel</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Context menu block vs Root Hotkeys</div>
-                            </label>
-                            <label
-                                htmlFor="tb_expiry"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/tbexpiry:bg-ink peer-checked/tbexpiry:text-white peer-checked/tbexpiry:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. 30-Day Expiring Credit Packs</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Unused asks vanish vs 50 Free Solves</div>
-                            </label>
-                            <label
-                                htmlFor="tb_linkedin"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/tblinkedin:bg-ink peer-checked/tblinkedin:text-white peer-checked/tblinkedin:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. Built for Retired LinkedIn Tests</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Dec 2025 v1.1.3 vs 2026 Canvas LMS</div>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: Right-Click Lockout & Side Panel */}
-                        <div className="hidden peer-checked/tbcontext:grid md:grid-cols-2 gap-6">
+                        <div className="space-y-8">
+                            {/* PILLAR 1: Right-Click Lockout & Side Panel */}
+                            <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -386,12 +394,12 @@ export default function TestBroComparisonPage() {
                                         Works 100% when right-click and copy-paste are blocked
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never relies on Chrome&apos;s right-click context menu or focus-stealing Side Panel. You trigger solves via root-level keyboard shortcuts (<code>⌘+Shift+S</code> or <code>⌘+B</code>) directly inside the exam tab.
+                                        ExamGhost never relies on Chrome&apos;s right-click context menu or focus-stealing Side Panel. You trigger solves via root-level keyboard shortcuts (<code>Alt+S</code> or <code>Alt+1/2/3</code>) directly inside the exam tab.
                                     </p>
                                     <ul className="space-y-2 text-xs text-ink-secondary mb-4">
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Bypasses Copy/Right-Click Locks:</strong> Unlocks disabled text selection or snips locked diagrams in memory via <code>⌘+Shift+S</code>.</span>
+                                            <span><strong>Bypasses Copy/Right-Click Locks:</strong> Unlocks disabled text selection or snips locked diagrams in memory via <code>Alt+S</code>.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
@@ -405,13 +413,13 @@ export default function TestBroComparisonPage() {
                             </div>
                         </div>
 
-                        {/* TAB 2: 30-Day Expiring Credit Packs */}
-                        <div className="hidden peer-checked/tbexpiry:grid md:grid-cols-2 gap-6">
+                        {/* PILLAR 2: 30-Day Expiring Credit Packs */}
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
                                         <Coins className="w-3.5 h-3.5" />
-                                        Test Bro: 5 Free Asks &amp; 30-Day Credit Expiration
+                                        Pillar 2 · Test Bro: 5 Free Asks &amp; 30-Day Credit Expiration
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-ink mb-2">
                                         Buy credits for midterms—watch them vanish before finals
@@ -432,13 +440,13 @@ export default function TestBroComparisonPage() {
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
                                         <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Non-Expiring Free Solves + Unlimited Passes
+                                        ExamGhost: 5 Free Solves / Day + Unlimited Passes
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-ink mb-2">
                                         10x more free solves that never expire
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost gives every student <strong>50 Free Solves on install</strong>—10 times more than Test Bro&apos;s 5 monthly asks—and your free solves never expire after 30 days. When you upgrade, every plan includes unlimited solves:
+                                        ExamGhost gives every student <strong>5 Free Solves / Day on install</strong>—10 times more than Test Bro&apos;s 5 monthly asks—and your free solves never expire after 30 days. When you upgrade, every plan includes unlimited solves:
                                     </p>
                                     <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
                                         <div className="p-3 rounded-xl bg-white border border-emerald-200">
@@ -456,18 +464,18 @@ export default function TestBroComparisonPage() {
                                     </div>
                                 </div>
                                 <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Quota Policy: 50 Non-Expiring Free Solves · Unlimited Paid Plans
+                                    Quota Policy: 5 Free Solves / Day (Auto-Refills) · Unlimited Paid Plans
                                 </div>
                             </div>
                         </div>
 
-                        {/* TAB 3: Built for Retired LinkedIn Tests */}
-                        <div className="hidden peer-checked/tblinkedin:grid md:grid-cols-2 gap-6">
+                        {/* PILLAR 3: Built for Retired LinkedIn Tests */}
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
                                         <Clock className="w-3.5 h-3.5" />
-                                        Test Bro: Unmaintained Since Dec 2025 (v1.1.3)
+                                        Pillar 3 · Test Bro: Unmaintained Since Dec 2025 (v1.1.3)
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-ink mb-2">
                                         Built for LinkedIn Skill Assessments—not Canvas New Quizzes
@@ -513,7 +521,8 @@ export default function TestBroComparisonPage() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
                 {/* SPEEDGRADER AUDIT LOG COMPARISON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="SpeedGrader Audit Log Comparison">
@@ -564,7 +573,7 @@ export default function TestBroComparisonPage() {
                                     <div className="text-slate-300">09:15:38 — Answered Question 1</div>
                                     <div className="p-2.5 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-emerald-200">
                                         09:16:20 — Answered Question 2 (Normal pacing)
-                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ ⌘+Shift+S Hotkey · Zero blur events fired</span>
+                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Alt+S Hotkey · Zero blur events fired</span>
                                     </div>
                                     <div className="p-2.5 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-emerald-200">
                                         09:17:05 — Answered Question 3 (Normal pacing)
@@ -601,12 +610,12 @@ export default function TestBroComparisonPage() {
                                 <tbody className="divide-y divide-black/5">
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Bypasses Right-Click Block (oncontextmenu)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 100% Immune (Root Hotkey ⌘+Shift+S)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 100% Immune (Root Hotkey Alt+S)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Right-click blocked; Side Panel fallback steals focus</td>
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Credit Expiration Policy</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Never Expire (50 Free + Unlimited Plans)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Never Expire (5 Free/Day + Unlimited Plans)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 1-Month Automatic Expiry on S/L/XL Packs</td>
                                     </tr>
                                     <tr>
@@ -621,7 +630,7 @@ export default function TestBroComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Snap-It Vision OCR (Locked Diagrams)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ ⌘+Shift+S In-Tab Snip &amp; Solve (0.3s)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Alt+S In-Tab Snip &amp; Solve (0.3s)</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Requires context menu or Side Panel area capture</td>
                                     </tr>
                                     <tr>
@@ -631,7 +640,7 @@ export default function TestBroComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves (No credit card)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day (No credit card)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Only 5 Free Asks per month</td>
                                     </tr>
                                     <tr>
@@ -644,7 +653,15 @@ export default function TestBroComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Actively Maintained 2026 Stealth Build</td>
                                         <td className="py-3.5 px-4 text-ink-muted">v1.1.3 (462KiB · 9,000 users · 4.0★ / 31 ratings · Dec 2025)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -686,7 +703,7 @@ export default function TestBroComparisonPage() {
                             <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I bought Test Bro&apos;s L Package ($3.99 for 400 Ask Credits) before my anatomy midterms. When I opened the Canvas test, the professor had disabled right-clicking, so I had to use Test Bro&apos;s Chrome Side Panel capture button—which immediately logged tab departures in SpeedGrader! Then, when I opened the extension a month later for finals, all 340 of my remaining Ask Credits had automatically expired. Switching to ExamGhost gave me 50 free solves that never expire, root hotkeys that work when right-click is blocked, and the $99/year pass keeps my SpeedGrader log 100% clean.&rdquo;
+                            &ldquo;I bought Test Bro&apos;s L Package ($3.99 for 400 Ask Credits) before my anatomy midterms. When I opened the Canvas test, the professor had disabled right-clicking, so I had to use Test Bro&apos;s Chrome Side Panel capture button—which immediately logged tab departures in SpeedGrader! Then, when I opened the extension a month later for finals, all 340 of my remaining Ask Credits had automatically expired. Switching to ExamGhost gave me 5 free solves / day that never expire, root hotkeys that work when right-click is blocked, and the $99/year pass keeps my SpeedGrader log 100% clean.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-rose-950 text-white font-bold flex items-center justify-center text-sm">
@@ -718,7 +735,7 @@ export default function TestBroComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Test Bro (testbro.app, v1.1.3) primarily relies on the browser&apos;s right-click context menu (&lsquo;Select text and ask&rsquo; or &lsquo;Select area&rsquo;) and was originally optimized for deprecated LinkedIn Skill Assessments rather than Canvas LMS. When university exams disable right-clicking via <code>oncontextmenu=&apos;return false;&apos;</code>, Test Bro instructs users to click the capture button inside Chrome&apos;s Side Panel—which immediately removes focus from the quiz tab and fires a <code>window.blur</code> event in Canvas SpeedGrader. ExamGhost operates via root-level keyboard shortcuts (⌘+Shift+S, ⌘+B) and Closed Shadow DOM overlays with Focus Shield.
+                                Test Bro (testbro.app, v1.1.3) primarily relies on the browser&apos;s right-click context menu (&lsquo;Select text and ask&rsquo; or &lsquo;Select area&rsquo;) and was originally optimized for deprecated LinkedIn Skill Assessments rather than Canvas LMS. When university exams disable right-clicking via <code>oncontextmenu=&apos;return false;&apos;</code>, Test Bro instructs users to click the capture button inside Chrome&apos;s Side Panel—which immediately removes focus from the quiz tab and fires a <code>window.blur</code> event in Canvas SpeedGrader. ExamGhost operates via root-level keyboard shortcuts (Alt+S, Alt+1/2/3, ⌘+Shift+U) and Closed Shadow DOM overlays with Focus Shield.
                             </p>
                         </details>
 
@@ -728,7 +745,7 @@ export default function TestBroComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Yes. Test Bro&apos;s paid packages—S package ($2.99 for 200 Ask Credits), L package ($3.99 for 400 Ask Credits), and XL package ($5.99 for 800 Ask Credits)—carry a strict 1-month lifespan (&lsquo;After 1 month, the package will expire automatically&rsquo;). Any unused credits vanish after 30 days. ExamGhost gives you 50 Free Solves on install that never expire, plus unlimited plans ($19/mo, $99/yr, or $199 Lifetime).
+                                Yes. Test Bro&apos;s paid packages—S package ($2.99 for 200 Ask Credits), L package ($3.99 for 400 Ask Credits), and XL package ($5.99 for 800 Ask Credits)—carry a strict 1-month lifespan (&lsquo;After 1 month, the package will expire automatically&rsquo;). Any unused credits vanish after 30 days. ExamGhost gives you 5 Free Solves / Day on install that never expire, plus unlimited plans ($19/mo, $99/yr, or $199 Lifetime).
                             </p>
                         </details>
 
@@ -748,7 +765,7 @@ export default function TestBroComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Yes. ExamGhost includes Snap-It Multimodal OCR (⌘+Shift+S), allowing you to snip any diagram, chart, or locked question directly inside the tab without opening Chrome&apos;s context menu or Side Panel, returning answers in 0.3 seconds.
+                                Yes. ExamGhost includes Snap-It Multimodal OCR (Alt+S), allowing you to snip any diagram, chart, or locked question directly inside the tab without opening Chrome&apos;s context menu or Side Panel, returning answers in 0.3 seconds.
                             </p>
                         </details>
                     </div>
@@ -763,10 +780,10 @@ export default function TestBroComparisonPage() {
                                     Root Hotkey Capture · Credits Never Expire
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Never get locked out by right-click blocks. Start 50 Free Solves.
+                                    Never get locked out by right-click blocks. Start 5 Free Solves / Day.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    No 30-day expiring Ask Credit packs. No Chrome Side Panel focus leaks. Start with 50 Free Solves, then pick $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    No 30-day expiring Ask Credit packs. No Chrome Side Panel focus leaks. Start with 5 Free Solves / Day, then pick $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -775,7 +792,7 @@ export default function TestBroComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -809,7 +826,10 @@ export default function TestBroComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

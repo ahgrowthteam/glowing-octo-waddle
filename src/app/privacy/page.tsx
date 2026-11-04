@@ -126,8 +126,8 @@ export default function PrivacyPage() {
                             ExamGhost was engineered from day one with a strict <strong>privacy-first, zero-knowledge philosophy</strong>. Because our tools operate directly on-device inside your browser, our data collection footprint is minimal:
                         </p>
                         <ul className="space-y-2 pl-4 list-disc text-xs sm:text-sm">
-                            <li><strong>Local Preferences (On-Device Only):</strong> Your chosen HUD opacity level, keybinding preferences (e.g., ⌘+Shift+X), and attempt memory cache are stored strictly within Chrome’s encrypted local storage (`chrome.storage.local`). This data never leaves your laptop.</li>
-                            <li><strong>License Verification:</strong> When activating your license key (whether Free 50-Solve Trial, Monthly, Yearly, or Lifetime), the extension verifies the cryptographic hash with our licensing server. We only record an anonymous license token and creation timestamp.</li>
+                            <li><strong>Local Preferences (On-Device Only):</strong> Your chosen solver mode (Alt+1, Alt+2, Alt+3), keybinding preferences (e.g., Alt+S, ⌘+Shift+U), and attempt memory cache are stored strictly within Chrome’s encrypted local storage (`chrome.storage.local`). This data never leaves your laptop.</li>
+                            <li><strong>License Verification:</strong> When activating your license key (whether 5 Free Solves / Day Tier, Monthly, Yearly, or Lifetime), the extension verifies the cryptographic hash with our licensing server. We only record an anonymous license token and creation timestamp.</li>
                             <li><strong>Payment Data:</strong> Payments are processed via encrypted third-party processors (such as Stripe). ExamGhost never accesses or stores credit card numbers, CVVs, or billing addresses.</li>
                         </ul>
                     </section>
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
                     <section className="space-y-3">
                         <h2 className="font-display font-bold text-xl text-ink">2. How Questions and AI Solves Are Handled</h2>
                         <p>
-                            When you highlight a question, use keyboard auto-solve, or crop a diagram with Snap-It (⌘+Shift+S):
+                            When you Double-Click a question, use hotkey auto-solve, or crop a diagram with Snap-It (Alt+S):
                         </p>
                         <ul className="space-y-2 pl-4 list-disc text-xs sm:text-sm">
                             <li>Text and cropped bitmap data are processed in volatile memory buffers.</li>

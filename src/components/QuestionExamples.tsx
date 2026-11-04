@@ -88,7 +88,7 @@ export default function QuestionExamples() {
                                 <div className="space-y-3">
                                     {[
                                         { title: "Off Until You Switch It On", desc: "Never runs in the background. Toggle instantly with ⌘+Shift+U and off just as fast." },
-                                        { title: "No Account to Start", desc: "Install and use 50 free questions immediately. We only ask for an email if you upgrade." },
+                                        { title: "No Account to Start", desc: "Install and get 5 free solves per day immediately (auto-refills every 24h). Paid plans also include the Claude, ChatGPT & DeepSeek Study Hub." },
                                         { title: "Nothing on Screen", desc: "Answers apply directly on the page — no new tabs or floating widgets. Screen-share safe by design." },
                                         { title: "1-Click Clean Uninstall", desc: "Remove it from Chrome any time. Zero leftover data or background hooks." }
                                     ].map((item, idx) => (
@@ -306,7 +306,7 @@ export default function QuestionExamples() {
                         )}
 
                         {/* Controls */}
-                        <div className="flex items-center justify-between pt-4 border-t border-black/5">
+                        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-4 border-t border-black/5">
                             <button
                                 onClick={handleAutoSolve}
                                 className="btn-dark px-5 py-2.5 text-xs sm:text-sm flex items-center gap-2"

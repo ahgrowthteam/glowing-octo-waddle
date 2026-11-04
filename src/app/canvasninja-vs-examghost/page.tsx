@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CanvasNinjaDiscreteMathDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "CanvasNinja vs ExamGhost (2026) — New Quizzes & AI Audit",
     },
-    description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 50 Free Solves.",
+    description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/canvasninja-vs-examghost",
     },
     openGraph: {
         title: "CanvasNinja vs ExamGhost (2026) — New Quizzes & AI Audit",
-        description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 50 Free Solves.",
+        description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 5 Free Solves / Day.",
         url: "https://examghost.com/canvasninja-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CanvasNinja vs ExamGhost (2026) — New Quizzes & AI Audit",
-        description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 50 Free Solves.",
+        description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -83,7 +85,13 @@ export default function CanvasNinjaComparisonPage() {
                             "lowPrice": "0.00",
                             "highPrice": "199.00",
                             "priceCurrency": "USD",
-                            "offerCount": "4"
+                            "offerCount": "4",
+                            "offers": [
+                                { "@type": "Offer", "name": "5 Free Solves / Day", "price": "0.00", "priceCurrency": "USD" },
+                                { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                                { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                                { "@type": "Offer", "name": "Lifetime Pass", "price": "199.00", "priceCurrency": "USD" }
+                            ]
                         }
                     },
                     {
@@ -135,7 +143,7 @@ export default function CanvasNinjaComparisonPage() {
                         "name": "How does CanvasNinja pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "CanvasNinja charges $16.99/month ($203.88/year) or $67.99 one-time for 3 basic features that do not parse AI answers on Canvas New Quizzes. ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by transparent plans: $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 Lifetime."
+                            "text": "CanvasNinja charges $16.99/month ($203.88/year) or $67.99 one-time for 3 basic features that do not parse AI answers on Canvas New Quizzes. ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by transparent plans: $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 Lifetime."
                         }
                     },
                     {
@@ -143,7 +151,7 @@ export default function CanvasNinjaComparisonPage() {
                         "name": "Can CanvasNinja solve STEM questions with diagrams, graphs, or formulas?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. CanvasNinja sends plain-text question content and answer choices through its backend to OpenAI and has no screen-snipping OCR capability. ExamGhost includes built-in Snap-It Vision OCR (⌘+Shift+S) and an integrated STEM formula engine to solve complex physics, chemistry, and calculus problems instantly."
+                            "text": "No. CanvasNinja sends plain-text question content and answer choices through its backend to OpenAI and has no screen-snipping OCR capability. ExamGhost includes built-in Snap-It Vision OCR (Alt+S) and an integrated STEM formula engine to solve complex physics, chemistry, and calculus problems instantly."
                         }
                     },
                     {
@@ -223,7 +231,7 @@ export default function CanvasNinjaComparisonPage() {
                                     </div>
                                     <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
                                         <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Free Evaluation</div>
-                                        <div className="font-display font-extrabold text-base text-ink">50 Free Solves</div>
+                                        <div className="font-display font-extrabold text-base text-ink">5 Free Solves / Day</div>
                                         <div className="text-[11px] text-ink-muted">$0 · No card needed</div>
                                     </div>
                                 </div>
@@ -234,7 +242,7 @@ export default function CanvasNinjaComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#ffe9a0]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 · All 24 Tools)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 · All 24 Tools)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -287,7 +295,7 @@ export default function CanvasNinjaComparisonPage() {
                                         </div>
                                         <div className="text-[11px] text-emerald-100/90 space-y-1.5 font-mono">
                                             <div>✓ Full AI solving on Canvas Classic &amp; New Quizzes</div>
-                                            <div>✓ Snap-It Vision (`⌘+Shift+S`) for any graph or diagram</div>
+                                            <div>✓ Snap-It Vision (`Alt+S`) for any graph or diagram</div>
                                             <div>✓ Works on Blackboard, Moodle, D2L, Pearson &amp; McGraw-Hill</div>
                                         </div>
                                     </div>
@@ -297,7 +305,9 @@ export default function CanvasNinjaComparisonPage() {
                     </div>
                 </section>
 
-                {/* INTERACTIVE 3-TAB COMPARISON SWITCHER (Pure CSS peer-checked) */}
+        <CanvasNinjaDiscreteMathDemo />
+
+                {/* VISIBLE 3-PILLAR COMPARISON BREAKDOWN */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                     <div className="text-center max-w-2xl mx-auto mb-8">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-xs font-bold text-amber-950 mb-3">
@@ -313,138 +323,170 @@ export default function CanvasNinjaComparisonPage() {
                     </div>
 
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <input type="radio" name="cn_tabs" id="cn-newquiz" className="sr-only peer/newquiz" defaultChecked />
-                        <input type="radio" name="cn_tabs" id="cn-features" className="sr-only peer/features" />
-                        <input type="radio" name="cn_tabs" id="cn-status" className="sr-only peer/status" />
-
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="cn-newquiz"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/newquiz:bg-ink peer-checked/newquiz:text-white peer-checked/newquiz:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Binary className="w-4 h-4" />
-                                <span>1. New Quizzes &amp; STEM Diagrams</span>
-                            </label>
-                            <label
-                                htmlFor="cn-features"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/features:bg-ink peer-checked/features:text-white peer-checked/features:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Layers className="w-4 h-4" />
-                                <span>2. 3 Basic Features vs 24 Tools</span>
-                            </label>
-                            <label
-                                htmlFor="cn-status"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/status:bg-ink peer-checked/status:text-white peer-checked/status:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Activity className="w-4 h-4" />
-                                <span>3. Telemetry &amp; Maintenance Status</span>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: NEW QUIZZES & DIAGRAMS */}
-                        <div className="hidden peer-checked/newquiz:block">
-                            <div className="grid lg:grid-cols-2 gap-6">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">CanvasNinja Limitation</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Blind to Canvas New Quizzes &amp; Visual Graphs
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Fails on LTI 1.3 New Quizzes:</strong> Because Canvas New Quizzes renders inside a cross-origin React LTI iframe, CanvasNinja&apos;s Classic DOM scraper cannot parse questions or save answers.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Plain-Text Only (Zero Screen Crop):</strong> CanvasNinja only forwards raw HTML text strings to OpenAI—so if your biology, economics, or calculus question has a graph or circuit image, it cannot see it.</span>
-                                        </li>
-                                    </ul>
+                        <div className="space-y-8">
+                            {/* Pillar 1: New Quizzes & STEM Diagrams */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    PILLAR 1 · NEW QUIZZES &amp; STEM DIAGRAMS
                                 </div>
+                                <div className="grid lg:grid-cols-2 gap-6">
+                                    <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">CanvasNinja Limitation</div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Blind to Canvas New Quizzes &amp; Visual Graphs
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Fails on LTI 1.3 New Quizzes:</strong> Because Canvas New Quizzes renders inside a cross-origin React LTI iframe, CanvasNinja&apos;s Classic DOM scraper cannot parse questions or save answers.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Plain-Text Only (Zero Screen Crop):</strong> CanvasNinja only forwards raw HTML text strings to OpenAI—so if your biology, economics, or calculus question has a graph or circuit image, it cannot see it.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Advantage</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Full New Quizzes Support + Snap-It Vision (`⌘+Shift+S`)
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Native LTI 1.3 Execution:</strong> Double-click any question inside Canvas New Quizzes, Canvas Classic, Blackboard, or McGraw-Hill for an instant 0.3s solve.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>In-Memory Diagram &amp; Equation OCR:</strong> Press <code>⌘+Shift+S</code> to crop any graph, organic chemistry ring, or locked image without leaving your exam tab.</span>
-                                        </li>
-                                    </ul>
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Advantage</div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Full New Quizzes Support + Snap-It Vision (`Alt+S`)
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Native LTI 1.3 Execution:</strong> Double-click any question inside Canvas New Quizzes, Canvas Classic, Blackboard, or McGraw-Hill for an instant 0.3s solve.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>In-Memory Diagram &amp; Equation OCR:</strong> Press <code>Alt+S</code> to crop any graph, organic chemistry ring, or locked image without leaving your exam tab.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Pillar 2: 3 Features vs 24 Tools */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    PILLAR 2 · 3 BASIC FEATURES VS 24 TOOLS
+                                </div>
+                                <div className="grid lg:grid-cols-2 gap-6">
+                                    <div className="p-6 rounded-2xl bg-white border border-black/10">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="font-display font-bold text-lg text-ink">CanvasNinja ($16.99/mo)</span>
+                                            <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">Only 3 Features</span>
+                                        </div>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>1. Privacy Guard (Canvas focus signals only)</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>2. Answer Saver (Classic Quizzes only)</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>3. AI Answers (Classic Quizzes plain-text only)</span></li>
+                                            <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Invisible Auto-Fill &amp; Smart Highlight Modes</span></li>
+                                            <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Snap-It Vision OCR (Alt+S)</span></li>
+                                            <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Master Panic Kill-Switch (⌘+Shift+U)</span></li>
+                                            <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Blackboard, Moodle, D2L &amp; Publisher Support</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="font-display font-bold text-lg text-ink">ExamGhost (5 Free/Day · $8.25/mo Annual)</span>
+                                            <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">All 24 Stealth Tools</span>
+                                        </div>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>0.3s Double-Click Solve (Classic + New Quizzes)</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>3 Stealth Modes (Invisible Auto-Fill, Highlight, Explain)</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>Snap-It Vision OCR + LaTeX &amp; SMILES Chemistry Engine</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>4-Layer Focus Shield + Closed Shadow DOM Isolation</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>0%–100% Ghost Opacity Slider + ⌘+Shift+U Panic Key</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>Works Across 20+ University LMSs &amp; Publisher Portals</span></li>
+                                            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>5 Free Solves / Day ($0) + 14-Day Money-Back Guarantee</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Pillar 3: Telemetry & Maintenance */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    PILLAR 3 · TELEMETRY &amp; MAINTENANCE STATUS
+                                </div>
+                                <div className="grid lg:grid-cols-2 gap-6">
+                                    <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">CanvasNinja v1.1.40 Audit</div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            19.11MiB Bundle + Mandatory Telemetry + Dormant Founder Profile
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-3">
+                                            CanvasNinja weighs an unusually heavy <strong>19.11MiB</strong> and discloses under <em>&quot;AUTOMATIC COMPATIBILITY REPORTS&quot;</em> that activating features required sending compatibility and support/receipt metadata stored for up to 90 days.
+                                        </p>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                            Furthermore, on public startup directory TrustMRR, founder Ashish Hirpara lists CanvasNinja with <strong>&quot;No active subscriptions&quot;</strong> and notes <em>&quot;I&apos;m no longer posting new content&quot;</em> (1.7★ rating).
+                                        </p>
+                                    </div>
+
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Active Engineering</div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Lightweight Build · Zero Forced Telemetry · 24/7 Discord Support
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-3">
+                                            ExamGhost is actively maintained every week for 2026 LMS updates, backed by a live community of 14,000+ college students on Discord.
+                                        </p>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                            We never force telemetry reporting campaigns on students, and you can verify every feature yourself with <strong>5 Free Solves / Day ($0, no credit card required)</strong>.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {/* TAB 2: 3 FEATURES VS 24 TOOLS */}
-                        <div className="hidden peer-checked/features:block">
-                            <div className="grid lg:grid-cols-2 gap-6">
-                                <div className="p-6 rounded-3xl bg-[#faf8f4] border border-black/10">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="font-display font-bold text-lg text-ink">CanvasNinja ($16.99/mo)</span>
-                                        <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">Only 3 Features</span>
-                                    </div>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>1. Privacy Guard (Canvas focus signals only)</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>2. Answer Saver (Classic Quizzes only)</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>3. AI Answers (Classic Quizzes plain-text only)</span></li>
-                                        <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Invisible Auto-Fill &amp; Smart Highlight Modes</span></li>
-                                        <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Snap-It Vision OCR (⌘+Shift+S)</span></li>
-                                        <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Master Panic Kill-Switch (⌘+Shift+U)</span></li>
-                                        <li className="flex items-center gap-2 text-rose-800 line-through"><XCircle className="w-4 h-4 text-rose-600 shrink-0" /><span>Blackboard, Moodle, D2L &amp; Publisher Support</span></li>
-                                    </ul>
-                                </div>
-
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="font-display font-bold text-lg text-ink">ExamGhost (50 Free · $8.25/mo Annual)</span>
-                                        <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">All 24 Stealth Tools</span>
-                                    </div>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>0.3s Double-Click Solve (Classic + New Quizzes)</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>3 Stealth Modes (Invisible Auto-Fill, Highlight, Explain)</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>Snap-It Vision OCR + LaTeX &amp; SMILES Chemistry Engine</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>4-Layer Focus Shield + Closed Shadow DOM Isolation</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>0%–100% Ghost Opacity Slider + ⌘+Shift+U Panic Key</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>Works Across 20+ University LMSs &amp; Publisher Portals</span></li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" /><span>50 Free Solves ($0) + 14-Day Money-Back Guarantee</span></li>
-                                    </ul>
-                                </div>
-                            </div>
+                {/* 6 MODERN HOTKEYS PARITY GRID */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="p-6 sm:p-8 rounded-[32px] bg-white border border-black/10 shadow-card">
+                        <div className="max-w-3xl mb-6">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded">
+                                FULL 6-HOTKEY SUITE
+                            </span>
+                            <h3 className="font-display text-xl sm:text-2xl font-black text-ink mt-2 mb-1">
+                                Complete Stealth &amp; Speed Controls
+                            </h3>
+                            <p className="text-xs sm:text-sm text-ink-secondary">
+                                Instant in-tab execution with 0 SpeedGrader telemetry events.
+                            </p>
                         </div>
-
-                        {/* TAB 3: TELEMETRY & MAINTENANCE */}
-                        <div className="hidden peer-checked/status:block">
-                            <div className="grid lg:grid-cols-2 gap-6">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">CanvasNinja v1.1.40 Audit</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        19.11MiB Bundle + Mandatory Telemetry + Dormant Founder Profile
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-3">
-                                        CanvasNinja weighs an unusually heavy <strong>19.11MiB</strong> and discloses under <em>&quot;AUTOMATIC COMPATIBILITY REPORTS&quot;</em> that activating features required sending compatibility and support/receipt metadata stored for up to 90 days.
-                                    </p>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        Furthermore, on public startup directory TrustMRR, founder Ashish Hirpara lists CanvasNinja with <strong>&quot;No active subscriptions&quot;</strong> and notes <em>&quot;I&apos;m no longer posting new content&quot;</em> (1.7★ rating).
-                                    </p>
-                                </div>
-
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Active Engineering</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Lightweight Build · Zero Forced Telemetry · 24/7 Discord Support
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-3">
-                                        ExamGhost is actively maintained every week for 2026 LMS updates, backed by a live community of 14,000+ college students on Discord.
-                                    </p>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        We never force telemetry reporting campaigns on students, and you can verify every feature yourself with <strong>50 Free Solves ($0, no credit card required)</strong>.
-                                    </p>
-                                </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Double-Click</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">0.3s Inline Solve</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Classic &amp; New Quizzes</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+S</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Vision Snip OCR</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Graphs &amp; LTI iframes</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+1</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Invisible Mode</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">15% subtle dot indicator</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+2</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Stealth Micro-HUD</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Closed Shadow DOM badge</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+3</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Inline Explain</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Step-by-step LaTeX drawer</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">⌘+Shift+U</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Emergency Panic</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">&lt;8ms memory flush</div>
                             </div>
                         </div>
                     </div>
@@ -477,7 +519,7 @@ export default function CanvasNinjaComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Diagrams, Graphs &amp; Equations</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Snap-It Vision OCR (⌘+Shift+S) + LaTeX</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Snap-It Vision OCR (Alt+S) + LaTeX</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">Plain-Text Only (Cannot Crop Images)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -492,10 +534,18 @@ export default function CanvasNinjaComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial &amp; Pricing</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0) · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0) · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">$16.99/mo ($203.88/yr) or $67.99</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -556,13 +606,13 @@ export default function CanvasNinjaComparisonPage() {
                             <div className="max-w-xl text-center lg:text-left">
                                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>Full New Quizzes AI · 24 Stealth Tools · 50 Free Solves</span>
+                                    <span>Full New Quizzes AI · 24 Stealth Tools · 5 Free Solves / Day</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
                                     Don&apos;t get caught with a solver that breaks on Canvas New Quizzes.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Test all 24 ExamGhost stealth tools on Canvas Classic, Canvas New Quizzes, Blackboard, and McGraw-Hill with 50 Free Solves ($0, no card).
+                                    Test all 24 ExamGhost stealth tools on Canvas Classic, Canvas New Quizzes, Blackboard, and McGraw-Hill with 5 Free Solves / Day ($0, no card).
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -571,7 +621,7 @@ export default function CanvasNinjaComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffe9a0]" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -613,7 +663,10 @@ export default function CanvasNinjaComparisonPage() {
                         </Link>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

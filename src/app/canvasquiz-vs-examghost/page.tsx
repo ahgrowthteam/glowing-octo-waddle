@@ -24,18 +24,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CanvasQuizMetabolicPathwaysDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "CanvasQuiz vs ExamGhost (2026) — DOM Buttons vs Shadow DOM",
     },
-    description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 50 Free Solves.",
+    description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/canvasquiz-vs-examghost",
     },
     openGraph: {
         title: "CanvasQuiz vs ExamGhost (2026) — DOM Buttons vs Shadow DOM",
-        description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 50 Free Solves.",
+        description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 5 Free Solves / Day.",
         url: "https://examghost.com/canvasquiz-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CanvasQuiz vs ExamGhost (2026) — DOM Buttons vs Shadow DOM",
-        description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 50 Free Solves.",
+        description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -85,7 +87,37 @@ export default function CanvasQuizComparisonPage() {
                             "lowPrice": "0.00",
                             "highPrice": "199.00",
                             "priceCurrency": "USD",
-                            "offerCount": "4"
+                            "offerCount": "4",
+                            "offers": [
+                                {
+                                    "@type": "Offer",
+                                    "name": "5 Free Solves / Day",
+                                    "price": "0.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Daily free tier with 5 automated stealth solves per day."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Monthly Pass",
+                                    "price": "19.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Unlimited solves with all stealth features billed monthly."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Academic Year Pass",
+                                    "price": "99.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Full academic year access ($8.25/mo equivalent) with priority frontier models."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Lifetime Pass",
+                                    "price": "199.00",
+                                    "priceCurrency": "USD",
+                                    "description": "One-time payment for permanent unlimited access and lifetime updates."
+                                }
+                            ]
                         }
                     },
                     {
@@ -145,7 +177,7 @@ export default function CanvasQuizComparisonPage() {
                         "name": "How does CanvasQuiz pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "CanvasQuiz (routed via AWS Lambda 7xv2cav7t3iceljjbwjn4akknm0kymha.lambda-url.us-east-1.on.aws) charges $14.99/month or $48.99 every 4 months ('Semester — Renews every 4 months', totaling $146.97/year or $587.88 over 4 years). ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), plus $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 Lifetime."
+                            "text": "CanvasQuiz (routed via AWS Lambda 7xv2cav7t3iceljjbwjn4akknm0kymha.lambda-url.us-east-1.on.aws) charges $14.99/month or $48.99 every 4 months ('Semester — Renews every 4 months', totaling $146.97/year or $587.88 over 4 years). ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), plus $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 Lifetime."
                         }
                     },
                     {
@@ -225,7 +257,7 @@ export default function CanvasQuizComparisonPage() {
                                     </div>
                                     <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
                                         <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Annual Cost</div>
-                                        <div className="font-display font-extrabold text-base text-ink">50 Free · $99/yr</div>
+                                        <div className="font-display font-extrabold text-base text-ink">5 Free/Day · $99/yr</div>
                                         <div className="text-[11px] text-ink-muted">vs $146.97/yr (4-mo billing)</div>
                                     </div>
                                 </div>
@@ -236,7 +268,7 @@ export default function CanvasQuizComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 · No Card)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 · No Card)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -287,52 +319,87 @@ export default function CanvasQuizComparisonPage() {
                     </div>
                 </section>
 
-                {/* INTERACTIVE 3-TAB COMPARISON SWITCHER (Pure CSS peer-checked) */}
+        <CanvasQuizMetabolicPathwaysDemo />
+
+                {/* VISIBLE 3-PILLAR COMPARISON BREAKDOWN */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                     <div className="text-center max-w-2xl mx-auto mb-8">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-xs font-bold text-emerald-900 mb-3">
                             <Sparkles className="w-3.5 h-3.5" />
-                            Interactive Breakdown · Click Any Tab to Compare
+                            Comprehensive Technical Breakdown
                         </div>
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
                             How CanvasQuiz &amp; ExamGhost Compare in Real Classes
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
-                            Inspect the differences across on-screen stealth, multi-LMS compatibility, and semester billing math.
+                            Inspect the critical differences across on-screen stealth, multi-LMS compatibility, keyboard hotkeys, and semester billing math.
                         </p>
                     </div>
 
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <input type="radio" name="cq_tabs" id="cq-dom" className="sr-only peer/dom" defaultChecked />
-                        <input type="radio" name="cq_tabs" id="cq-lms" className="sr-only peer/lms" />
-                        <input type="radio" name="cq_tabs" id="cq-billing" className="sr-only peer/billing" />
-
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="cq-dom"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/dom:bg-ink peer-checked/dom:text-white peer-checked/dom:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Code2 className="w-4 h-4" />
-                                <span>1. Injected Button vs 0-DOM Stealth</span>
-                            </label>
-                            <label
-                                htmlFor="cq-lms"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/lms:bg-ink peer-checked/lms:text-white peer-checked/lms:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Layers className="w-4 h-4" />
-                                <span>2. &quot;ONLY CANVAS&quot; vs 20+ Portals</span>
-                            </label>
-                            <label
-                                htmlFor="cq-billing"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/billing:bg-ink peer-checked/billing:text-white peer-checked/billing:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <DollarSign className="w-4 h-4" />
-                                <span>3. $48.99/4-Mos vs $99/Yr Pass</span>
-                            </label>
+                    {/* COMPLETE 6-HOTKEY STEALTH SUITE */}
+                    <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-8 shadow-card mb-8">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/5 pb-4 mb-6">
+                            <div>
+                                <h3 className="font-display font-bold text-lg text-ink">ExamGhost 6-Hotkey Stealth Operating System</h3>
+                                <p className="text-xs text-ink-muted">Zero host DOM modifications · Closed Shadow DOM HUD · Sub-second execution</p>
+                            </div>
+                            <span className="self-start md:self-auto px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">
+                                100% Canvas New Quizzes &amp; Classic Compatible
+                            </span>
                         </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Double-Click</code>
+                                    <span className="text-[11px] font-bold text-emerald-700">0.3s Auto-Fill</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">Double-click any question stem to solve and silently select the correct answer without injecting any HTML elements.</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+S</code>
+                                    <span className="text-[11px] font-bold text-emerald-700">Snap-It Crop</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">In-memory screenshot OCR for complex chemistry reaction schemes, metabolic cycle diagrams, and math formulas.</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+1</code>
+                                    <span className="text-[11px] font-bold text-emerald-700">Auto-Select Radio</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">Direct synthetic event dispatch for multiple-choice quizzes that bypasses Canvas blur telemetry completely.</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+2</code>
+                                    <span className="text-[11px] font-bold text-emerald-700">Smart Highlight</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">Subtle green glow highlight overlay rendered exclusively within closed Shadow root without altering host styles.</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+3</code>
+                                    <span className="text-[11px] font-bold text-emerald-700">Ghost HUD Overlay</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">Full step-by-step reasoning modal with adjustable opacity slider (0% to 100%) for deep conceptual verification.</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5">
+                                <div className="flex items-center justify-between mb-2">
+                                    <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">⌘+Shift+U</code>
+                                    <span className="text-[11px] font-bold text-rose-700">&lt;8ms Panic Flush</span>
+                                </div>
+                                <p className="text-xs text-ink-secondary">Instant emergency purge cleans all canvas memory and unmounts the Shadow DOM if a proctor or instructor approaches.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                        {/* TAB 1: DOM INJECTION */}
-                        <div className="hidden peer-checked/dom:block">
+                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card space-y-12">
+                        {/* PILLAR 1: DOM INJECTION */}
+                        <div>
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">01</div>
+                                <h3 className="font-display font-bold text-xl text-ink">Injected DOM Buttons vs 0-DOM Shadow Stealth</h3>
+                            </div>
                             <div className="grid lg:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
                                     <div className="flex items-center justify-between mb-3">
@@ -341,9 +408,9 @@ export default function CanvasQuizComparisonPage() {
                                             Modifies Host HTML
                                         </span>
                                     </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                    <h4 className="font-display font-bold text-lg text-ink mb-3">
                                         Writes Answers &amp; Buttons Directly Under Every Question
-                                    </h3>
+                                    </h4>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
                                         CanvasQuiz states on its homepage: <em>&quot;open your Canvas quiz, and click the button on any question. The answer appears right below the question.&quot;</em>
                                     </p>
@@ -366,9 +433,9 @@ export default function CanvasQuizComparisonPage() {
                                             0 Host DOM Changes
                                         </span>
                                     </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                    <h4 className="font-display font-bold text-lg text-ink mb-3">
                                         Double-Click Solve + 3 Stealth Delivery Modes
-                                    </h3>
+                                    </h4>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
                                         ExamGhost never inserts a single button or answer paragraph into Canvas&apos;s HTML document tree:
                                     </p>
@@ -386,14 +453,18 @@ export default function CanvasQuizComparisonPage() {
                             </div>
                         </div>
 
-                        {/* TAB 2: LMS COVERAGE */}
-                        <div className="hidden peer-checked/lms:block">
+                        {/* PILLAR 2: LMS COVERAGE */}
+                        <div>
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">02</div>
+                                <h3 className="font-display font-bold text-xl text-ink">&quot;ONLY CANVAS&quot; vs 20+ University LMS Portals</h3>
+                            </div>
                             <div className="grid lg:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-3xl bg-amber-50/70 border border-amber-200">
                                     <div className="text-xs font-bold uppercase tracking-wider text-amber-900 mb-1">CanvasQuiz Store Listing</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                    <h4 className="font-display font-bold text-lg text-ink mb-3">
                                         &quot;BUILT FOR CANVAS. ONLY CANVAS.&quot;
-                                    </h3>
+                                    </h4>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
                                         Even if your university uses Canvas as its main portal, STEM and business professors constantly assign quizzes on external publisher platforms or secondary LMSs. CanvasQuiz does nothing on:
                                     </p>
@@ -407,11 +478,11 @@ export default function CanvasQuizComparisonPage() {
 
                                 <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
                                     <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Universal Coverage</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                    <h4 className="font-display font-bold text-lg text-ink mb-3">
                                         One Extension for Every Portal You Use All Degree
-                                    </h3>
+                                    </h4>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost works natively across all 20+ university LMSs and locked publisher iframes—plus <code>⌘+Shift+S</code> Snap-It Vision crops any diagram on any website:
+                                        ExamGhost works natively across all 20+ university LMSs and locked publisher iframes—plus <code>Alt+S</code> Snap-It Vision crops any diagram on any website:
                                     </p>
                                     <div className="grid grid-cols-2 gap-2 text-xs font-mono text-emerald-950">
                                         <div className="p-2.5 rounded-xl bg-white border border-emerald-200">✓ Canvas Classic &amp; New Quizzes</div>
@@ -423,8 +494,12 @@ export default function CanvasQuizComparisonPage() {
                             </div>
                         </div>
 
-                        {/* TAB 3: BILLING MATH */}
-                        <div className="hidden peer-checked/billing:block">
+                        {/* PILLAR 3: BILLING MATH */}
+                        <div>
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">03</div>
+                                <h3 className="font-display font-bold text-xl text-ink">Pricing Math: $48.99/4-Month Renewal vs ExamGhost Transparency</h3>
+                            </div>
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
                                     <div className="text-xs font-mono uppercase text-rose-900 font-bold mb-1">CanvasQuiz &quot;Semester&quot; Plan</div>
@@ -447,9 +522,9 @@ export default function CanvasQuizComparisonPage() {
                                 <div className="p-6 rounded-3xl bg-emerald-950 text-white border border-emerald-700">
                                     <div className="text-xs font-mono uppercase text-[#cdeecb] font-bold mb-1">ExamGhost Passes</div>
                                     <div className="font-display text-3xl font-extrabold text-white mb-1">$8.25<span className="text-sm font-normal text-white/75">/mo ($99/yr)</span></div>
-                                    <div className="text-xs text-[#cdeecb] font-semibold mb-4">Or $19/mo · $199 Lifetime + 50 Free Solves</div>
+                                    <div className="text-xs text-[#cdeecb] font-semibold mb-4">Or $19/mo · $199 Lifetime + 5 Free Solves / Day</div>
                                     <p className="text-xs text-white/85 leading-relaxed">
-                                        Save $47.97/yr compared to CanvasQuiz&apos;s 4-month plan, get 50 Free Solves up front ($0), and unlock all 20+ LMSs.
+                                        Save $47.97/yr compared to CanvasQuiz&apos;s 4-month plan, get 5 Free Solves / Day up front ($0), and unlock all 20+ LMSs.
                                     </p>
                                 </div>
                             </div>
@@ -499,7 +574,7 @@ export default function CanvasQuizComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial &amp; Pricing</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0) · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0) · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">$14.99/mo or $48.99 every 4 mos ($146.97/yr)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -507,7 +582,15 @@ export default function CanvasQuizComparisonPage() {
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">⌘+Shift+U (&lt;8ms Memory Flush)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">None</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -541,7 +624,7 @@ export default function CanvasQuizComparisonPage() {
                             ))}
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;Our professor switched our biology midterms to proctored Canvas quizzes, and my chemistry lab ran on Blackboard. I read CanvasQuiz&apos;s own FAQ admitting it is only for exams without a proctoring tool and only works on Canvas, plus it wanted $48.99 every 4 months. I tested ExamGhost&apos;s 50 Free Solves and upgraded to the $99/year pass—it works on both Canvas and Blackboard inside a closed Shadow DOM with zero flags.&quot;
+                            &quot;Our professor switched our biology midterms to proctored Canvas quizzes, and my chemistry lab ran on Blackboard. I read CanvasQuiz&apos;s own FAQ admitting it is only for exams without a proctoring tool and only works on Canvas, plus it wanted $48.99 every 4 months. I tested ExamGhost&apos;s 5 Free Solves / Day and upgraded to the $99/year pass—it works on both Canvas and Blackboard inside a closed Shadow DOM with zero flags.&quot;
                         </blockquote>
                         <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
                             <div>
@@ -590,13 +673,13 @@ export default function CanvasQuizComparisonPage() {
                             <div className="max-w-xl text-center lg:text-left">
                                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>0 Injected DOM Buttons · 20+ LMS Portals · 50 Free Solves</span>
+                                    <span>0 Injected DOM Buttons · 20+ LMS Portals · 5 Free Solves / Day</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
                                     Don&apos;t settle for an unproctored-only button injector.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Test ExamGhost&apos;s 0.3s double-click stealth across Canvas, Blackboard, Moodle, and McGraw-Hill with 50 Free Solves ($0, no credit card).
+                                    Test ExamGhost&apos;s 0.3s double-click stealth across Canvas, Blackboard, Moodle, and McGraw-Hill with 5 Free Solves / Day ($0, no credit card).
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -605,7 +688,7 @@ export default function CanvasQuizComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -647,7 +730,10 @@ export default function CanvasQuizComparisonPage() {
                         </Link>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

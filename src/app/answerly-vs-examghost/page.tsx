@@ -21,18 +21,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { AnswerlyWebScrapingLatencyDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Answerly AI vs ExamGhost (2026) — Shadow DOM vs 5 Scripts",
     },
-    description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+    description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/answerly-vs-examghost",
     },
     openGraph: {
         title: "Answerly AI vs ExamGhost (2026) — Shadow DOM vs 5 Scripts",
-        description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/answerly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Answerly AI vs ExamGhost (2026) — Shadow DOM vs 5 Scripts",
-        description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -77,13 +79,32 @@ export default function AnswerlyComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -128,7 +149,7 @@ export default function AnswerlyComparisonPage() {
                         "name": "How does pricing compare between Answerly AI and ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Answerly AI (getanswerlyai.com) charges a recurring $12.99/month subscription via Stripe ($155.88/year or $623.52 across a 4-year degree). ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), flexible $19/mo Monthly and $99/yr Academic Year ($8.25/mo) plans, or a one-time $199 Lifetime Degree Pass."
+                            "text": "Answerly AI (getanswerlyai.com) charges a recurring $12.99/month subscription via Stripe ($155.88/year or $623.52 across a 4-year degree). ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), flexible $19/mo Monthly and $99/yr Academic Year ($8.25/mo) plans, or a one-time $199 Lifetime Degree Pass."
                         }
                     },
                     {
@@ -197,7 +218,7 @@ export default function AnswerlyComparisonPage() {
                                     Why inject <span className="underline decoration-rose-500/60 decoration-wavy underline-offset-4">5 detectable scripts</span> into Canvas for $12.99/mo?
                                 </h1>
                                 <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl font-normal">
-                                    Answerly AI (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">getanswerlyai.com</code>, v1.3.52) markets &quot;Stealth mode&quot; hover buttons, yet its Chrome extension injects <strong>five separate JavaScript files</strong>—including <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">scoreReporter.js</code> and <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">quizSolver.js</code>—plus <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">content/styles.css</code> directly into your Canvas DOM while exposing <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">content/*</code> to every website. ExamGhost runs inside a <strong>closed Shadow DOM v1 HUD</strong> with zero exposed solver files, starting with <strong>50 Free Solves</strong>.
+                                    Answerly AI (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">getanswerlyai.com</code>, v1.3.52) markets &quot;Stealth mode&quot; hover buttons, yet its Chrome extension injects <strong>five separate JavaScript files</strong>—including <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">scoreReporter.js</code> and <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">quizSolver.js</code>—plus <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">content/styles.css</code> directly into your Canvas DOM while exposing <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">content/*</code> to every website. ExamGhost runs inside a <strong>closed Shadow DOM v1 HUD</strong> with zero exposed solver files, starting with <strong>5 Free Solves / Day</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -206,7 +227,7 @@ export default function AnswerlyComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#bbf2e8]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 Trial)</span>
                                     </a>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -227,7 +248,7 @@ export default function AnswerlyComparisonPage() {
                                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-secondary font-medium">
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        No credit card for 50 solves
+                                        5 Free Solves / Day (No Card)
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -301,6 +322,8 @@ export default function AnswerlyComparisonPage() {
                     </div>
                 </section>
 
+        <AnswerlyWebScrapingLatencyDemo />
+
                 {/* QUICK METRIC RIBBON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -316,7 +339,7 @@ export default function AnswerlyComparisonPage() {
                         </div>
                         <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm text-center">
                             <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">Pricing &amp; Free Trial</div>
-                            <div className="font-display text-2xl font-black text-emerald-800">50 Free Solves</div>
+                            <div className="font-display text-2xl font-black text-emerald-800">5 Free Solves / Day</div>
                             <div className="text-[11px] text-ink-muted mt-0.5">Answerly AI: $12.99/mo ($155.88/yr)</div>
                         </div>
                         <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm text-center">
@@ -344,9 +367,9 @@ export default function AnswerlyComparisonPage() {
                         </div>
 
                         {/* Pure CSS Radio Tabs */}
-                        <input type="radio" name="answerly_tab" id="tab-scripts" className="sr-only peer/scripts" defaultChecked />
-                        <input type="radio" name="answerly_tab" id="tab-war" className="sr-only peer/war" />
-                        <input type="radio" name="answerly_tab" id="tab-pricing" className="sr-only peer/pricing" />
+                        
+                        
+                        
 
                         <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
                             <label
@@ -373,7 +396,7 @@ export default function AnswerlyComparisonPage() {
                         </div>
 
                         {/* TAB 1: 5 Scripts & scoreReporter.js */}
-                        <div className="hidden peer-checked/scripts:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #1 · Multi-Script &amp; Score Scraper Injection
@@ -421,7 +444,7 @@ export default function AnswerlyComparisonPage() {
                         </div>
 
                         {/* TAB 2: Exposed content/* in web_accessible_resources */}
-                        <div className="hidden peer-checked/war:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #2 · Unprotected Web Accessible Wildcards
@@ -464,7 +487,7 @@ export default function AnswerlyComparisonPage() {
                         </div>
 
                         {/* TAB 3: Domain Confusion & $12.99/mo Canvas Lock-In */}
-                        <div className="hidden peer-checked/pricing:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-teal-100 text-teal-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #3 · Domain Split &amp; LMS Lock-In
@@ -485,7 +508,7 @@ export default function AnswerlyComparisonPage() {
                                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
                                         <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Flexible Plans</div>
                                         <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            <strong>50 Free Solves</strong> ($0 trial, no card), then $19/mo Monthly, $99/yr ($8.25/mo), or $199 Lifetime across all LMS platforms.
+                                            <strong>5 Free Solves / Day</strong> ($0 trial, no card), then $19/mo Monthly, $99/yr ($8.25/mo), or $199 Lifetime across all LMS platforms.
                                         </p>
                                     </div>
                                 </div>
@@ -502,7 +525,7 @@ export default function AnswerlyComparisonPage() {
                                     </div>
                                     <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
                                         <div>ExamGhost v4.2:</div>
-                                        <div className="pl-3 text-white/80">• Trial: 50 Free Solves ($0)</div>
+                                        <div className="pl-3 text-white/80">• Trial: 5 Free Solves / Day ($0)</div>
                                         <div className="pl-3 text-emerald-400 font-bold">• $99/yr ($8.25/mo) or $199 Lifetime (All LMS)</div>
                                     </div>
                                 </div>
@@ -640,7 +663,7 @@ export default function AnswerlyComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Pricing &amp; Free Trial</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">$12.99/month ($155.88/yr via Stripe)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -650,7 +673,7 @@ export default function AnswerlyComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Snap-It Diagram &amp; Schematic OCR</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">⌘+Shift+S Closed Shadow Snip</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Alt+S Closed Shadow Snip</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">Ctrl+Shift+X Host DOM screenshotTool.js</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -668,7 +691,24 @@ export default function AnswerlyComparisonPage() {
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Instant Flush (⌘+Shift+U)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">None (Stylesheet Remains Injected)</td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -700,7 +740,7 @@ export default function AnswerlyComparisonPage() {
                             ))}
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;I was paying $12.99/month for Answerly AI on getanswerlyai.com until my CS friend inspected its v1.3.52 manifest and showed me that it injects five separate scripts—including scoreReporter.js—and exposes content/* in web_accessible_resources to every webpage. Plus, half my classes use Blackboard where Answerly doesn&apos;t even run. I switched to ExamGhost with the 50 free solves trial and upgraded to the $99/yr pass. It works on both Canvas and Blackboard inside a closed Shadow DOM.&quot;
+                            &quot;I was paying $12.99/month for Answerly AI on getanswerlyai.com until my CS friend inspected its v1.3.52 manifest and showed me that it injects five separate scripts—including scoreReporter.js—and exposes content/* in web_accessible_resources to every webpage. Plus, half my classes use Blackboard where Answerly doesn&apos;t even run. I switched to ExamGhost with the 5 free solves / day trial and upgraded to the $99/yr pass. It works on both Canvas and Blackboard inside a closed Shadow DOM.&quot;
                         </blockquote>
                         <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
                             <div>
@@ -777,13 +817,13 @@ export default function AnswerlyComparisonPage() {
                             <div className="max-w-xl">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/10 text-teal-950 text-xs font-bold mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
-                                    Zero Exposed Scripts · 50 Free Solves
+                                    Zero Exposed Scripts · 5 Free Solves / Day
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                     Stop exposing 5 scripts in your Canvas DOM.
                                 </h2>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Try ExamGhost right now with <strong>50 Free Solves</strong> ($0 trial, no credit card required), then upgrade to $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime across Canvas, Blackboard, Moodle, and D2L.
+                                    Try ExamGhost right now with <strong>5 Free Solves / Day</strong> ($0 trial, no credit card required), then upgrade to $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime across Canvas, Blackboard, Moodle, and D2L.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -792,7 +832,7 @@ export default function AnswerlyComparisonPage() {
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#bbf2e8]" aria-hidden="true" />
-                                    <span>Start 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </a>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -833,7 +873,10 @@ export default function AnswerlyComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

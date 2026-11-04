@@ -1,89 +1,58 @@
-# ExamGhost Whole-Site Page-by-Page SEO, AEO, GEO & Lighthouse 100% Audit Report
+# ExamGhost — Full-Site SEO / AEO / GEO Audit
 
-> **Target Scope**: Whole site — all **66 routes** (`8` core routes: `/`, `/demo`, `/features`, `/faq`, `/contact`, `/privacy`, `/terms`, `/compare-canvas-hack-extensions` + `57` canonical competitor routes `/[slug]-vs-examghost` + `1` canonical redirect `/classlogy-vs-examghost`), global configuration ([`next.config.mjs`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/next.config.mjs), [`src/app/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/layout.tsx)), XML Sitemap ([`src/app/sitemap.ts`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/sitemap.ts)), AI Crawler Policy ([`src/app/robots.ts`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/robots.ts)), and Machine-Readable Agent Discovery Bundles ([`public/llms.txt`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/llms.txt), [`public/llms-full.txt`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/llms-full.txt), [`public/pricing.md`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/pricing.md)).
-> **Methodology**: Deterministic `claude-seo` (`agentic-seo`) verification suite (`parse_html.py`, `readability.py`, `security_headers.py`, `robots_checker.py`, `llms_txt_checker.py`) + live headless Chromium Lighthouse CLI audits across all core routes and competitor page templates.
+**Date:** 2026-10-27 · **Scope:** all 79 sitemap URLs (local `http://localhost:3000`) + production (`https://www.examghost.com`) headers and Lighthouse
+**Method:** custom crawler (title/meta/H1/canonical/OG/JSON-LD/word count/internal links), agentic-seo `llms_txt_checker.py`, Lighthouse 12 (mobile) on production, manual code review.
 
----
+## Score (before → after local fixes)
 
-## 1. Executive Summary & Weighted Whole-Site Scorecard
-
-Across all **65 canonical prerendered HTML pages**, **0 structural, schema, metadata, heading, image, or spam issues remain**. Live Lighthouse audits achieve **100 / 100 / 100 / 100 (Performance, Accessibility, Best Practices, SEO)** on Desktop across every tested route and **97–99 Performance / 100 Accessibility / 100 Best Practices / 100 SEO** on simulated Slow-4G Mobile.
-
-| Audit Dimension (`claude-seo` Rubric) | Weight | Pre-Audit Score | Post-Remediation Score | Verification Status |
-| :--- | :---: | :---: | :---: | :---: |
-| **1. Technical SEO & Security Headers** (Canonicals, Sitemap, `robots.txt`, HSTS, CSP, Permissions-Policy) | 20% | 88 / 100 | **100 / 100** | ✅ 65/65 self-canonicals; 6/6 security headers in `next.config.mjs` |
-| **2. Google Anti-Spam & Manual Action Immunity** (Review Snippet Rules, Date Integrity, 1:1 FAQ Parity, Link Graph) | 20% | 64 / 100 | **100 / 100** | ✅ 0 future dates; `AggregateRating` only on `/`; 1:1 visible FAQ parity; 0 orphan pages |
-| **3. On-Page SEO** (`<title>` 25–60 chars, `<meta description>` 100–160 chars, Single `<h1>`, Semantic `H1→H2→H3`) | 15% | 82 / 100 | **100 / 100** | ✅ 65/65 pages pass `parse_html.py` with 0 title/desc truncations and 0 heading skips |
-| **4. Schema.org & AEO Readiness** (`WebPage`, `SpeakableSpecification`, `.aeo-summary`, `FAQPage`, `ItemList`) | 15% | 85 / 100 | **100 / 100** | ✅ 65/65 pages contain `.aeo-summary` passage hooks + valid `SpeakableSpecification` |
-| **5. GEO & AI Agent Discovery** (`/llms.txt`, `/llms-full.txt`, `/pricing.md`, `OAI-SearchBot`, `PerplexityBot`) | 10% | 78 / 100 | **100 / 100** | ✅ All 57 competitors + 24 features synced across all 3 Markdown discovery endpoints |
-| **6. Lighthouse Performance & Core Web Vitals** (LCP, TBT/INP, CLS, Image Delivery, Code-Splitting) | 10% | 91 / 100 | **100 / 100 (Desktop)**<br/>**98.6 / 100 (Mobile avg)** | ✅ 0ms TBT, 0.000 CLS, optimized 2–6KB WebP/JPEG assets, Server Components |
-| **7. Lighthouse Accessibility, Best Practices & SEO** (WCAG AA Contrast, ARIA, `width`/`height`, `alt`) | 10% | 96 / 100 | **100 / 100** | ✅ 100 Accessibility, 100 Best Practices, 100 SEO across all routes |
-| **OVERALL WEIGHTED SCORE** | **100%** | **81.9 / 100** | **99.9 / 100** | 🏆 **100% Production Verified** |
+| Category (weight) | Before | After | Notes |
+|---|---|---|---|
+| Technical SEO (25%) | 62 | 70 | Canonical host conflict still open (needs a Vercel setting) |
+| Content quality (20%) | 85 | 85 | Pillar pages are 1.8k–2.5k words of platform-specific content; free demo is thin inside `<main>` |
+| On-page SEO (15%) | 55 | 90 | 15 titles/descriptions rewritten; 11 double-brand titles fixed |
+| Schema (15%) | 85 | 92 | Every page has JSON-LD; LMS pages now carry dates + author |
+| Performance (10%) | 67 | ~85 (est.) | MP4 now lazy-loads; re-measure after deploy |
+| Images (10%) | 90 | 95 | 0 missing `alt`; each page now has its own OG image |
+| AI search readiness / GEO (5%) | 90 | 95 | robots allows all AI bots; llms.txt scored 100/100 |
+| **Weighted total** | **~71** | **~84** | |
 
 ---
 
-## 2. Live Lighthouse Verification Matrix (Desktop & Mobile)
+## 🔴 Critical
 
-Tested against the production Next.js build (`npm run build && npx next start`) using headless Chromium Lighthouse:
+### C1. Canonical host conflict (apex ↔ www) — STILL OPEN
+- **Evidence:** `curl -I https://examghost.com` returns **308 → https://www.examghost.com/**. But every page sets `<link rel="canonical" href="https://examghost.com/...">`, and `sitemap.xml`, `robots.txt`, `metadataBase`, every JSON-LD `@id` and `llms.txt` also use the apex.
+- **Impact:** Every canonical points to a URL that redirects. Google gets conflicting signals, may ignore your canonicals, and indexing and link equity get split between the two hosts.
+- **Fix (pick one):**
+  1. **Recommended, no code change:** in Vercel → Project → Domains, make `examghost.com` the primary domain and set `www.examghost.com` to redirect to it.
+  2. Or change `https://examghost.com` → `https://www.examghost.com` across the codebase.
 
-| Route | Page Type | Desktop (Perf / A11y / BP / SEO) | Mobile Slow-4G (Perf / A11y / BP / SEO) | TBT | CLS |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| `/` | Homepage (12 Sections + Interactive Simulators) | **100 / 100 / 100 / 100** | **97 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/demo` | Interactive 5-Question Canvas Sandbox + Vision OCR | **100 / 100 / 100 / 100** | **98 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/features` | All 24 Stealth & AI Features + Benchmark Matrix | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/faq` | 26-Question Searchable Knowledge Base | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/contact` | 24/7 Discord & Engineering Support + SLA Guide | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/privacy` | Zero-Telemetry Privacy Policy & Architecture | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/terms` | Terms of Service & 14-Day Refund Policy | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/compare-canvas-hack-extensions` | 57-Tool Master Comparison Hub & Filter Matrix | **100 / 100 / 100 / 100** | **98 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/canvashack-vs-examghost` | Tier-1 Competitor Teardown (Legacy Group) | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
-| `/testwhiz-vs-examghost` | Tier-1 Competitor Teardown (Pure-CSS Tabs) | **100 / 100 / 100 / 100** | **99 / 100 / 100 / 100** | `0 ms` | `0.000` |
+### C2. 11 pillar pages had double brand titles and no OG image — ✅ FIXED
+- **Evidence:** `<title>Moodle Quiz Solver & AI Homework Helper | Moodle 4.x Chrome Extension | ExamGhost | ExamGhost</title>` (97 chars). The same pattern was on 9 platform pages and both blog posts. Their page-level `openGraph` replaced the layout's settings without an `images` field.
+- **Fix applied:** `title.absolute` (52–58 chars) and descriptions (146–157 chars) on all 15 pillar pages, plus `og:image` and a Twitter card using each page's own film poster.
 
 ---
 
-## 3. Page-by-Page Audit & Remediations Applied
+## ⚠️ Warnings
 
-### A. Global Infrastructure & Discovery Files
-1. **[`next.config.mjs`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/next.config.mjs) Security Headers (6/6)**:
-   - Added `Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()` and `Content-Security-Policy` alongside `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, and `Referrer-Policy: strict-origin-when-cross-origin`.
-2. **[`src/app/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/layout.tsx) & [`src/components/Hero.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Hero.tsx) Rendering Pipeline**:
-   - Eliminated the 100ms webfont block period (`FOIT`) and secondary render-blocking stylesheet by aligning `body` directly with our native system UI font stack (`font-sans`).
-   - Removed the CPU-bound `<feTurbulence>` / `<feDisplacementMap>` full-bleed SVG filter (`url(#torn)`) that previously added `~418ms` of main-thread style/layout rasterization prior to First Contentful Paint.
-3. **[`public/og-image.jpg`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/og-image.jpg) & `public/images/ghost/*.jpg` Asset Compression**:
-   - Resized and compressed `public/og-image.jpg` from `1376×768` (`457 KB`) to exact `1200×630` (`56 KB`) progressive JPEG.
-   - Resized and compressed all 11 ghost mascot/card images in `public/images/ghost/` from `400×400` (`15–18 KB` each) to their exact display bounds (`120×120` to `360×200`, `2.0–6.1 KB` each), resolving all Lighthouse `image-delivery-insight` warnings across all 65 pages.
-4. **Machine-Readable GEO Discovery Files ([`public/llms.txt`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/llms.txt), [`public/llms-full.txt`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/llms-full.txt), [`public/pricing.md`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/public/pricing.md))**:
-   - Synchronized all 57 competitors and 24 features and normalized all audit dates to `March 29, 2026` (`Q1 2026`).
+| # | Finding | Evidence | Status |
+|---|---|---|---|
+| W1 | 2.7 MB MP4 autoplayed on page load | Lighthouse mobile, `/moodle-quiz-solver`: Performance **67**, TBT **1,020 ms**, LCP 3.2 s, 3,084 KiB total (2,688 KB was the MP4). Homepage scores 96. | ✅ Fixed: lazy-load the video when it scrolls into view (`preload="none"` + IntersectionObserver) |
+| W2 | Weak internal linking to pillar pages | 57 competitor pages and the footer linked to **0** LMS pages; `/blog/does-canvas-detect-extensions-2026` was an orphan | ✅ Fixed: sitewide footer platform and research links; re-crawl shows **0 orphans** |
+| W3 | Accessibility: switches had no names; heading order broken | Lighthouse `button-name` and `heading-order` failed; simulator questions were `<h3>` | ✅ Fixed |
+| W4 | Free demo VideoObject pointed to a missing file | `…/videos/films/canvas-lms-quiz-solver.mp4` (404) | ✅ Fixed |
+| W5 | Stale freshness signals | 9 LMS pages had no `dateModified`; sitemap `lastmod` was 2026-03-29 | ✅ Fixed |
+| W6 | Free demo page is thin inside `<main>` | 313 words inside `<main>` (~3.7k words page-wide) | Open |
+| W7 | Three `next.config.*` files | `.cpanel.mjs` has `output:'export'` + `ignoreBuildErrors` | Open: delete the unused files |
+| W8 | Minor length overruns on 14 competitor pages | Titles 62–63 chars or descriptions 161–168 chars | Open (low) |
 
-### B. Core Application Pages (`8 / 8` Routes)
-1. **Homepage (`/`) — [`src/app/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/page.tsx) & `src/components/*`**:
-   - Synced `Organization.logo` dimensions (`120×120`, exceeding Google's `112×112` minimum).
-   - Added `.aeo-summary` to the hero definition paragraph in [`Hero.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Hero.tsx).
-   - Fixed heading hierarchy skips in [`QuestionExamples.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/QuestionExamples.tsx) and [`Pricing.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Pricing.tsx).
-   - Upgraded `text-white/40` and `text-white/50` spans in [`Integrations.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Integrations.tsx) and [`DemoVideo.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/DemoVideo.tsx) to `text-white/75` (passing WCAG AA 4.5:1 contrast across all 4 interactive steps).
-   - Converted [`Integrations.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Integrations.tsx), [`Reviews.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Reviews.tsx), [`DiscordSection.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/DiscordSection.tsx), and [`Footer.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/components/Footer.tsx) into zero-JS Server Components and code-split below-the-fold client widgets via `next/dynamic`.
-2. **Live Sandbox Demo (`/demo`) — [`src/app/demo/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/demo/layout.tsx) & [`src/app/demo/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/demo/page.tsx)**:
-   - Added `width={40} height={40} loading="lazy" decoding="async"` to the HUD mascot `<img>`.
-   - Synchronized visible FAQ accordion answers 1:1 with `FAQPage` JSON-LD in `src/app/demo/layout.tsx`.
-   - Added `.aeo-summary` passage block, `SpeakableSpecification`, `twitter.creator`, WCAG AA contrast in the telemetry drawer, and global `<Footer />`.
-3. **24 Stealth Features (`/features`) — [`src/app/features/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/features/layout.tsx) & [`src/app/features/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/features/page.tsx)**:
-   - Expanded `allFeatures` from 20 to **24 complete feature cards** and updated `ItemList` JSON-LD (`numberOfItems: 24`) to match the `"24 Stealth Features"` title and `<h1>` 1:1.
-   - Added `.aeo-summary` and `SpeakableSpecification`.
-4. **Knowledge Base (`/faq`) — [`src/app/faq/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/faq/layout.tsx) & [`src/app/faq/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/faq/page.tsx)**:
-   - Verified 26/26 FAQ items match `FAQPage` JSON-LD 1:1, with `.aeo-summary` and `SpeakableSpecification`.
-5. **24/7 Student Support (`/contact`) — [`src/app/contact/layout.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/contact/layout.tsx) & [`src/app/contact/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/contact/page.tsx)**:
-   - Added `.aeo-summary`, `SpeakableSpecification`, and a 4-card **Self-Service Troubleshooting & Support SLA Guide** (bringing word count from 182 words to 450+ words, exceeding the 300-word `claude-seo` quality gate).
-6. **Privacy Policy (`/privacy`) & Terms of Service (`/terms`) — [`src/app/privacy/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/privacy/page.tsx) & [`src/app/terms/page.tsx`](file:///Users/ishara/Desktop/codes/antig%20work/examghost/src/app/terms/page.tsx)**:
-   - Added `.aeo-summary` lead summaries and `SpeakableSpecification` JSON-LD.
-7. **Master Comparison Hub (`/compare-canvas-hack-extensions`)**:
-   - Verified 57-item `ItemList` JSON-LD, `.aeo-summary`, `SpeakableSpecification`, and accurate 12-point matrix classification across all 57 tools.
+## ℹ️ Info / AEO-GEO
+- **robots.txt:** allows GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot, Google-Extended, Applebot-Extended and CCBot. ✅
+- **llms.txt / llms-full.txt:** found on production with a quality score of 100/100. ✅
+- **Schema (79 pages):** WebPage 75, BreadcrumbList 78, FAQPage 75, SoftwareApplication 57, VideoObject 15, HowTo 15, Speakable 77. 0 JSON parse errors.
+- **FAQPage and HowTo:** Google no longer shows rich results for these on commercial sites. They are kept for AI answer engines, but don't expect SERP rich snippets from them.
+- **Security headers (prod):** HSTS preload, CSP, X-Frame-Options, nosniff, Referrer-Policy and Permissions-Policy are all present. ✅
+- **Site-wide:** 0 duplicate titles, descriptions or H1s; 0 broken internal links; exactly 1 H1 per page; 0 images missing `alt`.
 
-### C. All 57 Canonical Competitor Pages (`/[slug]-vs-examghost`) + 1 Alias Redirect (`/classlogy-vs-examghost`)
-- **Metadata Precision**: All 57 pages use `title: { absolute: "..." }` (`44–60` chars) and `description` (`130–160` chars). Trimmed the last 10 pages that exceeded 60/160 characters (`apexvision`, `asksia`, `cheatpal`, `collegetools`, `mylabsolver`, `quizloader`, `quizonator`, `quizper`, `rightclickai`, `transcript`).
-- **AEO & GEO Passage Hooks**: Added `.aeo-summary` to the lead verdict paragraph and `cssSelector: ["h1", ".aeo-summary", "summary h3"]` in `SpeakableSpecification` across all 57 pages.
-- **Google Spam / Manual Action Compliance**:
-  - Staggered realistic `datePublished` / `dateModified` timestamps across Q1 2026 (`2026-01-18` to `2026-03-29`).
-  - Removed self-serving `AggregateRating` from all secondary pages (retaining it strictly on `/` where `<Reviews />` is rendered).
-  - Replaced CSS `display: none` (`hidden peer-checked:block`) on interactive tabs with crawlable off-screen clipping so 100% of tab content is visible to Googlebot without triggering hidden-text filters.
-  - Synchronized all 57 `FAQPage` JSON-LD blocks 1:1 with visible `<details>` elements (`5` FAQs per page).
-  - Rebalanced the peer comparison cross-link graph so all 57 competitor pages receive `2–6` contextual peer incoming links (`0` orphan pages).
+## Environment limitations
+- The PageSpeed Insights API was rate-limited, so local Lighthouse 12 was used (lab data, not CrUX field data). Performance after the fix is an estimate; re-test after deploying.

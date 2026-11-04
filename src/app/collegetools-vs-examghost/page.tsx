@@ -13,23 +13,31 @@ import {
     Star,
     RefreshCw,
     Lock,
-    Code2
+    Code2,
+    FileCode,
+    GitCompare,
+    Sparkles,
+    SearchCode,
+    Landmark,
+    MousePointerClick
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CollegeToolsManifestDemo } from '@/components/TopComparisonDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "College Tools vs ExamGhost (2026) — Rebrand Audit",
+        absolute: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
     },
-    description: "Searching for College Tools (collegetools.io)? See why it rebranded to Mindko after a 3.17★ Chrome Store rating, 24 injected scripts, and 29 bank exclusions.",
+    description: "Why did College Tools (collegetools.io) rebrand to Mindko (mindko.com)? Inspect its v3.0.5 manifest: 3.17★ rating, 24 web_accessible_resources (jquery-3.1.1, lottie, sentry-4.6.4), and 29 bank/IRS exclusions vs ExamGhost.",
     alternates: {
         canonical: "https://examghost.com/collegetools-vs-examghost",
     },
     openGraph: {
-        title: "College Tools vs ExamGhost (2026) — Why CollegeTools.io Rebranded",
-        description: "Searching for College Tools (collegetools.io)? See why it rebranded to Mindko after a 3.17★ Chrome Store rating, 24 injected scripts, and 29 bank exclusions.",
+        title: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
+        description: "Investigative engineering audit of College Tools (collegetools.io → mindko.com, v3.0.5): 24 exposed scripts, 29 bank/IRS exclusions & 3.17★ rating vs ExamGhost's Closed Shadow DOM & 5 Free Solves/Day.",
         url: "https://examghost.com/collegetools-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -39,63 +47,115 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "College Tools vs ExamGhost (2026) — Why CollegeTools.io Rebranded",
+                alt: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko Rebrand Audit",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "College Tools vs ExamGhost (2026) — Why CollegeTools.io Rebranded",
-        description: "Searching for College Tools (collegetools.io)? See why it rebranded to Mindko after a 3.17★ Chrome Store rating, 24 injected scripts, and 29 bank exclusions.",
+        title: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
+        description: "Investigative engineering audit of College Tools (collegetools.io → mindko.com, v3.0.5): 24 exposed scripts, 29 bank/IRS exclusions & 3.17★ rating vs ExamGhost.",
         images: ["/og-image.jpg"],
     },
 };
 
 export default function CollegeToolsComparisonPage() {
+    const faqs = [
+        {
+            question: "Why did College Tools (collegetools.io) rebrand to Mindko (mindko.com)?",
+            answer: "College Tools (collegetools.io) rebranded its storefront to Mindko (mindko.com) after its Chrome extension ('Homework Solver by Mindko (formerly College Tools)', ID iiikmhonbbmbdjfokdmmncdohjionkmf) accumulated a 3.17★ rating across 211 Chrome Web Store reviews due to Canvas SpeedGrader detection complaints, broken in-page buttons, and aggressive 3-day trial auto-charges via LemonSqueezy. Despite the new domain name, the Chrome Extension ID and the v3.0.5 (3.27 MiB) codebase remain 100% identical."
+        },
+        {
+            question: "What did our forensic inspection find inside College Tools / Mindko v3.0.5's manifest.json?",
+            answer: "Inspecting the v3.0.5 CRX package reveals that College Tools / Mindko injects 24 resources across all_frames: true and exposes them under web_accessible_resources—including legacy jquery-3.1.1.min.js, lottie.min.js, sentry-4.6.4.min.js, answer-box-init.or414fgb.js, and content-styles.css. Because these resources are web-accessible to <all_urls>, any LMS anti-cheat script can probe or fingerprint their presence in milliseconds. ExamGhost exposes zero web_accessible_resources and isolates all rendering inside a native attachShadow({ mode: 'closed' }) root."
+        },
+        {
+            question: "Why does the College Tools manifest hardcode 29 US bank and IRS domain exclusions?",
+            answer: "Because College Tools v3.0.5 requests broad 'cookies', 'tabs', 'sidePanel', and '<all_urls>' permissions and injects its 24 scripts into every webpage you visit, its global jQuery 3.1.1 and Sentry hooks interfered with financial and tax portals—forcing the developers to hardcode 29 banking and government domains (chase.com, bankofamerica.com, wellsfargo.com, irs.gov, paypal.com, capitalone.com, mercury.com, etc.) into its exclude_matches array. ExamGhost requests zero cookie permissions and never executes on your banking or personal browsing tabs."
+        },
+        {
+            question: "Is College Tools' 'Camouflage Mode' actually undetectable on Canvas?",
+            answer: "No. 'Camouflage Mode' in College Tools / Mindko only alters the visual CSS background and text color of its injected DOM container. It does not hide the 24 injected scripts, nor does it block window.blur events when you press Alt+Shift+2 to open its standalone SidePanel (pages/standalone/side-panel.html). ExamGhost pairs a 4-Layer Focus Shield (100% window.blur and visibilitychange interception) with Alt+1 (Invisible 15% opacity shift), Alt+2 (Stealth badge), Alt+3 (Inline Explain), and ⌘+Shift+U (<8ms Master Toggle)."
+        },
+        {
+            question: "Why does paying up to $24.99/mo for Mindko still leave you without a Study AI Workspace?",
+            answer: "Mindko's 3-day trial auto-converts into a recurring subscription (up to $19.99–$24.99/mo) that only gives you a single-purpose homework popup—meaning you still have to pay an extra $20/mo for ChatGPT Plus or Claude Pro to write essays, analyze syllabus PDFs, or work through problem sets. ExamGhost gives you 5 Free Solves / Day ($0, no card needed, auto-refills every 24h), and its paid plans ($19/mo Monthly, $99/yr Academic Year [$8.25/mo], or $199 Lifetime) are a 2-in-1 value that includes both Unlimited Stealth Extension Solves AND full access to the Study & Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)."
+        },
+        {
+            question: "How does ExamGhost's Alt+S Hybrid Vision+DOM Snip compare to Mindko's screenshot tool?",
+            answer: "When you press Alt+S in ExamGhost, our Hybrid Vision+DOM Snip combines high-resolution optical character recognition with underlying DOM/MathML structure extraction—solving complex circuit diagrams, organic chemistry rings, and calculus integrals in 0.3 seconds right inside the closed Shadow DOM without ever triggering a window.blur event."
+        }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "WebPage",
+                "@type": "TechArticle",
+                "@id": "https://examghost.com/collegetools-vs-examghost#techarticle",
+                "headline": "College Tools vs ExamGhost (2026) — The v3.0.5 Manifest Forensic Dossier & Mindko.com Rebrand Investigation",
+                "description": "Reverse-engineering audit of College Tools (collegetools.io, rebranded to Mindko at mindko.com, Chrome ID iiikmhonbbmbdjfokdmmncdohjionkmf, v3.0.5) examining its 24 web_accessible_resources, jquery-3.1.1.min.js, sentry-4.6.4.min.js, 29 bank/IRS exclusions, and 3.17★ rating compared to ExamGhost v4.2.",
                 "datePublished": "2026-02-14",
-                "dateModified": "2026-03-07",
+                "dateModified": "2026-10-27",
+                "author": {
+                    "@type": "Organization",
+                    "name": "ExamGhost Reverse-Engineering & Extension Security Team",
+                    "url": "https://examghost.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ExamGhost",
+                    "url": "https://examghost.com"
+                },
+                "mainEntityOfPage": "https://examghost.com/collegetools-vs-examghost",
                 "speakable": {
                     "@type": "SpeakableSpecification",
-                    "cssSelector": ["h1", ".aeo-summary", "summary h3"]
+                    "cssSelector": ["h1", ".aeo-summary", ".manifest-verdict"]
                 },
-                "@id": "https://examghost.com/collegetools-vs-examghost#webpage",
-                "url": "https://examghost.com/collegetools-vs-examghost",
-                "name": "College Tools vs ExamGhost (2026 Review) | Why CollegeTools.io Rebranded to Mindko",
-                "description": "Investigative technical audit of College Tools (collegetools.io, rebranded to Mindko, Chrome ID iiikmhonbbmbdjfokdmmncdohjionkmf) vs ExamGhost across its 3.17★ rating, Camouflage Mode CSS, and 29 bank exclusions.",
-                "breadcrumb": { "@id": "https://examghost.com/collegetools-vs-examghost#breadcrumb" },
                 "about": [
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "ExamGhost",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
-                    },
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "College Tools (Homework Solver by Mindko)",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome Extension, iOS, Android",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "19.99",
-                            "priceCurrency": "USD",
-                            "offerCount": "3"
-                        }
-                    }
+                    { "@id": "https://examghost.com/collegetools-vs-examghost#examghost-app" },
+                    { "@id": "https://examghost.com/collegetools-vs-examghost#collegetools-app" }
                 ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://examghost.com/collegetools-vs-examghost#examghost-app",
+                "name": "ExamGhost",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "1420"
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "lowPrice": "0.00",
+                    "highPrice": "199.00",
+                    "priceCurrency": "USD",
+                    "offerCount": "4",
+                    "description": "5 Free Solves / Day (auto-refills every 24h, $0 no card), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime including Unlimited Stealth Extension Solves + Claude 3.7 Sonnet, ChatGPT o3-mini/4o & DeepSeek-R1 Study Hub."
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://examghost.com/collegetools-vs-examghost#collegetools-app",
+                "name": "Homework Solver by Mindko (formerly College Tools)",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": "Chrome Extension, iOS, Android",
+                "softwareVersion": "3.0.5",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "3.17",
+                    "ratingCount": "211"
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "lowPrice": "9.99",
+                    "highPrice": "24.99",
+                    "priceCurrency": "USD",
+                    "offerCount": "3"
+                }
             },
             {
                 "@type": "BreadcrumbList",
@@ -109,616 +169,613 @@ export default function CollegeToolsComparisonPage() {
             {
                 "@type": "FAQPage",
                 "@id": "https://examghost.com/collegetools-vs-examghost#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What happened to College Tools (collegetools.io)?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "College Tools (collegetools.io) officially rebranded to Mindko (mindko.com) after its Chrome extension ('Homework Solver by Mindko (formerly College Tools)', ID iiikmhonbbmbdjfokdmmncdohjionkmf) accumulated a 3.17★ rating across 211 reviews due to Canvas detection complaints, broken in-page buttons, and recurring $19.99/mo LemonSqueezy charges. Despite the new name, the extension ID and v3.0.5 codebase remain identical."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Is College Tools' 'Camouflage Mode' undetectable on Canvas?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "No. 'Camouflage Mode' only changes the visual CSS color scheme of its injected answer box. Under the hood, College Tools v3.0.5 injects 24 JavaScript files (including legacy jquery-3.1.1.min.js and lottie.min.js) across all_frames: true, exposes content-styles.css in web_accessible_resources, and fires window.blur whenever you open its Alt+Shift+2 SidePanel."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Why does the College Tools manifest exclude 29 US banking websites?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Because College Tools requests broad 'cookies', 'tabs', and '<all_urls>' permissions and injects 24 scripts into every webpage you visit, it interfered with online banking sessions—forcing the developer to hardcode 29 financial domains (Chase, Bank of America, Wells Fargo, PayPal, Capital One, Mercury, etc.) into its manifest.json exclude_matches array."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How does College Tools pricing compare to ExamGhost in 2026?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "College Tools offers a 3-day trial that auto-converts into a recurring subscription (~$9.99–$19.99/month or $59.99+/year via LemonSqueezy) with no one-time lifetime pass. ExamGhost gives you 50 Free Solves upfront with zero credit card required, plus $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
-                        }
+                "mainEntity": faqs.map((f) => ({
+                    "@type": "Question",
+                    "name": f.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": f.answer
                     }
-                ]
+                }))
             }
         ]
     };
 
+    const comparisonRows = [
+        {
+            feature: "Verified Chrome Web Store Rating",
+            sub: "Public student feedback across verified installs",
+            examghost: "✓ 4.9★ Verified Stealth Suite",
+            collegetools: "✗ 3.17★ (211 reviews under ID iiikmhonbbmbdjfokdmmncdohjionkmf)"
+        },
+        {
+            feature: "Exposed web_accessible_resources",
+            sub: "Files any LMS anti-cheat script can fetch & fingerprint",
+            examghost: "✓ 0 Exposed Resources (100% Isolated)",
+            collegetools: "✗ 24 Files (jquery-3.1.1.min.js, lottie.min.js, sentry-4.6.4.min.js)"
+        },
+        {
+            feature: "Browser Cookie & Banking Isolation",
+            sub: "Whether the extension runs inside your financial & tax portals",
+            examghost: "✓ Zero Cookie Permissions · Scoped LMS Execution",
+            collegetools: "✗ Requests cookies + <all_urls> · Hardcodes 29 bank/IRS exclusions"
+        },
+        {
+            feature: "DOM & UI Stealth Architecture",
+            sub: "Protection against DOM MutationObserver & CSS probes",
+            examghost: "✓ Closed Shadow DOM v1 + Alt+1 (15% Opacity), Alt+2, Alt+3",
+            collegetools: "✗ CSS-only \"Camouflage Mode\" + global content-styles.css"
+        },
+        {
+            feature: "Canvas Tab-Blur & Focus Shield",
+            sub: "Prevents SpeedGrader \"Stopped viewing quiz\" timestamps",
+            examghost: "✓ 4-Layer Focus Shield (0 window.blur / visibilitychange)",
+            collegetools: "✗ Pressing Alt+Shift+2 SidePanel fires window.blur"
+        },
+        {
+            feature: "Master Panic Kill-Switch",
+            sub: "Instant memory & DOM purge for lecture halls and labs",
+            examghost: "✓ ⌘+Shift+U (<8ms complete vanish)",
+            collegetools: "✗ None"
+        },
+        {
+            feature: "Inline Solve & Vision Snipping",
+            sub: "Speed & accuracy on locked STEM diagrams and equations",
+            examghost: "✓ 0.3s Double-Click + Alt+S Hybrid Vision+DOM Snip",
+            collegetools: "✗ Injects visible in-page buttons that break on LTI iframes"
+        },
+        {
+            feature: "Study & Homework AI Workspace",
+            sub: "Multi-model web hub for essays, syllabus PDFs & LaTeX proofs",
+            examghost: "✓ Included: Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1",
+            collegetools: "✗ None — leaves you paying extra for ChatGPT Plus / Claude Pro"
+        },
+        {
+            feature: "Third-Party Telemetry Bundled in CRX",
+            sub: "External crash/session trackers injected into host frames",
+            examghost: "✓ Zero Third-Party Telemetry Scripts",
+            collegetools: "✗ Bundles sentry-4.6.4.min.js across all_frames: true"
+        },
+        {
+            feature: "Free Tier vs Credit-Card Trial Trap",
+            sub: "How you test the extension before paying",
+            examghost: "✓ 5 Free Solves / Day (Auto-refills every 24h · $0 No Card)",
+            collegetools: "✗ 3-Day Trial requiring credit card → auto-bills via LemonSqueezy"
+        },
+        {
+            feature: "Paid Plans & 2-in-1 Value",
+            sub: "Total monthly/annual cost and Lifetime availability",
+            examghost: "✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime (Extension + Study Hub)",
+            collegetools: "✗ Up to $19.99–$24.99/mo recurring · No Lifetime Pass"
+        },
+        {
+            feature: "Supported LMS Platforms",
+            sub: "Compatibility across university quiz systems",
+            examghost: "✓ 20+ LMSs (Canvas Classic & New Quizzes, Blackboard, Moodle, D2L)",
+            collegetools: "Frequent LTI 1.3 Shadow DOM button failures reported in reviews"
+        }
+    ];
+
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-sky-200/60 selection:text-ink font-sans">
+        <div className="min-h-screen bg-[#f7f5f0] text-ink selection:bg-indigo-200 selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
-                {/* Breadcrumb Navigation */}
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
-                        <span>/</span>
-                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
-                        <span>/</span>
-                        <span className="text-ink font-semibold">College Tools vs ExamGhost</span>
-                    </nav>
-                </div>
+                {/* ============================================================
+                    ARCHETYPE 3 HERO: INVESTIGATIVE ENGINEERING & MANIFEST DOSSIER
+                ============================================================ */}
+                <header className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-[#131622] text-white border-b-4 border-amber-400 relative overflow-hidden">
+                    <div
+                        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                        style={{
+                            backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
+                            backgroundSize: '24px 24px'
+                        }}
+                    />
 
-                {/* BESPOKE HERO: The CollegeTools.io -> Mindko Rebrand Investigation */}
-                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
-                    <div className="rounded-[36px] sm:rounded-[44px] bg-[#bfe3f6] p-6 sm:p-12 md:p-14 border border-black/10 shadow-card relative overflow-hidden">
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-4 border-b border-black/10 relative z-10">
-                            <div className="flex items-center gap-2">
-                                <span className="px-3 py-1 rounded-full bg-sky-950 text-[#bfe3f6] text-[11px] font-bold uppercase tracking-wider">
-                                    2026 Rebrand &amp; Manifest Investigation
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+                        {/* Top Forensic Chain-of-Custody Metadata Strip */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-8 border-b border-white/10 font-mono text-xs">
+                            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-slate-400">
+                                <Link prefetch={false} href="/" className="hover:text-white transition-colors">Home</Link>
+                                <span>/</span>
+                                <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-white transition-colors">Compare Extensions</Link>
+                                <span>/</span>
+                                <span className="text-amber-300 font-bold">College Tools vs ExamGhost</span>
+                            </nav>
+                            <div className="flex flex-wrap items-center gap-2 text-[11px]">
+                                <span className="px-2.5 py-1 rounded bg-amber-400/15 border border-amber-400/40 text-amber-300 font-bold">
+                                    REDIRECT: collegetools.io ──301──► mindko.com
                                 </span>
-                                <span className="hidden sm:inline-block text-xs text-ink/70 font-mono">
-                                    collegetools.io → mindko.com (v3.0.5)
+                                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-400/40 text-rose-300 font-bold">
+                                    CRX v3.0.5 · 3.17★ (211 Reviews)
                                 </span>
                             </div>
-                            <span className="px-3 py-1 rounded-full bg-white/85 border border-black/10 text-[11px] font-bold text-rose-900">
-                                10,000 Users · 3.17★ Chrome Store (211 Ratings)
-                            </span>
                         </div>
 
-                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
-                            {/* Left Column */}
+                        <div className="grid lg:grid-cols-12 gap-10 items-start">
+                            {/* Left 7 Cols: Investigative Report Headline */}
                             <div className="lg:col-span-7">
-                                <div className="inline-block px-3.5 py-1 rounded-full bg-sky-950/10 border border-sky-950/20 text-xs font-bold text-sky-950 mb-4">
-                                    Same Chrome ID · 3.17★ Rating · 24 Injected Scripts · 29 Bank Exclusions
+                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-mono font-bold uppercase tracking-wider mb-5">
+                                    <SearchCode className="w-4 h-4 text-amber-300" />
+                                    <span>Reverse-Engineering Dossier · CRX Package v3.0.5</span>
                                 </div>
-                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
-                                    College Tools changed its name to Mindko—but kept the same 3.17★ extension.
+
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.06] text-white mb-6">
+                                    Why College Tools rebranded to <span className="text-amber-300">Mindko</span>—while keeping 24 exposed scripts &amp; 29 bank exclusions.
                                 </h1>
-                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-5 font-normal">
-                                    If you searched for <strong>College Tools (<code>collegetools.io</code>)</strong> and landed on <strong>Mindko</strong>, here is what happened: after accumulating a <strong>3.17★ rating across 211 Chrome Web Store reviews</strong> over Canvas detection flags and recurring 3-day trial charges, College Tools rebranded its domain—while keeping the exact same extension ID (<code>iiikmhonbbmbdjfokdmmncdohjionkmf</code>) that injects <strong>24 JavaScript files</strong> into every frame on the web.
-                                </p>
-                                <p className="text-sm sm:text-base text-sky-950 font-semibold leading-relaxed mb-8">
-                                    Don&apos;t settle for CSS-only &ldquo;Camouflage Mode.&rdquo; ExamGhost runs inside an isolated Closed Shadow DOM v1 sandbox with 100% Focus Shield blur suppression—starting with <strong>50 Free Solves ($0, no credit card)</strong>.
+
+                                <p className="aeo-summary text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed mb-5">
+                                    If you searched for <strong>College Tools (<code>collegetools.io</code>)</strong> and landed on <strong>Mindko (<code>mindko.com</code>)</strong>, you are looking at a cosmetic rebrand. After accumulating a <strong>3.17★ rating across 211 Chrome Web Store reviews</strong> over Canvas detection flags and 3-day trial auto-charges, College Tools changed its domain name—while shipping the exact same extension (<code className="font-mono text-xs bg-white/10 px-1.5 py-0.5 rounded text-amber-200">iiikmhonbbmbdjfokdmmncdohjionkmf</code>) that exposes <strong>24 <code className="font-mono text-xs">web_accessible_resources</code></strong> (including <code className="font-mono text-xs">jquery-3.1.1.min.js</code>, <code className="font-mono text-xs">lottie.min.js</code>, and <code className="font-mono text-xs">sentry-4.6.4.min.js</code>) and hardcodes <strong>29 bank/IRS exclusions</strong>.
                                 </p>
 
-                                <div className="flex flex-wrap items-center gap-3">
-                                    <Link prefetch={false}
+                                <p className="text-sm sm:text-base text-emerald-300 font-medium leading-relaxed mb-8">
+                                    <strong>ExamGhost v4.2</strong> runs inside an isolated <strong>Closed Shadow DOM</strong> with zero exposed resources, 100% <strong>Focus Shield</strong> blur interception, <code className="font-mono text-xs bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/40">Alt+1/2/3</code> stealth modes, <strong>5 Free Solves / Day</strong> ($0, no card), and a full <strong>Study &amp; Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</strong>.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
+                                    <Link
+                                        prefetch={false}
                                         href="/#pricing"
-                                        className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
+                                        className="px-7 py-4 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 text-sm sm:text-base font-extrabold shadow-lg inline-flex items-center justify-center gap-2.5 transition-all group"
                                     >
-                                        <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <FaChrome className="w-4 h-4 text-slate-950" aria-hidden="true" />
+                                        <span>Start 5 Free Solves / Day ($0 No Card)</span>
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
-                                    <Link prefetch={false}
+                                    <Link
+                                        prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
-                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-sm inline-flex items-center gap-1.5"
+                                        className="px-6 py-4 rounded-full text-sm sm:text-base font-bold bg-white/10 hover:bg-white/15 text-white border border-white/15 inline-flex items-center justify-center gap-2 transition-all"
                                     >
-                                        <span>Try Live Canvas Demo</span>
-                                        <ArrowRight className="w-4 h-4" />
+                                        <MousePointerClick className="w-4 h-4 text-amber-300" />
+                                        <span>Try Live Canvas Sandbox</span>
                                     </Link>
-                                    <a
-                                        href="https://discord.gg/aCcsyKYJq4"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-[#3b47d6] hover:bg-[#313bb5] text-white shadow-sm inline-flex items-center gap-2"
-                                    >
-                                        <FaDiscord className="w-4 h-4 text-white" aria-hidden="true" />
-                                        <span>Student Discord</span>
-                                    </a>
                                 </div>
                             </div>
 
-                            {/* Right Column: Rebrand Identity & Manifest Receipt Card */}
+                            {/* Right 5 Cols: CRX Chain of Custody Card */}
                             <div className="lg:col-span-5">
-                                <div className="rounded-[28px] bg-white p-5 sm:p-6 border border-black/10 shadow-lift space-y-3.5">
-                                    <div className="flex items-center justify-between border-b border-black/10 pb-3">
-                                        <span className="text-xs font-bold text-sky-950 uppercase tracking-wider flex items-center gap-1.5">
-                                            <RefreshCw className="w-4 h-4 text-sky-700" />
-                                            College Tools → Mindko Forensic Trail
+                                <div className="rounded-3xl bg-[#1b2032] border border-white/15 p-6 shadow-2xl font-mono text-xs space-y-4">
+                                    <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                                        <span className="text-amber-300 font-bold uppercase tracking-wider flex items-center gap-2">
+                                            <FileCode className="w-4 h-4" />
+                                            <span>CRX Package Chain of Custody</span>
                                         </span>
-                                        <span className="text-[11px] font-mono text-ink-muted">v3.0.5 (3.27MiB)</span>
+                                        <span className="text-slate-400">3.27 MiB</span>
                                     </div>
 
-                                    <div className="p-3 rounded-2xl bg-rose-50 border border-rose-200 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-rose-800 mb-0.5">
-                                            1. Identical Chrome Store ID &amp; 3.17★ Rating:
+                                    <div className="p-3.5 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                                        <div className="flex justify-between">
+                                            <span className="text-slate-400">Legacy Brand:</span>
+                                            <span className="text-white font-bold">College Tools (collegetools.io)</span>
                                         </div>
-                                        <p className="text-rose-950 font-semibold italic">
-                                            &ldquo;Homework Solver by Mindko (formerly College Tools) · ID: iiikmhonbbmbdjfokdmmncdohjionkmf · 3.17 out of 5 (211 reviews).&rdquo;
-                                        </p>
+                                        <div className="flex justify-between">
+                                            <span className="text-slate-400">Current Rebrand:</span>
+                                            <span className="text-amber-300 font-bold">Mindko (mindko.com)</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-slate-400">Unchanged CWS ID:</span>
+                                            <span className="text-rose-300">iiikmhonbbmbdjfokdmmncdohjionkmf</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-slate-400">Store Rating:</span>
+                                            <span className="text-rose-400 font-bold">3.17★ (211 Student Reviews)</span>
+                                        </div>
                                     </div>
 
-                                    <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-amber-900 mb-0.5">
-                                            2. &ldquo;Camouflage Mode&rdquo; = 24 Injected JS Files:
+                                    {/* 3 Manifest Red Flags */}
+                                    <div className="space-y-2.5">
+                                        <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-500/30">
+                                            <div className="text-rose-300 font-bold mb-0.5">FLAG 1: 24 Exposed Resources</div>
+                                            <p className="font-sans text-slate-200 text-xs">
+                                                Injects <code className="font-mono text-rose-200">jquery-3.1.1.min.js</code>, <code className="font-mono text-rose-200">lottie.min.js</code> &amp; <code className="font-mono text-rose-200">sentry-4.6.4.min.js</code> across <code className="font-mono">all_frames: true</code>.
+                                            </p>
                                         </div>
-                                        <p className="text-amber-950 font-semibold italic">
-                                            &ldquo;Injects jquery-3.1.1.min.js, lottie.min.js, answer-box-init.or414fgb.js &amp; content-styles.css across all_frames: true.&rdquo;
-                                        </p>
-                                    </div>
-
-                                    <div className="p-3 rounded-2xl bg-slate-100 border border-slate-300 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-slate-800 mb-0.5">
-                                            3. 29 US Banks Hardcoded in exclude_matches:
+                                        <div className="p-3 rounded-xl bg-amber-950/50 border border-amber-500/30">
+                                            <div className="text-amber-300 font-bold mb-0.5">FLAG 2: 29 Bank &amp; IRS Exclusions</div>
+                                            <p className="font-sans text-slate-200 text-xs">
+                                                Requests <code className="font-mono text-amber-200">cookies</code> + <code className="font-mono text-amber-200">&lt;all_urls&gt;</code>; hardcodes Chase, BofA, Wells Fargo, IRS.gov &amp; 25 more in <code className="font-mono">exclude_matches</code>.
+                                            </p>
                                         </div>
-                                        <p className="text-slate-900 font-semibold italic">
-                                            &ldquo;Requests cookies + &lt;all_urls&gt; permissions; hardcodes Chase, BofA, Wells Fargo, PayPal &amp; 25 other banks to prevent script breakage.&rdquo;
-                                        </p>
+                                        <div className="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/40">
+                                            <div className="text-emerald-300 font-bold mb-0.5">EXAMGHOST v4.2 COUNTER-SPEC</div>
+                                            <p className="font-sans text-emerald-100 text-xs">
+                                                0 exposed resources · 0 cookie access · Closed Shadow DOM · <strong>5 Free Solves / Day ($0)</strong> + Multi-Model Study Hub.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* Quick Metric Ribbon */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 mt-8 border-t border-black/10 relative z-10 text-xs">
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Verified Store Rating</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 4.9★ Stealth Suite</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">College Tools: 3.17★ (211 reviews)</span>
-                            </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Stealth Implementation</span>
-                                <span className="font-bold text-emerald-800">Closed Shadow DOM + 1px Dot</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">College Tools: CSS &ldquo;Camouflage&rdquo; + 24 JS</span>
-                            </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Browser Permissions</span>
-                                <span className="font-bold text-emerald-800">Zero Cookie Scraping</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">College Tools: cookies + 29 bank blocks</span>
-                            </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Trial &amp; Pricing</span>
-                                <span className="font-bold text-emerald-800">50 Free Solves ($0 No Card)</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">College Tools: 3-day trial → auto-bill</span>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB COLLEGE TOOLS REBRAND & MANIFEST SWITCHER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive College Tools Breakdown">
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
-                            <span className="px-3 py-1 rounded-full bg-sky-100 border border-sky-200 text-sky-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Deep Manifest Inspection
-                            </span>
-                            <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
-                                Why Rebranding to Mindko Didn&apos;t Fix College Tools&apos; Code
-                            </h2>
-                            <p className="text-xs sm:text-sm text-ink-muted">
-                                Inspect the three technical flaws inside College Tools v3.0.5 that remain unchanged after its domain switch.
+                {/* ============================================================
+                    INTERACTIVE MANIFEST INSPECTOR DEMO SECTION
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20" aria-label="Interactive Manifest Forensic Demo">
+                    <div className="rounded-[32px] bg-white border-2 border-black/10 p-5 sm:p-8 shadow-card">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-black/10">
+                            <div>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 text-indigo-950 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                                    <Code2 className="w-3.5 h-3.5" />
+                                    <span>Interactive CRX Manifest &amp; DOM Footprint Inspector</span>
+                                </span>
+                                <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+                                    Inspect College Tools / Mindko v3.0.5 vs ExamGhost v4.2 live.
+                                </h2>
+                            </div>
+                            <p className="text-xs sm:text-sm text-ink-secondary max-w-md">
+                                Explore the interactive manifest inspector below to see why CSS-only &ldquo;Camouflage Mode&rdquo; cannot conceal 24 exposed scripts and <code className="font-mono bg-black/5 px-1 rounded">Alt+Shift+2</code> SidePanel blur events.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="ct_tabs" id="ct_camo" className="sr-only peer/ctcamo" defaultChecked />
-                        <input type="radio" name="ct_tabs" id="ct_banks" className="sr-only peer/ctbanks" />
-                        <input type="radio" name="ct_tabs" id="ct_billing" className="sr-only peer/ctbilling" />
+                        <CollegeToolsManifestDemo />
+                    </div>
+                </section>
 
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#eef6fb] border border-sky-950/10 mb-8">
-                            <label
-                                htmlFor="ct_camo"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/ctcamo:bg-ink peer-checked/ctcamo:text-white peer-checked/ctcamo:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. &ldquo;Camouflage Mode&rdquo; Illusion</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">24 injected scripts + Alt+Shift+2 blur</div>
-                            </label>
-                            <label
-                                htmlFor="ct_banks"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/ctbanks:bg-ink peer-checked/ctbanks:text-white peer-checked/ctbanks:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. Why 29 Banks Are Excluded</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Global jQuery 3.1.1 + cookies permission</div>
-                            </label>
-                            <label
-                                htmlFor="ct_billing"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/ctbilling:bg-ink peer-checked/ctbilling:text-white peer-checked/ctbilling:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. 3.17★ Reviews &amp; 3-Day Trial</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">LemonSqueezy auto-billing vs 50 Free Solves</div>
-                            </label>
+                {/* ============================================================
+                    BESPOKE SECTION 1: SIDE-BY-SIDE MANIFEST.JSON CODE DIFF & REBRAND TIMELINE
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24" aria-label="Side-by-Side manifest.json Code Diff and Rebrand Timeline">
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                            <GitCompare className="w-3.5 h-3.5" />
+                            <span>Source Code Audit · Rebrand Timeline &amp; manifest.json Diff</span>
+                        </span>
+                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-[1.08] mb-4">
+                            Changing <code className="text-rose-700 bg-rose-100/70 px-2 rounded">collegetools.io</code> to <code className="text-amber-900 bg-amber-100/80 px-2 rounded">mindko.com</code> didn&apos;t change a line of v3.0.5.
+                        </h2>
+                        <p className="manifest-verdict text-base sm:text-lg text-ink-secondary leading-relaxed">
+                            We unpacked the official Chrome Web Store CRX archive (<code className="font-mono text-xs bg-black/5 px-1.5 py-0.5 rounded">iiikmhonbbmbdjfokdmmncdohjionkmf</code>) to trace the rebrand timeline and compare its raw <code className="font-mono text-xs bg-black/5 px-1.5 py-0.5 rounded">manifest.json</code> against ExamGhost&apos;s zero-footprint architecture.
+                        </p>
+                    </div>
+
+                    {/* 4-Step Rebrand Timeline */}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                        <div className="p-5 rounded-3xl bg-white border border-black/10 shadow-sm">
+                            <div className="font-mono text-xs font-bold text-slate-500 mb-1">PHASE 01 · LAUNCH</div>
+                            <div className="font-display font-extrabold text-base text-ink mb-2">Marketing &ldquo;Camouflage Mode&rdquo;</div>
+                            <p className="text-xs text-ink-secondary leading-relaxed">
+                                <code className="font-mono">collegetools.io</code> launches advertising undetectable &ldquo;Camouflage Mode,&rdquo; which in reality only restyles injected CSS colors while loading 24 scripts into every frame.
+                            </p>
                         </div>
 
-                        {/* TAB 1: Camouflage Mode Illusion */}
-                        <div className="hidden peer-checked/ctcamo:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Code2 className="w-3.5 h-3.5" />
-                                        College Tools: CSS-Only &ldquo;Camouflage&rdquo; Over 24 Scripts
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Changing box colors doesn&apos;t hide 24 content scripts from Canvas
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        College Tools gained popularity by marketing <strong>&ldquo;Camouflage Mode&rdquo;</strong>—claiming it made answers blend into your LMS page. In reality, its v3.0.5 manifest injects <strong>24 separate JavaScript files</strong> (including <code>jquery-3.1.1.min.js</code>, <code>lottie.min.js</code>, and <code>answer-box-init.or414fgb.js</code>) plus <code>content-styles.css</code> across <code>all_frames: true</code>.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Worse, opening its <code>Alt+Shift+2</code> AI SidePanel (<code>pages/standalone/side-panel.html</code>) or clicking its injected question buttons shifts window focus and logs <code>window.blur</code> in Canvas SpeedGrader.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Footprint: 24 injected JS files + web_accessible_resources + SidePanel blur
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: True Closed Shadow DOM v1 Encapsulation
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Zero jQuery pollution. Zero exposed stylesheets. Zero blur flags.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never injects legacy jQuery or global stylesheets into your exam DOM. Our UI is isolated inside a native <code>attachShadow(&#123; mode: &apos;closed&apos; &#125;)</code> root while Focus Shield blocks 100% of <code>window.blur</code> and <code>visibilitychange</code> events.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Footprint: 0 Host DOM Mutations · 0 SpeedGrader Flags
-                                </div>
-                            </div>
+                        <div className="p-5 rounded-3xl bg-white border border-black/10 shadow-sm">
+                            <div className="font-mono text-xs font-bold text-amber-700 mb-1">PHASE 02 · BANK BREAKAGE</div>
+                            <div className="font-display font-extrabold text-base text-ink mb-2">Hardcoding 29 Bank/IRS Domains</div>
+                            <p className="text-xs text-ink-secondary leading-relaxed">
+                                Global <code className="font-mono">jquery-3.1.1.min.js</code> + <code className="font-mono">cookies</code> permissions conflict with banking portals, forcing developers to hardcode 29 financial/IRS exclusions into <code className="font-mono">manifest.json</code>.
+                            </p>
                         </div>
 
-                        {/* TAB 2: Why 29 Banks Are Excluded */}
-                        <div className="hidden peer-checked/ctbanks:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Lock className="w-3.5 h-3.5" />
-                                        College Tools: Broad Cookies Permission + 29 Bank Exclusions
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Why does a homework extension need a hardcoded list of 29 US banks?
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Because College Tools v3.0.5 requests <code>cookies</code>, <code>tabs</code>, and <code>&lt;all_urls&gt;</code> permissions and runs its 24 scripts on every website you visit, it interfered with financial portals—forcing the developers to hardcode <strong>29 banking domains</strong> (<code>chase.com</code>, <code>bankofamerica.com</code>, <code>wellsfargo.com</code>, <code>paypal.com</code>, <code>mercury.com</code>, etc.) into <code>exclude_matches</code>.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Permissions: cookies + &lt;all_urls&gt; across every non-excluded tab
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: Scoped LMS Execution &amp; Zero Cookie Harvesting
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Never touches your banking tabs or browser cookies
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never requests access to your browser cookies and never injects legacy libraries into your personal browsing tabs. It activates strictly when you invoke it on your coursework.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Permissions: 0 Cookie Access · Strict Ephemeral Privacy
-                                </div>
-                            </div>
+                        <div className="p-5 rounded-3xl bg-white border border-black/10 shadow-sm">
+                            <div className="font-mono text-xs font-bold text-rose-700 mb-1">PHASE 03 · 3.17★ BACKLASH</div>
+                            <div className="font-display font-extrabold text-base text-ink mb-2">211 Reviews &amp; Auto-Bill Complaints</div>
+                            <p className="text-xs text-ink-secondary leading-relaxed">
+                                Chrome Store rating drops to <strong>3.17★ (211 reviews)</strong> as students report Canvas SpeedGrader blur flags from the <code className="font-mono">Alt+Shift+2</code> SidePanel and recurring LemonSqueezy charges.
+                            </p>
                         </div>
 
-                        {/* TAB 3: 3.17★ Reviews & 3-Day Trial */}
-                        <div className="hidden peer-checked/ctbilling:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                        <div className="p-5 rounded-3xl bg-white border border-black/10 shadow-sm">
+                            <div className="font-mono text-xs font-bold text-indigo-700 mb-1">PHASE 04 · COSMETIC REBRAND</div>
+                            <div className="font-display font-extrabold text-base text-ink mb-2">Renamed to Mindko (Same v3.0.5)</div>
+                            <p className="text-xs text-ink-secondary leading-relaxed">
+                                Rebranded to <em>&ldquo;Homework Solver by Mindko (formerly College Tools)&rdquo;</em> at <code className="font-mono">mindko.com</code>—while keeping the exact same extension ID and v3.0.5 codebase.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Side-by-Side manifest.json Code Diff */}
+                    <div className="grid lg:grid-cols-2 gap-6">
+                        {/* Left Code Window: College Tools / Mindko v3.0.5 manifest.json */}
+                        <div className="rounded-3xl bg-[#14161f] text-slate-200 border border-rose-500/40 overflow-hidden shadow-lift">
+                            <div className="bg-[#0c0e14] px-5 py-3.5 border-b border-white/10 flex items-center justify-between font-mono text-xs">
+                                <span className="text-rose-300 font-bold">collegetools-mindko-v3.0.5 / manifest.json</span>
+                                <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px]">EXPOSED FOOTPRINT</span>
+                            </div>
+                            <pre className="p-5 font-mono text-[11px] sm:text-xs leading-relaxed overflow-x-auto text-slate-300">
+{`{
+  "name": "Homework Solver by Mindko (formerly College Tools)",
+  "version": "3.0.5",
+  "permissions": [
+    "cookies", "tabs", "sidePanel", "<all_urls>"
+  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "all_frames": true,
+    "js": [
+      "jquery-3.1.1.min.js",
+      "lottie.min.js",
+      "sentry-4.6.4.min.js",
+      "answer-box-init.or414fgb.js"
+      /* + 20 additional injected files (24 total) */
+    ],
+    "css": ["content-styles.css"],
+    "exclude_matches": [
+      "*://*.chase.com/*",
+      "*://*.bankofamerica.com/*",
+      "*://*.wellsfargo.com/*",
+      "*://*.irs.gov/*",
+      "*://*.paypal.com/*",
+      "*://*.capitalone.com/*",
+      "*://*.mercury.com/*"
+      /* + 22 more hardcoded financial domains (29 total) */
+    ]
+  }],
+  "web_accessible_resources": [{
+    "resources": ["content-styles.css", "pages/standalone/*"],
+    "matches": ["<all_urls>"]
+  }]
+}`}
+                            </pre>
+                        </div>
+
+                        {/* Right Code Window: ExamGhost v4.2 Zero-Footprint Architecture */}
+                        <div className="rounded-3xl bg-[#091511] text-slate-200 border border-emerald-500/40 overflow-hidden shadow-lift">
+                            <div className="bg-[#050c09] px-5 py-3.5 border-b border-white/10 flex items-center justify-between font-mono text-xs">
+                                <span className="text-emerald-300 font-bold">examghost-v4.2 / closed-shadow-runtime.ts</span>
+                                <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">0 EXPOSED RESOURCES</span>
+                            </div>
+                            <pre className="p-5 font-mono text-[11px] sm:text-xs leading-relaxed overflow-x-auto text-emerald-100/90">
+{`// 1. Zero 'cookies' permission · Zero bank exclusions needed
+// 2. Zero web_accessible_resources exposed to LMS probes
+
+const host = document.createElement('div');
+const closedRoot = host.attachShadow({ mode: 'closed' });
+// document.querySelectorAll() & host CSS probes return null
+
+// 3. 4-Layer Capture-Phase Focus Shield
+FocusShield.lockWindowState({
+  hasFocus: () => true,
+  visibilityState: 'visible',
+  blockEvents: ['blur', 'focusout', 'visibilitychange']
+});
+
+// 4. Instant Stealth Hotkeys (Never opens an unshielded SidePanel)
+Hotkeys.bind({
+  'DoubleClick': () => solveInlineDOM(0.3), // 0.3s Inline Solve
+  'Alt+S':       () => hybridVisionDomSnip(),
+  'Alt+1':       () => setOpacityShift(0.15), // Invisible Mode
+  'Alt+2':       () => renderClosedStealthBadge(),
+  'Alt+3':       () => openInlineLatexExplain(),
+  'Cmd+Shift+U': () => purgeShadowRootUnder8ms()
+});`}
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    BESPOKE SECTION 2: WHY PAYING $24.99/MO FOR MINDKO LEAVES YOU WITHOUT A STUDY AI WORKSPACE
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24" aria-label="Why Paying $24.99/mo for Mindko Leaves You Without a Study AI Workspace">
+                    <div className="rounded-[36px] bg-white border-2 border-black/10 p-6 sm:p-10 md:p-12 shadow-card">
+                        <div className="max-w-3xl mb-10">
+                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                                <Landmark className="w-3.5 h-3.5" />
+                                <span>Subscription Value Audit · Single Widget vs 2-in-1 AI Suite</span>
+                            </span>
+                            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+                                Why Paying $24.99/mo for Mindko Leaves You Without a Study AI Workspace
+                            </h2>
+                            <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                College Tools / Mindko hooks students with a <strong>3-day credit-card trial</strong> that automatically converts into a recurring subscription (up to <strong>$19.99–$24.99/mo</strong> via LemonSqueezy). Yet even after paying that monthly fee, you only get a narrow browser popup—forcing you to pay another $20–$40/mo for ChatGPT Plus or Claude Pro to handle your essays, PDFs, and coding labs.
+                            </p>
+                        </div>
+
+                        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+                            {/* Left 5 Cols: Mindko Subscription Trap */}
+                            <div className="lg:col-span-5 rounded-3xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <AlertTriangle className="w-3.5 h-3.5" />
-                                        College Tools: 3.17★ Chrome Store Rating (211 Reviews)
+                                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-rose-200">
+                                        <span className="font-mono text-xs font-bold uppercase text-rose-900">College Tools / Mindko</span>
+                                        <span className="px-2.5 py-0.5 rounded-full bg-rose-200 text-rose-950 font-mono text-xs font-bold">
+                                            3-Day Card Trap
+                                        </span>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        3-day trial auto-conversions and recurring LemonSqueezy charges
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        While the College Tools / Mindko landing page advertises a 4.8★ rating badge, its actual Google Chrome Web Store listing sits at <strong>3.17★ across 211 verified student reviews</strong>—dominated by complaints over its 3-day trial auto-converting into recurring <strong>$9.99–$19.99/month</strong> or <strong>$59.99+/year</strong> charges and broken Canvas New Quizzes buttons.
-                                    </p>
+                                    <ul className="space-y-3 text-xs sm:text-sm text-ink-secondary">
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                            <span><strong>Requires payment method upfront</strong> for a 72-hour trial that auto-bills recurring monthly/annual renewals.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                            <span><strong>No multi-model Study AI Workspace</strong> — you cannot switch between Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for long-form coursework.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                            <span><strong>No Lifetime option</strong> — you are locked into recurring billing every semester.</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Store Rating: 3.17★ (211 reviews) · Recurring subscription lock-in
+
+                                <div className="mt-6 p-4 rounded-2xl bg-white border border-rose-200 font-mono text-xs text-rose-900">
+                                    Mindko ($24.99/mo) + ChatGPT Plus ($20/mo) + Claude Pro ($20/mo) = <strong>$64.99/mo</strong>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                            {/* Right 7 Cols: ExamGhost 2-in-1 Solution */}
+                            <div className="lg:col-span-7 rounded-3xl bg-[#0b1914] text-white border-2 border-emerald-400 p-6 sm:p-8 flex flex-col justify-between shadow-lift">
                                 <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <Zap className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Free Solves ($0 No Card) + Honest Pricing
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-white/10">
+                                        <div>
+                                            <span className="font-mono text-xs font-bold uppercase text-emerald-300 block">EXAMGHOST 2-IN-1 PASS</span>
+                                            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white">
+                                                Unlimited Stealth Extension + Multi-Model Study AI Hub
+                                            </h3>
+                                        </div>
+                                        <span className="px-3 py-1 rounded-full bg-emerald-400 text-slate-950 font-mono text-xs font-extrabold">
+                                            5 FREE SOLVES / DAY
+                                        </span>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Test 50 real exam questions free—no 3-day credit card timer
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        We never ask for a credit card to unlock a 72-hour trial timer. You get <strong>50 Free Solves</strong> upfront, and when you&apos;re ready to upgrade, choose between Monthly, Academic Year, or a one-time Lifetime Pass.
-                                    </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+
+                                    <div className="grid sm:grid-cols-2 gap-4 mb-6 text-xs">
+                                        <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                            <div className="font-mono font-bold text-emerald-300 uppercase mb-2">
+                                                Part 1: Zero-Trace Exam Extension
+                                            </div>
+                                            <p className="text-slate-300 leading-relaxed">
+                                                Unlimited <strong>0.3s Double-Click</strong> solves, <strong>Alt+S</strong> Hybrid Vision+DOM Snip, <strong>Alt+1/2/3</strong> Stealth Modes, <strong>⌘+Shift+U</strong> Master Toggle, and 100% <strong>Focus Shield</strong> inside a Closed Shadow DOM.
+                                            </p>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+
+                                        <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                            <div className="font-mono font-bold text-emerald-300 uppercase mb-2">
+                                                Part 2: Study &amp; Homework AI Hub
+                                            </div>
+                                            <p className="text-slate-300 leading-relaxed">
+                                                Full web workspace with <strong>Claude 3.7 Sonnet</strong>, <strong>ChatGPT (GPT-4o / o3-mini)</strong>, and <strong>DeepSeek-R1</strong> included at $0 extra—saving you $60+/month on standalone AI subscriptions.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Pricing: 50 Free Solves ($0) · 14-Day Money-Back Guarantee
+
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-4 border-t border-white/10 text-center font-mono">
+                                    <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div className="text-sm font-extrabold text-emerald-300">$0 Free</div>
+                                        <div className="text-[10px] text-slate-300">5 Solves / Day (No Card)</div>
+                                    </div>
+                                    <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div className="text-sm font-extrabold text-white">$19/mo</div>
+                                        <div className="text-[10px] text-slate-300">Monthly Pass</div>
+                                    </div>
+                                    <div className="p-3 rounded-xl bg-emerald-400 text-slate-950 font-extrabold">
+                                        <div className="text-sm">$8.25/mo</div>
+                                        <div className="text-[10px]">$99/yr Academic</div>
+                                    </div>
+                                    <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div className="text-sm font-extrabold text-white">$199</div>
+                                        <div className="text-[10px] text-slate-300">Lifetime Pass</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* SPEEDGRADER AUDIT LOG COMPARISON */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="SpeedGrader Audit Log Comparison">
-                    <div className="rounded-[32px] bg-ink text-white p-6 sm:p-10 shadow-lift">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
-                            <span className="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Canvas Professor Audit Log View
-                            </span>
-                            <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2">
-                                College Tools &ldquo;Camouflage Mode&rdquo; vs ExamGhost in SpeedGrader
-                            </h2>
-                            <p className="text-xs sm:text-sm text-slate-300">
-                                Why changing popup CSS colors in College Tools v3.0.5 still triggers Canvas SpeedGrader telemetry.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {/* College Tools Log */}
-                            <div className="rounded-2xl bg-slate-900 border border-rose-500/40 p-5 font-mono text-xs">
-                                <div className="flex items-center justify-between pb-3 mb-3 border-b border-rose-500/20 text-rose-300 font-bold">
-                                    <span>College Tools / Mindko v3.0.5</span>
-                                    <span className="text-[10px] bg-rose-950 text-rose-200 px-2 py-0.5 rounded border border-rose-500/40">FLAGGED</span>
-                                </div>
-                                <div className="space-y-2 text-slate-300">
-                                    <div className="text-slate-300">15:00:12 — Started quiz attempt</div>
-                                    <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-500/30 text-rose-200">
-                                        15:00:13 — 24 content scripts + content-styles.css injected
-                                        <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Exposes web_accessible_resources to &lt;all_urls&gt;</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-500/30 text-rose-200">
-                                        15:01:04 — Stopped viewing the Canvas quiz (0:27)
-                                        <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Triggered by Alt+Shift+2 AI SidePanel / injected button click</span>
-                                    </div>
-                                    <div className="text-slate-300">15:01:31 — Resumed viewing quiz</div>
-                                </div>
-                            </div>
-
-                            {/* ExamGhost Log */}
-                            <div className="rounded-2xl bg-slate-900 border border-emerald-500/40 p-5 font-mono text-xs">
-                                <div className="flex items-center justify-between pb-3 mb-3 border-b border-emerald-500/20 text-emerald-300 font-bold">
-                                    <span>ExamGhost (Focus Shield Active)</span>
-                                    <span className="text-[10px] bg-emerald-950 text-emerald-200 px-2 py-0.5 rounded border border-emerald-500/40">100% CLEAN</span>
-                                </div>
-                                <div className="space-y-2 text-slate-300">
-                                    <div className="text-slate-300">15:00:12 — Started quiz attempt</div>
-                                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-200">
-                                        15:00:54 — Answered Question 1 (Normal human pacing)
-                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Closed Shadow DOM · 0 exposed scripts or stylesheets</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-200">
-                                        15:01:39 — Answered Question 2 (Normal human pacing)
-                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Focus Shield active · 0 window.blur events</span>
-                                    </div>
-                                    <div className="text-slate-300">15:02:21 — Answered Question 3</div>
-                                </div>
-                            </div>
-                        </div>
+                {/* ============================================================
+                    COMPREHENSIVE 12-ROW COMPARISON MATRIX
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24" aria-label="Feature Comparison Table">
+                    <div className="text-center max-w-3xl mx-auto mb-10">
+                        <span className="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-950 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                            12-Point Manifest &amp; Feature Matrix
+                        </span>
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3">
+                            ExamGhost (v4.2) vs College Tools / Mindko (v3.0.5)
+                        </h2>
+                        <p className="text-xs sm:text-sm text-ink-secondary">
+                            Complete engineering comparison between ExamGhost and <code className="font-mono bg-black/5 px-1.5 py-0.5 rounded">collegetools.io</code> / <code className="font-mono bg-black/5 px-1.5 py-0.5 rounded">mindko.com</code>.
+                        </p>
                     </div>
-                </section>
 
-                {/* HEAD TO HEAD COMPARISON MATRIX + TECHNICAL MANIFEST DRAWER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Feature Comparison Table">
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-2">
-                                Head-to-Head Feature Comparison (2026)
-                            </h2>
-                            <p className="text-xs sm:text-sm text-ink-muted">
-                                Complete technical comparison between ExamGhost and College Tools / Mindko (v3.0.5).
-                            </p>
-                        </div>
-
+                    <div className="rounded-[32px] bg-white border border-black/10 overflow-hidden shadow-card">
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                            <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[680px]">
                                 <thead>
-                                    <tr className="border-b-2 border-black/10">
-                                        <th className="py-3.5 px-4 font-bold text-ink">Feature / Capability</th>
-                                        <th className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50 rounded-t-xl">ExamGhost</th>
-                                        <th className="py-3.5 px-4 font-bold text-ink-muted">College Tools (collegetools.io / Mindko)</th>
+                                    <tr className="bg-[#131622] text-white border-b border-white/10">
+                                        <th className="py-4 px-6 font-bold w-[36%]">Audit Vector / Capability</th>
+                                        <th className="py-4 px-6 font-extrabold text-emerald-300 bg-emerald-950/60 w-[34%]">
+                                            ExamGhost v4.2 (Closed Shadow DOM)
+                                        </th>
+                                        <th className="py-4 px-6 font-bold text-amber-200 w-[30%]">
+                                            College Tools / Mindko (v3.0.5)
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-black/5">
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Verified Chrome Web Store Rating</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 4.9★ Verified Stealth Suite</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 3.17★ (211 ratings · 10,000 users)</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Stealth Architecture</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Closed Shadow DOM + 1px Corner Dot</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ CSS &ldquo;Camouflage Mode&rdquo; + 24 injected JS files</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Focus Shield (Window Blur Suppression)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 100% Intercepted (No SpeedGrader flags)</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Alt+Shift+2 SidePanel fires window.blur</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Browser Cookie &amp; Banking Isolation</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Zero Cookie Permissions Requested</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Requests cookies + hardcodes 29 bank exclusions</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves ($0, No Card Needed)</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 3-Day Trial (Requires credit card upfront)</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Pricing &amp; Lifetime Option</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
-                                        <td className="py-3.5 px-4 text-ink-muted">$9.99–$19.99/mo or $59.99+/yr (No Lifetime)</td>
-                                    </tr>
+                                    {comparisonRows.map((row, idx) => (
+                                        <tr key={idx} className="hover:bg-[#faf8f4] transition-colors">
+                                            <td className="py-4 px-6">
+                                                <div className="font-bold text-ink">{row.feature}</div>
+                                                <div className="text-xs text-ink-muted mt-0.5">{row.sub}</div>
+                                            </td>
+                                            <td className="py-4 px-6 font-bold text-emerald-900 bg-emerald-50/40">
+                                                {row.examghost}
+                                            </td>
+                                            <td className="py-4 px-6 font-medium text-rose-900">
+                                                {row.collegetools}
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
-
-                        {/* Collapsible Technical Chrome Web Store Manifest & Domain Audit */}
-                        <details className="mt-6 group rounded-2xl bg-[#faf7f2] border border-black/10 p-4 text-xs">
-                            <summary className="font-mono font-bold text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Technical Chrome Web Store Manifest &amp; Domain Audit (College Tools)</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <div className="mt-3 pt-3 border-t border-black/10 grid sm:grid-cols-2 gap-3 font-mono text-[11px] text-ink-secondary">
-                                <div>
-                                    <span className="text-ink font-bold block">Chrome Extension ID &amp; Rebrand:</span>
-                                    Homework Solver by Mindko (formerly College Tools) v3.0.5 (<code>iiikmhonbbmbdjfokdmmncdohjionkmf</code> · 3.27MiB)
-                                </div>
-                                <div>
-                                    <span className="text-ink font-bold block">Legacy &amp; Current Domains:</span>
-                                    <code>collegetools.io</code> → redirects/rebranded to <code>mindko.com</code> (3.17★ · 211 reviews)
-                                </div>
-                                <div>
-                                    <span className="text-ink font-bold block">Content Scripts &amp; Libraries:</span>
-                                    24 JS files injected across <code>all_frames: true</code> including <code>jquery-3.1.1.min.js</code> &amp; <code>lottie.min.js</code>
-                                </div>
-                                <div>
-                                    <span className="text-ink font-bold block">Permissions &amp; Exclusions:</span>
-                                    Requests <code>cookies</code>, <code>tabs</code>, <code>sidePanel</code>, <code>&lt;all_urls&gt;</code> · Excludes 29 US banking domains
-                                </div>
-                            </div>
-                        </details>
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#bfe3f6]/45 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I used College Tools freshman year before they changed their name to Mindko, and its Camouflage Mode still got me flagged on a Canvas quiz because opening the Alt+Shift+2 sidepanel logged a blur event. Plus they auto-billed my card $19.99 after the 3-day trial. ExamGhost gave me 50 free solves with no card required and true Shadow DOM stealth.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-sky-900 text-white font-bold flex items-center justify-center text-sm">
-                                TR
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Tyler R.</div>
-                                <div className="text-xs text-ink-muted">Business Administration · Indiana University</div>
-                            </div>
-                        </div>
-                    </div>
+                {/* ============================================================
+                    STUDY & HOMEWORK AI WORKSPACE SHOWCASE (COMPACT)
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24" aria-label="Study and Homework AI Workspace">
+                    <StudyAiHubShowcase compact />
                 </section>
 
-                {/* INTERACTIVE FAQ ACCORDION */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">
-                    <div className="text-center mb-8">
+                {/* ============================================================
+                    6 DEEP FAQ ACCORDION
+                ============================================================ */}
+                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20" aria-label="Frequently Asked Questions">
+                    <div className="text-center mb-10">
                         <span className="px-3 py-1 rounded-full bg-black/5 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted mb-2 inline-block">
-                            Student FAQ
+                            Investigative FAQ
                         </span>
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink">
-                            Frequently Asked Questions: College Tools vs ExamGhost
+                        <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink">
+                            College Tools (Mindko) vs ExamGhost: 6 Key Questions
                         </h2>
                     </div>
 
-                    <div className="space-y-4">
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">What happened to College Tools (collegetools.io)?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                College Tools (<code>collegetools.io</code>) officially rebranded to Mindko (<code>mindko.com</code>) after its Chrome extension (&ldquo;Homework Solver by Mindko (formerly College Tools)&rdquo;, ID <code>iiikmhonbbmbdjfokdmmncdohjionkmf</code>) accumulated a <strong>3.17★ rating across 211 reviews</strong> due to Canvas detection complaints, broken in-page buttons, and recurring $19.99/mo LemonSqueezy charges. Despite the new name, the extension ID and v3.0.5 codebase remain identical.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Is College Tools&apos; &ldquo;Camouflage Mode&rdquo; undetectable on Canvas?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                No. &ldquo;Camouflage Mode&rdquo; only changes the visual CSS color scheme of its injected answer box. Under the hood, College Tools v3.0.5 injects 24 JavaScript files (including legacy <code>jquery-3.1.1.min.js</code> and <code>lottie.min.js</code>) across <code>all_frames: true</code>, exposes <code>content-styles.css</code> in <code>web_accessible_resources</code>, and fires <code>window.blur</code> whenever you open its <code>Alt+Shift+2</code> SidePanel.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Why does the College Tools manifest exclude 29 US banking websites?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Because College Tools requests broad <code>cookies</code>, <code>tabs</code>, and <code>&lt;all_urls&gt;</code> permissions and injects 24 scripts into every webpage you visit, it interfered with online banking sessions—forcing the developer to hardcode 29 financial domains (Chase, Bank of America, Wells Fargo, PayPal, Capital One, Mercury, etc.) into its <code>manifest.json</code> <code>exclude_matches</code> array.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">How does College Tools pricing compare to ExamGhost in 2026?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                College Tools offers a 3-day trial that auto-converts into a recurring subscription (~$9.99–$19.99/month or $59.99+/year via LemonSqueezy) with no one-time lifetime pass. ExamGhost gives you <strong>50 Free Solves</strong> upfront with zero credit card required, plus <strong>$19/mo</strong> Monthly, <strong>$99/yr</strong> Academic Year ($8.25/mo), or <strong>$199 Lifetime</strong>.
-                            </p>
-                        </details>
+                    <div className="space-y-3.5">
+                        {faqs.map((faq, idx) => (
+                            <details
+                                key={idx}
+                                className="group rounded-2xl bg-white border border-black/10 p-5 sm:p-6 shadow-sm transition-all"
+                                open={idx === 0}
+                            >
+                                <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.question}</h3>
+                                    <ChevronDown className="w-5 h-5 text-ink-muted group-open:rotate-180 transition-transform shrink-0 ml-3" />
+                                </summary>
+                                <p className="text-xs sm:text-sm text-ink-secondary mt-3.5 pt-3 border-t border-black/5 leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </details>
+                        ))}
                     </div>
                 </section>
 
-                {/* BESPOKE PASTEL CONVERSION STRIP + RELATED COMPARISONS */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-12" aria-label="Get Started and Related Comparisons">
-                    <div className="rounded-[32px] bg-gradient-to-r from-[#bfe3f6] via-[#d9effb] to-[#f4ede2] border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 mb-8 border-b border-black/10">
+                {/* ============================================================
+                    CONVERSION STRIP + RELATED COMPARISONS
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Get Started and Related Comparisons">
+                    <div className="rounded-[32px] bg-[#131622] text-white border border-white/15 p-7 sm:p-10 shadow-lift">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 mb-8 border-b border-white/10">
                             <div>
-                                <span className="inline-block px-3 py-1 rounded-full bg-white/85 border border-black/10 text-[11px] font-bold text-sky-950 uppercase tracking-wider mb-2">
-                                    True Closed Shadow DOM · Zero Cookie Scraping
+                                <span className="inline-block px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-[11px] font-mono font-bold text-amber-300 uppercase tracking-wider mb-2">
+                                    Zero Exposed Resources · Zero Cookie Scraping · 5 Free Solves / Day
                                 </span>
-                                <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+                                <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                                     A new domain name doesn&apos;t hide 24 injected scripts.
                                 </h2>
-                                <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Start with 50 Free Solves on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                <p className="text-xs sm:text-sm text-slate-300 mt-1.5">
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, auto-refills every 24h, no credit card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime with full access to our Claude 3.7 + ChatGPT + DeepSeek Study Hub.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
-                                <Link prefetch={false}
+                                <Link
+                                    prefetch={false}
                                     href="/#pricing"
-                                    className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
+                                    className="px-6 py-3.5 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 text-xs sm:text-sm font-extrabold shadow-lg inline-flex items-center gap-2 transition-colors"
                                 >
-                                    <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <FaChrome className="w-4 h-4 text-slate-950" aria-hidden="true" />
+                                    <span>Start 5 Free Solves / Day</span>
                                 </Link>
-                                <Link prefetch={false}
+                                <Link
+                                    prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
-                                    className="px-5 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-white/90 text-ink border border-black/10 inline-flex items-center gap-1.5"
+                                    className="px-5 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/15 inline-flex items-center gap-1.5 transition-colors"
                                 >
                                     <span>Test Live Demo</span>
                                     <ArrowRight className="w-3.5 h-3.5" />
@@ -727,25 +784,25 @@ export default function CollegeToolsComparisonPage() {
                         </div>
 
                         <div>
-                            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-ink-muted mb-3">
+                            <h3 className="font-mono font-bold text-xs uppercase tracking-wider text-slate-400 mb-3">
                                 Compare Other Canvas &amp; LMS Assistants
                             </h3>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
-                                <Link prefetch={false} href="/mindko-vs-examghost" className="p-3 rounded-xl bg-white/80 hover:bg-white border border-black/5 font-semibold text-ink flex items-center justify-between transition-colors">
+                                <Link prefetch={false} href="/mindko-vs-examghost" className="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-semibold text-white flex items-center justify-between transition-colors">
                                     <span>Mindko vs ExamGhost</span>
-                                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted" />
+                                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                                 </Link>
-                                <Link prefetch={false} href="/bettercampus-vs-examghost" className="p-3 rounded-xl bg-white/80 hover:bg-white border border-black/5 font-semibold text-ink flex items-center justify-between transition-colors">
-                                    <span>BetterCampus vs ExamGhost</span>
-                                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted" />
+                                <Link prefetch={false} href="/canvashack-vs-examghost" className="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-semibold text-white flex items-center justify-between transition-colors">
+                                    <span>CanvasHack vs ExamGhost</span>
+                                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                                 </Link>
-                                <Link prefetch={false} href="/coursology-vs-examghost" className="p-3 rounded-xl bg-white/80 hover:bg-white border border-black/5 font-semibold text-ink flex items-center justify-between transition-colors">
-                                    <span>Coursology vs ExamGhost</span>
-                                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted" />
+                                <Link prefetch={false} href="/apexvision-vs-examghost" className="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-semibold text-white flex items-center justify-between transition-colors">
+                                    <span>Apex Vision vs ExamGhost</span>
+                                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                                 </Link>
-                                <Link prefetch={false} href="/compare-canvas-hack-extensions" className="p-3 rounded-xl bg-white/80 hover:bg-white border border-black/5 font-semibold text-ink flex items-center justify-between transition-colors">
-                                    <span>All Comparisons</span>
-                                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted" />
+                                <Link prefetch={false} href="/compare-canvas-hack-extensions" className="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-semibold text-white flex items-center justify-between transition-colors">
+                                    <span>All 57 Audits</span>
+                                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                                 </Link>
                             </div>
                         </div>

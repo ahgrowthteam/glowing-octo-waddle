@@ -14,9 +14,8 @@ import {
     ChevronDown, 
     SlidersHorizontal,
     Sparkles,
-    Flame
+    Keyboard
 } from 'lucide-react';
-import { FaChrome } from 'react-icons/fa';
 import { CompetitorData } from '@/data/competitors';
 
 interface CompareHubClientProps {
@@ -77,6 +76,53 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
 
     return (
         <div className="w-full">
+            {/* Reference Baseline Banner: ExamGhost v4.2 Hotkeys + 2-in-1 Study Hub */}
+            <div className="rounded-3xl bg-[#111522] text-white p-5 sm:p-6 border border-indigo-500/30 shadow-card mb-6">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 mb-4 border-b border-white/10">
+                    <div className="flex items-center gap-2.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="font-mono text-xs uppercase tracking-wider text-indigo-300 font-bold">
+                            #1 Benchmark Baseline // ExamGhost v4.2 (Stealth Extension + Study AI Hub)
+                        </span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                        <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 font-bold">
+                            5 Free Solves / Day ($0 · Auto-Refills Every 24h)
+                        </span>
+                        <span className="px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 font-bold">
+                            Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1 Included
+                        </span>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 text-xs font-mono">
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-emerald-300 font-bold block">Double-Click</span>
+                        <span className="text-[11px] text-slate-300 font-sans">0.3s Inline Solve</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-cyan-300 font-bold block">Alt+S</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Hybrid Vision+DOM Snip</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-purple-300 font-bold block">Alt+1</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Invisible Mode</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-indigo-300 font-bold block">Alt+2</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Stealth Ghost Dot</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-amber-300 font-bold block">Alt+3</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Step-by-Step Explain</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
+                        <span className="text-rose-300 font-bold block">⌘+Shift+U</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Master Toggle Unload</span>
+                    </div>
+                </div>
+            </div>
+
             {/* Interactive Search & Filter Controls */}
             <div className="bg-white rounded-3xl p-5 sm:p-7 border border-black/10 shadow-soft mb-10">
                 <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
@@ -87,7 +133,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search by tool name (e.g. CanvasHack, FastSolve, CheatMate)..."
+                            placeholder="Search by tool name (e.g. Gauth, Course Hero, CanvasHack, FastSolve, CheatMate)..."
                             className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#fcf9f5] border border-black/10 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black/30 transition-all"
                         />
                         {searchQuery && (
@@ -107,7 +153,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                         <select 
                             id="sort-select"
                             value={sortBy}
-                            onChange={(e) => setSortBy(e.target.value as any)}
+                            onChange={(e) => setSortBy(e.target.value as 'default' | 'latency' | 'az' | 'za')}
                             className="text-xs font-semibold bg-[#fcf9f5] border border-black/10 rounded-xl px-3 py-2.5 text-ink focus:outline-none focus:ring-2 focus:ring-black/10 cursor-pointer"
                         >
                             <option value="default">Featured / Default</option>
@@ -288,24 +334,24 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                         Master 12-Point Technical Matrix
                     </div>
                     <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        2026 Stealth &amp; Architecture Matrix
+                        2026 Stealth, Hotkeys &amp; Study AI Matrix
                     </h2>
                     <p className="text-sm text-ink-muted">
-                        Filtering {categorizedList.length} extensions by DOM isolation, blur shield, and SpeedGrader immunity.
+                        Filtering {categorizedList.length} extensions by DOM isolation, blur shield, hotkeys, and 2-in-1 multi-model Study Hub access.
                     </p>
                 </div>
 
                 <div className="rounded-[32px] bg-white border border-black/10 overflow-hidden shadow-card">
                     <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs sm:text-sm">
+                        <table className="w-full text-left text-xs sm:text-sm min-w-[780px]">
                             <thead className="bg-[#f7f4ee] border-b border-black/10 text-ink font-semibold">
                                 <tr>
                                     <th className="py-4 px-5">Tool Name</th>
-                                    <th className="py-4 px-4 text-center">Built-In AI</th>
+                                    <th className="py-4 px-4 text-center">In-Tab AI &amp; Hotkeys</th>
                                     <th className="py-4 px-4 text-center">Shadow DOM</th>
                                     <th className="py-4 px-4 text-center">Blur Shield</th>
-                                    <th className="py-4 px-4 text-center">LMS Coverage</th>
-                                    <th className="py-4 px-4">Pricing Model</th>
+                                    <th className="py-4 px-4 text-center">Study AI Hub</th>
+                                    <th className="py-4 px-4">Free Quota &amp; Pricing</th>
                                     <th className="py-4 px-4 text-right">Audit</th>
                                 </tr>
                             </thead>
@@ -314,14 +360,25 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                 <tr className="bg-[#c4d0f8]/30 font-bold border-b-2 border-indigo-200">
                                     <td className="py-4 px-5 flex items-center gap-2 text-indigo-950">
                                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                                        <span className="text-sm">ExamGhost (Stealth Suite)</span>
+                                        <div>
+                                            <div className="text-sm">ExamGhost v4.2 (2-in-1 Suite)</div>
+                                            <div className="text-[11px] font-mono text-indigo-900/80">Canvas, BB, Moodle, D2L, WebAssign</div>
+                                        </div>
                                     </td>
-                                    <td className="py-4 px-4 text-center text-emerald-800">✓ Instant 0.3s</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">
+                                        <div>✓ 0.3s Double-Click + Alt+S</div>
+                                        <div className="text-[10px] font-mono text-emerald-900">Alt+1/2/3 · ⌘+Shift+U</div>
+                                    </td>
                                     <td className="py-4 px-4 text-center text-emerald-800">✓ 100% Isolated</td>
-                                    <td className="py-4 px-4 text-center text-emerald-800">✓ Focus Shield</td>
-                                    <td className="py-4 px-4 text-center text-indigo-950 font-semibold">Canvas, BB, Moodle, D2L</td>
-                                    <td className="py-4 px-4 font-extrabold text-emerald-800 text-xs sm:text-sm">50 Free · $19/mo · $99/yr · $199 Life</td>
-                                    <td className="py-4 px-4 text-right text-indigo-900 font-bold">Recommended</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">✓ 4-Layer Shield</td>
+                                    <td className="py-4 px-4 text-center text-indigo-950 font-semibold">
+                                        ✓ Claude 3.7 + GPT-4o/o3 + R1
+                                    </td>
+                                    <td className="py-4 px-4 font-extrabold text-emerald-800 text-xs">
+                                        <div>5 Free Solves / Day ($0)</div>
+                                        <div className="text-[11px] text-ink-secondary font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</div>
+                                    </td>
+                                    <td className="py-4 px-4 text-right text-indigo-900 font-bold">#1 Pick</td>
                                 </tr>
 
                                 {/* Competitors */}
@@ -351,14 +408,8 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                                 <span className="text-rose-800 font-bold">✗ Leaks Focus</span>
                                             )}
                                         </td>
-                                        <td className="py-3.5 px-4 text-center text-ink-muted">
-                                            {comp.name.includes('Canvas') || comp.name === 'Quizonator' || comp.name === 'AskSia'
-                                                ? 'Canvas only'
-                                                : comp.name === 'MyLab Solver'
-                                                ? 'Pearson only (Dead)'
-                                                : comp.name === 'EasySB & SmarterBook'
-                                                ? 'SmartBook only'
-                                                : 'Limited'}
+                                        <td className="py-3.5 px-4 text-center text-ink-muted text-xs">
+                                            ✗ Single Wrapper / None
                                         </td>
                                         <td className="py-3.5 px-4 text-xs font-medium text-ink-muted">
                                             {comp.pricingSummary}

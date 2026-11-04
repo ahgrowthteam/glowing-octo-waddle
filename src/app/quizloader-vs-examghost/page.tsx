@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaChrome } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { QuizLoaderComputerArchitectureDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
   title: {
@@ -40,112 +42,142 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'WebPage',
-      '@id': 'https://examghost.com/quizloader-vs-examghost#webpage',
-      name: 'Canvas Quiz Loader vs ExamGhost (2026): Technical & Attempt-Replay Audit',
-      description:
-        'Side-by-side comparison between Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl) and ExamGhost across first-attempt AI solving, dynamic formula calculation, DOM stealth, and Canvas SpeedGrader telemetry.',
-      url: 'https://examghost.com/quizloader-vs-examghost',
-      datePublished: '2026-02-12',
-      dateModified: '2026-03-19',
-      breadcrumb: { '@id': 'https://examghost.com/quizloader-vs-examghost#breadcrumb' },
-      author: {
-        '@type': 'Organization',
-        name: 'ExamGhost Security Engineering Team',
-        url: 'https://examghost.com',
+      "@type": "WebPage",
+      "@id": "https://examghost.com/quizloader-vs-examghost#webpage",
+      "name": "Canvas Quiz Loader vs ExamGhost (2026): Technical & Attempt-Replay Audit",
+      "description":
+        "Side-by-side comparison between Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl) and ExamGhost across first-attempt AI solving, dynamic formula calculation, DOM stealth, and Canvas SpeedGrader telemetry.",
+      "url": "https://examghost.com/quizloader-vs-examghost",
+      "datePublished": "2026-02-12",
+      "dateModified": "2026-03-19",
+      "breadcrumb": { "@id": "https://examghost.com/quizloader-vs-examghost#breadcrumb" },
+      "author": {
+        "@type": "Organization",
+        "name": "ExamGhost Security Engineering Team",
+        "url": "https://examghost.com",
       },
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', 'h2', 'summary'],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "summary"],
       },
-      about: [
+      "about": [
         {
-          '@type': 'SoftwareApplication',
-          name: 'ExamGhost',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome, Edge, Brave, macOS, Windows',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '199.00',
-            priceCurrency: 'USD',
-            offerCount: '4',
+          "@type": "SoftwareApplication",
+          "name": "ExamGhost",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0.00",
+            "highPrice": "199.00",
+            "priceCurrency": "USD",
+            "offerCount": "4",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "5 Free Solves / Day",
+                "price": "0.00",
+                "priceCurrency": "USD",
+                "description": "Daily free tier with 5 automated stealth solves per day.",
+              },
+              {
+                "@type": "Offer",
+                "name": "Monthly Pass",
+                "price": "19.00",
+                "priceCurrency": "USD",
+                "description": "Unlimited solves with all stealth features billed monthly.",
+              },
+              {
+                "@type": "Offer",
+                "name": "Academic Year Pass",
+                "price": "99.00",
+                "priceCurrency": "USD",
+                "description": "Full academic year access ($8.25/mo equivalent) with priority frontier models.",
+              },
+              {
+                "@type": "Offer",
+                "name": "Lifetime Pass",
+                "price": "199.00",
+                "priceCurrency": "USD",
+                "description": "One-time payment for permanent unlimited access and lifetime updates.",
+              },
+            ],
           },
         },
         {
-          '@type': 'SoftwareApplication',
-          name: 'Canvas Quiz Loader',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome Extension',
-          offers: {
-            '@type': 'Offer',
-            price: '0.00',
-            priceCurrency: 'USD',
+          "@type": "SoftwareApplication",
+          "name": "Canvas Quiz Loader",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome Extension",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
           },
         },
       ],
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://examghost.com/quizloader-vs-examghost#breadcrumb',
-      itemListElement: [
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/quizloader-vs-examghost#breadcrumb",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://examghost.com',
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://examghost.com",
         },
         {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Competitor Comparisons',
-          item: 'https://examghost.com/compare-canvas-hack-extensions',
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Competitor Comparisons",
+          "item": "https://examghost.com/compare-canvas-hack-extensions",
         },
         {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'Canvas Quiz Loader vs ExamGhost',
-          item: 'https://examghost.com/quizloader-vs-examghost',
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Canvas Quiz Loader vs ExamGhost",
+          "item": "https://examghost.com/quizloader-vs-examghost",
         },
       ],
     },
     {
-      '@type': 'FAQPage',
-      '@id': 'https://examghost.com/quizloader-vs-examghost#faq',
-      mainEntity: [
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/quizloader-vs-examghost#faq",
+      "mainEntity": [
         {
-          '@type': 'Question',
-          name: 'Does Canvas Quiz Loader work on your first quiz attempt or single-attempt exams?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Canvas Quiz Loader (Chrome ID pfagnepdndhkmilceinbebdfbmiddagl, v0.5.4) contains zero AI and cannot solve questions. As its Chrome Web Store listing explicitly states, it only "scans your previous submissions, picks out correct answers, and automatically applies them to the current attempt." On a 1-attempt midterm, final exam, or your first attempt of a quiz, it does nothing.',
+          "@type": "Question",
+          "name": "Does Canvas Quiz Loader work on your first quiz attempt or single-attempt exams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Canvas Quiz Loader (Chrome ID pfagnepdndhkmilceinbebdfbmiddagl, v0.5.4) contains zero AI and cannot solve questions. As its Chrome Web Store listing explicitly states, it only \"scans your previous submissions, picks out correct answers, and automatically applies them to the current attempt.\" On a 1-attempt midterm, final exam, or your first attempt of a quiz, it does nothing.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'What happens with Canvas Quiz Loader when the professor changes formula numbers or hides correct answers?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Developer Alex Shnyrov explicitly warns in the Chrome Web Store description: "If formula or variables within the formula change, the answer might have to be changed as well. Fill in multiple blank question type does not auto-populate." Furthermore, if a professor disables "Let Students See The Correct Answers" in Canvas settings, Canvas Quiz Loader cannot tell which option is right and either fails or re-selects your previous wrong answer.',
+          "@type": "Question",
+          "name": "What happens with Canvas Quiz Loader when the professor changes formula numbers or hides correct answers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Developer Alex Shnyrov explicitly warns in the Chrome Web Store description: \"If formula or variables within the formula change, the answer might have to be changed as well. Fill in multiple blank question type does not auto-populate.\" Furthermore, if a professor disables \"Let Students See The Correct Answers\" in Canvas settings, Canvas Quiz Loader cannot tell which option is right and either fails or re-selects your previous wrong answer.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'Can professors detect Canvas Quiz Loader auto-filling answers in SpeedGrader?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Because Canvas Quiz Loader programmatically checks radio buttons and populates text fields across the entire page in under 1 second, Canvas Action Logs record 0.0s–0.4s elapsed time between question answers and synthetic DOM change events (event.isTrusted === false). ExamGhost instead renders answers silently inside a Closed Shadow DOM badge so you click naturally with genuine hardware events.',
+          "@type": "Question",
+          "name": "Can professors detect Canvas Quiz Loader auto-filling answers in SpeedGrader?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Because Canvas Quiz Loader programmatically checks radio buttons and populates text fields across the entire page in under 1 second, Canvas Action Logs record 0.0s–0.4s elapsed time between question answers and synthetic DOM change events (event.isTrusted === false). ExamGhost instead renders answers silently inside a Closed Shadow DOM badge so you click naturally with genuine hardware events.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'Does Canvas Quiz Loader work on Blackboard, Moodle, Pearson MyLab, or McGraw-Hill?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Canvas Quiz Loader is hardcoded exclusively for Canvas LMS submission history tables. ExamGhost works across Canvas (Classic & New Quizzes LTI), Blackboard Ultra, Moodle, D2L Brightspace, Pearson MyLab, McGraw-Hill Connect, ALEKS, Cengage MindTap, and Respondus browser tests.',
+          "@type": "Question",
+          "name": "Does Canvas Quiz Loader work on Blackboard, Moodle, Pearson MyLab, or McGraw-Hill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Canvas Quiz Loader is hardcoded exclusively for Canvas LMS submission history tables. ExamGhost works across Canvas (Classic & New Quizzes LTI), Blackboard Ultra, Moodle, D2L Brightspace, Pearson MyLab, McGraw-Hill Connect, ALEKS, Cengage MindTap, and Respondus browser tests.",
           },
         },
       ],
@@ -155,14 +187,15 @@ const jsonLd = {
 
 export default function QuizLoaderVsExamGhostPage() {
   return (
-    <main className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#d3f8e2] selection:text-[#111]">
+    <div className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#d3f8e2] selection:text-[#111]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
 
-      {/* Top Forensic Banner */}
+      <main id="main-content">
+        {/* Top Forensic Banner */}
       <div className="bg-[#111] text-white border-b-2 border-[#111] px-4 py-2.5 text-xs font-mono mt-20">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -268,7 +301,7 @@ export default function QuizLoaderVsExamGhostPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111] text-white font-bold text-sm shadow-[4px_4px_0px_#047857] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   <FaChrome className="w-4 h-4 text-[#d3f8e2]" aria-hidden="true" />
-                  <span>Start 50 Free Solves · $0 No Card</span>
+                  <span>Start 5 Free Solves / Day · $0 No Card</span>
                 </Link>
                 <a
                   href="#store-receipts"
@@ -348,12 +381,14 @@ export default function QuizLoaderVsExamGhostPage() {
         </div>
       </section>
 
+        <QuizLoaderComputerArchitectureDemo />
+
       {/* Section 2: Interactive 4-Tab Failure Breakdown (Pure CSS Peer-Checked) */}
       <section id="store-receipts" className="py-14 px-4 border-b-2 border-[#111]">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mb-8">
+          <div className="max-w-3xl mb-10">
             <span className="text-xs font-mono uppercase tracking-wider bg-[#111] text-white px-2.5 py-1 rounded font-bold">
-              ARCHITECTURAL AUTOPSY
+              VISIBLE ARCHITECTURAL AUTOPSY · 4 FAILURE MODES
             </span>
             <h2 className="text-2xl sm:text-4xl font-black mt-3 mb-3">
               Why 50,000 Students Hit a Wall With Canvas Quiz Loader on Real Exams
@@ -361,272 +396,174 @@ export default function QuizLoaderVsExamGhostPage() {
             <p className="text-neutral-700 text-sm sm:text-base">
               Canvas Quiz Loader was built for a single narrow scenario: an unproctored Canvas
               practice quiz where the professor gives unlimited attempts, never changes the
-              questions, and exposes the full answer key after Attempt #1. Click through the 4 tabs
-              below to see what happens in real college courses.
+              questions, and exposes the full answer key after Attempt #1. Below is the full technical
+              breakdown of how it fails on real university exams compared to ExamGhost.
             </p>
           </div>
 
-          {/* Pure CSS Radio Tabs */}
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111]">
-            <input
-              type="radio"
-              name="ql-audit-tabs"
-              id="ql-tab-1"
-              className="peer/tab1 hidden"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="ql-audit-tabs"
-              id="ql-tab-2"
-              className="peer/tab2 hidden"
-            />
-            <input
-              type="radio"
-              name="ql-audit-tabs"
-              id="ql-tab-3"
-              className="peer/tab3 hidden"
-            />
-            <input
-              type="radio"
-              name="ql-audit-tabs"
-              id="ql-tab-4"
-              className="peer/tab4 hidden"
-            />
-
-            {/* Tab Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-6 border-b-2 border-[#111] pb-4">
-              <label
-                htmlFor="ql-tab-1"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#d3f8e2]/60 peer-checked/tab1:bg-[#d3f8e2] peer-checked/tab1:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Failure Mode 01
-                </span>
-                1-Attempt Exams &amp; Attempt #1
-              </label>
-
-              <label
-                htmlFor="ql-tab-2"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#d3f8e2]/60 peer-checked/tab2:bg-[#d3f8e2] peer-checked/tab2:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Failure Mode 02
-                </span>
-                Hidden Answer Keys &amp; Wrong Replay
-              </label>
-
-              <label
-                htmlFor="ql-tab-3"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#d3f8e2]/60 peer-checked/tab3:bg-[#d3f8e2] peer-checked/tab3:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Failure Mode 03
-                </span>
-                Randomized Banks &amp; Formula Math
-              </label>
-
-              <label
-                htmlFor="ql-tab-4"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#d3f8e2]/60 peer-checked/tab4:bg-[#d3f8e2] peer-checked/tab4:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Failure Mode 04
-                </span>
-                0.2s Auto-Fill SpeedGrader Flag
-              </label>
+          {/* COMPLETE 6-HOTKEY STEALTH SUITE */}
+          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[5px_5px_0px_#111] mb-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-neutral-100 pb-4 mb-6">
+              <div>
+                <h3 className="font-black text-lg text-ink">ExamGhost 6-Hotkey Stealth Operating System</h3>
+                <p className="text-xs text-neutral-600 font-mono">0-DOM closed shadowroot execution · Multi-Model STEM consensus · Humanized event dispatch</p>
+              </div>
+              <span className="self-start md:self-auto px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold font-mono">
+                5 Free Solves / Day ($0) · $19/mo · $99/yr · $199 Lifetime
+              </span>
             </div>
-
-            {/* Tab 1 Content */}
-            <div className="hidden peer-checked/tab1:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  CANVAS QUIZ LOADER (v0.5.4)
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">Double-Click</code>
+                  <span className="text-[11px] font-bold text-emerald-700">0.3s Auto-Fill</span>
                 </div>
-                <h3 className="text-xl font-black mb-2">
+                <p className="text-xs text-neutral-600">Double-click any question stem to solve and select the correct option with zero on-screen DOM modifications.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">Alt+S</code>
+                  <span className="text-[11px] font-bold text-emerald-700">Snap-It Crop</span>
+                </div>
+                <p className="text-xs text-neutral-600">In-memory screenshot OCR for computer architecture logic gates, CPU cache diagrams, and assembly code blocks.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">Alt+1</code>
+                  <span className="text-[11px] font-bold text-emerald-700">Auto-Select Radio</span>
+                </div>
+                <p className="text-xs text-neutral-600">Dispatches genuine hardware events with isTrusted: true, pacing selections at natural human intervals.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">Alt+2</code>
+                  <span className="text-[11px] font-bold text-emerald-700">Smart Highlight</span>
+                </div>
+                <p className="text-xs text-neutral-600">Subtle green glow highlight overlay rendered exclusively within closed Shadow root without altering host styles.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">Alt+3</code>
+                  <span className="text-[11px] font-bold text-emerald-700">Ghost HUD Overlay</span>
+                </div>
+                <p className="text-xs text-neutral-600">Full architectural instruction cycle modal with adjustable opacity slider (0% to 100%) for deep conceptual verification.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center justify-between mb-2">
+                  <code className="px-2 py-0.5 rounded bg-neutral-200 text-ink font-mono font-bold text-xs">⌘+Shift+U</code>
+                  <span className="text-[11px] font-bold text-rose-700">&lt;8ms Panic Flush</span>
+                </div>
+                <p className="text-xs text-neutral-600">Emergency panic purge instantly wipes HUD memory and restores pristine Canvas state if an instructor approaches.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 Visible Autopsy Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Failure Mode 01 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[5px_5px_0px_#111] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider bg-red-100 text-red-900 border border-red-200 px-2.5 py-1 rounded-full">
+                    Failure Mode 01
+                  </span>
+                  <span className="text-xs font-mono text-neutral-500">Attempt #1 Lockout</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-black text-ink mb-2">
                   Requires You to Burn Attempt #1 Before It Can Do Anything
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  At only <code>176KiB</code>, Canvas Quiz Loader is a lightweight DOM parser that
-                  fetches your <code>/submissions/</code> HTML history on Canvas. If you have no
-                  prior submission—either because it is your <strong>first attempt</strong> or
-                  because it is a <strong>single-attempt midterm or final exam</strong>—clicking the
-                  extension icon returns zero answers.
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-4">
+                  At only <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">176 KiB</code>, Canvas Quiz Loader is a lightweight DOM parser that fetches your <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">/submissions/</code> HTML history on Canvas. If you have no prior submission—either because it is your <strong>first attempt</strong> or because it is a <strong>single-attempt midterm or final exam</strong>—clicking the extension icon returns zero answers.
                 </p>
-                <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
-                  <div>// What happens on a 1-Attempt Canvas Midterm:</div>
-                  <div className="mt-1">1. Open Midterm Quiz (Attempts Allowed: 1)</div>
-                  <div>2. Click Canvas Quiz Loader icon</div>
-                  <div className="font-bold text-red-600">
-                    3. Output: &quot;No previous submission found&quot; → 0 questions answered.
-                  </div>
+                <div className="bg-red-50 border border-red-200 rounded-xl p-3.5 font-mono text-xs text-red-950 mb-4 space-y-1">
+                  <div className="text-neutral-500">// What happens on a 1-Attempt Canvas Exam:</div>
+                  <div>1. Open Midterm Quiz (Attempts Allowed: 1)</div>
+                  <div>2. Click Canvas Quiz Loader extension icon</div>
+                  <div className="font-bold text-red-600">3. Output: &quot;No previous submission found&quot; → 0 questions answered.</div>
                 </div>
               </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST ARCHITECTURE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Solves Attempt #1 Live in 0.3s With Multi-Model STEM Consensus
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost doesn&apos;t wait for you to fail Attempt #1. On your very first
-                  attempt, ExamGhost extracts the question context (and any uploaded lecture PDFs in
-                  your local <strong>Course Materials RAG Vault</strong>), routes it through frontier
-                  models in parallel, and displays the verified answer inside a subtle{' '}
-                  <strong>Closed Shadow DOM</strong> badge.
-                </p>
-                <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
-                  <div>// ExamGhost on Attempt #1 or Single-Attempt Finals:</div>
-                  <div className="mt-1">1. Open any Canvas, Blackboard, or MyLab exam</div>
-                  <div>2. Press ⌘+Shift+A (or ⌘+Shift+S for diagrams/graphs)</div>
-                  <div className="font-bold text-emerald-700">
-                    3. Output: 99.4% verified solution + step-by-step math on Attempt #1.
-                  </div>
-                </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 font-mono text-xs text-emerald-950">
+                <div className="font-bold text-emerald-800 mb-1">✓ ExamGhost Architecture:</div>
+                <div>Solves Attempt #1 in 0.3s via Multi-Model STEM Consensus inside a Closed Shadow DOM badge. Never relies on prior attempts.</div>
               </div>
             </div>
 
-            {/* Tab 2 Content */}
-            <div className="hidden peer-checked/tab2:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  CANVAS QUIZ LOADER (v0.5.4)
+            {/* Failure Mode 02 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[5px_5px_0px_#111] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider bg-red-100 text-red-900 border border-red-200 px-2.5 py-1 rounded-full">
+                    Failure Mode 02
+                  </span>
+                  <span className="text-xs font-mono text-neutral-500">Hidden Answer Keys</span>
                 </div>
-                <h3 className="text-xl font-black mb-2">
+                <h3 className="text-lg sm:text-xl font-black text-ink mb-2">
                   Fails or Re-Selects Wrong Answers When Professors Hide the Key
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  Even on multi-attempt quizzes, most professors uncheck{' '}
-                  <em>&ldquo;Let Students See The Correct Answers&rdquo;</em> in Canvas Quiz
-                  settings (showing only which questions you missed, or hiding responses entirely
-                  until after the due date). When the green <code>.correct_answer</code> DOM class
-                  is absent from your previous submission page, Canvas Quiz Loader cannot solve the
-                  missed questions—leaving you to guess again or re-filling your old wrong choice.
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-4">
+                  Even on multi-attempt quizzes, most professors uncheck <em>&ldquo;Let Students See The Correct Answers&rdquo;</em> in Canvas Quiz settings. When the green <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">.correct_answer</code> DOM class is absent from your submission page, Canvas Quiz Loader cannot determine the right option and either fails completely or re-selects your old wrong choice.
                 </p>
-                <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
+                <ul className="bg-red-50 border border-red-200 rounded-xl p-3.5 text-xs font-mono text-red-950 mb-4 space-y-1">
                   <li>✗ Professor unchecks &quot;Show Correct Answers&quot; → Extension blinded</li>
-                  <li>✗ Professor keeps highest vs average score → Attempt #1 hurts GPA</li>
-                  <li>✗ Canvas New Quizzes (LTI 1.3 iframe) → Different DOM, scraper breaks</li>
+                  <li>✗ Professor averages attempts → Failed Attempt #1 permanently damages GPA</li>
+                  <li>✗ Canvas New Quizzes (LTI 1.3 iframe) → Scraper crashes on cross-origin iframe</li>
                 </ul>
               </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST ARCHITECTURE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Independent AI Reasoning That Never Relies on Exposed Answer Keys
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost solves every question from first principles using Multi-Model Consensus
-                  + your own course syllabus/slides. Even if your professor completely locks down
-                  post-submission review and averages all attempts together, you get the right
-                  answer on Attempt #1.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Works when post-quiz review is completely locked by instructor</li>
-                  <li>✓ Protects GPA when Canvas is set to &quot;Average All Attempts&quot;</li>
-                  <li>✓ Native support for both Canvas Classic &amp; Canvas New Quizzes LTI</li>
-                </ul>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 font-mono text-xs text-emerald-950">
+                <div className="font-bold text-emerald-800 mb-1">✓ ExamGhost Architecture:</div>
+                <div>Independent AI reasoning from first principles. Works when post-submission review is 100% locked by instructors.</div>
               </div>
             </div>
 
-            {/* Tab 3 Content */}
-            <div className="hidden peer-checked/tab3:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  DEVELOPER ADMISSION (v0.5.4)
+            {/* Failure Mode 03 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[5px_5px_0px_#111] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider bg-red-100 text-red-900 border border-red-200 px-2.5 py-1 rounded-full">
+                    Failure Mode 03
+                  </span>
+                  <span className="text-xs font-mono text-neutral-500">Randomized Formula Numbers</span>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Breaks on Randomized Formula Numbers &amp; Multi-Blank Questions
+                <h3 className="text-lg sm:text-xl font-black text-ink mb-2">
+                  Breaks on Randomized Formula Variables &amp; Multi-Blank Tables
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  In STEM courses (Chemistry, Physics, Calculus, Accounting, Finance), Canvas
-                  generates new random variables on every attempt (e.g., Attempt 1 asks for{' '}
-                  <code>m = 4.2 kg</code>; Attempt 2 asks for <code>m = 7.9 kg</code>). Developer
-                  Alex Shnyrov explicitly warns in the store listing:
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-4">
+                  In STEM courses, Canvas generates new random variables on each attempt (e.g., Attempt 1 asks for <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">m = 4.2 kg</code>; Attempt 2 asks for <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">m = 7.9 kg</code>). Developer Alex Shnyrov explicitly admits in the Chrome Web Store:
                 </p>
-                <blockquote className="bg-white border-l-4 border-red-600 p-3 text-xs italic text-neutral-800 mb-3">
-                  &ldquo;* If formula or variables within the formula change, the answer might have
-                  to be changed as well.
-                  <br />* Fill in multiple blank question type does not auto-populate.&rdquo;
+                <blockquote className="bg-neutral-100 border-l-4 border-red-500 p-3 text-xs italic text-neutral-800 mb-4">
+                  &ldquo;* If formula or variables within the formula change, the answer might have to be changed as well.<br />* Fill in multiple blank question type does not auto-populate.&rdquo;
                 </blockquote>
-                <p className="text-xs text-red-900 font-mono">
-                  Result: Auto-filling Attempt #1&apos;s numeric answer into Attempt #2 submits the
-                  wrong number and marks the question wrong.
-                </p>
               </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST STEM ENGINE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Re-Calculates Every New Variable, LaTeX Formula &amp; Multi-Blank Table
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost reads the exact live numbers, LaTeX equations, and embedded diagrams on
-                  your current screen—re-computing the exact numerical answer to the required
-                  decimal places or significant figures on every single question.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Solves dynamic Canvas Formula Questions with fresh variables</li>
-                  <li>✓ Solves Fill-in-Multiple-Blanks, Matching, &amp; Dropdown matrices</li>
-                  <li>✓ ⌘+Shift+S Vision OCR reads chemical structures &amp; physics free-body diagrams</li>
-                </ul>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 font-mono text-xs text-emerald-950">
+                <div className="font-bold text-emerald-800 mb-1">✓ ExamGhost Architecture:</div>
+                <div>Dynamically reads live numbers &amp; LaTeX formulas on your current attempt, re-computing precise numerical values every time.</div>
               </div>
             </div>
 
-            {/* Tab 4 Content */}
-            <div className="hidden peer-checked/tab4:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  SPEEDGRADER TELEMETRY RISK
+            {/* Failure Mode 04 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[5px_5px_0px_#111] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider bg-red-100 text-red-900 border border-red-200 px-2.5 py-1 rounded-full">
+                    Failure Mode 04
+                  </span>
+                  <span className="text-xs font-mono text-neutral-500">SpeedGrader Telemetry Flag</span>
                 </div>
-                <h3 className="text-xl font-black mb-2">
+                <h3 className="text-lg sm:text-xl font-black text-ink mb-2">
                   Instant Bulk Auto-Fill Creates Impossible 0.2s Action Logs
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  When Canvas Quiz Loader &ldquo;automatically applies them to the current
-                  attempt,&rdquo; its content script loops through every question in the DOM and
-                  programmatically sets <code>input.checked = true</code> or dispatches synthetic
-                  change events. In Canvas SpeedGrader&apos;s Quiz Log, the professor sees 25
-                  questions answered at <code>00:01</code> elapsed time with{' '}
-                  <code>event.isTrusted === false</code>.
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-4">
+                  When Canvas Quiz Loader &ldquo;automatically applies answers to the current attempt,&rdquo; its script loops through all questions and programmatically triggers synthetic click events. In Canvas SpeedGrader&apos;s Action Log, the professor sees 25 questions answered at <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">00:01</code> with <code className="bg-neutral-100 px-1 py-0.5 rounded font-mono">event.isTrusted === false</code>.
                 </p>
-                <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
+                <div className="bg-red-50 border border-red-200 rounded-xl p-3.5 font-mono text-xs text-red-950 mb-4 space-y-1">
                   <div>00:01 • Answered Q1, Q2, Q3 ... Q25 simultaneously</div>
                   <div>00:02 • Event signature: synthetic script mutation (isTrusted: false)</div>
-                  <div className="font-bold text-red-600 mt-1">
-                    → Instant academic integrity review for automated script injection.
-                  </div>
+                  <div className="font-bold text-red-600 mt-1">→ Instant academic integrity review for automated script injection.</div>
                 </div>
               </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST ZERO-TRACE STEALTH
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Closed Shadow DOM Display + Natural Human Clicks (`isTrusted: true`)
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost never programmatically mutates Canvas radio inputs or fires bulk
-                  auto-fill scripts. Instead, it displays a subtle answer indicator inside an
-                  isolated <code>attachShadow(&#123; mode: &apos;closed&apos; &#125;)</code> container so
-                  you click the option yourself at a natural human pace—generating 100% authentic{' '}
-                  <code>isTrusted: true</code> hardware events while <strong>Focus Shield</strong>{' '}
-                  blocks any <code>window.blur</code> logs.
-                </p>
-                <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
-                  <div>00:18 • Answered Q1 via genuine mouse click (isTrusted: true)</div>
-                  <div>00:44 • Answered Q2 via genuine mouse click (isTrusted: true)</div>
-                  <div className="font-bold text-emerald-700 mt-1">
-                    → Zero page-left events, natural pacing, zero DOM mutations.
-                  </div>
-                </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 font-mono text-xs text-emerald-950">
+                <div className="font-bold text-emerald-800 mb-1">✓ ExamGhost Architecture:</div>
+                <div>Displays answers in Closed Shadow DOM so you click options with authentic hardware events (<code className="font-bold">isTrusted: true</code>) at natural human pacing.</div>
               </div>
             </div>
           </div>
@@ -714,7 +651,7 @@ export default function QuizLoaderVsExamGhostPage() {
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
                   <span className="text-emerald-300 font-bold">[Attempt #1 • 00:24s]</span> Student
-                  presses <code>⌘+Shift+A</code>. Multi-Model AI solves Q1 inside{' '}
+                  <code>Double-Clicks</code> the question. Multi-Model AI solves Q1 inside{' '}
                   <code>Closed Shadow DOM</code>. Student clicks option naturally (
                   <code>isTrusted: true</code>).
                 </div>
@@ -807,7 +744,7 @@ export default function QuizLoaderVsExamGhostPage() {
                     ✗ Dev states &ldquo;Fill in multiple blank question type does not auto-populate&rdquo;
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ Full support for Multi-Blanks + ⌘+Shift+S Snap-It Vision OCR for graphs
+                    ✓ Full support for Multi-Blanks + Alt+S Snap-It Vision OCR for graphs
                   </td>
                 </tr>
                 <tr>
@@ -862,10 +799,18 @@ export default function QuizLoaderVsExamGhostPage() {
                     Free utility (no AI engine, attempt-copier only)
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ 50 Free AI Solves ($0, No Card) • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                    ✓ 5 Free AI Solves / Day ($0, No Card) • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                   </td>
                 </tr>
-              </tbody>
+              
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  </tr>
+                </tbody>
             </table>
           </div>
 
@@ -1070,10 +1015,10 @@ Verbatim Limitations from Store Description:
             STOP BURNING ATTEMPT #1 ON UNSOLVED QUIZZES
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Get 50 Free First-Attempt Solves With ExamGhost
+            Get 5 Free/Day First-Attempt Solves With ExamGhost
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
-            Test ExamGhost right now with <strong>50 free AI solves ($0, no credit card)</strong>.
+            Test ExamGhost right now with <strong>5 Free/Day AI solves ($0, no credit card)</strong>.
             Solve Attempt #1, randomized formula variables, and multi-blank questions inside an
             undetectable Closed Shadow DOM with Focus Shield active.
           </p>
@@ -1084,7 +1029,7 @@ Verbatim Limitations from Store Description:
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-400 text-[#111] font-black text-sm hover:bg-emerald-300 transition-all"
             >
               <FaChrome className="w-4 h-4" aria-hidden="true" />
-              <span>Start 50 Free Solves · $0 No Card</span>
+              <span>Start 5 Free Solves / Day · $0 No Card</span>
             </Link>
             <Link prefetch={false}
               href="/compare-canvas-hack-extensions"
@@ -1140,7 +1085,13 @@ Verbatim Limitations from Store Description:
           </div>
         </div>
       </section>
-      <Footer />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+        <StudyAiHubShowcase compact />
+      </div>
     </main>
+
+    <Footer />
+  </div>
   );
 }

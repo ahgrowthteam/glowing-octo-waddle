@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { ClassologyManifestDomDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Classology AI vs ExamGhost (2026) — 40.8MiB Sidebar Audit",
     },
-    description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/classology-vs-examghost",
     },
     openGraph: {
         title: "Classology AI vs ExamGhost (2026) — 40.8MiB Sidebar Audit",
-        description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/classology-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Classology AI vs ExamGhost (2026) — 40.8MiB Sidebar Audit",
-        description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -72,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does Classology AI pricing compare to ExamGhost in 2026?",
-    a: "Classology.ai offers a study app for flashcards and AI podcasts with a limited free tier, while Classology Pro bills ~$14.99–$19.99/month recurring across Web, iOS, and Android (up to $720 over a 4-year degree). ExamGhost gives every student 50 Free Solves with no credit card required, followed by $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 One-Time Lifetime.",
+    a: "Classology.ai offers a study app for flashcards and AI podcasts with a limited free tier, while Classology Pro bills ~$14.99–$19.99/month recurring across Web, iOS, and Android (up to $720 over a 4-year degree). ExamGhost gives every student 5 Free Solves / Day with no credit card required, followed by $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 One-Time Lifetime.",
   },
 ];
 
@@ -80,6 +82,39 @@ export default function ClassologyVsExamGhostPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-27",
@@ -140,7 +175,7 @@ export default function ClassologyVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -237,7 +272,7 @@ export default function ClassologyVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -350,6 +385,8 @@ export default function ClassologyVsExamGhostPage() {
           </div>
         </section>
 
+        <ClassologyManifestDomDemo />
+
         {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
           <div className="text-center max-w-3xl mx-auto mb-8">
@@ -368,25 +405,9 @@ export default function ClassologyVsExamGhostPage() {
 
           <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
             {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="classology-audit-tabs"
-              id="tab-classology-sidebar"
-              className="sr-only peer/sidebar"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="classology-audit-tabs"
-              id="tab-classology-privacy"
-              className="sr-only peer/privacy"
-            />
-            <input
-              type="radio"
-              name="classology-audit-tabs"
-              id="tab-classology-cost"
-              className="sr-only peer/cost"
-            />
+            
+            
+            
 
             {/* Tab Headers */}
             <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
@@ -414,7 +435,7 @@ export default function ClassologyVsExamGhostPage() {
             </div>
 
             {/* Panel 1: Sidebar & Solve Button */}
-            <div className="hidden peer-checked/sidebar:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-purple-50 text-purple-800 text-xs font-bold">
                   Visual &amp; Telemetry Exposure
@@ -489,7 +510,7 @@ export default function ClassologyVsExamGhostPage() {
             </div>
 
             {/* Panel 2: Non-Trader & 4 Data Categories */}
-            <div className="hidden peer-checked/privacy:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
                   Chrome Web Store Privacy Audit
@@ -559,7 +580,7 @@ export default function ClassologyVsExamGhostPage() {
             </div>
 
             {/* Panel 3: Study App vs 3-Model Stealth */}
-            <div className="hidden peer-checked/cost:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold">
                   Accuracy &amp; Pricing Breakdown
@@ -584,7 +605,7 @@ export default function ClassologyVsExamGhostPage() {
                     GPT-5.4, Claude Sonnet 4.6, and Gemini 3.1 Pro
                   </strong>{" "}
                   in parallel for 99.2% accuracy and gives you{" "}
-                  <strong>50 free solves</strong> to prove it before you ever pay
+                  <strong>5 free solves / day</strong> to prove it before you ever pay
                   a cent.
                 </p>
               </div>
@@ -612,7 +633,7 @@ export default function ClassologyVsExamGhostPage() {
                       ExamGhost Free Trial
                     </div>
                     <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
+                      5 Free Solves / Day (auto-refills every 24h, no card required)
                     </div>
                   </div>
                   <span className="font-mono font-bold text-emerald-400 text-sm">
@@ -703,7 +724,7 @@ export default function ClassologyVsExamGhostPage() {
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
                       Stealth Snap-It (
-                      <code className="font-mono text-xs">⌘+Shift+S</code>) with
+                      <code className="font-mono text-xs">Alt+S</code>) with
                       0ms focus loss
                     </td>
                   </tr>
@@ -749,8 +770,25 @@ export default function ClassologyVsExamGhostPage() {
                       ~$14.99–$19.99/mo recurring subscription
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                      5 Free Solves / Day • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                     </td>
+                  </tr>
+                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -868,7 +906,7 @@ export default function ClassologyVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> and{" "}
+                    You want <strong>5 free solves / day</strong> and{" "}
                     <strong>3-model consensus accuracy (99.2%)</strong> without
                     handing over 4 categories of personal data.
                   </span>
@@ -918,7 +956,7 @@ export default function ClassologyVsExamGhostPage() {
                   <span>Replace 40.87MiB Sidebars with Zero-Trace Stealth</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Start with 50 Free Solves Inside ExamGhost&apos;s Closed
+                  Start with 5 Free Solves / Day Inside ExamGhost&apos;s Closed
                   Shadow DOM.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -932,7 +970,7 @@ export default function ClassologyVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -979,6 +1017,9 @@ export default function ClassologyVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

@@ -240,7 +240,7 @@ export default function LmsInteractiveVideoDemo({
                 id: 5,
                 code: '06',
                 label: 'Screenshot Snip OCR (Alt+S)',
-                caption: `Press Alt+S (or ⌘+Shift+S) and drag the crop box over any locked ${platformName} graph, equation, or iframe diagram to solve via Vision AI.`,
+                caption: `Press Alt+S and drag the crop box over any locked ${platformName} graph, equation, or iframe diagram to solve via Vision AI.`,
                 durationMs: 7200,
             },
         ],
@@ -258,8 +258,8 @@ export default function LmsInteractiveVideoDemo({
     const [showLicenseModal, setShowLicenseModal] = useState(false);
     const [licenseKey, setLicenseKey] = useState('');
     const [licenseSuccess, setLicenseSuccess] = useState(false);
-    const [usedMessages, setUsedMessages] = useState(14);
-    const [totalMessages, setTotalMessages] = useState(50);
+    const [usedMessages, setUsedMessages] = useState(2);
+    const [totalMessages, setTotalMessages] = useState(5);
 
     // Mode 1: Invisible Toggles
     const [invisibleAutoFill, setInvisibleAutoFill] = useState(true);
@@ -1286,9 +1286,9 @@ export default function LmsInteractiveVideoDemo({
                                                 </div>
                                             )}
 
-                                            <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-4 leading-snug">
+                                            <p className="font-display text-base sm:text-lg font-bold text-ink mb-4 leading-snug">
                                                 {currentQ.question}
-                                            </h3>
+                                            </p>
 
                                             <div className="space-y-2">
                                                 {currentQ.options.map((opt) => {
@@ -1915,6 +1915,7 @@ function LmsSwitchRow({
                 type="button"
                 role="switch"
                 aria-checked={checked}
+                aria-label={label}
                 onClick={() => onChange(!checked)}
                 className={`relative w-10 h-[22px] rounded-full transition-colors cursor-pointer shrink-0 ${
                     checked ? 'bg-[#10b981]' : 'bg-[#2a3441]'

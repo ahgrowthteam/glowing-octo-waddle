@@ -2,7 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { KnowtFlashcardMismatchAndNoStealthDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   CheckCircle2,
   XCircle,
@@ -28,13 +30,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Knowt vs ExamGhost (2026) — Flashcard App vs Quiz Stealth",
     },
-    description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (50 Free Solves).",
+    description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (5 Free Solves / Day).",
     alternates: {
         canonical: "https://examghost.com/knowt-vs-examghost",
     },
     openGraph: {
         title: "Knowt vs ExamGhost (2026) — Flashcard App vs Quiz Stealth",
-        description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (50 Free Solves).",
+        description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (5 Free Solves / Day).",
         url: "https://examghost.com/knowt-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Knowt vs ExamGhost (2026) — Flashcard App vs Quiz Stealth",
-        description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (50 Free Solves).",
+        description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (5 Free Solves / Day).",
         images: ["/og-image.jpg"],
     },
 };
@@ -59,6 +61,39 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
     {
       "@type": "WebPage",
                 "datePublished": "2026-02-25",
@@ -125,7 +160,7 @@ const jsonLd = {
           name: "Is Knowt really 100% free in 2026?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Knowt's Basic plan ($0) offers free manual flashcards and Learn Mode (with ads), but heavily caps AI tools (roughly 1 AI summary and 1 mock exam per month). Unlocking unlimited AI summaries, Kai AI chat, and ad-free studying requires Knowt Ultra at $24.99/month or ~$149.99/year. ExamGhost offers 50 free AI solves ($0) and costs $19/month, $99/year ($8.25/mo), or $199 Lifetime.",
+            text: "Knowt's Basic plan ($0) offers free manual flashcards and Learn Mode (with ads), but heavily caps AI tools (roughly 1 AI summary and 1 mock exam per month). Unlocking unlimited AI summaries, Kai AI chat, and ad-free studying requires Knowt Ultra at $24.99/month or ~$149.99/year. ExamGhost offers 5 Free/Day AI solves ($0) and costs $19/month, $99/year ($8.25/mo), or $199 Lifetime.",
           },
         },
         {
@@ -196,7 +231,7 @@ export default function KnowtVsExamGhostPage() {
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
               >
                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                <span>Claim 50 Free Live Exam Solves ($0)</span>
+                <span>Claim 5 Free/Day Live Exam Solves ($0)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <Link prefetch={false}
@@ -274,7 +309,7 @@ export default function KnowtVsExamGhostPage() {
                       <span className="font-display font-bold text-sm text-ink">ExamGhost 0.3s Live Exam Stealth Suite</span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                      50 Free Solves ($0)
+                      5 Free Solves / Day ($0)
                     </span>
                   </div>
 
@@ -304,7 +339,7 @@ export default function KnowtVsExamGhostPage() {
                     </div>
                     <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                      <span><strong>Save $50/Yr vs Knowt Ultra:</strong> Start with 50 Free Solves ($0), then pay $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.</span>
+                      <span><strong>Save $50/Yr vs Knowt Ultra:</strong> Start with 5 Free Solves / Day ($0), then pay $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.</span>
                     </div>
                   </div>
                 </div>
@@ -317,6 +352,8 @@ export default function KnowtVsExamGhostPage() {
             </div>
           </div>
         </header>
+
+                <KnowtFlashcardMismatchAndNoStealthDemo />
 
         {/* INTERACTIVE PURE-CSS 3-TAB COMPARISON */}
         <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
@@ -335,9 +372,9 @@ export default function KnowtVsExamGhostPage() {
             </div>
 
             <div>
-              <input type="radio" name="kn-tabs" id="kn-tab-ext" className="sr-only peer/ext" defaultChecked />
-              <input type="radio" name="kn-tabs" id="kn-tab-stem" className="sr-only peer/stem" />
-              <input type="radio" name="kn-tabs" id="kn-tab-price" className="sr-only peer/price" />
+              
+              
+              
 
               {/* Tab Navigation */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
@@ -365,7 +402,7 @@ export default function KnowtVsExamGhostPage() {
               </div>
 
               {/* TAB 1: EXTENSION ROLE & BLUR LOGS */}
-              <div className="hidden peer-checked/ext:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <FileText className="w-3.5 h-3.5" />
@@ -411,7 +448,7 @@ export default function KnowtVsExamGhostPage() {
               </div>
 
               {/* TAB 2: STATIC FLASHCARDS VS DYNAMIC STEM */}
-              <div className="hidden peer-checked/stem:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <XCircle className="w-3.5 h-3.5" />
@@ -456,7 +493,7 @@ export default function KnowtVsExamGhostPage() {
               </div>
 
               {/* TAB 3: KNOWT ULTRA PRICING VS EXAMGHOST PASSES */}
-              <div className="hidden peer-checked/price:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <Lock className="w-3.5 h-3.5" />
@@ -494,7 +531,7 @@ export default function KnowtVsExamGhostPage() {
                     <span>ExamGhost Student-First Passes</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
-                    50 Free AI Solves upfront—and $50/year less than Knowt Ultra
+                    5 Free AI Solves / Day upfront—and $50/year less than Knowt Ultra
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                     Keep using Knowt&apos;s free tier if you like importing Quizlet flashcards before class, and use ExamGhost for live homework and exams:
@@ -502,7 +539,7 @@ export default function KnowtVsExamGhostPage() {
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Starter Trial (No Card Required)</span>
-                      <span className="font-mono font-bold text-emerald-800">50 Free Solves ($0)</span>
+                      <span className="font-mono font-bold text-emerald-800">5 Free Solves / Day ($0)</span>
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Monthly Pass (vs $24.99/mo)</span>
@@ -650,7 +687,7 @@ export default function KnowtVsExamGhostPage() {
                     <td className="py-3.5 px-4 font-semibold text-ink">Free Tier AI Allowance</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Testing real AI capabilities for $0</td>
                     <td className="py-3.5 px-4 text-emerald-800 font-bold">
-                      50 Free AI Solves + 10 OCR Snips ($0)
+                      5 Free AI Solves / Day + 10 OCR Snips ($0)
                     </td>
                     <td className="py-3.5 px-4 text-ink-muted">
                       Capped to ~1 AI summary &amp; 1 mock exam/mo (Ad-supported)
@@ -660,10 +697,39 @@ export default function KnowtVsExamGhostPage() {
                     <td className="py-3.5 px-4 font-semibold text-ink">Unlimited AI Pricing</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Monthly, annual &amp; lifetime cost</td>
                     <td className="py-3.5 px-4 text-emerald-800 font-bold">
-                      $19/mo · $99/yr ($8.25/mo) · $199 Life
+                      $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
                     </td>
                     <td className="py-3.5 px-4 text-ink-muted">
                       $24.99/mo or ~$149.99/yr (Knowt Ultra)
+                    </td>
+                  </tr>
+                
+                  <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-ink-muted text-xs">
+                      Zero-click solve without window.blur logs
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">
+                      Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-ink-muted text-xs">
+                      Multi-model consensus and derivation breakdown
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">
+                      ✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">
+                      ✗ No Multi-Model Study &amp; Homework AI Hub
                     </td>
                   </tr>
                 </tbody>
@@ -711,7 +777,7 @@ export default function KnowtVsExamGhostPage() {
                   Join the ExamGhost Student Discord
                 </h2>
                 <p className="text-xs sm:text-sm text-white/90">
-                  Study flashcards on Knowt before class—claim 50 free ExamGhost AI solves for live Canvas &amp; Blackboard tests.
+                  Study flashcards on Knowt before class—claim 5 Free/Day ExamGhost AI solves for live Canvas &amp; Blackboard tests.
                 </p>
               </div>
             </div>
@@ -721,7 +787,7 @@ export default function KnowtVsExamGhostPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
             >
-              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <span>Join Discord &amp; Get 5 Free Solves / Day</span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -765,7 +831,7 @@ export default function KnowtVsExamGhostPage() {
                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                Knowt&apos;s Basic plan ($0) offers free manual flashcards and Learn Mode (with ads), but heavily caps AI tools to roughly 1 AI summary and 1 mock exam per month. Unlocking unlimited AI summaries, Kai AI chat, and ad-free studying requires <strong>Knowt Ultra at $24.99/month or ~$149.99/year</strong>. ExamGhost offers <strong>50 free AI solves ($0)</strong> and costs <strong>$19/month, $99/year ($8.25/mo), or $199 Lifetime</strong>.
+                Knowt&apos;s Basic plan ($0) offers free manual flashcards and Learn Mode (with ads), but heavily caps AI tools to roughly 1 AI summary and 1 mock exam per month. Unlocking unlimited AI summaries, Kai AI chat, and ad-free studying requires <strong>Knowt Ultra at $24.99/month or ~$149.99/year</strong>. ExamGhost offers <strong>5 Free/Day AI solves ($0)</strong> and costs <strong>$19/month, $99/year ($8.25/mo), or $199 Lifetime</strong>.
               </p>
             </details>
 
@@ -794,7 +860,7 @@ export default function KnowtVsExamGhostPage() {
                   Don&apos;t switch tabs to search flashcards mid-exam.
                 </h2>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                  Solve randomized STEM problems, graphs, and multiple-choice questions right inside your active exam tab in 0.3s. Start with 50 Free Solves ($0).
+                  Solve randomized STEM problems, graphs, and multiple-choice questions right inside your active exam tab in 0.3s. Start with 5 Free Solves / Day ($0).
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
@@ -805,7 +871,7 @@ export default function KnowtVsExamGhostPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                 >
                   <FaChrome className="w-4 h-4 text-mint" />
-                  <span>Claim 50 Free Solves</span>
+                  <span>Claim 5 Free Solves / Day</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link prefetch={false}
@@ -854,6 +920,9 @@ export default function KnowtVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

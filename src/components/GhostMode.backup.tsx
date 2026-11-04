@@ -8,7 +8,7 @@ export default function GhostMode() {
     const steps = [
         {
             title: "Find what to do in 2 seconds.",
-            description: "No more scrolling through clunky notes or minimizing windows. Just hit your secret shortcut (like Cmd+Shift+X) and the Ghost activates invisibly on your current screen. It's like having an Ivy League tutor instantly available at your fingertips.",
+            description: "No more scrolling through clunky notes or minimizing windows. Just hit your secret shortcut (like Alt+S) and the Ghost activates invisibly on your current screen. It's like having an Ivy League tutor instantly available at your fingertips.",
             icon: Zap,
             visual: (
                 <div className="w-full h-full bg-[#f8fafc] flex items-center justify-center relative overflow-hidden">

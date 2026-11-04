@@ -22,7 +22,7 @@ export default function Home() {
         "@id": "https://examghost.com/#webpage",
         "url": "https://examghost.com",
         "name": "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
-        "description": "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 50 free solves.",
+        "description": "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Alt+S Snip OCR, 5 free solves/day, and a full Claude/ChatGPT/DeepSeek Study AI Hub.",
         "datePublished": "2026-01-15",
         "dateModified": "2026-03-29",
         "inLanguage": "en-US",
@@ -90,11 +90,11 @@ export default function Home() {
         "offers": [
           {
             "@type": "Offer",
-            "name": "Free Trial",
+            "name": "Free Tier",
             "price": "0.00",
             "priceCurrency": "USD",
             "priceValidUntil": "2027-12-31",
-            "description": "50 Free Question Solves, no credit card required",
+            "description": "5 Free Solves / Day (Auto-Refills Every 24 Hours, no credit card required)",
             "availability": "https://schema.org/InStock"
           },
           {
@@ -140,7 +140,7 @@ export default function Home() {
             "name": "How does double-click solving work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open your exam on any supported platform, ensure ExamGhost is toggled on (⌘+Shift+U), and double-click any question. ExamGhost reads the question text and options directly from the page DOM and highlights or auto-fills the correct answer in under a second. Need step-by-step reasoning? Shift + double-click opens a full explanation drawer."
+              "text": "Open your exam on any supported platform, ensure ExamGhost is toggled on (⌘+Shift+U), and double-click any question. ExamGhost reads the question text and options directly from the page DOM and highlights or auto-fills the correct answer in under a second. Need step-by-step reasoning? Press Alt+3 to switch to Explain Mode and open the full explanation card."
             }
           },
           {
@@ -148,7 +148,7 @@ export default function Home() {
             "name": "What are the 3 display modes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ExamGhost has three display modes you can pick in one click from the extension popup: Invisible applies the answer with nothing shown on screen (0 cursor, 0 overlay, 100% screen-share safe); Stealth (the default) shows a quiet micro-cursor while solving, then applies the answer; Explain applies the answer and displays a full step-by-step reasoning drawer."
+              "text": "ExamGhost has three display modes you can pick in one click from the extension popup or via keyboard hotkeys: Invisible (Alt+1) applies the answer and copies it to clipboard with nothing shown on screen (0 cursor, 0 overlay, 100% screen-share safe); Stealth (Alt+2, default) auto-fills answers or marks the right option with a subtle ✓ tick; Explain (Alt+3) applies the answer and slides in a step-by-step reasoning card."
             }
           },
           {
@@ -156,7 +156,7 @@ export default function Home() {
             "name": "What are the 3 answer methods?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Independent of your display mode, choose how the answer lands on your quiz: Auto-fill selects the right choice directly on the page; Highlight glows on the correct option for 1–10 seconds (default 4s) so you click it yourself; Clipboard silently copies the answer so you can paste it into short-answer or essay fields."
+              "text": "Choose how the answer lands on your quiz: Auto-Fill selects the right radio, checkbox, dropdown, or text input directly on the page; Highlight marks the correct option with a subtle ✓ indicator so you click it yourself; Clipboard silently copies the answer so you can paste it into short-answer or essay fields."
             }
           },
           {
@@ -164,7 +164,7 @@ export default function Home() {
             "name": "Can ExamGhost solve image-based questions and locked content?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Using Snap-It Sniping (⌘+Shift+S or right-click → Solve with Screenshot), you can draw a crop box around any mathematical graph, calculus integral, organic chemistry diagram, or scanned PDF worksheet. Our multimodal vision AI reads the image and returns the solution with step-by-step reasoning."
+              "text": "Yes! Using Snap-It Sniping (Alt+S or clicking Launch Snip Tool in the popup), you can draw a crop box around any mathematical graph, calculus integral, organic chemistry diagram, or scanned PDF worksheet. Our hybrid Vision + DOM AI reads the image and returns the solution with step-by-step reasoning."
             }
           },
           {
@@ -180,7 +180,7 @@ export default function Home() {
             "name": "How do I turn ExamGhost on and off?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The extension stays completely dormant until you activate it — it never runs background scripts or polling loops. Toggle it instantly using ⌘+Shift+U (Ctrl+Shift+U on Windows) or click the extension toolbar icon. Screenshot Solve is ⌘+Shift+S (Ctrl+Shift+S on Windows)."
+              "text": "The extension stays completely dormant until you activate it — it never runs background polling loops. Toggle the Master Power Switch instantly using ⌘+Shift+U or the ON/OFF pill in the popup header. Switch modes with Alt+1 (Invisible), Alt+2 (Stealth), and Alt+3 (Explain), or trigger Snap-It Region Solve with Alt+S."
             }
           },
           {
@@ -196,15 +196,15 @@ export default function Home() {
             "name": "Is ExamGhost free to start?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Every student gets 50 free question solves immediately upon installing the extension. No credit card or billing details are required. You can test all 3 display modes, all 3 answer delivery methods, and Snap-It Vision OCR before deciding whether to upgrade."
+              "text": "Yes! Every student gets 5 free question solves per day (auto-refills every 24 hours) immediately upon installing the extension. No credit card or billing details are required. You can test all 3 display modes (Alt+1, Alt+2, Alt+3), all 3 answer delivery methods, and Alt+S Snap-It Vision OCR before deciding whether to upgrade."
             }
           },
           {
             "@type": "Question",
-            "name": "What pricing plans do you offer?",
+            "name": "What pricing plans do you offer, and what is the Study & Homework AI Hub?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access across your undergraduate and graduate degrees). All paid plans include unlimited question solves and priority speed."
+              "text": "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1 for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs."
             }
           },
           {

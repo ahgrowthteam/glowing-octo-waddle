@@ -17,19 +17,21 @@ import {
   CreditCard,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { QuizplusStaticBankPaywallDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
     },
-    description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (50 Free Solves).",
+    description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
     alternates: {
         canonical: "https://examghost.com/quizplus-vs-examghost",
     },
     openGraph: {
         title: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
-        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (50 Free Solves).",
+        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
         url: "https://examghost.com/quizplus-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
-        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (50 Free Solves).",
+        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
         images: ["/og-image.jpg"],
     },
 };
@@ -71,48 +73,48 @@ export default function QuizplusVsExamghostPage() {
         breadcrumb: {
           "@id": "https://examghost.com/quizplus-vs-examghost#breadcrumb",
         },
-        about: [
+        "about": [
           {
             "@type": "SoftwareApplication",
-            name: "ExamGhost",
-            applicationCategory: "EducationalApplication",
-            operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
-            offers: [
+            "name": "ExamGhost",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+            "offers": [
               {
                 "@type": "Offer",
-                name: "Free Trial (50 Question Solves)",
-                price: "0.00",
-                priceCurrency: "USD",
+                "name": "Free Tier (5 Free Solves / Day)",
+                "price": "0.00",
+                "priceCurrency": "USD",
               },
               {
                 "@type": "Offer",
-                name: "Monthly Pass",
-                price: "19.00",
-                priceCurrency: "USD",
+                "name": "Monthly Pass",
+                "price": "19.00",
+                "priceCurrency": "USD",
               },
               {
                 "@type": "Offer",
-                name: "Academic Year Pass",
-                price: "99.00",
-                priceCurrency: "USD",
+                "name": "Academic Year Pass",
+                "price": "99.00",
+                "priceCurrency": "USD",
               },
               {
                 "@type": "Offer",
-                name: "Lifetime Degree Pass",
-                price: "199.00",
-                priceCurrency: "USD",
+                "name": "Lifetime Degree Pass",
+                "price": "199.00",
+                "priceCurrency": "USD",
               },
             ],
           },
           {
             "@type": "SoftwareApplication",
-            name: "Quizplus",
-            applicationCategory: "EducationalApplication",
-            operatingSystem: "Web Application (quizplus.com)",
-            offers: {
+            "name": "Quizplus",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web Application (quizplus.com)",
+            "offers": {
               "@type": "Offer",
-              price: "24.99",
-              priceCurrency: "USD",
+              "price": "24.99",
+              "priceCurrency": "USD",
             },
           },
         ],
@@ -174,7 +176,7 @@ export default function QuizplusVsExamghostPage() {
             name: "How does Quizplus pricing compare to ExamGhost in 2026?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Quizplus locks full test-bank answers behind a recurring subscription ranging from $20 to $24.99/month (or ~$55.99/quarter) after a short 3-to-7 day trial, costing up to $299/year. ExamGhost gives you 50 Free Question Solves with no credit card required, plus transparent flat options: $19/month, $99/year ($8.25/mo across Fall, Spring, and Summer), or a $199 one-time Lifetime Degree Pass.",
+              text: "Quizplus locks full test-bank answers behind a recurring subscription ranging from $20 to $24.99/month (or ~$55.99/quarter) after a short 3-to-7 day trial, costing up to $299/year. ExamGhost gives you 5 Free Solves / Day with no credit card required, plus transparent flat options: $19/month, $99/year ($8.25/mo across Fall, Spring, and Summer), or a $199 one-time Lifetime Degree Pass.",
             },
           },
         ],
@@ -283,7 +285,7 @@ export default function QuizplusVsExamghostPage() {
                   </div>
                   <div className="text-sm font-bold text-[#111111]">
                     <span className="text-rose-700 line-through mr-1.5">$24.99/mo</span>
-                    <span className="text-emerald-800">$99/yr + 50 Free</span>
+                    <span className="text-emerald-800">$99/yr + 5 Free/Day</span>
                   </div>
                   <div className="text-xs text-neutral-600 mt-0.5">
                     No blurred answer traps
@@ -297,7 +299,7 @@ export default function QuizplusVsExamghostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
                 >
-                  Claim 50 Free Solves ($0)
+                  Claim 5 Free Solves / Day ($0)
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -402,7 +404,7 @@ export default function QuizplusVsExamghostPage() {
                     <div className="bg-emerald-950 text-emerald-100 rounded-lg p-2.5 flex items-center justify-between">
                       <span>Free Trial &amp; Pass:</span>
                       <span className="text-emerald-300 font-bold">
-                        50 Free Solves • $99/yr ($8.25/mo)
+                        5 Free Solves / Day • $99/yr ($8.25/mo)
                       </span>
                     </div>
                   </div>
@@ -412,17 +414,55 @@ export default function QuizplusVsExamghostPage() {
           </div>
         </section>
 
-        {/* Interactive Pure-CSS 3-Tab Audit Explorer */}
+        <QuizplusStaticBankPaywallDemo />
+
+        {/* MODERN HOTKEYS SUITE */}
+        <section className="py-8 bg-[#f5f1ea] border-y border-black/10 mb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Architecture & Test-Bank Audit (Visible 3-Card Stack) */}
         <section
           id="quizplus-audit"
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24"
         >
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
-              01 // Interactive Architecture &amp; Test-Bank Audit
+              01 // Architecture &amp; Test-Bank Audit
             </span>
             <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
-              Click Any Tab to See Why Static Test Banks Lose on Modern Exams
+              Why Static Test Banks Lose on Modern Exams
             </h2>
             <p className="text-neutral-700 mt-2 max-w-3xl text-sm sm:text-base">
               We audited{" "}
@@ -430,273 +470,216 @@ export default function QuizplusVsExamghostPage() {
                 quizplus.com
               </code>
               , its delisted Chrome Web Store endpoint, and its subscription
-              paywall. Select a tab below to compare how it handles 2026
-              university exams.
+              paywall. Here is why static indexing breaks down on 2026 university exams.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
-            {/* Pure CSS Radio Inputs */}
-            <input
-              type="radio"
-              name="qp-tabs"
-              id="tab-qp-bank"
-              className="sr-only peer/qp-bank"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="qp-tabs"
-              id="tab-qp-delisted"
-              className="sr-only peer/qp-delisted"
-            />
-            <input
-              type="radio"
-              name="qp-tabs"
-              id="tab-qp-pricing"
-              className="sr-only peer/qp-pricing"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
-              <label
-                htmlFor="tab-qp-bank"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qp-bank:border-[#111111] peer-checked/qp-bank:bg-emerald-950 peer-checked/qp-bank:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <Database className="w-4 h-4" />
-                  <span>Tab 01 • Static vs Live AI</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  Why 20M Static Banks Fail on Randomized Math
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-qp-delisted"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qp-delisted:border-[#111111] peer-checked/qp-delisted:bg-emerald-950 peer-checked/qp-delisted:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <EyeOff className="w-4 h-4" />
-                  <span>Tab 02 • Delisted Extension</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  Dead Store Link &amp; Tab-Switch Blur Logs
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-qp-pricing"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qp-pricing:border-[#111111] peer-checked/qp-pricing:bg-emerald-950 peer-checked/qp-pricing:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <CreditCard className="w-4 h-4" />
-                  <span>Tab 03 • Blurred Paywall</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  $24.99/mo ($55.99/qtr) vs $99/yr + 50 Free
-                </div>
-              </label>
-            </div>
-
-            {/* Panel 1: Static 20M Bank vs Live AI */}
-            <div className="hidden peer-checked/qp-bank:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
-                  Static Indexing vs Real-Time Reasoning
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Why Static Publisher Test Banks Break When Professors Randomize Variables
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Quizplus indexes roughly <strong>20 million static Q&amp;A items</strong>{" "}
-                  and <strong>300,000+ preset quizzes</strong> pulled from legacy
-                  Cengage, Pearson, and McGraw Hill textbook editions. When you
-                  search a question on{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
-                    quizplus.com
-                  </code>
-                  , it performs a text-similarity lookup against those static
-                  pages.
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  In 2026, university courses on Canvas New Quizzes, WebAssign,
-                  ALEKS, and Pearson MyLab use{" "}
-                  <strong>algorithmic question generators</strong> where every
-                  student gets different numbers, negated stems, or embedded
-                  diagrams. If your textbook bank solved for{" "}
-                  <code className="font-mono text-xs">r = 4 m</code>, Quizplus
-                  gives you the wrong answer for{" "}
-                  <code className="font-mono text-xs">r = 7.5 m</code>.{" "}
-                  <strong>ExamGhost AI</strong> reads your exact on-screen
-                  variables and diagrams via <strong>0.3s Mathpix Vision OCR</strong>{" "}
-                  and computes the live derivation from scratch.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
-                  <div className="text-xs font-mono uppercase font-bold text-rose-900 mb-2">
-                    Where Static Test Banks Fail
+          <div className="space-y-8">
+            {/* Card 1: Static 20M Bank vs Live AI */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
+                    Static Indexing vs Real-Time Reasoning
                   </div>
-                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
-                    <li>• Algorithmic STEM problems with randomized numbers per student</li>
-                    <li>• Non-selectable circuit schematics, chemistry rings &amp; graphs</li>
-                    <li>• Original professor-written midterms not found in publisher banks</li>
-                  </ul>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Why Static Publisher Test Banks Break When Professors Randomize Variables
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Quizplus indexes roughly <strong>20 million static Q&amp;A items</strong>{" "}
+                    and <strong>300,000+ preset quizzes</strong> pulled from legacy
+                    Cengage, Pearson, and McGraw Hill textbook editions. When you
+                    search a question on{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                      quizplus.com
+                    </code>
+                    , it performs a text-similarity lookup against those static
+                    pages.
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    In 2026, university courses on Canvas New Quizzes, WebAssign,
+                    ALEKS, and Pearson MyLab use{" "}
+                    <strong>algorithmic question generators</strong> where every
+                    student gets different numbers, negated stems, or embedded
+                    diagrams. If your textbook bank solved for{" "}
+                    <code className="font-mono text-xs">r = 4 m</code>, Quizplus
+                    gives you the wrong answer for{" "}
+                    <code className="font-mono text-xs">r = 7.5 m</code>.{" "}
+                    <strong>ExamGhost AI</strong> reads your exact on-screen
+                    variables and diagrams via <strong>0.3s Mathpix Vision OCR</strong>{" "}
+                    and computes the live derivation from scratch using{" "}
+                    <strong>Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1</strong>.
+                  </p>
                 </div>
 
-                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
-                  <div className="text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
-                    How ExamGhost AI Solves Every Prompt
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
+                    <div className="text-xs font-mono uppercase font-bold text-rose-900 mb-2">
+                      Where Static Test Banks Fail
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                      <li>• Algorithmic STEM problems with randomized numbers per student</li>
+                      <li>• Non-selectable circuit schematics, chemistry rings &amp; graphs</li>
+                      <li>• Original professor-written midterms not found in publisher banks</li>
+                    </ul>
                   </div>
-                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
-                    <li>• Computes exact answers for your specific live numbers in 0.3s</li>
-                    <li>• Crosshair Snap-It Vision OCR reads any locked graph or table</li>
-                    <li>• Shows both the final answer and step-by-step verification</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
 
-            {/* Panel 2: Delisted Extension & Tab-Switch Blur Logs */}
-            <div className="hidden peer-checked/qp-delisted:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
-                  Chrome Web Store &amp; Telemetry Audit
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Quizplus&apos;s Chrome Extension Is Dead—Forcing You to Switch Tabs on Monitored Quizzes
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  When we audited Quizplus&apos;s official Chrome Web Store
-                  listing in 2026, the store URL redirected to{" "}
-                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
-                    /detail/empty-title/
-                  </code>{" "}
-                  with an item-removed status code—confirming the extension has
-                  been delisted.
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Without a working in-tab stealth extension, using Quizplus
-                  during a Canvas or Blackboard exam requires highlighting the
-                  question text, copying it, and switching to a second browser
-                  tab at{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
-                    quizplus.com
-                  </code>
-                  . Every single tab switch dispatches{" "}
-                  <code className="font-mono text-xs">window.blur</code>,{" "}
-                  <code className="font-mono text-xs">visibilitychange</code>,
-                  and <code className="font-mono text-xs">pagehide</code> events
-                  that Canvas SpeedGrader logs with exact timestamps.{" "}
-                  <strong>ExamGhost AI</strong> is an active Manifest V3 stealth
-                  extension that solves inside your exam tab within a{" "}
-                  <strong>closed Shadow DOM root</strong> while blocking all
-                  focus-loss events.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
-                <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
-                  <div className="text-rose-300 font-bold uppercase">
-                    Quizplus Chrome Store Status (2026)
-                  </div>
-                  <div className="text-amber-300">
-                    Location: /detail/empty-title/...
-                  </div>
-                  <div className="text-rose-200">
-                    errorHasStatus: true, data: [5] // Delisted
-                  </div>
-                  <div className="text-rose-200">
-                    Result: Forces tab-switching to quizplus.com
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
-                  <div className="text-emerald-300 font-bold uppercase">
-                    ExamGhost Active MV3 Stealth
-                  </div>
-                  <div className="text-emerald-100">
-                    window.addEventListener(&apos;blur&apos;, stopImmediatePropagation, true)
-                  </div>
-                  <div className="text-emerald-100">
-                    host.attachShadow(&#123; mode: &apos;closed&apos; &#125;)
-                  </div>
-                  <div className="text-emerald-100">
-                    Result: 0 Tab Switches • 0 Canvas Blur Logs
+                  <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                    <div className="text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
+                      How ExamGhost AI Solves Every Prompt
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                      <li>• Computes exact answers for your specific live numbers in 0.3s</li>
+                      <li>• Crosshair Snap-It Vision OCR reads any locked graph or table</li>
+                      <li>• Shows both the final answer and step-by-step verification</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Panel 3: Blurred Paywall & Pricing */}
-            <div className="hidden peer-checked/qp-pricing:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
-                  Subscription &amp; Trial Comparison
+            {/* Card 2: Delisted Extension & Tab-Switch Blur Logs */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
+                    Chrome Web Store &amp; Telemetry Audit
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Quizplus&apos;s Chrome Extension Is Dead—Forcing You to Switch Tabs on Monitored Quizzes
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    When we audited Quizplus&apos;s official Chrome Web Store
+                    listing in 2026, the store URL redirected to{" "}
+                    <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                      /detail/empty-title/
+                    </code>{" "}
+                    with an item-removed status code—confirming the extension has
+                    been delisted.
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Without a working in-tab stealth extension, using Quizplus
+                    during a Canvas or Blackboard exam requires highlighting the
+                    question text, copying it, and switching to a second browser
+                    tab at{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                      quizplus.com
+                    </code>
+                    . Every single tab switch dispatches{" "}
+                    <code className="font-mono text-xs">window.blur</code>,{" "}
+                    <code className="font-mono text-xs">visibilitychange</code>,
+                    and <code className="font-mono text-xs">pagehide</code> events
+                    that Canvas SpeedGrader logs with exact timestamps.{" "}
+                    <strong>ExamGhost AI</strong> is an active Manifest V3 stealth
+                    extension that solves inside your exam tab within a{" "}
+                    <strong>closed Shadow DOM root</strong> while blocking all
+                    focus-loss events.
+                  </p>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Stop Paying $24.99/Month ($299/Year) to Unblur Static Textbook Keys
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  When you search a question on{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
-                    quizplus.com
-                  </code>
-                  , the correct multiple-choice option and explanation are
-                  blurred behind a paywall. Unlocking full test-bank access
-                  requires entering a payment method for a short 3-to-7 day trial
-                  that auto-renews at{" "}
-                  <strong>$20 to $24.99/month</strong> (or{" "}
-                  <strong>~$55.99/quarter</strong>)—costing up to{" "}
-                  <strong>$299.88 per year</strong>.
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  <strong>ExamGhost AI</strong> gives you{" "}
-                  <strong>50 Free Question Solves ($0, no credit card required)</strong>{" "}
-                  with unblurred answers, full step-by-step math derivations,
-                  and active Canvas Focus Shield included. Upgrading to unlimited
-                  solves costs just <strong>$19/month</strong>,{" "}
-                  <strong>$99/year ($8.25/mo — saving up to $200/yr over Quizplus)</strong>,
-                  or <strong>$199 one-time for a Lifetime Degree Pass</strong>{" "}
-                  backed by our <strong>14-day 100% money-back guarantee</strong>.
-                </p>
+
+                <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
+                  <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
+                    <div className="text-rose-300 font-bold uppercase">
+                      Quizplus Chrome Store Status (2026)
+                    </div>
+                    <div className="text-amber-300">
+                      Location: /detail/empty-title/...
+                    </div>
+                    <div className="text-rose-200">
+                      errorHasStatus: true, data: [5] // Delisted
+                    </div>
+                    <div className="text-rose-200">
+                      Result: Forces tab-switching to quizplus.com
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
+                    <div className="text-emerald-300 font-bold uppercase">
+                      ExamGhost Active MV3 Stealth
+                    </div>
+                    <div className="text-emerald-100">
+                      window.addEventListener(&apos;blur&apos;, stopImmediatePropagation, true)
+                    </div>
+                    <div className="text-emerald-100">
+                      host.attachShadow(&#123; mode: &apos;closed&apos; &#125;)
+                    </div>
+                    <div className="text-emerald-100">
+                      Result: 0 Tab Switches • 0 Canvas Blur Logs
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-[#FAF8F5] border border-neutral-300 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-[#111111]">
-                      Quizplus Pricing (2026)
-                    </span>
-                    <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-rose-100 text-rose-900 font-bold">
-                      Blurred Free Preview
-                    </span>
+            {/* Card 3: Blurred Paywall & Pricing */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
+                    Subscription &amp; Trial Comparison
                   </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-700">
-                    <li>• <strong>Free Preview:</strong> Blurs correct answers &amp; explanations</li>
-                    <li>• <strong>Trial:</strong> 3–7 day card-gated auto-renewing trial</li>
-                    <li>• <strong>Monthly Billing:</strong> $20–$24.99/month (~$299/yr)</li>
-                    <li>• <strong>Quarterly Billing:</strong> ~$55.99/quarter (~$224/yr)</li>
-                  </ul>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Stop Paying $24.99/Month ($299/Year) to Unblur Static Textbook Keys
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    When you search a question on{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                      quizplus.com
+                    </code>
+                    , the correct multiple-choice option and explanation are
+                    blurred behind a paywall. Unlocking full test-bank access
+                    requires entering a payment method for a short 3-to-7 day trial
+                    that auto-renews at{" "}
+                    <strong>$20 to $24.99/month</strong> (or{" "}
+                    <strong>~$55.99/quarter</strong>)—costing up to{" "}
+                    <strong>$299.88 per year</strong>.
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    <strong>ExamGhost AI</strong> gives you{" "}
+                    <strong>5 Free Solves / Day ($0, no credit card required)</strong>{" "}
+                    with unblurred answers, full step-by-step math derivations,
+                    and active Canvas Focus Shield included. Upgrading to unlimited
+                    solves costs just <strong>$19/month</strong>,{" "}
+                    <strong>$99/year ($8.25/mo — saving up to $200/yr over Quizplus)</strong>,
+                    or <strong>$199 one-time for a Lifetime Degree Pass</strong>{" "}
+                    backed by our <strong>14-day 100% money-back guarantee</strong>.
+                  </p>
                 </div>
 
-                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-[#111111]">
-                      ExamGhost AI Passes (2026)
-                    </span>
-                    <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-800 text-white">
-                      50 Free Solves
-                    </span>
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="bg-[#FAF8F5] border border-neutral-300 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-[#111111]">
+                        Quizplus Pricing (2026)
+                      </span>
+                      <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-rose-100 text-rose-900 font-bold">
+                        Blurred Free Preview
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-700">
+                      <li>• <strong>Free Preview:</strong> Blurs correct answers &amp; explanations</li>
+                      <li>• <strong>Trial:</strong> 3–7 day card-gated auto-renewing trial</li>
+                      <li>• <strong>Monthly Billing:</strong> $20–$24.99/month (~$299/yr)</li>
+                      <li>• <strong>Quarterly Billing:</strong> ~$55.99/quarter (~$224/yr)</li>
+                    </ul>
                   </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• <strong>Free Trial:</strong> 50 Unblurred Solves + Steps ($0, no card)</li>
-                    <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited)</li>
-                    <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo — save ~$200/yr)</li>
-                    <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
-                  </ul>
+
+                  <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-[#111111]">
+                        ExamGhost AI Passes (2026)
+                      </span>
+                      <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-800 text-white">
+                        5 Free Solves / Day
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                      <li>• <strong>Free Trial:</strong> 5 Free Solves / Day + Steps ($0, no card)</li>
+                      <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited)</li>
+                      <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo — save ~$200/yr)</li>
+                      <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -840,7 +823,7 @@ export default function QuizplusVsExamghostPage() {
                       Risk-free testing before paying
                     </td>
                     <td className="py-3.5 px-5 text-emerald-900 font-bold border-r border-neutral-200">
-                      50 Free Solves (No Credit Card)
+                      5 Free Solves / Day (No Credit Card)
                     </td>
                     <td className="py-3.5 px-5 text-neutral-700">
                       Blurred Answers / Card-Gated Trial
@@ -854,11 +837,22 @@ export default function QuizplusVsExamghostPage() {
                       Monthly, annual, and lifetime cost
                     </td>
                     <td className="py-3.5 px-5 text-emerald-900 font-bold border-r border-neutral-200">
-                      $19/mo · $99/yr ($8.25/mo) · $199 Life
+                      $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
                     </td>
                     <td className="py-3.5 px-5 text-rose-800 font-medium">
                       $20–$24.99/mo or $55.99/quarter
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -979,7 +973,7 @@ export default function QuizplusVsExamghostPage() {
                   <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
                   <span>
                     Transparent pricing: start with{" "}
-                    <strong>50 Free Question Solves ($0)</strong>, then pick{" "}
+                    <strong>5 Free Solves / Day ($0)</strong>, then pick{" "}
                     <strong>$19/mo</strong>,{" "}
                     <strong>$99/yr ($8.25/mo)</strong>, or{" "}
                     <strong>$199 Lifetime</strong>.
@@ -1062,7 +1056,7 @@ export default function QuizplusVsExamghostPage() {
                 subscription ranging from <strong>$20 to $24.99/month</strong>{" "}
                 (or <strong>~$55.99/quarter</strong>) after a short 3-to-7 day
                 trial, costing up to $299/year. ExamGhost gives you{" "}
-                <strong>50 Free Question Solves ($0)</strong> with no credit
+                <strong>5 Free Solves / Day ($0)</strong> with no credit
                 card required, plus transparent flat options:{" "}
                 <strong>$19/month</strong>, <strong>$99/year</strong>{" "}
                 ($8.25/mo), or a{" "}
@@ -1086,7 +1080,7 @@ export default function QuizplusVsExamghostPage() {
                 <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
                   Don&apos;t switch tabs to search outdated textbook banks. Test
                   ExamGhost AI with{" "}
-                  <strong>50 Free Question Solves ($0, no card required)</strong>{" "}
+                  <strong>5 Free Solves / Day ($0, no card required)</strong>{" "}
                   or unlock unlimited access for <strong>$19/month</strong> or{" "}
                   <strong>$99/year ($8.25/mo)</strong>.
                 </p>
@@ -1095,7 +1089,7 @@ export default function QuizplusVsExamghostPage() {
                     href="/#pricing"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
                   >
-                    Claim 50 Free Solves ($0)
+                    Claim 5 Free Solves / Day ($0)
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link prefetch={false}
@@ -1153,6 +1147,9 @@ export default function QuizplusVsExamghostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

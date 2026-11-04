@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { QuizardDiscordBotAndFocusLossDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Quizard AI vs ExamGhost (2026) — Phone Pairing vs Stealth",
     },
-    description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/quizard-vs-examghost",
     },
     openGraph: {
         title: "Quizard AI vs ExamGhost (2026) — Phone Pairing vs Stealth",
-        description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/quizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quizard AI vs ExamGhost (2026) — Phone Pairing vs Stealth",
-        description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,7 +66,7 @@ const faqs = [
   },
   {
     q: "Why does Quizard AI ask me to 'Link Device' on a phone before using the Chrome extension?",
-    a: "Quizard AI was built as a mobile-first camera app where subscriptions (~$6.99/week or $9.99–$19.99/month) are managed through Apple App Store or Google Play Store in-app purchases. To unlock the desktop Chrome extension (v0.1.13), you must install the mobile app, activate a mobile trial or subscription, and sync via the 'Link Device' setting. ExamGhost works natively on your desktop browser with 50 free solves and no mobile app required.",
+    a: "Quizard AI was built as a mobile-first camera app where subscriptions (~$6.99/week or $9.99–$19.99/month) are managed through Apple App Store or Google Play Store in-app purchases. To unlock the desktop Chrome extension (v0.1.13), you must install the mobile app, activate a mobile trial or subscription, and sync via the 'Link Device' setting. ExamGhost works natively on your desktop browser with 5 free solves / day and no mobile app required.",
   },
   {
     q: "Why does Quizard AI miss college-level calculus, physics, and chemistry questions?",
@@ -80,6 +82,39 @@ export default function QuizardVsExamGhostPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-24",
@@ -140,7 +175,7 @@ export default function QuizardVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -239,7 +274,7 @@ export default function QuizardVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Phone App Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Phone App Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -335,7 +370,7 @@ export default function QuizardVsExamGhostPage() {
                       , 8-layer focus-loss event blocking, and 3-model AI
                       consensus—starting with{" "}
                       <span className="text-emerald-300 font-semibold">
-                        50 free solves
+                        5 free solves / day
                       </span>{" "}
                       and no phone sync required.
                     </p>
@@ -345,6 +380,8 @@ export default function QuizardVsExamGhostPage() {
             </div>
           </div>
         </section>
+
+        <QuizardDiscordBotAndFocusLossDemo />
 
         {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
@@ -364,53 +401,12 @@ export default function QuizardVsExamGhostPage() {
 
           <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
             {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="quizard-audit-tabs"
-              id="tab-quizard-link"
-              className="sr-only peer/link"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="quizard-audit-tabs"
-              id="tab-quizard-sat"
-              className="sr-only peer/sat"
-            />
-            <input
-              type="radio"
-              name="quizard-audit-tabs"
-              id="tab-quizard-billing"
-              className="sr-only peer/billing"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
-              <label
-                htmlFor="tab-quizard-link"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/link:bg-white peer-checked/link:text-[#111111] peer-checked/link:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <Smartphone className="w-4 h-4 text-indigo-600 shrink-0" />
-                <span>1. &ldquo;Link Device&rdquo; &amp; Cmd+Shift+K Blur</span>
-              </label>
-              <label
-                htmlFor="tab-quizard-sat"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/sat:bg-white peer-checked/sat:text-[#111111] peer-checked/sat:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <Cpu className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>2. High-School SAT vs College STEM</span>
-              </label>
-              <label
-                htmlFor="tab-quizard-billing"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center transition-all peer-checked/billing:bg-white peer-checked/billing:text-[#111111] peer-checked/billing:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <CreditCard className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>3. ~$6.99/wk App Store &amp; Notion Docs</span>
-              </label>
-            </div>
+            
+            
+            
 
             {/* Panel 1: Link Device & Cmd+Shift+K Blur */}
-            <div className="hidden peer-checked/link:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-800 text-xs font-bold">
                   Mobile-First Companion Architecture (v0.1.13)
@@ -486,7 +482,7 @@ export default function QuizardVsExamGhostPage() {
             </div>
 
             {/* Panel 2: High-School SAT vs College STEM */}
-            <div className="hidden peer-checked/sat:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
                   Accuracy Benchmark Audit
@@ -553,7 +549,7 @@ export default function QuizardVsExamGhostPage() {
             </div>
 
             {/* Panel 3: Weekly App Store Billing & Notion Docs */}
-            <div className="hidden peer-checked/billing:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
                   Subscription &amp; Governance Audit
@@ -584,7 +580,7 @@ export default function QuizardVsExamGhostPage() {
                   offline flashcard maker capped at{" "}
                   <strong>300 questions per day</strong> with zero browser
                   extension support. ExamGhost gives you{" "}
-                  <strong>50 free solves</strong> upfront, transparent{" "}
+                  <strong>5 free solves / day</strong> upfront, transparent{" "}
                   <strong>$8.25/mo annual billing</strong>, or a{" "}
                   <strong>$199 Lifetime</strong> pass.
                 </p>
@@ -626,7 +622,7 @@ export default function QuizardVsExamGhostPage() {
                       ExamGhost Annual / Lifetime
                     </div>
                     <div className="text-neutral-300">
-                      50 Free Solves • $8.25/mo ($99/yr) • $199 Lifetime
+                      5 Free Solves / Day • $8.25/mo ($99/yr) • $199 Lifetime
                     </div>
                   </div>
                   <span className="font-mono font-bold text-emerald-400 text-sm">
@@ -755,7 +751,7 @@ export default function QuizardVsExamGhostPage() {
                       Limited free tier; Pro capped at 300 questions/day
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves (no credit card or phone required)
+                      5 Free Solves / Day (no credit card or phone required)
                     </td>
                   </tr>
                   <tr>
@@ -771,6 +767,13 @@ export default function QuizardVsExamGhostPage() {
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
                       $19/mo, $99/yr ($8.25/mo), or $199 Lifetime
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
                   </tr>
                 </tbody>
               </table>
@@ -891,7 +894,7 @@ export default function QuizardVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves right in Chrome</strong>{" "}
+                    You want <strong>5 free solves / day right in Chrome</strong>{" "}
                     without downloading a phone app or linking a mobile device.
                   </span>
                 </li>
@@ -900,7 +903,93 @@ export default function QuizardVsExamGhostPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        
+                {/* 6 MODERN HOTKEYS COMPARISON */}
+                <section className="py-12 bg-white border-y border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                6 Modern Stealth Hotkeys for Live Exams
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Instantly solve, extract diagrams, or wipe RAM in under 0.3s without touching your mouse or triggering window.blur.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Double-Click</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Instant Inline Solve</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">0.3s Shadow DOM HUD</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+S</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Hybrid Vision Snip</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Captures locked diagrams</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+1</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Ghost Dot Mode</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Zero UI footprint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+2</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Smart Highlight</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Discreet answer tint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+3</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Sidebar Derivation</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Step-by-step proofs</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">⌘+Shift+U</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Panic RAM Wipe</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Instant emergency close</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 2-IN-1 FRONTIER AI MODELS */}
+                <section className="py-12 bg-neutral-50 border-b border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider block mb-2">2-in-1 Study &amp; Homework AI Workspace</span>
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                Powered by 3 Frontier AI Models
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* FAQ Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111111]">
@@ -940,7 +1029,7 @@ export default function QuizardVsExamGhostPage() {
                   <span>Skip the Mobile &ldquo;Link Device&rdquo; Runaround</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Test ExamGhost on 50 Real Questions—Free, Standalone, and
+                  Test ExamGhost With 5 Free Solves / Day—Free, Standalone, and
                   Zero-Trace.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -954,7 +1043,7 @@ export default function QuizardVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -1001,6 +1090,9 @@ export default function QuizardVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

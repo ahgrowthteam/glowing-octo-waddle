@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { MindkoHermitianMatrixDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Mindko (College Tools) vs ExamGhost (2026) — Stealth Audit",
     },
-    description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 50 Free Solves.",
+    description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/mindko-vs-examghost",
     },
     openGraph: {
         title: "Mindko (College Tools) vs ExamGhost (2026) — Stealth Audit",
-        description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 50 Free Solves.",
+        description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/mindko-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Mindko (College Tools) vs ExamGhost (2026) — Stealth Audit",
-        description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 50 Free Solves.",
+        description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -68,11 +70,11 @@ const faqs = [
   },
   {
     q: "How does Mindko's Alt+Shift+1 Screenshot tool compare to ExamGhost's Snap-It OCR?",
-    a: "Mindko's Alt+Shift+1 screenshot script (modules/extensions/screenshot.8zldnknb.js) injects selection elements directly into the host DOM and shifts focus to its sidepanel (pages/standalone/side-panel.html), logging a blur event in Canvas. ExamGhost's Snap-It (⌘+Shift+S) runs inside an isolated Closed Shadow DOM v1 sandbox with Focus Shield active, solving complex LaTeX math, organic chemistry structures, and economics graphs with zero blur flags.",
+    a: "Mindko's Alt+Shift+1 screenshot script (modules/extensions/screenshot.8zldnknb.js) injects selection elements directly into the host DOM and shifts focus to its sidepanel (pages/standalone/side-panel.html), logging a blur event in Canvas. ExamGhost's Snap-It (Alt+S) runs inside an isolated Closed Shadow DOM v1 sandbox with Focus Shield active, solving complex LaTeX math, organic chemistry structures, and economics graphs with zero blur flags.",
   },
   {
     q: "How does Mindko pricing compare to ExamGhost in 2026?",
-    a: "Mindko charges recurring subscriptions via LemonSqueezy (~$19.99/month or $239.88/year, totaling $959.52 across a 4-year degree). ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by transparent tiers: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 One-Time Lifetime.",
+    a: "Mindko charges recurring subscriptions via LemonSqueezy (~$19.99/month or $239.88/year, totaling $959.52 across a 4-year degree). ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by transparent tiers: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 One-Time Lifetime.",
   },
 ];
 
@@ -80,6 +82,39 @@ export default function MindkoVsExamGhostPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-14",
@@ -140,7 +175,7 @@ export default function MindkoVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -242,7 +277,7 @@ export default function MindkoVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -370,6 +405,8 @@ export default function MindkoVsExamGhostPage() {
           </div>
         </section>
 
+        <MindkoHermitianMatrixDemo />
+
         {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
           <div className="text-center max-w-3xl mx-auto mb-8">
@@ -390,25 +427,9 @@ export default function MindkoVsExamGhostPage() {
 
           <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
             {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="mindko-audit-tabs"
-              id="tab-mindko-camouflage"
-              className="sr-only peer/camouflage"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="mindko-audit-tabs"
-              id="tab-mindko-banks"
-              className="sr-only peer/banks"
-            />
-            <input
-              type="radio"
-              name="mindko-audit-tabs"
-              id="tab-mindko-billing"
-              className="sr-only peer/billing"
-            />
+            
+            
+            
 
             {/* Tab Headers */}
             <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
@@ -436,7 +457,7 @@ export default function MindkoVsExamGhostPage() {
             </div>
 
             {/* Panel 1: Camouflage Mode vs 24 Scripts */}
-            <div className="hidden peer-checked/camouflage:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-teal-50 text-teal-800 text-xs font-bold">
                   DOM &amp; Focus Telemetry Audit
@@ -522,7 +543,7 @@ export default function MindkoVsExamGhostPage() {
             </div>
 
             {/* Panel 2: Cookies & 29 Bank Exclusions */}
-            <div className="hidden peer-checked/banks:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
                   Permissions &amp; Security Audit
@@ -613,7 +634,7 @@ export default function MindkoVsExamGhostPage() {
             </div>
 
             {/* Panel 3: 3.17★ Rating & $19.99/mo Billing */}
-            <div className="hidden peer-checked/billing:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
                   Reputation &amp; Pricing Audit
@@ -636,7 +657,7 @@ export default function MindkoVsExamGhostPage() {
                 </p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   <strong>ExamGhost</strong> lets you test its 3-model consensus
-                  engine on <strong>50 free solves</strong> with no credit card
+                  engine on <strong>5 free solves / day</strong> with no credit card
                   required, followed by transparent{" "}
                   <strong>$19/mo</strong>,{" "}
                   <strong>$99/yr ($8.25/mo)</strong>, or{" "}
@@ -667,7 +688,7 @@ export default function MindkoVsExamGhostPage() {
                       ExamGhost Free Trial
                     </div>
                     <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
+                      5 Free Solves / Day (auto-refills every 24h, no card required)
                     </div>
                   </div>
                   <span className="font-mono font-bold text-emerald-400 text-sm">
@@ -812,8 +833,25 @@ export default function MindkoVsExamGhostPage() {
                       ~$19.99/mo via LemonSqueezy ($239.88/yr)
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                      5 Free Solves / Day • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                     </td>
+                  </tr>
+                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -941,7 +979,7 @@ export default function MindkoVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> upfront and{" "}
+                    You want <strong>5 free solves / day</strong> upfront and{" "}
                     <strong>99.2% 3-model consensus accuracy</strong> for{" "}
                     <strong>$8.25/mo ($99/yr)</strong> or{" "}
                     <strong>$199 Lifetime</strong>.
@@ -992,7 +1030,7 @@ export default function MindkoVsExamGhostPage() {
                   <span>Upgrade from 3.17★ CSS Camouflage to Real Stealth</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Test ExamGhost with 50 Free Solves—Zero jQuery Injection, Zero
+                  Test ExamGhost with 5 Free Solves / Day—Zero jQuery Injection, Zero
                   Blur Logs.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -1006,7 +1044,7 @@ export default function MindkoVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -1053,6 +1091,9 @@ export default function MindkoVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

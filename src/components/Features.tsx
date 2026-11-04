@@ -2,140 +2,257 @@
 
 import React, { useState } from 'react';
 import { 
-    Shield, ScanLine, Sparkles, Layers, Eye, 
+    Shield, Sparkles, Layers, EyeOff, 
     Check, Lock, Zap, CheckCircle2,
-    Camera, MonitorCheck, KeyRound, Sliders
+    Crop, BookOpen, Sliders,
+    MousePointerClick, ListChecks, KeyRound, Sun
 } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
+
+interface ToolItem {
+    id: string;
+    name: string;
+    sub: string;
+    icon: React.ElementType;
+    badge: string;
+}
 
 interface ToolCategory {
     id: string;
     label: string;
     count: string;
     bg: string;
-    accent: string;
     tagline: string;
     headline: string;
     description: string;
     bullets: string[];
-    tools: {
-        id: string;
-        name: string;
-        sub: string;
-        icon: React.ElementType;
-        badge: string;
-    }[];
+    tools: ToolItem[];
 }
 
 const CATEGORIES: ToolCategory[] = [
     {
         id: 'modes',
-        label: 'Display Modes',
-        count: '3 modes',
-        bg: '#c4d0f8', // Periwinkle
-        accent: '#3b5bdb',
-        tagline: 'DISPLAY MODES · 3 MODES',
-        headline: 'Three ways to solve. Completely your call.',
-        description: 'Choose how visible the solving is in one click from the popup. Stealth is on by default with a subtle natural indicator, Invisible operates with zero on-screen traces for screen-shares, and Explain unlocks step-by-step reasoning.',
+        label: '3 Solver Modes',
+        count: 'Alt+1 / 2 / 3',
+        bg: '#c4d0f8',
+        tagline: '3 SOLVER MODES · ALT+1 · ALT+2 · ALT+3',
+        headline: 'Three ways to solve. Switch in one click.',
+        description: 'Press Alt+1, Alt+2, or Alt+3 on any quiz page to switch instantly between silent auto-fill, subtle checkmark hints, and step-by-step explanations.',
         bullets: [
-            'Invisible: Silent answer injection',
-            'Stealth: Quiet micro-cursor (default)',
-            'Explain: Full reasoning drawer',
-            '1-tap mode switcher in popup'
+            'Invisible Mode (Alt+1)',
+            'Stealth Auto-Fill (Alt+2)',
+            'Step-by-Step Explain (Alt+3)',
+            'Instant Cross-Tab Sync'
         ],
         tools: [
-            { id: 'stealth-mode', name: 'Stealth Mode (Default)', sub: 'Quiet cursor while solving, then applies answer', icon: Eye, badge: 'Default' },
-            { id: 'invisible-mode', name: 'Invisible Mode', sub: 'Silent injection with zero on-screen traces', icon: Lock, badge: 'Silent' },
-            { id: 'explain-mode', name: 'Explain Mode', sub: 'Applies answer + full step-by-step proof drawer', icon: Sparkles, badge: 'Deep Study' },
-            { id: 'mode-toggle', name: 'Instant Mode Switcher', sub: 'Toggle between all 3 modes in 1 click from popup', icon: Sliders, badge: 'Instant' }
+            {
+                id: 'stealth-mode',
+                name: 'Stealth Mode',
+                sub: 'Auto-fills or marks options with ✓',
+                icon: Shield,
+                badge: 'Alt+2'
+            },
+            {
+                id: 'invisible-mode',
+                name: 'Invisible Mode',
+                sub: 'Zero screen traces + clipboard copy',
+                icon: EyeOff,
+                badge: 'Alt+1'
+            },
+            {
+                id: 'explain-mode',
+                name: 'Explain Mode',
+                sub: 'Step-by-step answer & rationale',
+                icon: BookOpen,
+                badge: 'Alt+3'
+            },
+            {
+                id: 'instant-hotkeys',
+                name: 'Instant Mode Hotkeys',
+                sub: 'Switch modes any time mid-quiz',
+                icon: Sliders,
+                badge: 'Synced'
+            }
         ]
     },
     {
-        id: 'methods',
-        label: 'Answer Methods',
-        count: '3 methods',
-        bg: '#bfe3f6', // Sky
-        accent: '#1971c2',
-        tagline: 'ANSWER METHODS · 3 METHODS',
-        headline: 'Three delivery methods. Pick what fits the quiz.',
-        description: 'Independent of your display mode, choose how the answer lands on your page. Auto-fill selects the right choice directly, Highlight marks the option so you click it yourself, and Clipboard silently copies for essay prompts.',
+        id: 'autofill',
+        label: 'Auto-Fill & Delivery',
+        count: '4 Formats',
+        bg: '#bfe3f6',
+        tagline: 'SMART AUTO-FILL · EVERY QUESTION FORMAT',
+        headline: 'Fills radios, checkboxes, dropdowns, and inputs.',
+        description: 'ExamGhost detects the exact question format on the page and selects the right choice—or highlights it with a subtle ✓ so you can click it yourself.',
         bullets: [
-            'Auto-fill: Direct option selection',
-            'Highlight: 1–10s glow to self-click',
-            'Clipboard: Silent copy for essays',
-            'Configurable highlight duration'
+            'Single-choice radio buttons',
+            'Multi-select checkboxes',
+            'Inline Cloze dropdown menus',
+            'Short-answer text inputs'
         ],
         tools: [
-            { id: 'auto-fill', name: 'Auto-fill Engine', sub: 'Directly selects the right radio or checkbox', icon: CheckCircle2, badge: 'Default' },
-            { id: 'smart-highlight', name: 'Smart Highlight', sub: 'Marks the correct option so you click yourself', icon: Sparkles, badge: '1-10s Glow' },
-            { id: 'silent-clipboard', name: 'Silent Clipboard', sub: 'Copies text answer to clipboard for typing', icon: Zap, badge: 'Essay Safe' },
-            { id: 'duration-dial', name: 'Configurable Duration', sub: 'Adjust glow duration from 1s to 10s (default 4s)', icon: Sliders, badge: 'Custom' }
+            {
+                id: 'mcq-multi-engine',
+                name: 'Radio & Checkbox Select',
+                sub: 'Selects all right choices inline',
+                icon: CheckCircle2,
+                badge: 'MCQ'
+            },
+            {
+                id: 'dropdown-cloze',
+                name: 'Dropdown Blank Solver',
+                sub: 'Picks matching dropdown choices',
+                icon: Layers,
+                badge: 'Select'
+            },
+            {
+                id: 'native-input-typing',
+                name: 'Short-Answer Input Fill',
+                sub: 'Fills short-answer text inputs',
+                icon: Zap,
+                badge: 'Input'
+            },
+            {
+                id: 'stealth-tick-hint',
+                name: 'Subtle ✓ Hint & Copy',
+                sub: 'Marks with ✓ or copies answer',
+                icon: Sparkles,
+                badge: '✓ / Copy'
+            }
         ]
     },
     {
-        id: 'sniping',
-        label: 'Snap-It Vision',
-        count: '4 tools',
-        bg: '#e2d3fa', // Lilac
-        accent: '#6741d9',
-        tagline: 'SNAP-IT VISION · 4 TOOLS',
-        headline: 'Draw to solve formulas, diagrams, and locked text.',
-        description: 'Can’t double-click a question or text is unselectable? Hit ⌘+Shift+S, draw a crop box around any problem, equation, or diagram, and let ExamGhost read the image and return the exact answer with proof.',
+        id: 'snip',
+        label: 'Snap-It OCR (Alt+S)',
+        count: 'Vision + DOM',
+        bg: '#e2d3fa',
+        tagline: 'SNAP-IT OCR · ALT+S REGION CAPTURE',
+        headline: 'Drag a box over any diagram, graph, or formula.',
+        description: 'Press Alt+S and drag over any image, chart, or locked question. ExamGhost reads both the screenshot and page text to solve and auto-fill in seconds.',
         bullets: [
-            'Calculus & chemical equations',
-            'Bypasses text-selection locks',
-            'Chart, graph & diagram recognition',
-            'Works on PDFs, slides & canvas'
+            'Alt+S crosshair region crop',
+            'High-DPI math & LaTeX OCR',
+            'Reads graphs & chemistry rings',
+            'Auto-fills inside the cropped box'
         ],
         tools: [
-            { id: 'snap-it', name: 'Snap-It Sniping (⌘+Shift+S)', sub: 'Drag crop rectangle around any question area', icon: Camera, badge: '0.3s' },
-            { id: 'latex-engine', name: 'LaTeX & Formula Engine', sub: 'Decodes calculus integrals, limits & matrices', icon: Sparkles, badge: 'LaTeX' },
-            { id: 'diagram-decoder', name: 'Diagram & Chart Parser', sub: 'Understands biology, circuits & organic chemistry', icon: ScanLine, badge: 'Visual AI' },
-            { id: 'unselectable-fix', name: 'Unselectable Text Bypass', sub: 'Solves canvas-rendered and protected quiz items', icon: Lock, badge: 'Universal' }
+            {
+                id: 'launch-snip-tool',
+                name: 'Region Crop Tool',
+                sub: 'Drag around any question on screen',
+                icon: Crop,
+                badge: 'Alt+S'
+            },
+            {
+                id: 'hybrid-fusion',
+                name: 'Vision + Text Fusion',
+                sub: 'Pairs screenshot with page text',
+                icon: Sparkles,
+                badge: 'Hybrid'
+            },
+            {
+                id: 'bounding-autofill',
+                name: 'In-Box Auto-Fill',
+                sub: 'Auto-fills right after snipping',
+                icon: CheckCircle2,
+                badge: 'Auto-Fill'
+            },
+            {
+                id: 'diagram-math-ocr',
+                name: 'STEM Graphs & Formulas',
+                sub: 'Solves charts, circuits & math',
+                icon: Lock,
+                badge: 'STEM AI'
+            }
         ]
     },
     {
-        id: 'lms',
-        label: 'Platforms',
-        count: '20+ LMSs',
-        bg: '#cdeecb', // Mint
-        accent: '#2f9e44',
-        tagline: 'PLATFORMS · 20+ SUPPORTED',
-        headline: 'Works with every LMS you already use.',
-        description: 'ExamGhost runs client-side inside Chrome, Edge, Brave, and Arc. Whether you are on Canvas, Blackboard, Moodle, Google Classroom, Brightspace, or McGraw-Hill — double-tap any question and get the correct answer.',
+        id: 'doubleclick',
+        label: 'Double-Click & AI',
+        count: 'Smart Guard',
+        bg: '#cdeecb',
+        tagline: 'DOUBLE-CLICK SOLVER · BUILT-IN ACCURACY',
+        headline: 'Double-click any question to solve inline.',
+        description: 'Double-click anywhere on a question card for an instant answer. Built-in trap detection catches trick words like NOT and EXCEPT before locking in the choice.',
         bullets: [
-            'Canvas Quizzes & New Quizzes',
-            'Blackboard Learn & Ultra',
-            'Moodle & Google Classroom',
-            'Brightspace, Pearson & McGraw-Hill'
+            '1-second inline double-click solve',
+            'Catches NOT / EXCEPT trap words',
+            'Eliminates wrong choices first',
+            'Multi-model high-speed fallback'
         ],
         tools: [
-            { id: 'canvas-hook', name: 'Canvas Quiz Solver', sub: 'Classic and New Quizzes solved inline in 1 click', icon: Layers, badge: 'Canvas' },
-            { id: 'bb-shield', name: 'Blackboard Ultra Helper', sub: 'Double-click answer solve on all test questions', icon: Shield, badge: 'Blackboard' },
-            { id: 'moodle-beacon', name: 'Moodle Quiz Solver', sub: 'Instant inline option selection & full explanation', icon: Lock, badge: 'Moodle' },
-            { id: 'classroom-forms', name: 'Google Classroom & Forms', sub: 'Handles MCQs, multi-selects & short answers', icon: MonitorCheck, badge: 'Forms' }
+            {
+                id: 'dblclick-solver',
+                name: 'Double-Click to Solve',
+                sub: 'Double-click any question or option',
+                icon: MousePointerClick,
+                badge: '2× Click'
+            },
+            {
+                id: 'trap-detection',
+                name: 'Trap-Word Detection',
+                sub: 'Catches NOT & EXCEPT trick words',
+                icon: ListChecks,
+                badge: 'Accuracy'
+            },
+            {
+                id: 'false-positive-guard',
+                name: 'Smart Quiz Detection',
+                sub: 'Only runs on real quiz questions',
+                icon: Shield,
+                badge: 'Guarded'
+            },
+            {
+                id: 'model-fallback',
+                name: 'Multi-Model Speed Chain',
+                sub: 'Instant failover for 99.9% uptime',
+                icon: Zap,
+                badge: '< 1.2s'
+            }
         ]
     },
     {
-        id: 'safety',
-        label: 'Privacy & Control',
-        count: '4 safety rules',
-        bg: '#bfe9d9', // Teal
-        accent: '#0ca678',
-        tagline: 'PRIVACY & SAFETY · 4 RULES',
-        headline: 'Off until you switch it on. Zero background activity.',
-        description: 'ExamGhost only acts when you tell it to. It never runs in the background, requires no account to start, and leaves zero traces on your screen. Master shortcut ⌘+Shift+U turns it on and off instantly.',
+        id: 'controls',
+        label: 'Quota & Study Hub',
+        count: '5/Day',
+        bg: '#bfe9d9',
+        tagline: '5 FREE SOLVES / DAY · MULTI-MODEL STUDY HUB',
+        headline: '5 free solves every day + full Study AI Hub on paid plans.',
+        description: 'Start immediately with 5 free solves per day (auto-refills every 24h). Paid plans unlock unlimited extension solves plus the Claude 3.7, ChatGPT, and DeepSeek-R1 Study & Homework AI Workspace.',
         bullets: [
-            'Off until you switch it on (⌘+Shift+U)',
-            'No account required to start (50 free)',
-            'Closed Shadow DOM container',
-            'Uninstall cleanly in one click'
+            '5 free solves / day included ($0, no card)',
+            'Claude 3.7 + ChatGPT + DeepSeek Study Hub',
+            '⌘+Shift+U master pause shortcut',
+            'Dark & Light extension popup'
         ],
         tools: [
-            { id: 'master-toggle', name: 'Master Shortcut (⌘+Shift+U)', sub: 'Toggle extension on and off in under 50ms', icon: KeyRound, badge: '⌘+Shift+U' },
-            { id: 'no-account', name: 'No Account to Start', sub: '50 free questions immediately upon install', icon: Sparkles, badge: 'Free 50' },
-            { id: 'shadow-dom', name: 'Closed Shadow DOM Container', sub: 'Leaves zero script or CSS footprints on pages', icon: Lock, badge: 'Isolated' },
-            { id: 'clean-uninstall', name: '1-Click Chrome Uninstall', sub: 'Remove anytime with no tangled data or strings', icon: Zap, badge: 'Clean' }
+            {
+                id: 'free-quota-license',
+                name: '5 Free Solves / Day',
+                sub: 'Auto-refills every 24h with no signup',
+                icon: Sparkles,
+                badge: '5/Day Free'
+            },
+            {
+                id: 'study-ai-hub',
+                name: 'Claude + ChatGPT + DeepSeek Hub',
+                sub: 'Specialized homework & study AI wrapper',
+                icon: Lock,
+                badge: 'Paid Bonus'
+            },
+            {
+                id: 'master-power-switch',
+                name: 'Master Pause Shortcut',
+                sub: 'Pause or resume anytime via hotkey',
+                icon: KeyRound,
+                badge: '⌘+Shift+U'
+            },
+            {
+                id: 'theme-appearance',
+                name: 'Dark & Light Popup',
+                sub: 'Switch between dark & light mode',
+                icon: Sun,
+                badge: 'Themes'
+            }
         ]
     }
 ];
@@ -156,38 +273,39 @@ export default function Features() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>BUILT FOR EXAMS · ZERO COMPLICATION</span>
+                        <span>BUILT FOR SPEED &amp; SIMPLICITY</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
                         Everything you need to solve,<br />
                         completely invisible.
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
-                        Click through the categories below to explore our 3 display modes, 3 answer delivery methods, Snap-It screenshot solving, and zero-footprint privacy architecture.
+                        Switch modes with <code className="text-ink font-semibold">Alt+1/2/3</code>, double-click any question to auto-fill, or press <code className="text-ink font-semibold">Alt+S</code> to snip diagrams and formulas.
                     </p>
                 </div>
 
-                {/* Massive OneMacApp Style Pastel Container */}
+                {/* Pastel Showcase Container */}
                 <div 
                     className="rounded-[36px] sm:rounded-[44px] p-6 sm:p-10 md:p-12 transition-colors duration-500 border border-black/5 shadow-card relative overflow-hidden"
                     style={{ backgroundColor: activeCategory.bg }}
                 >
-                    {/* Top Floating Capsule Tabs (OneMacApp Style) */}
+                    {/* Top Floating Capsule Tabs */}
                     <div className="flex justify-center mb-10 overflow-x-auto pb-2">
-                        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/40 backdrop-blur-md border border-white/60 shadow-xs">
+                        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/45 backdrop-blur-md border border-white/70 shadow-xs">
                             {CATEGORIES.map((cat, idx) => {
                                 const isSelected = idx === activeCategoryIndex;
                                 return (
                                     <button
                                         key={cat.id}
+                                        type="button"
                                         onClick={() => handleTabChange(idx)}
-                                        className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                                        className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                                             isSelected
                                                 ? 'bg-white text-ink shadow-soft'
-                                                : 'text-ink/70 hover:text-ink hover:bg-white/30'
+                                                : 'text-ink/75 hover:text-ink hover:bg-white/35'
                                         }`}
                                     >
                                         <span>{cat.label}</span>
@@ -197,9 +315,10 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* All 5 Categories Mounted in SSR DOM for Search & AI Crawlers */}
+                    {/* All 5 Categories Mounted in SSR DOM */}
                     {CATEGORIES.map((category, cIdx) => {
                         const isCurrentCat = cIdx === activeCategoryIndex;
+
                         return (
                             <div
                                 key={category.id}
@@ -209,12 +328,12 @@ export default function Features() {
                                         : 'hidden'
                                 }
                             >
-                                {/* Left Column: macOS Native App Window Sidebar (OneMacApp Layout) */}
+                                {/* Left Column: Clean macOS Feature List Card */}
                                 <div className="lg:col-span-5">
                                     <div className="bg-white rounded-3xl border border-black/10 shadow-lift overflow-hidden">
                                         
-                                        {/* macOS Window Title Bar */}
-                                        <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-5 py-3.5 flex items-center justify-between">
+                                        {/* Clean Window Header */}
+                                        <div className="bg-[#f7f5f0] border-b border-black/5 px-5 py-3.5 flex items-center justify-between">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
                                                 <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
@@ -223,45 +342,46 @@ export default function Features() {
                                                     {category.label}
                                                 </span>
                                             </div>
-                                            <span className="text-[11px] font-bold text-ink bg-black/10 px-2.5 py-0.5 rounded-full">
+                                            <span className="text-[11px] font-mono text-ink-muted font-semibold bg-white px-2.5 py-0.5 rounded-full border border-black/5">
                                                 {category.count}
                                             </span>
                                         </div>
 
-                                        {/* Sidebar Tool Items List */}
-                                        <div className="p-3 sm:p-4 space-y-1.5 bg-[#faf8f5]/80">
+                                        {/* 4 Spacious, Clean Feature Rows (Zero Truncation) */}
+                                        <div className="p-4 space-y-2.5 bg-[#faf8f5]/60">
                                             {category.tools.map((tool, tIdx) => {
                                                 const Icon = tool.icon;
                                                 const isToolActive = isCurrentCat && tIdx === activeToolIndex;
                                                 return (
                                                     <button
                                                         key={tool.id}
+                                                        type="button"
                                                         onClick={() => setActiveToolIndex(tIdx)}
-                                                        className={`w-full text-left p-3 rounded-2xl transition-all duration-200 flex items-center justify-between gap-3 ${
+                                                        className={`w-full text-left p-3.5 rounded-2xl transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer ${
                                                             isToolActive
                                                                 ? 'bg-white shadow-soft border border-black/10 text-ink scale-[1.01]'
-                                                                : 'hover:bg-white/60 text-ink/75 border border-transparent'
+                                                                : 'hover:bg-white/70 text-ink/80 border border-transparent'
                                                         }`}
                                                     >
-                                                        <div className="flex items-center gap-3 min-w-0">
-                                                            <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
+                                                        <div className="flex items-center gap-3.5 min-w-0">
+                                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                                                                 isToolActive ? 'bg-ink text-white' : 'bg-black/5 text-ink'
                                                             }`}>
-                                                                <Icon className="w-4 h-4" />
+                                                                <Icon className="w-5 h-5" />
                                                             </div>
                                                             <div className="min-w-0">
-                                                                <div className="text-xs font-bold truncate text-ink">
+                                                                <div className="text-sm font-bold text-ink leading-snug">
                                                                     {tool.name}
                                                                 </div>
-                                                                <div className="text-[11px] text-ink-muted truncate">
+                                                                <div className="text-xs text-ink-muted leading-snug">
                                                                     {tool.sub}
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${
+                                                        <span className={`text-[11px] font-mono font-bold px-2.5 py-1 rounded-full shrink-0 ${
                                                             isToolActive 
-                                                                ? 'bg-ink/5 text-ink' 
+                                                                ? 'bg-ink text-white' 
                                                                 : 'bg-black/5 text-ink-muted'
                                                         }`}>
                                                             {tool.badge}
@@ -273,7 +393,7 @@ export default function Features() {
                                     </div>
                                 </div>
 
-                                {/* Right Column: Category Details & Bullets (OneMacApp Layout) */}
+                                {/* Right Column: Instant Clarity Hierarchy */}
                                 <div className="lg:col-span-7 flex flex-col justify-center">
                                     
                                     {/* Eyebrow Category Tag */}
@@ -286,24 +406,28 @@ export default function Features() {
                                         {category.headline}
                                     </h3>
 
-                                    {/* Descriptive Paragraph */}
+                                    {/* Concise 2-Line Description */}
                                     <p className="text-base sm:text-lg text-ink/80 leading-relaxed font-normal mb-8 max-w-xl">
                                         {category.description}
                                     </p>
 
-                                    {/* 2x2 Grid of Checkmarks (OneMacApp Style) */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-9 max-w-lg">
+                                    {/* Clean 2x2 Grid of Short Checkmarks */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-9 max-w-xl">
                                         {category.bullets.map((bullet, bIdx) => (
-                                            <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-ink">
-                                                <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-xs shrink-0">
-                                                    <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" />
+                                            <div
+                                                key={bIdx}
+                                                onClick={() => setActiveToolIndex(bIdx)}
+                                                className="flex items-center gap-3 text-sm font-semibold text-ink bg-white/55 hover:bg-white/80 px-4 py-3 rounded-2xl border border-white/80 shadow-2xs transition-all cursor-pointer"
+                                            >
+                                                <div className="w-5 h-5 rounded-full bg-ink text-white flex items-center justify-center shrink-0">
+                                                    <Check className="w-3 h-3 stroke-[2.5]" />
                                                 </div>
                                                 <span>{bullet}</span>
                                             </div>
                                         ))}
                                     </div>
 
-                                    {/* Dark CTA Button */}
+                                    {/* Single Primary CTA */}
                                     <div>
                                         <a
                                             href="https://discord.gg/aCcsyKYJq4"

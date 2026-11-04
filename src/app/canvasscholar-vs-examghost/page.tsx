@@ -21,18 +21,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CanvasScholarLinearAlgebraDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Canvas Scholar vs ExamGhost (2026) — Clipper vs 0.3s AI",
     },
-    description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 50 Free Solves.",
+    description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/canvasscholar-vs-examghost",
     },
     openGraph: {
         title: "Canvas Scholar vs ExamGhost (2026) — Clipper vs 0.3s AI",
-        description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 50 Free Solves.",
+        description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 5 Free Solves / Day.",
         url: "https://examghost.com/canvasscholar-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Canvas Scholar vs ExamGhost (2026) — Clipper vs 0.3s AI",
-        description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 50 Free Solves.",
+        description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,7 +80,7 @@ export default function CanvasscholarVsExamghostPage() {
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
                         "offers": [
-                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
@@ -112,7 +114,7 @@ export default function CanvasscholarVsExamghostPage() {
                         "name": "Does Canvas Scholar actually solve new quiz questions with AI?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. According to its Chrome Web Store listing (version 3.0 by xenojiva07), Canvas Scholar is a keyboard and clipboard utility featuring a Question Clipper (Ctrl/Cmd+Shift+C), a Question Recorder (Ctrl/Cmd+Shift+R), and a Quiz Answer Viewer that only displays your own previous quiz responses on hover. It has no built-in AI or OCR engine to solve unseen questions on a first-attempt exam. ExamGhost includes a 0.3s Edge Vision AI solver with 50 Free Question Solves."
+                            "text": "No. According to its Chrome Web Store listing (version 3.0 by xenojiva07), Canvas Scholar is a keyboard and clipboard utility featuring a Question Clipper (Ctrl/Cmd+Shift+C), a Question Recorder (Ctrl/Cmd+Shift+R), and a Quiz Answer Viewer that only displays your own previous quiz responses on hover. It has no built-in AI or OCR engine to solve unseen questions on a first-attempt exam. ExamGhost includes a 0.3s Edge Vision AI solver with 5 Free Solves / Day."
                         }
                     },
                     {
@@ -136,7 +138,7 @@ export default function CanvasscholarVsExamghostPage() {
                         "name": "How does ExamGhost pricing compare to Canvas Scholar?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost gives every student 50 Free Question Solves ($0, no credit card required) including Focus Shield and 10 Snap-It Vision OCR snips—letting you solve an entire exam with real AI for free. For unlimited access, ExamGhost offers a $19/month pass, a $99/year Academic Year Pass ($8.25/mo), and a $199 one-time Lifetime Degree Pass."
+                            "text": "ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required) including Focus Shield and 10 Snap-It Vision OCR snips—letting you solve an entire exam with real AI for free. For unlimited access, ExamGhost offers a $19/month pass, a $99/year Academic Year Pass ($8.25/mo), and a $199 one-time Lifetime Degree Pass."
                         }
                     }
                 ]
@@ -175,7 +177,7 @@ export default function CanvasscholarVsExamghostPage() {
                         </h1>
 
                         <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-3xl leading-relaxed mb-8">
-                            Many students install <strong>Canvas Scholar v3.0</strong> expecting an AI solver, only to discover during a test that it has <strong>zero AI engine</strong>. Its hover viewer only recalls answers you already submitted on an earlier quiz attempt, and its <code className="text-ink font-mono text-sm bg-sand/70 px-1.5 py-0.5 rounded">Ctrl+Shift+C</code> clipper just copies plaintext to your clipboard so you have to alt-tab out to ChatGPT. ExamGhost solves brand-new Attempt #1 questions and diagrams in <strong>0.3 seconds</strong> inside a closed Shadow DOM—starting with <strong>50 Free AI Solves ($0)</strong>.
+                            Many students install <strong>Canvas Scholar v3.0</strong> expecting an AI solver, only to discover during a test that it has <strong>zero AI engine</strong>. Its hover viewer only recalls answers you already submitted on an earlier quiz attempt, and its <code className="text-ink font-mono text-sm bg-sand/70 px-1.5 py-0.5 rounded">Ctrl+Shift+C</code> clipper just copies plaintext to your clipboard so you have to alt-tab out to ChatGPT. ExamGhost solves brand-new Attempt #1 questions and diagrams in <strong>0.3 seconds</strong> inside a closed Shadow DOM—starting with <strong>5 Free AI Solves / Day ($0)</strong>.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-12">
@@ -186,7 +188,7 @@ export default function CanvasscholarVsExamghostPage() {
                                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
                             >
                                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                                <span>Get 50 Free AI Solves ($0, No Card)</span>
+                                <span>Get 5 Free AI Solves / Day ($0, No Card)</span>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </a>
                             <Link prefetch={false}
@@ -264,7 +266,7 @@ export default function CanvasscholarVsExamghostPage() {
                                             <span className="font-display font-bold text-sm text-ink">ExamGhost 0.3s Multimodal Stealth HUD</span>
                                         </div>
                                         <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                                            50 Free Solves ($0)
+                                            5 Free Solves / Day ($0)
                                         </span>
                                     </div>
 
@@ -308,204 +310,253 @@ export default function CanvasscholarVsExamghostPage() {
                     </div>
                 </header>
 
-                {/* INTERACTIVE PURE-CSS 3-TAB FEATURE & WORKFLOW INSPECTOR */}
+                <CanvasScholarLinearAlgebraDemo />
+
+                {/* VISIBLE 3-PILLAR ARCHITECTURE COMPARISON & 6-HOTKEY SUITE */}
                 <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center max-w-3xl mx-auto mb-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
                                 <Layers className="w-3.5 h-3.5 text-emerald-800" />
-                                <span>Interactive Architecture Comparison · Select Any Tab</span>
+                                <span>Architecture Breakdown · 0-DOM AI vs Offline Clipboard Clipper</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
                                 What Canvas Scholar v3.0 Actually Does vs ExamGhost
                             </h2>
                             <p className="text-sm sm:text-base text-ink-muted">
-                                Click through the three tabs below to see how Canvas Scholar&apos;s five local utilities compare to ExamGhost&apos;s live AI stealth suite.
+                                Detailed comparison showing why Canvas Scholar&apos;s manual clipboard clipping fails on single-attempt exams and how ExamGhost provides 0.3s stealth solving.
                             </p>
                         </div>
 
-                        <div>
-                            <input type="radio" name="cs-tabs" id="cs-tab-retake" className="sr-only peer/retake" defaultChecked />
-                            <input type="radio" name="cs-tabs" id="cs-tab-clip" className="sr-only peer/clip" />
-                            <input type="radio" name="cs-tabs" id="cs-tab-lms" className="sr-only peer/lms" />
-
-                            {/* Tab Bar */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
-                                <label
-                                    htmlFor="cs-tab-retake"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/retake:bg-ink peer-checked/retake:text-white peer-checked/retake:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <History className="w-4 h-4 shrink-0" />
-                                    <span>1. Retake Viewer vs Attempt #1 AI</span>
-                                </label>
-                                <label
-                                    htmlFor="cs-tab-clip"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/clip:bg-ink peer-checked/clip:text-white peer-checked/clip:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Copy className="w-4 h-4 shrink-0" />
-                                    <span>2. Ctrl+Shift+C vs Snap-It OCR</span>
-                                </label>
-                                <label
-                                    htmlFor="cs-tab-lms"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/lms:bg-ink peer-checked/lms:text-white peer-checked/lms:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Keyboard className="w-4 h-4 shrink-0" />
-                                    <span>3. 5 Local Tools vs Full Stealth</span>
-                                </label>
-                            </div>
-
-                            {/* TAB 1: RETAKE VIEWER VS ATTEMPT #1 AI */}
-                            <div className="hidden peer-checked/retake:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
-                                        <History className="w-3.5 h-3.5" />
-                                        <span>Canvas Scholar: &ldquo;Quiz Answer Viewer&rdquo;</span>
-                                    </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        Why hovering shows nothing on your first quiz attempt
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                        Canvas Scholar&apos;s description states: <em>&ldquo;Quiz Answer Viewer: Easily review your previous responses by hovering over questions.&rdquo;</em> Paired with its <code className="font-mono text-xs bg-sand px-1 rounded">Ctrl/Cmd+Shift+R</code> Question Recorder, it simply saves what you answered on an earlier attempt and displays it back to you on a retake.
-                                    </p>
-                                    <div className="space-y-2 text-xs sm:text-sm text-ink-muted">
-                                        <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
-                                            <strong>Useless on Single-Attempt Midterms &amp; Finals:</strong> If your exam only allows 1 attempt, there is no prior response in storage—so hovering over a question returns nothing.
-                                        </div>
-                                        <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
-                                            <strong>Fails on Randomized Question Banks:</strong> Even on multi-attempt quizzes, if Canvas pulls fresh questions from an item bank on Attempt #2, Canvas Scholar has no answer stored.
-                                        </div>
-                                    </div>
+                        {/* COMPLETE 6-HOTKEY STEALTH SUITE */}
+                        <div className="rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm mb-8">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-dark/20 pb-4 mb-6">
+                                <div>
+                                    <h3 className="font-display font-bold text-lg text-ink">ExamGhost 6-Hotkey Stealth Operating System</h3>
+                                    <p className="text-xs text-ink-muted">In-tab edge acceleration · Zero clipboard reliance · Closed Shadow DOM HUD</p>
                                 </div>
-
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
-                                        <Zap className="w-3.5 h-3.5" />
-                                        <span>ExamGhost: Real-Time 0.3s Edge AI Engine</span>
+                                <span className="self-start md:self-auto px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">
+                                    5 Free Solves / Day ($0) · $19/mo · $99/yr · $199 Lifetime
+                                </span>
+                            </div>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Double-Click</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">0.3s Auto-Fill</span>
                                     </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        Solves unseen questions on Attempt #1 in 300ms
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                        ExamGhost doesn&apos;t rely on you failing Attempt #1 first. Our multimodal Edge Vision AI solves brand-new questions on the spot:
-                                    </p>
-                                    <div className="space-y-2 text-xs sm:text-sm text-ink-muted">
-                                        <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
-                                            <strong>All Question Formats Supported:</strong> Multiple-choice, multi-select checkboxes, numerical entry, fill-in-the-blank, and matching tables.
-                                        </div>
-                                        <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
-                                            <strong>50 Free Question Solves Included:</strong> Test the live AI engine across an entire midterm for $0 before deciding on a $19/mo, $99/yr, or $199 Lifetime pass.
-                                        </div>
+                                    <p className="text-xs text-ink-secondary">Double-click any question stem to solve and select correct radio button silently without clipboard touching.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+S</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Snap-It Crop</span>
                                     </div>
+                                    <p className="text-xs text-ink-secondary">In-memory screenshot OCR for linear algebra matrices, vector spaces, eigenvalues, and locked publisher diagrams.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+1</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Auto-Select Radio</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Synthetic event dispatch selecting options without firing SpeedGrader blur telemetry or focus lost flags.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+2</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Smart Highlight</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Subtle green glow highlight overlay rendered exclusively within closed Shadow root without altering host styles.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+3</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Ghost HUD Overlay</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Step-by-step matrix row-reduction and proof modal with adjustable opacity slider (0% to 100%).</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-sand-dark/20">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">⌘+Shift+U</code>
+                                        <span className="text-[11px] font-bold text-rose-700">&lt;1ms Panic Flush</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Emergency panic kill key instantly purges HUD from memory and restores native Canvas view if someone approaches.</p>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* TAB 2: CTRL+SHIFT+C CLIPPER VS SNAP-IT OCR */}
-                            <div className="hidden peer-checked/clip:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
-                                        <Copy className="w-3.5 h-3.5" />
-                                        <span>Canvas Scholar: Ctrl/Cmd+Shift+C Question Clipper</span>
-                                    </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        Copying text still forces you to leave your exam tab
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                        When you press <code className="font-mono text-xs bg-sand px-1 rounded">Ctrl/Cmd+Shift+C</code> in Canvas Scholar, it copies the plaintext of the question to your system clipboard. Because there is no AI built into Canvas Scholar, you must then:
-                                    </p>
-                                    <ol className="list-decimal list-inside space-y-2 text-xs sm:text-sm text-ink-muted bg-sand/40 p-4 rounded-xl border border-sand-dark/25">
-                                        <li>Switch tabs or windows to ChatGPT, Claude, or Google (~2s)</li>
-                                        <li>Paste the clipped text and manually type any missing equations (~4s)</li>
-                                        <li>Wait for the external tab to stream a response (~3.5s+)</li>
-                                        <li>Switch back to Canvas to click your answer</li>
-                                    </ol>
-                                    <p className="text-xs text-rose-800 font-medium">
-                                        Worse: if the question contains a graph, circuit diagram, or Canvas New Quizzes (<code className="font-mono">LTI 1.3</code>) iframe, <code className="font-mono">Ctrl+Shift+C</code> cannot copy the visual data at all.
-                                    </p>
+                        {/* VISIBLE 3-PILLAR BREAKDOWN CARDS */}
+                        <div className="space-y-8">
+                            {/* PILLAR 1: RETAKE VIEWER VS ATTEMPT #1 AI */}
+                            <div className="rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-sand flex items-center justify-center font-mono font-bold text-xs text-ink">01</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">Retake Viewer vs Attempt #1 Real-Time AI</h3>
                                 </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                                            <History className="w-3.5 h-3.5" />
+                                            <span>Canvas Scholar: &ldquo;Quiz Answer Viewer&rdquo;</span>
+                                        </div>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            Why hovering shows nothing on your first quiz attempt
+                                        </h4>
+                                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                            Canvas Scholar&apos;s description states: <em>&ldquo;Quiz Answer Viewer: Easily review your previous responses by hovering over questions.&rdquo;</em> Paired with its <code className="font-mono text-xs bg-sand px-1 rounded">Ctrl/Cmd+Shift+R</code> Question Recorder, it simply saves what you answered on an earlier attempt and displays it back to you on a retake.
+                                        </p>
+                                        <div className="space-y-2 text-xs sm:text-sm text-ink-muted">
+                                            <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                                                <strong>Useless on Single-Attempt Midterms &amp; Finals:</strong> If your exam only allows 1 attempt, there is no prior response in storage—so hovering over a question returns nothing.
+                                            </div>
+                                            <div className="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200 text-rose-950">
+                                                <strong>Fails on Randomized Question Banks:</strong> Even on multi-attempt quizzes, if Canvas pulls fresh questions from an item bank on Attempt #2, Canvas Scholar has no answer stored.
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        <span>ExamGhost: In-Tab Hotkey + Snap-It Vision OCR</span>
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                                            <Zap className="w-3.5 h-3.5" />
+                                            <span>ExamGhost: Real-Time 0.3s Edge AI Engine</span>
+                                        </div>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            Solves unseen questions on Attempt #1 in 300ms
+                                        </h4>
+                                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                            ExamGhost doesn&apos;t rely on you failing Attempt #1 first. Our multimodal Edge Vision AI solves brand-new questions on the spot:
+                                        </p>
+                                        <div className="space-y-2 text-xs sm:text-sm text-ink-muted">
+                                            <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                                                <strong>All Question Formats Supported:</strong> Multiple-choice, multi-select checkboxes, numerical entry, fill-in-the-blank, and matching tables.
+                                            </div>
+                                            <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                                                <strong>5 Free Solves / Day Included:</strong> Test the live AI engine across an entire midterm for $0 before deciding on a $19/mo, $99/yr, or $199 Lifetime pass.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        Zero tab switching, zero clipboard pasting, full diagram OCR
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                        With ExamGhost, you never leave the quiz viewport or touch your system clipboard:
-                                    </p>
-                                    <div className="bg-emerald-950 text-emerald-100 rounded-2xl p-4 font-mono text-xs overflow-x-auto leading-relaxed border border-emerald-800">
-                                        <div className="text-emerald-400">// 1. Press hotkey or drag Snap-It OCR crosshair:</div>
-                                        <div>const answer = await EdgeVision.solveInTab(region); // 0.3s</div>
-                                        <div className="text-emerald-400 mt-2">// 2. Renders inside closed ShadowRoot on the same screen:</div>
-                                        <div>shadowHud.renderMinimalBadge(answer); // 0 tab switches</div>
-                                    </div>
-                                    <p className="text-xs text-ink-muted leading-relaxed">
-                                        Whether the question is selectable HTML text, a locked PDF diagram, or a cross-origin Canvas New Quizzes iframe, ExamGhost solves and displays the answer in 0.3 seconds on the exact same screen.
-                                    </p>
                                 </div>
                             </div>
 
-                            {/* TAB 3: 5 LOCAL TOOLS VS FULL STEALTH SUITE */}
-                            <div className="hidden peer-checked/lms:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand border border-sand-dark/30 text-xs font-mono font-bold text-ink">
-                                        <span>Canvas Scholar v3.0: All 5 Listed Utilities</span>
+                            {/* PILLAR 2: CTRL+SHIFT+C CLIPPER VS SNAP-IT OCR */}
+                            <div className="rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-sand flex items-center justify-center font-mono font-bold text-xs text-ink">02</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">Ctrl+Shift+C Clipboard Clipper vs Snap-It STEM OCR</h3>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
+                                            <Copy className="w-3.5 h-3.5" />
+                                            <span>Canvas Scholar: Ctrl/Cmd+Shift+C Question Clipper</span>
+                                        </div>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            Copying text still forces you to leave your exam tab
+                                        </h4>
+                                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                            When you press <code className="font-mono text-xs bg-sand px-1 rounded">Ctrl/Cmd+Shift+C</code> in Canvas Scholar, it copies the plaintext of the question to your system clipboard. Because there is no AI built into Canvas Scholar, you must then:
+                                        </p>
+                                        <ol className="list-decimal list-inside space-y-2 text-xs sm:text-sm text-ink-muted bg-sand/40 p-4 rounded-xl border border-sand-dark/25">
+                                            <li>Switch tabs or windows to ChatGPT, Claude, or Google (~2s)</li>
+                                            <li>Paste the clipped text and manually type any missing equations (~4s)</li>
+                                            <li>Wait for the external tab to stream a response (~3.5s+)</li>
+                                            <li>Switch back to Canvas to click your answer</li>
+                                        </ol>
+                                        <p className="text-xs text-rose-800 font-medium">
+                                            Worse: if the question contains a graph, circuit diagram, or Canvas New Quizzes (<code className="font-mono">LTI 1.3</code>) iframe, <code className="font-mono">Ctrl+Shift+C</code> cannot copy the visual data at all.
+                                        </p>
                                     </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        What is inside Canvas Scholar&apos;s 561KiB package?
-                                    </h3>
-                                    <div className="space-y-2 text-xs">
-                                        <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
-                                            <span><strong>1. Question Clipper</strong> (<code className="font-mono">Ctrl/Cmd+Shift+C</code>)</span>
-                                            <span className="font-mono text-ink-muted">Clipboard Copy Only</span>
+
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                                            <ShieldCheck className="w-3.5 h-3.5" />
+                                            <span>ExamGhost: In-Tab Hotkey + Snap-It Vision OCR</span>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
-                                            <span><strong>2. Quiz Answer Viewer</strong> (Hover)</span>
-                                            <span className="font-mono text-rose-800">Prior Attempts Only</span>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            Zero tab switching, zero clipboard pasting, full diagram OCR
+                                        </h4>
+                                        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                            With ExamGhost, you never leave the quiz viewport or touch your system clipboard:
+                                        </p>
+                                        <div className="bg-emerald-950 text-emerald-100 rounded-2xl p-4 font-mono text-xs overflow-x-auto leading-relaxed border border-emerald-800">
+                                            <div className="text-emerald-400">// 1. Press hotkey or drag Snap-It OCR crosshair:</div>
+                                            <div>const answer = await EdgeVision.solveInTab(region); // 0.3s</div>
+                                            <div className="text-emerald-400 mt-2">// 2. Renders inside closed ShadowRoot on the same screen:</div>
+                                            <div>shadowHud.renderMinimalBadge(answer); // 0 tab switches</div>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
-                                            <span><strong>3. Question Recorder</strong> (<code className="font-mono">Ctrl/Cmd+Shift+R</code>)</span>
-                                            <span className="font-mono text-ink-muted">Local Save After Quiz</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
-                                            <span><strong>4. Keyboard Selection</strong> (<code className="font-mono">1-5</code>, <code className="font-mono">a-e</code>, <code className="font-mono">Enter</code>)</span>
-                                            <span className="font-mono text-emerald-800">Included</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
-                                            <span><strong>5. Activity Bypass</strong></span>
-                                            <span className="font-mono text-ink-muted">Canvas Classic Only</span>
-                                        </div>
+                                        <p className="text-xs text-ink-muted leading-relaxed">
+                                            Whether the question is selectable HTML text, a locked PDF diagram, or a cross-origin Canvas New Quizzes iframe, ExamGhost solves and displays the answer in 0.3 seconds on the exact same screen.
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div className="space-y-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
-                                        <span>ExamGhost 2026 Stealth Architecture</span>
+                            {/* PILLAR 3: 5 LOCAL TOOLS VS FULL STEALTH SUITE */}
+                            <div className="rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-sand flex items-center justify-center font-mono font-bold text-xs text-ink">03</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">5 Local Utilities vs Complete Stealth Suite</h3>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand border border-sand-dark/30 text-xs font-mono font-bold text-ink">
+                                            <span>Canvas Scholar v3.0: All 5 Listed Utilities</span>
+                                        </div>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            What is inside Canvas Scholar&apos;s 561KiB package?
+                                        </h4>
+                                        <div className="space-y-2 text-xs">
+                                            <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
+                                                <span><strong>1. Question Clipper</strong> (<code className="font-mono">Ctrl/Cmd+Shift+C</code>)</span>
+                                                <span className="font-mono text-ink-muted">Clipboard Copy Only</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
+                                                <span><strong>2. Quiz Answer Viewer</strong> (Hover)</span>
+                                                <span className="font-mono text-rose-800">Prior Attempts Only</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
+                                                <span><strong>3. Question Recorder</strong> (<code className="font-mono">Ctrl/Cmd+Shift+R</code>)</span>
+                                                <span className="font-mono text-ink-muted">Local Save After Quiz</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
+                                                <span><strong>4. Keyboard Selection</strong> (<code className="font-mono">1-5</code>, <code className="font-mono">a-e</code>, <code className="font-mono">Enter</code>)</span>
+                                                <span className="font-mono text-emerald-800">Included</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-sand/40 border border-sand-dark/25 flex justify-between items-center">
+                                                <span><strong>5. Activity Bypass</strong></span>
+                                                <span className="font-mono text-ink-muted">Canvas Classic Only</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3 className="text-xl font-bold font-display text-ink">
-                                        Engineered for Canvas, Blackboard, Moodle &amp; D2L
-                                    </h3>
-                                    <div className="space-y-2 text-xs">
-                                        <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
-                                            <span><strong>1. Multimodal Edge AI Solver</strong></span>
-                                            <span className="font-mono font-bold text-emerald-800">0.3s Attempt #1 Solve</span>
+
+                                    <div className="space-y-4">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                                            <span>ExamGhost 2026 Stealth Architecture</span>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
-                                            <span><strong>2. Snap-It STEM Vision OCR</strong></span>
-                                            <span className="font-mono font-bold text-emerald-800">Graphs, LaTeX &amp; Iframes</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
-                                            <span><strong>3. Closed ShadowRoot HUD</strong></span>
-                                            <span className="font-mono font-bold text-emerald-800">0 Host DOM Footprint</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
-                                            <span><strong>4. Capture-Phase Focus Shield</strong></span>
-                                            <span className="font-mono font-bold text-emerald-800">Blocks Blur &amp; Visibility</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
-                                            <span><strong>5. Emergency Panic Kill Switch</strong></span>
-                                            <span className="font-mono font-bold text-emerald-800">⌘+Shift+U (&lt;1ms Purge)</span>
+                                        <h4 className="text-lg font-bold font-display text-ink">
+                                            Engineered for Canvas, Blackboard, Moodle &amp; D2L
+                                        </h4>
+                                        <div className="space-y-2 text-xs">
+                                            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
+                                                <span><strong>1. Multimodal Edge AI Solver</strong></span>
+                                                <span className="font-mono font-bold text-emerald-800">0.3s Attempt #1 Solve</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
+                                                <span><strong>2. Snap-It STEM Vision OCR</strong></span>
+                                                <span className="font-mono font-bold text-emerald-800">Graphs, LaTeX &amp; Iframes</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
+                                                <span><strong>3. Closed ShadowRoot HUD</strong></span>
+                                                <span className="font-mono font-bold text-emerald-800">0 Host DOM Footprint</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
+                                                <span><strong>4. Capture-Phase Focus Shield</strong></span>
+                                                <span className="font-mono font-bold text-emerald-800">Blocks Blur &amp; Visibility</span>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between items-center">
+                                                <span><strong>5. Emergency Panic Kill Switch</strong></span>
+                                                <span className="font-mono font-bold text-emerald-800">⌘+Shift+U (&lt;1ms Purge)</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -556,7 +607,7 @@ export default function CanvasscholarVsExamghostPage() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span><strong>50 Free AI Solves Upfront:</strong> Try the full stealth HUD and AI solver on 50 real questions for $0 with no credit card required.</span>
+                                    <span><strong>5 Free AI Solves / Day Upfront:</strong> Try the full stealth HUD and AI solver with 5 Free Solves / Day ($0, auto-refills every 24h, no credit card required).</span>
                                 </li>
                             </ul>
                         </div>
@@ -685,10 +736,17 @@ export default function CanvasscholarVsExamghostPage() {
                                     <tr className="bg-surface">
                                         <td className="py-3.5 px-4 font-semibold text-ink">Pricing &amp; Free Trial</td>
                                         <td className="py-3.5 px-4 text-ink-muted text-xs">Cost to test and unlock full functionality</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">50 Free Solves · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Free CWS utility (No AI solver included)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -762,7 +820,7 @@ export default function CanvasscholarVsExamghostPage() {
                                     Join the ExamGhost Student Discord
                                 </h2>
                                 <p className="text-xs sm:text-sm text-white/90">
-                                    Get 50 Free AI Question Solves, live Canvas &amp; Blackboard stealth updates, and 24/7 engineering support.
+                                    Get 5 Free/Day AI Question Solves, live Canvas &amp; Blackboard stealth updates, and 24/7 engineering support.
                                 </p>
                             </div>
                         </div>
@@ -772,7 +830,7 @@ export default function CanvasscholarVsExamghostPage() {
                             rel="noopener noreferrer"
                             className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
                         >
-                            <span>Join Discord &amp; Get 50 Free Solves</span>
+                            <span>Join Discord &amp; Get 5 Free Solves / Day</span>
                             <ExternalLink className="w-4 h-4" />
                         </a>
                     </div>
@@ -796,7 +854,7 @@ export default function CanvasscholarVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                No. According to its Chrome Web Store listing (version 3.0 by <code className="font-mono text-xs">xenojiva07</code>), Canvas Scholar is a keyboard and clipboard utility featuring a <strong>Question Clipper (<code className="font-mono text-xs">Ctrl/Cmd+Shift+C</code>)</strong>, a <strong>Question Recorder (<code className="font-mono text-xs">Ctrl/Cmd+Shift+R</code>)</strong>, and a <strong>Quiz Answer Viewer</strong> that only displays your own previous quiz responses on hover. It has no built-in AI or OCR engine to solve unseen questions on a first-attempt exam. ExamGhost includes a 0.3s Edge Vision AI solver with <strong>50 Free Question Solves</strong>.
+                                No. According to its Chrome Web Store listing (version 3.0 by <code className="font-mono text-xs">xenojiva07</code>), Canvas Scholar is a keyboard and clipboard utility featuring a <strong>Question Clipper (<code className="font-mono text-xs">Ctrl/Cmd+Shift+C</code>)</strong>, a <strong>Question Recorder (<code className="font-mono text-xs">Ctrl/Cmd+Shift+R</code>)</strong>, and a <strong>Quiz Answer Viewer</strong> that only displays your own previous quiz responses on hover. It has no built-in AI or OCR engine to solve unseen questions on a first-attempt exam. ExamGhost includes a 0.3s Edge Vision AI solver with <strong>5 Free Solves / Day</strong>.
                             </p>
                         </details>
 
@@ -826,7 +884,7 @@ export default function CanvasscholarVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                ExamGhost gives every student <strong>50 Free Question Solves ($0, no credit card required)</strong> including Focus Shield and 10 Snap-It Vision OCR snips—letting you solve an entire exam with real AI for free. For unlimited access, ExamGhost offers a <strong>$19/month</strong> pass, a <strong>$99/year Academic Year Pass ($8.25/mo)</strong>, and a <strong>$199 one-time Lifetime Degree Pass</strong>.
+                                ExamGhost gives every student <strong>5 Free Solves / Day ($0, no credit card required)</strong> including Focus Shield and 10 Snap-It Vision OCR snips—letting you solve an entire exam with real AI for free. For unlimited access, ExamGhost offers a <strong>$19/month</strong> pass, a <strong>$99/year Academic Year Pass ($8.25/mo)</strong>, and a <strong>$199 one-time Lifetime Degree Pass</strong>.
                             </p>
                         </details>
                     </div>
@@ -845,7 +903,7 @@ export default function CanvasscholarVsExamghostPage() {
                                     Stop clipping text to paste into another tab.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    Test ExamGhost&apos;s 0.3s in-tab AI solver and Snap-It Vision OCR with 50 Free Question Solves ($0, no credit card required).
+                                    Test ExamGhost&apos;s 0.3s in-tab AI solver and Snap-It Vision OCR with 5 Free Solves / Day ($0, no credit card required).
                                 </p>
                             </div>
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
@@ -856,7 +914,7 @@ export default function CanvasscholarVsExamghostPage() {
                                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                                 >
                                     <FaChrome className="w-4 h-4 text-mint" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
                                 <Link prefetch={false}
@@ -894,7 +952,10 @@ export default function CanvasscholarVsExamghostPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

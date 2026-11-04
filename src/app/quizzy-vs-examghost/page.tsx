@@ -2,7 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { QuizzyDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   CheckCircle2,
   XCircle,
@@ -27,13 +29,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
     },
-    description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+    description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/quizzy-vs-examghost",
     },
     openGraph: {
         title: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
-        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/quizzy-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quizzy App vs ExamGhost (2026) — Credit Caps vs Unlimited",
-        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 50 Free Solves.",
+        description: "Compare Quizzy App (quizzy-app.xyz) with ExamGhost. Replace 250-credit caps and Lite AI paywalls with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -74,6 +76,40 @@ const jsonLd = {
       breadcrumb: {
         "@id": "https://examghost.com/quizzy-vs-examghost#breadcrumb",
       },
+      "about": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ExamGhost",
+          "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+          "applicationCategory": "EducationalApplication",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free Tier (5 Free Solves / Day)",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Monthly Pass",
+              "price": "19.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Academic Year Pass",
+              "price": "99.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Lifetime Degree Pass",
+              "price": "199.00",
+              "priceCurrency": "USD"
+            }
+          ]
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -116,7 +152,7 @@ const jsonLd = {
           name: "Does Quizzy App offer a free trial or refund guarantee?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No. Quizzy's setup instructions state: 'Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,' and its FAQ explicitly states: 'Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.' ExamGhost includes 50 Free Question Solves + 10 Vision OCR Snips ($0, no card required) plus a 14-day 100% refund guarantee.",
+            text: "No. Quizzy's setup instructions state: 'Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,' and its FAQ explicitly states: 'Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.' ExamGhost includes 5 Free Solves / Day + 10 Vision OCR Snips ($0, no card required) plus a 14-day 100% refund guarantee.",
           },
         },
         {
@@ -197,7 +233,7 @@ export default function QuizzyVsExamGhostPage() {
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
               >
                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                <span>Claim 50 Free Flagship AI Solves ($0)</span>
+                <span>Claim 5 Free/Day Flagship AI Solves ($0)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <Link prefetch={false}
@@ -292,7 +328,7 @@ export default function QuizzyVsExamGhostPage() {
                     </div>
                     <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-50/80 border border-emerald-200">
                       <span className="text-emerald-950"><strong>$0 Starter Trial:</strong> Flagship STEM + Vision AI</span>
-                      <span className="font-mono text-emerald-800 font-bold">50 Free Solves</span>
+                      <span className="font-mono text-emerald-800 font-bold">5 Free Solves / Day</span>
                     </div>
                     <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-50/80 border border-emerald-200">
                       <span className="text-emerald-950"><strong>$19/mo or $99/yr ($8.25/mo):</strong> Flagship AI</span>
@@ -307,7 +343,7 @@ export default function QuizzyVsExamGhostPage() {
                   <div className="space-y-2 text-xs">
                     <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                      <span><strong>Never Downgraded to a &ldquo;Lite&rdquo; Model:</strong> Every solve—including your 50 free trial solves—uses our highest-accuracy STEM &amp; Vision model.</span>
+                      <span><strong>Never Downgraded to a &ldquo;Lite&rdquo; Model:</strong> Every solve—including your 5 Free/Day trial solves—uses our highest-accuracy STEM &amp; Vision model.</span>
                     </div>
                     <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
@@ -329,13 +365,49 @@ export default function QuizzyVsExamGhostPage() {
           </div>
         </header>
 
-        {/* INTERACTIVE PURE-CSS 3-TAB COMPARISON */}
+        <QuizzyDemo />
+
+        {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+          <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  ExamGhost Stealth Keyboard &amp; Model Suite
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+              </div>
+            </div>
+            <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+              </p>
+              <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                <div className="font-bold text-white text-sm">
+                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* VISIBLE 3-PART COMPARISON TEARDOWN */}
         <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
                 <Layers className="w-3.5 h-3.5 text-emerald-800" />
-                <span>Interactive Audit · Click Any Tab Below</span>
+                <span>Forensic Architecture &amp; Pricing Audit</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
                 Inside Quizzy-App.xyz vs ExamGhost Architecture
@@ -345,38 +417,9 @@ export default function QuizzyVsExamGhostPage() {
               </p>
             </div>
 
-            <div>
-              <input type="radio" name="qz-tabs" id="qz-tab-models" className="sr-only peer/models" defaultChecked />
-              <input type="radio" name="qz-tabs" id="qz-tab-refund" className="sr-only peer/refund" />
-              <input type="radio" name="qz-tabs" id="qz-tab-stealth" className="sr-only peer/stealth" />
-
-              {/* Tab Navigation */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
-                <label
-                  htmlFor="qz-tab-models"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/models:bg-ink peer-checked/models:text-white peer-checked/models:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <Cpu className="w-4 h-4 shrink-0" />
-                  <span>1. Lite vs Expert AI Paywall</span>
-                </label>
-                <label
-                  htmlFor="qz-tab-refund"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/refund:bg-ink peer-checked/refund:text-white peer-checked/refund:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <CreditCard className="w-4 h-4 shrink-0" />
-                  <span>2. No-Refund Policy &amp; Credits</span>
-                </label>
-                <label
-                  htmlFor="qz-tab-stealth"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/stealth:bg-ink peer-checked/stealth:text-white peer-checked/stealth:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <EyeOff className="w-4 h-4 shrink-0" />
-                  <span>3. Right-Click vs Shadow DOM</span>
-                </label>
-              </div>
-
-              {/* TAB 1: LITE VS EXPERT AI PAYWALL */}
-              <div className="hidden peer-checked/models:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+            <div className="space-y-8">
+              {/* CARD 1: LITE VS EXPERT AI PAYWALL */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <Cpu className="w-3.5 h-3.5" />
@@ -407,24 +450,24 @@ export default function QuizzyVsExamGhostPage() {
                     <span>ExamGhost: Flagship STEM &amp; Vision AI for Everyone</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
-                    100% flagship reasoning accuracy—even on your 50 free solves
+                    100% flagship reasoning accuracy—even on your 5 free solves / day
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                    We never bait-and-switch students with a downgraded &ldquo;Lite&rdquo; model on lower tiers. Every single ExamGhost solve runs on our full-power multimodal STEM &amp; Vision OCR pipeline:
+                    We never bait-and-switch students with a downgraded &ldquo;Lite&rdquo; model on lower tiers. Every single ExamGhost solve runs on our full-power multimodal STEM &amp; Vision OCR pipeline (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1):
                   </p>
                   <div className="space-y-2 text-xs">
                     <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
                       <strong>Unlimited Solves on Every Paid Pass:</strong> No 250, 700, or 1,500 credit meters counting down during midterms or finals week.
                     </div>
                     <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
-                      <strong>Cheaper Than Quizzy Expert:</strong> ExamGhost Monthly is $19.00/mo (unlimited), Academic Year is $99/yr ($8.25/mo), and Lifetime is $199 once.
+                      <strong>Cheaper Than Quizzy Expert:</strong> ExamGhost Monthly is $19.00/mo (unlimited), Academic Year is $99/yr ($8.25/mo), and Lifetime Degree Pass is $199 once.
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* TAB 2: NO-REFUND POLICY & CREDITS */}
-              <div className="hidden peer-checked/refund:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* CARD 2: NO-REFUND POLICY & CREDITS */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <Lock className="w-3.5 h-3.5" />
@@ -447,7 +490,7 @@ export default function QuizzyVsExamGhostPage() {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>ExamGhost: 50 Free Solves + 14-Day Refund Guarantee</span>
+                    <span>ExamGhost: 5 Free Solves / Day + 14-Day Refund Guarantee</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Test on your actual course portal for $0 before paying
@@ -457,7 +500,7 @@ export default function QuizzyVsExamGhostPage() {
                   </p>
                   <div className="space-y-2.5 text-xs">
                     <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
-                      <strong>1. 50 Free Question Solves + 10 OCR Snips ($0):</strong> Claim your free starter pass on Discord with zero credit card required.
+                      <strong>1. 5 Free Solves / Day ($0):</strong> Claim your free starter solves with zero credit card required.
                     </div>
                     <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950">
                       <strong>2. 14-Day 100% Money-Back Guarantee:</strong> Every paid ExamGhost pass is backed by a straightforward 14-day refund policy.
@@ -466,8 +509,8 @@ export default function QuizzyVsExamGhostPage() {
                 </div>
               </div>
 
-              {/* TAB 3: RIGHT-CLICK WRAPPER VS CLOSED SHADOW DOM */}
-              <div className="hidden peer-checked/stealth:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* CARD 3: RIGHT-CLICK WRAPPER VS CLOSED SHADOW DOM */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <AlertTriangle className="w-3.5 h-3.5" />
@@ -555,7 +598,7 @@ export default function QuizzyVsExamGhostPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>50 Free Solves + 14-Day Refund Guarantee:</strong> Zero upfront risk compared to Quizzy&apos;s strict no-refund policy.</span>
+                  <span><strong>5 Free Solves / Day + 14-Day Refund Guarantee:</strong> Zero upfront risk compared to Quizzy&apos;s strict no-refund policy.</span>
                 </li>
               </ul>
             </div>
@@ -612,7 +655,7 @@ export default function QuizzyVsExamGhostPage() {
                     <td className="py-3.5 px-4 font-semibold text-ink">Free Trial Access</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Testing on your LMS before paying</td>
                     <td className="py-3.5 px-4 text-emerald-800 font-bold">
-                      50 Free Solves + 10 OCR Snips ($0, No CC)
+                      5 Free Solves / Day + 10 OCR Snips ($0, No CC)
                     </td>
                     <td className="py-3.5 px-4 text-rose-800">
                       <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
@@ -664,8 +707,19 @@ export default function QuizzyVsExamGhostPage() {
                   <tr className="bg-surface">
                     <td className="py-3.5 px-4 font-semibold text-ink">Highest-Accuracy Pricing</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Cost for flagship AI accuracy</td>
-                    <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime Degree Pass</td>
                     <td className="py-3.5 px-4 text-ink-muted">$19.99/mo (Capped at 1,500 credits)</td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -712,7 +766,7 @@ export default function QuizzyVsExamGhostPage() {
                   Join the ExamGhost Student Discord
                 </h2>
                 <p className="text-xs sm:text-sm text-white/90">
-                  Claim 50 free flagship AI solves ($0, no card), check live Canvas stealth status, and get 24/7 engineering support.
+                  Claim 5 Free/Day flagship AI solves ($0, no card), check live Canvas stealth status, and get 24/7 engineering support.
                 </p>
               </div>
             </div>
@@ -722,7 +776,7 @@ export default function QuizzyVsExamGhostPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
             >
-              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <span>Join Discord &amp; Get 5 Free Solves / Day</span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -756,7 +810,7 @@ export default function QuizzyVsExamGhostPage() {
                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                No. Quizzy&apos;s setup instructions state: <em>&ldquo;Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,&rdquo;</em> and its FAQ explicitly states: <em>&ldquo;Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.&rdquo;</em> ExamGhost includes <strong>50 Free Question Solves + 10 Vision OCR Snips ($0)</strong> with no card required, plus a <strong>14-day 100% refund guarantee</strong>.
+                No. Quizzy&apos;s setup instructions state: <em>&ldquo;Sign up with Google or email/password, choose your subscription plan, and install our Chrome extension,&rdquo;</em> and its FAQ explicitly states: <em>&ldquo;Quizzy App operates on a no-refund policy... Once a purchase is made, it is final and non-refundable.&rdquo;</em> ExamGhost includes <strong>5 Free Solves / Day + 10 Vision OCR Snips ($0)</strong> with no card required, plus a <strong>14-day 100% refund guarantee</strong>.
               </p>
             </details>
 
@@ -792,7 +846,7 @@ export default function QuizzyVsExamGhostPage() {
                   <span>Zero Credit Meters · Zero &ldquo;Lite&rdquo; Models</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold font-display text-ink mb-2">
-                  Get 50 Free Flagship AI Solves before spending a cent.
+                  Get 5 Free/Day Flagship AI Solves before spending a cent.
                 </h2>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                   Test ExamGhost&apos;s closed Shadow DOM HUD, Focus Shield, and 0.3s Vision OCR risk-free—backed by our 14-day 100% money-back guarantee.
@@ -806,7 +860,7 @@ export default function QuizzyVsExamGhostPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                 >
                   <FaChrome className="w-4 h-4 text-mint" />
-                  <span>Claim 50 Free Solves</span>
+                  <span>Claim 5 Free Solves / Day</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link prefetch={false}
@@ -855,6 +909,9 @@ export default function QuizzyVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

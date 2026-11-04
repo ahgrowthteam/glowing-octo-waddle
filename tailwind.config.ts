@@ -70,8 +70,8 @@ const config: Config = {
                 },
             },
             fontFamily: {
-                display: ["ui-rounded", '"SF Pro Rounded"', '"Hiragino Maru Gothic ProN"', '"Quicksand"', "system-ui", "-apple-system", "sans-serif"],
-                sans: ["Inter", "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"],
+                display: ["ui-rounded", '"SF Pro Rounded"', "var(--font-nunito)", '"Quicksand"', "system-ui", "-apple-system", "sans-serif"],
+                sans: ["var(--font-inter)", "Inter", "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"],
             },
             borderRadius: {
                 xl: "36px",

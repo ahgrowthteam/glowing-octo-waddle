@@ -19,19 +19,21 @@ import {
   Lock,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { QuizWizardDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Quiz Wizard vs ExamGhost (2026) — Spell Quotas vs 0.3s AI",
     },
-    description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/quizwizard-vs-examghost",
     },
     openGraph: {
         title: "Quiz Wizard vs ExamGhost (2026) — Spell Quotas vs 0.3s AI",
-        description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/quizwizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quiz Wizard vs ExamGhost (2026) — Spell Quotas vs 0.3s AI",
-        description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -79,10 +81,10 @@ export default function QuizwizardVsExamghostPage() {
             name: "ExamGhost",
             applicationCategory: "EducationalApplication",
             operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
-            offers: [
+            "offers": [
               {
                 "@type": "Offer",
-                name: "Free Trial (50 Solves)",
+                name: "Free Tier (5 Free Solves / Day)",
                 price: "0",
                 priceCurrency: "USD",
               },
@@ -198,7 +200,7 @@ export default function QuizwizardVsExamghostPage() {
             name: "How does ExamGhost's pricing compare to Quiz Wizard's monthly Spell tiers?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Quiz Wizard charges up to $14.99/month ($179.88/year) for Pro or $29.99/month ($359.88/year) for Premium Spell quotas. ExamGhost includes 50 Free Solves (with full Focus Shield + 10 Snap-It OCR snips), a $19/month Midterm Sprint pass, a $99/year Academic Year Pass ($8.25/mo, Unlimited Solves), and a $199 one-time Lifetime Degree Pass.",
+              text: "Quiz Wizard charges up to $14.99/month ($179.88/year) for Pro or $29.99/month ($359.88/year) for Premium Spell quotas. ExamGhost includes 5 Free Solves / Day (with full Focus Shield + 10 Snap-It OCR snips), a $19/month Midterm Sprint pass, a $99/year Academic Year Pass ($8.25/mo, Unlimited Solves), and a $199 one-time Lifetime Degree Pass.",
             },
           },
         ],
@@ -319,7 +321,7 @@ export default function QuizwizardVsExamghostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
                 >
-                  Claim 50 Free Solves ($0)
+                  Claim 5 Free Solves / Day ($0)
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -434,17 +436,53 @@ export default function QuizwizardVsExamghostPage() {
           </div>
         </section>
 
-        {/* Interactive Pure-CSS 3-Tab Audit Explorer */}
+        <QuizWizardDemo />
+
+        {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  ExamGhost Stealth Keyboard &amp; Model Suite
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+              </div>
+            </div>
+            <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+              </p>
+              <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                <div className="font-bold text-white text-sm">
+                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Visible 3-Part Audit Teardown */}
         <section
           id="spell-audit"
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24"
         >
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
-              01 // Interactive Code &amp; Pricing Teardown
+              01 // Architectural &amp; Pricing Teardown
             </span>
             <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
-              Click Any Tab to Inspect Quiz Wizard&apos;s Beta Architecture
+              Quiz Wizard Beta Inspection: 3 Critical Vulnerabilities
             </h2>
             <p className="text-neutral-700 mt-2 max-w-3xl text-sm sm:text-base">
               We inspected{" "}
@@ -456,281 +494,224 @@ export default function QuizwizardVsExamghostPage() {
                 /pricing
               </code>{" "}
               tiers, and its Chrome extension behavior during live Canvas
-              sessions. Select a tab below to see the data.
+              sessions. Here is the verified technical breakdown.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
-            {/* Pure CSS Radio Inputs */}
-            <input
-              type="radio"
-              name="qw-tabs"
-              id="tab-qw-spells"
-              className="sr-only peer/qw-spells"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="qw-tabs"
-              id="tab-qw-models"
-              className="sr-only peer/qw-models"
-            />
-            <input
-              type="radio"
-              name="qw-tabs"
-              id="tab-qw-stealth"
-              className="sr-only peer/qw-stealth"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
-              <label
-                htmlFor="tab-qw-spells"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qw-spells:border-[#111111] peer-checked/qw-spells:bg-emerald-950 peer-checked/qw-spells:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <CreditCard className="w-4 h-4" />
-                  <span>Tab 01 • &ldquo;Spell&rdquo; Quotas</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  100 vs 50 Free Spells &amp; $359/yr Tiers
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-qw-models"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qw-models:border-[#111111] peer-checked/qw-models:bg-emerald-950 peer-checked/qw-models:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <Cpu className="w-4 h-4" />
-                  <span>Tab 02 • AI Accuracy Ceiling</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  92% &ldquo;Base Models&rdquo; vs 99.4% STEM
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-qw-stealth"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/qw-stealth:border-[#111111] peer-checked/qw-stealth:bg-emerald-950 peer-checked/qw-stealth:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <Eye className="w-4 h-4" />
-                  <span>Tab 03 • Canvas Stealth</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  Toolbar Blur &amp; Cloud History Risks
-                </div>
-              </label>
-            </div>
-
-            {/* Panel 1: Spell Quotas & Pricing */}
-            <div className="hidden peer-checked/qw-spells:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-mono font-bold uppercase">
-                  Metered Quota &amp; FAQ Contradiction
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Why Does the FAQ Promise 100 Free Spells While /pricing Gives Only 50?
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  On <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">quizwizard.app</code>,
-                  every single AI question explanation deducts{" "}
-                  <strong>1 &ldquo;Spell&rdquo;</strong> from your monthly
-                  balance. When we compared the homepage FAQ against the live{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">/pricing</code>{" "}
-                  page, we found a glaring mismatch: the homepage FAQ promises{" "}
-                  <em>&ldquo;100 free AI explanations every month,&rdquo;</em>{" "}
-                  while the live pricing table restricts the Free ($0/mo) tier to
-                  just <strong>50 Spells</strong>.
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Once your free Spells run out, Quiz Wizard routes you through
-                  PayPro Global into three metered monthly subscriptions:{" "}
-                  <strong>Standard ($5.99/mo for 500 Spells)</strong>,{" "}
-                  <strong>Pro ($14.99/mo for 2,000 Spells = $179.88/yr)</strong>,
-                  or <strong>Premium ($29.99/mo for 5,000 Spells = $359.88/yr)</strong>{" "}
-                  with zero unused-Spell rollover. By contrast,{" "}
-                  <strong>ExamGhost AI</strong> gives you{" "}
-                  <strong>50 Free Solves ($0)</strong> and{" "}
-                  <strong>100% Unlimited Solves</strong> for{" "}
-                  <strong>$19/month</strong> or <strong>$99/year ($8.25/mo)</strong>.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-rose-950">
-                      Quiz Wizard Spell Tiers
-                    </span>
-                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-rose-200 text-rose-950 font-bold">
-                      Metered Caps
-                    </span>
+          <div className="space-y-8">
+            {/* Card 1: Spell Quotas & Pricing */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-mono font-bold uppercase">
+                    Metered Quota &amp; FAQ Contradiction
                   </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• <strong>Free Tier:</strong> 50 Spells on <code className="font-mono text-xs">/pricing</code> (contradicts 100 in FAQ)</li>
-                    <li>• <strong>Standard:</strong> $5.99/mo (capped at 500 Spells)</li>
-                    <li>• <strong>Pro:</strong> $14.99/mo ($179.88/yr, capped at 2,000 Spells)</li>
-                    <li>• <strong>Premium:</strong> $29.99/mo ($359.88/yr, capped at 5,000 Spells)</li>
-                  </ul>
-                </div>
-
-                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-emerald-950">
-                      ExamGhost AI Unlimited Passes
-                    </span>
-                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-800 text-white font-bold">
-                      Zero Spell Caps
-                    </span>
-                  </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• <strong>Free Trial:</strong> 50 Free Solves + Focus Shield ($0)</li>
-                    <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited Solves)</li>
-                    <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo — Unlimited)</li>
-                    <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 2: 92% Base Models vs 99.4% STEM */}
-            <div className="hidden peer-checked/qw-models:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
-                  Base Model Ceiling Disclosure
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  &ldquo;All Plans Include Access to Our Base Models&rdquo;—Even at $29.99/Month
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Many students assume that upgrading to Quiz Wizard&apos;s{" "}
-                  <strong>$14.99/mo Pro</strong> or{" "}
-                  <strong>$29.99/mo Premium</strong> tier unlocks a deeper
-                  frontier reasoning model for Calculus, Physics, or Organic
-                  Chemistry. However, Quiz Wizard&apos;s own{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">/pricing</code>{" "}
-                  page explicitly states:{" "}
-                  <em>
-                    &ldquo;All plans include access to our base models and core
-                    browser features.&rdquo;
-                  </em>
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  On its homepage, Quiz Wizard benchmarks that base-model visual
-                  pipeline at a <strong>92% success rate</strong>. On a
-                  50-question university midterm, a 92% ceiling means missing{" "}
-                  <strong>4 questions automatically</strong> before accounting for
-                  multi-step trick stems. <strong>ExamGhost AI</strong> routes
-                  every solve—including all 50 free trial solves—through our{" "}
-                  <strong>99.4% Mathpix LaTeX OCR + frontier STEM reasoning pipeline</strong>{" "}
-                  in 0.3 seconds.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 bg-[#FAF8F5] border border-neutral-200 rounded-2xl p-6 space-y-4">
-                <h4 className="text-sm font-mono uppercase tracking-wider text-neutral-600 font-bold">
-                  Accuracy &amp; Latency Benchmark (50-Q STEM Exam)
-                </h4>
-                <div className="bg-white rounded-xl p-4 border border-neutral-200">
-                  <div className="flex justify-between text-xs font-bold mb-1">
-                    <span>Quiz Wizard (&ldquo;Base Models&rdquo; • ~4.2s)</span>
-                    <span className="text-rose-700 font-mono">92.0% (~4 wrong)</span>
-                  </div>
-                  <div className="w-full bg-neutral-200 h-2.5 rounded-full overflow-hidden">
-                    <div className="bg-rose-600 h-full w-[82%]" />
-                  </div>
-                  <p className="text-xs text-neutral-600 mt-2">
-                    Same base model across $0, $5.99, $14.99, and $29.99/mo plans.
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Why Does the FAQ Promise 100 Free Spells While /pricing Gives Only 50?
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    On <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">quizwizard.app</code>,
+                    every single AI question explanation deducts{" "}
+                    <strong>1 &ldquo;Spell&rdquo;</strong> from your monthly
+                    balance. When we compared the homepage FAQ against the live{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">/pricing</code>{" "}
+                    page, we found a glaring mismatch: the homepage FAQ promises{" "}
+                    <em>&ldquo;100 free AI explanations every month,&rdquo;</em>{" "}
+                    while the live pricing table restricts the Free ($0/mo) tier to
+                    just <strong>50 Spells</strong>.
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Once your free Spells run out, Quiz Wizard routes you through
+                    PayPro Global into three metered monthly subscriptions:{" "}
+                    <strong>Standard ($5.99/mo for 500 Spells)</strong>,{" "}
+                    <strong>Pro ($14.99/mo for 2,000 Spells = $179.88/yr)</strong>,
+                    or <strong>Premium ($29.99/mo for 5,000 Spells = $359.88/yr)</strong>{" "}
+                    with zero unused-Spell rollover. By contrast,{" "}
+                    <strong>ExamGhost AI</strong> gives you{" "}
+                    <strong>5 Free Solves / Day ($0)</strong> and{" "}
+                    <strong>100% Unlimited Solves</strong> for{" "}
+                    <strong>$19/month</strong>, <strong>$99/year ($8.25/mo)</strong>, or <strong>$199 Lifetime Degree Pass</strong>.
                   </p>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 border-2 border-emerald-700">
-                  <div className="flex justify-between text-xs font-bold mb-1">
-                    <span>ExamGhost AI (Frontier STEM + Mathpix • 0.3s)</span>
-                    <span className="text-emerald-800 font-mono">99.4% Verified</span>
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-rose-950">
+                        Quiz Wizard Spell Tiers
+                      </span>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-rose-200 text-rose-950 font-bold">
+                        Metered Caps
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                      <li>• <strong>Free Tier:</strong> 50 Spells on <code className="font-mono text-xs">/pricing</code> (contradicts 100 in FAQ)</li>
+                      <li>• <strong>Standard:</strong> $5.99/mo (capped at 500 Spells)</li>
+                      <li>• <strong>Pro:</strong> $14.99/mo ($179.88/yr, capped at 2,000 Spells)</li>
+                      <li>• <strong>Premium:</strong> $29.99/mo ($359.88/yr, capped at 5,000 Spells)</li>
+                    </ul>
                   </div>
-                  <div className="w-full bg-neutral-200 h-2.5 rounded-full overflow-hidden">
-                    <div className="bg-emerald-600 h-full w-[99%]" />
+
+                  <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-emerald-950">
+                        ExamGhost AI Unlimited Passes
+                      </span>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-800 text-white font-bold">
+                        Zero Spell Caps
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                      <li>• <strong>Free Trial:</strong> 5 Free Solves / Day + Focus Shield ($0)</li>
+                      <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited Solves)</li>
+                      <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo — Unlimited)</li>
+                      <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
+                    </ul>
                   </div>
-                  <p className="text-xs text-neutral-600 mt-2">
-                    Full symbolic math, organic chemistry structures, and circuit
-                    analysis included on every tier.
-                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Panel 3: Toolbar Blur & Cloud History Risks */}
-            <div className="hidden peer-checked/qw-stealth:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
-                  Canvas SpeedGrader Telemetry Audit
+            {/* Card 2: 92% Base Models vs 99.4% STEM */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
+                    Base Model Ceiling Disclosure
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    &ldquo;All Plans Include Access to Our Base Models&rdquo;—Even at $29.99/Month
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Many students assume that upgrading to Quiz Wizard&apos;s{" "}
+                    <strong>$14.99/mo Pro</strong> or{" "}
+                    <strong>$29.99/mo Premium</strong> tier unlocks a deeper
+                    frontier reasoning model for Calculus, Physics, or Organic
+                    Chemistry. However, Quiz Wizard&apos;s own{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">/pricing</code>{" "}
+                    page explicitly states:{" "}
+                    <em>
+                      &ldquo;All plans include access to our base models and core
+                      browser features.&rdquo;
+                    </em>
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    On its homepage, Quiz Wizard benchmarks that base-model visual
+                    pipeline at a <strong>92% success rate</strong>. On a
+                    50-question university midterm, a 92% ceiling means missing{" "}
+                    <strong>4 questions automatically</strong> before accounting for
+                    multi-step trick stems. <strong>ExamGhost AI</strong> routes
+                    every solve—including all 5 Free/Day trial solves—through our{" "}
+                    <strong>99.4% Mathpix LaTeX OCR + frontier STEM reasoning pipeline</strong>{" "}
+                    (featuring Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1) in 0.3 seconds.
+                  </p>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Why Clicking an Extension Icon Logs a Tab Departure—And Why Cloud Session Logs Matter
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Quiz Wizard instructs students to{" "}
-                  <em>
-                    &ldquo;simply click the extension while you have a question
-                    open.&rdquo;
-                  </em>{" "}
-                  In Chrome, Edge, and Brave, clicking an extension icon in the
-                  browser toolbar immediately steals active window focus from the
-                  webpage—firing{" "}
-                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
-                    window.onblur
-                  </code>{" "}
-                  and{" "}
-                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
-                    document.visibilitychange
-                  </code>{" "}
-                  to Canvas SpeedGrader (&ldquo;Stopped viewing the Canvas
-                  quiz-taking page&rdquo;).
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Additionally, every Quiz Wizard plan lists mandatory{" "}
-                  <strong>&ldquo;History tracking &amp; session stats&rdquo;</strong>{" "}
-                  stored on its cloud servers. <strong>ExamGhost AI</strong>{" "}
-                  operates via silent in-tab keyboard hotkeys inside a{" "}
-                  <strong>closed Shadow DOM root</strong> with active{" "}
-                  <strong>Focus Shield</strong> blur suppression and an instant{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">Esc</code>{" "}
-                  <strong>Panic RAM Flush</strong> that leaves zero cloud quiz
-                  history.
-                </p>
+
+                <div className="lg:col-span-5 bg-[#FAF8F5] border border-neutral-200 rounded-2xl p-6 space-y-4">
+                  <h4 className="text-sm font-mono uppercase tracking-wider text-neutral-600 font-bold">
+                    Accuracy &amp; Latency Benchmark (50-Q STEM Exam)
+                  </h4>
+                  <div className="bg-white rounded-xl p-4 border border-neutral-200">
+                    <div className="flex justify-between text-xs font-bold mb-1">
+                      <span>Quiz Wizard (&ldquo;Base Models&rdquo; • ~4.2s)</span>
+                      <span className="text-rose-700 font-mono">92.0% (~4 wrong)</span>
+                    </div>
+                    <div className="w-full bg-neutral-200 h-2.5 rounded-full overflow-hidden">
+                      <div className="bg-rose-600 h-full w-[82%]" />
+                    </div>
+                    <p className="text-xs text-neutral-600 mt-2">
+                      Same base model across $0, $5.99, $14.99, and $29.99/mo plans.
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-4 border-2 border-emerald-700">
+                    <div className="flex justify-between text-xs font-bold mb-1">
+                      <span>ExamGhost AI (Frontier STEM + Mathpix • 0.3s)</span>
+                      <span className="text-emerald-800 font-mono">99.4% Verified</span>
+                    </div>
+                    <div className="w-full bg-neutral-200 h-2.5 rounded-full overflow-hidden">
+                      <div className="bg-emerald-600 h-full w-[99%]" />
+                    </div>
+                    <p className="text-xs text-neutral-600 mt-2">
+                      Full symbolic math, organic chemistry structures, and circuit
+                      analysis included on every tier.
+                    </p>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
-                <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
-                  <div className="text-rose-300 font-bold uppercase">
-                    Quiz Wizard (Toolbar Click + Cloud Log)
+            {/* Card 3: Toolbar Blur & Cloud History Risks */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
+                    Canvas SpeedGrader Telemetry Audit
                   </div>
-                  <div className="text-rose-100/90">
-                    1. Toolbar click → <code>window.dispatchEvent(&apos;blur&apos;)</code>
-                  </div>
-                  <div className="text-rose-100/90">
-                    2. SpeedGrader → <code>&quot;Stopped viewing quiz page&quot;</code>
-                  </div>
-                  <div className="text-rose-100/90">
-                    3. Server DB → <code>trackSessionStats: true</code>
-                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Why Clicking an Extension Icon Logs a Tab Departure—And Why Cloud Session Logs Matter
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Quiz Wizard instructs students to{" "}
+                    <em>
+                      &ldquo;simply click the extension while you have a question
+                      open.&rdquo;
+                    </em>{" "}
+                    In Chrome, Edge, and Brave, clicking an extension icon in the
+                    browser toolbar immediately steals active window focus from the
+                    webpage—firing{" "}
+                    <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                      window.onblur
+                    </code>{" "}
+                    and{" "}
+                    <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                      document.visibilitychange
+                    </code>{" "}
+                    to Canvas SpeedGrader (&ldquo;Stopped viewing the Canvas
+                    quiz-taking page&rdquo;).
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Additionally, every Quiz Wizard plan lists mandatory{" "}
+                    <strong>&ldquo;History tracking &amp; session stats&rdquo;</strong>{" "}
+                    stored on its cloud servers. <strong>ExamGhost AI</strong>{" "}
+                    operates via silent in-tab keyboard hotkeys inside a{" "}
+                    <strong>closed Shadow DOM root</strong> with active{" "}
+                    <strong>Focus Shield</strong> blur suppression and an instant{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">⌘+Shift+U</code>{" "}
+                    <strong>Panic RAM Flush</strong> that leaves zero cloud quiz
+                    history.
+                  </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
-                  <div className="text-emerald-300 font-bold uppercase">
-                    ExamGhost AI (Closed Shadow DOM + Focus Shield)
+                <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
+                  <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
+                    <div className="text-rose-300 font-bold uppercase">
+                      Quiz Wizard (Toolbar Click + Cloud Log)
+                    </div>
+                    <div className="text-rose-100/90">
+                      1. Toolbar click → <code>window.dispatchEvent(&apos;blur&apos;)</code>
+                    </div>
+                    <div className="text-rose-100/90">
+                      2. SpeedGrader → <code>&quot;Stopped viewing quiz page&quot;</code>
+                    </div>
+                    <div className="text-rose-100/90">
+                      3. Server DB → <code>trackSessionStats: true</code>
+                    </div>
                   </div>
-                  <div className="text-emerald-100/90">
-                    1. Hotkey trigger → <code>attachShadow(&#123; mode: &apos;closed&apos; &#125;)</code>
-                  </div>
-                  <div className="text-emerald-100/90">
-                    2. Focus Shield → <code>e.stopImmediatePropagation()</code>
-                  </div>
-                  <div className="text-emerald-100/90">
-                    3. Zero-Log RAM → <code>Esc Panic Purge (0 Cloud Logs)</code>
+
+                  <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
+                    <div className="text-emerald-300 font-bold uppercase">
+                      ExamGhost AI (Closed Shadow DOM + Focus Shield)
+                    </div>
+                    <div className="text-emerald-100/90">
+                      1. Hotkey trigger → <code>attachShadow(&#123; mode: &apos;closed&apos; &#125;)</code>
+                    </div>
+                    <div className="text-emerald-100/90">
+                      2. Focus Shield → <code>e.stopImmediatePropagation()</code>
+                    </div>
+                    <div className="text-emerald-100/90">
+                      3. Zero-Log RAM → <code>Panic Purge (0 Cloud Logs)</code>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -841,7 +822,7 @@ export default function QuizwizardVsExamghostPage() {
                       Risk-free testing before upgrading
                     </td>
                     <td className="py-3.5 px-5 text-emerald-900 font-bold border-r border-neutral-200">
-                      50 Free Solves + Focus Shield
+                      5 Free Solves / Day + Focus Shield
                     </td>
                     <td className="py-3.5 px-5 text-neutral-700">
                       50 Spells (/pricing) vs 100 (FAQ)
@@ -924,6 +905,17 @@ export default function QuizwizardVsExamghostPage() {
                     <td className="py-3.5 px-5 text-rose-800">
                       $5.99–$29.99/mo ($359.88/yr Max)
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -1099,7 +1091,7 @@ export default function QuizwizardVsExamghostPage() {
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Quiz Wizard charges up to $14.99/month ($179.88/year) for Pro or
                 $29.99/month ($359.88/year) for Premium Spell quotas. ExamGhost
-                includes <strong>50 Free Solves ($0)</strong> (with full Focus
+                includes <strong>5 Free Solves / Day ($0)</strong> (with full Focus
                 Shield + 10 Snap-It OCR snips), a <strong>$19/month</strong>{" "}
                 Midterm Sprint pass, a{" "}
                 <strong>$99/year Academic Year Pass</strong> ($8.25/mo,
@@ -1124,14 +1116,14 @@ export default function QuizwizardVsExamghostPage() {
                 <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
                   Switch to ExamGhost for 0.3s Mathpix STEM accuracy, a 100%
                   closed Shadow DOM HUD, and active Canvas Focus Shield
-                  protection—starting with <strong>50 free solves ($0)</strong>.
+                  protection—starting with <strong>5 free solves / day ($0)</strong>.
                 </p>
                 <div className="flex flex-wrap items-center gap-3.5">
                   <Link prefetch={false}
                     href="/#pricing"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
                   >
-                    Claim 50 Free Solves ($0)
+                    Claim 5 Free Solves / Day ($0)
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link prefetch={false}
@@ -1189,6 +1181,9 @@ export default function QuizwizardVsExamghostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

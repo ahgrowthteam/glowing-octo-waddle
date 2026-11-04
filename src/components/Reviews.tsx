@@ -28,7 +28,7 @@ export default function Reviews() {
             date: "3 days ago",
             rating: 5,
             tag: "Snap-It Vision OCR",
-            text: "Our chemistry department disables copy-paste and uploads every synthesis mechanism as locked PNG images so you can't paste into ChatGPT. With Snap-It (⌘+Shift+S) you just drag a quick box over the reaction tree. Decoded the stereochemistry and gave the right enantiomer product in about a second. Went from a 68 to a 94 on unit quizzes."
+            text: "Our chemistry department disables copy-paste and uploads every synthesis mechanism as locked PNG images so you can't paste into ChatGPT. With Snap-It (Alt+S) you just drag a quick box over the reaction tree. Decoded the stereochemistry and gave the right enantiomer product in about a second. Went from a 68 to a 94 on unit quizzes."
         },
         {
             name: "Marcus Vance",
@@ -68,7 +68,7 @@ export default function Reviews() {
             date: "2 weeks ago",
             rating: 5,
             tag: "LaTeX Math Engine",
-            text: "Solves double integrals, partial derivatives, and 3D vectors without messing up negative signs or notation like standard AI does. Also huge shoutout for not doing shady $25/month auto-renewing subscriptions like the scam extensions on TikTok. Tested the free 50 questions first, then got the lifetime pass. Best $199 I’ve spent for college."
+            text: "Solves double integrals, partial derivatives, and 3D vectors without messing up negative signs or notation like standard AI does. Also huge shoutout for not doing shady $25/month auto-renewing subscriptions like the scam extensions on TikTok. Tested the 5 free solves/day first, then got the lifetime pass with the Claude + DeepSeek Study Hub. Best $199 I’ve spent for college."
         }
     ];
 
@@ -77,7 +77,7 @@ export default function Reviews() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
                 {/* Section Head */}
-                <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-20">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-2 h-2 rounded-full bg-emerald-500" />
                         <span>VERIFIED REVIEWS</span>
@@ -86,7 +86,7 @@ export default function Reviews() {
                         Students who never worry<br />
                         about timed quizzes again.
                     </h2>
-                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                    <p className="max-w-2xl mx-auto text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
                         Private client-side solving, Snap-It screenshot OCR, and 3 stealth display modes for Canvas, Blackboard, Moodle, and beyond.
                     </p>
                 </div>

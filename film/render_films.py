@@ -780,10 +780,10 @@ def render_frame(spec: dict, frame_idx: int, fps: int = 30) -> np.ndarray:
         draw.text((ex1 + 36, ey1 + 296), "Snip graphs, diagrams & PDFs", fill=INK2_RGB, font=FONTS["sm"])
 
         # Live Telemetry Counter Card
-        solves_left = 49 if is_solved else 50
+        solves_left = 4 if is_solved else 5
         draw.rounded_rectangle((ex1 + 20, ey1 + 348, ex2 - 20, ey2 - 22), radius=18, fill=INK_RGB)
-        draw.text((ex1 + 36, ey1 + 366), "FREE TRIAL CREDITS", fill=MINT_RGB, font=FONTS["xs_b"])
-        draw.text((ex1 + 36, ey1 + 390), f"{solves_left} / 50 Solves", fill=PAPER_RGB, font=FONTS["h2"])
+        draw.text((ex1 + 36, ey1 + 366), "DAILY FREE SOLVES", fill=MINT_RGB, font=FONTS["xs_b"])
+        draw.text((ex1 + 36, ey1 + 390), f"{solves_left} / 5 Solves", fill=PAPER_RGB, font=FONTS["h2"])
         draw.text((ex1 + 36, ey1 + 436), "window.onblur: 0 Events", fill=MINT_RGB, font=FONTS["mono_b"])
         draw.text((ex1 + 36, ey1 + 460), "Shadow Root: CLOSED", fill=(196, 208, 248), font=FONTS["mono_b"])
 
@@ -938,7 +938,7 @@ def render_frame(spec: dict, frame_idx: int, fps: int = 30) -> np.ndarray:
         caption = f"4/5 • {spec['telemetry_metric']} — zero focus-loss or DOM mutation flags."
 
     # ------------------------------------------------------------------------
-    # SCENE 5 (13.5s - 16.0s): OUTRO BRAND LOCKUP & 50 FREE SOLVES CTA
+    # SCENE 5 (13.5s - 16.0s): OUTRO BRAND LOCKUP & 5 FREE SOLVES / DAY CTA
     # ------------------------------------------------------------------------
     else:
         u = (t - 13.5) / 2.5
@@ -956,7 +956,7 @@ def render_frame(spec: dict, frame_idx: int, fps: int = 30) -> np.ndarray:
         draw.rounded_rectangle((cx1 + 64, cy1 + 288, cx1 + 328, cy1 + 332), radius=22, fill=PAPER_RGB)
         draw.ellipse((cx1 + 82, cy1 + 304, cx1 + 94, cy1 + 316), fill=EMERALD_RGB)
         em_draw.ellipse((cx1 + 82, cy1 + 304, cx1 + 94, cy1 + 316), fill=EMERALD_RGB)
-        draw.text((cx1 + 106, cy1 + 302), "50 Free Solves Included", fill=INK_RGB, font=FONTS["sm_b"])
+        draw.text((cx1 + 106, cy1 + 302), "5 Free Solves / Day", fill=INK_RGB, font=FONTS["sm_b"])
         draw.text((cx1 + 88, cy1 + 354), "No Credit Card Required", fill=INK2_RGB, font=FONTS["sm_b"])
 
         # Right CTA Copy & URL Lockup
@@ -980,7 +980,7 @@ def render_frame(spec: dict, frame_idx: int, fps: int = 30) -> np.ndarray:
 
         draw.text((rx_text + 8, cy1 + 366), "Chrome Web Store • Works on 20+ University LMS & STEM Portals", fill=INK2_RGB, font=FONTS["sm_b"])
 
-        caption = f"5/5 • Claim 50 free solves now at examghost.com/{spec['slug']}"
+        caption = f"5/5 • Claim 5 free solves / day at examghost.com/{spec['slug']}"
 
     # ------------------------------------------------------------------------
     # SAFE-MARGIN CAPTION BAR (Above bottom 8% mobile player controls: y = 602..652)

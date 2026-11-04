@@ -20,18 +20,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { StudyFoxDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "StudyFox vs ExamGhost (2026) — Toolbar Popup vs Shadow DOM",
     },
-    description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 50 Free Solves.",
+    description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/studyfox-vs-examghost",
     },
     openGraph: {
         title: "StudyFox vs ExamGhost (2026) — Toolbar Popup vs Shadow DOM",
-        description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 50 Free Solves.",
+        description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 5 Free Solves / Day.",
         url: "https://examghost.com/studyfox-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "StudyFox vs ExamGhost (2026) — Toolbar Popup vs Shadow DOM",
-        description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 50 Free Solves.",
+        description: "Compare StudyFox AI (studyfox.pro) with ExamGhost. Replace toolbar popup blur logs with a 0.3s closed Shadow DOM HUD, Focus Shield, and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -77,7 +79,7 @@ export default function StudyfoxVsExamghostPage() {
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
                         "offers": [
-                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
@@ -134,7 +136,7 @@ export default function StudyfoxVsExamghostPage() {
                         "name": "How do StudyFox and ExamGhost compare on pricing and refund guarantees?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "StudyFox offers auto-renewing weekly, monthly, semester, and annual subscriptions after a short trial with a 7-day refund policy. ExamGhost provides 50 Free Question Solves upfront with zero credit card required, backed by a 14-day 100% money-back guarantee on its $19/month Pass, $99/year ($8.25/mo) Academic Year Pass, and $199 Lifetime Degree Pass."
+                            "text": "StudyFox offers auto-renewing weekly, monthly, semester, and annual subscriptions after a short trial with a 7-day refund policy. ExamGhost provides 5 Free Solves / Day upfront with zero credit card required, backed by a 14-day 100% money-back guarantee on its $19/month Pass, $99/year ($8.25/mo) Academic Year Pass, and $199 Lifetime Degree Pass."
                         }
                     }
                 ]
@@ -180,7 +182,7 @@ export default function StudyfoxVsExamghostPage() {
                                 </h1>
 
                                 <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl">
-                                    <strong>StudyFox AI</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">studyfox.pro</code>) is a thoughtful pre-exam toolkit for turning lecture PDFs into mind maps and FSRS flashcards (with Anki import). However, on live exams, StudyFox requires clicking its Chrome toolbar icon to open an extension popup—which immediately steals tab focus and fires <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">window.blur</code> in Canvas SpeedGrader. <strong>ExamGhost</strong> solves questions directly on the page via Double-Click in <strong>0.3 seconds</strong> inside a closed Shadow DOM, starting with <strong>50 Free Solves</strong>.
+                                    <strong>StudyFox AI</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">studyfox.pro</code>) is a thoughtful pre-exam toolkit for turning lecture PDFs into mind maps and FSRS flashcards (with Anki import). However, on live exams, StudyFox requires clicking its Chrome toolbar icon to open an extension popup—which immediately steals tab focus and fires <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">window.blur</code> in Canvas SpeedGrader. <strong>ExamGhost</strong> solves questions directly on the page via Double-Click in <strong>0.3 seconds</strong> inside a closed Shadow DOM, starting with <strong>5 Free Solves / Day</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -189,7 +191,7 @@ export default function StudyfoxVsExamghostPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 Trial)</span>
                                     </a>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -218,7 +220,7 @@ export default function StudyfoxVsExamghostPage() {
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        No credit card for 50 solves
+                                        5 Free Solves / Day (No Card)
                                     </span>
                                 </div>
                             </div>
@@ -285,6 +287,42 @@ export default function StudyfoxVsExamghostPage() {
                     </div>
                 </header>
 
+                <StudyFoxDemo />
+
+                {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+                  <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+                      <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                          <Zap className="w-3.5 h-3.5" />
+                          ExamGhost Stealth Keyboard &amp; Model Suite
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                        <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+                      </div>
+                    </div>
+                    <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                      <p>
+                        Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+                      </p>
+                      <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                        <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                        <div className="font-bold text-white text-sm">
+                          Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 {/* QUICK METRIC RIBBON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -305,7 +343,7 @@ export default function StudyfoxVsExamghostPage() {
                         </div>
                         <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
                             <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Refund &amp; Trial Policy</div>
-                            <div className="text-lg sm:text-xl font-black text-emerald-800">50 Free + 14-Day</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">5 Free/Day + 14-Day</div>
                             <div className="text-xs text-ink-secondary mt-1">StudyFox: Auto-Renew + 7-Day</div>
                         </div>
                     </div>
@@ -327,165 +365,144 @@ export default function StudyfoxVsExamghostPage() {
                             </p>
                         </div>
 
-                        {/* Pure CSS Radio Tabs */}
-                        <input type="radio" name="studyfox_tab" id="tab-popup" className="sr-only peer/popup" defaultChecked />
-                        <input type="radio" name="studyfox_tab" id="tab-latency" className="sr-only peer/latency" />
-                        <input type="radio" name="studyfox_tab" id="tab-trial" className="sr-only peer/trial" />
+                        <div className="space-y-8">
+                            {/* CARD 1: Toolbar Popup Blur */}
+                            <div className="rounded-2xl bg-[#faf8f5] border border-black/10 p-6 sm:p-8">
+                                <div className="grid lg:grid-cols-12 gap-6 items-center">
+                                    <div className="lg:col-span-7 space-y-4">
+                                        <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
+                                            Finding #1 · Chrome Toolbar Extension Popup Focus Loss
+                                        </span>
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                            Clicking StudyFox&apos;s Toolbar Icon Fires <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">window.blur</code> on Your Quiz Tab
+                                        </h3>
+                                        <p className="text-sm text-ink-secondary leading-relaxed">
+                                            StudyFox&apos;s official documentation instructs students to <em>&quot;click the StudyFox icon&quot;</em> in the Chrome toolbar so the extension can screenshot the question and display the step-by-step answer inside a popup window. In every Chromium browser, opening a toolbar extension popup transfers OS window focus away from the active webpage—immediately firing <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.onblur</code> in Canvas SpeedGrader.
+                                        </p>
+                                        <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                            <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                                <div className="text-xs font-bold text-rose-950 mb-1">StudyFox Toolbar Popup</div>
+                                                <p className="text-xs text-rose-900/90 leading-relaxed">
+                                                    Requires moving your cursor to the browser toolbar and opening an external popup window, logging a Canvas departure.
+                                                </p>
+                                            </div>
+                                            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                                <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost In-Page HUD</div>
+                                                <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                    Double-click any question right on the page for a 150ms auto-fill or translucent badge inside a closed Shadow DOM with Focus Shield active.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="lg:col-span-5">
+                                        <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                            <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                                // Chromium Extension Popup Focus Behavior
+                                            </div>
+                                            <div className="space-y-1.5 text-rose-300">
+                                                <div>1. User clicks StudyFox icon in Chrome toolbar</div>
+                                                <div>2. Popup window acquires focus -&gt; Tab blurs</div>
+                                                <div>3. Canvas logs: &quot;Stopped viewing quiz page&quot;</div>
+                                            </div>
+                                            <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                                <div className="font-bold">✓ ExamGhost Inline Solve:</div>
+                                                <div className="text-white/80">0 toolbar clicks · 0 popup windows · 0 blur logs</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="tab-popup"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/popup:bg-white peer-checked/popup:text-ink peer-checked/popup:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <MousePointerClick className="w-4 h-4 text-rose-600" />
-                                <span>1. Toolbar Popup Blur</span>
-                            </label>
-                            <label
-                                htmlFor="tab-latency"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/latency:bg-white peer-checked/latency:text-ink peer-checked/latency:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Cpu className="w-4 h-4 text-amber-600" />
-                                <span>2. 3.4s Multi-Model vs 0.3s</span>
-                            </label>
-                            <label
-                                htmlFor="tab-trial"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/trial:bg-white peer-checked/trial:text-ink peer-checked/trial:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <CreditCard className="w-4 h-4 text-emerald-700" />
-                                <span>3. Auto-Renew vs 50 Free Solves</span>
-                            </label>
-                        </div>
+                            {/* CARD 2: 3.4s Multi-Model Latency vs 0.3s Edge Vision */}
+                            <div className="rounded-2xl bg-[#faf8f5] border border-black/10 p-6 sm:p-8">
+                                <div className="grid lg:grid-cols-12 gap-6 items-center">
+                                    <div className="lg:col-span-7 space-y-4">
+                                        <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
+                                            Finding #2 · Multi-Model Consensus Latency vs Edge Speed
+                                        </span>
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                            Waiting ~3.4 Seconds for 3 LLMs vs. 0.3-Second Edge Inference
+                                        </h3>
+                                        <p className="text-sm text-ink-secondary leading-relaxed">
+                                            StudyFox highlights a <em>&quot;Multi-model&quot;</em> feature that queries GPT, Claude Sonnet, and Gemini simultaneously to compare three answers against each other. While great for untimed late-night homework review, waiting 3.4 to 5 seconds for three separate cloud LLMs to generate and reconcile inside a popup is too slow when you have 2 minutes left on a timed Canvas exam.
+                                        </p>
+                                        <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                                                <div className="text-xs font-bold text-amber-950 mb-1">StudyFox 3-Model Check</div>
+                                                <p className="text-xs text-amber-900/90 leading-relaxed">
+                                                    ~3.4s average wait while GPT, Claude Sonnet, and Gemini generate full comparison breakdowns.
+                                                </p>
+                                            </div>
+                                            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                                <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost 0.3s Edge Routing</div>
+                                                <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                    Pairs low-latency Mathpix optical token extraction with priority edge routing to deliver verified answers in <strong>0.3 seconds</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="lg:col-span-5">
+                                        <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                            <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                                // Per-Question Solve Latency Benchmark
+                                            </div>
+                                            <div className="space-y-1.5 text-amber-300">
+                                                <div>StudyFox Multi-Model (GPT + Claude + Gemini):</div>
+                                                <div className="text-white/80">• Toolbar screenshot + 3-model consensus: ~3.4s</div>
+                                            </div>
+                                            <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                                <div>ExamGhost v4.2 Edge Engine:</div>
+                                                <div className="text-emerald-400 font-bold">• Inline DOM / Mathpix OCR solve: 0.3s</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        {/* TAB 1: Toolbar Popup Blur */}
-                        <div className="hidden peer-checked/popup:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #1 · Chrome Toolbar Extension Popup Focus Loss
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Clicking StudyFox&apos;s Toolbar Icon Fires <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">window.blur</code> on Your Quiz Tab
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    StudyFox&apos;s official documentation instructs students to <em>&quot;click the StudyFox icon&quot;</em> in the Chrome toolbar so the extension can screenshot the question and display the step-by-step answer inside a popup window. In every Chromium browser, opening a toolbar extension popup transfers OS window focus away from the active webpage—immediately firing <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.onblur</code> in Canvas SpeedGrader.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
-                                        <div className="text-xs font-bold text-rose-950 mb-1">StudyFox Toolbar Popup</div>
-                                        <p className="text-xs text-rose-900/90 leading-relaxed">
-                                            Requires moving your cursor to the browser toolbar and opening an external popup window, logging a Canvas departure.
+                            {/* CARD 3: Auto-Renewing Weekly Trials vs 5 Free Solves / Day */}
+                            <div className="rounded-2xl bg-[#faf8f5] border border-black/10 p-6 sm:p-8">
+                                <div className="grid lg:grid-cols-12 gap-6 items-center">
+                                    <div className="lg:col-span-7 space-y-4">
+                                        <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                                            Finding #3 · Trial &amp; Refund Transparency
+                                        </span>
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                            Auto-Renewing Weekly Trials (7-Day Refund) vs. 5 Free Solves / Day (No Card Needed)
+                                        </h3>
+                                        <p className="text-sm text-ink-secondary leading-relaxed">
+                                            StudyFox offers weekly, monthly, semester, and annual subscriptions where plans begin with a short trial that automatically converts into a recurring charge, backed by a 7-day refund window. ExamGhost gives every student <strong>5 Free Solves / Day</strong> upfront with zero credit card required—and backs every paid pass ($19/mo, $99/yr, or $199 Lifetime Degree Pass) with a full 14-day money-back guarantee.
                                         </p>
+                                        <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                            <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                                <div className="text-xs font-bold text-rose-950 mb-1">StudyFox Billing</div>
+                                                <p className="text-xs text-rose-900/90 leading-relaxed">
+                                                    Trial-to-auto-renew weekly/monthly/semester subscriptions with a 7-day refund policy.
+                                                </p>
+                                            </div>
+                                            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                                <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost No-Card Trial</div>
+                                                <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                    <strong>5 Free Solves / Day</strong> ($0 trial, no card required) + 14-day 100% money-back guarantee on all passes.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost In-Page HUD</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Double-click any question right on the page for a 150ms auto-fill or translucent badge inside a closed Shadow DOM with Focus Shield active.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        // Chromium Extension Popup Focus Behavior
-                                    </div>
-                                    <div className="space-y-1.5 text-rose-300">
-                                        <div>1. User clicks StudyFox icon in Chrome toolbar</div>
-                                        <div>2. Popup window acquires focus -&gt; Tab blurs</div>
-                                        <div>3. Canvas logs: &quot;Stopped viewing quiz page&quot;</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div className="font-bold">✓ ExamGhost Inline Solve:</div>
-                                        <div className="text-white/80">0 toolbar clicks · 0 popup windows · 0 blur logs</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 2: 3.4s Multi-Model Latency vs 0.3s Edge Vision */}
-                        <div className="hidden peer-checked/latency:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #2 · Multi-Model Consensus Latency vs Edge Speed
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Waiting ~3.4 Seconds for 3 LLMs vs. 0.3-Second Edge Inference
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    StudyFox highlights a <em>&quot;Multi-model&quot;</em> feature that queries GPT, Claude Sonnet, and Gemini simultaneously to compare three answers against each other. While great for untimed late-night homework review, waiting 3.4 to 5 seconds for three separate cloud LLMs to generate and reconcile inside a popup is too slow when you have 2 minutes left on a timed Canvas exam.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
-                                        <div className="text-xs font-bold text-amber-950 mb-1">StudyFox 3-Model Check</div>
-                                        <p className="text-xs text-amber-900/90 leading-relaxed">
-                                            ~3.4s average wait while GPT, Claude Sonnet, and Gemini generate full comparison breakdowns.
-                                        </p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost 0.3s Edge Routing</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Pairs low-latency Mathpix optical token extraction with priority edge routing to deliver verified answers in <strong>0.3 seconds</strong>.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        // Per-Question Solve Latency Benchmark
-                                    </div>
-                                    <div className="space-y-1.5 text-amber-300">
-                                        <div>StudyFox Multi-Model (GPT + Claude + Gemini):</div>
-                                        <div className="text-white/80">• Toolbar screenshot + 3-model consensus: ~3.4s</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div>ExamGhost v4.2 Edge Engine:</div>
-                                        <div className="text-emerald-400 font-bold">• Inline DOM / Mathpix OCR solve: 0.3s</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 3: Auto-Renewing Weekly Trials vs 50 Free Solves */}
-                        <div className="hidden peer-checked/trial:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #3 · Trial &amp; Refund Transparency
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Auto-Renewing Weekly Trials (7-Day Refund) vs. 50 Free Solves (No Card Needed)
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    StudyFox offers weekly, monthly, semester, and annual subscriptions where plans begin with a short trial that automatically converts into a recurring charge, backed by a 7-day refund window. ExamGhost gives every student <strong>50 Free Question Solves</strong> upfront with zero credit card required—and backs every paid pass ($19/mo, $99/yr, or $199 Lifetime) with a full 14-day money-back guarantee.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
-                                        <div className="text-xs font-bold text-rose-950 mb-1">StudyFox Billing</div>
-                                        <p className="text-xs text-rose-900/90 leading-relaxed">
-                                            Trial-to-auto-renew weekly/monthly/semester subscriptions with a 7-day refund policy.
-                                        </p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost No-Card Trial</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            <strong>50 Free Solves</strong> ($0 trial, no card required) + 14-day 100% money-back guarantee on all passes.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        // Trial &amp; Subscription Comparison
-                                    </div>
-                                    <div className="space-y-1.5 text-rose-300">
-                                        <div>StudyFox (studyfox.pro/pricing):</div>
-                                        <div className="text-white/80">• Auto-renewing weekly / monthly / semester plans</div>
-                                        <div className="text-white/80">• 7-day refund window</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div>ExamGhost v4.2:</div>
-                                        <div className="text-emerald-400 font-bold">• 50 Free Solves (No Credit Card Required)</div>
-                                        <div className="text-white/80">• $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</div>
+                                    <div className="lg:col-span-5">
+                                        <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                            <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                                // Trial &amp; Subscription Comparison
+                                            </div>
+                                            <div className="space-y-1.5 text-rose-300">
+                                                <div>StudyFox (studyfox.pro/pricing):</div>
+                                                <div className="text-white/80">• Auto-renewing weekly / monthly / semester plans</div>
+                                                <div className="text-white/80">• 7-day refund window</div>
+                                            </div>
+                                            <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                                <div>ExamGhost v4.2:</div>
+                                                <div className="text-emerald-400 font-bold">• 5 Free Solves / Day (No Credit Card Required)</div>
+                                                <div className="text-white/80">• $19/mo · $99/yr ($8.25/mo) · $199 Lifetime Degree Pass</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -623,7 +640,7 @@ export default function StudyfoxVsExamghostPage() {
                                         <td className="py-3.5 px-5 text-rose-800 font-semibold">✗ None</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-3.5 px-5 font-semibold text-ink">Snap-It Vision OCR (<code className="font-mono">⌘+Shift+S</code>)</td>
+                                        <td className="py-3.5 px-5 font-semibold text-ink">Snap-It Vision OCR (<code className="font-mono">Alt+S</code>)</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">Solves graphs, integrals &amp; chemistry</td>
                                         <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 0.3s In-Memory Mathpix OCR</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">✓ Crop &amp; Solve (~3.4s Multi-Model)</td>
@@ -643,16 +660,27 @@ export default function StudyfoxVsExamghostPage() {
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-5 font-semibold text-ink">Free Trial &amp; Refund Guarantee</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">Risk-free testing on your own courses</td>
-                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 50 Free Solves (No Card) + 14-Day</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 5 Free Solves / Day (No Card) + 14-Day</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">Auto-Renew Trial + 7-Day Refund</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-5 font-semibold text-ink">Pricing Options</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">No unexpected weekly billing</td>
-                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime Degree Pass</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">Weekly / Monthly / Semester Auto-Sub</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -716,7 +744,7 @@ export default function StudyfoxVsExamghostPage() {
                                 </li>
                                 <li className="flex items-start gap-2.5">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
-                                    <span>You want <strong>50 Free Solves</strong> upfront with no credit card required and a 14-day refund guarantee.</span>
+                                    <span>You want <strong>5 Free Solves / Day</strong> upfront with no credit card required and a 14-day refund guarantee.</span>
                                 </li>
                             </ul>
                         </div>
@@ -735,7 +763,7 @@ export default function StudyfoxVsExamghostPage() {
                                     Join the ExamGhost Student Community on Discord
                                 </h2>
                                 <p className="text-xs sm:text-sm text-white font-medium mt-0.5">
-                                    Get your 50 free solves, download the latest stealth build, and access 24/7 student support.
+                                    Get your 5 free solves / day, download the latest stealth build, and access 24/7 student support.
                                 </p>
                             </div>
                         </div>
@@ -784,13 +812,13 @@ export default function StudyfoxVsExamghostPage() {
                             <div className="max-w-xl">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/10 text-rose-950 text-xs font-bold mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
-                                    Zero Toolbar Popups · 50 Free Solves
+                                    Zero Toolbar Popups · 5 Free Solves / Day
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                     Solve inline in 0.3 seconds without losing tab focus.
                                 </h2>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Try ExamGhost right now with <strong>50 Free Solves</strong> ($0 trial, no credit card required), backed by a 14-day refund guarantee on $19/mo, $99/yr ($8.25/mo), and $199 Lifetime passes.
+                                    Try ExamGhost right now with <strong>5 Free Solves / Day</strong> ($0 trial, no credit card required), backed by a 14-day refund guarantee on $19/mo, $99/yr ($8.25/mo), and $199 Lifetime passes.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -799,7 +827,7 @@ export default function StudyfoxVsExamghostPage() {
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                    <span>Start 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </a>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -835,7 +863,10 @@ export default function StudyfoxVsExamghostPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
             <Footer />
         </div>
     );

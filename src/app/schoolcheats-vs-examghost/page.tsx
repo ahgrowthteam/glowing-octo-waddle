@@ -2,7 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { Schoolcheats2SLSEconometricsDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   CheckCircle2,
   XCircle,
@@ -28,13 +30,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
     },
-    description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
+    description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/schoolcheats-vs-examghost",
     },
     openGraph: {
         title: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
-        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
+        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 5 Free Solves / Day.",
         url: "https://examghost.com/schoolcheats-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
-        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 50 Free Solves.",
+        description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -75,6 +77,33 @@ const jsonLd = {
       breadcrumb: {
         "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
       },
+      about: [
+        {
+          "@type": "SoftwareApplication",
+          name: "ExamGhost",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
+          offers: [
+            { "@type": "Offer", name: "Free Tier (5 Free Solves / Day)", price: "0", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Monthly Pass", price: "19.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Academic Year Pass", price: "99.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Lifetime Degree Pass", price: "199.00", priceCurrency: "USD" }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          name: "SchoolCheats",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Chrome Extension, Web VM",
+          offers: {
+            "@type": "AggregateOffer",
+            lowPrice: "8.99",
+            highPrice: "25.00",
+            priceCurrency: "USD",
+            offerCount: "2"
+          }
+        }
+      ],
     },
     {
       "@type": "BreadcrumbList",
@@ -125,7 +154,7 @@ const jsonLd = {
           name: "Are Answer Retrieval and Auto Complete free on SchoolCheats.net?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No. On SchoolCheats.net's pricing matrix, the Free Plan disables ('X') both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground, leaving only basic client-side tweaks. Unlocking Answer Retrieval requires a paid Premium Membership at $8.99/week ($35.96/mo) or $25.00/month. ExamGhost includes 50 free full AI & OCR solves ($0, no card required) and costs $19/mo, $99/yr, or $199 Lifetime.",
+            text: "No. On SchoolCheats.net's pricing matrix, the Free Plan disables ('X') both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground, leaving only basic client-side tweaks. Unlocking Answer Retrieval requires a paid Premium Membership at $8.99/week ($35.96/mo) or $25.00/month. ExamGhost includes 5 Free/Day full AI & OCR solves ($0, no card required) and costs $19/mo, $99/yr, or $199 Lifetime.",
           },
         },
         {
@@ -198,7 +227,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
               >
                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                <span>Start 50 Free University LMS Solves ($0)</span>
+                <span>Start 5 Free/Day University LMS Solves ($0)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <Link prefetch={false}
@@ -282,7 +311,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                       <span className="font-display font-bold text-sm text-ink">ExamGhost Universal LMS Stealth Suite</span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                      50 Free Solves ($0)
+                      5 Free Solves / Day ($0)
                     </span>
                   </div>
 
@@ -318,7 +347,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                     </div>
                     <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                      <span><strong>50 Free Solves + Lower Pricing:</strong> Test 50 real AI solves &amp; 10 OCR snips for $0, then pay $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.</span>
+                      <span><strong>5 Free Solves / Day + Lower Pricing:</strong> Test 5 Free Solves / Day (Text + Alt+S Vision OCR) for $0, then pay $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.</span>
                     </div>
                   </div>
                 </div>
@@ -332,13 +361,51 @@ export default function SchoolCheatsVsExamGhostPage() {
           </div>
         </header>
 
-        {/* INTERACTIVE PURE-CSS 3-TAB ARCHITECTURE & TELEMETRY BREAKDOWN */}
+        <Schoolcheats2SLSEconometricsDemo />
+
+        {/* MODERN HOTKEYS SUITE */}
+        <section className="py-8 bg-sand/20 border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
+                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* VISIBLE SEQUENTIAL ARCHITECTURE & TELEMETRY BREAKDOWN */}
         <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
                 <Layers className="w-3.5 h-3.5 text-emerald-800" />
-                <span>Interactive Audit · Click Any Tab Below</span>
+                <span>Architecture Audit · 3 Critical Differences</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
                 Why College Students Switch From SchoolCheats to ExamGhost
@@ -348,42 +415,13 @@ export default function SchoolCheatsVsExamGhostPage() {
               </p>
             </div>
 
-            <div>
-              <input type="radio" name="sc-tabs" id="sc-tab-sites" className="sr-only peer/sites" defaultChecked />
-              <input type="radio" name="sc-tabs" id="sc-tab-flags" className="sr-only peer/flags" />
-              <input type="radio" name="sc-tabs" id="sc-tab-vm" className="sr-only peer/vm" />
-
-              {/* Tab Navigation */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
-                <label
-                  htmlFor="sc-tab-sites"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/sites:bg-ink peer-checked/sites:text-white peer-checked/sites:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <Gamepad2 className="w-4 h-4 shrink-0" />
-                  <span>1. 7 Game Sites vs All LMS</span>
-                </label>
-                <label
-                  htmlFor="sc-tab-flags"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/flags:bg-ink peer-checked/flags:text-white peer-checked/flags:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <AlertTriangle className="w-4 h-4 shrink-0" />
-                  <span>2. Redirect &amp; Bot Time Flags</span>
-                </label>
-                <label
-                  htmlFor="sc-tab-vm"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/vm:bg-ink peer-checked/vm:text-white peer-checked/vm:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <Server className="w-4 h-4 shrink-0" />
-                  <span>3. Cloud VM IP &amp; $25/Mo Price</span>
-                </label>
-              </div>
-
-              {/* TAB 1: 7 K-12 GAME SITES VS ALL UNIVERSITY LMS */}
-              <div className="hidden peer-checked/sites:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+            <div className="space-y-8">
+              {/* CARD 1: 7 K-12 GAME SITES VS ALL UNIVERSITY LMS */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <XCircle className="w-3.5 h-3.5" />
-                    <span>SchoolCheats.net: Hardcoded for 7 Sites Only</span>
+                    <span>Pillar 1 · SchoolCheats.net: Hardcoded for 7 Sites Only</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Built for Blooket, Quizizz &amp; Edpuzzle—not Canvas or Blackboard
@@ -426,12 +464,12 @@ export default function SchoolCheatsVsExamGhostPage() {
                 </div>
               </div>
 
-              {/* TAB 2: TAB REDIRECT & AUTO COMPLETE FLAGS */}
-              <div className="hidden peer-checked/flags:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* CARD 2: TAB REDIRECT & AUTO COMPLETE FLAGS */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <ExternalLink className="w-3.5 h-3.5" />
-                    <span>SchoolCheats: Step 3 Redirect + 1.2s Auto Complete</span>
+                    <span>Pillar 2 · SchoolCheats: Step 3 Redirect + 1.2s Auto Complete</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Why &ldquo;Auto Complete&rdquo; gets flagged in DeltaMath &amp; ZyBooks gradebooks
@@ -473,12 +511,12 @@ export default function SchoolCheatsVsExamGhostPage() {
                 </div>
               </div>
 
-              {/* TAB 3: CLOUD VM & PRICING */}
-              <div className="hidden peer-checked/vm:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* CARD 3: CLOUD VM & PRICING */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <Server className="w-3.5 h-3.5" />
-                    <span>SchoolCheats Cloud VM &amp; $8.99/Wk Paywall</span>
+                    <span>Pillar 3 · SchoolCheats Cloud VM &amp; $8.99/Wk Paywall</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Why Cloud VMs trigger university IT alerts—and Free blocks answers
@@ -499,10 +537,10 @@ export default function SchoolCheatsVsExamGhostPage() {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
                     <CreditCard className="w-3.5 h-3.5" />
-                    <span>ExamGhost Local Browser Stealth &amp; 50 Free Solves</span>
+                    <span>ExamGhost Local Browser Stealth &amp; 5 Free Solves / Day</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
-                    Runs on your real residential/campus IP with 50 free solves
+                    Runs on your real residential/campus IP with 5 free solves / day
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                     ExamGhost runs natively inside your own Chrome, Edge, or Brave browser—preserving your normal campus or home IP address while isolating all UI inside a closed Shadow DOM.
@@ -510,7 +548,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Free Starter Trial (Full AI + OCR)</span>
-                      <span className="font-mono font-bold text-emerald-800">50 Free Solves ($0)</span>
+                      <span className="font-mono font-bold text-emerald-800">5 Free Solves / Day ($0)</span>
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Monthly Pass (vs SchoolCheats $25/mo)</span>
@@ -522,7 +560,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Lifetime Degree Pass (3 Devices)</span>
-                      <span className="font-mono font-bold text-emerald-800">$199 One-Time</span>
+                      <span className="font-mono font-bold text-emerald-800">$199 Lifetime</span>
                     </div>
                   </div>
                 </div>
@@ -573,7 +611,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>50 Free Solves ($0, No Card):</strong> Verify real AI + Vision OCR accuracy before paying $19/mo, $99/yr, or $199 Lifetime.</span>
+                  <span><strong>5 Free Solves / Day ($0, No Card):</strong> Verify real AI + Vision OCR accuracy before paying $19/mo, $99/yr, or $199 Lifetime.</span>
                 </li>
               </ul>
             </div>
@@ -663,7 +701,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                     <td className="py-3.5 px-4 font-semibold text-ink">Free Tier Answer Retrieval</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Can you get real answers for $0?</td>
                     <td className="py-3.5 px-4 text-emerald-800 font-bold">
-                      50 Free Solves + 10 OCR Snips ($0)
+                      5 Free Solves / Day + 10 OCR Snips ($0)
                     </td>
                     <td className="py-3.5 px-4 text-rose-800">
                       Disabled (&ldquo;X&rdquo;) on Free Plan
@@ -673,7 +711,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                     <td className="py-3.5 px-4 font-semibold text-ink">Paid Pricing Tiers</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Monthly, annual &amp; lifetime cost</td>
                     <td className="py-3.5 px-4 text-emerald-800 font-bold">
-                      $19/mo · $99/yr ($8.25/mo) · $199 Life
+                      $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
                     </td>
                     <td className="py-3.5 px-4 text-ink-muted">
                       $8.99/wk ($35.96/mo) · $25/mo · $100/yr
@@ -690,6 +728,17 @@ export default function SchoolCheatsVsExamGhostPage() {
                       <XCircle className="w-4 h-4 text-rose-800 inline mr-1" />
                       None
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -736,7 +785,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                   Join the ExamGhost Student Discord
                 </h2>
                 <p className="text-xs sm:text-sm text-white/90">
-                  Claim 50 free AI question solves for Canvas, Blackboard, Moodle, DeltaMath &amp; ZyBooks.
+                  Claim 5 Free/Day AI question solves for Canvas, Blackboard, Moodle, DeltaMath &amp; ZyBooks.
                 </p>
               </div>
             </div>
@@ -746,7 +795,7 @@ export default function SchoolCheatsVsExamGhostPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
             >
-              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <span>Join Discord &amp; Get 5 Free Solves / Day</span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -790,7 +839,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                No. On SchoolCheats.net&apos;s pricing matrix, the Free Plan disables (<strong>X</strong>) both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground. Unlocking Answer Retrieval requires a paid Premium Membership at <strong>$8.99/week ($35.96/mo)</strong> or <strong>$25.00/month</strong>. ExamGhost includes <strong>50 free full AI &amp; OCR solves ($0)</strong> and costs <strong>$19/mo, $99/yr ($8.25/mo), or $199 Lifetime</strong>.
+                No. On SchoolCheats.net&apos;s pricing matrix, the Free Plan disables (<strong>X</strong>) both Answer Retrieval and Auto Complete for DeltaMath, ZyBooks, Edpuzzle, and Wayground. Unlocking Answer Retrieval requires a paid Premium Membership at <strong>$8.99/week ($35.96/mo)</strong> or <strong>$25.00/month</strong>. ExamGhost includes <strong>5 Free/Day full AI &amp; OCR solves ($0)</strong> and costs <strong>$19/mo, $99/yr ($8.25/mo), or $199 Lifetime</strong>.
               </p>
             </details>
 
@@ -819,7 +868,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                   Solve Canvas, Blackboard, DeltaMath &amp; ZyBooks in 0.3s.
                 </h2>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                  Start with 50 Free Question Solves + 10 Vision OCR Snips ($0, no credit card required). Zero tab redirects, zero bot completion flags.
+                  Start with 5 Free Solves / Day + 10 Vision OCR Snips ($0, no credit card required). Zero tab redirects, zero bot completion flags.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
@@ -830,7 +879,7 @@ export default function SchoolCheatsVsExamGhostPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                 >
                   <FaChrome className="w-4 h-4 text-mint" />
-                  <span>Claim 50 Free Solves</span>
+                  <span>Claim 5 Free Solves / Day</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link prefetch={false}
@@ -879,6 +928,9 @@ export default function SchoolCheatsVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

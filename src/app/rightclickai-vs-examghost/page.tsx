@@ -18,6 +18,8 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { RightClickAiDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
@@ -74,13 +76,32 @@ export default function RightClickAIComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -139,7 +160,7 @@ export default function RightClickAIComparisonPage() {
                         "name": "How does RightClick AI's VisionScan limit compare to ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "RightClick AI's website contradicts itself—advertising '50x VisionScans / day included' in the headline while stating 'every user now gets 10x visual scans per day' in the body text immediately below—and charges a $0.99 7-day trial that auto-renews monthly. ExamGhost gives you 50 Free Solves upfront with zero credit card required and full Snap-It Vision OCR included."
+                            "text": "RightClick AI's website contradicts itself—advertising '50x VisionScans / day included' in the headline while stating 'every user now gets 10x visual scans per day' in the body text immediately below—and charges a $0.99 7-day trial that auto-renews monthly. ExamGhost gives you 5 Free Solves / Day upfront with zero credit card required and full Snap-It Vision OCR included."
                         }
                     }
                 ]
@@ -194,7 +215,7 @@ export default function RightClickAIComparisonPage() {
                                     Before entering your card for <strong>RightClick AI&apos;s $0.99 7-day trial</strong> (<code>userightclick.app</code>, published by UK marketing firm <em>Abundant Agency Ltd</em>), look at the receipts: it holds a <strong>2.6★ Chrome Web Store rating</strong>, its live website literally left unedited <strong>&ldquo;Snooze sleep app&rdquo; and &ldquo;Lorem ipsum&rdquo; placeholder text</strong> under its <em>Secure data</em> section, and its right-click workflow is easily blocked by Canvas and Blackboard quizzes.
                                 </p>
                                 <p className="text-sm sm:text-base text-rose-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost is a real, precision-engineered Closed Shadow DOM stealth suite with 100% Focus Shield blur suppression—starting with <strong>50 Free Solves ($0, no credit card required)</strong>.
+                                    ExamGhost is a real, precision-engineered Closed Shadow DOM stealth suite with 100% Focus Shield blur suppression—starting with <strong>5 Free Solves / Day ($0, no credit card required)</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -203,7 +224,7 @@ export default function RightClickAIComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -230,7 +251,7 @@ export default function RightClickAIComparisonPage() {
                                     <div className="flex items-center justify-between border-b border-black/10 pb-3">
                                         <span className="text-xs font-bold text-rose-800 uppercase tracking-wider flex items-center gap-1.5">
                                             <FileWarning className="w-4 h-4 text-rose-600" />
-                                            3 Verbatim userightclick.app Receipts
+                                            userightclick.app Forensic Audit
                                         </span>
                                         <span className="text-[11px] font-mono text-ink-muted">Live Site Audit</span>
                                     </div>
@@ -290,15 +311,51 @@ export default function RightClickAIComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Trial &amp; Pricing</span>
-                                <span className="font-bold text-emerald-800">50 Free Solves ($0 No Card)</span>
+                                <span className="font-bold text-emerald-800">5 Free Solves / Day ($0 No Card)</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">RightClick: $0.99 7-day auto-bill trial</span>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB RIGHTCLICK AUDIT SWITCHER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive RightClick Breakdown">
+                <RightClickAiDemo />
+
+                {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+                  <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+                      <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                          <Zap className="w-3.5 h-3.5" />
+                          ExamGhost Stealth Keyboard &amp; Model Suite
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                        <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+                      </div>
+                    </div>
+                    <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                      <p>
+                        Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+                      </p>
+                      <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                        <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                        <div className="font-bold text-white text-sm">
+                          Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* VISIBLE 3-PART AUDIT TEARDOWN */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Visible RightClick Breakdown">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="text-center max-w-2xl mx-auto mb-8">
                             <span className="px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
@@ -308,186 +365,158 @@ export default function RightClickAIComparisonPage() {
                                 Why RightClick Earned a 2.6★ Chrome Web Store Rating
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click each tab below to compare RightClick&apos;s blocked right-click context menu workflow, its unedited template website, and its $0.99 7-day trial billing against ExamGhost.
+                                Detailed forensic audit comparing RightClick&apos;s blocked right-click context menu workflow, its unedited template website, and its $0.99 7-day trial billing against ExamGhost.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="rc_tabs" id="rc_menu" className="sr-only peer/rcmenu" defaultChecked />
-                        <input type="radio" name="rc_tabs" id="rc_template" className="sr-only peer/rctemplate" />
-                        <input type="radio" name="rc_tabs" id="rc_trial" className="sr-only peer/rctrial" />
-
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#fff2ef] border border-rose-950/10 mb-8">
-                            <label
-                                htmlFor="rc_menu"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/rcmenu:bg-ink peer-checked/rcmenu:text-white peer-checked/rcmenu:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. Blocked Right-Click &amp; StealthTap</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">LMS blocks selection &amp; contextmenu</div>
-                            </label>
-                            <label
-                                htmlFor="rc_template"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/rctemplate:bg-ink peer-checked/rctemplate:text-white peer-checked/rctemplate:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. &ldquo;Snooze App&rdquo; &amp; Lorem Ipsum</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Unedited template + 4.77MiB bundle</div>
-                            </label>
-                            <label
-                                htmlFor="rc_trial"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/rctrial:bg-ink peer-checked/rctrial:text-white peer-checked/rctrial:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. $0.99 Trial Trap &amp; 10x Scan Cap</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Card required upfront vs 50 Free Solves</div>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: Blocked Right-Click & StealthTap */}
-                        <div className="hidden peer-checked/rcmenu:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <MousePointerClick className="w-3.5 h-3.5" />
-                                        RightClick AI: Relies on Highlighting &amp; Context Menus
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        What happens when your exam disables text selection and right-click?
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        RightClick AI&apos;s primary workflow requires you to <em>&ldquo;highlight a question, right click and get instant answers&rdquo;</em> or use its <em>StealthTap Beta</em> (double-clicking question text).
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        On timed Canvas, Blackboard, and publisher quizzes, professors routinely enable <code>user-select: none</code> CSS and attach <code>contextmenu</code>, <code>selectstart</code>, and <code>copy</code> event listeners. Trying to drag-select text and right-click either fails outright or triggers an immediate DOM event log.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Vulnerability: Blocked by user-select: none &amp; contextmenu listeners
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: Zero-Highlight DOM Extraction + Hotkey Stealth
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Never highlight text or open a browser right-click menu
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost reads Canvas Classic, Canvas New Quizzes (LTI Shadow DOM), Blackboard, and Moodle questions silently in the background without requiring you to highlight text or trigger a right-click menu.
-                                    </p>
-                                    <ul className="space-y-2 text-xs text-ink-secondary mb-4">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Silent Hotkey Trigger (<code>⌘+B</code> / <code>⌘+Shift+S</code>):</strong> Works even when right-click and text selection are completely disabled by the exam page.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>4-Layer Event Shield:</strong> Suppresses <code>blur</code>, <code>visibilitychange</code>, and clipboard telemetry automatically.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Stealth: Zero Text Highlighting · Zero Context-Menu Triggers
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 2: Snooze App & Lorem Ipsum */}
-                        <div className="hidden peer-checked/rctemplate:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Code2 className="w-3.5 h-3.5" />
-                                        RightClick AI: White-Label Marketing Agency Build
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Published by Abundant Agency Ltd with unedited template text
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        RightClick is published by a UK marketing agency (<code>Abundant Agency Ltd</code>, <code>help@abundant.agency</code>). On their live homepage (<code>userightclick.app</code>), the features section still reads: <strong>&ldquo;Your Perfect Sleep, One Feature at a Time — Snooze is packed with powerful features designed to transform your sleep experience.&rdquo;</strong>
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Even worse, all six feature cards underneath—including <strong>Secure data</strong>, <strong>24/7 support</strong>, and <strong>Supported by macbooks</strong>—contain only unedited <em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa massa.&rdquo;</em>
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Engineering Quality: 4.77MiB bundle · 2.6★ rating · Lorem ipsum docs
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: Dedicated LMS Security &amp; Stealth Engineering
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Audited Closed Shadow DOM v1 &amp; zero-retention RAM pipeline
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost isn&apos;t a re-skinned Webflow template run by an ad agency. Every line of our extension is engineered specifically around Instructure Canvas SpeedGrader, Blackboard Ultra, and LTI Shadow DOM architecture—backed by an active student Discord community and verifiable live demos.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Engineering Quality: Purpose-Built Closed Shadow DOM v1 Engine
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 3: $0.99 Trial Trap & 10x Scan Cap */}
-                        <div className="hidden peer-checked/rctrial:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <CreditCard className="w-3.5 h-3.5" />
-                                        RightClick AI: $0.99 7-Day Trial + 10x Daily VisionScan Cap
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Demands your credit card upfront and caps diagram scans at 10/day
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        RightClick pushes a top banner reading: <strong>&ldquo;👉 Use Code TRIAL for a $0.99 7-Day Trial of RightClick&rdquo;</strong>—requiring your credit card before you can properly test the extension, then auto-renewing into a paid subscription.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        And while their headline claims <em>&ldquo;50x VisionScans / day included,&rdquo;</em> the text directly below it admits: <em>&ldquo;every user now gets 10x visual scans per day, at no extra cost!&rdquo;</em>—meaning a single 25-question physics or economics quiz with graphs exhausts your daily visual quota halfway through the exam.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Billing: $0.99 7-day card trial · 10x VisionScans/day cap
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <Zap className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Free Solves ($0 No Card) + Uncapped Vision OCR
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Never enter a credit card just to test an extension
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost gives every student <strong>50 Free Solves</strong> with zero credit card required—and all 50 solves include full <code>⌘+Shift+S</code> Snap-It Vision OCR for diagrams, graphs, and chemical structures.
-                                    </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                        <div className="space-y-8">
+                            {/* CARD 1: Blocked Right-Click & StealthTap */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <MousePointerClick className="w-3.5 h-3.5" />
+                                            RightClick AI: Relies on Highlighting &amp; Context Menus
                                         </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            What happens when your exam disables text selection and right-click?
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            RightClick AI&apos;s primary workflow requires you to <em>&ldquo;highlight a question, right click and get instant answers&rdquo;</em> or use its <em>StealthTap Beta</em> (double-clicking question text).
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            On timed Canvas, Blackboard, and publisher quizzes, professors routinely enable <code>user-select: none</code> CSS and attach <code>contextmenu</code>, <code>selectstart</code>, and <code>copy</code> event listeners. Trying to drag-select text and right-click either fails outright or triggers an immediate DOM event log.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Vulnerability: Blocked by user-select: none &amp; contextmenu listeners
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <EyeOff className="w-3.5 h-3.5" />
+                                            ExamGhost: Zero-Highlight DOM Extraction + Hotkey Stealth
                                         </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Never highlight text or open a browser right-click menu
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost reads Canvas Classic, Canvas New Quizzes (LTI Shadow DOM), Blackboard, and Moodle questions silently in the background without requiring you to highlight text or trigger a right-click menu.
+                                        </p>
+                                        <ul className="space-y-2 text-xs text-ink-secondary mb-4">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Silent Hotkey Trigger (<code>Alt+1</code>, <code>Alt+2</code>, <code>Alt+3</code>, <code>Alt+S</code>):</strong> Works even when right-click and text selection are completely disabled by the exam page.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>4-Layer Event Shield:</strong> Suppresses <code>blur</code>, <code>visibilitychange</code>, and clipboard telemetry automatically.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Stealth: Zero Text Highlighting · Zero Context-Menu Triggers
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* CARD 2: Snooze App & Lorem Ipsum */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <Code2 className="w-3.5 h-3.5" />
+                                            RightClick AI: White-Label Marketing Agency Build
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Published by Abundant Agency Ltd with unedited template text
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            RightClick is published by a UK marketing agency (<code>Abundant Agency Ltd</code>, <code>help@abundant.agency</code>). On their live homepage (<code>userightclick.app</code>), the features section still reads: <strong>&ldquo;Your Perfect Sleep, One Feature at a Time — Snooze is packed with powerful features designed to transform your sleep experience.&rdquo;</strong>
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            Even worse, all six feature cards underneath—including <strong>Secure data</strong>, <strong>24/7 support</strong>, and <strong>Supported by macbooks</strong>—contain only unedited <em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa massa.&rdquo;</em>
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Engineering Quality: 4.77MiB bundle · 2.6★ rating · Lorem ipsum docs
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <ShieldCheck className="w-3.5 h-3.5" />
+                                            ExamGhost: Dedicated LMS Security &amp; Stealth Engineering
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Audited Closed Shadow DOM v1 &amp; zero-retention RAM pipeline
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost isn&apos;t a re-skinned Webflow template run by an ad agency. Every line of our extension is engineered specifically around Instructure Canvas SpeedGrader, Blackboard Ultra, and LTI Shadow DOM architecture—backed by an active student Discord community and verifiable live demos.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Engineering Quality: Purpose-Built Closed Shadow DOM v1 Engine
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* CARD 3: $0.99 Trial Trap & 10x Scan Cap */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <CreditCard className="w-3.5 h-3.5" />
+                                            RightClick AI: $0.99 7-Day Trial + 10x Daily VisionScan Cap
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Demands your credit card upfront and caps diagram scans at 10/day
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            RightClick pushes a top banner reading: <strong>&ldquo;👉 Use Code TRIAL for a $0.99 7-Day Trial of RightClick&rdquo;</strong>—requiring your credit card before you can properly test the extension, then auto-renewing into a paid subscription.
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            And while their headline claims <em>&ldquo;50x VisionScans / day included,&rdquo;</em> the text directly below it admits: <em>&ldquo;every user now gets 10x visual scans per day, at no extra cost!&rdquo;</em>—meaning a single 25-question physics or economics quiz with graphs exhausts your daily visual quota halfway through the exam.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Billing: $0.99 7-day card trial · 10x VisionScans/day cap
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <Zap className="w-3.5 h-3.5" />
+                                            ExamGhost: 5 Free Solves / Day ($0 No Card) + Uncapped Vision OCR
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Never enter a credit card just to test an extension
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost gives every student <strong>5 Free Solves / Day</strong> with zero credit card required—and all 5 daily free solves include full <code>Alt+S</code> Snap-It Vision OCR for diagrams, graphs, and chemical structures.
+                                        </p>
+                                        <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
+                                                <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$199</div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Lifetime Degree Pass</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Billing: $0 No-Card Starter · Transparent Plans · 14-Day Refund
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Billing: $0 No-Card Starter · Transparent Plans · 14-Day Refund
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -546,7 +575,7 @@ export default function RightClickAIComparisonPage() {
                                         <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Zero text highlighting or right-click menu required</span>
                                     </div>
                                     <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-200">
-                                        11:11:29 — Answered Question 2 (Diagram solved via ⌘+Shift+S)
+                                        11:11:29 — Answered Question 2 (Diagram solved via Alt+S)
                                         <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Closed Shadow DOM · 0 blur flags · Uncapped Pro Vision OCR</span>
                                     </div>
                                     <div className="text-slate-300">11:12:14 — Answered Question 3</div>
@@ -605,7 +634,7 @@ export default function RightClickAIComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Trial Without Credit Card</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves ($0, No Card Needed)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day ($0, No Card Needed)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ $0.99 7-Day Trial (Requires card upfront)</td>
                                     </tr>
                                     <tr>
@@ -613,7 +642,15 @@ export default function RightClickAIComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-ink-muted">$0.99 7-day trial → recurring monthly billing</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -717,7 +754,7 @@ export default function RightClickAIComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                RightClick AI&apos;s website contradicts itself—advertising <em>&ldquo;50x VisionScans / day included&rdquo;</em> in the headline while stating <em>&ldquo;every user now gets 10x visual scans per day&rdquo;</em> in the body text immediately below—and charges a $0.99 7-day trial that auto-renews monthly. ExamGhost gives you <strong>50 Free Solves</strong> upfront with zero credit card required and full Snap-It Vision OCR included.
+                                RightClick AI&apos;s website contradicts itself—advertising <em>&ldquo;50x VisionScans / day included&rdquo;</em> in the headline while stating <em>&ldquo;every user now gets 10x visual scans per day&rdquo;</em> in the body text immediately below—and charges a $0.99 7-day trial that auto-renews monthly. ExamGhost gives you <strong>5 Free Solves / Day</strong> upfront with zero credit card required and full Snap-It Vision OCR included.
                             </p>
                         </details>
                     </div>
@@ -735,7 +772,7 @@ export default function RightClickAIComparisonPage() {
                                     Real Shadow DOM stealth—not a 2.6★ Lorem Ipsum template.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Start with 50 Free Solves on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -744,7 +781,7 @@ export default function RightClickAIComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -781,7 +818,10 @@ export default function RightClickAIComparisonPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

@@ -209,8 +209,8 @@ export default function VideoDemoPage() {
   const [showLicenseModal, setShowLicenseModal] = useState(false);
   const [licenseKey, setLicenseKey] = useState('');
   const [licenseSuccess, setLicenseSuccess] = useState(false);
-  const [usedMessages, setUsedMessages] = useState(32);
-  const [totalMessages, setTotalMessages] = useState(50);
+  const [usedMessages, setUsedMessages] = useState(2);
+  const [totalMessages, setTotalMessages] = useState(5);
 
   // Mode 1: Invisible Toggles
   const [invisibleAutoFill, setInvisibleAutoFill] = useState(true);

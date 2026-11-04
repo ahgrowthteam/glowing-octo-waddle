@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { StudyMonkeyDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "StudyMonkey vs ExamGhost (2026) — Web Chat vs 0.3s Stealth",
     },
-    description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 50 Free Solves.",
+    description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/studymonkey-vs-examghost",
     },
     openGraph: {
         title: "StudyMonkey vs ExamGhost (2026) — Web Chat vs 0.3s Stealth",
-        description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 50 Free Solves.",
+        description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/studymonkey-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "StudyMonkey vs ExamGhost (2026) — Web Chat vs 0.3s Stealth",
-        description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 50 Free Solves.",
+        description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -83,7 +85,7 @@ export default function StudymonkeyVsExamghostPage() {
                         "offers": [
                             {
                                 "@type": "Offer",
-                                "name": "Free Trial (50 Question Solves)",
+                                "name": "Free Tier (5 Free Solves / Day)",
                                 "price": "0.00",
                                 "priceCurrency": "USD"
                             },
@@ -182,7 +184,7 @@ export default function StudymonkeyVsExamghostPage() {
                         "name": "Why does StudyMonkey's $9/month Plus plan still fail on college STEM questions?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "On studymonkey.ai/pricing, both the Free Basic plan (capped at 5 subjects) and the paid Plus plan ($9/mo or $90/yr) are explicitly restricted to a 'Standard AI model' with no essay writer. To unlock StudyMonkey's 'Advanced AI model', students must pay $16/month ($160/yr) for Pro or $29/month ($290/yr) for Max. ExamGhost gives every user frontier multimodal AI + Mathpix STEM OCR starting from your very first 50 Free Question Solves."
+                            "text": "On studymonkey.ai/pricing, both the Free Basic plan (capped at 5 subjects) and the paid Plus plan ($9/mo or $90/yr) are explicitly restricted to a 'Standard AI model' with no essay writer. To unlock StudyMonkey's 'Advanced AI model', students must pay $16/month ($160/yr) for Pro or $29/month ($290/yr) for Max. ExamGhost gives every user frontier multimodal AI + Mathpix STEM OCR starting from your very first 5 Free Solves / Day."
                         }
                     },
                     {
@@ -198,7 +200,7 @@ export default function StudymonkeyVsExamghostPage() {
                         "name": "What is the contradiction in StudyMonkey's refund policy on studymonkey.ai/pricing?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Under its pricing cards, StudyMonkey displays a badge stating 'We offer a 7-day money-back guarantee on all plans.' However, in FAQ #2 and #3 on the exact same page, StudyMonkey states 'Every paid plan has a 14 day free trial' and 'After the trial period, all sales are final.' ExamGhost provides 50 Free Question Solves with zero credit card required and backs paid passes with a clear 14-day 100% refund guarantee."
+                            "text": "Under its pricing cards, StudyMonkey displays a badge stating 'We offer a 7-day money-back guarantee on all plans.' However, in FAQ #2 and #3 on the exact same page, StudyMonkey states 'Every paid plan has a 14 day free trial' and 'After the trial period, all sales are final.' ExamGhost provides 5 Free Solves / Day with zero credit card required and backs paid passes with a clear 14-day 100% refund guarantee."
                         }
                     }
                 ]
@@ -243,7 +245,7 @@ export default function StudymonkeyVsExamghostPage() {
                                 </h1>
 
                                 <p className="aeo-summary text-base sm:text-lg text-neutral-700 leading-relaxed mb-7">
-                                    <strong>StudyMonkey</strong> (<code className="text-xs sm:text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded font-mono">studymonkey.ai</code>) looks cheap at first glance—until you read the fine print on its pricing table. Both its Free plan (capped at 5 subjects) and its paid <strong>$9/mo Plus</strong> plan restrict you to a downgraded <strong>&ldquo;Standard AI model&rdquo;</strong> inside a web chat tab that triggers Canvas <code className="text-xs sm:text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded font-mono">window.blur</code> alerts. Unlocking its &ldquo;Advanced AI model&rdquo; costs <strong>$16 to $29/month ($290/yr)</strong>. <strong>ExamGhost</strong> gives every student full frontier multimodal AI + Mathpix STEM OCR right inside your exam tab—starting with <strong>50 Free Solves ($0)</strong>.
+                                    <strong>StudyMonkey</strong> (<code className="text-xs sm:text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded font-mono">studymonkey.ai</code>) looks cheap at first glance—until you read the fine print on its pricing table. Both its Free plan (capped at 5 subjects) and its paid <strong>$9/mo Plus</strong> plan restrict you to a downgraded <strong>&ldquo;Standard AI model&rdquo;</strong> inside a web chat tab that triggers Canvas <code className="text-xs sm:text-sm bg-neutral-200/80 px-1.5 py-0.5 rounded font-mono">window.blur</code> alerts. Unlocking its &ldquo;Advanced AI model&rdquo; costs <strong>$16 to $29/month ($290/yr)</strong>. <strong>ExamGhost</strong> gives every student full frontier multimodal AI + Mathpix STEM OCR right inside your exam tab—starting with <strong>5 Free Solves / Day ($0)</strong>.
                                 </p>
 
                                 {/* Above-the-Fold Primary & Secondary CTAs */}
@@ -253,7 +255,7 @@ export default function StudymonkeyVsExamghostPage() {
                                         className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-[#111111] text-white font-bold hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg group text-sm sm:text-base"
                                     >
                                         <FaChrome className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0)</span>
+                                        <span>Claim 5 Free Solves / Day ($0)</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
                                     <Link prefetch={false}
@@ -352,7 +354,7 @@ export default function StudymonkeyVsExamghostPage() {
                                         </div>
 
                                         <div className="flex items-center justify-between text-xs font-semibold text-emerald-950 pt-0.5">
-                                            <span>50 Free Solves ($0) · No Card</span>
+                                            <span>5 Free Solves / Day ($0) · No Card</span>
                                             <span className="font-mono text-emerald-800">$8.25/mo ($99/yr)</span>
                                         </div>
                                     </div>
@@ -379,14 +381,50 @@ export default function StudymonkeyVsExamghostPage() {
                             </div>
                             <div className="p-4 rounded-2xl bg-white border border-neutral-200 shadow-sm">
                                 <div className="text-xs text-neutral-500 font-medium mb-1">Unlimited + Best AI Cost</div>
-                                <div className="text-sm sm:text-base font-bold text-emerald-800">$19/mo · $99/yr · $199 Life</div>
+                                <div className="text-sm sm:text-base font-bold text-emerald-800">$19/mo · $99/yr · $199 Lifetime Degree Pass</div>
                                 <div className="text-xs text-neutral-600 mt-0.5">StudyMonkey Max: $29/mo ($290/yr)</div>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE PURE-CSS TABS: AI MODEL TIER & LIVE EXAM WORKFLOW SIMULATOR */}
+                <StudyMonkeyDemo />
+
+                {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+                  <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+                      <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                          <Zap className="w-3.5 h-3.5" />
+                          ExamGhost Stealth Keyboard &amp; Model Suite
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                        <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                        <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+                      </div>
+                    </div>
+                    <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                      <p>
+                        Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+                      </p>
+                      <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                        <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                        <div className="font-bold text-white text-sm">
+                          Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* 3 VISIBLE AUDIT EXPLORER DIMENSIONS */}
                 <section className="py-16 sm:py-20 bg-neutral-100/80 border-b border-neutral-200">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -395,62 +433,17 @@ export default function StudymonkeyVsExamghostPage() {
                                 <span>Interactive Audit Explorer</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl font-bold font-display text-[#111111] mb-3">
-                                Click Each Dimension to See What StudyMonkey.ai Hides Behind Its Pricing Tiers
+                                What StudyMonkey.ai Hides Behind Its Pricing Tiers
                             </h2>
                             <p className="text-neutral-700 text-sm sm:text-base">
                                 Compare how StudyMonkey handles AI model quality, live Canvas telemetry, and refund fine print against ExamGhost.
                             </p>
                         </div>
 
-                        {/* Pure CSS Radio Tabs Container */}
-                        <div>
-                            <input
-                                type="radio"
-                                name="studymonkey-audit-tabs"
-                                id="tab-sm-model"
-                                className="sr-only peer/model"
-                                defaultChecked
-                            />
-                            <input
-                                type="radio"
-                                name="studymonkey-audit-tabs"
-                                id="tab-sm-stealth"
-                                className="sr-only peer/stealth"
-                            />
-                            <input
-                                type="radio"
-                                name="studymonkey-audit-tabs"
-                                id="tab-sm-pricing"
-                                className="sr-only peer/pricing"
-                            />
-
-                            {/* Tab Labels */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-white p-2 rounded-2xl border border-neutral-200 shadow-sm">
-                                <label
-                                    htmlFor="tab-sm-model"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/model:bg-[#111111] peer-checked/model:text-white peer-checked/model:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Cpu className="w-4 h-4 shrink-0" />
-                                    <span>1. &ldquo;Standard AI&rdquo; Downgrade</span>
-                                </label>
-                                <label
-                                    htmlFor="tab-sm-stealth"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/stealth:bg-[#111111] peer-checked/stealth:text-white peer-checked/stealth:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <EyeOff className="w-4 h-4 shrink-0" />
-                                    <span>2. Web Chat vs Stealth HUD</span>
-                                </label>
-                                <label
-                                    htmlFor="tab-sm-pricing"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/pricing:bg-[#111111] peer-checked/pricing:text-white peer-checked/pricing:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <CreditCard className="w-4 h-4 shrink-0" />
-                                    <span>3. $290/yr Max &amp; Refund Trap</span>
-                                </label>
-                            </div>
-
+                        {/* 3 Visible Comparison Dimension Cards */}
+                        <div className="space-y-8">
                             {/* PANEL 1: MODEL THROTTLING */}
-                            <div className="hidden peer-checked/model:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -480,7 +473,7 @@ export default function StudymonkeyVsExamghostPage() {
                                             Frontier Multimodal AI + Mathpix OCR on Every Single Solve
                                         </h3>
                                         <p className="text-sm text-white/85 leading-relaxed mb-5">
-                                            ExamGhost never artificially lobotomizes its AI to force an upsell. From your very first <strong>50 Free Question Solves ($0)</strong> to our <strong>$8.25/mo Academic Year Pass</strong>, every request runs through our full frontier multimodal reasoning pipeline paired with <strong>Mathpix LaTeX OCR</strong>.
+                                            ExamGhost never artificially lobotomizes its AI to force an upsell. From your very first <strong>5 Free Solves / Day ($0)</strong> to our <strong>$8.25/mo Academic Year Pass</strong>, every request runs through our full frontier multimodal reasoning pipeline paired with <strong>Mathpix LaTeX OCR</strong>.
                                         </p>
                                     </div>
                                     <div className="p-4 rounded-2xl bg-white/10 border border-white/15 text-xs text-emerald-200 space-y-1.5">
@@ -491,7 +484,7 @@ export default function StudymonkeyVsExamghostPage() {
                             </div>
 
                             {/* PANEL 2: WEB CHAT VS STEALTH HUD */}
-                            <div className="hidden peer-checked/stealth:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -526,13 +519,13 @@ export default function StudymonkeyVsExamghostPage() {
                                     </div>
                                     <div className="p-4 rounded-2xl bg-white/10 border border-white/15 text-xs text-emerald-200 space-y-1.5">
                                         <div className="font-bold text-white">16ms Panic Key RAM Flush:</div>
-                                        <p>Press <code className="font-mono">Alt+X</code> (or your custom hotkey) at any moment to unmount the HUD and flush ephemeral memory in 16 milliseconds.</p>
+                                        <p>Press <code className="font-mono">⌘+Shift+U</code> (or your custom hotkey) at any moment to unmount the HUD and flush ephemeral memory in 16 milliseconds.</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* PANEL 3: PRICING & REFUND CONTRADICTION */}
-                            <div className="hidden peer-checked/pricing:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -559,10 +552,10 @@ export default function StudymonkeyVsExamghostPage() {
                                             <span>ExamGhost Transparent Student Passes</span>
                                         </div>
                                         <h3 className="text-xl sm:text-2xl font-bold font-display text-white mb-3">
-                                            50 Free Solves ($0) With No Credit Card + Save $191/Year
+                                            5 Free Solves / Day ($0) With No Credit Card + Save $191/Year
                                         </h3>
                                         <p className="text-sm text-white/85 leading-relaxed mb-5">
-                                            Test ExamGhost on your hardest Canvas or Blackboard questions with <strong>50 Free Question Solves</strong>—no credit card required and zero auto-billing traps. When you upgrade, choose <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime</strong>, all backed by a clear 14-day 100% money-back guarantee.
+                                            Test ExamGhost on your hardest Canvas or Blackboard questions with <strong>5 Free Solves / Day</strong>—no credit card required and zero auto-billing traps. When you upgrade, choose <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime Degree Pass</strong>, all backed by a clear 14-day 100% money-back guarantee.
                                         </p>
                                     </div>
                                     <div className="flex flex-wrap gap-3">
@@ -570,7 +563,7 @@ export default function StudymonkeyVsExamghostPage() {
                                             href="/#pricing"
                                             className="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#111111] font-bold text-xs sm:text-sm transition-colors inline-flex items-center gap-1.5"
                                         >
-                                            <span>Claim 50 Free Solves ($0)</span>
+                                            <span>Claim 5 Free Solves / Day ($0)</span>
                                             <ArrowRight className="w-4 h-4" />
                                         </Link>
                                         <Link prefetch={false}
@@ -704,7 +697,7 @@ export default function StudymonkeyVsExamghostPage() {
                                     <tr className="bg-white">
                                         <td className="py-3.5 px-4 font-semibold text-[#111111]">Free Tier Subject Cap</td>
                                         <td className="py-3.5 px-4 text-neutral-600 text-xs">Subject coverage during free evaluation</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">50 Free Solves Across All Subjects</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">5 Free Solves / Day Across All Subjects</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">Restricted to 5 Subjects Only</td>
                                     </tr>
                                     <tr className="bg-[#FAF8F5]/60">
@@ -722,13 +715,13 @@ export default function StudymonkeyVsExamghostPage() {
                                     <tr className="bg-[#FAF8F5]/60">
                                         <td className="py-3.5 px-4 font-semibold text-[#111111]">Panic Key RAM Flush</td>
                                         <td className="py-3.5 px-4 text-neutral-600 text-xs">Instant 16ms UI unmount on hotkey</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">Built-In (Alt+X / Configurable)</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">Built-In (⌘+Shift+U / Configurable)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">Not Supported</td>
                                     </tr>
                                     <tr className="bg-white">
                                         <td className="py-3.5 px-4 font-semibold text-[#111111]">Unlimited + Best AI Pricing</td>
                                         <td className="py-3.5 px-4 text-neutral-600 text-xs">Cost for full accuracy &amp; unlimited solves</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime Degree Pass</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">$16/mo Pro ($160/yr) or $29/mo Max ($290/yr)</td>
                                     </tr>
                                     <tr className="bg-[#FAF8F5]/60">
@@ -737,7 +730,14 @@ export default function StudymonkeyVsExamghostPage() {
                                         <td className="py-3.5 px-4 text-emerald-800 font-bold">14-Day 100% Refund Guarantee</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">Conflicting &ldquo;7-Day&rdquo; vs &ldquo;All Sales Final&rdquo; FAQ</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -769,7 +769,7 @@ export default function StudymonkeyVsExamghostPage() {
                                     <div className="text-emerald-300">document.addEventListener(&apos;visibilitychange&apos;, (e) =&gt; e.stopImmediatePropagation(), true);</div>
                                     <div className="text-neutral-300 mt-2">
                                         • Model Access: Unthrottled Frontier Multimodal + Mathpix OCR on all passes<br />
-                                        • Free Trial: 50 Question Solves ($0, no credit card required)<br />
+                                        • Free Trial: 5 Free Solves / Day ($0, no credit card required)<br />
                                         • Refund Policy: Clear 14-day 100% money-back guarantee
                                     </div>
                                 </div>
@@ -818,7 +818,7 @@ export default function StudymonkeyVsExamghostPage() {
                                 </li>
                                 <li className="flex items-start gap-2.5">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span>Start with <strong>50 Free Solves</strong> (no card required), then upgrade for <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime</strong>.</span>
+                                    <span>Start with <strong>5 Free Solves / Day</strong> (no card required), then upgrade for <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime</strong>.</span>
                                 </li>
                             </ul>
                             <div className="flex flex-wrap gap-3">
@@ -826,7 +826,7 @@ export default function StudymonkeyVsExamghostPage() {
                                     href="/#pricing"
                                     className="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#111111] font-bold text-xs sm:text-sm transition-colors inline-flex items-center gap-1.5"
                                 >
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
                                 <Link prefetch={false}
@@ -896,7 +896,7 @@ export default function StudymonkeyVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-neutral-600 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                                On <code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">studymonkey.ai/pricing</code>, both the Free Basic plan (capped at 5 subjects) and the paid Plus plan (<strong>$9/mo</strong> or <strong>$90/yr</strong>) are explicitly restricted to a <strong>&ldquo;Standard AI model&rdquo;</strong> with no essay writer. To unlock StudyMonkey&apos;s &ldquo;Advanced AI model&rdquo;, students must pay <strong>$16/month ($160/yr)</strong> for Pro or <strong>$29/month ($290/yr)</strong> for Max. ExamGhost gives every user frontier multimodal AI + Mathpix STEM OCR starting from your very first 50 Free Question Solves.
+                                On <code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">studymonkey.ai/pricing</code>, both the Free Basic plan (capped at 5 subjects) and the paid Plus plan (<strong>$9/mo</strong> or <strong>$90/yr</strong>) are explicitly restricted to a <strong>&ldquo;Standard AI model&rdquo;</strong> with no essay writer. To unlock StudyMonkey&apos;s &ldquo;Advanced AI model&rdquo;, students must pay <strong>$16/month ($160/yr)</strong> for Pro or <strong>$29/month ($290/yr)</strong> for Max. ExamGhost gives every user frontier multimodal AI + Mathpix STEM OCR starting from your very first 5 Free Solves / Day.
                             </p>
                         </details>
 
@@ -916,7 +916,7 @@ export default function StudymonkeyVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-neutral-600 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                                Under its pricing cards, StudyMonkey displays a badge stating <em>&ldquo;We offer a 7-day money-back guarantee on all plans.&rdquo;</em> However, in FAQ #2 and #3 on the exact same page, StudyMonkey states <em>&ldquo;Every paid plan has a 14 day free trial&rdquo;</em> and <em>&ldquo;After the trial period, all sales are final.&rdquo;</em> ExamGhost provides <strong>50 Free Question Solves</strong> with zero credit card required and backs paid passes with a clear 14-day 100% refund guarantee.
+                                Under its pricing cards, StudyMonkey displays a badge stating <em>&ldquo;We offer a 7-day money-back guarantee on all plans.&rdquo;</em> However, in FAQ #2 and #3 on the exact same page, StudyMonkey states <em>&ldquo;Every paid plan has a 14 day free trial&rdquo;</em> and <em>&ldquo;After the trial period, all sales are final.&rdquo;</em> ExamGhost provides <strong>5 Free Solves / Day</strong> with zero credit card required and backs paid passes with a clear 14-day 100% refund guarantee.
                             </p>
                         </details>
                     </div>
@@ -932,7 +932,7 @@ export default function StudymonkeyVsExamghostPage() {
                                     <span>SKIP THE &ldquo;STANDARD AI&rdquo; PAYWALL</span>
                                 </div>
                                 <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#111111] mb-2">
-                                    Test Unthrottled 0.3s Stealth AI on Your Next 50 Questions for $0
+                                    Test Unthrottled 0.3s Stealth AI on 5 Free Solves / Day ($0 No Card)
                                 </h2>
                                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                                     No credit card required. Full frontier multimodal AI + Mathpix OCR inside a closed Shadow DOM HUD with an active Canvas Focus Shield.
@@ -944,7 +944,7 @@ export default function StudymonkeyVsExamghostPage() {
                                     className="px-6 py-3.5 rounded-2xl bg-[#111111] hover:bg-neutral-800 text-white font-bold text-xs sm:text-sm transition-all inline-flex items-center gap-2 shadow-sm"
                                 >
                                     <FaChrome className="w-4 h-4 text-emerald-400" />
-                                    <span>Claim 50 Free Solves ($0)</span>
+                                    <span>Claim 5 Free Solves / Day ($0)</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
                                 <Link prefetch={false}
@@ -979,7 +979,7 @@ export default function StudymonkeyVsExamghostPage() {
                                         <span>TestWhiz vs ExamGhost</span>
                                         <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all" />
                                     </div>
-                                    <p className="text-[11px] text-neutral-500 mt-1">$5.99/wk auto-billing trial vs 50 Free Solves</p>
+                                    <p className="text-[11px] text-neutral-500 mt-1">$5.99/wk auto-billing trial vs 5 Free Solves / Day</p>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/cramly-vs-examghost"
@@ -1005,7 +1005,10 @@ export default function StudymonkeyVsExamghostPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

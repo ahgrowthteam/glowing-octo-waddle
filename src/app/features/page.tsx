@@ -70,44 +70,44 @@ export default function FeaturesPage() {
         // Display Modes
         {
             category: 'modes',
-            title: 'Zero-UI In-DOM Highlighting',
+            title: 'Invisible Mode (Alt+1) — Silent Auto-Fill',
             badge: 'Zero Overhead',
             bg: '#bfe9d9',
-            description: 'Answers are marked directly on the native Canvas radio buttons without opening floating windows, sidebars, or auxiliary panels.',
+            description: 'Answers are selected directly on native Canvas radio buttons or copied to your clipboard with zero floating windows, banners, or on-screen traces.',
             icon: CheckCircle2
         },
         {
             category: 'modes',
-            title: 'Discreet Stealth Dot Indicator',
+            title: 'Stealth Mode (Alt+2) — Subtle ✓ Hint Indicator',
             badge: 'Whisper Safe',
             bg: '#cdeecb',
-            description: 'Places a faint, semi-transparent colored dot beside the correct choice. Completely invisible to anyone glancing across your lecture hall or shoulder.',
+            description: 'Auto-fills inputs or places a discreet green ✓ tick beside the correct choice. Completely invisible to anyone glancing across your lecture hall or shoulder.',
             icon: EyeOff
         },
         {
             category: 'modes',
-            title: 'Deep Tutor Breakdown Drawer',
+            title: 'Explain Mode (Alt+3) — Side Breakdown Banner',
             badge: 'Full Reasoning',
             bg: '#e2d3fa',
-            description: 'Pops up full step-by-step logic, explaining why the correct choice is true and specifically why each distractor is wrong.',
+            description: 'Auto-fills the verified choice and slides in a right-side rationale card explaining why the correct choice is true and why each distractor is wrong.',
             icon: Bot
         },
         {
             category: 'modes',
-            title: '3 Answer Delivery Methods (Auto-Fill, Highlight & Silent Clipboard)',
-            badge: 'Flexible Output',
+            title: 'Double-Click Question Solver & 3 Delivery Methods',
+            badge: 'Instant Trigger',
             bg: '#c4d0f8',
-            description: 'Independent of your display mode, choose whether ExamGhost selects the option automatically, glows on the right choice for 1–10 seconds, or copies the answer silently to your clipboard.',
+            description: 'Double-click any question card to solve inline. Independent of your mode (Alt+1/2/3), choose Auto-Fill, Subtle ✓ Highlight, or Silent Clipboard Copy.',
             icon: Command
         },
 
         // Snap-It Vision
         {
             category: 'vision',
-            title: 'Area Screenshot Crop Tool (⌘+Shift+S)',
+            title: 'Area Screenshot Crop Tool (Alt+S)',
             badge: 'Multimodal OCR',
             bg: '#ffd5cc',
-            description: 'When text cannot be highlighted or right-click is disabled, hit ⌘+Shift+S and drag a crop box over any area to solve instantly with computer vision in <1.2s.',
+            description: 'When text cannot be highlighted or right-click is disabled, hit Alt+S and drag a crop box over any area to solve instantly with computer vision in <1.2s.',
             icon: Camera
         },
         {
@@ -206,10 +206,10 @@ export default function FeaturesPage() {
         // Security & Privacy
         {
             category: 'security',
-            title: 'Emergency Panic Kill-Switch (Escape × 2)',
+            title: 'Instant Panic Kill-Switch (⌘+Shift+U)',
             badge: 'Safety First',
             bg: '#ffd5cc',
-            description: 'Double-tap ESC or hit your panic hotkey to instantly vaporize all HUD overlays, purge local solver cache, and revert DOM to standard state in 10ms.',
+            description: 'Press ⌘+Shift+U (or click ON/OFF in the popup) to instantly vaporize all Shadow DOM overlays, purge local solver cache, and revert DOM to standard state in 10ms.',
             icon: Power
         },
         {
@@ -266,7 +266,7 @@ export default function FeaturesPage() {
                         in one calm app.
                     </h1>
                     <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto leading-relaxed font-normal mb-8">
-                        ExamGhost combines 24 specialized stealth and AI solving capabilities—including Focus Shield window.onblur interception, Closed Shadow DOM v1 isolation, Snap-It Vision OCR (⌘+Shift+S), 3 display modes, 3 answer delivery methods, and a 10ms emergency panic switch—into one client-side Chrome extension.
+                        ExamGhost combines 24 specialized stealth and AI solving capabilities—including Focus Shield window.onblur interception, Closed Shadow DOM v1 isolation, Snap-It Vision OCR (Alt+S), Double-Click Question Solving, 3 solver modes (Alt+1, Alt+2, Alt+3), and a 10ms master toggle switch (⌘+Shift+U)—into one client-side Chrome extension.
                     </p>
 
                     {/* Search & Category Filter Pills */}

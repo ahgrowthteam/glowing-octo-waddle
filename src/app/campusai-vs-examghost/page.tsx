@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { CampusAiSidepanelBlurDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Campus AI vs ExamGhost (2026) — SidePanel Blur vs Stealth",
     },
-    description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/campusai-vs-examghost",
     },
     openGraph: {
         title: "Campus AI vs ExamGhost (2026) — SidePanel Blur vs Stealth",
-        description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/campusai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Campus AI vs ExamGhost (2026) — SidePanel Blur vs Stealth",
-        description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,7 +66,7 @@ const faqs = [
   },
   {
     q: "Does Campus AI really cap paid subscribers to 'limited questions'?",
-    a: "Yes. On thecampusai.com/resources/pricing, both the Monthly Plan ($4.99/mth) and the Yearly Plan ($3.33/mth, billed $39.99/yr—alongside a legacy $9.99/mo banner) explicitly list 'Answer limited questions' as the second plan bullet. By contrast, ExamGhost gives every student 50 Free Solves ($0, no credit card required) and unlimited solves on its $19/mo Monthly, $99/yr Annual ($8.25/mo), and $199 Lifetime tiers.",
+    a: "Yes. On thecampusai.com/resources/pricing, both the Monthly Plan ($4.99/mth) and the Yearly Plan ($3.33/mth, billed $39.99/yr—alongside a legacy $9.99/mo banner) explicitly list 'Answer limited questions' as the second plan bullet. By contrast, ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required) and unlimited solves on its $19/mo Monthly, $99/yr Annual ($8.25/mo), and $199 Lifetime tiers.",
   },
   {
     q: "What is the privacy risk of Campus AI's Cloud Memory Bank and Google OAuth?",
@@ -72,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does ExamGhost compare to Campus AI during live Canvas exams?",
-    a: "ExamGhost is engineered specifically for timed assessments with 3-model consensus (GPT-5.4 + Claude Sonnet 4.6 + Gemini 3.1 Pro), Closed Shadow DOM (mode: 'closed') sandboxing, zero web_accessible_resources, and Focus Shield event interception that keeps document.hasFocus() locked to true. Campus AI is built around flashcard generation, practice quizzes, and a sidePanel UI that leaks tab departures.",
+    a: "ExamGhost is engineered specifically for timed assessments with 3-model consensus (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1), Closed Shadow DOM (mode: 'closed') sandboxing, zero web_accessible_resources, and Focus Shield event interception that keeps document.hasFocus() locked to true. Campus AI is built around flashcard generation, practice quizzes, and a sidePanel UI that leaks tab departures.",
   },
 ];
 
@@ -94,6 +96,33 @@ export default function CampusAiVsExamGhostPage() {
         description:
           "Detailed 2026 comparison of Campus AI (formerly Canvas AI, v0.2.2) and ExamGhost covering sidePanel focus leaks, client.js DOM buttons, Cloud Memory Bank screenshot retention, and paid question caps.",
         isPartOf: { "@id": "https://examghost.com/#website" },
+        about: [
+          {
+            "@type": "SoftwareApplication",
+            name: "ExamGhost",
+            applicationCategory: "EducationalApplication",
+            operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
+            offers: [
+              { "@type": "Offer", name: "Free Tier (5 Free Solves / Day)", price: "0", priceCurrency: "USD" },
+              { "@type": "Offer", name: "Monthly Pass", price: "19.00", priceCurrency: "USD" },
+              { "@type": "Offer", name: "Academic Year Pass", price: "99.00", priceCurrency: "USD" },
+              { "@type": "Offer", name: "Lifetime Degree Pass", price: "199.00", priceCurrency: "USD" }
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            name: "Campus AI",
+            applicationCategory: "EducationalApplication",
+            operatingSystem: "Chrome Extension",
+            offers: {
+              "@type": "AggregateOffer",
+              lowPrice: "4.99",
+              highPrice: "39.99",
+              priceCurrency: "USD",
+              offerCount: "2"
+            }
+          }
+        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -140,7 +169,7 @@ export default function CampusAiVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -228,7 +257,7 @@ export default function CampusAiVsExamGhostPage() {
                     Paid Plan Quota
                   </div>
                   <div className="text-sm font-bold text-[#111111]">
-                    &ldquo;Limited Questions&rdquo; vs 50 Free + Unlimited
+                    &ldquo;Limited Questions&rdquo; vs 5 Free/Day + Unlimited
                   </div>
                 </div>
                 <div className="bg-white border border-neutral-200/90 rounded-xl p-3.5 shadow-sm">
@@ -246,7 +275,7 @@ export default function CampusAiVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -348,7 +377,7 @@ export default function CampusAiVsExamGhostPage() {
                   <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-3.5">
                     <div className="flex items-center gap-2 text-xs font-bold text-emerald-300 mb-1">
                       <ShieldCheck className="w-4 h-4 shrink-0 text-emerald-400" />
-                      <span>ExamGhost: Zero-Log + 50 Free Solves</span>
+                      <span>ExamGhost: Zero-Log + 5 Free Solves / Day</span>
                     </div>
                     <p className="text-xs text-neutral-300 leading-relaxed">
                       Closed Shadow DOM HUD, 8-layer{" "}
@@ -368,306 +397,189 @@ export default function CampusAiVsExamGhostPage() {
           </div>
         </section>
 
-        {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
+        <CampusAiSidepanelBlurDemo />
+
+        {/* MODERN HOTKEYS SUITE */}
+        <section className="py-8 bg-neutral-100/60 border-y border-neutral-200/80 mb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">Double-Click</span>
+                <span className="text-[11px] text-neutral-500">Quick Text Solve</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">Alt+S</span>
+                <span className="text-[11px] text-neutral-500">Vision OCR Snip</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">Alt+1</span>
+                <span className="text-[11px] text-neutral-500">Show / Hide HUD</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">Alt+2</span>
+                <span className="text-[11px] text-neutral-500">Cycle AI Models</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">Alt+3</span>
+                <span className="text-[11px] text-neutral-500">Focus Shield Toggle</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-neutral-900 block">⌘+Shift+U</span>
+                <span className="text-[11px] text-neutral-500">Panic Memory Purge</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Visible 3-Pillar Deep Dive */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-          <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff5722]">
-              Interactive Breakdown
+              Technical Architecture Breakdown
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111111] mt-2">
               Inspecting Campus AI v0.2.2 Under the Hood
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 mt-2">
-              Click any tab below to see how Campus AI&apos;s Chrome{" "}
-              <code className="font-mono text-xs">sidePanel</code>, paid
-              question caps, and Cloud Memory Bank compare against ExamGhost.
+              How Campus AI&apos;s Chrome <code className="font-mono text-xs">sidePanel</code>, paid
+              question caps, and Cloud Memory Bank compare against ExamGhost across 3 critical pillars.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
-            {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="campusai-audit-tabs"
-              id="tab-campusai-sidepanel"
-              className="sr-only peer/sidepanel"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="campusai-audit-tabs"
-              id="tab-campusai-memory"
-              className="sr-only peer/memory"
-            />
-            <input
-              type="radio"
-              name="campusai-audit-tabs"
-              id="tab-campusai-quota"
-              className="sr-only peer/quota"
-            />
-
-            {/* Tab Headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
-              <label
-                htmlFor="tab-campusai-sidepanel"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/sidepanel:bg-white peer-checked/sidepanel:text-[#111111] peer-checked/sidepanel:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <PanelRight className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>1. SidePanel &amp; client.js Blur Leaks</span>
-              </label>
-              <label
-                htmlFor="tab-campusai-memory"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/memory:bg-white peer-checked/memory:text-[#111111] peer-checked/memory:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <CloudUpload className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>2. Cloud &ldquo;Memory Bank&rdquo; &amp; OAuth2</span>
-              </label>
-              <label
-                htmlFor="tab-campusai-quota"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center transition-all peer-checked/quota:bg-white peer-checked/quota:text-[#111111] peer-checked/quota:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <CreditCard className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>3. &ldquo;Limited Questions&rdquo; Paid Cap</span>
-              </label>
-            </div>
-
-            {/* Panel 1: SidePanel & client.js Blur Leaks */}
-            <div className="hidden peer-checked/sidepanel:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-sky-50 text-sky-800 text-xs font-bold">
-                  SpeedGrader Telemetry Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why &ldquo;Sitting Atop Websites&rdquo; Doesn&apos;t Stop
-                  Canvas{" "}
-                  <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    window.blur
-                  </code>{" "}
-                  Logs
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  On{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    thecampusai.com/resources/faq
-                  </code>
-                  , Campus AI claims extensions are undetectable simply because
-                  they <em>&ldquo;sit atop websites without connecting to any
-                  API.&rdquo;</em> That ignores how Canvas, Blackboard, and D2L
-                  actually detect extensions: <strong>DOM mutation</strong> and{" "}
-                  <strong>browser focus telemetry</strong>.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Campus AI v0.2.2 injects{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    client.js
-                  </code>{" "}
-                  across{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    &lt;all_urls&gt;
-                  </code>{" "}
-                  to insert buttons into Canvas 2.0, Blackboard, D2L, and
-                  Moodle, and sets{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    openPanelOnActionClick: true
-                  </code>{" "}
-                  to open Chrome&apos;s native{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    sidePanel
-                  </code>
-                  . Clicking that SidePanel immediately steals window focus from
-                  the exam tab.
-                </p>
-              </div>
-
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
-                <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
-                  <span>Canvas Quiz Action Log</span>
-                  <span className="text-emerald-400">Live Telemetry</span>
-                </div>
-                <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
-                  <div className="text-rose-300 font-bold">
-                    Campus AI v0.2.2 (70.71KiB MV3)
+          <div className="space-y-8">
+            {/* Pillar 1: SidePanel & client.js Blur Leaks */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-sky-50 text-sky-800 text-xs font-bold">
+                    <PanelRight className="w-3.5 h-3.5 text-sky-600" />
+                    <span>Pillar 1 · SpeedGrader Telemetry &amp; Blur Audit</span>
                   </div>
-                  <div className="text-neutral-300">
-                    09:12:30 — client.js injects button into Canvas DOM
-                  </div>
-                  <div className="text-neutral-300">
-                    09:12:35 — Clicked Chrome sidePanel (index.html)
-                  </div>
-                  <div className="text-rose-400">
-                    09:12:35 — FLAGGED: Stopped viewing quiz page (8s)
-                  </div>
-                </div>
-                <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
-                  <div className="text-emerald-300 font-bold">
-                    ExamGhost Stealth Engine
-                  </div>
-                  <div className="text-neutral-300">
-                    09:12:30 — Closed Shadow DOM HUD (0 host DOM buttons)
-                  </div>
-                  <div className="text-neutral-300">
-                    09:12:31 — Focus Shield locks document.hasFocus() === true
-                  </div>
-                  <div className="text-emerald-400">
-                    09:12:31 — CLEAN: 0 focus-loss or blur events recorded
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 2: Cloud Memory Bank & Google OAuth */}
-            <div className="hidden peer-checked/memory:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
-                  Screenshot Retention Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why Uploading Exam Screenshots to a Cloud &ldquo;Memory
-                  Bank&rdquo; Is a Liability
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Campus AI v0.2.2 requests the Chrome{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    identity
-                  </code>{" "}
-                  permission along with Google OAuth2 scopes (
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    userinfo.email
-                  </code>{" "}
-                  and{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    userinfo.profile
-                  </code>
-                  ). Every screenshot you capture is automatically uploaded into
-                  its cloud <strong>&ldquo;Memory Bank&rdquo;</strong> at{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    dashboard.thecampusai.com
-                  </code>{" "}
-                  for &ldquo;Automatic Subject Sorting.&rdquo;
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Storing timestamped screenshots of live university exams on a
-                  Non-trader developer&apos;s cloud dashboard tied directly to
-                  your Google email creates an unnecessary permanent record.{" "}
-                  <strong>ExamGhost</strong> processes every screenshot
-                  ephemerally in memory and never saves your exam crops to a
-                  cloud gallery.
-                </p>
-              </div>
-
-              <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
-                <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                  Data &amp; Screenshot Retention Comparison
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      Campus AI (CampusAI LLC)
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
-                      Cloud Memory Bank
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-600">
-                    Links to Google OAuth (<code className="font-mono">userinfo.email</code>)
-                    and saves every captured exam screenshot inside{" "}
-                    <code className="font-mono">dashboard.thecampusai.com</code>.
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why &ldquo;Sitting Atop Websites&rdquo; Doesn&apos;t Stop Canvas <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">window.blur</code> Logs
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    On <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">thecampusai.com/resources/faq</code>, Campus AI claims extensions are undetectable simply because they <em>&ldquo;sit atop websites without connecting to any API.&rdquo;</em> That ignores how Canvas, Blackboard, and D2L actually detect extensions: <strong>DOM mutation</strong> and <strong>browser focus telemetry</strong>.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Campus AI v0.2.2 injects <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">client.js</code> across <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">&lt;all_urls&gt;</code> to insert buttons into Canvas 2.0, Blackboard, D2L, and Moodle, and sets <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">openPanelOnActionClick: true</code> to open Chrome&apos;s native <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">sidePanel</code>. Clicking that SidePanel immediately steals window focus from the exam tab.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      ExamGhost Ephemeral Processing
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">
-                      Zero Cloud Gallery
-                    </span>
+
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
+                  <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
+                    <span>Canvas Quiz Action Log</span>
+                    <span className="text-emerald-400">Live Telemetry</span>
                   </div>
-                  <p className="text-xs text-neutral-700">
-                    Screen crops are solved in parallel across 3 frontier models
-                    and immediately discarded. Includes a 1ms Panic Switch (
-                    <code className="font-mono">⌘+Shift+U</code>).
-                  </p>
+                  <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
+                    <div className="text-rose-300 font-bold">Campus AI v0.2.2 (70.71KiB MV3)</div>
+                    <div className="text-neutral-300">09:12:30 — client.js injects button into Canvas DOM</div>
+                    <div className="text-neutral-300">09:12:35 — Clicked Chrome sidePanel (index.html)</div>
+                    <div className="text-rose-400">09:12:35 — FLAGGED: Stopped viewing quiz page (8s)</div>
+                  </div>
+                  <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
+                    <div className="text-emerald-300 font-bold">ExamGhost Stealth Engine</div>
+                    <div className="text-neutral-300">09:12:30 — Closed Shadow DOM HUD (0 host DOM buttons)</div>
+                    <div className="text-neutral-300">09:12:31 — Focus Shield locks document.hasFocus() === true</div>
+                    <div className="text-emerald-400">09:12:31 — CLEAN: 0 focus-loss or blur events recorded</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Panel 3: Limited Questions Paid Cap */}
-            <div className="hidden peer-checked/quota:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
-                  Quota &amp; Pricing Audit
+            {/* Pillar 2: Cloud Memory Bank & Google OAuth */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
+                    <CloudUpload className="w-3.5 h-3.5 text-rose-600" />
+                    <span>Pillar 2 · Cloud Screenshot Retention Audit</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why Uploading Exam Screenshots to a Cloud &ldquo;Memory Bank&rdquo; Is a Liability
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Campus AI v0.2.2 requests the Chrome <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">identity</code> permission along with Google OAuth2 scopes (<code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">userinfo.email</code> and <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">userinfo.profile</code>). Every screenshot you capture is automatically uploaded into its cloud <strong>&ldquo;Memory Bank&rdquo;</strong> at <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">dashboard.thecampusai.com</code> for &ldquo;Automatic Subject Sorting.&rdquo;
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Storing timestamped screenshots of live university exams on a Non-trader developer&apos;s cloud dashboard tied directly to your Google email creates an unnecessary permanent record. <strong>ExamGhost</strong> processes every screenshot ephemerally in memory and never saves your exam crops to a cloud gallery.
+                  </p>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why Do Campus AI&apos;s Paid Plans Explicitly Say &ldquo;Answer
-                  Limited Questions&rdquo;?
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  If you visit{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    thecampusai.com/resources/pricing
-                  </code>
-                  , both the Monthly Plan (<strong>$4.99/mth</strong>) and the
-                  Yearly Plan (<strong>$3.33/mth, billed $39.99/yr</strong>—next
-                  to a legacy $9.99/mo banner) explicitly list{" "}
-                  <strong>&ldquo;Answer limited questions&rdquo;</strong> as the
-                  second bullet point.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Running into a hidden question cap halfway through finals week
-                  defeats the entire purpose of paying for an exam solver.{" "}
-                  <strong>ExamGhost</strong> gives every student{" "}
-                  <strong>50 free solves</strong> to test the full 3-model
-                  consensus engine, followed by{" "}
-                  <strong>truly unlimited solves</strong> on Monthly ($19/mo),
-                  Annual ($99/yr / $8.25/mo), or Lifetime ($199).
-                </p>
-              </div>
 
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
-                <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
-                  Quota &amp; Solver Accuracy Comparison
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      Campus AI Paid Tiers ($4.99/mo or $39.99/yr)
-                    </div>
-                    <div className="text-neutral-400">
-                      Single-model chat • Explicitly states &ldquo;Answer
-                      limited questions&rdquo;
-                    </div>
+                <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
+                  <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                    Data &amp; Screenshot Retention Comparison
                   </div>
-                  <span className="font-mono font-bold text-rose-400 text-sm">
-                    Capped Quota
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      ExamGhost Free Trial
+                  <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">Campus AI (CampusAI LLC)</span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">Cloud Memory Bank</span>
                     </div>
-                    <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
-                    </div>
+                    <p className="text-xs text-neutral-600">
+                      Links to Google OAuth (<code className="font-mono">userinfo.email</code>) and saves every captured exam screenshot inside <code className="font-mono">dashboard.thecampusai.com</code>.
+                    </p>
                   </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    50 Free Solves
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
-                  <div>
-                    <div className="font-bold text-emerald-300">
-                      ExamGhost Annual / Lifetime
+                  <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">ExamGhost Ephemeral Processing</span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">Zero Cloud Gallery</span>
                     </div>
-                    <div className="text-neutral-300">
-                      Unlimited 3-model solves • $8.25/mo ($99/yr) or $199
-                      Lifetime
-                    </div>
+                    <p className="text-xs text-neutral-700">
+                      Screen crops are solved in parallel across 3 frontier models (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1) and immediately discarded. Includes a 1ms Panic Switch (<code className="font-mono">⌘+Shift+U</code>).
+                    </p>
                   </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    Unlimited
-                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 3: Limited Questions Paid Cap */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
+                    <CreditCard className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Pillar 3 · Quota &amp; Pricing Audit</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why Do Campus AI&apos;s Paid Plans Explicitly Say &ldquo;Answer Limited Questions&rdquo;?
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    If you visit <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">thecampusai.com/resources/pricing</code>, both the Monthly Plan (<strong>$4.99/mth</strong>) and the Yearly Plan (<strong>$3.33/mth, billed $39.99/yr</strong>—next to a legacy $9.99/mo banner) explicitly list <strong>&ldquo;Answer limited questions&rdquo;</strong> as the second bullet point.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Running into a hidden question cap halfway through finals week defeats the entire purpose of paying for an exam solver. <strong>ExamGhost</strong> gives every student <strong>5 Free Solves / Day</strong> to test the full 3-model consensus engine, followed by <strong>truly unlimited solves</strong> on Monthly ($19/mo or $19.00 / month), Annual ($99/yr / $8.25/mo), or Lifetime ($199 Lifetime).
+                  </p>
+                </div>
+
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
+                  <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
+                    Quota &amp; Solver Accuracy Comparison
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">Campus AI Paid Tiers ($4.99/mo or $39.99/yr)</div>
+                      <div className="text-neutral-400">Single-model chat • Explicitly states &ldquo;Answer limited questions&rdquo;</div>
+                    </div>
+                    <span className="font-mono font-bold text-rose-400 text-sm">Capped Quota</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">ExamGhost Free Trial</div>
+                      <div className="text-neutral-400">5 Free Solves / Day (auto-refills every 24h, zero credit card required)</div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">5 Free Solves / Day</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
+                    <div>
+                      <div className="font-bold text-emerald-300">ExamGhost Annual / Lifetime</div>
+                      <div className="text-neutral-300">Unlimited 3-model solves • $8.25/mo ($99/yr) or $199 Lifetime</div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">Unlimited</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -750,7 +662,7 @@ export default function CampusAiVsExamGhostPage() {
                       Single-model chat + flashcard/subject sorting
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      3-Model Consensus (GPT-5.4 + Claude 4.6 + Gemini 3.1 Pro)
+                      3-Model Consensus (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
                     </td>
                   </tr>
                   <tr>
@@ -762,7 +674,7 @@ export default function CampusAiVsExamGhostPage() {
                       on paid plans
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves + Truly Unlimited Solves on all paid tiers
+                      5 Free Solves / Day + Truly Unlimited Solves on all paid tiers
                     </td>
                   </tr>
                   <tr>
@@ -786,8 +698,16 @@ export default function CampusAiVsExamGhostPage() {
                       cap)
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                      5 Free Solves / Day • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -912,7 +832,7 @@ export default function CampusAiVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> upfront and{" "}
+                    You want <strong>5 free solves / day</strong> upfront and{" "}
                     <strong>truly unlimited 3-model consensus solves</strong> on
                     every paid tier.
                   </span>
@@ -962,7 +882,7 @@ export default function CampusAiVsExamGhostPage() {
                   <span>Ditch the SidePanel Blur &amp; Question Caps</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Start with 50 Free Solves—Zero SidePanel Focus Theft, Zero
+                  Start with 5 Free Solves / Day—Zero SidePanel Focus Theft, Zero
                   Cloud Screenshot Trail.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -976,7 +896,7 @@ export default function CampusAiVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -1023,6 +943,9 @@ export default function CampusAiVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

@@ -22,7 +22,7 @@ MOTION STUDIO BRIEF — EXAMGHOST EXPLAINER & PRODUCT DEMO FILMS (2026)
 
 3. Audience & Final-Second Action:
    University & K-12 STEM students taking timed assessments on Moodle, ALEKS, MyLab, WebAssign, Gradescope, Google Forms, Schoology, DeltaMath, Edgenuity, and Canvas.
-   Last-second action: Install ExamGhost from the Chrome Web Store to claim 50 free trial solves at examghost.com/<slug>.
+   Last-second action: Install ExamGhost from the Chrome Web Store to claim 5 free solves / day at examghost.com/<slug>.
 
 4. Length & Format:
    16.0 seconds (480 frames @ 30fps output, supersampled from 120fps physics/motion steps), 16:9 widescreen (1280x720 HD, H.264 yuv420p, +faststart, AAC 48kHz stereo).

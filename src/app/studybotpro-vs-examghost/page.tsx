@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { StudyBotProDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "StudyBotPro vs ExamGhost (2026) — Untrusted Clicks & SSL",
     },
-    description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 50 Free Solves.",
+    description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/studybotpro-vs-examghost",
     },
     openGraph: {
         title: "StudyBotPro vs ExamGhost (2026) — Untrusted Clicks & SSL",
-        description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 50 Free Solves.",
+        description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 5 Free Solves / Day.",
         url: "https://examghost.com/studybotpro-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "StudyBotPro vs ExamGhost (2026) — Untrusted Clicks & SSL",
-        description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 50 Free Solves.",
+        description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -72,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does pricing compare between StudyBotPro and ExamGhost?",
-    a: "StudyBotPro charged $11.99/month ($143.88/year) before its domain SSL expired. ExamGhost gives every student 50 Free Solves ($0, no credit card required), followed by transparent $19/mo Monthly, $99/yr Annual ($8.25/mo), or $199 Lifetime plans.",
+    a: "StudyBotPro charged $11.99/month ($143.88/year) before its domain SSL expired. ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required), followed by transparent $19/mo Monthly, $99/yr Annual ($8.25/mo), or $199 Lifetime plans.",
   },
 ];
 
@@ -94,6 +96,40 @@ export default function StudyBotProVsExamGhostPage() {
         description:
           "2026 technical comparison of StudyBotPro (studybotpro.co) and ExamGhost covering synthetic Auto Select clicks, expired Namecheap SSL certificates, SpeedGrader focus logs, and pricing.",
         isPartOf: { "@id": "https://examghost.com/#website" },
+        "about": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "ExamGhost",
+            "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+            "applicationCategory": "EducationalApplication",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Free Tier (5 Free Solves / Day)",
+                "price": "0.00",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Monthly Pass",
+                "price": "19.00",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Academic Year Pass",
+                "price": "99.00",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Lifetime Degree Pass",
+                "price": "199.00",
+                "priceCurrency": "USD"
+              }
+            ]
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -238,7 +274,7 @@ export default function StudyBotProVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -339,297 +375,292 @@ export default function StudyBotProVsExamGhostPage() {
           </div>
         </section>
 
-        {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
+        <StudyBotProDemo />
+
+        {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+          <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  ExamGhost Stealth Keyboard &amp; Model Suite
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+              </div>
+            </div>
+            <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+              </p>
+              <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                <div className="font-bold text-white text-sm">
+                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Visible 3-Part Deep Dive Breakdown */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
           <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff5722]">
-              Interactive Breakdown
+              Forensic Architecture Breakdown
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111111] mt-2">
               Why Former StudyBotPro Users Switched to ExamGhost
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 mt-2">
-              Click any tab below to inspect how StudyBotPro&apos;s Auto Select
+              Forensic inspection into how StudyBotPro&apos;s Auto Select
               clicker, broken SSL infrastructure, and unshielded chatbox compare
               against ExamGhost.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
-            {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="studybotpro-audit-tabs"
-              id="tab-sbp-click"
-              className="sr-only peer/click"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="studybotpro-audit-tabs"
-              id="tab-sbp-tls"
-              className="sr-only peer/tls"
-            />
-            <input
-              type="radio"
-              name="studybotpro-audit-tabs"
-              id="tab-sbp-chat"
-              className="sr-only peer/chat"
-            />
-
-            {/* Tab Headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
-              <label
-                htmlFor="tab-sbp-click"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/click:bg-white peer-checked/click:text-[#111111] peer-checked/click:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <MousePointerClick className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>1. Auto Select &ldquo;isTrusted: false&rdquo;</span>
-              </label>
-              <label
-                htmlFor="tab-sbp-tls"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/tls:bg-white peer-checked/tls:text-[#111111] peer-checked/tls:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <ServerCrash className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>2. Broken SSL &amp; Store Removal</span>
-              </label>
-              <label
-                htmlFor="tab-sbp-chat"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center transition-all peer-checked/chat:bg-white peer-checked/chat:text-[#111111] peer-checked/chat:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <Cpu className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>3. Chatbox Blur vs 3-Model Stealth</span>
-              </label>
-            </div>
-
-            {/* Panel 1: Auto Select isTrusted: false */}
-            <div className="hidden peer-checked/click:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
-                  DOM Event Integrity Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why Having an Extension Click Radio Buttons for You Is an
-                  Instant Bot Flag
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  StudyBotPro&apos;s #1 advertised feature was{" "}
-                  <strong>Auto Select</strong>—a script that automatically
-                  clicked the multiple-choice radio button on your quiz page. In
-                  every modern browser, JavaScript-triggered clicks carry a
-                  read-only property:{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    event.isTrusted === false
-                  </code>{" "}
-                  along with{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    clientX: 0, clientY: 0
-                  </code>
-                  .
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Canvas New Quizzes (React LTI 1.3), McGraw-Hill Connect, and
-                  Blackboard Ultra inspect{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    event.isTrusted
-                  </code>{" "}
-                  on form inputs. <strong>ExamGhost</strong> never mutates your
-                  exam form: it renders the subtle answer badge inside a{" "}
-                  <strong>Closed Shadow DOM HUD</strong> so you click with 100%
-                  authentic hardware pointer events.
-                </p>
-              </div>
-
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
-                <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
-                  <span>Browser PointerEvent Inspection</span>
-                  <span className="text-emerald-400">Live Telemetry</span>
-                </div>
-                <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
-                  <div className="text-rose-300 font-bold">
-                    StudyBotPro (&ldquo;Auto Select&rdquo; Module)
+          <div className="space-y-8">
+            {/* Card 1: Auto Select isTrusted: false */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
+                    DOM Event Integrity Audit
                   </div>
-                  <div className="text-neutral-300">
-                    • Calls input[type=&quot;radio&quot;].click() via JS
-                  </div>
-                  <div className="text-neutral-300">
-                    • Pointer coordinates: clientX: 0, clientY: 0
-                  </div>
-                  <div className="text-rose-400">
-                    • Canvas logs: event.isTrusted === false (Bot Input)
-                  </div>
-                </div>
-                <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
-                  <div className="text-emerald-300 font-bold">
-                    ExamGhost Closed Shadow DOM HUD
-                  </div>
-                  <div className="text-neutral-300">
-                    • Displays verified answer inside isolated #shadow-root
-                  </div>
-                  <div className="text-neutral-300">
-                    • Student clicks radio input with physical mouse/trackpad
-                  </div>
-                  <div className="text-emerald-400">
-                    • Canvas logs: event.isTrusted === true (100% Genuine)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 2: Broken SSL & Store Removal */}
-            <div className="hidden peer-checked/tls:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
-                  2026 Infrastructure Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  What Happened to{" "}
-                  <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    studybotpro.co
-                  </code>{" "}
-                  in 2026?
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Students searching for StudyBotPro in 2026 quickly discover
-                  that its official domain (
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    https://studybotpro.co
-                  </code>
-                  ) throws a hard browser security warning:{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    x509: certificate is valid for *.web-hosting.com, not
-                    studybotpro.co
-                  </code>
-                  .
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Its Chrome Web Store listing was removed at the same time,
-                  leaving subscribers who were paying{" "}
-                  <strong>$11.99/month ($143.88/year)</strong> with dead API
-                  endpoints. <strong>ExamGhost</strong> is backed by a dedicated
-                  engineering team, 99.99% edge uptime, and a{" "}
-                  <strong>40,000+ student Discord community</strong> receiving
-                  weekly LMS stealth updates.
-                </p>
-              </div>
-
-              <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
-                <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                  2026 Service Reliability Comparison
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      StudyBotPro (studybotpro.co)
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
-                      Delisted &amp; Broken SSL
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-600">
-                    Fails TLS verification on Namecheap shared hosting (
-                    <code className="font-mono">*.web-hosting.com</code>) and is
-                    no longer available on the Chrome Web Store.
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why Having an Extension Click Radio Buttons for You Is an
+                    Instant Bot Flag
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    StudyBotPro&apos;s #1 advertised feature was{" "}
+                    <strong>Auto Select</strong>—a script that automatically
+                    clicked the multiple-choice radio button on your quiz page. In
+                    every modern browser, JavaScript-triggered clicks carry a
+                    read-only property:{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      event.isTrusted === false
+                    </code>{" "}
+                    along with{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      clientX: 0, clientY: 0
+                    </code>
+                    .
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Canvas New Quizzes (React LTI 1.3), McGraw-Hill Connect, and
+                    Blackboard Ultra inspect{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      event.isTrusted
+                    </code>{" "}
+                    on form inputs. <strong>ExamGhost</strong> never mutates your
+                    exam form: it renders the subtle answer badge inside a{" "}
+                    <strong>Closed Shadow DOM HUD</strong> so you click with 100%
+                    authentic hardware pointer events.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      ExamGhost 2026 Infrastructure
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">
-                      99.99% Uptime + 24/7 Discord
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-700">
-                    Actively maintained for Canvas Classic, Canvas New Quizzes
-                    (LTI 1.3), Blackboard, Moodle, D2L, McGraw-Hill, and
-                    Pearson.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Panel 3: Chatbox Blur vs 3-Model Stealth */}
-            <div className="hidden peer-checked/chat:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold">
-                  Stealth &amp; Pricing Comparison
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Unshielded Real-Time Chatbox ($143.88/yr) vs 3-Model Consensus
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Beyond Auto Select, StudyBotPro bundled{" "}
-                  <strong>Web Highlight</strong>,{" "}
-                  <strong>Snapshot Tool</strong>,{" "}
-                  <strong>Real-Time Chatbox</strong>, and{" "}
-                  <strong>StudyMode</strong>. None of those modules intercepted{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    window.blur
-                  </code>{" "}
-                  or{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    document.visibilitychange
-                  </code>
-                  —so clicking into the Real-Time Chatbox logged an immediate
-                  focus departure in Canvas SpeedGrader.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  <strong>ExamGhost</strong> protects your focus state across 8
-                  browser layers, cross-verifies every question across{" "}
-                  <strong>
-                    GPT-5.4, Claude Sonnet 4.6, and Gemini 3.1 Pro
-                  </strong>
-                  , and starts with <strong>50 free solves</strong> ($0, no
-                  card)—or <strong>$99/yr ($8.25/mo)</strong>, saving you over
-                  $44/year compared to StudyBotPro&apos;s old $11.99/mo price.
-                </p>
-              </div>
-
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
-                <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
-                  Annual Cost &amp; Capability Breakdown
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      Legacy StudyBotPro Subscription
-                    </div>
-                    <div className="text-neutral-400">
-                      $11.99/mo • Single-LLM + Broken SSL in 2026
-                    </div>
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
+                  <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
+                    <span>Browser PointerEvent Inspection</span>
+                    <span className="text-emerald-400">Live Telemetry</span>
                   </div>
-                  <span className="font-mono font-bold text-rose-400 text-sm">
-                    $143.88 / yr
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      ExamGhost Free Trial
-                    </div>
-                    <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
-                    </div>
-                  </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    $0.00
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
-                  <div>
-                    <div className="font-bold text-emerald-300">
-                      ExamGhost Annual / Lifetime
+                  <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
+                    <div className="text-rose-300 font-bold">
+                      StudyBotPro (&ldquo;Auto Select&rdquo; Module)
                     </div>
                     <div className="text-neutral-300">
-                      Unlimited 3-model solves • $8.25/mo ($99/yr) • $199
-                      Lifetime
+                      • Calls input[type=&quot;radio&quot;].click() via JS
+                    </div>
+                    <div className="text-neutral-300">
+                      • Pointer coordinates: clientX: 0, clientY: 0
+                    </div>
+                    <div className="text-rose-400">
+                      • Canvas logs: event.isTrusted === false (Bot Input)
                     </div>
                   </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    $99/yr or $199 Once
-                  </span>
+                  <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
+                    <div className="text-emerald-300 font-bold">
+                      ExamGhost Closed Shadow DOM HUD
+                    </div>
+                    <div className="text-neutral-300">
+                      • Displays verified answer inside isolated #shadow-root
+                    </div>
+                    <div className="text-neutral-300">
+                      • Student clicks radio input with physical mouse/trackpad
+                    </div>
+                    <div className="text-emerald-400">
+                      • Canvas logs: event.isTrusted === true (100% Genuine)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Broken SSL & Store Removal */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
+                    2026 Infrastructure Audit
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    What Happened to{" "}
+                    <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      studybotpro.co
+                    </code>{" "}
+                    in 2026?
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Students searching for StudyBotPro in 2026 quickly discover
+                    that its official domain (
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      https://studybotpro.co
+                    </code>
+                    ) throws a hard browser security warning:{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      x509: certificate is valid for *.web-hosting.com, not
+                      studybotpro.co
+                    </code>
+                    .
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Its Chrome Web Store listing was removed at the same time,
+                    leaving subscribers who were paying{" "}
+                    <strong>$11.99/month ($143.88/year)</strong> with dead API
+                    endpoints. <strong>ExamGhost</strong> is backed by a dedicated
+                    engineering team, 99.99% edge uptime, and a{" "}
+                    <strong>40,000+ student Discord community</strong> receiving
+                    weekly LMS stealth updates.
+                  </p>
+                </div>
+
+                <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
+                  <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                    2026 Service Reliability Comparison
+                  </div>
+                  <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">
+                        StudyBotPro (studybotpro.co)
+                      </span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
+                        Delisted &amp; Broken SSL
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-600">
+                      Fails TLS verification on Namecheap shared hosting (
+                      <code className="font-mono">*.web-hosting.com</code>) and is
+                      no longer available on the Chrome Web Store.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">
+                        ExamGhost 2026 Infrastructure
+                      </span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">
+                        99.99% Uptime + 24/7 Discord
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-700">
+                      Actively maintained for Canvas Classic, Canvas New Quizzes
+                      (LTI 1.3), Blackboard, Moodle, D2L, McGraw-Hill, and
+                      Pearson.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Chatbox Blur vs 3-Model Stealth */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold">
+                    Stealth &amp; Pricing Comparison
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Unshielded Real-Time Chatbox ($143.88/yr) vs 3-Model Consensus
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Beyond Auto Select, StudyBotPro bundled{" "}
+                    <strong>Web Highlight</strong>,{" "}
+                    <strong>Snapshot Tool</strong>,{" "}
+                    <strong>Real-Time Chatbox</strong>, and{" "}
+                    <strong>StudyMode</strong>. None of those modules intercepted{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      window.blur
+                    </code>{" "}
+                    or{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      document.visibilitychange
+                    </code>
+                    —so clicking into the Real-Time Chatbox logged an immediate
+                    focus departure in Canvas SpeedGrader.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    <strong>ExamGhost</strong> protects your focus state across 8
+                    browser layers, cross-verifies every question across{" "}
+                    <strong>
+                      Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1
+                    </strong>
+                    , and starts with <strong>5 free solves / day</strong> ($0, no
+                    card)—or <strong>$99/yr ($8.25/mo)</strong> or <strong>$199 Lifetime Degree Pass</strong>, saving you over
+                    $44/year compared to StudyBotPro&apos;s old $11.99/mo price.
+                  </p>
+                </div>
+
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
+                  <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
+                    Annual Cost &amp; Capability Breakdown
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">
+                        Legacy StudyBotPro Subscription
+                      </div>
+                      <div className="text-neutral-400">
+                        $11.99/mo • Single-LLM + Broken SSL in 2026
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-rose-400 text-sm">
+                      $143.88 / yr
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">
+                        ExamGhost Free Trial
+                      </div>
+                      <div className="text-neutral-400">
+                        5 Free Solves / Day (auto-refills every 24h, no card required)
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">
+                      $0.00
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
+                    <div>
+                      <div className="font-bold text-emerald-300">
+                        ExamGhost Annual / Lifetime
+                      </div>
+                      <div className="text-neutral-300">
+                        Unlimited 3-model solves • $8.25/mo ($99/yr) • $199 Lifetime Degree Pass
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">
+                      $99/yr or $199 Once
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -753,8 +784,16 @@ export default function StudyBotProVsExamGhostPage() {
                       $11.99/mo ($143.88/yr) prior to domain expiration
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                      5 Free Solves / Day • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -877,7 +916,7 @@ export default function StudyBotProVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> right away and{" "}
+                    You want <strong>5 free solves / day</strong> right away and{" "}
                     <strong>3-model consensus accuracy (99.2%)</strong>.
                   </span>
                 </li>
@@ -926,7 +965,7 @@ export default function StudyBotProVsExamGhostPage() {
                   <span>Replace Defunct Auto-Clickers with True Stealth</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Start with 50 Free Solves Inside ExamGhost&apos;s Closed
+                  Start with 5 Free Solves / Day Inside ExamGhost&apos;s Closed
                   Shadow DOM.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -940,7 +979,7 @@ export default function StudyBotProVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -987,6 +1026,9 @@ export default function StudyBotProVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

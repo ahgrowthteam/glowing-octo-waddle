@@ -20,18 +20,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { QuestionAiSingleModelHallucinationDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
     },
-    description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
+    description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
     alternates: {
         canonical: "https://examghost.com/questionai-vs-examghost",
     },
     openGraph: {
         title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
-        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
         url: "https://examghost.com/questionai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
-        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 50 Free Solves ($0).",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
         images: ["/og-image.jpg"],
     },
 };
@@ -77,7 +79,7 @@ export default function QuestionaiVsExamghostPage() {
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
                         "offers": [
-                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
@@ -134,7 +136,7 @@ export default function QuestionaiVsExamghostPage() {
                         "name": "What are ExamGhost's current pricing plans compared to QuestionAI Plus?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "QuestionAI offers a basic free tier with lower-tier AI models and charges recurring monthly fees for QuestionAI Plus. ExamGhost gives every student 50 Free Question Solves with full Focus Shield and Snap-It OCR, followed by transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
+                            "text": "QuestionAI offers a basic free tier with lower-tier AI models and charges recurring monthly fees for QuestionAI Plus. ExamGhost gives every student 5 Free Solves / Day with full Focus Shield and Snap-It OCR, followed by transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
                         }
                     }
                 ]
@@ -180,7 +182,7 @@ export default function QuestionaiVsExamghostPage() {
                                 </h1>
 
                                 <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl">
-                                    With 10M+ users, <strong>QuestionAI</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">questionai.com</code>) is great for summarizing PDFs and scanning paper worksheets on mobile. But on live university quizzes, its text-highlight popups, 400px Copilot sidebar, and <strong>public Google-indexed question feed</strong> create serious academic integrity risks. <strong>ExamGhost</strong> solves Canvas, Blackboard, and Moodle questions inline in <strong>0.3 seconds</strong> inside a closed Shadow DOM—with zero public indexing and <strong>50 Free Solves</strong>.
+                                    With 10M+ users, <strong>QuestionAI</strong> (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">questionai.com</code>) is great for summarizing PDFs and scanning paper worksheets on mobile. But on live university quizzes, its text-highlight popups, 400px Copilot sidebar, and <strong>public Google-indexed question feed</strong> create serious academic integrity risks. <strong>ExamGhost</strong> solves Canvas, Blackboard, and Moodle questions inline in <strong>0.3 seconds</strong> inside a closed Shadow DOM—with zero public indexing and <strong>5 Free Solves / Day</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -189,7 +191,7 @@ export default function QuestionaiVsExamghostPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 Trial)</span>
                                     </a>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -218,7 +220,7 @@ export default function QuestionaiVsExamghostPage() {
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        50 Free Solves ($0 Trial)
+                                        5 Free Solves / Day ($0 Trial)
                                     </span>
                                 </div>
                             </div>
@@ -282,6 +284,8 @@ export default function QuestionaiVsExamghostPage() {
                     </div>
                 </header>
 
+                <QuestionAiSingleModelHallucinationDemo />
+
                 {/* QUICK METRIC RIBBON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -302,7 +306,7 @@ export default function QuestionaiVsExamghostPage() {
                         </div>
                         <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm">
                             <div className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Free Trial &amp; Plans</div>
-                            <div className="text-lg sm:text-xl font-black text-emerald-800">50 Free Solves</div>
+                            <div className="text-lg sm:text-xl font-black text-emerald-800">5 Free Solves / Day</div>
                             <div className="text-xs text-ink-secondary mt-1">$19/mo · $99/yr · $199 Lifetime</div>
                         </div>
                     </div>
@@ -325,9 +329,9 @@ export default function QuestionaiVsExamghostPage() {
                         </div>
 
                         {/* Pure CSS Radio Tabs */}
-                        <input type="radio" name="questionai_tab" id="tab-seo" className="sr-only peer/seo" defaultChecked />
-                        <input type="radio" name="questionai_tab" id="tab-sidebar" className="sr-only peer/sidebar" />
-                        <input type="radio" name="questionai_tab" id="tab-latex" className="sr-only peer/latex" />
+                        
+                        
+                        
 
                         <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
                             <label
@@ -354,7 +358,7 @@ export default function QuestionaiVsExamghostPage() {
                         </div>
 
                         {/* TAB 1: Public Google Indexing */}
-                        <div className="hidden peer-checked/seo:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #1 · Public Q&amp;A Directory Exposure
@@ -399,7 +403,7 @@ export default function QuestionaiVsExamghostPage() {
                         </div>
 
                         {/* TAB 2: 400px Copilot Sidebar Blur */}
-                        <div className="hidden peer-checked/sidebar:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-indigo-100 text-indigo-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #2 · Highlight Popups &amp; Viewport Shift
@@ -420,7 +424,7 @@ export default function QuestionaiVsExamghostPage() {
                                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
                                         <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Closed Shadow HUD</div>
                                         <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Double-click any question or press <code className="text-[11px]">⌘+Shift+S</code>—renders inside an isolated <code className="text-[11px]">#shadow-root (closed)</code> with Focus Shield active.
+                                            Double-click any question or press <code className="text-[11px]">Alt+S</code>—renders inside an isolated <code className="text-[11px]">#shadow-root (closed)</code> with Focus Shield active.
                                         </p>
                                     </div>
                                 </div>
@@ -444,7 +448,7 @@ export default function QuestionaiVsExamghostPage() {
                         </div>
 
                         {/* TAB 3: Broken LaTeX vs Mathpix OCR */}
-                        <div className="hidden peer-checked/latex:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #3 · STEM &amp; Equation Accuracy
@@ -453,7 +457,7 @@ export default function QuestionaiVsExamghostPage() {
                                     Mangled Copied MathJax Strings vs. 0.3s Mathpix Visual OCR
                                 </h3>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    When you highlight or copy-paste a Canvas math question containing MathJax or embedded equation images into QuestionAI, it frequently mangles fractions, matrices, and definite integrals into broken strings (e.g., <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">int 1 1 left x frac 4 3</code>)—causing wrong answers on Calculus, Physics, and Chemistry exams. ExamGhost&apos;s <strong>Snap-It OCR</strong> (<code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">⌘+Shift+S</code>) reads the rendered visual equation directly.
+                                    When you highlight or copy-paste a Canvas math question containing MathJax or embedded equation images into QuestionAI, it frequently mangles fractions, matrices, and definite integrals into broken strings (e.g., <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">int 1 1 left x frac 4 3</code>)—causing wrong answers on Calculus, Physics, and Chemistry exams. ExamGhost&apos;s <strong>Snap-It OCR</strong> (<code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+S</code>) reads the rendered visual equation directly.
                                 </p>
                                 <div className="grid sm:grid-cols-2 gap-3 pt-2">
                                     <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
@@ -551,7 +555,7 @@ export default function QuestionaiVsExamghostPage() {
                                         <span className="text-white/75">Normal</span>
                                     </div>
                                     <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
-                                        <span>10:15:04 AM — [Snap-It ⌘+Shift+S · 0.3s Mathpix Solve]</span>
+                                        <span>10:15:04 AM — [Snap-It Alt+S · 0.3s Mathpix Solve]</span>
                                         <span className="text-emerald-300 font-bold">Closed Shadow DOM</span>
                                     </div>
                                     <div className="p-2.5 rounded bg-emerald-500/15 border-l-2 border-emerald-400 flex items-center justify-between">
@@ -604,7 +608,7 @@ export default function QuestionaiVsExamghostPage() {
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-5 font-semibold text-ink">Trigger Mechanism</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">Works even when text selection is locked</td>
-                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Double-Click or ⌘+Shift+S Snip</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ Double-Click or Alt+S Snip</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">Requires Text Highlighting / Chat</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -640,16 +644,45 @@ export default function QuestionaiVsExamghostPage() {
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-5 font-semibold text-ink">Free Trial Experience</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">Test frontier accuracy before paying</td>
-                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 50 Free Solves (Full Frontier AI)</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">✓ 5 Free Solves / Day (Full Frontier AI)</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">Free Basic Chat (Plus Paywall for Pro)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-5 font-semibold text-ink">Paid Plans</td>
                                         <td className="py-3.5 px-5 text-ink-muted text-xs">Predictable student cost</td>
-                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                                        <td className="py-3.5 px-5 font-bold text-emerald-800 bg-[#cdeecb]/15">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-5 text-ink-secondary">QuestionAI Plus (~$9.99–$19.99/mo)</td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-ink-muted text-xs">
+                      Zero-click solve without window.blur logs
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">
+                      Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-ink-muted text-xs">
+                      Multi-model consensus and derivation breakdown
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">
+                      ✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">
+                      ✗ No Multi-Model Study &amp; Homework AI Hub
+                    </td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -713,7 +746,7 @@ export default function QuestionaiVsExamghostPage() {
                                 </li>
                                 <li className="flex items-start gap-2.5">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
-                                    <span>You want complete question privacy (never indexed on Google) and <strong>50 Free Solves</strong> to test on your own coursework before choosing a pass.</span>
+                                    <span>You want complete question privacy (never indexed on Google) and <strong>5 Free Solves / Day</strong> to test on your own coursework before choosing a pass.</span>
                                 </li>
                             </ul>
                         </div>
@@ -729,7 +762,7 @@ export default function QuestionaiVsExamghostPage() {
                             </div>
                             <div>
                                 <h2 className="font-display font-bold text-lg sm:text-xl text-white">
-                                    Get ExamGhost &amp; 50 Free Solves in Our Student Discord
+                                    Get ExamGhost &amp; 5 Free Solves / Day in Our Student Discord
                                 </h2>
                                 <p className="text-xs sm:text-sm text-white font-medium mt-0.5">
                                     Join 2,400+ university students for instant extension access, Canvas update alerts, and 24/7 support.
@@ -781,13 +814,13 @@ export default function QuestionaiVsExamghostPage() {
                             <div className="max-w-xl">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/10 text-indigo-950 text-xs font-bold mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
-                                    Zero Public Indexing · 50 Free Solves
+                                    Zero Public Indexing · 5 Free Solves / Day
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                     Keep your exam questions private and your SpeedGrader log clean.
                                 </h2>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Test ExamGhost right now with <strong>50 Free Solves</strong> ($0 trial, no credit card required), then pick $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
+                                    Test ExamGhost right now with <strong>5 Free Solves / Day</strong> ($0 trial, no credit card required), then pick $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -796,7 +829,7 @@ export default function QuestionaiVsExamghostPage() {
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
-                                    <span>Start 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </a>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -832,7 +865,10 @@ export default function QuestionaiVsExamghostPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
             <Footer />
         </div>
     );

@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { MathosaiContourIntegralDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   Check,
   X,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
     },
-    description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
+    description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/mathosai-vs-examghost",
     },
     openGraph: {
         title: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
-        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
+        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 5 Free Solves / Day.",
         url: "https://examghost.com/mathosai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
-        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 50 Free Solves.",
+        description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -56,6 +58,39 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
     {
       "@type": "WebPage",
                 "datePublished": "2026-01-13",
@@ -128,7 +163,7 @@ const jsonLd = {
           name: "How much does Mathos AI cost per week vs ExamGhost AI?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Mathos AI bills primarily on weekly or annual tiers: Basic costs ~$5.98/week (~$23.92/month equivalent, capping MathosMax at 100 solves/day) and Prime costs ~$9.98/week (~$39.92/month equivalent, or ~$98.80/year billed annually) for unlimited MathosMax and 20x PDF Helper quota. ExamGhost AI gives you 50 Free Question Solves ($0, no credit card required), a $19/month Monthly Pass (more than 50% cheaper than paying Mathos AI Prime weekly), a $99/year Academic Year Pass ($8.25/month), and a $199 Lifetime Degree Pass.",
+            text: "Mathos AI bills primarily on weekly or annual tiers: Basic costs ~$5.98/week (~$23.92/month equivalent, capping MathosMax at 100 solves/day) and Prime costs ~$9.98/week (~$39.92/month equivalent, or ~$98.80/year billed annually) for unlimited MathosMax and 20x PDF Helper quota. ExamGhost AI gives you 5 Free Solves / Day ($0, no credit card required), a $19/month Monthly Pass (more than 50% cheaper than paying Mathos AI Prime weekly), a $99/year Academic Year Pass ($8.25/month), and a $199 Lifetime Degree Pass.",
           },
         },
         {
@@ -153,7 +188,7 @@ export default function MathosAiVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-24">
+      <main id="main-content" className="pt-28 pb-24">
         {/* Breadcrumb & Split Hero */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <nav
@@ -245,7 +280,7 @@ export default function MathosAiVsExamGhostPage() {
                     <span className="text-emerald-800">$19/mo</span>
                   </div>
                   <div className="text-xs text-neutral-600 mt-0.5">
-                    + 50 Free Solves ($0 upfront)
+                    + 5 Free Solves / Day ($0 upfront)
                   </div>
                 </div>
               </div>
@@ -256,7 +291,7 @@ export default function MathosAiVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
                 >
-                  Claim 50 Free Solves ($0)
+                  Claim 5 Free Solves / Day ($0)
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -371,6 +406,8 @@ export default function MathosAiVsExamGhostPage() {
           </div>
         </section>
 
+        <MathosaiContourIntegralDemo />
+
         {/* Interactive Pure-CSS 3-Tab Comparison Explorer */}
         <section
           id="interactive-comparison"
@@ -392,70 +429,12 @@ export default function MathosAiVsExamGhostPage() {
 
           <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
             {/* Pure CSS Radio Inputs */}
-            <input
-              type="radio"
-              name="ma-tabs"
-              id="tab-ma-workflow"
-              className="sr-only peer/ma-workflow"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="ma-tabs"
-              id="tab-ma-models"
-              className="sr-only peer/ma-models"
-            />
-            <input
-              type="radio"
-              name="ma-tabs"
-              id="tab-ma-pricing"
-              className="sr-only peer/ma-pricing"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
-              <label
-                htmlFor="tab-ma-workflow"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-workflow:border-[#111111] peer-checked/ma-workflow:bg-emerald-950 peer-checked/ma-workflow:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <FileText className="w-4 h-4" />
-                  <span>Tab 01 • Study vs Live Exam</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  PDF Helper &amp; Videos vs In-Tab OCR
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-ma-models"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-models:border-[#111111] peer-checked/ma-models:bg-emerald-950 peer-checked/ma-models:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <Layers className="w-4 h-4" />
-                  <span>Tab 02 • AI Models &amp; Majors</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  MathosMax Caps &amp; All-Major Coverage
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-ma-pricing"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/ma-pricing:border-[#111111] peer-checked/ma-pricing:bg-emerald-950 peer-checked/ma-pricing:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <DollarSign className="w-4 h-4" />
-                  <span>Tab 03 • Semester Cost Math</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  $9.98/wk (~$160/Sem) vs $99/yr Pass
-                </div>
-              </label>
-            </div>
+            
+            
+            
 
             {/* Panel 1: PDF Helper & Videos vs In-Tab OCR */}
-            <div className="hidden peer-checked/ma-workflow:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-900 text-xs font-mono font-bold uppercase">
                   Workflow Architecture Comparison
@@ -518,7 +497,7 @@ export default function MathosAiVsExamGhostPage() {
             </div>
 
             {/* Panel 2: MathosMax Caps & All-Major Coverage */}
-            <div className="hidden peer-checked/ma-models:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
                   Model Tiering &amp; Subject Scope
@@ -576,7 +555,7 @@ export default function MathosAiVsExamGhostPage() {
             </div>
 
             {/* Panel 3: Semester Cost Math */}
-            <div className="hidden peer-checked/ma-pricing:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
                   16-Week Semester Billing Audit
@@ -598,7 +577,7 @@ export default function MathosAiVsExamGhostPage() {
                 <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                   <strong>ExamGhost AI</strong> keeps pricing simple and
                   student-friendly: start with{" "}
-                  <strong>50 Free Question Solves ($0, no card required)</strong>,
+                  <strong>5 Free Solves / Day ($0, no card required)</strong>,
                   upgrade to a single <strong>$19/month Monthly Pass</strong>{" "}
                   during midterms or finals, or lock in a full year (Fall + Spring
                   + Summer) for <strong>$99/year ($8.25/month)</strong> backed by
@@ -629,11 +608,11 @@ export default function MathosAiVsExamGhostPage() {
                       ExamGhost AI Transparent Passes
                     </span>
                     <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-800 text-white font-bold">
-                      50 Free Solves
+                      5 Free Solves / Day
                     </span>
                   </div>
                   <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• <strong>Free Trial:</strong> 50 Free Solves + 10 OCR Snips ($0)</li>
+                    <li>• <strong>Free Trial:</strong> 5 Free Solves / Day + 10 OCR Snips ($0)</li>
                     <li>• <strong>Monthly Pass:</strong> $19/month (cancel anytime)</li>
                     <li>• <strong>Academic Year Pass:</strong> $99/year ($8.25/mo)</li>
                     <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
@@ -795,7 +774,7 @@ export default function MathosAiVsExamGhostPage() {
                       <div className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
                         <span>
-                          <strong>50 Free Question Solves ($0)</strong> + 10
+                          <strong>5 Free Solves / Day ($0)</strong> + 10
                           Snap-It OCR snips + Focus Shield (no credit card
                           required)
                         </span>
@@ -828,6 +807,14 @@ export default function MathosAiVsExamGhostPage() {
                       MathosMax/day) • <strong>Prime:</strong> ~$9.98/wk
                       (~$39.92/mo eq., or ~$98.80/yr)
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -930,8 +917,8 @@ export default function MathosAiVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-1" />
                   <span>
-                    <strong>50 Free Trial Solves &amp; Transparent Passes:</strong>{" "}
-                    Start with 50 free solves ($0), then choose{" "}
+                    <strong>5 Free/Day Trial Solves &amp; Transparent Passes:</strong>{" "}
+                    Start with 5 free solves / day ($0), then choose{" "}
                     <strong>$19/month</strong>, <strong>$99/year</strong>{" "}
                     ($8.25/mo), or <strong>$199 Lifetime</strong> with a 14-day
                     100% refund guarantee.
@@ -982,7 +969,93 @@ export default function MathosAiVsExamGhostPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        
+                {/* 6 MODERN HOTKEYS COMPARISON */}
+                <section className="py-12 bg-white border-y border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                6 Modern Stealth Hotkeys for Live Exams
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Instantly solve, extract diagrams, or wipe RAM in under 0.3s without touching your mouse or triggering window.blur.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Double-Click</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Instant Inline Solve</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">0.3s Shadow DOM HUD</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+S</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Hybrid Vision Snip</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Captures locked diagrams</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+1</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Ghost Dot Mode</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Zero UI footprint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+2</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Smart Highlight</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Discreet answer tint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+3</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Sidebar Derivation</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Step-by-step proofs</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">⌘+Shift+U</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Panic RAM Wipe</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Instant emergency close</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 2-IN-1 FRONTIER AI MODELS */}
+                <section className="py-12 bg-neutral-50 border-b border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider block mb-2">2-in-1 Study &amp; Homework AI Workspace</span>
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                Powered by 3 Frontier AI Models
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* FAQ Section */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
@@ -1037,7 +1110,7 @@ export default function MathosAiVsExamGhostPage() {
                 <em>MathosMax</em> and the 20× PDF Helper quota require the
                 Prime plan (~$9.98/wk). ExamGhost AI gives every user its
                 highest-accuracy reasoning model on every solve, including all
-                50 free trial solves.
+                5 Free/Day trial solves.
               </p>
             </div>
 
@@ -1070,7 +1143,7 @@ export default function MathosAiVsExamGhostPage() {
                 <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
                   Don&apos;t risk tab-switching to an external math workspace
                   during a timed quiz. Test ExamGhost AI with{" "}
-                  <strong>50 free solves ($0)</strong> in our sandbox or unlock
+                  <strong>5 free solves / day ($0)</strong> in our sandbox or unlock
                   unlimited access for <strong>$19/month</strong> or{" "}
                   <strong>$99/year ($8.25/mo)</strong>.
                 </p>
@@ -1079,7 +1152,7 @@ export default function MathosAiVsExamGhostPage() {
                     href="/#pricing"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
                   >
-                    Claim 50 Free Solves ($0)
+                    Claim 5 Free Solves / Day ($0)
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link prefetch={false}
@@ -1137,6 +1210,9 @@ export default function MathosAiVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

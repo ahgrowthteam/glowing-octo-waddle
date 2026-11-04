@@ -18,19 +18,21 @@ import {
   WifiOff,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { SnapGptDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "SnapGPT vs ExamGhost (2026) — opacity:0 DOM vs Shadow DOM",
     },
-    description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 50 Free Solves.",
+    description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/snapgpt-vs-examghost",
     },
     openGraph: {
         title: "SnapGPT vs ExamGhost (2026) — opacity:0 DOM vs Shadow DOM",
-        description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 50 Free Solves.",
+        description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 5 Free Solves / Day.",
         url: "https://examghost.com/snapgpt-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "SnapGPT vs ExamGhost (2026) — opacity:0 DOM vs Shadow DOM",
-        description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 50 Free Solves.",
+        description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,10 +80,10 @@ export default function SnapgptVsExamghostPage() {
             name: "ExamGhost",
             applicationCategory: "EducationalApplication",
             operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
-            offers: [
+            "offers": [
               {
                 "@type": "Offer",
-                name: "Free Trial (50 Solves)",
+                name: "Free Tier (5 Free Solves / Day)",
                 price: "0",
                 priceCurrency: "USD",
               },
@@ -197,7 +199,7 @@ export default function SnapgptVsExamghostPage() {
             name: "How does SnapGPT's 2026 pricing compare to ExamGhost?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "SnapGPT's Free plan is capped at 5 screenshot answers per day (with AI chat, explanations, and Autopilot locked). SnapGPT Plus costs $7.99/week (~$34.60/month), $9.99/month, or $89.99/year. ExamGhost gives you 50 Free Solves (including full Focus Shield + 10 Snap-It OCR snips), a $19/month pass, a $99/year Academic Year Pass ($8.25/mo), or a $199 one-time Lifetime Degree Pass.",
+              text: "SnapGPT's Free plan is capped at 5 screenshot answers per day (with AI chat, explanations, and Autopilot locked). SnapGPT Plus costs $7.99/week (~$34.60/month), $9.99/month, or $89.99/year. ExamGhost gives you 5 Free Solves / Day (including full Focus Shield + 10 Snap-It OCR snips), a $19/month pass, a $99/year Academic Year Pass ($8.25/mo), or a $199 one-time Lifetime Degree Pass.",
             },
           },
         ],
@@ -302,7 +304,7 @@ export default function SnapgptVsExamghostPage() {
                   </div>
                   <div className="text-sm font-bold text-[#111111]">
                     <span className="text-rose-700 line-through mr-1.5">5/Day</span>
-                    <span className="text-emerald-800">50 Free Solves</span>
+                    <span className="text-emerald-800">5 Free Solves / Day</span>
                   </div>
                   <div className="text-xs text-neutral-600 mt-0.5">
                     Full math steps unlocked ($0)
@@ -316,7 +318,7 @@ export default function SnapgptVsExamghostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
                 >
-                  Claim 50 Free Solves ($0)
+                  Claim 5 Free Solves / Day ($0)
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -431,307 +433,285 @@ export default function SnapgptVsExamghostPage() {
           </div>
         </section>
 
-        {/* Interactive Pure-CSS 3-Tab Source-Code & Privacy Explorer */}
+        <SnapGptDemo />
+
+        {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  ExamGhost Stealth Keyboard &amp; Model Suite
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+              </div>
+            </div>
+            <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+              </p>
+              <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                <div className="font-bold text-white text-sm">
+                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Visible 3-Part Source-Code & Privacy Breakdown */}
         <section
           id="subtle-mode-audit"
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24"
         >
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
-              01 // Interactive Source-Code &amp; Privacy Teardown
+              01 // Source-Code &amp; Privacy Teardown
             </span>
             <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mt-2">
-              Click Any Tab to Inspect What We Found in SnapGPT&apos;s Live Code
+              SnapGPT Codebase Inspection: 3 Critical Flaws
             </h2>
             <p className="text-neutral-700 mt-2 max-w-3xl text-sm sm:text-base">
               Hiding a button from human eyes with CSS transparency is not the
-              same as isolating an extension from LMS scripts. Select an audit
-              tab below to compare SnapGPT against ExamGhost AI.
+              same as isolating an extension from LMS scripts. Here is the verified architectural teardown.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
-            {/* Pure CSS Radio Inputs */}
-            <input
-              type="radio"
-              name="sg-tabs"
-              id="tab-sg-subtle"
-              className="sr-only peer/sg-subtle"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="sg-tabs"
-              id="tab-sg-privacy"
-              className="sr-only peer/sg-privacy"
-            />
-            <input
-              type="radio"
-              name="sg-tabs"
-              id="tab-sg-pricing"
-              className="sr-only peer/sg-pricing"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
-              <label
-                htmlFor="tab-sg-subtle"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/sg-subtle:border-[#111111] peer-checked/sg-subtle:bg-emerald-950 peer-checked/sg-subtle:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <EyeOff className="w-4 h-4" />
-                  <span>Tab 01 • DOM &amp; Subtle Mode</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  Why opacity:0 &amp; Autopilot Fail Scanners
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-sg-privacy"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/sg-privacy:border-[#111111] peer-checked/sg-privacy:bg-emerald-950 peer-checked/sg-privacy:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <Lock className="w-4 h-4" />
-                  <span>Tab 02 • Privacy &amp; Wi-Fi Blocks</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  OpenReplay, /admin/chats/ &amp; Dead Domains
-                </div>
-              </label>
-
-              <label
-                htmlFor="tab-sg-pricing"
-                className="cursor-pointer rounded-2xl p-4 border-2 border-neutral-200 bg-[#FAF8F5] hover:border-neutral-400 transition-all peer-checked/sg-pricing:border-[#111111] peer-checked/sg-pricing:bg-emerald-950 peer-checked/sg-pricing:text-white"
-              >
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider opacity-80 mb-1">
-                  <CreditCard className="w-4 h-4" />
-                  <span>Tab 03 • Free Caps &amp; Billing</span>
-                </div>
-                <div className="font-bold text-sm sm:text-base">
-                  5/Day Locked Free Tier vs 50 Free Solves
-                </div>
-              </label>
-            </div>
-
-            {/* Panel 1: opacity:0 & Autopilot */}
-            <div className="hidden peer-checked/sg-subtle:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
-                  CSS Transparency vs True Shadow DOM Isolation
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  &ldquo;Still There — Just Transparent&rdquo;: How Subtle Mode &amp; Autopilot Mutate Your Quiz Page
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  SnapGPT pins a <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">52px × 52px</code>{" "}
-                  viewfinder button (<code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">css/button.css</code>)
-                  at the bottom-left corner of your browser (<code className="font-mono text-xs">left: 16px; bottom: 16px</code>).
-                  When you enable <strong>&ldquo;Subtle mode,&rdquo;</strong>{" "}
-                  SnapGPT&apos;s own interactive demo explains:{" "}
-                  <em>&ldquo;Still there — just transparent. Click it.&rdquo;</em>{" "}
-                  Under the hood, it merely applies{" "}
-                  <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
-                    .invisible &#123; opacity: 0; &#125;
-                  </code>
-                  .
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Any school script running{" "}
-                  <code className="font-mono text-xs">document.querySelectorAll</code>{" "}
-                  or a <code className="font-mono text-xs">MutationObserver</code>{" "}
-                  doesn&apos;t care about CSS opacity—it sees the injected button
-                  node immediately. Worse, when SnapGPT reveals or auto-solves an
-                  answer, it either paints a green{" "}
-                  <code className="font-mono text-xs">#2ecc71</code> border (
-                  <code className="font-mono text-xs">.correct</code>) directly
-                  onto Canvas <code className="font-mono text-xs">.question_holder</code>{" "}
-                  elements or opens a full-height <strong>Sidebar Chat</strong>{" "}
-                  that triggers <code className="font-mono text-xs">window.blur</code>{" "}
-                  and viewport resize logs.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
-                <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
-                  <div className="text-rose-300 font-bold uppercase">
-                    SnapGPT Live CSS (snapgpt.me)
+          <div className="space-y-8">
+            {/* Card 1: opacity:0 & Autopilot */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
+                    CSS Transparency vs True Shadow DOM Isolation
                   </div>
-                  <div className="text-rose-100/90">
-                    <code>.demo-snap-btn.invisible &#123; opacity: 0; &#125;</code>
-                  </div>
-                  <div className="text-rose-100/90">
-                    <code>.demo-option.correct &#123;</code>
-                  </div>
-                  <div className="text-rose-100/90 pl-3">
-                    <code>background: #e9faf0;</code>
-                  </div>
-                  <div className="text-rose-100/90 pl-3">
-                    <code>box-shadow: inset 0 0 0 2px #2ecc71;</code>
-                  </div>
-                  <div className="text-rose-100/90">
-                    <code>&#125; /* Mutates host quiz DOM */</code>
-                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    &ldquo;Still There — Just Transparent&rdquo;: How Subtle Mode &amp; Autopilot Mutate Your Quiz Page
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    SnapGPT pins a <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">52px × 52px</code>{" "}
+                    viewfinder button (<code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">css/button.css</code>)
+                    at the bottom-left corner of your browser (<code className="font-mono text-xs">left: 16px; bottom: 16px</code>).
+                    When you enable <strong>&ldquo;Subtle mode,&rdquo;</strong>{" "}
+                    SnapGPT&apos;s own interactive demo explains:{" "}
+                    <em>&ldquo;Still there — just transparent. Click it.&rdquo;</em>{" "}
+                    Under the hood, it merely applies{" "}
+                    <code className="font-mono text-xs bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded">
+                      .invisible &#123; opacity: 0; &#125;
+                    </code>
+                    .
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Any school script running{" "}
+                    <code className="font-mono text-xs">document.querySelectorAll</code>{" "}
+                    or a <code className="font-mono text-xs">MutationObserver</code>{" "}
+                    doesn&apos;t care about CSS opacity—it sees the injected button
+                    node immediately. Worse, when SnapGPT reveals or auto-solves an
+                    answer, it either paints a green{" "}
+                    <code className="font-mono text-xs">#2ecc71</code> border (
+                    <code className="font-mono text-xs">.correct</code>) directly
+                    onto Canvas <code className="font-mono text-xs">.question_holder</code>{" "}
+                    elements or opens a full-height <strong>Sidebar Chat</strong>{" "}
+                    that triggers <code className="font-mono text-xs">window.blur</code>{" "}
+                    and viewport resize logs.
+                  </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
-                  <div className="text-emerald-300 font-bold uppercase">
-                    ExamGhost Closed Shadow DOM
+                <div className="lg:col-span-5 bg-neutral-900 text-white rounded-2xl p-6 font-mono text-xs space-y-4">
+                  <div className="p-3.5 rounded-xl bg-rose-950/90 border border-rose-800 space-y-1.5">
+                    <div className="text-rose-300 font-bold uppercase">
+                      SnapGPT Live CSS (snapgpt.me)
+                    </div>
+                    <div className="text-rose-100/90">
+                      <code>.demo-snap-btn.invisible &#123; opacity: 0; &#125;</code>
+                    </div>
+                    <div className="text-rose-100/90">
+                      <code>.demo-option.correct &#123;</code>
+                    </div>
+                    <div className="text-rose-100/90 pl-3">
+                      <code>background: #e9faf0;</code>
+                    </div>
+                    <div className="text-rose-100/90 pl-3">
+                      <code>box-shadow: inset 0 0 0 2px #2ecc71;</code>
+                    </div>
+                    <div className="text-rose-100/90">
+                      <code>&#125; /* Mutates host quiz DOM */</code>
+                    </div>
                   </div>
-                  <div className="text-emerald-100/90">
-                    <code>const root = host.attachShadow(&#123; mode: &apos;closed&apos; &#125;);</code>
-                  </div>
-                  <div className="text-emerald-100/90">
-                    <code>// Zero host .question_holder CSS edits</code>
-                  </div>
-                  <div className="text-emerald-100/90">
-                    <code>// Focus Shield blocks blur &amp; visibility traps</code>
+
+                  <div className="p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700 space-y-1.5">
+                    <div className="text-emerald-300 font-bold uppercase">
+                      ExamGhost Closed Shadow DOM
+                    </div>
+                    <div className="text-emerald-100/90">
+                      <code>const root = host.attachShadow(&#123; mode: &apos;closed&apos; &#125;);</code>
+                    </div>
+                    <div className="text-emerald-100/90">
+                      <code>// Zero host .question_holder CSS edits</code>
+                    </div>
+                    <div className="text-emerald-100/90">
+                      <code>// Focus Shield blocks blur &amp; visibility traps</code>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Panel 2: OpenReplay, /admin/chats/ & Campus Wi-Fi Blocks */}
-            <div className="hidden peer-checked/sg-privacy:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
-                  Session Recording &amp; Network Reliability Audit
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Why Does SnapGPT Run OpenReplay Session Recording and an /admin/chats/ Console?
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  Although SnapGPT&apos;s footer claims{" "}
-                  <em>&ldquo;Learning first. Privacy always,&rdquo;</em>{" "}
-                  inspecting the production HTML on{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
-                    snapgpt.me
-                  </code>{" "}
-                  reveals a heavy third-party surveillance stack: it loads{" "}
-                  <strong>OpenReplay session recording</strong> (
-                  <code className="font-mono text-xs">replay.snapgpt.me</code>),{" "}
-                  <strong>PostHog analytics</strong>, and{" "}
-                  <strong>Reddit Ads tracking pixels</strong>. Even more
-                  concerning, its embedded admin navigation menu contains links
-                  for:{" "}
-                  <em>
-                    &ldquo;/admin/chats/ — Customer chats: Browse and search
-                    every conversation&rdquo;
-                  </em>{" "}
-                  and{" "}
-                  <em>
-                    &ldquo;replay.snapgpt.me — Session replay: OpenReplay
-                    recordings.&rdquo;
-                  </em>
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  On top of privacy concerns, SnapGPT&apos;s original{" "}
-                  <code className="font-mono text-xs">snapgpt.io</code> domain is
-                  dead, and <code className="font-mono text-xs">snapgpt.me</code>{" "}
-                  is frequently blocked on university Wi-Fi firewalls—forcing
-                  SnapGPT to display a corner banner telling students to use a
-                  raw CloudFront mirror URL. <strong>ExamGhost AI</strong>{" "}
-                  processes every solve in ephemeral edge RAM with zero stored
-                  chat logs and an instant{" "}
-                  <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
-                    Esc
-                  </code>{" "}
-                  <strong>Panic RAM Flush</strong>.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase font-bold text-rose-900 mb-2">
-                    <WifiOff className="w-4 h-4 text-rose-700" />
-                    <span>SnapGPT Privacy &amp; Domain Risks</span>
+            {/* Card 2: OpenReplay, /admin/chats/ & Campus Wi-Fi Blocks */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
+                    Session Recording &amp; Network Reliability Audit
                   </div>
-                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
-                    <li>• Original <code className="font-mono text-xs">snapgpt.io</code> domain is offline (DNS failure)</li>
-                    <li>• <code className="font-mono text-xs">snapgpt.me</code> blocked on many dorm networks (requires CloudFront mirror)</li>
-                    <li>• Embeds OpenReplay session recording + <code className="font-mono text-xs">/admin/chats/</code> conversation viewer</li>
-                    <li>• Self-hosts Firefox <code className="font-mono text-xs">.xpi</code> on a raw AWS S3 bucket</li>
-                  </ul>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    Why Does SnapGPT Run OpenReplay Session Recording and an /admin/chats/ Console?
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    Although SnapGPT&apos;s footer claims{" "}
+                    <em>&ldquo;Learning first. Privacy always,&rdquo;</em>{" "}
+                    inspecting the production HTML on{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                      snapgpt.me
+                    </code>{" "}
+                    reveals a heavy third-party surveillance stack: it loads{" "}
+                    <strong>OpenReplay session recording</strong> (
+                    <code className="font-mono text-xs">replay.snapgpt.me</code>),{" "}
+                    <strong>PostHog analytics</strong>, and{" "}
+                    <strong>Reddit Ads tracking pixels</strong>. Even more
+                    concerning, its embedded admin navigation menu contains links
+                    for:{" "}
+                    <em>
+                      &ldquo;/admin/chats/ — Customer chats: Browse and search
+                      every conversation&rdquo;
+                    </em>{" "}
+                    and{" "}
+                    <em>
+                      &ldquo;replay.snapgpt.me — Session replay: OpenReplay
+                      recordings.&rdquo;
+                    </em>
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    On top of privacy concerns, SnapGPT&apos;s original{" "}
+                    <code className="font-mono text-xs">snapgpt.io</code> domain is
+                    dead, and <code className="font-mono text-xs">snapgpt.me</code>{" "}
+                    is frequently blocked on university Wi-Fi firewalls—forcing
+                    SnapGPT to display a corner banner telling students to use a
+                    raw CloudFront mirror URL. <strong>ExamGhost AI</strong>{" "}
+                    processes every solve in ephemeral edge RAM with zero stored
+                    chat logs and an instant{" "}
+                    <code className="font-mono text-xs bg-neutral-200 px-1.5 py-0.5 rounded">
+                      ⌘+Shift+U
+                    </code>{" "}
+                    <strong>Panic RAM Flush</strong>.
+                  </p>
                 </div>
 
-                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-700" />
-                    <span>ExamGhost Zero-Log Standard</span>
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5">
+                    <div className="flex items-center gap-2 text-xs font-mono uppercase font-bold text-rose-900 mb-2">
+                      <WifiOff className="w-4 h-4 text-rose-700" />
+                      <span>SnapGPT Privacy &amp; Domain Risks</span>
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                      <li>• Original <code className="font-mono text-xs">snapgpt.io</code> domain is offline (DNS failure)</li>
+                      <li>• <code className="font-mono text-xs">snapgpt.me</code> blocked on many dorm networks (requires CloudFront mirror)</li>
+                      <li>• Embeds OpenReplay session recording + <code className="font-mono text-xs">/admin/chats/</code> conversation viewer</li>
+                      <li>• Self-hosts Firefox <code className="font-mono text-xs">.xpi</code> on a raw AWS S3 bucket</li>
+                    </ul>
                   </div>
-                  <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
-                    <li>• Ephemeral edge RAM processing—zero searchable chat database</li>
-                    <li>• Zero OpenReplay screen recording on your account</li>
-                    <li>• 1-key <code className="font-mono text-xs">Esc</code> Panic RAM Flush unmounts HUD in &lt;10ms</li>
-                    <li>• Clean, unblocked enterprise TLS edge routing on all campus Wi-Fi</li>
-                  </ul>
+
+                  <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                    <div className="flex items-center gap-2 text-xs font-mono uppercase font-bold text-emerald-950 mb-2">
+                      <ShieldCheck className="w-4 h-4 text-emerald-700" />
+                      <span>ExamGhost Zero-Log Standard</span>
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
+                      <li>• Ephemeral edge RAM processing—zero searchable chat database</li>
+                      <li>• Zero OpenReplay screen recording on your account</li>
+                      <li>• 1-key <code className="font-mono text-xs">⌘+Shift+U</code> Panic RAM Flush unmounts HUD in &lt;10ms</li>
+                      <li>• Clean, unblocked enterprise TLS edge routing on all campus Wi-Fi</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Panel 3: 5/Day Free Cap vs 50 Free Solves */}
-            <div className="hidden peer-checked/sg-pricing:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
-                  Free Trial &amp; Subscription Value Audit
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  5 Screenshots/Day (With Explanations Locked) vs 50 Full Free Solves
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  SnapGPT&apos;s Free plan cuts you off after just{" "}
-                  <strong>5 screenshot answers per day</strong>—and locks AI
-                  follow-up chat, step-by-step explanations, and Autopilot behind
-                  a paywall. If you select its weekly billing option,{" "}
-                  <strong>SnapGPT Plus charges $7.99/week (~$34.60/month)</strong>,
-                  or $9.99/month ($89.99/year), with no lifetime ownership tier.
-                </p>
-                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  <strong>ExamGhost AI</strong> gives every student{" "}
-                  <strong>50 Free Question Solves ($0, no credit card required)</strong>{" "}
-                  with full step-by-step Mathpix LaTeX explanations, 10 Snap-It
-                  Vision OCR snips, and active Canvas Focus Shield included from
-                  solve #1. When you upgrade, choose our{" "}
-                  <strong>$19/month Monthly Pass</strong>,{" "}
-                  <strong>$99/year Academic Year Pass ($8.25/mo)</strong>, or{" "}
-                  <strong>$199 one-time Lifetime Degree Pass</strong>—all backed
-                  by a <strong>14-day 100% money-back guarantee</strong>.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-[#FAF8F5] border border-neutral-300 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-[#111111]">
-                      SnapGPT Tiers (2026)
-                    </span>
-                    <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-rose-100 text-rose-900 font-bold">
-                      5/Day Free Cap
-                    </span>
+            {/* Card 3: 5/Day Free Cap vs 5 Free Solves / Day */}
+            <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
+                    Free Trial &amp; Subscription Value Audit
                   </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-700">
-                    <li>• <strong>Free Tier:</strong> 5 screenshots/day (Explanations &amp; Chat locked)</li>
-                    <li>• <strong>Plus Weekly:</strong> $7.99/week (~$34.60/mo equivalent)</li>
-                    <li>• <strong>Plus Monthly / Annual:</strong> $9.99/mo or $89.99/yr</li>
-                    <li>• <strong>Lifetime Option:</strong> None (recurring billing only)</li>
-                  </ul>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
+                    5 Screenshots/Day (With Explanations Locked) vs 5 Free Full Solves / Day (Explanations Included)
+                  </h3>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    SnapGPT&apos;s Free plan cuts you off after just{" "}
+                    <strong>5 screenshot answers per day</strong>—and locks AI
+                    follow-up chat, step-by-step explanations, and Autopilot behind
+                    a paywall. If you select its weekly billing option,{" "}
+                    <strong>SnapGPT Plus charges $7.99/week (~$34.60/month)</strong>,
+                    or $9.99/month ($89.99/year), with no lifetime ownership tier.
+                  </p>
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                    <strong>ExamGhost AI</strong> gives every student{" "}
+                    <strong>5 Free Solves / Day ($0, no credit card required)</strong>{" "}
+                    with full step-by-step Mathpix LaTeX explanations, 10 Snap-It
+                    Vision OCR snips, and active Canvas Focus Shield included from
+                    solve #1. When you upgrade, choose our{" "}
+                    <strong>$19/month Monthly Pass</strong>,{" "}
+                    <strong>$99/year Academic Year Pass ($8.25/mo)</strong>, or{" "}
+                    <strong>$199 one-time Lifetime Degree Pass</strong>—all backed
+                    by a <strong>14-day 100% money-back guarantee</strong>.
+                  </p>
                 </div>
 
-                <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-base text-[#111111]">
-                      ExamGhost AI Passes (2026)
-                    </span>
-                    <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-800 text-white">
-                      50 Free Solves
-                    </span>
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="bg-[#FAF8F5] border border-neutral-300 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-[#111111]">
+                        SnapGPT Tiers (2026)
+                      </span>
+                      <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-rose-100 text-rose-900 font-bold">
+                        5/Day Free Cap
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-700">
+                      <li>• <strong>Free Tier:</strong> 5 screenshots/day (Explanations &amp; Chat locked)</li>
+                      <li>• <strong>Plus Weekly:</strong> $7.99/week (~$34.60/mo equivalent)</li>
+                      <li>• <strong>Plus Monthly / Annual:</strong> $9.99/mo or $89.99/yr</li>
+                      <li>• <strong>Lifetime Option:</strong> None (recurring billing only)</li>
+                    </ul>
                   </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• <strong>Free Trial:</strong> 50 Free Solves + Full Steps + Focus Shield ($0)</li>
-                    <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited)</li>
-                    <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo)</li>
-                    <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
-                  </ul>
+
+                  <div className="bg-emerald-50 border-2 border-emerald-800 rounded-2xl p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-base text-[#111111]">
+                        ExamGhost AI Passes (2026)
+                      </span>
+                      <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-800 text-white">
+                        5 Free Solves / Day
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
+                      <li>• <strong>Free Trial:</strong> 5 Free Solves / Day + Full Steps + Focus Shield ($0)</li>
+                      <li>• <strong>Monthly Pass:</strong> $19/month (100% Unlimited)</li>
+                      <li>• <strong>Academic Year:</strong> $99/year ($8.25/mo)</li>
+                      <li>• <strong>Lifetime Pass:</strong> $199 one-time • 14-day 100% refund guarantee</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -877,7 +857,7 @@ export default function SnapgptVsExamghostPage() {
                       What you get before entering a card
                     </td>
                     <td className="py-3.5 px-5 text-emerald-900 font-bold border-r border-neutral-200">
-                      50 Free Solves + Explanations
+                      5 Free Solves / Day + Explanations
                     </td>
                     <td className="py-3.5 px-5 text-rose-800">
                       5 Screenshots/Day (Explanations Locked)
@@ -929,6 +909,13 @@ export default function SnapgptVsExamghostPage() {
                       <XCircle className="w-4 h-4 text-rose-700 inline mr-1" />{" "}
                       Recurring Subscriptions Only
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                   </tr>
                 </tbody>
               </table>
@@ -1107,7 +1094,7 @@ export default function SnapgptVsExamghostPage() {
                 explanations, and Autopilot locked). SnapGPT Plus costs{" "}
                 <strong>$7.99/week</strong> (~$34.60/month),{" "}
                 <strong>$9.99/month</strong>, or <strong>$89.99/year</strong>.
-                ExamGhost gives you <strong>50 Free Solves ($0)</strong>{" "}
+                ExamGhost gives you <strong>5 Free Solves / Day ($0)</strong>{" "}
                 (including full Focus Shield + 10 Snap-It OCR snips), a{" "}
                 <strong>$19/month</strong> pass, a{" "}
                 <strong>$99/year Academic Year Pass</strong> ($8.25/mo), or a{" "}
@@ -1135,14 +1122,14 @@ export default function SnapgptVsExamghostPage() {
                 <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
                   Upgrade from SnapGPT to ExamGhost&apos;s 100% isolated closed
                   Shadow DOM HUD, active Canvas Focus Shield, and 0.3s Mathpix
-                  STEM engine—starting with <strong>50 free solves ($0)</strong>.
+                  STEM engine—starting with <strong>5 free solves / day ($0)</strong>.
                 </p>
                 <div className="flex flex-wrap items-center gap-3.5">
                   <Link prefetch={false}
                     href="/#pricing"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
                   >
-                    Claim 50 Free Solves ($0)
+                    Claim 5 Free Solves / Day ($0)
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link prefetch={false}
@@ -1200,6 +1187,9 @@ export default function SnapgptVsExamghostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

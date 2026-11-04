@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaChrome } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { EasySBAdaptiveReadingDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
   title: {
@@ -40,114 +42,134 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'WebPage',
-      '@id': 'https://examghost.com/easysb-vs-examghost#webpage',
-      name: 'EasySB & SmarterBook vs ExamGhost (2026): McGraw-Hill SmartBook & LMS Audit',
-      description:
-        'Technical comparison of EasySB (easysb.org), archived SmarterBook, and ExamGhost across McGraw-Hill SmartBook 2.0, graded Connect exams, Canvas, Blackboard, DOM stealth, and network burst safety.',
-      url: 'https://examghost.com/easysb-vs-examghost',
-      datePublished: '2026-01-23',
-      dateModified: '2026-03-24',
-      breadcrumb: { '@id': 'https://examghost.com/easysb-vs-examghost#breadcrumb' },
-      author: {
-        '@type': 'Organization',
-        name: 'ExamGhost Security Engineering Team',
-        url: 'https://examghost.com',
+      "@type": "WebPage",
+      "@id": "https://examghost.com/easysb-vs-examghost#webpage",
+      "name": "EasySB & SmarterBook vs ExamGhost (2026): McGraw-Hill SmartBook & LMS Audit",
+      "description":
+        "Technical comparison of EasySB (easysb.org), archived SmarterBook, and ExamGhost across McGraw-Hill SmartBook 2.0, graded Connect exams, Canvas, Blackboard, DOM stealth, and network burst safety.",
+      "url": "https://examghost.com/easysb-vs-examghost",
+      "datePublished": "2026-01-23",
+      "dateModified": "2026-03-24",
+      "breadcrumb": { "@id": "https://examghost.com/easysb-vs-examghost#breadcrumb" },
+      "author": {
+        "@type": "Organization",
+        "name": "ExamGhost Security Engineering Team",
+        "url": "https://examghost.com",
       },
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', 'h2', 'summary'],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "summary"],
       },
-      about: [
+      "about": [
         {
-          '@type': 'SoftwareApplication',
-          name: 'ExamGhost',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome, Edge, Brave, macOS, Windows',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '199.00',
-            priceCurrency: 'USD',
-            offerCount: '4',
-          },
+          "@type": "SoftwareApplication",
+          "name": "ExamGhost",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free Daily Solves",
+              "price": "0.00",
+              "priceCurrency": "USD",
+              "description": "5 Free Solves / Day"
+            },
+            {
+              "@type": "Offer",
+              "name": "Monthly Pass",
+              "price": "19.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Academic Year Pass",
+              "price": "99.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Lifetime Pass",
+              "price": "199.00",
+              "priceCurrency": "USD"
+            }
+          ],
         },
         {
-          '@type': 'SoftwareApplication',
-          name: 'EasySB & SmarterBook',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome Extension',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '14.99',
-            priceCurrency: 'USD',
-            offerCount: '2',
+          "@type": "SoftwareApplication",
+          "name": "EasySB & SmarterBook",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Chrome Extension",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0.00",
+            "highPrice": "14.99",
+            "priceCurrency": "USD",
+            "offerCount": "2",
           },
         },
       ],
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://examghost.com/easysb-vs-examghost#breadcrumb',
-      itemListElement: [
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/easysb-vs-examghost#breadcrumb",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://examghost.com',
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://examghost.com",
         },
         {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Competitor Comparisons',
-          item: 'https://examghost.com/compare-canvas-hack-extensions',
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Competitor Comparisons",
+          "item": "https://examghost.com/compare-canvas-hack-extensions",
         },
         {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'EasySB & SmarterBook vs ExamGhost',
-          item: 'https://examghost.com/easysb-vs-examghost',
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EasySB & SmarterBook vs ExamGhost",
+          "item": "https://examghost.com/easysb-vs-examghost",
         },
       ],
     },
     {
-      '@type': 'FAQPage',
-      '@id': 'https://examghost.com/easysb-vs-examghost#faq',
-      mainEntity: [
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/easysb-vs-examghost#faq",
+      "mainEntity": [
         {
-          '@type': 'Question',
-          name: 'What happened to the SmarterBook Chrome extension for McGraw-Hill?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'SmarterBook (originally created by developer Micah Lindley) was permanently discontinued and archived on GitHub after receiving a copyright cease-and-desist letter from legal counsel representing major textbook publishers. Unmaintained forks no longer match 2026 McGraw-Hill SmartBook 2.0 security checks.',
+          "@type": "Question",
+          "name": "What happened to the SmarterBook Chrome extension for McGraw-Hill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SmarterBook (originally created by developer Micah Lindley) was permanently discontinued and archived on GitHub after receiving a copyright cease-and-desist letter from legal counsel representing major textbook publishers. Unmaintained forks no longer match 2026 McGraw-Hill SmartBook 2.0 security checks.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'Does EasySB (easysb.org) work on graded McGraw-Hill Connect exams or Canvas quizzes?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. EasySB is a single-purpose utility built strictly for McGraw-Hill SmartBook 2.0 adaptive reading modules (including exporting module questions into Excel spreadsheets). It does not work on timed McGraw-Hill Connect homework/exams, Canvas, Blackboard, Moodle, Pearson MyLab, or ALEKS. ExamGhost works across SmartBook 2.0 AND every graded LMS exam platform.',
+          "@type": "Question",
+          "name": "Does EasySB (easysb.org) work on graded McGraw-Hill Connect exams or Canvas quizzes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. EasySB is a single-purpose utility built strictly for McGraw-Hill SmartBook 2.0 adaptive reading modules (including exporting module questions into Excel spreadsheets). It does not work on timed McGraw-Hill Connect homework/exams, Canvas, Blackboard, Moodle, Pearson MyLab, or ALEKS. ExamGhost works across SmartBook 2.0 AND every graded LMS exam platform.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'Can exporting SmartBook modules to Excel trigger McGraw-Hill Connect detection?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes, in two ways: first, bulk-scraping an entire SmartBook module to generate an Excel sheet sends rapid sequential API requests through your authenticated mheducation.com session; second, switching between your browser and Excel during an assignment fires window.blur and document.visibilitychange events. ExamGhost solves questions one-by-one at natural human speed inside a Closed Shadow DOM with Focus Shield active.',
+          "@type": "Question",
+          "name": "Can exporting SmartBook modules to Excel trigger McGraw-Hill Connect detection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in two ways: first, bulk-scraping an entire SmartBook module to generate an Excel sheet sends rapid sequential API requests through your authenticated mheducation.com session; second, switching between your browser and Excel during an assignment fires window.blur and document.visibilitychange events. ExamGhost solves questions one-by-one at natural human speed inside a Closed Shadow DOM with Focus Shield active.",
           },
         },
         {
-          '@type': 'Question',
-          name: 'How does ExamGhost handle McGraw-Hill SmartBook 2.0 confidence ratings and multi-select questions?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'ExamGhost’s Multi-Model STEM & Business Consensus engine evaluates every option in McGraw-Hill SmartBook 2.0 ("Select all that apply", fill-in-the-blank, and matching) plus graded McGraw-Hill Connect accounting tables and finance formulas, displaying the exact verified choices silently in-page so you can click High Confidence with 99.4% accuracy.',
+          "@type": "Question",
+          "name": "How does ExamGhost handle McGraw-Hill SmartBook 2.0 confidence ratings and multi-select questions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ExamGhost’s Multi-Model STEM & Business Consensus engine evaluates every option in McGraw-Hill SmartBook 2.0 (\"Select all that apply\", fill-in-the-blank, and matching) plus graded McGraw-Hill Connect accounting tables and finance formulas, displaying the exact verified choices silently in-page so you can click High Confidence with 99.4% accuracy.",
           },
         },
       ],
@@ -157,14 +179,15 @@ const jsonLd = {
 
 export default function EasySbVsExamGhostPage() {
   return (
-    <main className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#fed7aa] selection:text-[#111]">
+    <div className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#fed7aa] selection:text-[#111]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
 
-      {/* Top Forensic Banner */}
+      <main id="main-content">
+        {/* Top Forensic Banner */}
       <div className="bg-[#111] text-white border-b-2 border-[#111] px-4 py-2.5 text-xs font-mono mt-20">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -269,7 +292,7 @@ export default function EasySbVsExamGhostPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111] text-white font-bold text-sm shadow-[4px_4px_0px_#c2410c] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   <FaChrome className="w-4 h-4 text-[#fed7aa]" aria-hidden="true" />
-                  <span>Start 50 Free Solves · $0 No Card</span>
+                  <span>Start 5 Free Solves / Day · $0 No Card</span>
                 </Link>
                 <a
                   href="#smartbook-autopsy"
@@ -352,7 +375,9 @@ export default function EasySbVsExamGhostPage() {
         </div>
       </section>
 
-      {/* Section 2: Interactive 4-Tab Breakdown (Pure CSS Peer-Checked) */}
+        <EasySBAdaptiveReadingDemo />
+
+      {/* Section 2: Visible 4-Pillar Teardown & 6-Hotkey Suite */}
       <section id="smartbook-autopsy" className="py-14 px-4 border-b-2 border-[#111]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-8">
@@ -366,263 +391,251 @@ export default function EasySbVsExamGhostPage() {
               Even in classes that use McGraw-Hill SmartBook 2.0 for weekly textbook reading
               completion, 80%–90% of your course grade comes from <strong>McGraw-Hill Connect
               Graded Homework/Exams</strong> and <strong>Canvas / Blackboard Midterms</strong>.
-              Explore the 4 tabs below to see why EasySB and SmarterBook fall short.
+              Here is the 4-gap architectural autopsy of EasySB and SmarterBook.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111]">
-            <input
-              type="radio"
-              name="esb-audit-tabs"
-              id="esb-tab-1"
-              className="peer/tab1 hidden"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="esb-audit-tabs"
-              id="esb-tab-2"
-              className="peer/tab2 hidden"
-            />
-            <input
-              type="radio"
-              name="esb-audit-tabs"
-              id="esb-tab-3"
-              className="peer/tab3 hidden"
-            />
-            <input
-              type="radio"
-              name="esb-audit-tabs"
-              id="esb-tab-4"
-              className="peer/tab4 hidden"
-            />
-
-            {/* Tab Headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-6 border-b-2 border-[#111] pb-4">
-              <label
-                htmlFor="esb-tab-1"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fed7aa]/60 peer-checked/tab1:bg-[#fed7aa] peer-checked/tab1:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Gap 01
-                </span>
-                SmartBook Reading vs Connect Exams
-              </label>
-
-              <label
-                htmlFor="esb-tab-2"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fed7aa]/60 peer-checked/tab2:bg-[#fed7aa] peer-checked/tab2:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Gap 02
-                </span>
-                Excel Alt-Tab Blur &amp; Bulk API Flags
-              </label>
-
-              <label
-                htmlFor="esb-tab-3"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fed7aa]/60 peer-checked/tab3:bg-[#fed7aa] peer-checked/tab3:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Gap 03
-                </span>
-                SmarterBook Cease-and-Desist
-              </label>
-
-              <label
-                htmlFor="esb-tab-4"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fed7aa]/60 peer-checked/tab4:bg-[#fed7aa] peer-checked/tab4:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Gap 04
-                </span>
-                One Subscription vs 5 Separate Tools
-              </label>
-            </div>
-
-            {/* Tab 1 */}
-            <div className="hidden peer-checked/tab1:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EASYSB (easysb.org) LIMITATION
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Blind on Graded McGraw-Hill Connect Homework &amp; Timed Exams
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  McGraw-Hill has two completely different engines: <strong>SmartBook 2.0</strong>{' '}
-                  (ungraded/completion adaptive textbook reading with High/Medium/Low confidence
-                  buttons) and <strong>McGraw-Hill Connect Assessments</strong> (graded problem sets,
-                  accounting ledgers, chemistry equations, and timed midterms). EasySB only hooks
-                  SmartBook 2.0 reading JSON—meaning it cannot solve a single graded Connect problem
-                  set or exam.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
-                  <li>✗ Fails on McGraw-Hill Connect Graded Homework &amp; Quizzes</li>
-                  <li>✗ Fails on McGraw-Hill ALEKS Math &amp; Chemistry</li>
-                  <li>✗ Fails on Canvas, Blackboard, Moodle, &amp; Pearson MyLab</li>
-                </ul>
-              </div>
-
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST UNIVERSAL ENGINE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Crushes Both SmartBook 2.0 AND Graded Connect / Canvas Exams
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  With ExamGhost, you don&apos;t need a separate tool for SmartBook reading and
-                  another tool for graded exams. Press <code>⌘+Shift+A</code> inside SmartBook 2.0
-                  to breeze through multi-select confidence questions in 0.3s, then use the exact
-                  same hotkey on your graded McGraw-Hill Connect accounting tables, ALEKS math, and
-                  Canvas midterms.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Solves SmartBook 2.0 &quot;Select all that apply&quot; &amp; fill-in-blanks</li>
-                  <li>✓ Solves graded McGraw-Hill Connect accounting, finance, &amp; STEM exams</li>
-                  <li>✓ Works seamlessly across Canvas, Blackboard, Moodle, D2L, &amp; MyLab</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Tab 2 */}
-            <div className="hidden peer-checked/tab2:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EASYSB EXCEL WORKFLOW RISK
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Bulk Module Scraping + Switching to Excel Leaves Two Telemetry Trails
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  EasySB&apos;s flagship feature is exporting SmartBook modules into an Excel
-                  spreadsheet so you can Ctrl+F answers. That workflow creates two glaring
-                  problems:
-                </p>
-                <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900 space-y-1.5">
-                  <div>
-                    <strong>1. API Burst Anomaly:</strong> Scraping all concept nodes at once fires
-                    rapid automated requests through your authenticated McGraw-Hill session.
+          <div className="space-y-6 mb-8">
+            {/* Pillar 1 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EASYSB (easysb.org) LIMITATION
                   </div>
-                  <div>
-                    <strong>2. Constant Window Blur:</strong> Clicking out of Chrome into Excel for
-                    every question fires 40+ <code>window.blur</code> and{' '}
-                    <code>visibilitychange</code> events.
-                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Blind on Graded McGraw-Hill Connect Homework &amp; Timed Exams
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    McGraw-Hill has two completely different engines: <strong>SmartBook 2.0</strong>{' '}
+                    (ungraded/completion adaptive textbook reading with High/Medium/Low confidence
+                    buttons) and <strong>McGraw-Hill Connect Assessments</strong> (graded problem sets,
+                    accounting ledgers, chemistry equations, and timed midterms). EasySB only hooks
+                    SmartBook 2.0 reading JSON—meaning it cannot solve a single graded Connect problem
+                    set or exam.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
+                    <li>✗ Fails on McGraw-Hill Connect Graded Homework &amp; Quizzes</li>
+                    <li>✗ Fails on McGraw-Hill ALEKS Math &amp; Chemistry</li>
+                    <li>✗ Fails on Canvas, Blackboard, Moodle, &amp; Pearson MyLab</li>
+                  </ul>
                 </div>
-              </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST ZERO-TAB-SWITCH WORKFLOW
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  Stay Inside the Browser Tab With Zero API Scraping Bursts
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost never bulk-queries McGraw-Hill&apos;s backend APIs and never forces you
-                  to switch over to an Excel window. It reads only the currently rendered question
-                  on your screen, solves it in 0.3s inside a <code>Closed Shadow DOM</code> overlay,
-                  and keeps <code>Focus Shield</code> locked so your session records zero page-left
-                  events.
-                </p>
-                <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900 space-y-1.5">
-                  <div>✓ Zero abnormal API request bursts to mheducation.com</div>
-                  <div>✓ Zero switching to Excel or external windows</div>
-                  <div>✓ Always-on Focus Shield blocks window.blur &amp; visibilitychange</div>
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST UNIVERSAL ENGINE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Crushes Both SmartBook 2.0 AND Graded Connect / Canvas Exams
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    With ExamGhost, you don&apos;t need a separate tool for SmartBook reading and
+                    another tool for graded exams. <code>Double-Click</code> any question inside SmartBook 2.0
+                    to breeze through multi-select confidence questions in 0.3s, then use the exact
+                    same hotkey on your graded McGraw-Hill Connect accounting tables, ALEKS math, and
+                    Canvas midterms.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
+                    <li>✓ Solves SmartBook 2.0 &quot;Select all that apply&quot; &amp; fill-in-blanks</li>
+                    <li>✓ Solves graded McGraw-Hill Connect accounting, finance, &amp; STEM exams</li>
+                    <li>✓ Works seamlessly across Canvas, Blackboard, Moodle, D2L, &amp; MyLab</li>
+                  </ul>
                 </div>
               </div>
             </div>
 
-            {/* Tab 3 */}
-            <div className="hidden peer-checked/tab3:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  SMARTERBOOK LEGAL TAKEDOWN
+            {/* Pillar 2 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EASYSB EXCEL WORKFLOW RISK
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Bulk Module Scraping + Switching to Excel Leaves Two Telemetry Trails
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    EasySB&apos;s flagship feature is exporting SmartBook modules into an Excel
+                    spreadsheet so you can Ctrl+F answers. That workflow creates two glaring
+                    problems:
+                  </p>
+                  <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900 space-y-1.5">
+                    <div>
+                      <strong>1. API Burst Anomaly:</strong> Scraping all concept nodes at once fires
+                      rapid automated requests through your authenticated McGraw-Hill session.
+                    </div>
+                    <div>
+                      <strong>2. Constant Window Blur:</strong> Clicking out of Chrome into Excel for
+                      every question fires 40+ <code>window.blur</code> and{' '}
+                      <code>visibilitychange</code> events.
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Why Unpacked GitHub Forks of SmarterBook Are Dangerous in 2026
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  After SmarterBook&apos;s original author (Micah Lindley) shut down the project
-                  following a publisher cease-and-desist letter, copycat GitHub repositories and
-                  sketchy zip downloads popped up claiming to be &ldquo;SmarterBook 2026.&rdquo;
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
-                  <li>✗ Original repo archived &amp; unmaintained since legal notice</li>
-                  <li>✗ Injects visible DOM styles directly into SmartBook answer nodes</li>
-                  <li>✗ Copycat unpacked .zip forks frequently contain session-stealing scripts</li>
-                </ul>
-              </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  EXAMGHOST 2026 ARCHITECTURE
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST ZERO-TAB-SWITCH WORKFLOW
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Stay Inside the Browser Tab With Zero API Scraping Bursts
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost never bulk-queries McGraw-Hill&apos;s backend APIs and never forces you
+                    to switch over to an Excel window. It reads only the currently rendered question
+                    on your screen, solves it in 0.3s inside a <code>Closed Shadow DOM</code> overlay,
+                    and keeps <code>Focus Shield</code> locked so your session records zero page-left
+                    events.
+                  </p>
+                  <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900 space-y-1.5">
+                    <div>✓ Zero abnormal API request bursts to mheducation.com</div>
+                    <div>✓ Zero switching to Excel or external windows</div>
+                    <div>✓ Always-on Focus Shield blocks window.blur &amp; visibilitychange</div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Actively Maintained, Closed Shadow DOM, Zero Publisher API Scraping
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  Because ExamGhost uses independent Multi-Model AI + Vision OCR inside an isolated
-                  <code>Closed Shadow DOM</code> rather than redistributing proprietary McGraw-Hill
-                  answer keys, it works reliably across every 2026 textbook edition and platform
-                  update.
-                </p>
-                <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Works on every 2026 McGraw-Hill SmartBook &amp; Connect update</li>
-                  <li>✓ No reliance on leaked or scraped publisher answer keys</li>
-                  <li>✓ Zero host DOM style mutations on answer choice elements</li>
-                </ul>
               </div>
             </div>
 
-            {/* Tab 4 */}
-            <div className="hidden peer-checked/tab4:grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  SINGLE-PLATFORM FRAGMENTATION
+            {/* Pillar 3 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    SMARTERBOOK LEGAL TAKEDOWN
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    Why Unpacked GitHub Forks of SmarterBook Are Dangerous in 2026
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    After SmarterBook&apos;s original author (Micah Lindley) shut down the project
+                    following a publisher cease-and-desist letter, copycat GitHub repositories and
+                    sketchy zip downloads popped up claiming to be &ldquo;SmarterBook 2026.&rdquo;
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-red-900 bg-white border border-red-300 rounded-lg p-3">
+                    <li>✗ Original repo archived &amp; unmaintained since legal notice</li>
+                    <li>✗ Injects visible DOM styles directly into SmartBook answer nodes</li>
+                    <li>✗ Copycat unpacked .zip forks frequently contain session-stealing scripts</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-black mb-2">
-                  Paying for a Tool That Only Works in 1 Class Out of 5
-                </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  A typical college student takes 4 to 5 courses per semester: one class might use
-                  McGraw-Hill SmartBook, another uses Pearson MyLab Math, and all five use Canvas or
-                  Blackboard for midterms and finals. Buying a SmartBook-only tool leaves 80% of
-                  your semester uncovered.
-                </p>
-                <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
-                  <div>• Marketing 101 (SmartBook Reading): Covered by EasySB</div>
-                  <div className="text-red-600 font-bold">
-                    • Marketing 101 Midterm (Canvas): NOT Covered
+
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    EXAMGHOST 2026 ARCHITECTURE
                   </div>
-                  <div className="text-red-600 font-bold">
-                    • Financial Accounting (Connect Graded Ledger): NOT Covered
+                  <h3 className="text-xl font-black mb-2">
+                    Actively Maintained, Closed Shadow DOM, Zero Publisher API Scraping
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    Because ExamGhost uses independent Multi-Model AI (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1) + Vision OCR inside an isolated
+                    <code>Closed Shadow DOM</code> rather than redistributing proprietary McGraw-Hill
+                    answer keys, it works reliably across every 2026 textbook edition and platform
+                    update.
+                  </p>
+                  <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
+                    <li>✓ Works on every 2026 McGraw-Hill SmartBook &amp; Connect update</li>
+                    <li>✓ No reliance on leaked or scraped publisher answer keys</li>
+                    <li>✓ Zero host DOM style mutations on answer choice elements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 4 */}
+            <div className="bg-white border-2 border-[#111] rounded-2xl p-6 shadow-[6px_6px_0px_#111]">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    SINGLE-PLATFORM FRAGMENTATION
                   </div>
-                  <div className="text-red-600 font-bold">
-                    • Calculus / Stats (Pearson MyLab / ALEKS): NOT Covered
+                  <h3 className="text-xl font-black mb-2">
+                    Paying for a Tool That Only Works in 1 Class Out of 5
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    A typical college student takes 4 to 5 courses per semester: one class might use
+                    McGraw-Hill SmartBook, another uses Pearson MyLab Math, and all five use Canvas or
+                    Blackboard for midterms and finals. Buying a SmartBook-only tool leaves 80% of
+                    your semester uncovered.
+                  </p>
+                  <div className="bg-white border border-red-300 rounded-lg p-3 font-mono text-xs text-red-900">
+                    <div>• Marketing 101 (SmartBook Reading): Covered by EasySB</div>
+                    <div className="text-red-600 font-bold">
+                      • Marketing 101 Midterm (Canvas): NOT Covered
+                    </div>
+                    <div className="text-red-600 font-bold">
+                      • Financial Accounting (Connect Graded Ledger): NOT Covered
+                    </div>
+                    <div className="text-red-600 font-bold">
+                      • Calculus / Stats (Pearson MyLab / ALEKS): NOT Covered
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
+                  <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
+                    ALL-IN-ONE SEMESTER COVERAGE
+                  </div>
+                  <h3 className="text-xl font-black mb-2">
+                    One Extension for Every Course, LMS, and Homework Portal
+                  </h3>
+                  <p className="text-sm text-neutral-800 leading-relaxed mb-4">
+                    ExamGhost covers your entire semester schedule under a single lightweight
+                    extension—and lets you start with <strong>5 Free Solves / Day ($0, no card)</strong> to
+                    verify it on both SmartBook 2.0 and your Canvas/Blackboard quizzes. Transparent pricing: $19/mo, $99/yr [$8.25/mo], or $199 Lifetime.
+                  </p>
+                  <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
+                    <div>✓ McGraw-Hill SmartBook 2.0 + Connect Graded Homework/Exams</div>
+                    <div>✓ Canvas (Classic &amp; New Quizzes LTI), Blackboard, Moodle, D2L</div>
+                    <div>✓ Pearson MyLab, Mastering, ALEKS, Cengage MindTap &amp; WebAssign</div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="bg-emerald-50/70 border-2 border-[#111] rounded-xl p-5">
-                <div className="inline-block bg-emerald-700 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  ALL-IN-ONE SEMESTER COVERAGE
-                </div>
-                <h3 className="text-xl font-black mb-2">
-                  One Extension for Every Course, LMS, and Homework Portal
+          {/* ExamGhost Complete 6-Hotkey Execution Suite */}
+          <div className="bg-[#111] text-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#c2410c]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-neutral-800">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-wider text-orange-400 font-bold block mb-1">
+                  UNIVERSAL STEALTH SHORTCUTS
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white">
+                  ExamGhost 6-Hotkey Hardware Engine
                 </h3>
-                <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost covers your entire semester schedule under a single lightweight
-                  extension—and lets you start with <strong>50 Free Solves ($0, no card)</strong> to
-                  verify it on both SmartBook 2.0 and your Canvas/Blackboard quizzes.
-                </p>
-                <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
-                  <div>✓ McGraw-Hill SmartBook 2.0 + Connect Graded Homework/Exams</div>
-                  <div>✓ Canvas (Classic &amp; New Quizzes LTI), Blackboard, Moodle, D2L</div>
-                  <div>✓ Pearson MyLab, Mastering, ALEKS, Cengage MindTap &amp; WebAssign</div>
-                </div>
+              </div>
+              <span className="text-xs font-mono text-neutral-400 bg-neutral-900 px-3 py-1.5 rounded-lg border border-neutral-800 w-fit">
+                Zero Host DOM Elements
+              </span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-orange-400 mb-1">Double-Click</div>
+                <div className="text-xs font-bold text-neutral-200">Instant Solve</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Solve selected question</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-orange-400 mb-1">Alt+S</div>
+                <div className="text-xs font-bold text-neutral-200">Snap-It Vision</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Snip diagrams &amp; OCR</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-orange-400 mb-1">Alt+1</div>
+                <div className="text-xs font-bold text-neutral-200">Stealth Mode</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">5% to 100% opacity</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-orange-400 mb-1">Alt+2</div>
+                <div className="text-xs font-bold text-neutral-200">Split Screen</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Side-by-side study</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <div className="font-mono text-xs font-bold text-orange-400 mb-1">Alt+3</div>
+                <div className="text-xs font-bold text-neutral-200">Full Breakdown</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Step-by-step reasoning</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-900 border border-red-900/50">
+                <div className="font-mono text-xs font-bold text-red-400 mb-1">⌘+Shift+U</div>
+                <div className="text-xs font-bold text-neutral-200">Panic Purge</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">0.05s RAM &amp; DOM wipe</div>
               </div>
             </div>
           </div>
@@ -700,7 +713,7 @@ export default function EasySbVsExamGhostPage() {
               <div className="space-y-2.5 text-neutral-300">
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
                   <span className="text-emerald-300 font-bold">[SmartBook 2.0 • 00:12s]</span>{' '}
-                  Student presses <code>⌘+Shift+A</code> on adaptive multi-select question. Solved
+                  Student <code>Double-Clicks</code> the question on adaptive multi-select question. Solved
                   in 0.3s in-page with zero bulk API scraping.
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
@@ -827,8 +840,29 @@ export default function EasySbVsExamGhostPage() {
                     Limited demo
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ 50 Free Solves ($0, No Credit Card Required)
+                    ✓ 5 Free Solves / Day ($0, No Credit Card Required)
                   </td>
+                </tr>
+              
+                <tr>
+                  <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
+                    Pricing Model
+                  </td>
+                  <td className="p-4 text-neutral-500 border-r-2 border-[#111]">
+                    Discontinued
+                  </td>
+                  <td className="p-4 text-neutral-800 border-r-2 border-[#111]">
+                    $9.99/mo
+                  </td>
+                  <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
+                    ✓ 5 Free Solves / Day · $19/mo · $99/yr [$8.25/mo] · $199 Lifetime
+                  </td>
+                </tr>
+                <tr className="bg-emerald-50/20">
+                  <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                  <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                  <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                 </tr>
               </tbody>
             </table>
@@ -1015,7 +1049,7 @@ export default function EasySbVsExamGhostPage() {
             SOLVE SMARTBOOK 2.0 + CONNECT EXAMS + CANVAS IN ONE TOOL
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Try ExamGhost Free With 50 Solves ($0, No Card)
+            Try ExamGhost Free with 5 Free Solves / Day ($0, No Card)
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
             Stop exporting Excel spreadsheets or hunting for dead SmarterBook forks. Solve
@@ -1028,7 +1062,7 @@ export default function EasySbVsExamGhostPage() {
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-orange-400 text-[#111] font-black text-sm hover:bg-orange-300 transition-all"
             >
               <FaChrome className="w-4 h-4" aria-hidden="true" />
-              <span>Start 50 Free Solves · $0 No Card</span>
+              <span>Start 5 Free Solves / Day · $0 No Card</span>
             </Link>
             <Link prefetch={false}
               href="/compare-canvas-hack-extensions"
@@ -1083,7 +1117,13 @@ export default function EasySbVsExamGhostPage() {
           </div>
         </div>
       </section>
-      <Footer />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+        <StudyAiHubShowcase compact />
+      </div>
     </main>
+
+    <Footer />
+  </div>
   );
 }

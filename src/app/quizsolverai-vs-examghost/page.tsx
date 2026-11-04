@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { QuizSolverAiDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "QuizSolver AI vs ExamGhost (2026) — $224/Yr Cap vs Stealth",
     },
-    description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 50 Free Solves ($0 trial).",
+    description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 5 Free Solves / Day ($0 trial).",
     alternates: {
         canonical: "https://examghost.com/quizsolverai-vs-examghost",
     },
     openGraph: {
         title: "QuizSolver AI vs ExamGhost (2026) — $224/Yr Cap vs Stealth",
-        description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 50 Free Solves ($0 trial).",
+        description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 5 Free Solves / Day ($0 trial).",
         url: "https://examghost.com/quizsolverai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "QuizSolver AI vs ExamGhost (2026) — $224/Yr Cap vs Stealth",
-        description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 50 Free Solves ($0 trial).",
+        description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 5 Free Solves / Day ($0 trial).",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,13 +80,32 @@ export default function QuizSolverAIComparisonPage() {
                         "name": "ExamGhost",
                         "operatingSystem": "Chrome, Edge, Brave",
                         "applicationCategory": "EducationalApplication",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -145,7 +166,7 @@ export default function QuizSolverAIComparisonPage() {
                         "name": "What is the true cost comparison between QuizSolver AI and ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "QuizSolver AI charges up to $224.99/year on auto-renewing subscriptions with only 10 free answers upfront. ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by simple, uncapped plans: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime Degree Pass."
+                            "text": "QuizSolver AI charges up to $224.99/year on auto-renewing subscriptions with only 10 free answers upfront. ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by simple, uncapped plans: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime Degree Pass."
                         }
                     },
                     {
@@ -209,7 +230,7 @@ export default function QuizSolverAIComparisonPage() {
                                     QuizSolver AI gives you only <strong>10 free answers</strong> (`QuizKick`) before locking you into annual plans that cap your monthly solves—charging <strong>$64.99/yr for just 120 answers/mo</strong> (`Quiz Pass`) or <strong>$224.99/yr for unlimited answers</strong> (`Quiz Master`). Worse, clicking its Custom Answer Box or right-click Smart Highlight shifts focus away from Canvas and logs <em>&ldquo;Stopped viewing the Canvas quiz&rdquo;</em> in SpeedGrader.
                                 </p>
                                 <p className="text-sm sm:text-base text-emerald-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost gives you <strong>50 Free Solves ($0, no credit card)</strong>, blocks 100% of Canvas focus-blur logs with Focus Shield, and costs just <strong>$99/yr ($8.25/mo)</strong> or <strong>$199 Lifetime</strong> with zero monthly answer caps.
+                                    ExamGhost gives you <strong>5 Free Solves / Day ($0, no credit card)</strong>, blocks 100% of Canvas focus-blur logs with Focus Shield, and costs just <strong>$99/yr ($8.25/mo)</strong> or <strong>$199 Lifetime</strong> with zero monthly answer caps.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -218,7 +239,7 @@ export default function QuizSolverAIComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#bfe9d9]" aria-hidden="true"/>
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false} 
                                         href="/canvas-quiz-solver-free-demo"
@@ -290,7 +311,7 @@ export default function QuizSolverAIComparisonPage() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-8 mt-8 border-t border-black/10 relative z-10 text-xs">
                             <div className="p-3.5 rounded-2xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Free Trial Quota</span>
-                                <span className="font-bold text-emerald-900">ExamGhost: 50 Free Solves</span>
+                                <span className="font-bold text-emerald-900">ExamGhost: 5 Free Solves / Day</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">QuizSolver AI: Only 10 answers</span>
                             </div>
                             <div className="p-3.5 rounded-2xl bg-white/80 border border-black/5">
@@ -312,151 +333,145 @@ export default function QuizSolverAIComparisonPage() {
                     </div>
                 </header>
 
-                {/* INTERACTIVE 4-TIER QUIZSOLVER AI PRICING & QUOTA INSPECTOR (Pure CSS peer-checked) */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive Pricing Tier Inspector">
+                <QuizSolverAiDemo />
+
+                {/* 6 MODERN HOTKEYS & FRONTIER AI SUITE */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-12" aria-label="Modern Hotkeys & AI Models">
+                    <div className="rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-sky-950/40 border border-emerald-500/30 p-6 text-white shadow-card">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b border-white/10">
+                            <div>
+                                <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-1">Modern Stealth Controls</span>
+                                <h3 className="font-display text-lg font-bold">Complete 6-Hotkey Suite</h3>
+                            </div>
+                            <div className="flex flex-wrap gap-2 text-xs font-mono">
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">⌘+Shift+U</span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-300">
+                            <p className="leading-relaxed">
+                                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+                            </p>
+                            <div className="shrink-0 font-mono text-[11px] text-emerald-300 bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-500/40">
+                                Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 4-TIER QUIZSOLVER AI PRICING & QUOTA INSPECTOR (Visible Stacked Cards) */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Pricing Tier Inspector">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="text-center max-w-2xl mx-auto mb-8">
                             <span className="px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-900 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Interactive Tier &amp; Quota Inspector
+                                Technical Tier &amp; Quota Inspector
                             </span>
                             <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
                                 Inspect QuizSolver AI&apos;s 4 Capped Tiers vs ExamGhost
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click any QuizSolver AI plan below to see the yearly billing commitment, monthly answer caps, and how ExamGhost compares.
+                                Compare QuizSolver AI&apos;s four metered plans against ExamGhost&apos;s unlimited, DOM-isolated stealth architecture.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="qs_tier" id="qs_kick" className="sr-only peer/kick" defaultChecked />
-                        <input type="radio" name="qs_tier" id="qs_pass" className="sr-only peer/pass" />
-                        <input type="radio" name="qs_tier" id="qs_wiz" className="sr-only peer/wiz" />
-                        <input type="radio" name="qs_tier" id="qs_master" className="sr-only peer/master" />
+                        <div className="space-y-6">
+                            {/* TIER 1: QuizKick */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · QuizKick Starter</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">Only 10 Free Answers Total</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        A typical university Canvas quiz has 20 to 50 questions. With QuizSolver AI&apos;s 10-answer limit, your free trial runs out on Question 11 of your very first quiz—forcing you to pull out a credit card mid-assignment.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Quota: 10 solves total · Cuts off 20% into a 50-question exam
+                                    </div>
+                                </div>
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Free Starter Pass</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">5 Free Solves / Day ($0, No Card Needed)</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        ExamGhost gives you <strong>5 Free Solves / Day (auto-refilling every 24 hours, ~150 free solves/month)</strong> right out of the box with zero credit card required—so you can test Focus Shield and verify your SpeedGrader log stays 100% clean every single day.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Quota: 5 Free Solves / Day · All 24 Stealth Features Unlocked
+                                    </div>
+                                </div>
+                            </div>
 
-                        {/* 4 Tier Selector Buttons */}
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 p-2 rounded-2xl bg-[#f4efe6] border border-black/5 mb-8">
-                            <label
-                                htmlFor="qs_kick"
-                                className="cursor-pointer rounded-xl p-3 text-center transition-all border border-transparent peer-checked/kick:bg-ink peer-checked/kick:text-white peer-checked/kick:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. QuizKick (Free)</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">10 Answers Total</div>
-                            </label>
-                            <label
-                                htmlFor="qs_pass"
-                                className="cursor-pointer rounded-xl p-3 text-center transition-all border border-transparent peer-checked/pass:bg-ink peer-checked/pass:text-white peer-checked/pass:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. Quiz Pass ($64.99/yr)</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Capped at 120 / month</div>
-                            </label>
-                            <label
-                                htmlFor="qs_wiz"
-                                className="cursor-pointer rounded-xl p-3 text-center transition-all border border-transparent peer-checked/wiz:bg-ink peer-checked/wiz:text-white peer-checked/wiz:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. Quiz Wiz ($95.99/yr)</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Capped at 800 / month</div>
-                            </label>
-                            <label
-                                htmlFor="qs_master"
-                                className="cursor-pointer rounded-xl p-3 text-center transition-all border border-transparent peer-checked/master:bg-ink peer-checked/master:text-white peer-checked/master:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">4. Quiz Master ($224.99/yr)</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">$18.75/mo billed yearly</div>
-                            </label>
-                        </div>
+                            {/* TIER 2: Quiz Pass ($64.99/yr) */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Pass ($5.42/mo Billed Yearly)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$64.99 Upfront for Just 120 Answers/Mo</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        While advertised at &ldquo;$5.42/month,&rdquo; Quiz Pass bills <strong>$64.99/year upfront</strong> and strictly caps you at <strong>120 answers per month</strong>. If you take four courses at university, 120 answers barely covers three weekly homework assignments before your account locks until next month.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Cap: 120 answers/month (~4 answers per day) · Non-refundable
+                                    </div>
+                                </div>
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Academic Year Pass ($8.25/mo)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">Unlimited Solves All Year for $99/yr</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        Every paid ExamGhost plan includes <strong>unlimited solves</strong> across every class, quiz, and homework assignment—no counting credits during midterms. Or pick our flexible <strong>$19/mo Monthly Pass</strong> with one-click cancellation anytime.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Cap: Unlimited Solves · Multimodal Snap-It Vision Included
+                                    </div>
+                                </div>
+                            </div>
 
-                        {/* TIER 1: QuizKick */}
-                        <div className="hidden peer-checked/kick:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · QuizKick Starter</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">Only 10 Free Answers Total</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    A typical university Canvas quiz has 20 to 50 questions. With QuizSolver AI&apos;s 10-answer limit, your free trial runs out on Question 11 of your very first quiz—forcing you to pull out a credit card mid-assignment.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Quota: 10 solves total · Cuts off 20% into a 50-question exam
+                            {/* TIER 3: Quiz Wiz ($95.99/yr) */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Wiz ($8.00/mo Billed Yearly)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$95.99/yr and Still Capped at 800 Answers/Mo</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        Even when paying nearly $100/year (`$95.99/yr`), QuizSolver AI still meters your usage at 800 answers per month—and still uses the same folded-DOM answer box and unshielded overlay that triggers Canvas `window.blur` flags.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Cost: $95.99/yr · Still metered (800/mo cap) · No Focus Shield
+                                    </div>
+                                </div>
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Academic Year Pass ($99/yr)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">For $3 More per Year: Unlimited + True Stealth</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        For virtually the exact same annual price ($99/yr vs $95.99/yr), ExamGhost removes the 800/month cap entirely and upgrades you from a detectable DOM answer box to a <strong>Closed Shadow DOM v1 HUD with Focus Shield</strong>.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Cost: $99/yr ($8.25/mo) · 100% Uncapped · 0 SpeedGrader Flags
+                                    </div>
                                 </div>
                             </div>
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Free Starter Pass</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">50 Free Solves ($0, No Card Needed)</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    ExamGhost gives you <strong>5x more free solves (50 full questions)</strong> right out of the box with zero credit card required—enough to complete an entire 50-question midterm and verify that Focus Shield keeps your SpeedGrader log 100% clean.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Quota: 50 Free Solves · All 24 Stealth Features Unlocked
-                                </div>
-                            </div>
-                        </div>
 
-                        {/* TIER 2: Quiz Pass ($64.99/yr) */}
-                        <div className="hidden peer-checked/pass:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Pass ($5.42/mo Billed Yearly)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$64.99 Upfront for Just 120 Answers/Mo</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    While advertised at &ldquo;$5.42/month,&rdquo; Quiz Pass bills <strong>$64.99/year upfront</strong> and strictly caps you at <strong>120 answers per month</strong>. If you take four courses at university, 120 answers barely covers three weekly homework assignments before your account locks until next month.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Cap: 120 answers/month (~4 answers per day) · Non-refundable
+                            {/* TIER 4: Quiz Master ($224.99/yr) */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Master ($18.75/mo Billed Yearly)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$224.99 Charged Every Single Year</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        To unlock unlimited answers on QuizSolver AI, you must subscribe to <strong>Quiz Master at $224.99/year</strong>—more than ExamGhost&apos;s entire 4-year Lifetime Degree Pass—and if you forget to cancel before the annual renewal date, their FAQ explicitly states no refunds will be issued.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        4-Year Degree Cost on Quiz Master: $899.96
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Academic Year Pass ($8.25/mo)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">Unlimited Solves All Year for $99/yr</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    Every paid ExamGhost plan includes <strong>unlimited solves</strong> across every class, quiz, and homework assignment—no counting credits during midterms. Or pick our flexible <strong>$19/mo Monthly Pass</strong> with one-click cancellation anytime.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Cap: Unlimited Solves · Multimodal Snap-It Vision Included
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TIER 3: Quiz Wiz ($95.99/yr) */}
-                        <div className="hidden peer-checked/wiz:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Wiz ($8.00/mo Billed Yearly)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$95.99/yr and Still Capped at 800 Answers/Mo</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    Even when paying nearly $100/year (`$95.99/yr`), QuizSolver AI still meters your usage at 800 answers per month—and still uses the same folded-DOM answer box and unshielded overlay that triggers Canvas `window.blur` flags.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Cost: $95.99/yr · Still metered (800/mo cap) · No Focus Shield
-                                </div>
-                            </div>
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Academic Year Pass ($99/yr)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">For $3 More per Year: Unlimited + True Stealth</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    For virtually the exact same annual price ($99/yr vs $95.99/yr), ExamGhost removes the 800/month cap entirely and upgrades you from a detectable DOM answer box to a <strong>Closed Shadow DOM v1 HUD with Focus Shield</strong>.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Cost: $99/yr ($8.25/mo) · 100% Uncapped · 0 SpeedGrader Flags
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TIER 4: Quiz Master ($224.99/yr) */}
-                        <div className="hidden peer-checked/master:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-rose-800 mb-1">QuizSolver AI · Quiz Master ($18.75/mo Billed Yearly)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$224.99 Charged Every Single Year</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    To unlock unlimited answers on QuizSolver AI, you must subscribe to <strong>Quiz Master at $224.99/year</strong>—more than ExamGhost&apos;s entire 4-year Lifetime Degree Pass—and if you forget to cancel before the annual renewal date, their FAQ explicitly states no refunds will be issued.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    4-Year Degree Cost on Quiz Master: $899.96
-                                </div>
-                            </div>
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
-                                <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Lifetime Degree Pass ($199 One-Time)</div>
-                                <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$199 Once Forever (Save $700+ Over College)</h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                    Instead of paying $224.99 every single year on an auto-renewing subscription, you can get ExamGhost&apos;s <strong>Lifetime Degree Pass for $199 once</strong> (or $99/yr Academic Year Pass)—saving $25 immediately in Year 1 and over $700 across a 4-year degree.
-                                </p>
-                                <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    4-Year Degree Cost on ExamGhost Lifetime: $199.00 Total
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6">
+                                    <div className="text-xs font-mono font-bold uppercase text-emerald-800 mb-1">ExamGhost · Lifetime Degree Pass ($199 One-Time)</div>
+                                    <h3 className="font-display text-2xl font-extrabold text-ink mb-2">$199 Once Forever (Save $700+ Over College)</h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        Instead of paying $224.99 every single year on an auto-renewing subscription, you can get ExamGhost&apos;s <strong>Lifetime Degree Pass for $199 once</strong> (or $99/yr Academic Year Pass)—saving $25 immediately in Year 1 and over $700 across a 4-year degree.
+                                    </p>
+                                    <div className="p-3 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        4-Year Degree Cost on ExamGhost Lifetime: $199.00 Total
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -605,7 +620,7 @@ export default function QuizSolverAIComparisonPage() {
                                     <tr>
                                         <td className="p-4 sm:p-5 font-semibold text-ink">Free Starter Quota</td>
                                         <td className="p-4 sm:p-5 font-bold text-emerald-800 bg-[#bfe9d9]/20">
-                                            ✓ 50 Free Solves ($0 trial, no credit card)
+                                            ✓ 5 Free Solves / Day ($0 trial, no credit card)
                                         </td>
                                         <td className="p-4 sm:p-5 text-rose-800 font-medium">
                                             ✗ Only 10 free answers (QuizKick tier)
@@ -641,7 +656,7 @@ export default function QuizSolverAIComparisonPage() {
                                     <tr>
                                         <td className="p-4 sm:p-5 font-semibold text-ink">Snap-It Multimodal Screenshot OCR</td>
                                         <td className="p-4 sm:p-5 font-bold text-emerald-800 bg-[#bfe9d9]/20">
-                                            ✓ Yes (⌘+Shift+S Zero-Footprint Snip)
+                                            ✓ Yes (Alt+S Zero-Footprint Snip)
                                         </td>
                                         <td className="p-4 sm:p-5 text-ink-muted">
                                             Ctrl+Shift+Q QuickSnap (unshielded focus)
@@ -656,7 +671,15 @@ export default function QuizSolverAIComparisonPage() {
                                             ✗ Often fails to auto-detect inside LTI iframes
                                         </td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -697,7 +720,7 @@ export default function QuizSolverAIComparisonPage() {
                             ))}
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;My Organic Chemistry TA pulled me into office hours because my Canvas SpeedGrader log showed 22 separate &lsquo;Stopped viewing the quiz&rsquo; entries. I was using QuizSolver AI and had no clue clicking their Custom Answer Box was de-focusing my tab—plus I burned through my 120 monthly Quiz Pass credits in two weeks. I switched to ExamGhost that night. The 50 Free Solves let me test it risk-free, Focus Shield keeps the tab 100% active, and the $99/yr Academic Year Pass ($8.25/mo) is less than half of QuizSolver&apos;s $224.99/yr plan.&rdquo;
+                            &ldquo;My Organic Chemistry TA pulled me into office hours because my Canvas SpeedGrader log showed 22 separate &lsquo;Stopped viewing the quiz&rsquo; entries. I was using QuizSolver AI and had no clue clicking their Custom Answer Box was de-focusing my tab—plus I burned through my 120 monthly Quiz Pass credits in two weeks. I switched to ExamGhost that night. The 5 Free Solves / Day let me test it risk-free, Focus Shield keeps the tab 100% active, and the $99/yr Academic Year Pass ($8.25/mo) is less than half of QuizSolver&apos;s $224.99/yr plan.&rdquo;
                         </blockquote>
                         <div className="flex items-center justify-between text-xs text-ink-secondary pt-4 border-t border-black/10">
                             <div>
@@ -748,7 +771,7 @@ export default function QuizSolverAIComparisonPage() {
                                     5x More Free Solves · Zero Monthly Answer Caps
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Skip the $224.99/yr Quiz Master bill. Start 50 Free Solves today.
+                                    Skip the $224.99/yr Quiz Master bill. Start 5 Free Solves / Day today.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
                                     Zero window.blur leaks in Canvas SpeedGrader. Upgrade anytime to $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
@@ -760,7 +783,7 @@ export default function QuizSolverAIComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#bfe9d9]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -794,7 +817,10 @@ export default function QuizSolverAIComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

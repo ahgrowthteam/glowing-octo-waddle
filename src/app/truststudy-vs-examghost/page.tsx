@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { TrustStudyDemo } from '@/components/GeneralAiBatchBDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "TrustStudy vs ExamGhost (2026) — Dead DNS & Alt+X Audit",
     },
-    description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/truststudy-vs-examghost",
     },
     openGraph: {
         title: "TrustStudy vs ExamGhost (2026) — Dead DNS & Alt+X Audit",
-        description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/truststudy-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "TrustStudy vs ExamGhost (2026) — Dead DNS & Alt+X Audit",
-        description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,13 +80,32 @@ export default function TrustStudyComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -113,7 +134,7 @@ export default function TrustStudyComparisonPage() {
                         "name": "Is TrustStudy (truststudy.ai) still working in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Our 2026 technical audit confirmed that truststudy.ai fails DNS resolution (lookup truststudy.ai: no such host) and the TrustStudy Chrome extension (originally developed by Specimen) is no longer listed on the official Chrome Web Store. Students needing a reliable, actively maintained solver can switch to ExamGhost and start with 50 Free Solves."
+                            "text": "No. Our 2026 technical audit confirmed that truststudy.ai fails DNS resolution (lookup truststudy.ai: no such host) and the TrustStudy Chrome extension (originally developed by Specimen) is no longer listed on the official Chrome Web Store. Students needing a reliable, actively maintained solver can switch to ExamGhost and start with 5 Free Solves / Day."
                         }
                     },
                     {
@@ -137,7 +158,7 @@ export default function TrustStudyComparisonPage() {
                         "name": "How does ExamGhost pricing compare to TrustStudy?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "TrustStudy charged $9.99/month ($119.88/year) before its domain went offline. ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by transparent unlimited options: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or a one-time $199 Lifetime Degree Pass."
+                            "text": "TrustStudy charged $9.99/month ($119.88/year) before its domain went offline. ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by transparent unlimited options: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or a one-time $199 Lifetime Degree Pass."
                         }
                     },
                     {
@@ -198,7 +219,7 @@ export default function TrustStudyComparisonPage() {
                                     You don&apos;t have time for <span className="underline decoration-amber-500/60 decoration-wavy underline-offset-4">Alt+X hint loops</span> or dead DNS on a 50-minute exam.
                                 </h1>
                                 <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl font-normal">
-                                    TrustStudy (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">truststudy.ai</code> by Specimen) forced students through an active-recall <strong>&quot;study, think, reveal&quot;</strong> loop—making you guess an answer first before pressing <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">Alt+X</code> to unlock Eco or Max coaching hints. Worse, in 2026 its domain is completely offline (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">no such host</code>) and delisted from the Chrome Web Store. ExamGhost delivers <strong>0.3-second direct answers</strong> inside a closed Shadow DOM HUD, starting with <strong>50 Free Solves</strong>.
+                                    TrustStudy (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">truststudy.ai</code> by Specimen) forced students through an active-recall <strong>&quot;study, think, reveal&quot;</strong> loop—making you guess an answer first before pressing <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">Alt+X</code> to unlock Eco or Max coaching hints. Worse, in 2026 its domain is completely offline (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">no such host</code>) and delisted from the Chrome Web Store. ExamGhost delivers <strong>0.3-second direct answers</strong> inside a closed Shadow DOM HUD, starting with <strong>5 Free Solves / Day</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -207,7 +228,7 @@ export default function TrustStudyComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-emerald-300" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 Trial)</span>
                                     </a>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -228,7 +249,7 @@ export default function TrustStudyComparisonPage() {
                                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-secondary font-medium">
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        No credit card for 50 solves
+                                        5 Free Solves / Day (No Card)
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -303,6 +324,42 @@ export default function TrustStudyComparisonPage() {
                     </div>
                 </section>
 
+        <TrustStudyDemo />
+
+        {/* MODERN HOTKEYS & FRONTIER REASONING BAR */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+          <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+                  <Zap className="w-3.5 h-3.5" />
+                  ExamGhost Stealth Keyboard &amp; Model Suite
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+S</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+1</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+2</span>
+                <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Alt+3</span>
+                <span className="px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300">⌘+Shift+U</span>
+              </div>
+            </div>
+            <div className="pt-6 grid sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
+              </p>
+              <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
+                <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
+                <div className="font-bold text-white text-sm">
+                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
                 {/* QUICK METRIC RIBBON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -323,188 +380,162 @@ export default function TrustStudyComparisonPage() {
                         </div>
                         <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-sm text-center">
                             <div className="text-xs text-ink-muted mb-1 font-mono uppercase tracking-wider">Free Trial &amp; Plans</div>
-                            <div className="font-display text-2xl font-black text-emerald-800">50 Free Solves</div>
+                            <div className="font-display text-2xl font-black text-emerald-800">5 Free Solves / Day</div>
                             <div className="text-[11px] text-ink-muted mt-0.5">$19/mo · $99/yr · $199 Lifetime</div>
                         </div>
                     </div>
                 </section>
 
-                {/* INTERACTIVE 3-TAB AUDIT: Inside TrustStudy's 2026 Collapse */}
+                {/* 3 VISIBLE AUDIT EXPLORER DIMENSIONS: Inside TrustStudy's 2026 Collapse */}
                 <section id="truststudy-audit" className="max-w-6xl mx-auto px-4 sm:px-6 mb-20 scroll-mt-24">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="max-w-2xl mb-8">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-3">
                                 <Hourglass className="w-3.5 h-3.5" />
-                                Interactive Infrastructure &amp; Workflow Audit
+                                Infrastructure &amp; Workflow Audit
                             </div>
                             <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                 Why TrustStudy Fails Timed College Exams in 2026
                             </h2>
                             <p className="text-sm text-ink-secondary">
-                                Click through the three tabs below to inspect TrustStudy&apos;s 2026 DNS failure, its mandatory <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code> active-recall loop, and its Canvas SpeedGrader focus leaks.
+                                Direct forensic comparison of TrustStudy&apos;s 2026 DNS failure, its mandatory <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code> active-recall loop, and its Canvas SpeedGrader focus leaks.
                             </p>
                         </div>
 
-                        {/* Pure CSS Radio Tabs */}
-                        <input type="radio" name="truststudy_tab" id="tab-dns" className="sr-only peer/dns" defaultChecked />
-                        <input type="radio" name="truststudy_tab" id="tab-altx" className="sr-only peer/altx" />
-                        <input type="radio" name="truststudy_tab" id="tab-blur" className="sr-only peer/blur" />
+                        {/* 3 Visible Comparison Dimension Cards */}
+                        <div className="space-y-8">
+                            {/* TAB 1: Dead DNS & Chrome Store Delisting */}
+                            <div className="grid lg:grid-cols-12 gap-6 items-center p-6 sm:p-8 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="lg:col-span-7 space-y-4">
+                                    <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
+                                        Finding #1 · 2026 Domain &amp; Chrome Web Store Status
+                                    </span>
+                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                        <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">truststudy.ai</code> Returns <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">no such host</code>
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        TrustStudy (originally published by <strong>Specimen</strong> at <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">truststudy.ai</code> for $9.99/month) is completely offline as of our 2026 verification audit. Any DNS lookup to <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">truststudy.ai</code> fails immediately with <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">no such host</code>, and its extension listing has been removed from the official Chrome Web Store.
+                                    </p>
+                                    <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                        <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                            <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy in 2026</div>
+                                            <p className="text-xs text-rose-900/90 leading-relaxed">
+                                                Dead DNS records (<code className="text-[11px]">no such host</code>) and delisted Chrome extension leave existing installs hanging with network errors.
+                                            </p>
+                                        </div>
+                                        <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                            <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Edge Network</div>
+                                            <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                Multi-region cloud routing with a verified 99.98% uptime SLA during finals week—backed by <strong>5 Free Solves / Day</strong> to test right now.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:col-span-5">
+                                    <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                        <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                            $ curl -I https://truststudy.ai
+                                        </div>
+                                        <div className="space-y-1.5 text-rose-300">
+                                            <div>curl: (6) Could not resolve host: truststudy.ai</div>
+                                            <div className="text-amber-300 mt-2">// Go HTTP probe output:</div>
+                                            <div>dial tcp: lookup truststudy.ai: no such host</div>
+                                        </div>
+                                        <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                            <div className="font-bold">✓ ExamGhost 2026 Status:</div>
+                                            <div className="text-white/80">Active 0.3s Edge API · 5 Free Solves / Day</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="tab-dns"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/dns:bg-white peer-checked/dns:text-ink peer-checked/dns:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Globe className="w-4 h-4 text-rose-600" />
-                                <span>1. Dead DNS &amp; Delisting</span>
-                            </label>
-                            <label
-                                htmlFor="tab-altx"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/altx:bg-white peer-checked/altx:text-ink peer-checked/altx:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Keyboard className="w-4 h-4 text-amber-600" />
-                                <span>2. Alt+X &quot;Guess First&quot; Loop</span>
-                            </label>
-                            <label
-                                htmlFor="tab-blur"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-xs sm:text-sm font-bold text-center transition-all text-ink-secondary peer-checked/blur:bg-white peer-checked/blur:text-ink peer-checked/blur:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Activity className="w-4 h-4 text-purple-600" />
-                                <span>3. Practice-Only Blur Leaks</span>
-                            </label>
-                        </div>
+                            {/* TAB 2: The Alt+X "Study, Think, Reveal" Loop */}
+                            <div className="grid lg:grid-cols-12 gap-6 items-center p-6 sm:p-8 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="lg:col-span-7 space-y-4">
+                                    <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
+                                        Finding #2 · Active-Recall Friction vs Timed Quizzes
+                                    </span>
+                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                        Why Forced <code className="text-lg bg-amber-50 px-2 py-0.5 rounded border border-amber-200 text-amber-900">Alt+X</code> Eco/Max Loops Wreck Exam Pacing
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        TrustStudy was designed as a Socratic study coach, not a rapid exam solver. Its workflow forced a strict <strong>&quot;study, think, reveal&quot;</strong> cycle: you had to select your own guess first, press <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code>, and read through either an <strong>Eco</strong> (short hint) or <strong>Max</strong> (long conceptual walkthrough) explanation. On a 35-question exam with a 50-minute timer, spending 25 seconds per question playing guessing games costs over 14 minutes of clock time.
+                                    </p>
+                                    <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                        <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                            <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy Eco / Max Loop</div>
+                                            <p className="text-xs text-rose-900/90 leading-relaxed">
+                                                Requires guessing first + pressing <code className="text-[11px]">Alt+X</code> + reading multi-paragraph coaching notes to deduce the right option.
+                                            </p>
+                                        </div>
+                                        <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                            <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Direct HUD</div>
+                                            <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                Displays the exact verified option in <strong>0.3 seconds</strong> inside a subtle, adjustable-opacity HUD—no preliminary guessing required.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:col-span-5">
+                                    <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                        <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                            // 35-Question Timed Exam Clock Math
+                                        </div>
+                                        <div className="space-y-2 text-rose-300">
+                                            <div>TrustStudy (&quot;Study, Think, Reveal&quot;):</div>
+                                            <div className="pl-3 text-white/80">• Guess first: ~6s</div>
+                                            <div className="pl-3 text-white/80">• Alt+X Eco/Max render + read: ~19s</div>
+                                            <div className="pl-3 text-rose-400 font-bold">= 14m 35s lost across 35 questions</div>
+                                        </div>
+                                        <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                            <div>ExamGhost Direct 0.3s Solve:</div>
+                                            <div className="pl-3 text-emerald-400 font-bold">= 10.5 seconds total compute across 35 Qs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        {/* TAB 1: Dead DNS & Chrome Store Delisting */}
-                        <div className="hidden peer-checked/dns:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #1 · 2026 Domain &amp; Chrome Web Store Status
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">truststudy.ai</code> Returns <code className="text-lg bg-rose-50 px-2 py-0.5 rounded border border-rose-200 text-rose-900">no such host</code>
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    TrustStudy (originally published by <strong>Specimen</strong> at <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">truststudy.ai</code> for $9.99/month) is completely offline as of our 2026 verification audit. Any DNS lookup to <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">truststudy.ai</code> fails immediately with <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">no such host</code>, and its extension listing has been removed from the official Chrome Web Store.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
-                                        <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy in 2026</div>
-                                        <p className="text-xs text-rose-900/90 leading-relaxed">
-                                            Dead DNS records (<code className="text-[11px]">no such host</code>) and delisted Chrome extension leave existing installs hanging with network errors.
-                                        </p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Edge Network</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Multi-region cloud routing with a verified 99.98% uptime SLA during finals week—backed by <strong>50 Free Solves</strong> to test right now.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        $ curl -I https://truststudy.ai
-                                    </div>
-                                    <div className="space-y-1.5 text-rose-300">
-                                        <div>curl: (6) Could not resolve host: truststudy.ai</div>
-                                        <div className="text-amber-300 mt-2">// Go HTTP probe output:</div>
-                                        <div>dial tcp: lookup truststudy.ai: no such host</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div className="font-bold">✓ ExamGhost 2026 Status:</div>
-                                        <div className="text-white/80">Active 0.3s Edge API · 50 Free Solves</div>
+                            {/* TAB 3: Practice-Only UI vs Canvas SpeedGrader Telemetry */}
+                            <div className="grid lg:grid-cols-12 gap-6 items-center p-6 sm:p-8 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="lg:col-span-7 space-y-4">
+                                    <span className="inline-block px-2.5 py-1 rounded-md bg-purple-100 text-purple-900 text-xs font-bold uppercase tracking-wider">
+                                        Finding #3 · Canvas SpeedGrader Telemetry Exposure
+                                    </span>
+                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                        Built for Ungraded Practice—Zero Protection on Live LMS Quizzes
+                                    </h3>
+                                    <p className="text-sm text-ink-secondary leading-relaxed">
+                                        Because Specimen explicitly built TrustStudy for ungraded self-study and practice sets, the extension never included a Focus Shield or closed Shadow DOM isolation. Triggering its <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code> modal or toggling between Eco and Max tabs stole active focus from the LMS page, immediately firing <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.blur</code> in Canvas SpeedGrader.
+                                    </p>
+                                    <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                        <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                            <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy Overlay</div>
+                                            <p className="text-xs text-rose-900/90 leading-relaxed">
+                                                Standard injected DOM nodes and unshielded <code className="text-[11px]">Alt+X</code> focus shift log <em>&quot;Stopped viewing the Canvas quiz-taking page&quot;</em>.
+                                            </p>
+                                        </div>
+                                        <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                            <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Focus Shield</div>
+                                            <p className="text-xs text-emerald-900/90 leading-relaxed">
+                                                Intercepts <code className="text-[11px]">blur</code>, <code className="text-[11px]">focusout</code>, and <code className="text-[11px]">visibilitychange</code> at capture phase while keeping <code className="text-[11px]">document.hasFocus() === true</code>.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 2: The Alt+X "Study, Think, Reveal" Loop */}
-                        <div className="hidden peer-checked/altx:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #2 · Active-Recall Friction vs Timed Quizzes
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Why Forced <code className="text-lg bg-amber-50 px-2 py-0.5 rounded border border-amber-200 text-amber-900">Alt+X</code> Eco/Max Loops Wreck Exam Pacing
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    TrustStudy was designed as a Socratic study coach, not a rapid exam solver. Its workflow forced a strict <strong>&quot;study, think, reveal&quot;</strong> cycle: you had to select your own guess first, press <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code>, and read through either an <strong>Eco</strong> (short hint) or <strong>Max</strong> (long conceptual walkthrough) explanation. On a 35-question exam with a 50-minute timer, spending 25 seconds per question playing guessing games costs over 14 minutes of clock time.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
-                                        <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy Eco / Max Loop</div>
-                                        <p className="text-xs text-rose-900/90 leading-relaxed">
-                                            Requires guessing first + pressing <code className="text-[11px]">Alt+X</code> + reading multi-paragraph coaching notes to deduce the right option.
-                                        </p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Direct HUD</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Displays the exact verified option in <strong>0.3 seconds</strong> inside a subtle, adjustable-opacity HUD—no preliminary guessing required.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        // 35-Question Timed Exam Clock Math
-                                    </div>
-                                    <div className="space-y-2 text-rose-300">
-                                        <div>TrustStudy (&quot;Study, Think, Reveal&quot;):</div>
-                                        <div className="pl-3 text-white/80">• Guess first: ~6s</div>
-                                        <div className="pl-3 text-white/80">• Alt+X Eco/Max render + read: ~19s</div>
-                                        <div className="pl-3 text-rose-400 font-bold">= 14m 35s lost across 35 questions</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div>ExamGhost Direct 0.3s Solve:</div>
-                                        <div className="pl-3 text-emerald-400 font-bold">= 10.5 seconds total compute across 35 Qs</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 3: Practice-Only UI vs Canvas SpeedGrader Telemetry */}
-                        <div className="hidden peer-checked/blur:grid lg:grid-cols-12 gap-6 items-center">
-                            <div className="lg:col-span-7 space-y-4">
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-purple-100 text-purple-900 text-xs font-bold uppercase tracking-wider">
-                                    Finding #3 · Canvas SpeedGrader Telemetry Exposure
-                                </span>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Built for Ungraded Practice—Zero Protection on Live LMS Quizzes
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Because Specimen explicitly built TrustStudy for ungraded self-study and practice sets, the extension never included a Focus Shield or closed Shadow DOM isolation. Triggering its <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+X</code> modal or toggling between Eco and Max tabs stole active focus from the LMS page, immediately firing <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded">window.blur</code> in Canvas SpeedGrader.
-                                </p>
-                                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                                    <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200">
-                                        <div className="text-xs font-bold text-rose-950 mb-1">TrustStudy Overlay</div>
-                                        <p className="text-xs text-rose-900/90 leading-relaxed">
-                                            Standard injected DOM nodes and unshielded <code className="text-[11px]">Alt+X</code> focus shift log <em>&quot;Stopped viewing the Canvas quiz-taking page&quot;</em>.
-                                        </p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                        <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Focus Shield</div>
-                                        <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Intercepts <code className="text-[11px]">blur</code>, <code className="text-[11px]">focusout</code>, and <code className="text-[11px]">visibilitychange</code> at capture phase while keeping <code className="text-[11px]">document.hasFocus() === true</code>.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="lg:col-span-5">
-                                <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
-                                    <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
-                                        // Canvas SpeedGrader Event Stream
-                                    </div>
-                                    <div className="space-y-1.5 text-rose-300">
-                                        <div>[10:20:30] Alt+X pressed -&gt; TrustStudy panel focused</div>
-                                        <div>[10:20:30] window.onblur fired -&gt; AWAY LOGGED</div>
-                                        <div>[10:20:56] Student away for 26 seconds</div>
-                                    </div>
-                                    <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
-                                        <div className="font-bold">✓ ExamGhost Focus Shield:</div>
-                                        <div className="text-white/80">0 departures logged across entire exam session</div>
+                                <div className="lg:col-span-5">
+                                    <div className="rounded-2xl bg-[#14171f] text-slate-100 p-5 font-mono text-xs border border-black/20 shadow-md">
+                                        <div className="text-slate-400 mb-2 pb-2 border-b border-white/10">
+                                            // Canvas SpeedGrader Event Stream
+                                        </div>
+                                        <div className="space-y-1.5 text-rose-300">
+                                            <div>[10:20:30] Alt+X pressed -&gt; TrustStudy panel focused</div>
+                                            <div>[10:20:30] window.onblur fired -&gt; AWAY LOGGED</div>
+                                            <div>[10:20:56] Student away for 26 seconds</div>
+                                        </div>
+                                        <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
+                                            <div className="font-bold">✓ ExamGhost Focus Shield:</div>
+                                            <div className="text-white/80">0 departures logged across entire exam session</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -640,7 +671,7 @@ export default function TrustStudyComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial &amp; Paid Plans</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves · $19/mo · $99/yr · $199 Lifetime</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day · $19/mo · $99/yr ($8.25/mo) · $199 Lifetime Degree Pass</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">$9.99/month (Legacy / Defunct)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -668,7 +699,15 @@ export default function TrustStudyComparisonPage() {
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Instant Flush (⌘+Shift+U)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">None</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -700,7 +739,7 @@ export default function TrustStudyComparisonPage() {
                             ))}
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;TrustStudy seemed okay for ungraded flashcards, but during my Financial Accounting quiz at Indiana Kelley, its Alt+X &apos;study, think, reveal&apos; workflow was useless—you had to guess an answer first just to get an Eco/Max explanation! Then this semester truststudy.ai stopped loading completely. I switched to ExamGhost, tested the 50 Free Solves on Canvas, and upgraded to the $99/yr pass. It gives the exact answer in 0.3s with zero games.&quot;
+                            &quot;TrustStudy seemed okay for ungraded flashcards, but during my Financial Accounting quiz at Indiana Kelley, its Alt+X &apos;study, think, reveal&apos; workflow was useless—you had to guess an answer first just to get an Eco/Max explanation! Then this semester truststudy.ai stopped loading completely. I switched to ExamGhost, tested the 5 Free Solves / Day on Canvas, and upgraded to the $99/yr pass. It gives the exact answer in 0.3s with zero games.&quot;
                         </blockquote>
                         <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
                             <div>
@@ -777,13 +816,13 @@ export default function TrustStudyComparisonPage() {
                             <div className="max-w-xl">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/10 text-emerald-950 text-xs font-bold mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
-                                    Skip the Alt+X Guessing Games · 50 Free Solves
+                                    Skip the Alt+X Guessing Games · 5 Free Solves / Day
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                     Ready for 0.3-second direct answers that never go offline?
                                 </h2>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Test ExamGhost right now with <strong>50 Free Solves</strong> ($0 trial, no credit card required), then pick the plan that fits your semester: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
+                                    Test ExamGhost right now with <strong>5 Free Solves / Day</strong> ($0 trial, no credit card required), then pick the plan that fits your semester: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -792,7 +831,7 @@ export default function TrustStudyComparisonPage() {
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-emerald-300" aria-hidden="true" />
-                                    <span>Start 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </a>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -833,7 +872,10 @@ export default function TrustStudyComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

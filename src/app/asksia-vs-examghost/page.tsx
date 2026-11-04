@@ -18,6 +18,8 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { AskSiaCourseScraperDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
@@ -74,13 +76,12 @@ export default function AskSiaComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -131,7 +132,7 @@ export default function AskSiaComparisonPage() {
                         "name": "How does AskSia's DeltaMath Solver compare to ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "AskSia's DeltaMath Solver is an external web portal on asksia.ai where you must manually upload screenshots or type problems in a separate browser tab. ExamGhost solves DeltaMath, ALEKS, WebAssign, and Canvas STEM equations directly inside your active exam tab in 0.3 seconds via ⌘+Shift+S Snap-It Vision OCR with zero tab switching."
+                            "text": "AskSia's DeltaMath Solver is an external web portal on asksia.ai where you must manually upload screenshots or type problems in a separate browser tab. ExamGhost solves DeltaMath, ALEKS, WebAssign, and Canvas STEM equations directly inside your active exam tab in 0.3 seconds via Alt+S Snap-It Vision OCR with zero tab switching."
                         }
                     },
                     {
@@ -139,7 +140,7 @@ export default function AskSiaComparisonPage() {
                         "name": "How much does AskSia cost compared to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "AskSia allows 1 free course sync or a $0.99 3-day trial, then bills ~$25/month or $76–$210/year across its Plus, Super, and A+ subscription tiers. ExamGhost gives you 50 Free Solves upfront with zero credit card required, plus $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
+                            "text": "AskSia allows 1 free course sync or a $0.99 3-day trial, then bills ~$25/month or $76–$210/year across its Plus, Super, and A+ subscription tiers. ExamGhost gives you 5 Free Solves / Day upfront with zero credit card required, plus $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
                         }
                     }
                 ]
@@ -194,7 +195,7 @@ export default function AskSiaComparisonPage() {
                                     Students install the <strong>AskSia Chrome extension (<code>asksia.ai</code>)</strong> expecting an in-page quiz solver, only to discover its actual function: it injects a <strong>&ldquo;Sync to AskSia&rdquo;</strong> button onto your Canvas dashboard to bulk-scrape your course modules into an external web workspace—and forces you to <strong>switch browser tabs</strong> (firing <code>window.blur</code>) whenever you want to solve a question or DeltaMath problem.
                                 </p>
                                 <p className="text-sm sm:text-base text-amber-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost solves Canvas, Blackboard, Moodle, and DeltaMath questions directly inside your active exam tab in 0.3s via a Closed Shadow DOM HUD—starting with <strong>50 Free Solves ($0, no credit card)</strong>.
+                                    ExamGhost solves Canvas, Blackboard, Moodle, and DeltaMath questions directly inside your active exam tab in 0.3s via a Closed Shadow DOM HUD—starting with <strong>5 Free Solves / Day ($0, no credit card)</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -203,7 +204,7 @@ export default function AskSiaComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#fef0c7]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -230,7 +231,7 @@ export default function AskSiaComparisonPage() {
                                     <div className="flex items-center justify-between border-b border-black/10 pb-3">
                                         <span className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
                                             <FileWarning className="w-4 h-4 text-amber-700" />
-                                            3 Verbatim AskSia Realities
+                                            AskSia Course Scraper Architecture
                                         </span>
                                         <span className="text-[11px] font-mono text-ink-muted">asksia.ai</span>
                                     </div>
@@ -285,193 +286,203 @@ export default function AskSiaComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">DeltaMath &amp; STEM Solving</span>
-                                <span className="font-bold text-emerald-800">⌘+Shift+S On-Page Vision OCR</span>
+                                <span className="font-bold text-emerald-800">Alt+S On-Page Vision OCR</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">AskSia: Manual screenshot upload tab</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Pricing</span>
-                                <span className="font-bold text-emerald-800">50 Free · $19/mo · $99/yr</span>
+                                <span className="font-bold text-emerald-800">5 Free/Day · $19/mo · $99/yr</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">AskSia: $0.99 trial → ~$25/mo</span>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB ASKSIA ARCHITECTURE SWITCHER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive AskSia Breakdown">
+                <AskSiaCourseScraperDemo />
+
+                {/* MODERN HOTKEYS SUITE */}
+                <section className="py-8 bg-[#fdf7e7] border-y border-amber-950/10 mb-16">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center mb-6">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISIBLE 3-PILLAR ASKSIA ARCHITECTURE BREAKDOWN */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Visible AskSia Breakdown">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
+                        <div className="text-center max-w-2xl mx-auto mb-10">
                             <span className="px-3 py-1 rounded-full bg-amber-100 border border-amber-200 text-amber-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Workflow &amp; Telemetry Comparison
+                                Workflow &amp; Telemetry Breakdown
                             </span>
                             <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
                                 Why AskSia Fails During Timed Canvas &amp; DeltaMath Exams
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click each tab below to compare AskSia&apos;s bulk Canvas module scraper, its external tab-switch solver, and its Plus/Super/A+ pricing against ExamGhost.
+                                Detailed technical comparison across AskSia&apos;s bulk Canvas module scraper, its external tab-switch solver, and its Plus/Super/A+ pricing against ExamGhost.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="ask_tabs" id="ask_sync" className="sr-only peer/asksync" defaultChecked />
-                        <input type="radio" name="ask_tabs" id="ask_deltamath" className="sr-only peer/askdeltamath" />
-                        <input type="radio" name="ask_tabs" id="ask_pricing" className="sr-only peer/askpricing" />
-
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#fdf7e7] border border-amber-950/10 mb-8">
-                            <label
-                                htmlFor="ask_sync"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/asksync:bg-ink peer-checked/asksync:text-white peer-checked/asksync:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. &ldquo;Sync to AskSia&rdquo; Bulk Scraper</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Crawls all Canvas modules vs Local RAG</div>
-                            </label>
-                            <label
-                                htmlFor="ask_deltamath"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/askdeltamath:bg-ink peer-checked/askdeltamath:text-white peer-checked/askdeltamath:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. External Tab-Switch Solver</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Fires window.blur vs Inline Shadow HUD</div>
-                            </label>
-                            <label
-                                htmlFor="ask_pricing"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/askpricing:bg-ink peer-checked/askpricing:text-white peer-checked/askpricing:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. ~$25/mo Plus/Super/A+ Tiers</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">$0.99 trial hook vs 50 Free Solves</div>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: Sync to AskSia Bulk Scraper */}
-                        <div className="hidden peer-checked/asksync:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <FolderSync className="w-3.5 h-3.5" />
-                                        AskSia: Bulk-Crawls Your University Canvas Account
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Automated downloading of every module, file, and syllabus
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        When you install the AskSia Chrome extension, it injects a visible <strong>&ldquo;Sync to AskSia&rdquo;</strong> button onto your Canvas dashboard cards. Clicking it triggers a background script that crawls your authenticated Canvas session to download every course module, page, assignment, and file to AskSia&apos;s external servers.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        University IT security systems monitor abnormal bulk file downloads from student LMS sessions—and AskSia only gives you <strong>1 free course sync</strong> before demanding a paid upgrade.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Footprint: Injected dashboard button + bulk LMS module crawling
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: Selective Local-First Course Materials Vault
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Upload only the PDFs you choose—zero automated LMS crawling
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never crawls your university Canvas endpoints in the background. You selectively drop your study guide or lecture slides into our Course Materials Vault, and ExamGhost uses them to ground your live quiz answers inside a Closed Shadow DOM HUD.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Footprint: 0 Automated LMS Crawls · 100% Selective RAG
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 2: External Tab-Switch Solver */}
-                        <div className="hidden peer-checked/askdeltamath:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <ExternalLink className="w-3.5 h-3.5" />
-                                        AskSia: External Web Workspace (Logs Tab Switches)
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Forces you to leave the exam tab to use its AI solver
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        AskSia markets a <em>DeltaMath Solver</em> and <em>AI Homework Helper</em>, but those tools live inside the external <code>asksia.ai</code> web dashboard. During a timed Canvas, Blackboard, or DeltaMath assessment, switching tabs to paste a problem or upload a screenshot into AskSia immediately triggers <code>window.blur</code> and <code>document.visibilitychange</code>.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Workflow: Leave exam tab → Upload to asksia.ai → Log window.blur
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <Zap className="w-3.5 h-3.5" />
-                                        ExamGhost: 0.3s In-Page Solving + ⌘+Shift+S Snap-It
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Solve Canvas &amp; DeltaMath equations without ever leaving the tab
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost runs directly inside your active exam tab. Press <code>⌘+B</code> for instant DOM extraction or <code>⌘+Shift+S</code> to snip any DeltaMath graph or calculus integral—and view the step-by-step solution inside a Closed Shadow DOM overlay with Focus Shield blocking 100% of blur events.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Workflow: 0 Tab Switches · 0.3s Inline Shadow DOM HUD
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 3: ~$25/mo Plus/Super/A+ Tiers */}
-                        <div className="hidden peer-checked/askpricing:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <CreditCard className="w-3.5 h-3.5" />
-                                        AskSia: $0.99 3-Day Trial → Up to ~$25/Month
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Confusing Plus, Super &amp; A+ tiers costing up to $210/year
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        AskSia gates full access behind a <strong>$0.99 3-day trial</strong> that rolls into tiered recurring plans (Plus, Super, and A+ ranging from <strong>~$25/month</strong> or <strong>$76 to $210/year</strong>), with no one-time lifetime license.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Pricing: $0.99 3-day trial → ~$25/mo ($76–$210/yr)
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Free Solves ($0 No Card) + Simple Flat Plans
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Every feature unlocked on every plan. 50 Free Solves upfront.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never splits features across confusing Plus/Super/A+ tiers. You get 100% of our 24 stealth tools on every plan, starting with 50 Free Solves.
-                                    </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                        <div className="space-y-8">
+                            {/* PILLAR 1: Sync to AskSia Bulk Scraper */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/10">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <FolderSync className="w-3.5 h-3.5" />
+                                            AskSia: Bulk-Crawls Your University Canvas Account
                                         </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Automated downloading of every module, file, and syllabus
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            When you install the AskSia Chrome extension, it injects a visible <strong>&ldquo;Sync to AskSia&rdquo;</strong> button onto your Canvas dashboard cards. Clicking it triggers a background script that crawls your authenticated Canvas session to download every course module, page, assignment, and file to AskSia&apos;s external servers.
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            University IT security systems monitor abnormal bulk file downloads from student LMS sessions—and AskSia only gives you <strong>1 free course sync</strong> before demanding a paid upgrade.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Footprint: Injected dashboard button + bulk LMS module crawling
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <EyeOff className="w-3.5 h-3.5" />
+                                            ExamGhost: Selective Local-First Course Materials Vault
                                         </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Upload only the PDFs you choose—zero automated LMS crawling
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost never crawls your university Canvas endpoints in the background. You selectively drop your study guide or lecture slides into our Course Materials Vault, and ExamGhost uses them to ground your live quiz answers inside a Closed Shadow DOM HUD.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Footprint: 0 Automated LMS Crawls · 100% Selective RAG
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* PILLAR 2: External Tab-Switch Solver */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/10">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <ExternalLink className="w-3.5 h-3.5" />
+                                            AskSia: External Web Workspace (Logs Tab Switches)
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Forces you to leave the exam tab to use its AI solver
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            AskSia markets a <em>DeltaMath Solver</em> and <em>AI Homework Helper</em>, but those tools live inside the external <code>asksia.ai</code> web dashboard. During a timed Canvas, Blackboard, or DeltaMath assessment, switching tabs to paste a problem or upload a screenshot into AskSia immediately triggers <code>window.blur</code> and <code>document.visibilitychange</code>.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Workflow: Leave exam tab → Upload to asksia.ai → Log window.blur
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <Zap className="w-3.5 h-3.5" />
+                                            ExamGhost: 0.3s In-Page Solving + Alt+S Snap-It
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Solve Canvas &amp; DeltaMath equations without ever leaving the tab
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost runs directly inside your active exam tab. <strong>Double-Click</strong> for instant DOM extraction or press <code>Alt+S</code> to snip any DeltaMath graph or calculus integral—and view the step-by-step solution inside a Closed Shadow DOM overlay with Focus Shield blocking 100% of blur events.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Workflow: 0 Tab Switches · 0.3s Inline Shadow DOM HUD
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* PILLAR 3: ~$25/mo Plus/Super/A+ Tiers */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/10">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <CreditCard className="w-3.5 h-3.5" />
+                                            AskSia: $0.99 3-Day Trial → Up to ~$25/Month
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Confusing Plus, Super &amp; A+ tiers costing up to $210/year
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            AskSia gates full access behind a <strong>$0.99 3-day trial</strong> that rolls into tiered recurring plans (Plus, Super, and A+ ranging from <strong>~$25/month</strong> or <strong>$76 to $210/year</strong>), with no one-time lifetime license.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Pricing: $0.99 3-day trial → ~$25/mo ($76–$210/yr)
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <ShieldCheck className="w-3.5 h-3.5" />
+                                            ExamGhost: 5 Free Solves / Day ($0 No Card) + Simple Flat Plans
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-ink mb-2">
+                                            Every feature unlocked on every plan. 5 Free Solves / Day upfront.
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost never splits features across confusing Plus/Super/A+ tiers. You get 100% of our 24 stealth tools on every plan, starting with 5 Free Solves / Day ($0, zero card needed).
+                                        </p>
+                                        <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass ($19.00 / month)</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
+                                                <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$199</div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass ($199 Lifetime)</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Pricing: 50 Free Solves · $99/yr ($8.25/mo) · $199 Lifetime
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Pricing: 5 Free Solves / Day · $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -576,12 +587,12 @@ export default function AskSiaComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">DeltaMath &amp; STEM Diagram OCR</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ In-Page ⌘+Shift+S Snap-It Vision</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ In-Page Alt+S Snap-It Vision</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Requires uploading screenshots on asksia.ai</td>
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves ($0, No Card Needed)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day ($0, No Card Needed)</td>
                                         <td className="py-3.5 px-4 text-ink-muted">1 free course sync / $0.99 3-day trial</td>
                                     </tr>
                                     <tr>
@@ -589,7 +600,15 @@ export default function AskSiaComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">~$25/mo or $76–$210/yr (Plus / Super / A+)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -683,7 +702,7 @@ export default function AskSiaComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                AskSia&apos;s DeltaMath Solver is an external web portal on <code>asksia.ai</code> where you must manually upload screenshots or type problems in a separate browser tab. ExamGhost solves DeltaMath, ALEKS, WebAssign, and Canvas STEM equations directly inside your active exam tab in 0.3 seconds via <code>⌘+Shift+S</code> Snap-It Vision OCR with zero tab switching.
+                                AskSia&apos;s DeltaMath Solver is an external web portal on <code>asksia.ai</code> where you must manually upload screenshots or type problems in a separate browser tab. ExamGhost solves DeltaMath, ALEKS, WebAssign, and Canvas STEM equations directly inside your active exam tab in 0.3 seconds via <code>Alt+S</code> Snap-It Vision OCR with zero tab switching.
                             </p>
                         </details>
 
@@ -693,7 +712,7 @@ export default function AskSiaComparisonPage() {
                                 <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
                             </summary>
                             <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                AskSia allows 1 free course sync or a $0.99 3-day trial, then bills <strong>~$25/month</strong> or <strong>$76–$210/year</strong> across its Plus, Super, and A+ subscription tiers. ExamGhost gives you <strong>50 Free Solves</strong> upfront with zero credit card required, plus <strong>$19/mo</strong> Monthly, <strong>$99/yr</strong> Academic Year ($8.25/mo), or <strong>$199 Lifetime</strong>.
+                                AskSia allows 1 free course sync or a $0.99 3-day trial, then bills <strong>~$25/month</strong> or <strong>$76–$210/year</strong> across its Plus, Super, and A+ subscription tiers. ExamGhost gives you <strong>5 Free Solves / Day</strong> upfront with zero credit card required, plus <strong>$19/mo</strong> Monthly, <strong>$99/yr</strong> Academic Year ($8.25/mo), or <strong>$199 Lifetime</strong>.
                             </p>
                         </details>
                     </div>
@@ -711,7 +730,7 @@ export default function AskSiaComparisonPage() {
                                     Stop switching tabs to an external study dashboard mid-exam.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Start with 50 Free Solves on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -720,7 +739,7 @@ export default function AskSiaComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#fef0c7]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -757,7 +776,10 @@ export default function AskSiaComparisonPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

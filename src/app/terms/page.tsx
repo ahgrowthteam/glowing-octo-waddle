@@ -80,7 +80,7 @@ export default function TermsPage() {
                         Terms of Service
                     </h1>
                     <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
-                        Last modified: March 1, 2026 · ExamGhost provides a 50-question free trial with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day 100% money-back refund guarantee.
+                        Last modified: March 1, 2026 · ExamGhost provides 5 Free Solves / Day (auto-refilling every 24 hours) with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day 100% money-back refund guarantee.
                     </p>
                 </div>
 
@@ -90,7 +90,7 @@ export default function TermsPage() {
                         <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 block max-w-max mb-3">
                             Free Trial
                         </span>
-                        <h2 className="font-display font-bold text-base text-ink mb-1">50 Free Solves</h2>
+                        <h2 className="font-display font-bold text-base text-ink mb-1">5 Free Solves / Day</h2>
                         <p className="text-xs text-ink-muted leading-relaxed">
                             Full stealth HUD and Focus Shield unlocked with zero credit card required.
                         </p>
@@ -143,10 +143,10 @@ export default function TermsPage() {
                             We grant you a personal, non-transferable, non-exclusive license to use the Extension subject to the plan tier you select:
                         </p>
                         <ul className="space-y-2.5 pl-4 list-disc text-xs sm:text-sm">
-                            <li><strong>Free Trial:</strong> Grants 50 question credit solves for testing purposes. No credit card or recurring subscription is created.</li>
-                            <li><strong>Monthly Pass ($19/mo):</strong> Grants unlimited question solves on a month-to-month basis. Automatically renews every 30 days unless canceled through your account or Discord billing support before the renewal date.</li>
-                            <li><strong>Yearly Academic Pass ($99/yr):</strong> Grants unlimited question solves for 365 days (~$8.25/mo), covering Fall, Spring, Summer semesters, and Finals week.</li>
-                            <li><strong>Lifetime VIP Pass ($199 one-time):</strong> Grants permanent, perpetual personal access with zero future renewals or maintenance fees. Includes multi-device sync for up to 3 authorized student laptops.</li>
+                            <li><strong>Free Tier:</strong> Grants 5 free question solves per day (auto-refills every 24 hours) for testing purposes. No credit card or recurring subscription is created.</li>
+                            <li><strong>Monthly Pass ($19/mo):</strong> Grants unlimited extension question solves plus full access to the Claude, ChatGPT &amp; DeepSeek Study &amp; Homework AI Workspace on a month-to-month basis. Automatically renews every 30 days unless canceled through your account or Discord billing support before the renewal date.</li>
+                            <li><strong>Yearly Academic Pass ($99/yr):</strong> Grants unlimited extension question solves plus full Study &amp; Homework AI Workspace access for 365 days (~$8.25/mo), covering Fall, Spring, Summer semesters, and Finals week.</li>
+                            <li><strong>Lifetime VIP Pass ($199 one-time):</strong> Grants permanent, perpetual personal access to both the stealth extension and the Study &amp; Homework AI Workspace with zero future renewals or maintenance fees. Includes multi-device sync for up to 3 authorized student laptops.</li>
                         </ul>
                     </section>
 

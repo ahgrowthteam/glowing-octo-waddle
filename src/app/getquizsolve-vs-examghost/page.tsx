@@ -21,18 +21,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { GetQuizSolvePlaintextPrivacyLeakDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "GetQuizSolve vs ExamGhost (2026) — 5/Day Cap & DOM Audit",
     },
-    description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 50 Free Solves.",
+    description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/getquizsolve-vs-examghost",
     },
     openGraph: {
         title: "GetQuizSolve vs ExamGhost (2026) — 5/Day Cap & DOM Audit",
-        description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 50 Free Solves.",
+        description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 5 Free Solves / Day.",
         url: "https://examghost.com/getquizsolve-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "GetQuizSolve vs ExamGhost (2026) — 5/Day Cap & DOM Audit",
-        description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 50 Free Solves.",
+        description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -77,13 +79,32 @@ export default function GetQuizSolveComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -134,7 +155,7 @@ export default function GetQuizSolveComparisonPage() {
                         "name": "How does GetQuizSolve's free tier and Pro pricing work in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "GetQuizSolve restricts free accounts to just 5 questions per day (resetting at midnight), 2 screenshot solves ('Snap It') per day, and 5 AI tutor chats per day. If a student is taking a 25-question midterm, they are cut off at Question 6 by a paywall demanding $4.99/week ($259.48/yr), $12.99/month ($155.88/yr), or $8.33/mo billed yearly ($99.96/yr)—and even Pro accounts are rate-limited to 30 requests/minute, 200 requests/hour, and 100 AI tutor chats/day. ExamGhost includes 50 Free Solves upfront with zero daily throttles, followed by $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
+                            "text": "GetQuizSolve restricts free accounts to just 5 questions per day (resetting at midnight), 2 screenshot solves ('Snap It') per day, and 5 AI tutor chats per day. If a student is taking a 25-question midterm, they are cut off at Question 6 by a paywall demanding $4.99/week ($259.48/yr), $12.99/month ($155.88/yr), or $8.33/mo billed yearly ($99.96/yr)—and even Pro accounts are rate-limited to 30 requests/minute, 200 requests/hour, and 100 AI tutor chats/day. ExamGhost includes 5 Free Solves / Day upfront with zero daily throttles, followed by $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
                         }
                     },
                     {
@@ -150,7 +171,7 @@ export default function GetQuizSolveComparisonPage() {
                         "name": "Can ExamGhost solve questions locked in images without a 2/day limit?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Unlike GetQuizSolve, which caps free 'Snap It' screenshot solves at just 2 per day, ExamGhost includes full Snap-It Vision OCR (⌘+Shift+S) across all 50 Free Solves, capturing protected images, canvas diagrams, or PDF charts in memory and generating verified answers in 0.3s."
+                            "text": "Yes. Unlike GetQuizSolve, which caps free 'Snap It' screenshot solves at just 2 per day, ExamGhost includes full Snap-It Vision OCR (Alt+S) across all 5 Free Solves / Day, capturing protected images, canvas diagrams, or PDF charts in memory and generating verified answers in 0.3s."
                         }
                     }
                 ]
@@ -206,7 +227,7 @@ export default function GetQuizSolveComparisonPage() {
                                     GetQuizSolve (listed on Chrome as <em>&ldquo;AI Quiz Solve&rdquo;</em>) caps free accounts at just <strong>5 questions per day and 2 screenshot solves per day</strong>—cutting you off 15% into a midterm with a paywall demanding <strong>$4.99/week ($259.48/yr)</strong>. Worse, its default double-click <strong>Auto-fill</strong> mode clicks Canvas radio buttons via JavaScript (<code>event.isTrusted: false</code>), and even their own docs admit: <em>&ldquo;Auto-fill can&apos;t always select the option.&rdquo;</em>
                                 </p>
                                 <p className="text-sm sm:text-base text-purple-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost gives you <strong>50 Free Solves upfront (including full Snap-It Vision OCR)</strong> with zero daily throttling, and keeps your clicks 100% authentic (<code>isTrusted: true</code>).
+                                    ExamGhost gives you <strong>5 Free Solves / Day upfront (including full Snap-It Vision OCR)</strong> with zero daily throttling, and keeps your clicks 100% authentic (<code>isTrusted: true</code>).
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -215,7 +236,7 @@ export default function GetQuizSolveComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#e2d3fa]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -283,13 +304,13 @@ export default function GetQuizSolveComparisonPage() {
                                         <div className="pt-2 border-t border-black/5">
                                             <div className="flex justify-between font-semibold text-emerald-900 mb-1">
                                                 <span>ExamGhost Free Starter Pass:</span>
-                                                <span className="font-mono">50 Free Solves (0 Daily Cap)</span>
+                                                <span className="font-mono">5 Free Solves / Day (0 Daily Cap)</span>
                                             </div>
                                             <div className="w-full h-2.5 rounded-full bg-emerald-100 overflow-hidden">
                                                 <div className="w-full h-full bg-emerald-600 rounded-full" />
                                             </div>
                                             <span className="text-[10px] text-emerald-800 font-medium block mt-1">
-                                                ✓ Includes full Snap-It Vision OCR on all 50 Free Solves
+                                                ✓ Includes full Snap-It Vision OCR on all 5 Free Solves / Day
                                             </span>
                                         </div>
                                     </div>
@@ -306,7 +327,7 @@ export default function GetQuizSolveComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Free Quota</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 50 Free Solves</span>
+                                <span className="font-bold text-emerald-800">ExamGhost: 5 Free Solves / Day</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">GetQuizSolve: 5 Qs + 2 Snaps/day</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
@@ -316,12 +337,14 @@ export default function GetQuizSolveComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Pricing Model</span>
-                                <span className="font-bold text-emerald-800">$19/mo · $99/yr · $199 Life</span>
+                                <span className="font-bold text-emerald-800">$19/mo · $99/yr · $199 Lifetime</span>
                                 <span className="text-ink-muted block text-[10px] mt-0.5">GetQuizSolve: $4.99/wk ($259/yr)</span>
                             </div>
                         </div>
                     </div>
                 </header>
+
+                <GetQuizSolvePlaintextPrivacyLeakDemo />
 
                 {/* INTERACTIVE 3-TAB GETQUIZSOLVE REALITY SWITCHER (Pure CSS peer-checked) */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive GetQuizSolve Breakdown">
@@ -339,9 +362,9 @@ export default function GetQuizSolveComparisonPage() {
                         </div>
 
                         {/* Hidden Radio Inputs */}
-                        <input type="radio" name="gqs_tabs" id="gqs_autofill" className="sr-only peer/autofill" defaultChecked />
-                        <input type="radio" name="gqs_tabs" id="gqs_daily" className="sr-only peer/daily" />
-                        <input type="radio" name="gqs_tabs" id="gqs_pro" className="sr-only peer/pro" />
+                        
+                        
+                        
 
                         {/* Tab Labels */}
                         <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f3eefc] border border-purple-950/10 mb-8">
@@ -357,7 +380,7 @@ export default function GetQuizSolveComparisonPage() {
                                 className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/daily:bg-ink peer-checked/daily:text-white peer-checked/daily:shadow-sm text-ink hover:bg-black/5"
                             >
                                 <div className="font-display font-bold text-xs sm:text-sm">2. 5 Qs + 2 Screenshots/Day Cap</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Mid-exam paywall vs 50 Free Solves</div>
+                                <div className="text-[11px] opacity-75 mt-0.5">Mid-exam paywall vs 5 Free Solves / Day</div>
                             </label>
                             <label
                                 htmlFor="gqs_pro"
@@ -369,7 +392,7 @@ export default function GetQuizSolveComparisonPage() {
                         </div>
 
                         {/* TAB 1: Auto-Fill Danger */}
-                        <div className="hidden peer-checked/autofill:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -421,7 +444,7 @@ export default function GetQuizSolveComparisonPage() {
                         </div>
 
                         {/* TAB 2: 5 Qs + 2 Screenshots/Day Cap */}
-                        <div className="hidden peer-checked/daily:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -461,18 +484,18 @@ export default function GetQuizSolveComparisonPage() {
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
                                         <Zap className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Free Solves (Zero Daily Throttle)
+                                        ExamGhost: 5 Free Solves / Day (Zero Daily Throttle)
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Use all 50 Free Solves in a single exam sitting
+                                        Use all 5 Free Solves / Day in a single exam sitting
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost gives you <strong>50 Free Solves upfront</strong> with no credit card required and <strong>zero daily rate limits</strong>. Whether you need 50 text solves or 50 <code>⌘+Shift+S</code> Snap-It Vision diagram snips in one afternoon, you never hit an artificial daily wall.
+                                        ExamGhost gives you <strong>5 Free Solves / Day upfront</strong> with no credit card required and <strong>zero daily rate limits</strong>. And when you upgrade to any Unlimited Pass ($19/mo, $99/yr, or $199 Lifetime), whether you need 50 text solves or 50 <code>Alt+S</code> Snap-It Vision diagram snips in one afternoon, you never hit an artificial daily wall.
                                     </p>
                                     <ul className="space-y-2 text-xs text-ink-secondary mb-4">
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Full Snap-It Vision Included:</strong> Snip molecular diagrams, calculus integrals, or physics graphs across all 50 free solves.</span>
+                                            <span><strong>Full Snap-It Vision Included:</strong> Snip molecular diagrams, calculus integrals, or physics graphs across all 5 free solves / day.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
@@ -481,13 +504,13 @@ export default function GetQuizSolveComparisonPage() {
                                     </ul>
                                 </div>
                                 <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Free Tier Limit: 50 Full Solves · Text + Screenshot OCR Included
+                                    Free Tier: 5 Free Solves / Day (Auto-Refills) · Text + Screenshot OCR Included
                                 </div>
                             </div>
                         </div>
 
                         {/* TAB 3: $4.99/Week + Pro Rate Limits */}
-                        <div className="hidden peer-checked/pro:grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
                                 <div>
                                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
@@ -521,7 +544,7 @@ export default function GetQuizSolveComparisonPage() {
                                         Zero weekly billing traps. Zero hourly rate throttles.
                                     </h3>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        After you finish your 50 Free Solves, pick the exact pass that fits your semester with zero hourly or daily caps:
+                                        After you finish your 5 Free Solves / Day, pick the exact pass that fits your semester with zero hourly or daily caps:
                                     </p>
                                     <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
                                         <div className="p-3 rounded-xl bg-white border border-emerald-200">
@@ -636,7 +659,7 @@ export default function GetQuizSolveComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Tier Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves (Zero daily throttle)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day (Zero daily throttle)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 5 questions/day + 2 screenshot solves/day + 5 chats/day</td>
                                     </tr>
                                     <tr>
@@ -656,12 +679,12 @@ export default function GetQuizSolveComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Snap-It Vision OCR (Locked Diagrams)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ ⌘+Shift+S Included in All 50 Free Solves</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Alt+S Included in All 5 Free Solves / Day</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Ctrl+Shift+S capped at 2 screenshot solves/day on Free</td>
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Pricing Model</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves · $19/mo · $99/yr · $199 Lifetime</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">$4.99/week ($259/yr), $12.99/mo, or $99.96/yr (No lifetime option)</td>
                                     </tr>
                                     <tr>
@@ -674,7 +697,15 @@ export default function GetQuizSolveComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Zero Third-Party Trackers · Ephemeral Memory</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Collects User Activity &amp; Website Content (quizsolve.vercel.app)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -716,7 +747,7 @@ export default function GetQuizSolveComparisonPage() {
                             <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;During my economics midterm, GetQuizSolve cut me off after my 5th double-click and 2nd graph screenshot with a paywall asking for $4.99/week or $12.99/month. Even worse, its default Auto-fill couldn&apos;t select Canvas New Quizzes radio buttons without opening the toolbar popup to switch to Highlight mode, which logged window blurs. I switched to ExamGhost: 50 Free Solves right out of the box, zero daily limits, and authentic hardware clicks from a closed Shadow DOM HUD.&rdquo;
+                            &ldquo;During my economics midterm, GetQuizSolve cut me off after my 5th double-click and 2nd graph screenshot with a paywall asking for $4.99/week or $12.99/month. Even worse, its default Auto-fill couldn&apos;t select Canvas New Quizzes radio buttons without opening the toolbar popup to switch to Highlight mode, which logged window blurs. I switched to ExamGhost: 5 Free Solves / Day right out of the box, zero daily limits, and authentic hardware clicks from a closed Shadow DOM HUD.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-purple-900 text-white font-bold flex items-center justify-center text-sm">
@@ -766,10 +797,10 @@ export default function GetQuizSolveComparisonPage() {
                         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 mb-8 border-b border-black/10">
                             <div>
                                 <span className="inline-block px-3 py-1 rounded-full bg-white/85 border border-black/10 text-[11px] font-bold text-purple-950 uppercase tracking-wider mb-2">
-                                    isTrusted: true Hardware Telemetry · 50 Free Solves
+                                    isTrusted: true Hardware Telemetry · 5 Free Solves / Day
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Stop getting cut off at Question 5. Start 50 Free Solves today.
+                                    Stop getting cut off at Question 5. Start 5 Free Solves / Day today.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
                                     No 5-question or 2-screenshot daily caps. No synthetic Auto-fill flags. Upgrade anytime to $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
@@ -781,7 +812,7 @@ export default function GetQuizSolveComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#e2d3fa]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -815,7 +846,96 @@ export default function GetQuizSolveComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              
+                {/* 6 MODERN HOTKEYS COMPARISON */}
+                <section className="py-12 bg-white border-y border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                6 Modern Stealth Hotkeys for Live Exams
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Instantly solve, extract diagrams, or wipe RAM in under 0.3s without touching your mouse or triggering window.blur.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Double-Click</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Instant Inline Solve</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">0.3s Shadow DOM HUD</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+S</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Hybrid Vision Snip</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Captures locked diagrams</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+1</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Ghost Dot Mode</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Zero UI footprint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+2</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Smart Highlight</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Discreet answer tint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+3</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Sidebar Derivation</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Step-by-step proofs</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">⌘+Shift+U</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Panic RAM Wipe</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Instant emergency close</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 2-IN-1 FRONTIER AI MODELS */}
+                <section className="py-12 bg-neutral-50 border-b border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider block mb-2">2-in-1 Study &amp; Homework AI Workspace</span>
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                Powered by 3 Frontier AI Models
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

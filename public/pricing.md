@@ -4,7 +4,7 @@
 > **Machine-Readable Pricing Spec**: https://examghost.com/pricing.md  
 > **Last Verified**: March 29, 2026  
 
-ExamGhost provides transparent, student-friendly pricing with **zero weekly billing traps** and **zero credit card required** for the 50-question Free Trial.
+ExamGhost provides transparent, student-friendly pricing with **zero weekly billing traps** and **zero credit card required** for the 5 Free Solves / Day ($0, auto-refills every 24 hours).
 
 ---
 
@@ -12,7 +12,7 @@ ExamGhost provides transparent, student-friendly pricing with **zero weekly bill
 
 | Plan Name | Price (USD) | Billing Cadence | Effective Monthly Cost | Question Quota | Device Limit | Included Features |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Free Trial** | **$0.00** | Forever free | $0.00 / mo | **50 Free Solves** | 1 browser | Double-Click Inline Solve, Snap-It Vision OCR (`⌘+Shift+S`), Closed Shadow DOM HUD, Focus Shield |
+| **Free Trial** | **$0.00** | Forever free | $0.00 / mo | **5 Free Solves / Day** *(Auto-refills every 24h)* | 1 browser | Double-Click Inline Solve, Snap-It Vision OCR (`Alt+S`), Closed Shadow DOM HUD, Focus Shield |
 | **Monthly Pass** | **$19.00** | Per month | $19.00 / mo | **Unlimited** | 2 browsers | All 24 features, all 3 display modes (Invisible, Stealth, Explain), all 3 delivery methods, 1-click cancel |
 | **Academic Year Pass** *(Most Popular)* | **$99.00** | Per year | **$8.25 / mo** *(Save 56%)* | **Unlimited** | 2 browsers | Full Fall, Spring, Summer & Finals coverage, Attempt Memory, Priority 0.3s Edge AI inference |
 | **Lifetime VIP Pass** | **$199.00** | One-time payment | Pay once, own forever | **Unlimited** | **3 computers** | Lifetime updates across undergraduate & graduate degrees, VIP Discord priority support |
@@ -22,7 +22,7 @@ ExamGhost provides transparent, student-friendly pricing with **zero weekly bill
 ## 2. What Every Plan Includes
 
 - **0.3-Second Inline AI Solve**: Double-click any question on Canvas (Classic & New Quizzes), Blackboard (Learn & Ultra), Moodle, D2L Brightspace, Google Classroom, McGraw-Hill Connect, or Pearson MyLab.
-- **Snap-It Vision OCR (`⌘+Shift+S` / `Ctrl+Shift+S`)**: Drag a selection rectangle over locked text (`user-select: none`), organic chemistry structures, calculus integrals, graphs, or embedded PDFs.
+- **Snap-It Vision OCR (`Alt+S`)**: Drag a selection rectangle over locked text (`user-select: none`), organic chemistry structures, calculus integrals, graphs, or embedded PDFs.
 - **Closed Shadow DOM Isolation (`mode: 'closed'`)**: Zero visible DOM mutations, zero injected `<button>` tags in host quiz containers, and zero exposed `web_accessible_resources` signatures.
 - **Focus Shield Telemetry Protection**: Intercepts `window.blur`, `visibilitychange`, and `document.hasFocus()` polling so Canvas SpeedGrader logs zero tab-switch flags.
 - **3 Display Modes**:
@@ -42,7 +42,7 @@ ExamGhost provides transparent, student-friendly pricing with **zero weekly bill
 
 | Extension / Tool | Advertised Trial | Recurring Billing Model | Annualized Student Cost | Built-in AI Solver? | Closed Shadow DOM + Focus Shield? |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **ExamGhost** | **$0 (50 Free Solves, no card)** | **$19/mo · $99/yr · $199 Lifetime** | **$99.00 / yr** | **Yes (0.3s Edge AI + Vision OCR)** | **Yes (`mode: 'closed'` + Focus Shield)** |
+| **ExamGhost** | **$0 (5 Free Solves / Day, no card)** | **$19/mo · $99/yr · $199 Lifetime** | **$99.00 / yr** | **Yes (0.3s Edge AI + Vision OCR)** | **Yes (`mode: 'closed'` + Focus Shield)** |
 | **CheatMate ("Study Buddy")** | $0.99 trial trap | $9.99 / week | $519.48 / yr | Yes (~10s lag) | No (Mutates host `.question_text` DOM) |
 | **Mathos AI (MathGPTPro)** | Limited demo | $9.98 / week | $518.96 / yr | Yes (Separate web/PDF flow) | No (Triggers `window.blur`) |
 | **SchoolCheats.net** | None | $8.99 / week or $25/mo | $300.00–$467.48 / yr | K-12 game scripts only | No (Tab redirects) |

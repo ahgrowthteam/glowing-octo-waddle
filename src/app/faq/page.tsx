@@ -44,25 +44,25 @@ export default function FAQPage() {
         },
         {
             category: 'stealth',
-            q: "What is the Stealth Opacity Dial (⌘ + B)?",
-            a: "You can adjust the HUD opacity from 100% visible down to 5% ghost whisper mode. At 5%, answers are only visible when viewed straight-on from inches away, making it completely invisible to teaching assistants or professors walking behind your desk."
+            q: "What are the 3 Solver Modes (Alt+1, Alt+2, Alt+3)?",
+            a: "You can switch modes anytime with instant hotkeys: Alt+1 activates Invisible Mode (silent auto-fill + clipboard copy with zero on-screen UI), Alt+2 activates Stealth Mode (auto-fills answers or places a subtle ✓ tick highlight), and Alt+3 activates Explain Mode (auto-fills the verified choice and slides in a right-side step-by-step rationale banner)."
         },
         {
             category: 'stealth',
-            q: "How fast is the Emergency Panic Kill-Switch (Escape × 2)?",
-            a: "Double-tapping the Escape key instantly vaporizes all Shadow DOM overlays, purges in-memory question caches, and restores standard event listeners within 10 milliseconds. Your browser immediately looks like an unmodded, standard quiz tab."
+            q: "How fast is the Master Power Toggle & Panic Switch (⌘ + Shift + U)?",
+            a: "Pressing ⌘ + Shift + U (or Ctrl + Shift + U on Windows) instantly toggles ExamGhost ON or OFF—vaporizing all Shadow DOM overlays, purging in-memory question caches, and restoring standard event listeners within 10 milliseconds. Your browser immediately looks like an unmodded, standard quiz tab."
         },
 
         // Solvers
         {
             category: 'solvers',
             q: "How does ExamGhost solve questions without copy-pasting?",
-            a: "You never need to copy, paste, or switch windows. Simply press your keyboard shortcut (⌘ + Shift + X or Ctrl + Shift + X) or double-tap the question. ExamGhost reads the question text and options directly from the page DOM and highlights the correct answer in under 1.2 seconds."
+            a: "You never need to copy, paste, or switch windows. Simply Double-Click any question card or press Alt+S to snip a region. ExamGhost reads the question text and options directly from the page DOM and auto-fills or highlights the correct answer in under 1.2 seconds."
         },
         {
             category: 'solvers',
             q: "Can it solve math equations, chemistry diagrams, and locked questions?",
-            a: "Yes! Using Snap-It (⌘ + Shift + S), you can drag a crosshair crop box around any mathematical graph, organic chemistry molecular structure, or non-selectable image. Our multimodal vision AI decodes the image and returns the solution with step-by-step reasoning in ~310ms."
+            a: "Yes! Using Snap-It (Alt+S), you can drag a crosshair crop box around any mathematical graph, organic chemistry molecular structure, or non-selectable image. Our multimodal vision AI decodes the image and returns the solution with step-by-step reasoning in ~310ms."
         },
         {
             category: 'solvers',
@@ -79,7 +79,7 @@ export default function FAQPage() {
         {
             category: 'pricing',
             q: "Can I try ExamGhost for free?",
-            a: "Yes! Every student gets 50 free AI question solves immediately upon installing the extension. No credit card or billing details are required. You can test our invisible Shadow HUD, window blur suppression, and Snap-It Vision OCR on live quizzes before deciding on an upgrade."
+            a: "Yes! Every student gets 5 Free/Day AI question solves immediately upon installing the extension. No credit card or billing details are required. You can test our invisible Shadow HUD, window blur suppression, and Snap-It Vision OCR on live quizzes before deciding on an upgrade."
         },
         {
             category: 'pricing',
@@ -131,7 +131,7 @@ export default function FAQPage() {
                 "@id": "https://examghost.com/faq#webpage",
                 "url": "https://examghost.com/faq",
                 "name": "FAQ — Stealth Architecture, Pricing & LMS Setup | ExamGhost",
-                "description": "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 50 free solves.",
+                "description": "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",

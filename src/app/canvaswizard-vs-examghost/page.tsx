@@ -24,18 +24,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CanvasWizardSociologyDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
     },
-    description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/canvaswizard-vs-examghost",
     },
     openGraph: {
         title: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
-        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/canvaswizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
-        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -85,7 +87,37 @@ export default function CanvasWizardComparisonPage() {
                             "lowPrice": "0.00",
                             "highPrice": "199.00",
                             "priceCurrency": "USD",
-                            "offerCount": "4"
+                            "offerCount": "4",
+                            "offers": [
+                                {
+                                    "@type": "Offer",
+                                    "name": "5 Free Solves / Day",
+                                    "price": "0.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Daily free tier with 5 automated stealth solves per day."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Monthly Pass",
+                                    "price": "19.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Unlimited solves with all stealth features billed monthly."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Academic Year Pass",
+                                    "price": "99.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Full academic year access ($8.25/mo equivalent) with priority frontier models."
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Lifetime Pass",
+                                    "price": "199.00",
+                                    "priceCurrency": "USD",
+                                    "description": "One-time payment for permanent unlimited access and lifetime updates."
+                                }
+                            ]
                         }
                     },
                     {
@@ -139,7 +171,7 @@ export default function CanvasWizardComparisonPage() {
                         "name": "How does ExamGhost solve the visibility issue?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost never adds physical buttons or watermarks to the Canvas page. Instead, it features Ghost Mode—an opacity slider allowing you to make your private closed Shadow DOM HUD completely transparent (down to 5% or 0%), summon answers via keyboard shortcut (⌘+Shift+S or ⌘+B), and flash-clear everything in 0.05 seconds with ⌘+Shift+U."
+                            "text": "ExamGhost never adds physical buttons or watermarks to the Canvas page. Instead, it features Ghost Mode—an opacity slider allowing you to make your private closed Shadow DOM HUD completely transparent (down to 5% or 0%), summon answers via keyboard shortcut (Alt+S, Alt+1/2/3, or Double-Click), and flash-clear everything in 0.05 seconds with ⌘+Shift+U."
                         }
                     },
                     {
@@ -147,7 +179,7 @@ export default function CanvasWizardComparisonPage() {
                         "name": "How does pricing compare between CanvasWizard and ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "CanvasWizard uses a 48-hour credit card trial that auto-renews into recurring billing. ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by transparent plans: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime Degree Pass."
+                            "text": "CanvasWizard uses a 48-hour credit card trial that auto-renews into recurring billing. ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by transparent plans: $19/mo Monthly Pass, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime Degree Pass."
                         }
                     }
                 ]
@@ -204,7 +236,7 @@ export default function CanvasWizardComparisonPage() {
                                     CanvasWizard injects a bright neon-mint bordered <strong className="text-white">&ldquo;Show Answer&rdquo;</strong> button and a watermarked explanation box directly into every Canvas quiz question header—and even admits in its own FAQ: <em className="text-rose-200">&ldquo;we can&apos;t guarantee 100% certainty against detection.&rdquo;</em> Worse, its homepage uses a hardcoded <strong className="text-white">&ldquo;Only 6 left!&rdquo;</strong> banner to push you into a 48-hour credit card trial that auto-bills you.
                                 </p>
                                 <p className="text-sm sm:text-base text-emerald-200/90 leading-relaxed mb-8 font-medium">
-                                    ExamGhost injects <strong className="text-white">zero buttons into Canvas</strong>, keeps your SpeedGrader logs 100% clean, and gives you <strong className="text-white">50 Free Solves with no credit card required</strong>.
+                                    ExamGhost injects <strong className="text-white">zero buttons into Canvas</strong>, keeps your SpeedGrader logs 100% clean, and gives you <strong className="text-white">5 Free Solves / Day with no credit card required</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -213,7 +245,7 @@ export default function CanvasWizardComparisonPage() {
                                         className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5 transition-all hover:-translate-y-0.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-slate-950" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -302,7 +334,7 @@ export default function CanvasWizardComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
                                 <span className="text-slate-400 block text-[11px] mb-0.5">Free Trial Policy</span>
-                                <span className="font-bold text-emerald-300">ExamGhost: 50 Free (No Card)</span>
+                                <span className="font-bold text-emerald-300">ExamGhost: 5 Free/Day (No Card)</span>
                                 <span className="text-rose-300 block text-[10px] mt-0.5">Wizard: 48h Card Trial (&ldquo;6 left&rdquo;)</span>
                             </div>
                             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
@@ -319,240 +351,290 @@ export default function CanvasWizardComparisonPage() {
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB REALITY CHECK SWITCHER (Pure CSS peer-checked) */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive CanvasWizard Reality Check">
+                <CanvasWizardSociologyDemo />
+
+                {/* VISIBLE 3-PILLAR COMPARISON BREAKDOWN & 6-HOTKEY SUITE */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="CanvasWizard Reality Check">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="text-center max-w-2xl mx-auto mb-8">
                             <span className="px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-900 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Interactive Audit Explorer
+                                Technical Audit Breakdown
                             </span>
                             <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
-                                3 Reasons Students Drop CanvasWizard Before Midterms
+                                3 Critical Differences Between CanvasWizard &amp; ExamGhost
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click each tab below to inspect CanvasWizard&apos;s visible DOM button injection, its 48-hour credit card trap, and its Chrome Web Store rating reality.
+                                Inspect CanvasWizard&apos;s visible DOM button injection, its 48-hour credit card trial trap, and its Chrome Web Store rating reality.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="wizard_tabs" id="tab_dom" className="sr-only peer/dom" defaultChecked />
-                        <input type="radio" name="wizard_tabs" id="tab_trial" className="sr-only peer/trial" />
-                        <input type="radio" name="wizard_tabs" id="tab_reviews" className="sr-only peer/reviews" />
-
-                        {/* Tab Buttons */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f0e8] border border-black/5 mb-8">
-                            <label
-                                htmlFor="tab_dom"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/dom:bg-ink peer-checked/dom:text-white peer-checked/dom:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. Neon &ldquo;Show Answer&rdquo; Button</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Injected into Canvas vs 0-DOM Stealth</div>
-                            </label>
-                            <label
-                                htmlFor="tab_trial"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/trial:bg-ink peer-checked/trial:text-white peer-checked/trial:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. &ldquo;Only 6 Left&rdquo; 48h Trial Trap</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Hardcoded scarcity vs 50 Free Solves</div>
-                            </label>
-                            <label
-                                htmlFor="tab_reviews"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/reviews:bg-ink peer-checked/reviews:text-white peer-checked/reviews:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. 15,000 Claimed vs 557 Real Users</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Fake review counter vs 3.0★ Store reality</div>
-                            </label>
-                        </div>
-
-                        {/* TAB 1 CONTENT: Neon "Show Answer" Button vs 0-DOM Stealth */}
-                        <div className="hidden peer-checked/dom:grid md:grid-cols-2 gap-6 items-stretch">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                        {/* COMPLETE 6-HOTKEY STEALTH SUITE */}
+                        <div className="rounded-3xl bg-[#faf8f4] border border-black/10 p-6 sm:p-8 shadow-card mb-8">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/5 pb-4 mb-6">
                                 <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Eye className="w-3.5 h-3.5" />
-                                        CanvasWizard: Visible Button + Watermark
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Injects <code className="text-sm bg-white px-1.5 py-0.5 rounded border border-rose-200">#wiz_button</code> directly into Canvas
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Every time you open a Canvas quiz, CanvasWizard mutates the host page DOM to insert a dark-green button bordered in bright neon mint (<code>#00E6D2</code>) with an angry wizard hat icon labeled <strong>&ldquo;Show Answer&rdquo;</strong>, plus an inline explanation modal with a <code>canvaswizard-watermark.png</code> badge.
-                                    </p>
-                                    <ul className="space-y-2 text-xs text-ink-secondary mb-5">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Shoulder-Surfing Magnet:</strong> A TA walking down a lecture hall aisle can spot the neon-mint button and wizard watermark from rows away.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Their Own FAQ Disclaimer:</strong> CanvasWizard explicitly states in its FAQ: <em>&ldquo;we can&apos;t guarantee 100% certainty against detection utilized by websites.&rdquo;</em></span>
-                                        </li>
-                                    </ul>
+                                    <h3 className="font-display font-bold text-lg text-ink">ExamGhost 6-Hotkey Stealth Operating System</h3>
+                                    <p className="text-xs text-ink-muted">Closed Shadow DOM container · Zero DOM button injection · 0.3s edge solve</p>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    DOM Footprint: Injects #wiz_button + #question_wiz_modal into Canvas
-                                </div>
+                                <span className="self-start md:self-auto px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">
+                                    5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime
+                                </span>
                             </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: 3 Stealth Modes &amp; 0 Injected Buttons
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Double-Click</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">0.3s Auto-Fill</span>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Zero buttons on Canvas. 100% invisible when you need it.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never injects a single button, icon, or watermark into the Canvas quiz DOM. You control how you view answers based on your exam environment:
-                                    </p>
-                                    <div className="space-y-2.5 text-xs mb-5">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
-                                            <strong className="text-emerald-950 block">1. Invisible Mode (0 UI on Screen)</strong>
-                                            <span className="text-ink-secondary">No popup or panel at all. A subtle 1px dot or micro-opacity indicator cues the correct choice—nothing for a TA or webcam to see.</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
-                                            <strong className="text-emerald-950 block">2. Stealth HUD Mode (0%–100% Opacity Slider)</strong>
-                                            <span className="text-ink-secondary">Summon a private Closed Shadow DOM overlay via <code>⌘+Shift+S</code> at 10% opacity, and wipe it in 0.05s with <code>⌘+Shift+U</code>.</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
-                                            <strong className="text-emerald-950 block">3. Explain Mode (Homework &amp; Study)</strong>
-                                            <span className="text-ink-secondary">Full step-by-step STEM derivations and reasoning when studying at home.</span>
-                                        </div>
-                                    </div>
+                                    <p className="text-xs text-ink-secondary">Double-click any sociology or humanities prompt to instantly solve and select the correct option with zero on-screen buttons.</p>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    DOM Footprint: 0 Host Page Mutations · Focus Shield Active
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+S</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Snap-It Crop</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">In-memory screenshot OCR for sociology demographic charts, statistical tables, and locked PDF case studies.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+1</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Auto-Select Radio</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Synthetic event dispatch selecting options without firing SpeedGrader blur telemetry or focus lost flags.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+2</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Smart Highlight</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Subtle green glow highlight overlay rendered exclusively within closed Shadow root without altering host styles.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">Alt+3</code>
+                                        <span className="text-[11px] font-bold text-emerald-700">Ghost HUD Overlay</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Full sociology theory rationale modal with adjustable opacity slider (0% to 100%) for deep conceptual verification.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-white border border-black/5">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <code className="px-2 py-0.5 rounded bg-black/5 text-ink font-mono font-bold text-xs">⌘+Shift+U</code>
+                                        <span className="text-[11px] font-bold text-rose-700">&lt;8ms Panic Flush</span>
+                                    </div>
+                                    <p className="text-xs text-ink-secondary">Instant emergency purge cleans all canvas memory and unmounts the Shadow DOM if a proctor or instructor approaches.</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* TAB 2 CONTENT: "Only 6 Left" 48h Trial Trap vs 50 Free Solves */}
-                        <div className="hidden peer-checked/trial:grid md:grid-cols-2 gap-6 items-stretch">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <CreditCard className="w-3.5 h-3.5" />
-                                        CanvasWizard: Hardcoded Scarcity &amp; 48h Auto-Renew
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Why does &ldquo;Only 6 left!&rdquo; never change to 5?
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        If you inspect the page source of <code>canvaswizard.co</code>, the top scarcity banner—<em>&ldquo;Exclusive Deal: 48-Hour Access for FREE! (Only 6 left)&rdquo;</em>—is hardcoded plain text. Alongside it, a script named <code>salespopup.js</code> generates fake toast notifications claiming students just signed up minutes ago.
-                                    </p>
-                                    <div className="space-y-2 text-xs text-ink-secondary mb-5">
-                                        <div className="p-3 rounded-xl bg-white border border-rose-200">
-                                            <strong className="text-rose-950 block">Step 1: Credit Card Required Upfront</strong>
-                                            <span>Clicking &ldquo;Try for Free&rdquo; sends you to <code>canvaswizard.co/setup</code> where you must enter a credit card before solving a single question.</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-rose-200">
-                                            <strong className="text-rose-950 block">Step 2: 48-Hour Countdown to Recurring Billing</strong>
-                                            <span>If you forget to cancel within 48 hours during finals week, your card is automatically charged recurring subscription fees.</span>
-                                        </div>
-                                    </div>
+                        {/* VISIBLE 3-PILLAR BREAKDOWN CARDS */}
+                        <div className="space-y-12">
+                            {/* PILLAR 1: Neon "Show Answer" Button vs 0-DOM Stealth */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">01</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">Neon &ldquo;Show Answer&rdquo; Button Injected into Canvas vs 0-DOM Stealth</h3>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Trial Policy: Credit card required · 48-hour auto-renewal clock
+                                <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                                    <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                                <Eye className="w-3.5 h-3.5" />
+                                                CanvasWizard: Visible Button + Watermark
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                Injects <code className="text-sm bg-white px-1.5 py-0.5 rounded border border-rose-200">#wiz_button</code> directly into Canvas
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                Every time you open a Canvas quiz, CanvasWizard mutates the host page DOM to insert a dark-green button bordered in bright neon mint (<code>#00E6D2</code>) with an angry wizard hat icon labeled <strong>&ldquo;Show Answer&rdquo;</strong>, plus an inline explanation modal with a <code>canvaswizard-watermark.png</code> badge.
+                                            </p>
+                                            <ul className="space-y-2 text-xs text-ink-secondary mb-5">
+                                                <li className="flex items-start gap-2">
+                                                    <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                    <span><strong>Shoulder-Surfing Magnet:</strong> A TA walking down a lecture hall aisle can spot the neon-mint button and wizard watermark from rows away.</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                    <span><strong>Their Own FAQ Disclaimer:</strong> CanvasWizard explicitly states in its FAQ: <em>&ldquo;we can&apos;t guarantee 100% certainty against detection utilized by websites.&rdquo;</em></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                            DOM Footprint: Injects #wiz_button + #question_wiz_modal into Canvas
+                                        </div>
+                                    </div>
+
+                                    <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                                <EyeOff className="w-3.5 h-3.5" />
+                                                ExamGhost: 3 Stealth Modes &amp; 0 Injected Buttons
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                Zero buttons on Canvas. 100% invisible when you need it.
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                ExamGhost never injects a single button, icon, or watermark into the Canvas quiz DOM. You control how you view answers based on your exam environment:
+                                            </p>
+                                            <div className="space-y-2.5 text-xs mb-5">
+                                                <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
+                                                    <strong className="text-emerald-950 block">1. Invisible Mode (0 UI on Screen)</strong>
+                                                    <span className="text-ink-secondary">No popup or panel at all. A subtle 1px dot or micro-opacity indicator cues the correct choice—nothing for a TA or webcam to see.</span>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
+                                                    <strong className="text-emerald-950 block">2. Stealth HUD Mode (0%–100% Opacity Slider)</strong>
+                                                    <span className="text-ink-secondary">Summon a private Closed Shadow DOM overlay via <code>Alt+S</code> at 10% opacity, and wipe it in 0.05s with <code>⌘+Shift+U</code>.</span>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-white border border-emerald-200/80">
+                                                    <strong className="text-emerald-950 block">3. Explain Mode (Homework &amp; Study)</strong>
+                                                    <span className="text-ink-secondary">Full step-by-step STEM derivations and reasoning when studying at home.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                            DOM Footprint: 0 Host Page Mutations · Focus Shield Active
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: 50 Free Solves ($0, No Card Needed)
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Test all 24 stealth features before spending a dime.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        We don&apos;t use fake countdown timers or 48-hour credit card traps. Every student gets <strong>50 Free Solves</strong> immediately after installing ExamGhost—no credit card form, no surprise auto-renewals.
-                                    </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-5">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
-                                            <div className="text-[10px] text-ink-muted">Cancel anytime</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">Academic Year</div>
-                                            <div className="text-[10px] text-emerald-200/80">$99/yr · Save 57%</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
-                                            <div className="text-[10px] text-ink-muted">Pay once forever</div>
-                                        </div>
-                                    </div>
+                            {/* PILLAR 2: "Only 6 Left" 48h Trial Trap vs 5 Free Solves / Day */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">02</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">&ldquo;Only 6 Left&rdquo; 48-Hour Trial Trap vs Transparent 5 Free Solves / Day</h3>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Trial Policy: 50 Free Solves · $0 No Credit Card Required
+                                <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                                    <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                                <CreditCard className="w-3.5 h-3.5" />
+                                                CanvasWizard: Hardcoded Scarcity &amp; 48h Auto-Renew
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                Why does &ldquo;Only 6 left!&rdquo; never change to 5?
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                If you inspect the page source of <code>canvaswizard.co</code>, the top scarcity banner—<em>&ldquo;Exclusive Deal: 48-Hour Access for FREE! (Only 6 left)&rdquo;</em>—is hardcoded plain text. Alongside it, a script named <code>salespopup.js</code> generates fake toast notifications claiming students just signed up minutes ago.
+                                            </p>
+                                            <div className="space-y-2 text-xs text-ink-secondary mb-5">
+                                                <div className="p-3 rounded-xl bg-white border border-rose-200">
+                                                    <strong className="text-rose-950 block">Step 1: Credit Card Required Upfront</strong>
+                                                    <span>Clicking &ldquo;Try for Free&rdquo; sends you to <code>canvaswizard.co/setup</code> where you must enter a credit card before solving a single question.</span>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-white border border-rose-200">
+                                                    <strong className="text-rose-950 block">Step 2: 48-Hour Countdown to Recurring Billing</strong>
+                                                    <span>If you forget to cancel within 48 hours during finals week, your card is automatically charged recurring subscription fees.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                            Trial Policy: Credit card required · 48-hour auto-renewal clock
+                                        </div>
+                                    </div>
+
+                                    <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                                <ShieldCheck className="w-3.5 h-3.5" />
+                                                ExamGhost: 5 Free Solves / Day ($0, No Card Needed)
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                Test all 24 stealth features before spending a dime.
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                We don&apos;t use fake countdown timers or 48-hour credit card traps. Every student gets <strong>5 Free Solves / Day</strong> immediately after installing ExamGhost—no credit card form, no surprise auto-renewals.
+                                            </p>
+                                            <div className="grid grid-cols-3 gap-2.5 text-center mb-5">
+                                                <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                    <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
+                                                    <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                                                    <div className="text-[10px] text-ink-muted">Cancel anytime</div>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
+                                                    <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
+                                                    <div className="text-[11px] font-semibold text-emerald-300">Academic Year</div>
+                                                    <div className="text-[10px] text-emerald-200/80">$99/yr · Save 57%</div>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                    <div className="font-display font-extrabold text-lg text-ink">$199</div>
+                                                    <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+                                                    <div className="text-[10px] text-ink-muted">Pay once forever</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                            Trial Policy: 5 Free Solves / Day · $0 No Credit Card Required
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* TAB 3 CONTENT: 15,000 Claimed vs 557 Real Chrome Store Users */}
-                        <div className="hidden peer-checked/reviews:grid md:grid-cols-2 gap-6 items-stretch">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Search className="w-3.5 h-3.5" />
-                                        CanvasWizard: Landing Page vs Google Verification
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        27x inflated user count &amp; 3.0★ Chrome Store rating
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        On <code>canvaswizard.co</code>, static badges claim <strong>&ldquo;Approved and used by more than 15,000 users&rdquo;</strong> and <strong>&ldquo;4.8/5 based on 1,067 reviews.&rdquo;</strong> Yet when you check its actual Chrome Web Store listing (<em>&ldquo;Wizard - Quiz Solver Canvas AI Extension&rdquo;</em>), Google&apos;s verified telemetry tells a very different story:
-                                    </p>
-                                    <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
-                                        <div className="p-3 rounded-xl bg-white border border-rose-200">
-                                            <div className="text-[11px] text-ink-muted">Website Claim</div>
-                                            <div className="font-display font-extrabold text-lg text-ink">15,000+ Users</div>
-                                            <div className="text-[11px] text-ink-muted">4.8★ (1,067 reviews)</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-rose-100/80 border border-rose-300">
-                                            <div className="text-[11px] text-rose-900 font-semibold">Chrome Store Reality</div>
-                                            <div className="font-display font-extrabold text-lg text-rose-950">557 Users</div>
-                                            <div className="text-[11px] text-rose-900 font-bold">3.0★ (Only 9 ratings)</div>
-                                        </div>
-                                    </div>
-                                    <p className="text-xs text-ink-secondary">
-                                        Additionally, CanvasWizard routes queries through its slow WizAI 3.0 cloud queue (~6.1s average latency) and only supports text scraping rather than locked diagram OCR.
-                                    </p>
+                            {/* PILLAR 3: 15,000 Claimed vs 557 Real Chrome Store Users */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center font-mono font-bold text-xs text-ink">03</div>
+                                    <h3 className="font-display font-bold text-xl text-ink">15,000 Claimed vs 557 Real Users</h3>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900 mt-4">
-                                    Verified Chrome Store Rating: 3.0 / 5.0 Stars (9 total ratings)
-                                </div>
-                            </div>
+                                <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                                    <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                                <Search className="w-3.5 h-3.5" />
+                                                CanvasWizard: Landing Page vs Google Verification
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                27x inflated user count &amp; 3.0★ Chrome Store rating
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                On <code>canvaswizard.co</code>, static badges claim <strong>&ldquo;Approved and used by more than 15,000 users&rdquo;</strong> and <strong>&ldquo;4.8/5 based on 1,067 reviews.&rdquo;</strong> Yet when you check its actual Chrome Web Store listing (<em>&ldquo;Wizard - Quiz Solver Canvas AI Extension&rdquo;</em>), Google&apos;s verified telemetry tells a very different story:
+                                            </p>
+                                            <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
+                                                <div className="p-3 rounded-xl bg-white border border-rose-200">
+                                                    <div className="text-[11px] text-ink-muted">Website Claim</div>
+                                                    <div className="font-display font-extrabold text-lg text-ink">15,000+ Users</div>
+                                                    <div className="text-[11px] text-ink-muted">4.8★ (1,067 reviews)</div>
+                                                </div>
+                                                <div className="p-3 rounded-xl bg-rose-100/80 border border-rose-300">
+                                                    <div className="text-[11px] text-rose-900 font-semibold">Chrome Store Reality</div>
+                                                    <div className="font-display font-extrabold text-lg text-rose-950">557 Users</div>
+                                                    <div className="text-[11px] text-rose-900 font-bold">3.0★ (Only 9 ratings)</div>
+                                                </div>
+                                            </div>
+                                            <p className="text-xs text-ink-secondary">
+                                                Additionally, CanvasWizard routes queries through its slow WizAI 3.0 cloud queue (~6.1s average latency) and only supports text scraping rather than locked diagram OCR.
+                                            </p>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900 mt-4">
+                                            Verified Chrome Store Rating: 3.0 / 5.0 Stars (9 total ratings)
+                                        </div>
+                                    </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <Zap className="w-3.5 h-3.5" />
-                                        ExamGhost: 0.3s Instant Speed + Snap-It Vision OCR
+                                    <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                        <div>
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                                <Zap className="w-3.5 h-3.5" />
+                                                ExamGhost: 0.3s Instant Speed + Snap-It Vision OCR
+                                            </div>
+                                            <h4 className="font-display text-xl font-bold text-ink mb-2">
+                                                Built for locked diagrams, graphs, and every LMS.
+                                            </h4>
+                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                                What happens when a professor uploads a chemistry molecular structure, a physics free-body diagram, or an economics supply-and-demand graph as an unselectable PNG image? CanvasWizard&apos;s text scraper fails.
+                                            </p>
+                                            <ul className="space-y-2.5 text-xs text-ink-secondary mb-5">
+                                                <li className="flex items-start gap-2">
+                                                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                    <span><strong>Snap-It Vision OCR (<code>Alt+S</code>):</strong> Drag a silent bounding box over any locked image, LaTeX equation, or graph to get an instant 0.3s breakdown.</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                    <span><strong>Works Everywhere:</strong> Canvas (Classic &amp; New Quizzes), Blackboard, Moodle, D2L Brightspace, McGraw Hill Connect, Cengage MindTap, and Pearson MyLab.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                            Inference Speed: 0.3s Edge Multimodal Vision + Text
+                                        </div>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Built for locked diagrams, graphs, and every LMS.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        What happens when a professor uploads a chemistry molecular structure, a physics free-body diagram, or an economics supply-and-demand graph as an unselectable PNG image? CanvasWizard&apos;s text scraper fails.
-                                    </p>
-                                    <ul className="space-y-2.5 text-xs text-ink-secondary mb-5">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Snap-It Vision OCR (<code>⌘+Shift+S</code>):</strong> Drag a silent bounding box over any locked image, LaTeX equation, or graph to get an instant 0.3s breakdown.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Works Everywhere:</strong> Canvas (Classic &amp; New Quizzes), Blackboard, Moodle, D2L Brightspace, McGraw Hill Connect, Cengage MindTap, and Pearson MyLab.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Inference Speed: 0.3s Edge Multimodal Vision + Text
                                 </div>
                             </div>
                         </div>
@@ -664,7 +746,7 @@ export default function CanvasWizardComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Snap-It Vision OCR (Locked Diagrams)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ ⌘+Shift+S Snip &amp; Solve Any Image/Graph</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Alt+S Snip &amp; Solve Any Image/Graph</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Text scraping &amp; sidebar chat only</td>
                                     </tr>
                                     <tr>
@@ -679,7 +761,7 @@ export default function CanvasWizardComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves ($0 trial, no credit card)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day ($0 trial, no credit card)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 48-hour credit card trial (&ldquo;Only 6 left&rdquo; banner)</td>
                                     </tr>
                                     <tr>
@@ -687,7 +769,15 @@ export default function CanvasWizardComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">Auto-renews after 48h at $7.99/mo+</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -729,7 +819,7 @@ export default function CanvasWizardComparisonPage() {
                             <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I almost got written up because CanvasWizard injected a glowing mint-bordered &lsquo;Show Answer&rsquo; button and watermarked explanation box directly onto my Canvas quiz in a lecture hall. A TA spotted it from three rows back. Then they auto-billed my card after their 48-hour &lsquo;Only 6 spots left&rsquo; trial expired. ExamGhost gave me 50 Free Solves with no credit card required, is 100% invisible with zero buttons on screen, and its $99/yr Academic Year Pass ($8.25/mo) is worth every cent.&rdquo;
+                            &ldquo;I almost got written up because CanvasWizard injected a glowing mint-bordered &lsquo;Show Answer&rsquo; button and watermarked explanation box directly onto my Canvas quiz in a lecture hall. A TA spotted it from three rows back. Then they auto-billed my card after their 48-hour &lsquo;Only 6 spots left&rsquo; trial expired. ExamGhost gave me 5 Free Solves / Day with no credit card required, is 100% invisible with zero buttons on screen, and its $99/yr Academic Year Pass ($8.25/mo) is worth every cent.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-rose-950 text-white font-bold flex items-center justify-center text-sm">
@@ -782,10 +872,10 @@ export default function CanvasWizardComparisonPage() {
                                     Zero Visible Page Buttons · Zero Credit Card Traps
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Ditch the glowing #wiz_button. Try 50 Free Solves on ExamGhost.
+                                    Ditch the glowing #wiz_button. Try 5 Free Solves / Day on ExamGhost.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    No credit card required for your first 50 solves. Upgrade anytime to $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    No credit card required for 5 free solves every day. Upgrade anytime to $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -794,7 +884,7 @@ export default function CanvasWizardComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -828,7 +918,10 @@ export default function CanvasWizardComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

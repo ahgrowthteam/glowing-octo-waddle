@@ -11,28 +11,37 @@ import {
     AlertTriangle,
     CheckCircle2,
     XCircle,
-    EyeOff,
     FileText,
     ExternalLink,
     Lock,
     Upload,
-    UserCheck
+    UserCheck,
+    Calculator,
+    FlaskConical,
+    FileWarning,
+    Scale,
+    Layers,
+    Terminal,
+    Keyboard,
+    Star
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CourseHeroPaywallDemo } from '@/components/TopComparisonDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Course Hero vs ExamGhost (2026) — $39.99 PDFs vs 0.3s AI",
+        absolute: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
     },
-    description: "Compare Course Hero ($39.99/mo unlock caps & Educator Exchange risk) with ExamGhost. Solve live Canvas & Blackboard questions in 0.3s with 50 Free Solves.",
+    description: "Why Course Hero's $39.95/mo blurred 2019–2022 PDFs fail on randomized Canvas STEM variables (and trigger professor distractor traps) vs ExamGhost's 0.3s live AI + Claude/ChatGPT/DeepSeek Study Hub. 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/coursehero-vs-examghost",
     },
     openGraph: {
-        title: "Course Hero vs ExamGhost (2026) — $39.99 PDFs vs 0.3s AI",
-        description: "Compare Course Hero ($39.99/mo unlock caps & Educator Exchange risk) with ExamGhost. Solve live Canvas & Blackboard questions in 0.3s with 50 Free Solves.",
+        title: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
+        description: "Stop paying $39.95/mo to unblur outdated PDFs that give wrong answers on randomized Canvas & WebAssign exams. Solve live variables in 0.3s + get Claude 3.7, ChatGPT & DeepSeek-R1.",
         url: "https://examghost.com/coursehero-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -42,14 +51,14 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Course Hero vs ExamGhost (2026) — $39.99 PDFs vs 0.3s AI",
+                alt: "Course Hero vs ExamGhost (2026) — Dead Static PDFs vs Live 0.3s Symbolic AI",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Course Hero vs ExamGhost (2026) — $39.99 PDFs vs 0.3s AI",
-        description: "Compare Course Hero ($39.99/mo unlock caps & Educator Exchange risk) with ExamGhost. Solve live Canvas & Blackboard questions in 0.3s with 50 Free Solves.",
+        title: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
+        description: "Course Hero's static PDFs fail on randomized STEM exams. Compute your exact live numbers in 0.3s with ExamGhost + access Claude 3.7, ChatGPT & DeepSeek-R1. 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -59,53 +68,33 @@ export default function CourseheroVsExamghostPage() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "WebPage",
+                "@type": "TechArticle",
+                "@id": "https://examghost.com/coursehero-vs-examghost#article",
+                "headline": "Course Hero vs ExamGhost (2026): Dead Static PDFs ($39.95/mo) vs Live 0.3s Symbolic AI + Multi-Model Study Hub",
                 "datePublished": "2026-01-15",
-                "dateModified": "2026-03-08",
+                "dateModified": "2026-04-10",
+                "author": {
+                    "@type": "Organization",
+                    "name": "ExamGhost Academic Economics & STEM Audit Lab",
+                    "url": "https://examghost.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ExamGhost",
+                    "url": "https://examghost.com"
+                },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/coursehero-vs-examghost#webpage",
                 "url": "https://examghost.com/coursehero-vs-examghost",
-                "name": "Course Hero vs ExamGhost (2026) | $39.99/mo Blurred PDFs vs 0.3s Live Canvas Exam Solver",
-                "description": "Comparison of Course Hero (coursehero.com & Course Hero: AI Study Assistant extension) vs ExamGhost across $39.99/mo unlock caps, Sift/FullStory tracking, Educator Exchange flags, and 4-Layer Focus Shield.",
+                "name": "Course Hero vs ExamGhost (2026) | $39.95/mo Blurred PDFs vs 0.3s Live Symbolic AI + Multi-Model Study Hub",
+                "description": "Forensic academic audit comparing Course Hero ($39.95/mo 30-unlock cap, static 2019–2022 student PDFs, Educator Exchange faculty tracking, and randomized STEM variable failure) against ExamGhost's 0.3s live in-tab solver and Claude 3.7 Sonnet / ChatGPT / DeepSeek-R1 Study Workspace.",
                 "breadcrumb": {
                     "@id": "https://examghost.com/coursehero-vs-examghost#breadcrumb"
                 },
                 "about": [
-                    {
-                        "@type": "SoftwareApplication",
-                        "name": "ExamGhost",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": [
-                            {
-                                "@type": "Offer",
-                                "name": "Free Trial (50 Solves)",
-                                "price": "0",
-                                "priceCurrency": "USD"
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Monthly Pass",
-                                "price": "19.00",
-                                "priceCurrency": "USD"
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Academic Year Pass",
-                                "price": "99.00",
-                                "priceCurrency": "USD"
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Lifetime Degree Pass",
-                                "price": "199.00",
-                                "priceCurrency": "USD"
-                            }
-                        ]
-                    },
+                    { "@id": "https://examghost.com/coursehero-vs-examghost#software" },
                     {
                         "@type": "SoftwareApplication",
                         "name": "Course Hero",
@@ -115,14 +104,8 @@ export default function CourseheroVsExamghostPage() {
                         "offers": [
                             {
                                 "@type": "Offer",
-                                "name": "Course Hero Monthly",
-                                "price": "39.99",
-                                "priceCurrency": "USD"
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Course Hero Quarterly (per month equivalent)",
-                                "price": "19.95",
+                                "name": "Course Hero Monthly (30 Document Unlocks)",
+                                "price": "39.95",
                                 "priceCurrency": "USD"
                             },
                             {
@@ -132,6 +115,39 @@ export default function CourseheroVsExamghostPage() {
                                 "priceCurrency": "USD"
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://examghost.com/coursehero-vs-examghost#software",
+                "name": "ExamGhost Stealth Extension & Multi-Model Study AI Hub",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Free Daily Tier (5 Free Solves / Day, Auto-Refills Every 24h)",
+                        "price": "0.00",
+                        "priceCurrency": "USD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Monthly 2-in-1 Pass (Unlimited Extension + Study AI Hub)",
+                        "price": "19.00",
+                        "priceCurrency": "USD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Academic Year 2-in-1 Pass ($8.25/mo billed annually)",
+                        "price": "99.00",
+                        "priceCurrency": "USD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Lifetime Degree 2-in-1 Pass",
+                        "price": "199.00",
+                        "priceCurrency": "USD"
                     }
                 ]
             },
@@ -165,34 +181,42 @@ export default function CourseheroVsExamghostPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Does the Course Hero: AI Study Assistant Chrome extension protect against Canvas Quiz Logs?",
+                        "name": "What is the 'Professor Distractor Trap' when using Course Hero PDFs on Canvas or WebAssign exams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Course Hero's official Chrome extension ('Course Hero: AI Study Assistant') is built for summarizing YouTube videos, working in Google Docs, and querying Course Hero's 184M document library. It does not include a Canvas window.blur or visibilitychange Focus Shield, nor does it isolate its UI inside a closed Shadow DOM. Clicking into the Course Hero extension or switching tabs to unblur a document on coursehero.com immediately triggers focus-loss events in Canvas Quiz Logs."
+                            "text": "In 2026, Canvas Formula Questions, WebAssign, Pearson MyLab, and McGraw-Hill Connect randomize numerical variables (such as mass, molarity, interest rate, or angle) for every student. Professors frequently find the 2019–2022 PDF of their exam on Course Hero, take the old PDF's numerical answer, and plant it as a wrong multiple-choice distractor on the 2026 exam. Students who copy the unblurred Course Hero PDF get the question wrong AND flag themselves for copying a static answer key. ExamGhost computes your exact live screen numbers in 0.3s and derives the full proof in DeepSeek-R1 and Claude 3.7 Sonnet."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What tracking scripts and Educator Exchange flags run on coursehero.com?",
+                        "name": "How much does Course Hero cost in 2026 compared to ExamGhost's 2-in-1 plans?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "In our 2026 source audit of https://www.coursehero.com, the live page loads Sift device/fraud fingerprinting (cdn.sift.com/s.js, account 84e77b3dea), FullStory session recording triggers (window.__CH_FULLSTORY_DATA and window.attemptSessionRecording), Amplitude analytics, Google Tag Manager (gtm.coursehero.com), and explicit user-state flags for verified faculty (isVerifiedEducator and hasAccessToEducatorExchange). Uploading a professor's live exam or posting course-tagged questions on Course Hero creates an indexed, permanent record visible to verified educators."
+                            "text": "Course Hero charges ~$39.95/month (or forces you to upload 10 personal study files) and still rations paid subscribers to 30 Document Unlocks and limited Tutor Credits per month. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0, no credit card or uploads required), followed by 2-in-1 Unlimited plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that include both Unlimited Stealth Extension Solves and the Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1 Study Workspace."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much does Course Hero cost in 2026 compared to ExamGhost?",
+                        "name": "Does the Course Hero Chrome extension protect against Canvas SpeedGrader Quiz Logs?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Course Hero charges ~$39.99/month for its Month-to-Month plan, ~$19.95/month billed quarterly ($59.85 every 3 months), or ~$9.95/month billed annually ($119.40/year), and rations paid members to monthly Document Unlocks (~30/mo) and Tutor Credits (10–40 questions). ExamGhost gives every student 50 Free Question Solves ($0, no credit card, no document upload required), followed by $19/month (52% cheaper than Course Hero monthly), $99/year Academic Year Pass ($8.25/mo, cheaper than Course Hero's $119.40/yr plan), or a $199 one-time Lifetime Degree Pass."
+                            "text": "No. Course Hero's extension ('Course Hero: AI Study Assistant') lacks a Canvas Focus Shield and does not encapsulate its UI in a closed Shadow DOM. Clicking into Course Hero or switching tabs to unblur a document on coursehero.com immediately triggers window.blur and visibilitychange events in Canvas SpeedGrader logs. ExamGhost solves inline in 0.3s with a 4-Layer Focus Shield and zero blur logs."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Why do Course Hero document unlocks often waste time during a timed college exam?",
+                        "name": "What faculty tracking scripts and Educator Exchange flags run on coursehero.com?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Course Hero blurs the body of its 184M uploaded documents until you spend a Document Unlock. During a timed exam, students frequently spend an unlock on a promising syllabus or old quiz PDF only to discover that the uploaded file has blank answers, wrong student guesses, or questions from a different textbook edition. ExamGhost solves your exact live question and diagram on the spot in 0.3 seconds."
+                            "text": "Our 2026 source audit of coursehero.com confirmed Sift Science device fingerprinting (cdn.sift.com/s.js, account 84e77b3dea), FullStory session recording (window.__CH_FULLSTORY_DATA), and explicit faculty flags (isVerifiedEducator and hasAccessToEducatorExchange). Uploading a live exam or asking a tutor question creates an indexed, permanent record visible to verified faculty. ExamGhost uses ephemeral in-memory compute and never indexes your questions publicly."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What hotkeys does ExamGhost use to solve randomized STEM questions without leaving the exam tab?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "ExamGhost gives you complete keyboard-first control: Double-Click any question for a 0.3s inline solve, Alt+S for Hybrid Vision+DOM Snip on graphs and formulas, Alt+1 for Invisible Mode, Alt+2 for Stealth Ghost Dot, Alt+3 for Step-by-Step LaTeX Explanations, and Cmd+Shift+U as a Master Toggle to instantly unload the HUD from RAM."
                         }
                     }
                 ]
@@ -201,7 +225,7 @@ export default function CourseheroVsExamghostPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink font-sans selection:bg-mint/40 selection:text-ink">
+        <div className="min-h-screen bg-[#f9f6f0] text-ink font-sans selection:bg-amber-200 selection:text-ink">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -209,340 +233,566 @@ export default function CourseheroVsExamghostPage() {
             <Navbar />
 
             <main id="main-content">
-                {/* Breadcrumb */}
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
-                        <span>/</span>
-                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
-                        <span>/</span>
-                        <span className="text-ink font-semibold">Course Hero vs ExamGhost</span>
-                    </nav>
+                {/* Breadcrumb & Audit Dossier Ribbon */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
+                            <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                            <span>/</span>
+                            <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                            <span>/</span>
+                            <span className="text-ink font-semibold">Course Hero vs ExamGhost</span>
+                        </nav>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-950 font-mono text-[11px] font-bold">
+                            <Scale className="w-3.5 h-3.5 text-amber-800" />
+                            <span>ACADEMIC ECONOMICS &amp; RANDOMIZED STEM AUDIT // 2026</span>
+                        </div>
+                    </div>
                 </div>
 
-                {/* BESPOKE HERO: The $39.99/mo Blurred PDF Lottery vs 0.3s Live In-Tab Solver */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
-                    <div className="rounded-[36px] sm:rounded-[44px] bg-gradient-to-br from-[#dbeafe] via-[#e2f5ea] to-[#cdeecb] p-6 sm:p-10 md:p-14 border border-black/10 shadow-card relative overflow-hidden">
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-4 border-b border-black/10">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/85 border border-black/10 text-xs font-bold text-ink">
-                                <FileText className="w-3.5 h-3.5 text-blue-700" />
-                                <span>2026 Head-to-Head · $39.99/mo Blurred PDFs vs 0.3s Live Exam Solver</span>
+                {/* ============================================================
+                    ARCHETYPE HERO: ACADEMIC ECONOMICS & RANDOMIZED STEM LEDGER
+                ============================================================ */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+                    <div className="rounded-[36px] sm:rounded-[44px] bg-gradient-to-br from-[#fffbeb] via-[#f5f3ea] to-[#e6f4ea] p-6 sm:p-10 lg:p-14 border-2 border-black/10 shadow-card relative overflow-hidden">
+                        {/* Editorial Ledger Header */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-5 border-b-2 border-black/10">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/15 text-xs font-bold text-ink shadow-2xs">
+                                <FileWarning className="w-3.5 h-3.5 text-rose-700" />
+                                <span>Dead Static PDFs ($39.95/mo) vs Live 0.3s Symbolic AI + Multi-Model Study Hub</span>
                             </div>
-                            <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-100 text-[11px] font-bold uppercase tracking-wider">
-                                Save 52% Monthly · Zero Document Uploads
-                            </span>
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-100 text-[11px] font-mono font-bold uppercase tracking-wider">
+                                    5 Free Solves / Day ($0 · Zero Uploads)
+                                </span>
+                            </div>
                         </div>
 
-                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                            {/* Left Column */}
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                            {/* Left 7 Columns: Editorial Narrative + Value Ledger */}
                             <div className="lg:col-span-7">
-                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[52px] font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
-                                    Stop paying $39.99/mo to unblur blank PDFs.{' '}
-                                    <span className="underline decoration-emerald-700/40 decoration-wavy underline-offset-4">
-                                        Solve live exams in 0.3s.
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
+                                    Blurred 2021 PDFs cost $39.95/mo—and{' '}
+                                    <span className="text-rose-800 underline decoration-rose-600/40 decoration-wavy underline-offset-4">
+                                        fail on randomized STEM numbers.
                                     </span>
                                 </h1>
-                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-6 max-w-2xl">
-                                    Everyone knows the Course Hero trap: you find a matching document on Google, hit a blurred paywall that demands <strong>$39.99/month</strong> (or forces you to upload 10 personal study files), and when you finally spend an unlock, the PDF is blank or has wrong student guesses. ExamGhost solves the exact question on your screen in <strong>0.3 seconds</strong>—starting with <strong>50 Free Solves ($0)</strong>.
+
+                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-5">
+                                    <strong>Course Hero</strong> was built for 2018 static worksheets: it charges <strong>$39.95/month</strong> (or demands 10 personal document uploads) to unblur 30 student-uploaded PDFs from 2019–2022. On 2026 Canvas, WebAssign, and McGraw-Hill exams where every student receives <strong>randomized numerical variables</strong>, copying an old Course Hero PDF gives you the wrong number—or worse, walks you straight into a <strong>professor-planted distractor trap</strong>.
                                 </p>
 
-                                <div className="grid sm:grid-cols-3 gap-3 mb-8">
-                                    <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
-                                        <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Free Access</div>
-                                        <div className="font-display font-extrabold text-base text-ink">50 Free Solves</div>
-                                        <div className="text-[11px] text-ink-muted">vs &quot;Upload 10 Docs&quot; wall</div>
+                                <p className="text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7">
+                                    <strong>ExamGhost</strong> computes <em>your exact live numbers</em> in <strong>0.3 seconds</strong> via <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Double-Click</kbd> or <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Alt+S</kbd> Hybrid Vision+DOM Snip, and derives the full step-by-step proof inside our <strong>Study &amp; Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</strong>.
+                                </p>
+
+                                {/* 3-Column Economic Ledger Strip */}
+                                <div className="grid sm:grid-cols-3 gap-3 mb-7">
+                                    <div className="p-4 rounded-2xl bg-white border border-black/10 shadow-2xs">
+                                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                                            FREE DAILY QUOTA
+                                        </div>
+                                        <div className="font-display font-extrabold text-base sm:text-lg text-ink">
+                                            5 Free Solves / Day
+                                        </div>
+                                        <div className="text-[11px] text-ink-muted mt-0.5">
+                                            Auto-refills every 24h · $0 · No doc uploads
+                                        </div>
                                     </div>
-                                    <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
-                                        <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Monthly Price</div>
-                                        <div className="font-display font-extrabold text-base text-ink">$19/mo Unlimited</div>
-                                        <div className="text-[11px] text-ink-muted">vs $39.99/mo (30 unlocks)</div>
+                                    <div className="p-4 rounded-2xl bg-white border border-black/10 shadow-2xs">
+                                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                                            2-IN-1 VALUE PASS
+                                        </div>
+                                        <div className="font-display font-extrabold text-base sm:text-lg text-ink">
+                                            $8.25/mo ($99/yr)
+                                        </div>
+                                        <div className="text-[11px] text-ink-muted mt-0.5">
+                                            Or $19/mo · $199 Lifetime (vs $39.95/mo CH)
+                                        </div>
                                     </div>
-                                    <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
-                                        <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Honor Code Safety</div>
-                                        <div className="font-display font-extrabold text-base text-ink">0 Paper Trail</div>
-                                        <div className="text-[11px] text-ink-muted">vs Educator Exchange logs</div>
+                                    <div className="p-4 rounded-2xl bg-white border border-black/10 shadow-2xs">
+                                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                                            INCLUDED AI MODELS
+                                        </div>
+                                        <div className="font-display font-extrabold text-base sm:text-lg text-ink">
+                                            Claude + GPT + R1
+                                        </div>
+                                        <div className="text-[11px] text-ink-muted mt-0.5">
+                                            Live symbolic math + essay workspace
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap items-center gap-3">
-                                    <Link prefetch={false}
+                                <div className="flex flex-wrap items-center gap-3.5">
+                                    <Link
+                                        prefetch={false}
                                         href="/#pricing"
-                                        className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm sm:text-base font-bold shadow-lift inline-flex items-center gap-2.5 group"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 · No Uploads)</span>
+                                        <span>Start 5 Free Solves / Day ($0 · No Uploads)</span>
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
-                                    <Link prefetch={false}
-                                        href="/canvas-quiz-solver-free-demo"
-                                        className="px-6 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-sm inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
+                                    <a
+                                        href="#paywall-simulator"
+                                        className="px-6 py-4 rounded-full text-sm sm:text-base font-bold bg-white hover:bg-cream text-ink border border-black/15 shadow-sm inline-flex items-center gap-2 transition-all"
                                     >
-                                        <span>Try Live Canvas Sandbox</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
+                                        <Calculator className="w-4 h-4 text-emerald-800" />
+                                        <span>Test Randomized Variable Demo ↓</span>
+                                    </a>
                                 </div>
                             </div>
 
-                            {/* Right Column: Visual "Unblur Document Lottery" vs ExamGhost 0.3s Card */}
+                            {/* Right 5 Columns: Forensic Variable Audit Receipt */}
                             <div className="lg:col-span-5">
-                                <div className="rounded-[28px] bg-[#141824] text-white p-6 sm:p-7 border border-black/20 shadow-lift">
-                                    <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                                <div className="rounded-[28px] bg-[#161922] text-white p-6 sm:p-7 border border-black/20 shadow-lift space-y-4">
+                                    <div className="flex items-center justify-between pb-3.5 border-b border-white/10">
                                         <div>
-                                            <div className="text-[11px] font-mono uppercase tracking-wider text-blue-300">
-                                                Real Midterm Comparison
+                                            <div className="text-[10px] font-mono uppercase tracking-widest text-amber-300">
+                                                FORENSIC AUDIT // CANVAS FORMULA QUESTION #14
                                             </div>
-                                            <div className="font-display font-bold text-lg text-white mt-0.5">
-                                                The &quot;Document Unlock&quot; Gamble
+                                            <div className="font-display font-bold text-base sm:text-lg text-white mt-0.5">
+                                                Why Static PDFs Fail Randomized STEM
                                             </div>
                                         </div>
-                                        <span className="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 text-[11px] font-mono font-bold">
-                                            $39.99/mo
+                                        <span className="px-2.5 py-1 rounded-md bg-rose-500/20 border border-rose-400/30 text-rose-300 text-[11px] font-mono font-bold">
+                                            TRAP EXPOSED
                                         </span>
                                     </div>
 
-                                    {/* Course Hero Blurred Card */}
-                                    <div className="p-4 rounded-2xl bg-rose-950/50 border border-rose-500/30 mb-4">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="font-bold text-xs text-rose-200">1. Course Hero: Spend 1 of 30 Unlocks</span>
-                                            <span className="text-[10px] font-mono text-rose-300 uppercase font-bold">Tab Switch Logged</span>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-black/50 border border-white/10 font-mono text-xs text-white/80 space-y-1.5 mb-2">
-                                            <div>BUSA_302_Midterm_Review_Final.pdf</div>
-                                            <div className="text-rose-300">
-                                                → Unblurred Result: Blank study guide with no answers filled in (Unlock wasted)
-                                            </div>
-                                        </div>
-                                        <div className="text-[11px] text-rose-200/90">
-                                            ⚠️ Worse: Uploading your exam creates a permanent record visible to <code>isVerifiedEducator</code> faculty accounts.
+                                    {/* Live Question Box */}
+                                    <div className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 font-mono text-xs space-y-1">
+                                        <div className="text-[10px] text-slate-400 uppercase">Your Live 2026 Canvas Screen (Seed #8841):</div>
+                                        <div className="text-white">
+                                            Projectile launched at <span className="text-emerald-300 font-bold">v₀ = 18.4 m/s</span>, angle <span className="text-emerald-300 font-bold">θ = 37°</span>. Find horizontal range <span className="text-cyan-300">R</span>.
                                         </div>
                                     </div>
 
-                                    {/* ExamGhost Instant Solve Card */}
-                                    <div className="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-500/30">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="font-bold text-xs text-emerald-200">2. ExamGhost: Double-Click In-Tab</span>
-                                            <span className="text-[10px] font-mono text-emerald-300 uppercase font-bold">0.3s · 0 Blur Flags</span>
+                                    {/* Course Hero Static PDF Result */}
+                                    <div className="p-4 rounded-2xl bg-rose-950/55 border border-rose-500/35 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <span className="font-bold text-xs text-rose-200">
+                                                Course Hero ($39.95/mo · 1 of 30 Unlocks Spent)
+                                            </span>
+                                            <span className="text-[10px] font-mono bg-rose-500/30 text-rose-200 px-2 py-0.5 rounded font-bold">
+                                                WRONG NUMBER
+                                            </span>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-black/50 border border-white/10 font-mono text-xs text-emerald-200 space-y-1 mb-2">
-                                            <div>✓ Solves the exact question on your screen</div>
-                                            <div>✓ Auto-selects or highlights the right choice</div>
+                                        <div className="p-2.5 rounded-xl bg-black/50 border border-white/10 font-mono text-[11px] text-rose-200 space-y-1">
+                                            <div>Found: <span className="text-white">PHYS_201_Fall2021_Key.pdf</span></div>
+                                            <div>2021 PDF Variables: <span className="underline">v₀ = 15.0 m/s, θ = 30°</span> → R = 19.9 m</div>
+                                            <div className="text-amber-300">
+                                                ⚠️ Professor planted <strong>19.9 m</strong> as Choice B to catch Course Hero copiers!
+                                            </div>
                                         </div>
-                                        <div className="text-[11px] text-emerald-200/90">
-                                            ✓ Ephemeral compute: Your exam questions are never uploaded or indexed on a public site.
+                                    </div>
+
+                                    {/* ExamGhost Live Symbolic AI Result */}
+                                    <div className="p-4 rounded-2xl bg-emerald-950/55 border border-emerald-500/35 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <span className="font-bold text-xs text-emerald-200">
+                                                ExamGhost (0.3s Live Symbolic Solve)
+                                            </span>
+                                            <span className="text-[10px] font-mono bg-emerald-500/30 text-emerald-200 px-2 py-0.5 rounded font-bold">
+                                                EXACT MATCH
+                                            </span>
+                                        </div>
+                                        <div className="p-2.5 rounded-xl bg-black/50 border border-white/10 font-mono text-[11px] text-emerald-200 space-y-1">
+                                            <div>Reads Live DOM: <span className="text-white">v₀ = 18.4, θ = 37°, g = 9.8</span></div>
+                                            <div>Symbolic Engine: <span className="text-emerald-300 font-bold">R = (18.4² · sin 74°) / 9.8 = 33.2 m (Choice D)</span></div>
+                                            <div className="text-cyan-200">
+                                                ✓ Full LaTeX proof verified in DeepSeek-R1 &amp; Claude 3.7 Sonnet
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </header>
 
-                {/* INTERACTIVE 3-TAB COMPARISON SWITCHER (Pure CSS peer-checked) */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="text-center max-w-2xl mx-auto mb-8">
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-xs font-bold text-blue-950 mb-3">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            Interactive Breakdown · Click Any Tab to Compare
+                {/* ============================================================
+                    INTERACTIVE MOTION DEMO: COURSE HERO PAYWALL & RANDOMIZED VARIABLE DEMO
+                ============================================================ */}
+                <section id="paywall-simulator" className="max-w-6xl mx-auto px-4 sm:px-6 mb-24 scroll-mt-24">
+                    <div className="text-center max-w-3xl mx-auto mb-8">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-xs font-bold text-amber-950 mb-3">
+                            <FlaskConical className="w-3.5 h-3.5 text-amber-800" />
+                            <span>INTERACTIVE PAYWALL &amp; RANDOMIZED STEM SIMULATOR</span>
                         </div>
-                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                            3 Reasons Students Ditch Course Hero for ExamGhost
+                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-[1.08] mb-4">
+                            See Why Unblurring a $39.95 PDF Fails on Live 2026 Exams
                         </h2>
-                        <p className="text-sm sm:text-base text-ink-muted">
-                            Compare how Course Hero and ExamGhost handle live exam accuracy, faculty Honor Code investigations, and monthly pricing.
+                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                            Interact with the simulator below to compare spending a Course Hero Document Unlock on a static 2021 PDF versus solving your live randomized Canvas variables in 0.3 seconds with ExamGhost.
                         </p>
                     </div>
 
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <input type="radio" name="ch_tabs" id="ch-unlocks" className="sr-only peer/unlocks" defaultChecked />
-                        <input type="radio" name="ch_tabs" id="ch-educator" className="sr-only peer/educator" />
-                        <input type="radio" name="ch_tabs" id="ch-pricing" className="sr-only peer/pricing" />
+                    <CourseHeroPaywallDemo />
+                </section>
 
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="ch-unlocks"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/unlocks:bg-ink peer-checked/unlocks:text-white peer-checked/unlocks:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Upload className="w-4 h-4" />
-                                <span>1. PDF Unlocks vs 0.3s Live AI</span>
-                            </label>
-                            <label
-                                htmlFor="ch-educator"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/educator:bg-ink peer-checked/educator:text-white peer-checked/educator:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <UserCheck className="w-4 h-4" />
-                                <span>2. Faculty &amp; Sift Tracking Risk</span>
-                            </label>
-                            <label
-                                htmlFor="ch-pricing"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/pricing:bg-ink peer-checked/pricing:text-white peer-checked/pricing:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <DollarSign className="w-4 h-4" />
-                                <span>3. $39.99/mo vs $19/mo &amp; $99/yr</span>
-                            </label>
+                {/* ============================================================
+                    BESPOKE SECTION 1: THE PROFESSOR DISTRACTOR TRAP ON RANDOMIZED
+                    CANVAS & WEBASSIGN EXAMS (3-STAGE FORENSIC CASE FILE)
+                ============================================================ */}
+                <section id="professor-distractor-trap" className="max-w-6xl mx-auto px-4 sm:px-6 mb-24 scroll-mt-24">
+                    <div className="rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 lg:p-12 shadow-card">
+                        <div className="max-w-3xl mb-10">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-xs font-mono font-bold text-rose-900 mb-3">
+                                <AlertTriangle className="w-3.5 h-3.5 text-rose-700" />
+                                <span>ACADEMIC INTEGRITY FORENSICS // CANVAS · WEBASSIGN · PEARSON MYLAB</span>
+                            </div>
+                            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight leading-[1.1] mb-4">
+                                The Professor Distractor Trap: How Static Course Hero PDFs Give You the Wrong Number on Randomized Canvas &amp; WebAssign Exams
+                            </h2>
+                            <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                University STEM departments no longer write static exams. Here is the exact 3-step forensic mechanism professors use to turn Course Hero&apos;s 2019–2022 PDF library into an automated academic integrity honeytrap—and how ExamGhost&apos;s live symbolic AI defeats it.
+                            </p>
                         </div>
 
-                        {/* TAB 1: UNLOCKS VS LIVE AI */}
-                        <div className="hidden peer-checked/unlocks:block">
-                            <div className="grid lg:grid-cols-2 gap-6">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Course Hero Workflow</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Static 2021 PDFs &amp; Zero Canvas Focus Protection
+                        {/* 3-Step Horizontal Timeline / Case File */}
+                        <div className="grid lg:grid-cols-3 gap-6 mb-10">
+                            {/* Stage 1 */}
+                            <div className="rounded-3xl bg-[#faf8f4] border border-black/10 p-6 relative flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="px-3 py-1 rounded-full bg-ink text-white font-mono text-xs font-bold">
+                                            STAGE 01 // SEEDING
+                                        </span>
+                                        <span className="text-xs font-mono text-ink-muted">Canvas LTI 1.3</span>
+                                    </div>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-2.5">
+                                        Per-Student Algorithmic Variable Randomization
                                     </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Forced to Upload 10 Docs or Pay $39.99:</strong> Free users cannot read a single full solution without uploading 10 study documents and waiting for moderation.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>No Canvas Focus Shield:</strong> Using the <em>Course Hero: AI Study Assistant</em> extension (built for YouTube &amp; Google Docs) or switching tabs to <code>coursehero.com</code> immediately logs <code>window.blur</code> in SpeedGrader.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Useless on Randomized STEM:</strong> Static uploaded PDFs cannot calculate answers when your professor changes the numbers or embeds a locked graph.</span>
-                                        </li>
-                                    </ul>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        When you open a quiz in Canvas, WebAssign, ALEKS, or McGraw-Hill Connect, the server generates unique parameters (<code className="bg-white px-1 py-0.5 rounded border border-black/10 text-xs">[molarity]</code>, <code className="bg-white px-1 py-0.5 rounded border border-black/10 text-xs">[interest_rate]</code>, <code className="bg-white px-1 py-0.5 rounded border border-black/10 text-xs">[voltage]</code>) tied to your student ID.
+                                    </p>
                                 </div>
+                                <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 font-mono">
+                                    Result: Out of 300 students in Chem 101, 0 students share the exact numbers in Course Hero&apos;s 2021 PDF.
+                                </div>
+                            </div>
 
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Workflow</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Instant 0.3s Double-Click Solve Inside Your Exam Tab
+                            {/* Stage 2 */}
+                            <div className="rounded-3xl bg-rose-50/70 border border-rose-200 p-6 relative flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="px-3 py-1 rounded-full bg-rose-800 text-white font-mono text-xs font-bold">
+                                            STAGE 02 // THE BAIT
+                                        </span>
+                                        <span className="text-xs font-mono text-rose-800 font-bold">Poison-Pill Choice</span>
+                                    </div>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-2.5">
+                                        Professors Plant the 2021 Course Hero Answer as Choice B
                                     </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>50 Free Solves ($0 · Zero Document Uploads):</strong> Test full STEM &amp; vision accuracy immediately without uploading a single PDF or entering a credit card.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>4-Layer Focus Shield:</strong> Stay inside Canvas, Blackboard, or McGraw-Hill with zero tab switches and zero SpeedGrader blur flags.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Snap-It Vision (`⌘+Shift+S`):</strong> Crops any locked graph, table, or equation on screen and returns the exact answer in 0.3s.</span>
-                                        </li>
-                                    </ul>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        Instructors know which past midterms have been leaked to Course Hero. When building a 2026 multiple-choice or numeric quiz, they intentionally include the <strong>exact numerical output from the 2021 Course Hero PDF</strong> as a decoy answer choice.
+                                    </p>
+                                </div>
+                                <div className="p-3 rounded-2xl bg-rose-950 text-rose-200 text-xs font-mono">
+                                    Result: Selecting the Course Hero PDF number scores 0 points AND flags you for copying an outdated key.
+                                </div>
+                            </div>
+
+                            {/* Stage 3 */}
+                            <div className="rounded-3xl bg-rose-50/70 border border-rose-200 p-6 relative flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="px-3 py-1 rounded-full bg-rose-950 text-rose-200 font-mono text-xs font-bold">
+                                            STAGE 03 // PAPER TRAIL
+                                        </span>
+                                        <span className="text-xs font-mono text-rose-900 font-bold">Educator Exchange</span>
+                                    </div>
+                                    <h3 className="font-display text-xl font-extrabold text-ink mb-2.5">
+                                        Verified Faculty Accounts &amp; Sift Fingerprinting
+                                    </h3>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                        If the static PDF is blank and you upload your live question to Course Hero&apos;s Tutor Queue, our source audit confirmed <code className="bg-white px-1 py-0.5 rounded border border-rose-200 text-xs">isVerifiedEducator</code> faculty portals, Sift fraud fingerprinting (<code className="bg-white px-1 py-0.5 rounded border border-rose-200 text-xs">cdn.sift.com/s.js</code>), and FullStory session recording.
+                                    </p>
+                                </div>
+                                <div className="p-3 rounded-2xl bg-rose-950 text-rose-200 text-xs font-mono">
+                                    Result: Uploading a live exam creates a permanent, course-tagged URL indexed for your professor.
                                 </div>
                             </div>
                         </div>
 
-                        {/* TAB 2: FACULTY & SIFT TRACKING */}
-                        <div className="hidden peer-checked/educator:block">
-                            <div className="grid lg:grid-cols-2 gap-6">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Course Hero Honor Code Risk</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Educator Exchange Accounts + Sift &amp; FullStory Recording
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Never upload a live exam or ask a tutor question tagged with your course code on Course Hero. Our live inspection of <code>coursehero.com</code> confirmed:
-                                    </p>
-                                    <ul className="space-y-2 text-xs sm:text-sm text-ink-secondary">
-                                        <li>• <strong>Verified Faculty Portal:</strong> Course Hero actively tracks <code>isVerifiedEducator</code> and <code>hasAccessToEducatorExchange</code> flags for professors monitoring their course codes.</li>
-                                        <li>• <strong>Device &amp; Session Fingerprinting:</strong> Loads Sift Science fraud fingerprinting (<code>cdn.sift.com/s.js</code>) and FullStory session recording (<code>attemptSessionRecording</code>) on every visit.</li>
-                                    </ul>
+                        {/* ExamGhost Live Symbolic AI Counter-Architecture Banner */}
+                        <div className="rounded-3xl bg-[#101c16] text-white p-6 sm:p-8 border border-emerald-500/30 grid lg:grid-cols-12 gap-6 items-center">
+                            <div className="lg:col-span-8 space-y-2">
+                                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-300 font-bold">
+                                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                                    <span>HOW EXAMGHOST DEFEATS RANDOMIZED VARIABLES &amp; FACULTY TRAPS</span>
                                 </div>
-
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Privacy Guarantee</div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Zero Public Indexing · Zero University Tags · Ephemeral Solves
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never publishes, indexes, or stores your exam questions in a public database:
-                                    </p>
-                                    <ul className="space-y-2 text-xs sm:text-sm text-ink-secondary">
-                                        <li>• <strong>No Public URL Created:</strong> Your professor can never search Google or an &quot;Educator Exchange&quot; to see that a question was solved.</li>
-                                        <li>• <strong>Zero Session Recording:</strong> No Sift, no FullStory, and no third-party behavioral ad trackers.</li>
-                                    </ul>
-                                </div>
+                                <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white">
+                                    Ephemeral 0.3s Symbolic Computation on Your Exact Live Screen Numbers
+                                </h3>
+                                <p className="text-xs sm:text-sm text-emerald-100/85 leading-relaxed">
+                                    ExamGhost never searches a database of outdated PDFs. When you <kbd className="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Double-Click</kbd> a question or press <kbd className="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Alt+S</kbd> (Hybrid Vision+DOM Snip), ExamGhost parses your live randomized parameters directly from the DOM, solves the underlying mathematical system from scratch in 0.3s, and never publishes or indexes your question online.
+                                </p>
                             </div>
-                        </div>
-
-                        {/* TAB 3: PRICING */}
-                        <div className="hidden peer-checked/pricing:block">
-                            <div className="grid md:grid-cols-3 gap-6">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-mono uppercase text-rose-900 font-bold mb-1">Course Hero Monthly</div>
-                                    <div className="font-display text-3xl font-extrabold text-ink mb-1">$39.99<span className="text-sm font-normal text-ink-muted">/mo</span></div>
-                                    <div className="text-xs text-rose-800 font-semibold mb-4">Equals $479.88/yr billed monthly</div>
-                                    <p className="text-xs text-ink-secondary leading-relaxed">
-                                        More than double ExamGhost&apos;s monthly price, and still rations you to ~30 Document Unlocks and 10–40 Tutor Credits per month.
-                                    </p>
+                            <div className="lg:col-span-4 grid grid-cols-2 gap-2.5 font-mono text-xs">
+                                <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/10">
+                                    <div className="text-emerald-300 font-bold">Alt+1 / Alt+2</div>
+                                    <div className="text-[11px] text-slate-300 mt-0.5">Invisible &amp; Stealth HUD</div>
                                 </div>
-
-                                <div className="p-6 rounded-3xl bg-[#faf8f4] border border-black/10">
-                                    <div className="text-xs font-mono uppercase text-amber-900 font-bold mb-1">Course Hero Annual</div>
-                                    <div className="font-display text-3xl font-extrabold text-ink mb-1">$119.40<span className="text-sm font-normal text-ink-muted">/yr</span></div>
-                                    <div className="text-xs text-ink-muted mb-4">$9.95/mo billed upfront</div>
-                                    <p className="text-xs text-ink-secondary leading-relaxed">
-                                        Costs $20.40/yr more than ExamGhost&apos;s Academic Year Pass ($99/yr), with zero Canvas Focus Shield protection.
-                                    </p>
+                                <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/10">
+                                    <div className="text-emerald-300 font-bold">Alt+3</div>
+                                    <div className="text-[11px] text-slate-300 mt-0.5">Live LaTeX Derivation</div>
                                 </div>
-
-                                <div className="p-6 rounded-3xl bg-emerald-950 text-white border border-emerald-700">
-                                    <div className="text-xs font-mono uppercase text-[#cdeecb] font-bold mb-1">ExamGhost Unlimited Passes</div>
-                                    <div className="font-display text-3xl font-extrabold text-white mb-1">$19<span className="text-sm font-normal text-white/75">/mo</span> · $99<span className="text-sm font-normal text-white/75">/yr</span></div>
-                                    <div className="text-xs text-[#cdeecb] font-semibold mb-4">($8.25/mo annual) or $199 Lifetime</div>
-                                    <p className="text-xs text-white/85 leading-relaxed">
-                                        Start with 50 Free Solves ($0). All paid passes include unlimited solves, 4-Layer Focus Shield, and a 14-day 100% refund guarantee.
-                                    </p>
+                                <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/10">
+                                    <div className="text-emerald-300 font-bold">⌘+Shift+U</div>
+                                    <div className="text-[11px] text-slate-300 mt-0.5">Instant RAM Unload</div>
+                                </div>
+                                <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/10">
+                                    <div className="text-emerald-300 font-bold">0 Public URLs</div>
+                                    <div className="text-[11px] text-slate-300 mt-0.5">100% Ephemeral</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* SIDE-BY-SIDE COMPARISON TABLE + COLLAPSIBLE SOURCE AUDIT */}
+                {/* ============================================================
+                    BESPOKE SECTION 2: 30 BLURRED DOCUMENT UNLOCKS ($39.95/MO)
+                    VS UNLIMITED LIVE AI + STUDY HUB ($8.25/MO)
+                ============================================================ */}
+                <section id="economic-breakdown" className="max-w-6xl mx-auto px-4 sm:px-6 mb-24 scroll-mt-24">
+                    <div className="text-center max-w-3xl mx-auto mb-10">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-xs font-bold text-emerald-950 mb-3">
+                            <DollarSign className="w-3.5 h-3.5 text-emerald-800" />
+                            <span>2026 STUDENT ECONOMICS &amp; 2-IN-1 VALUE AUDIT</span>
+                        </div>
+                        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-[1.08] mb-4">
+                            30 Blurred Document Unlocks ($39.95/mo) vs Unlimited Live AI + Study Hub ($8.25/mo)
+                        </h2>
+                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                            Why pay $39.95/month for rationed PDF unlocks when ExamGhost gives you <strong>5 Free Solves / Day ($0)</strong> and a <strong>2-in-1 Unlimited Suite</strong> that includes Claude 3.7 Sonnet, ChatGPT (o3-mini/4o), and DeepSeek-R1?
+                        </p>
+                    </div>
+
+                    {/* Side-by-Side Economic Ledger Cards */}
+                    <div className="grid lg:grid-cols-12 gap-8 items-stretch mb-12">
+                        {/* Course Hero Rationed Economy Card */}
+                        <div className="lg:col-span-5 rounded-[32px] bg-white border-2 border-rose-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+                            <div>
+                                <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/10">
+                                    <div>
+                                        <span className="text-xs font-mono uppercase text-rose-800 font-bold block">Course Hero Subscription</span>
+                                        <h3 className="font-display text-2xl font-extrabold text-ink">Rationed Credit Economy</h3>
+                                    </div>
+                                    <div className="text-right">
+                                        <div className="font-display text-3xl font-extrabold text-rose-800">$39.95</div>
+                                        <div className="text-[11px] text-ink-muted">per month ($479.40/yr)</div>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-3.5 text-xs sm:text-sm text-ink-secondary mb-6">
+                                    <div className="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200/80 flex items-start gap-2.5">
+                                        <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                        <div>
+                                            <strong className="text-ink block">Capped at 30 Document Unlocks / Month</strong>
+                                            Unblurring a syllabus or blank study guide permanently burns 1 of your 30 monthly unlocks with zero refund.
+                                        </div>
+                                    </div>
+                                    <div className="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200/80 flex items-start gap-2.5">
+                                        <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                        <div>
+                                            <strong className="text-ink block">&ldquo;Upload 10 Personal Files&rdquo; Free Wall</strong>
+                                            Refuses to let you test a single unblurred answer for free unless you upload 10 personal coursework documents.
+                                        </div>
+                                    </div>
+                                    <div className="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200/80 flex items-start gap-2.5">
+                                        <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                        <div>
+                                            <strong className="text-ink block">Zero Frontier AI Models Included</strong>
+                                            Does not include direct access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, or DeepSeek-R1 for essays and proofs.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-rose-100/70 border border-rose-200 text-xs font-mono text-rose-950">
+                                Annual Billed Plan: <strong>$119.40/yr ($9.95/mo)</strong> — still capped at 30 unlocks/mo with 0 Canvas Focus Shield.
+                            </div>
+                        </div>
+
+                        {/* ExamGhost 2-in-1 Unlimited Card */}
+                        <div className="lg:col-span-7 rounded-[32px] bg-[#141824] text-white border-2 border-emerald-500/40 p-6 sm:p-8 flex flex-col justify-between shadow-lift">
+                            <div>
+                                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-white/10">
+                                    <div>
+                                        <span className="text-xs font-mono uppercase text-emerald-300 font-bold block">
+                                            ExamGhost 2-in-1 Unlimited Pass
+                                        </span>
+                                        <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white">
+                                            Stealth Extension + Multi-Model Study Hub
+                                        </h3>
+                                    </div>
+                                    <div className="text-right">
+                                        <div className="font-display text-3xl font-extrabold text-emerald-400">
+                                            $8.25<span className="text-sm font-normal text-slate-300">/mo</span>
+                                        </div>
+                                        <div className="text-[11px] text-emerald-200 font-semibold">
+                                            $99/yr · $19/mo · $199 Lifetime
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Free Tier Highlight Banner */}
+                                <div className="p-4 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 mb-5 flex flex-wrap items-center justify-between gap-2">
+                                    <div className="text-xs sm:text-sm text-emerald-100">
+                                        <strong className="text-white">Free Forever Daily Quota:</strong>{' '}
+                                        <strong>5 Free Solves / Day</strong> (auto-refills every 24 hours, $0, no card or file uploads needed).
+                                    </div>
+                                    <span className="px-2.5 py-1 rounded-full bg-emerald-400 text-slate-950 font-mono text-[11px] font-extrabold">
+                                        $0 DAILY REFILL
+                                    </span>
+                                </div>
+
+                                {/* 2-in-1 Pillars */}
+                                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                                    <div className="p-4 rounded-2xl bg-white/[0.05] border border-white/10 space-y-2">
+                                        <div className="text-xs font-mono font-bold text-emerald-300 uppercase">
+                                            Pillar 1 // Unlimited Exam Stealth
+                                        </div>
+                                        <div className="font-bold text-sm text-white">
+                                            0.3s In-Tab LMS Extension
+                                        </div>
+                                        <p className="text-xs text-slate-300 leading-relaxed">
+                                            Unlimited solves on Canvas, Blackboard, Moodle, D2L, WebAssign &amp; McGraw-Hill with <code className="text-emerald-300">Double-Click</code>, <code className="text-cyan-300">Alt+S</code> Hybrid Vision+DOM Snip, <code className="text-purple-300">Alt+1</code> Invisible, <code className="text-purple-300">Alt+2</code> Stealth, <code className="text-amber-300">Alt+3</code> Explain, and <code className="text-rose-300">⌘+Shift+U</code> Master Toggle.
+                                        </p>
+                                    </div>
+                                    <div className="p-4 rounded-2xl bg-white/[0.05] border border-white/10 space-y-2">
+                                        <div className="text-xs font-mono font-bold text-cyan-300 uppercase">
+                                            Pillar 2 // Study &amp; Homework AI Hub
+                                        </div>
+                                        <div className="font-bold text-sm text-white">
+                                            Claude 3.7 + ChatGPT + DeepSeek-R1
+                                        </div>
+                                        <p className="text-xs text-slate-300 leading-relaxed">
+                                            Full access to <strong className="text-white">Claude 3.7 Sonnet</strong>, <strong className="text-white">ChatGPT (GPT-4o / o3-mini)</strong>, and <strong className="text-white">DeepSeek-R1</strong> in one workspace for homework sets, essays, syllabus PDFs, and step-by-step LaTeX math proofs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10">
+                                <span className="text-xs text-slate-300">
+                                    Save <strong className="text-emerald-300">79%</strong> vs Course Hero Monthly ($39.95/mo) + replace $60/mo in separate AI chatbots.
+                                </span>
+                                <Link
+                                    prefetch={false}
+                                    href="/#pricing"
+                                    className="px-5 py-2.5 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs transition-colors inline-flex items-center gap-1.5"
+                                >
+                                    <span>Start 5 Free Solves / Day</span>
+                                    <ArrowRight className="w-3.5 h-3.5" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Embedded StudyAiHubShowcase Component */}
+                    <StudyAiHubShowcase compact />
+                </section>
+
+                {/* ============================================================
+                    DEEP COMPARISON MATRIX + COLLAPSIBLE SOURCE AUDIT
+                ============================================================ */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                     <div className="rounded-3xl bg-white border border-black/10 overflow-hidden shadow-card">
                         <div className="bg-[#f7f4ee] px-6 py-4 border-b border-black/10 flex flex-wrap items-center justify-between gap-2">
                             <h2 className="font-display font-bold text-base sm:text-lg text-ink">
-                                Course Hero vs ExamGhost: 2026 Feature &amp; Pricing Matrix
+                                Course Hero vs ExamGhost: 2026 Feature, Accuracy &amp; Pricing Matrix
                             </h2>
-                            <span className="text-xs text-ink-muted font-medium">Verified against coursehero.com</span>
+                            <span className="text-xs text-ink-muted font-medium">Verified against coursehero.com (2026)</span>
                         </div>
 
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left text-xs sm:text-sm">
+                            <table className="w-full text-left text-xs sm:text-sm min-w-[680px]">
                                 <thead className="bg-[#faf8f4] border-b border-black/10">
                                     <tr>
-                                        <th className="py-4 px-6 font-bold text-ink">Evaluation Criteria</th>
-                                        <th className="py-4 px-6 text-center font-extrabold text-emerald-950 bg-[#cdeecb]/40">ExamGhost</th>
-                                        <th className="py-4 px-6 text-center font-bold text-ink-muted">Course Hero (coursehero.com)</th>
+                                        <th className="py-4 px-6 font-bold text-ink w-[34%]">Evaluation Criteria</th>
+                                        <th className="py-4 px-6 text-center font-extrabold text-emerald-950 bg-[#cdeecb]/40 w-[33%]">
+                                            ExamGhost (Stealth + Study AI Hub)
+                                        </th>
+                                        <th className="py-4 px-6 text-center font-bold text-ink-muted w-[33%]">
+                                            Course Hero (coursehero.com)
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-black/5">
                                     <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-3.5 px-6 font-semibold text-ink">Core Architecture</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">0.3s Live In-Tab AI + STEM Vision OCR</td>
-                                        <td className="py-3.5 px-6 text-center text-ink-muted">184M Blurred PDF Library + Tutor Queue</td>
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Core Solving Architecture</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            0.3s Live Symbolic AI + Alt+S Hybrid Vision+DOM Snip
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-ink-muted">
+                                            Static 2019–2022 Blurred PDF Library + Tutor Queue
+                                        </td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-3.5 px-6 font-semibold text-ink">Free Trial Policy</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0 · No Uploads · No Card)</td>
-                                        <td className="py-3.5 px-6 text-center text-rose-800">Blurred Docs (Must Upload 10+ Files to Unlock)</td>
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Randomized STEM Variable Accuracy</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            ✓ Computes Your Exact Live Screen Numbers
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">
+                                            ✗ Fails (Old PDF Numbers Trigger Distractor Traps)
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Free Daily Access Policy</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            ✓ 5 Free Solves / Day (Auto-Refills Every 24h · $0)
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-rose-800">
+                                            ✗ Blurred Paywall (Must Upload 10 Personal Docs)
+                                        </td>
+                                    </tr>
+                                    <tr className="hover:bg-[#fcf9f5]">
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Included Multi-Model Study Hub</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            ✓ Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-ink-muted">
+                                            ✗ Rationed 10–40 Tutor Credits / Month
+                                        </td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Month-to-Month Price</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$19/mo (Unlimited Solves · Save 52%)</td>
-                                        <td className="py-3.5 px-6 text-center text-rose-800">~$39.99/mo (Rationed to ~30 Unlocks/mo)</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            $19/mo (Unlimited Solves + Study Hub)
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">
+                                            ~$39.95/mo (Capped at 30 Unlocks / Month)
+                                        </td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Annual &amp; Lifetime Pricing</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$99/yr ($8.25/mo) or $199 Lifetime</td>
-                                        <td className="py-3.5 px-6 text-center text-ink-muted">~$119.40/yr ($9.95/mo) · No Lifetime Plan</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            $99/yr ($8.25/mo) or $199 Lifetime Pass
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-ink-muted">
+                                            ~$119.40/yr ($9.95/mo) · No Lifetime Option
+                                        </td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-3.5 px-6 font-semibold text-ink">Canvas Quiz Log Protection</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">4-Layer Focus Shield (0 Blur Flags)</td>
-                                        <td className="py-3.5 px-6 text-center text-rose-800">None (Extension &amp; Tab Switches Log Blur)</td>
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Stealth Hotkeys &amp; SpeedGrader Shield</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            ✓ Double-Click, Alt+S, Alt+1/2/3, ⌘+Shift+U (0 Blur Flags)
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-rose-800">
+                                            ✗ None (Tab Switching &amp; Extension Log window.blur)
+                                        </td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-3.5 px-6 font-semibold text-ink">Academic Paper Trail Risk</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Zero (Never Indexes Your Exam Questions)</td>
-                                        <td className="py-3.5 px-6 text-center text-rose-800">High (Educator Exchange + Sift Fingerprinting)</td>
+                                        <td className="py-3.5 px-6 font-semibold text-ink">Faculty &amp; Honor Code Paper Trail</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
+                                            ✓ Zero (Ephemeral Compute · Never Publicly Indexed)
+                                        </td>
+                                        <td className="py-3.5 px-6 text-center text-rose-800 font-semibold">
+                                            ✗ High Risk (Educator Exchange + Sift Fingerprinting)
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -553,7 +803,9 @@ export default function CourseheroVsExamghostPage() {
                             <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-xs sm:text-sm font-bold text-ink hover:bg-[#f2ede4] transition-colors">
                                 <div className="flex items-center gap-2">
                                     <Lock className="w-4 h-4 text-emerald-800" />
-                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Technical HTML Source &amp; Telemetry Audit (coursehero.com)</h3>
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">
+                                        Technical HTML Source &amp; Telemetry Audit (coursehero.com)
+                                    </h3>
                                 </div>
                                 <ChevronDown className="w-4 h-4 text-ink-muted transition-transform group-open:rotate-180" />
                             </summary>
@@ -562,33 +814,36 @@ export default function CourseheroVsExamghostPage() {
                                     <strong>Telemetry &amp; Educator Flags:</strong> Live inspection of <code>https://www.coursehero.com</code> (owned by Learneo alongside QuillBot, Symbolab, and Cram.com) confirms Sift Science fraud fingerprinting (<code>cdn.sift.com/s.js</code>, account <code>84e77b3dea</code>), FullStory session recording (<code>window.__CH_FULLSTORY_DATA</code> and <code>window.attemptSessionRecording</code>), Amplitude analytics, Google Tag Manager (<code>gtm.coursehero.com</code>), and explicit faculty flags (<code>window.__CH_PERSON.isVerifiedEducator</code> and <code>hasAccessToEducatorExchange</code>).
                                 </p>
                                 <p className="leading-relaxed">
-                                    <strong>Static Document Ratio:</strong> Under <em>&quot;Explore materials from top schools nearby,&quot;</em> Course Hero&apos;s SSR HTML renders school badges such as <code>Liberty University: 660K Documents 0 Questions</code>, <code>Grand Canyon University: 604K Documents 0 Questions</code>, and <code>Ashford University: 420K Documents 0 Questions</code>.
+                                    <strong>Static Document Ratio:</strong> Under <em>&quot;Explore materials from top schools nearby,&quot;</em> Course Hero&apos;s SSR HTML renders school badges such as <code>Liberty University: 660K Documents 0 Questions</code>, <code>Grand Canyon University: 604K Documents 0 Questions</code>, and <code>Ashford University: 420K Documents 0 Questions</code>—demonstrating why static document uploads cannot keep pace with dynamic, variable-seeded LMS assessments.
                                 </p>
                             </div>
                         </details>
                     </div>
                 </section>
 
-                {/* FAQ ACCORDION */}
+                {/* ============================================================
+                    FAQ ACCORDION
+                ============================================================ */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
                     <div className="text-center max-w-2xl mx-auto mb-10">
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
                             Frequently Asked Questions
                         </h2>
                         <p className="text-sm text-ink-muted">
-                            Everything students ask when comparing Course Hero and ExamGhost.
+                            Everything students ask when switching from Course Hero to ExamGhost.
                         </p>
                     </div>
 
                     <div className="space-y-4">
-                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                        {(jsonLd["@graph"][3] as any).mainEntity.map((faq: any, index: number) => (
                             <details
                                 key={index}
                                 className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all open:shadow-md"
+                                open={index === 0}
                             >
                                 <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-sm sm:text-base text-ink">
                                     <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
-                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
+                                    <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180 shrink-0 ml-3" />
                                 </summary>
                                 <p className="mt-4 text-xs sm:text-sm text-ink-secondary leading-relaxed pt-3 border-t border-black/5">
                                     {faq.acceptedAnswer.text}
@@ -598,31 +853,35 @@ export default function CourseheroVsExamghostPage() {
                     </div>
                 </section>
 
-                {/* BESPOKE CONVERSION STRIP + RELATED COMPARISONS */}
+                {/* ============================================================
+                    BESPOKE CONVERSION STRIP + RELATED COMPARISONS
+                ============================================================ */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
-                    <div className="rounded-[32px] bg-gradient-to-r from-[#dbeafe] via-[#e2f5ea] to-[#cdeecb] p-8 sm:p-10 border border-black/10 shadow-card mb-10">
+                    <div className="rounded-[32px] bg-gradient-to-r from-[#fffbeb] via-[#e2f5ea] to-[#cdeecb] p-8 sm:p-10 border border-black/10 shadow-card mb-10">
                         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                             <div className="max-w-xl text-center lg:text-left">
-                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
+                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>No Document Uploads · Save 52% Monthly · 50 Free Solves</span>
+                                    <span>Zero Document Uploads · 5 Free Solves / Day ($0)</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
-                                    Done wasting unlocks on blank Course Hero PDFs?
+                                    Done wasting $39.95/mo on blurred, outdated Course Hero PDFs?
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Solve your exact Canvas, Blackboard, or McGraw-Hill question live in 0.3 seconds. Start free with 50 solves ($0, no credit card, zero uploads).
+                                    Compute your exact randomized Canvas &amp; WebAssign numbers live in 0.3 seconds—and unlock Claude 3.7 Sonnet, ChatGPT (o3-mini/4o) &amp; DeepSeek-R1 in one 2-in-1 workspace.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-                                <Link prefetch={false}
+                                <Link
+                                    prefetch={false}
                                     href="/#pricing"
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </Link>
-                                <Link prefetch={false}
+                                <Link
+                                    prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
                                     className="px-5 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-white hover:bg-white/90 text-ink border border-black/10 shadow-sm inline-flex items-center gap-1.5"
                                 >
@@ -644,6 +903,10 @@ export default function CourseheroVsExamghostPage() {
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <Link prefetch={false} href="/gauth-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center shadow-sm">
+                            <div className="font-bold text-xs text-ink">Gauth vs ExamGhost</div>
+                            <div className="text-[11px] text-ink-muted mt-0.5">35° Phone Gaze vs 0.0° Desktop HUD</div>
+                        </Link>
                         <Link prefetch={false} href="/brainly-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center shadow-sm">
                             <div className="font-bold text-xs text-ink">Brainly vs ExamGhost</div>
                             <div className="text-[11px] text-ink-muted mt-0.5">Forum answers vs 0.3s live AI</div>
@@ -652,12 +915,8 @@ export default function CourseheroVsExamghostPage() {
                             <div className="font-bold text-xs text-ink">Homeworkify vs ExamGhost</div>
                             <div className="text-[11px] text-ink-muted mt-0.5">Shutdown notice &amp; safe alternative</div>
                         </Link>
-                        <Link prefetch={false} href="/coursology-vs-examghost" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center shadow-sm">
-                            <div className="font-bold text-xs text-ink">Coursology vs ExamGhost</div>
-                            <div className="text-[11px] text-ink-muted mt-0.5">Study suite vs exam stealth</div>
-                        </Link>
                         <Link prefetch={false} href="/compare-canvas-hack-extensions" className="p-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 transition-all text-center shadow-sm">
-                            <div className="font-bold text-xs text-ink">All 57 Extensions</div>
+                            <div className="font-bold text-xs text-ink">All 58 Extensions</div>
                             <div className="text-[11px] text-ink-muted mt-0.5">Full 2026 Comparison Hub</div>
                         </Link>
                     </div>

@@ -47,5 +47,8 @@ out.zip
 .bin/
 .windsurf/
 film/audio/*.wav
+__pycache__/
+*.py[cod]
+
 
 

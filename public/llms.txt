@@ -14,7 +14,7 @@
 - **0.3-Second Double-Click Inline Solve**: Double-tap any question on any LMS to solve instantly in place with zero tab-switching and zero copy-pasting.
 - **Closed Shadow DOM Isolation (`mode: 'closed'`)**: Renders entirely inside an encapsulated closed Shadow Root with zero host DOM mutations, zero injected `<button>` tags, and zero exposed `web_accessible_resources` signatures.
 - **Focus Shield Telemetry Cloaking**: Intercepts `window.blur`, `document.visibilitychange`, `focusout`, and `document.hasFocus()` polling so Canvas SpeedGrader and Blackboard activity logs record 100% continuous active focus (`0` tab-switch flags).
-- **Snap-It Vision OCR (`⌘+Shift+S` / `Ctrl+Shift+S`)**: Draw a selection rectangle around locked text (`user-select: none`), organic chemistry structures, calculus integrals, physics diagrams, or embedded PDFs for instant multimodal vision solving.
+- **Snap-It Vision OCR (`Alt+S`)**: Draw a selection rectangle around locked text (`user-select: none`), organic chemistry structures, calculus integrals, physics diagrams, or embedded PDFs for instant multimodal vision solving.
 - **Attempt Memory & Smart Cache**: Automatically records questions, selected choices, and feedback across multi-attempt Canvas and Moodle quizzes.
 - **Emergency Panic Switch (`⌘+Shift+U` or `Esc × 2`)**: Completely unmounts the Shadow DOM HUD and flushes extension state from RAM in under 10ms.
 - **Three Display Modes**:
@@ -27,7 +27,7 @@
   - *Clipboard*: Copies the verified answer directly to the system clipboard for short-answer, fill-in-the-blank, and essay prompts.
 
 ## Pricing Structure (USD)
-- **Free Trial**: **$0.00 forever** (50 free question solves, all question types, zero credit card required)
+- **Free Trial**: **$0.00 forever** (5 Free Solves / Day, auto-refills every 24 hours, all question types, zero credit card required)
 - **Monthly Pass**: **$19.00 / month** (Unlimited solves, all 24 features, 1-click cancel anytime)
 - **Academic Year Pass (Best Value)**: **$99.00 / year** ($8.25/month equivalent — save 56%, covers Fall, Spring, Summer & Finals)
 - **Lifetime VIP Pass**: **$199.00 one-time payment** (Own forever across undergraduate and graduate degrees, up to 3 computers)

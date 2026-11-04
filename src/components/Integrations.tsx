@@ -11,70 +11,94 @@ import {
 export default function Integrations() {
     const categories = [
         {
-            count: "3 modes",
-            title: "3 Display Modes",
-            desc: "Invisible for screen-shares, Stealth with quiet cursor, and Explain for deep step-by-step reasoning",
-            bg: "#c4d0f8", // Periwinkle
+            count: "3 Modes",
+            title: "3 Solver Modes",
+            desc: "Switch instantly between Invisible (Alt+1) for screen-shares, Stealth (Alt+2) for subtle ✓ hints, and Explain (Alt+3) for step-by-step proofs.",
+            bg: "#c3ccf9", // Periwinkle stage matching ghost_scene_modes.jpg
             accent: "#4361ee",
             icon: Shield,
-            badge: "Screen-Share Safe",
-            image: "/images/ghost/ghost_card_stealth.jpg",
-            features: ["Invisible: Silent answer injection", "Stealth: Quiet micro-cursor", "Explain: Step-by-step proof drawer"]
+            badge: "Alt+1 / Alt+2 / Alt+3",
+            image: "/images/ghost/ghost_scene_modes.jpg",
+            features: [
+                "Invisible (Alt+1): Silent auto-fill & copy",
+                "Stealth (Alt+2): Subtle ✓ checkmark hint",
+                "Explain (Alt+3): Side step-by-step banner"
+            ]
         },
         {
-            count: "3 methods",
-            title: "3 Answer Methods",
-            desc: "Auto-fill direct selection, Smart Highlight for 1–10s, and Silent Clipboard copy for essays",
-            bg: "#bfe3f6", // Sky
+            count: "3 Methods",
+            title: "3 Answer Delivery Methods",
+            desc: "Choose how ExamGhost delivers every solution: instant Auto-Fill selection, subtle ✓ Highlight, or Silent Clipboard copy for essays.",
+            bg: "#bce0fb", // Sky stage matching ghost_scene_methods.jpg
             accent: "#0077b6",
             icon: ScanLine,
-            badge: "Zero Copy-Paste",
-            image: "/images/ghost/ghost_card_vision.jpg",
-            features: ["Auto-fill direct option selection", "Configurable 1-10s glow duration", "Silent clipboard copy for typing"]
+            badge: "Double-Click",
+            image: "/images/ghost/ghost_scene_methods.jpg",
+            features: [
+                "Auto-fill radio, checkbox & numeric inputs",
+                "Discreet green ✓ hint next to verified choice",
+                "Silent clipboard copy for written responses"
+            ]
         },
         {
             count: "Vision AI",
-            title: "Snap-It Sniping",
-            desc: "Hit ⌘+Shift+S to draw a crop box around any equation, diagram, or locked PDF question",
-            bg: "#e2d3fa", // Lilac
+            title: "Snap-It Region OCR",
+            desc: "Press Alt+S and drag a selection box over any locked math equation, graph, circuit, or PDF diagram to solve visually in under 1.2s.",
+            bg: "#dfc9fb", // Lilac stage matching ghost_scene_snapit.jpg
             accent: "#7209b7",
             icon: Sparkles,
-            badge: "⌘+Shift+S",
-            image: "/images/ghost/ghost_card_ai.jpg",
-            features: ["Calculus & chemical equations", "Chart, graph & diagram parser", "Works on PDFs, slides & canvas"]
+            badge: "Alt+S",
+            image: "/images/ghost/ghost_scene_snapit.jpg",
+            features: [
+                "Calculus, matrices & chemical structures",
+                "Graphs, tables & free-body diagrams",
+                "Hybrid Vision AI + live DOM context"
+            ]
         },
         {
             count: "20+ LMSs",
             title: "Universal LMS Support",
-            desc: "Native double-click solving for Canvas Classic & New Quizzes, Blackboard Ultra, Moodle and D2L",
-            bg: "#cdeecb", // Mint
+            desc: "Engineered for native Double-Click and Alt+S solving across Canvas Classic & New Quizzes, Blackboard Ultra, Moodle, and D2L.",
+            bg: "#b8efd4", // Mint stage matching ghost_scene_lms.jpg
             accent: "#2d6a4f",
             icon: Layers,
-            badge: "All Major Platforms",
-            image: "/images/ghost/ghost_card_lms.jpg",
-            features: ["Canvas Classic & New Quizzes", "Blackboard Learn & Ultra", "Moodle, Brightspace & Google Forms"]
+            badge: "All Major Portals",
+            image: "/images/ghost/ghost_scene_lms.jpg",
+            features: [
+                "Canvas Classic & New Quizzes (LTI)",
+                "Blackboard Learn & Blackboard Ultra",
+                "Moodle, D2L Brightspace & STEM portals"
+            ]
         },
         {
             count: "Universal",
             title: "Locked Content Bypass",
-            desc: "When exams disable text selection, right clicks, or render in canvas, Snap-It reads it anyway",
-            bg: "#ffd5cc", // Blush
+            desc: "When exams disable right-click, block text selection, or lock questions inside cross-origin iframes, ExamGhost reads them effortlessly.",
+            bg: "#f9d2bb", // Peach stage matching ghost_scene_bypass.jpg
             accent: "#d90429",
             icon: Lock,
-            badge: "Universal Access",
-            image: "/images/ghost/ghost_card_proctor.jpg",
-            features: ["Bypasses text-selection locks", "Scanned worksheet OCR", "Canvas-rendered question solve"]
+            badge: "Zero Copy-Paste",
+            image: "/images/ghost/ghost_scene_bypass.jpg",
+            features: [
+                "Bypasses disabled right-click & copy locks",
+                "Works in ALEKS, MyLab & WebAssign iframes",
+                "Solves uncopyable canvas & PDF worksheets"
+            ]
         },
         {
-            count: "Client-side",
+            count: "Client-Side",
             title: "Zero-Footprint Privacy",
-            desc: "Off until switched on (⌘+Shift+U). Operates in closed Shadow DOM with zero background telemetry",
-            bg: "#bfe9d9", // Teal
+            desc: "Stays 100% dormant until toggled on (⌘+Shift+U). Runs inside an isolated Closed Shadow DOM with zero tab-switch or blur logs.",
+            bg: "#b6e7dc", // Seafoam stage matching ghost_scene_privacy.jpg
             accent: "#006d77",
             icon: Eye,
-            badge: "100% Client-Side",
-            image: "/images/ghost/ghost_card_hud.jpg",
-            features: ["Off until switched on (⌘+Shift+U)", "No account needed for free 50", "Closed Shadow DOM container"]
+            badge: "⌘+Shift+U",
+            image: "/images/ghost/ghost_scene_privacy.jpg",
+            features: [
+                "Instant ON / OFF master toggle (⌘+Shift+U)",
+                "5 free solves / day + Paid Study AI Hub",
+                "Closed Shadow DOM (0 SpeedGrader flags)"
+            ]
         }
     ];
 
@@ -229,67 +253,76 @@ export default function Integrations() {
                     </p>
                 </div>
 
-                {/* Categories Grid (OneMacApp 6 Pastel Cards with 3D Ghost Characters) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Categories Grid (Top Unobstructed 16:9 3D Mascot Stage + Clean White Content Body) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
                     {categories.map((cat, idx) => {
                         const IconComponent = cat.icon;
                         return (
-                            <div
+                            <article
                                 key={idx}
-                                className="rounded-3xl p-6 sm:p-7 border border-black/5 shadow-card hover:shadow-lift transition-all duration-300 flex flex-col justify-between group overflow-hidden relative"
-                                style={{ backgroundColor: cat.bg }}
+                                className="rounded-[28px] bg-white border border-black/8 shadow-card hover:shadow-lift hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
                             >
-                                {/* Top Header */}
-                                <div>
-                                    <div className="flex items-center justify-between gap-2 mb-4">
-                                        <span className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm text-ink border border-black/5">
-                                            {cat.count}
-                                        </span>
-                                        <span className="text-xs font-medium text-ink-secondary bg-black/5 px-2.5 py-1 rounded-full flex items-center gap-1">
-                                            <IconComponent className="w-3.5 h-3.5 text-ink" />
-                                            <span>{cat.badge}</span>
-                                        </span>
-                                    </div>
-
-                                    <h3 className="font-display text-2xl font-bold text-ink mb-2 tracking-tight">
-                                        {cat.title}
-                                    </h3>
-                                    <p className="text-sm text-ink-secondary leading-relaxed mb-5">
-                                        {cat.desc}
-                                    </p>
-                                </div>
-
-                                {/* 3D Character Image Card */}
-                                <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-5 border-2 border-white/90 shadow-soft bg-cream/60">
+                                {/* Top Full-Bleed 16:9 3D Character Stage (100% Uncropped & Unobstructed) */}
+                                <div
+                                    className="relative w-full aspect-[16/9] overflow-hidden border-b border-black/5 flex items-center justify-center"
+                                    style={{ backgroundColor: cat.bg }}
+                                >
                                     <img 
                                         src={cat.image} 
                                         alt={`${cat.title} — ${cat.badge} in ExamGhost AI`} 
-                                        width={360}
-                                        height={200}
+                                        width={960}
+                                        height={536}
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-transform duration-500 ease-out select-none"
                                     />
                                 </div>
 
-                                {/* Feature checklist pills */}
-                                <div className="bg-white/85 backdrop-blur-md rounded-2xl p-3.5 border border-white/80 shadow-xs">
-                                    <div className="space-y-1.5">
+                                {/* Bottom Crisp White Card Body */}
+                                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between bg-white">
+                                    <div>
+                                        {/* Clean Pill Row Inside Card Body */}
+                                        <div className="flex items-center justify-between gap-2 mb-3.5">
+                                            <span
+                                                className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-black/8 text-ink"
+                                                style={{ backgroundColor: `${cat.bg}66` }}
+                                            >
+                                                {cat.count}
+                                            </span>
+                                            <span className="text-[11px] font-mono font-semibold text-ink-secondary bg-[#faf8f5] px-2.5 py-0.5 rounded-full border border-black/8 flex items-center gap-1.5">
+                                                <IconComponent className="w-3 h-3 text-ink shrink-0" />
+                                                <span>{cat.badge}</span>
+                                            </span>
+                                        </div>
+
+                                        <h3 className="font-display text-xl sm:text-[22px] font-bold text-ink mb-2 tracking-tight leading-snug">
+                                            {cat.title}
+                                        </h3>
+                                        <p className="text-[13.5px] sm:text-sm text-ink-secondary leading-relaxed mb-5">
+                                            {cat.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Compact Feature Checklist */}
+                                    <div className="pt-4 border-t border-black/6 space-y-2">
                                         {cat.features.map((feat, fIdx) => (
-                                            <div key={fIdx} className="flex items-center gap-2 text-xs text-ink-secondary">
+                                            <div key={fIdx} className="flex items-center gap-2 text-xs text-ink-secondary font-medium">
                                                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                                                <span className="truncate">{feat}</span>
+                                                <span>{feat}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
-
-                                {/* Subtle corner glare effect */}
-                                <div className="pointer-events-none absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-white/30 blur-2xl group-hover:scale-150 transition-transform duration-500" />
-                            </div>
+                            </article>
                         );
                     })}
                 </div>
+
+                {/* Editorial Bridge Statement (Matches Reference Layout Rhythm) */}
+                <p className="mt-14 sm:mt-16 text-center font-display text-xl sm:text-2xl md:text-[28px] font-bold tracking-tight text-ink max-w-2xl mx-auto leading-[1.3]">
+                    ExamGhost puts instant answers, Vision OCR, and step-by-step proofs{' '}
+                    <span className="text-emerald-700">right inside your active quiz tab</span>, so nothing ever triggers a tab-switch log.
+                </p>
 
                 {/* =========================================================================
                     SCHOOL PORTAL COMPATIBILITY GRID (CLEAN 3x3 BENTO + UNIVERSAL OCR BAR)
@@ -406,11 +439,11 @@ export default function Integrations() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-2.5 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
+                            <div className="flex flex-wrap md:flex-col items-center md:items-end justify-between gap-2.5 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
                                 <div className="font-mono text-xs font-bold text-white flex items-center gap-1.5">
-                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-[#e2d3fa]">⌘ + Shift + S</kbd>
+                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-[#e2d3fa]">Alt + S</kbd>
                                     <span className="text-white/75 text-[11px]">or</span>
-                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-white/90">Ctrl + Shift + S</kbd>
+                                    <kbd className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-white/90">Double-Click</kbd>
                                 </div>
                                 <span className="text-[11px] font-semibold text-emerald-300 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-400/20 px-3 py-1 rounded-full whitespace-nowrap">
                                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />

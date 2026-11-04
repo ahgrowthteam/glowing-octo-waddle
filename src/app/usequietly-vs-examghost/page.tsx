@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { UseQuietlyOrganicChemistryDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
     },
-    description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/usequietly-vs-examghost",
     },
     openGraph: {
         title: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
-        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/usequietly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
-        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,13 +80,33 @@ export default function UseQuietlyComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Daily Solves",
+                                "price": "0.00",
+                                "priceCurrency": "USD",
+                                "description": "5 Free Solves / Day"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -143,15 +165,15 @@ export default function UseQuietlyComparisonPage() {
                         "name": "How does pricing compare between UseQuietly (Quietly AI) and ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Quietly AI gives Starter users only 8 lifetime questions that never reset monthly, then charges $7.99/month for Premium (standard AI) or $14.99/month ($179.88/year) for Pro just to unlock its strongest AI model for tough math and multi-step questions. ExamGhost gives you 50 Free Solves on install with flagship multi-model accuracy on every tier, followed by $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
+                            "text": "Quietly AI gives Starter users only 8 lifetime questions that never reset monthly, then charges $7.99/month for Premium (standard AI) or $14.99/month ($179.88/year) for Pro just to unlock its strongest AI model for tough math and multi-step questions. ExamGhost gives you 5 Free Solves / Day on install with flagship multi-model accuracy on every tier, followed by $19/mo, $99/yr ($8.25/mo), or $199 Lifetime."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How does UseQuietly's 8-question lifetime free cap compare to ExamGhost's 50 Free Solves?",
+                        "name": "How does UseQuietly's 8-question lifetime free cap compare to ExamGhost's 5 Free Solves / Day?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Quietly AI (usequietly.com) gives Starter accounts only 8 free questions total across the entire lifetime of the account (they never reset monthly) and restricts Starter users to its weaker baseline AI model. ExamGhost gives every student 50 Free Solves with full access to our flagship STEM and Snap-It Vision OCR engine with no credit card required."
+                            "text": "Quietly AI (usequietly.com) gives Starter accounts only 8 free questions total across the entire lifetime of the account (they never reset monthly) and restricts Starter users to its weaker baseline AI model. ExamGhost gives every student 5 Free Solves / Day with full access to our flagship STEM and Snap-It Vision OCR engine with no credit card required."
                         }
                     }
                 ]
@@ -207,7 +229,7 @@ export default function UseQuietlyComparisonPage() {
                                     Quietly AI (<code>usequietly.com</code>) gives Starter users only <strong>8 lifetime free questions</strong> (which never reset). If you upgrade to <strong>Premium ($7.99/mo)</strong>, it still withholds its best accuracy—forcing you to pay <strong>$14.99/mo ($179.88/yr) for Pro</strong> just to unlock its <em>&ldquo;strongest AI for tough math and multi-step questions.&rdquo;</em> Even worse, its answer dots and docked tooltips are injected directly into your Canvas HTML tree.
                                 </p>
                                 <p className="text-sm sm:text-base text-indigo-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost gives you <strong>50 Free Solves on install</strong> with our flagship multi-model STEM engine unlocked on every single tier, zero injected DOM elements, and full year-round access for <strong>$99/yr ($8.25/mo)</strong>.
+                                    ExamGhost gives you <strong>5 Free Solves / Day on install</strong> with our flagship multi-model STEM engine unlocked on every single tier, zero injected DOM elements, and full year-round access for <strong>$99/yr ($8.25/mo)</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3">
@@ -216,7 +238,7 @@ export default function UseQuietlyComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -295,7 +317,7 @@ export default function UseQuietlyComparisonPage() {
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Free Starter Quota</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 50 Free Solves</span>
+                                <span className="font-bold text-emerald-800">ExamGhost: 5 Free Solves / Day</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">Quietly: 8 lifetime questions total</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/80 border border-black/5">
@@ -307,215 +329,239 @@ export default function UseQuietlyComparisonPage() {
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB QUIETLY AI REALITY SWITCHER (Pure CSS peer-checked) */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive Quietly AI Breakdown">
+                <UseQuietlyOrganicChemistryDemo />
+
+                {/* 3-PILLAR TECHNICAL BREAKDOWN & 6-HOTKEY SUITE */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Quietly AI Technical Dissection">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
+                        <div className="text-center max-w-2xl mx-auto mb-10">
                             <span className="px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Interactive Technical Comparison
+                                Architecture &amp; Privacy Dissection
                             </span>
                             <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
-                                3 Reasons Students Switch from Quietly AI to ExamGhost
+                                3 Critical Vulnerabilities in Quietly AI (UseQuietly)
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Click each tab below to inspect Quietly AI&apos;s injected `.ai-dot` markers, its $14.99/mo math accuracy paywall, and its sidebar focus leaks.
+                                Why students preparing for rigorous Canvas &amp; Brightspace STEM exams migrate from Quietly AI to ExamGhost&apos;s isolated Shadow DOM v1 architecture.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="quietly_tabs" id="q_dom" className="sr-only peer/qdom" defaultChecked />
-                        <input type="radio" name="quietly_tabs" id="q_pricing" className="sr-only peer/qpricing" />
-                        <input type="radio" name="quietly_tabs" id="q_blur" className="sr-only peer/qblur" />
+                        {/* Visible 3-Pillar Technical Breakdown */}
+                        <div className="space-y-8 mb-12">
+                            {/* Pillar 1: Shift+Z DOM Illusion */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/5">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <CircleDot className="w-3.5 h-3.5" />
+                                            Quietly AI: Host DOM &amp; localStorage Contamination
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            Hiding a dot with CSS doesn&apos;t remove it from the DOM
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            Quietly AI injects physical elements—<code>&lt;span class=&quot;ai-dot&quot;&gt;</code>, <code>&lt;svg class=&quot;option-trace&quot;&gt;</code>, and <code>.helper-tooltip.docked</code>—directly inside your Canvas or Brightspace question HTML. Even when you press <code>Shift + Z</code>, those elements stay inside the live page DOM where any university integrity script can query them via <code>document.querySelector(&apos;.ai-dot&apos;)</code>.
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            Worse, Quietly writes its Firebase authentication token directly into the university domain&apos;s storage under <code>localStorage.getItem(&apos;quietly.auth.v1&apos;)</code>.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Exposed Selectors: .ai-dot, .option-trace, localStorage[&apos;quietly.auth.v1&apos;]
+                                    </div>
+                                </div>
 
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#eef1fc] border border-indigo-950/10 mb-8">
-                            <label
-                                htmlFor="q_dom"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/qdom:bg-ink peer-checked/qdom:text-white peer-checked/qdom:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. The Shift+Z DOM Illusion</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">.ai-dot spans &amp; localStorage tokens</div>
-                            </label>
-                            <label
-                                htmlFor="q_pricing"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/qpricing:bg-ink peer-checked/qpricing:text-white peer-checked/qpricing:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. $14.99/mo Math Accuracy Gate</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">8 free Qs + nerfed $7.99 tier</div>
-                            </label>
-                            <label
-                                htmlFor="q_blur"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/qblur:bg-ink peer-checked/qblur:text-white peer-checked/qblur:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. &ldquo;Ask Quietly&rdquo; Sidebar Blurs</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">SpeedGrader departure logs</div>
-                            </label>
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <EyeOff className="w-3.5 h-3.5" />
+                                            ExamGhost: Closed Shadow DOM + 0.05s Panic Wipe
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            Zero host DOM nodes. Zero university localStorage keys.
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost never injects classes like <code>.ai-dot</code> into Canvas and never touches the LMS page&apos;s <code>localStorage</code>. All credentials live inside Chrome&apos;s encrypted extension sandbox, and the HUD renders in a <strong>Closed Shadow DOM v1</strong> container.
+                                        </p>
+                                        <ul className="space-y-2 text-xs text-ink-secondary mb-4">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>0%–100% Opacity Slider:</strong> Dial your HUD down to 5% opacity so even someone standing behind you sees only your exam.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>True Panic Kill-Switch (<code>⌘+Shift+U</code>):</strong> Completely destroys the Shadow root and wipes RAM in 0.05 seconds.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Host Page Footprint: 0 Injected Classes · 0 localStorage Keys
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Pillar 2: $14.99/mo Math Accuracy Gate */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/5">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <DollarSign className="w-3.5 h-3.5" />
+                                            Quietly AI: 8 Free Qs &amp; Tiered AI Quality
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            Why pay $7.99/mo if it still uses weaker math AI?
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            Quietly AI splits its pricing into three tiers designed to upsell STEM students:
+                                        </p>
+                                        <div className="space-y-2 text-xs text-ink-secondary mb-4">
+                                            <div className="p-2.5 rounded-xl bg-white border border-rose-200">
+                                                <strong className="text-rose-950">Starter ($0):</strong> Only <strong>8 lifetime questions total</strong> (never resets monthly).
+                                            </div>
+                                            <div className="p-2.5 rounded-xl bg-white border border-rose-200">
+                                                <strong className="text-rose-950">Premium ($7.99/mo after 3-day trial):</strong> Uses standard AI routing—struggles on multi-step calculus, physics, and statistics.
+                                            </div>
+                                            <div className="p-2.5 rounded-xl bg-rose-100/80 border border-rose-300">
+                                                <strong className="text-rose-950">Pro ($14.99/mo = $179.88/yr):</strong> Required just to <em>&ldquo;route your questions to the strongest AI automatically.&rdquo;</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        Strongest AI Cost on Quietly: $14.99/mo ($179.88/year)
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <Sparkles className="w-3.5 h-3.5" />
+                                            ExamGhost: Flagship Multi-Model AI on Every Plan
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            We never nerf your AI accuracy on lower plans.
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            Whether you are using your <strong>5 Free Solves / Day</strong> or our <strong>$99/yr ($8.25/mo) Academic Year Pass</strong>, ExamGhost routes every question through our full flagship STEM &amp; multimodal vision engine powered by Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1.
+                                        </p>
+                                        <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
+                                                <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
+                                                <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                            </div>
+                                            <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                                <div className="font-display font-extrabold text-lg text-ink">$199</div>
+                                                <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        Free Starter Quota: 5 Free Solves / Day (6.25x more than Quietly)
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Pillar 3: "Ask Quietly" Sidebar Blurs */}
+                            <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl bg-[#faf7f2] border border-black/5">
+                                <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
+                                            <Sidebar className="w-3.5 h-3.5" />
+                                            Quietly AI: Unshielded Sidebar &amp; /chat/ Tab Blurs
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            Highlighting text spawns a focus-stealing popup
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            When you highlight text on an exam with Quietly AI, it injects a floating <code>.quietly-ask-popup</code> button and opens a docked <code>.quietly-ask-overlay-inner</code> sidebar—or opens <code>usequietly.com/chat/</code> in a separate browser tab.
+                                        </p>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-4">
+                                            Because Quietly AI has no <code>window.blur</code> or <code>visibilitychange</code> interceptor, clicking that sidebar or opening `/chat/` immediately logs <em>&ldquo;Stopped viewing the Canvas quiz&rdquo;</em> in your professor&apos;s SpeedGrader audit log.
+                                        </p>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
+                                        SpeedGrader Risk: Logs focus loss on sidebar &amp; /chat/ clicks
+                                    </div>
+                                </div>
+
+                                <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
+                                            <ShieldCheck className="w-3.5 h-3.5" />
+                                            ExamGhost: Focus Shield Active
+                                        </div>
+                                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-2">
+                                            Continuous active focus locked on your Canvas tab
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
+                                            ExamGhost&apos;s <strong>Focus Shield</strong> overrides native browser <code>window.onblur</code>, <code>focusout</code>, and <code>document.visibilityState</code> getters before Canvas&apos;s event listeners ever run.
+                                        </p>
+                                        <ul className="space-y-2 text-xs text-ink-secondary mb-4">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Zero Departure Timestamps:</strong> Even when using <code>Alt+S</code> Snap-It Vision OCR on a diagram, Canvas registers 100% unbroken focus.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>No External `/chat/` Redirects:</strong> Everything solves in-place in 0.3 seconds.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
+                                        SpeedGrader Status: 0 Blur Events · 100% Continuous Focus
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* TAB 1: Shift+Z DOM Illusion */}
-                        <div className="hidden peer-checked/qdom:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                        {/* ExamGhost Complete 6-Hotkey Execution Suite */}
+                        <div className="p-6 sm:p-8 rounded-2xl bg-[#0f172a] text-white border border-slate-800">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
                                 <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <CircleDot className="w-3.5 h-3.5" />
-                                        Quietly AI: Host DOM &amp; localStorage Contamination
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Hiding a dot with CSS doesn&apos;t remove it from the DOM
+                                    <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-1">
+                                        Universal Stealth Controls
+                                    </span>
+                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                                        The Complete ExamGhost 6-Hotkey Architecture
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Quietly AI injects physical elements—<code>&lt;span class=&quot;ai-dot&quot;&gt;</code>, <code>&lt;svg class=&quot;option-trace&quot;&gt;</code>, and <code>.helper-tooltip.docked</code>—directly inside your Canvas or Brightspace question HTML. Even when you press <code>Shift + Z</code>, those elements stay inside the live page DOM where any university integrity script can query them via <code>document.querySelector(&apos;.ai-dot&apos;)</code>.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Worse, Quietly writes its Firebase authentication token directly into the university domain&apos;s storage under <code>localStorage.getItem(&apos;quietly.auth.v1&apos;)</code>.
-                                    </p>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Exposed Selectors: .ai-dot, .option-trace, localStorage[&apos;quietly.auth.v1&apos;]
-                                </div>
+                                <span className="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700 w-fit">
+                                    Zero DOM Footprint
+                                </span>
                             </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: Closed Shadow DOM + 0.05s Panic Wipe
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Zero host DOM nodes. Zero university localStorage keys.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost never injects classes like <code>.ai-dot</code> into Canvas and never touches the LMS page&apos;s <code>localStorage</code>. All credentials live inside Chrome&apos;s encrypted extension sandbox, and the HUD renders in a <strong>Closed Shadow DOM v1</strong> container.
-                                    </p>
-                                    <ul className="space-y-2 text-xs text-ink-secondary mb-4">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>0%–100% Opacity Slider:</strong> Dial your HUD down to 5% opacity so even someone standing behind you sees only your exam.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>True Panic Kill-Switch (<code>⌘+Shift+U</code>):</strong> Completely destroys the Shadow root and wipes RAM in 0.05 seconds.</span>
-                                        </li>
-                                    </ul>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                                    <div className="font-mono text-xs font-bold text-emerald-400 mb-1">Double-Click</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Instant Solve</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">Solve selected question</div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Host Page Footprint: 0 Injected Classes · 0 localStorage Keys
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                                    <div className="font-mono text-xs font-bold text-emerald-400 mb-1">Alt+S</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Snap-It Vision</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">Snip diagrams &amp; OCR</div>
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 2: $14.99/mo Math Accuracy Gate */}
-                        <div className="hidden peer-checked/qpricing:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <DollarSign className="w-3.5 h-3.5" />
-                                        Quietly AI: 8 Free Qs &amp; Tiered AI Quality
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Why pay $7.99/mo if it still uses weaker math AI?
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Quietly AI splits its pricing into three tiers designed to upsell STEM students:
-                                    </p>
-                                    <div className="space-y-2 text-xs text-ink-secondary mb-4">
-                                        <div className="p-2.5 rounded-xl bg-white border border-rose-200">
-                                            <strong className="text-rose-950">Starter ($0):</strong> Only <strong>8 lifetime questions total</strong> (never resets monthly).
-                                        </div>
-                                        <div className="p-2.5 rounded-xl bg-white border border-rose-200">
-                                            <strong className="text-rose-950">Premium ($7.99/mo after 3-day trial):</strong> Uses standard AI routing—struggles on multi-step calculus, physics, and statistics.
-                                        </div>
-                                        <div className="p-2.5 rounded-xl bg-rose-100/80 border border-rose-300">
-                                            <strong className="text-rose-950">Pro ($14.99/mo = $179.88/yr):</strong> Required just to <em>&ldquo;route your questions to the strongest AI automatically.&rdquo;</em>
-                                        </div>
-                                    </div>
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                                    <div className="font-mono text-xs font-bold text-emerald-400 mb-1">Alt+1</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Stealth Mode</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">5% to 100% opacity</div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Strongest AI Cost on Quietly: $14.99/mo ($179.88/year)
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                                    <div className="font-mono text-xs font-bold text-emerald-400 mb-1">Alt+2</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Split Screen</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">Side-by-side study</div>
                                 </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <Sparkles className="w-3.5 h-3.5" />
-                                        ExamGhost: Flagship Multi-Model AI on Every Plan
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        We never nerf your AI accuracy on lower plans.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Whether you are using your <strong>50 Free Solves</strong> or our <strong>$99/yr ($8.25/mo) Academic Year Pass</strong>, ExamGhost routes every question through our full flagship STEM &amp; multimodal vision engine.
-                                    </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
-                                        </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
-                                            <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
-                                        </div>
-                                    </div>
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                                    <div className="font-mono text-xs font-bold text-emerald-400 mb-1">Alt+3</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Full Breakdown</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">Step-by-step reasoning</div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Free Starter Quota: 50 Free Solves (6.25x more than Quietly)
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TAB 3: "Ask Quietly" Sidebar Blurs */}
-                        <div className="hidden peer-checked/qblur:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Sidebar className="w-3.5 h-3.5" />
-                                        Quietly AI: Unshielded Sidebar &amp; /chat/ Tab Blurs
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Highlighting text spawns a focus-stealing popup
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        When you highlight text on an exam with Quietly AI, it injects a floating <code>.quietly-ask-popup</code> button and opens a docked <code>.quietly-ask-overlay-inner</code> sidebar—or opens <code>usequietly.com/chat/</code> in a separate browser tab.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Because Quietly AI has no <code>window.blur</code> or <code>visibilitychange</code> interceptor, clicking that sidebar or opening `/chat/` immediately logs <em>&ldquo;Stopped viewing the Canvas quiz&rdquo;</em> in your professor&apos;s SpeedGrader audit log.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    SpeedGrader Risk: Logs focus loss on sidebar &amp; /chat/ clicks
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: Focus Shield Active
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Continuous active focus locked on your Canvas tab
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost&apos;s <strong>Focus Shield</strong> overrides native browser <code>window.onblur</code>, <code>focusout</code>, and <code>document.visibilityState</code> getters before Canvas&apos;s event listeners ever run.
-                                    </p>
-                                    <ul className="space-y-2 text-xs text-ink-secondary mb-4">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Zero Departure Timestamps:</strong> Even when using <code>⌘+Shift+S</code> Snap-It Vision OCR on a diagram, Canvas registers 100% unbroken focus.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>No External `/chat/` Redirects:</strong> Everything solves in-place in 0.3 seconds.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    SpeedGrader Status: 0 Blur Events · 100% Continuous Focus
+                                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-rose-500/30">
+                                    <div className="font-mono text-xs font-bold text-rose-400 mb-1">⌘+Shift+U</div>
+                                    <div className="text-[11px] font-semibold text-slate-200">Panic Purge</div>
+                                    <div className="text-[10px] text-slate-400 mt-0.5">0.05s RAM &amp; DOM wipe</div>
                                 </div>
                             </div>
                         </div>
@@ -627,7 +673,7 @@ export default function UseQuietlyComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Snap-It Vision OCR (Locked Diagrams)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ ⌘+Shift+S Snip &amp; Solve Any Diagram</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Alt+S Snip &amp; Solve Any Diagram</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Auto-detect + highlight text sidebar</td>
                                     </tr>
                                     <tr>
@@ -637,7 +683,7 @@ export default function UseQuietlyComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves (No credit card required)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day (No credit card required)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 8 lifetime questions total (never resets)</td>
                                     </tr>
                                     <tr>
@@ -650,7 +696,15 @@ export default function UseQuietlyComparisonPage() {
                                         <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Verified Zero-Trace Stealth Build</td>
                                         <td className="py-3.5 px-4 text-ink-muted">v2.8.8 (423KiB · 1,000 users · 4.6★ / 11 ratings)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -692,7 +746,7 @@ export default function UseQuietlyComparisonPage() {
                             <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I tried Quietly AI for my business statistics quizzes on Canvas and burned through all 8 lifetime free questions on the first practice test. When I started the 3-day trial for the $7.99/mo Premium plan, it kept missing multi-step confidence interval questions because Quietly gates their &lsquo;strongest AI&rsquo; behind the $14.99/mo Pro tier. Even worse, it injected visible colored dots next to the options and docked a huge Step-by-Step Solution panel inside my Canvas tab. Switching to ExamGhost gave me 50 free solves right away, zero injected `.ai-dot` elements, and the $99/year pass ($8.25/mo) gives me top-tier math accuracy on every single question.&rdquo;
+                            &ldquo;I tried Quietly AI for my business statistics quizzes on Canvas and burned through all 8 lifetime free questions on the first practice test. When I started the 3-day trial for the $7.99/mo Premium plan, it kept missing multi-step confidence interval questions because Quietly gates their &lsquo;strongest AI&rsquo; behind the $14.99/mo Pro tier. Even worse, it injected visible colored dots next to the options and docked a huge Step-by-Step Solution panel inside my Canvas tab. Switching to ExamGhost gave me 5 free solves / day right away, zero injected `.ai-dot` elements, and the $99/year pass ($8.25/mo) gives me top-tier math accuracy on every single question.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-indigo-950 text-white font-bold flex items-center justify-center text-sm">
@@ -745,10 +799,10 @@ export default function UseQuietlyComparisonPage() {
                                     0 Injected .ai-dot Spans · Flagship Math AI on All Tiers
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Ditch the 8-question limit. Start 50 Free Solves on ExamGhost.
+                                    Ditch the 8-question limit. Start 5 Free Solves / Day on ExamGhost.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Why pay $14.99/mo ($179.88/yr) for Quietly Pro just to get accurate math answers? Get 50 Free Solves today, then pick $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    Why pay $14.99/mo ($179.88/yr) for Quietly Pro just to get accurate math answers? Get 5 Free Solves / Day today, then pick $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -757,7 +811,7 @@ export default function UseQuietlyComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#c4d0f8]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -791,7 +845,10 @@ export default function UseQuietlyComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

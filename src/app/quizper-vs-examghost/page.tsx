@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaChrome } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { QuizperByokDomTrapDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
   title: {
@@ -40,88 +42,87 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'WebPage',
-      '@id': 'https://examghost.com/quizper-vs-examghost#webpage',
-      name: 'Quizper AI & Quiz Solver Complete vs ExamGhost (2026): Technical & BYOK Security Audit',
+      "@type": "WebPage",
+      "@id": "https://examghost.com/quizper-vs-examghost#webpage",
+      name: "Quizper AI & Quiz Solver Complete vs ExamGhost (2026): Technical & BYOK Security Audit",
       description:
-        'Side-by-side comparison of Quizper AI, Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl), and ExamGhost across inline CSS DOM mutation, BYOK API key exposure, Focus Shield, and STEM accuracy.',
-      url: 'https://examghost.com/quizper-vs-examghost',
-      datePublished: '2026-01-18',
-      dateModified: '2026-03-04',
-      breadcrumb: { '@id': 'https://examghost.com/quizper-vs-examghost#breadcrumb' },
+        "Side-by-side comparison of Quizper AI, Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl), and ExamGhost across inline CSS DOM mutation, BYOK API key exposure, Focus Shield, and STEM accuracy.",
+      url: "https://examghost.com/quizper-vs-examghost",
+      datePublished: "2026-01-18",
+      dateModified: "2026-03-04",
+      breadcrumb: { "@id": "https://examghost.com/quizper-vs-examghost#breadcrumb" },
       author: {
-        '@type': 'Organization',
-        name: 'ExamGhost Security Engineering Team',
-        url: 'https://examghost.com',
+        "@type": "Organization",
+        name: "ExamGhost Security Engineering Team",
+        url: "https://examghost.com",
       },
       speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', 'h2', 'summary'],
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", "summary"],
       },
       about: [
         {
-          '@type': 'SoftwareApplication',
-          name: 'ExamGhost',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome, Edge, Brave, macOS, Windows',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '199.00',
-            priceCurrency: 'USD',
-            offerCount: '4',
-          },
+          "@type": "SoftwareApplication",
+          name: "ExamGhost",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
+          "offers": [
+            { "@type": "Offer", name: "Free Tier (5 Free Solves / Day)", price: "0", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Monthly Pass", price: "19.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Academic Year Pass", price: "99.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Lifetime Degree Pass", price: "199.00", priceCurrency: "USD" }
+          ],
         },
         {
-          '@type': 'SoftwareApplication',
-          name: 'Quizper AI & Quiz Solver Complete',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome Extension',
-          offers: {
-            '@type': 'Offer',
-            price: '0.00',
-            priceCurrency: 'USD',
+          "@type": "SoftwareApplication",
+          name: "Quizper AI & Quiz Solver Complete",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Chrome Extension",
+          "offers": {
+            "@type": "Offer",
+            price: "0.00",
+            priceCurrency: "USD",
           },
         },
       ],
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://examghost.com/quizper-vs-examghost#breadcrumb',
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/quizper-vs-examghost#breadcrumb",
       itemListElement: [
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           position: 1,
-          name: 'Home',
-          item: 'https://examghost.com',
+          name: "Home",
+          item: "https://examghost.com",
         },
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           position: 2,
-          name: 'Competitor Comparisons',
-          item: 'https://examghost.com/compare-canvas-hack-extensions',
+          name: "Competitor Comparisons",
+          item: "https://examghost.com/compare-canvas-hack-extensions",
         },
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           position: 3,
-          name: 'Quizper AI vs ExamGhost',
-          item: 'https://examghost.com/quizper-vs-examghost',
+          name: "Quizper AI vs ExamGhost",
+          item: "https://examghost.com/quizper-vs-examghost",
         },
       ],
     },
     {
-      '@type': 'FAQPage',
-      '@id': 'https://examghost.com/quizper-vs-examghost#faq',
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/quizper-vs-examghost#faq",
       mainEntity: [
         {
-          '@type': 'Question',
-          name: 'Why is turning correct options blue in the DOM ("Highlight Mode") detectable by Canvas and Blackboard?',
+          "@type": "Question",
+          name: "Why is turning correct options blue in the DOM (\"Highlight Mode\") detectable by Canvas and Blackboard?",
           acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Quiz Solver Complete (Chrome ID elbjclngdonajjihkebgholdgpeklmbl) advertises "Highlight Mode for passive studying (turns correct options blue) or Auto-Assist Mode for rapid form completion." Modifying the inline style attribute of an LMS answer choice element triggers MutationObserver attribute listeners on the host page. ExamGhost never modifies host page CSS—it displays answers inside an isolated Closed Shadow DOM container.',
+            "@type": "Answer",
+            text: "Quiz Solver Complete (Chrome ID elbjclngdonajjihkebgholdgpeklmbl) advertises \"Highlight Mode for passive studying (turns correct options blue) or Auto-Assist Mode for rapid form completion.\" Modifying the inline style attribute of an LMS answer choice element triggers MutationObserver attribute listeners on the host page. ExamGhost never modifies host page CSS—it displays answers inside an isolated Closed Shadow DOM container.",
           },
         },
         {
@@ -145,7 +146,7 @@ const jsonLd = {
           name: 'Does ExamGhost require me to bring my own OpenAI API key?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'No. ExamGhost works out of the box with zero API key setup and includes 50 Free Solves ($0, no credit card required) powered by our managed Multi-Model STEM Consensus router.',
+            text: 'No. ExamGhost works out of the box with zero API key setup and includes 5 Free Solves / Day ($0, no credit card required) powered by our managed Multi-Model STEM Consensus router.',
           },
         },
       ],
@@ -155,12 +156,14 @@ const jsonLd = {
 
 export default function QuizperVsExamGhostPage() {
   return (
-    <main className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#dbeafe] selection:text-[#111]">
+    <div className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#dbeafe] selection:text-[#111]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
+
+      <main id="main-content">
 
       {/* Top Forensic Banner */}
       <div className="bg-[#111] text-white border-b-2 border-[#111] px-4 py-2.5 text-xs font-mono mt-20">
@@ -271,7 +274,7 @@ export default function QuizperVsExamGhostPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111] text-white font-bold text-sm shadow-[4px_4px_0px_#1d4ed8] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   <FaChrome className="w-4 h-4 text-[#dbeafe]" aria-hidden="true" />
-                  <span>Start 50 Free Solves · $0 No Card</span>
+                  <span>Start 5 Free Solves / Day · $0 No Card</span>
                 </Link>
                 <a
                   href="#byok-audit"
@@ -357,7 +360,43 @@ export default function QuizperVsExamGhostPage() {
         </div>
       </section>
 
-      {/* Section 2: Interactive 4-Tab Breakdown (Pure CSS Peer-Checked) */}
+        <QuizperByokDomTrapDemo />
+
+      {/* MODERN HOTKEYS SUITE */}
+      <section className="py-8 bg-sand/20 border-b-2 border-[#111] max-w-6xl mx-auto px-4 mb-12">
+        <div className="text-center mb-6">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+          <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+            <span className="text-[11px] text-neutral-600">Quick Text Solve</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+            <span className="text-[11px] text-neutral-600">Vision OCR Snip</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+            <span className="text-[11px] text-neutral-600">Show / Hide HUD</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+            <span className="text-[11px] text-neutral-600">Cycle AI Models</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+            <span className="text-[11px] text-neutral-600">Focus Shield Toggle</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border-2 border-[#111] shadow-[3px_3px_0px_#111] text-center">
+            <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+            <span className="text-[11px] text-neutral-600">Panic Memory Purge</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Visible 4-Pillar Breakdown */}
       <section id="byok-audit" className="py-14 px-4 border-b-2 border-[#111]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-8">
@@ -368,84 +407,15 @@ export default function QuizperVsExamGhostPage() {
               4 Reasons DIY API-Key Quiz Solvers Fail in 2026 University Courses
             </h2>
             <p className="text-neutral-700 text-sm sm:text-base">
-              Click through the 4 tabs below to see what happens when an extension modifies LMS
+              Detailed technical breakdown of what happens when an extension modifies LMS
               inline CSS to color answers blue, auto-completes forms, or makes direct client-side
               calls with your personal developer API key.
             </p>
           </div>
 
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111]">
-            <input
-              type="radio"
-              name="qp-audit-tabs"
-              id="qp-tab-1"
-              className="peer/tab1 hidden"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="qp-audit-tabs"
-              id="qp-tab-2"
-              className="peer/tab2 hidden"
-            />
-            <input
-              type="radio"
-              name="qp-audit-tabs"
-              id="qp-tab-3"
-              className="peer/tab3 hidden"
-            />
-            <input
-              type="radio"
-              name="qp-audit-tabs"
-              id="qp-tab-4"
-              className="peer/tab4 hidden"
-            />
-
-            {/* Tab Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-6 border-b-2 border-[#111] pb-4">
-              <label
-                htmlFor="qp-tab-1"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#dbeafe]/60 peer-checked/tab1:bg-[#dbeafe] peer-checked/tab1:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Vulnerability 01
-                </span>
-                &ldquo;Turns Options Blue&rdquo; DOM Trap
-              </label>
-
-              <label
-                htmlFor="qp-tab-2"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#dbeafe]/60 peer-checked/tab2:bg-[#dbeafe] peer-checked/tab2:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Vulnerability 02
-                </span>
-                Auto-Assist Form Macro Flag
-              </label>
-
-              <label
-                htmlFor="qp-tab-3"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#dbeafe]/60 peer-checked/tab3:bg-[#dbeafe] peer-checked/tab3:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Vulnerability 03
-                </span>
-                Exposed BYOK Developer Keys
-              </label>
-
-              <label
-                htmlFor="qp-tab-4"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#dbeafe]/60 peer-checked/tab4:bg-[#dbeafe] peer-checked/tab4:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Vulnerability 04
-                </span>
-                14 Users vs Multi-LMS Engineering
-              </label>
-            </div>
-
-            {/* Tab 1 */}
-            <div className="hidden peer-checked/tab1:grid md:grid-cols-2 gap-6 items-start">
+          <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111] space-y-8">
+            {/* Pillar 1 */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   QUIZ SOLVER COMPLETE &amp; QUIZPER AI
@@ -497,11 +467,11 @@ export default function QuizperVsExamGhostPage() {
               </div>
             </div>
 
-            {/* Tab 2 */}
-            <div className="hidden peer-checked/tab2:grid md:grid-cols-2 gap-6 items-start">
+            {/* Pillar 2 */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  AUTO-ASSIST MODE RISK
+                  PILLAR 2 · AUTO-ASSIST MODE RISK
                 </div>
                 <h3 className="text-xl font-black mb-2">
                   &ldquo;Rapid Form Completion&rdquo; Sets `event.isTrusted = false`
@@ -542,11 +512,11 @@ export default function QuizperVsExamGhostPage() {
               </div>
             </div>
 
-            {/* Tab 3 */}
-            <div className="hidden peer-checked/tab3:grid md:grid-cols-2 gap-6 items-start">
+            {/* Pillar 3 */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
-                  BYOK API KEY EXPOSURE
+                  PILLAR 3 · BYOK API KEY EXPOSURE
                 </div>
                 <h3 className="text-xl font-black mb-2">
                   Hardcoding Your Personal `sk-...` Key in `content.js`
@@ -577,15 +547,15 @@ export default function QuizperVsExamGhostPage() {
                   and queries multiple frontier models in parallel for 99.4% STEM accuracy.
                 </p>
                 <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ Instant 1-click install with 50 Free Solves ($0, no card)</li>
+                  <li>✓ Instant 1-click install with 5 Free Solves / Day ($0, no card)</li>
                   <li>✓ Background Service Worker bypasses strict LMS CSP rules</li>
                   <li>✓ Multi-Model STEM Consensus + Local Course Materials RAG Vault</li>
                 </ul>
               </div>
             </div>
 
-            {/* Tab 4 */}
-            <div className="hidden peer-checked/tab4:grid md:grid-cols-2 gap-6 items-start">
+            {/* Pillar 4 */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   14 USERS &amp; 0 RATINGS
@@ -616,11 +586,11 @@ export default function QuizperVsExamGhostPage() {
                 </h3>
                 <p className="text-sm text-neutral-800 leading-relaxed mb-4">
                   ExamGhost is engineered specifically for 2026 university assessments—combining
-                  deep iframe extraction, <code>⌘+Shift+S</code> Snap-It Vision OCR for visual STEM
+                  deep iframe extraction, <code>Alt+S</code> Snap-It Vision OCR for visual STEM
                   problems, and an always-on <code>Focus Shield</code>.
                 </p>
                 <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
-                  <li>✓ ⌘+Shift+S Vision OCR solves any graph, table, or diagram</li>
+                  <li>✓ Alt+S Vision OCR solves any graph, table, or diagram</li>
                   <li>✓ Works inside Canvas New Quizzes LTI, MyLab, ALEKS, &amp; Blackboard</li>
                   <li>✓ Rated 4.9★ by over 1,400+ verified student reviews</li>
                 </ul>
@@ -783,7 +753,7 @@ export default function QuizperVsExamGhostPage() {
                     ✗ Must bring your own OpenAI/Gemini developer API key (`sk-...`)
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ Zero API key setup; works out of the box with 50 Free Solves
+                    ✓ Zero API key setup; works out of the box with 5 Free Solves / Day
                   </td>
                 </tr>
                 <tr>
@@ -805,10 +775,18 @@ export default function QuizperVsExamGhostPage() {
                     ✗ Single raw prompt to your BYOK key; no OCR or PDF vault
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ Multi-Model STEM Consensus + Course RAG Vault + ⌘+Shift+S Vision OCR
+                    ✓ Multi-Model STEM Consensus + Course RAG Vault + Alt+S Vision OCR
                   </td>
                 </tr>
-              </tbody>
+              
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  </tr>
+                </tbody>
             </table>
           </div>
 
@@ -981,10 +959,59 @@ export default function QuizperVsExamGhostPage() {
               </summary>
               <p className="mt-3 text-sm text-neutral-700 leading-relaxed">
                 No. ExamGhost works out of the box with zero API key setup and includes{' '}
-                <strong>50 Free Solves ($0, no credit card required)</strong> powered by our managed
+                <strong>5 Free Solves / Day ($0, no credit card required)</strong> powered by our managed
                 Multi-Model STEM Consensus router.
               </p>
             </details>
+          </div>
+        </div>
+      </section>
+
+      {/* 4-TIER PRICING STACK */}
+      <section className="py-12 px-4 bg-neutral-100 border-b-2 border-[#111]">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="text-xs font-mono uppercase tracking-wider bg-[#111] text-white px-2.5 py-1 rounded font-bold">
+            TRANSPARENT PRICING
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-black mt-3 mb-2">
+            ExamGhost Pricing Stack: Zero Expiring Credits, Zero API Keys
+          </h2>
+          <p className="text-neutral-600 text-xs sm:text-sm mb-8">
+            Choose the plan that fits your semester. No BYOK setup or hidden developer billing.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-5 rounded-2xl bg-white border-2 border-[#111] shadow-[4px_4px_0px_#111] flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase text-neutral-600">Free Daily Trial</span>
+                <div className="text-2xl font-black my-2">5 Free Solves / Day</div>
+                <p className="text-xs text-neutral-600">Full AI + Vision OCR without credit card</p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-neutral-200 text-xs font-mono font-bold text-emerald-700">$0 / Free</div>
+            </div>
+            <div className="p-5 rounded-2xl bg-white border-2 border-[#111] shadow-[4px_4px_0px_#111] flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase text-neutral-600">Monthly Pass</span>
+                <div className="text-2xl font-black my-2">$19/mo</div>
+                <p className="text-xs text-neutral-600">Unlimited solves across Canvas, Blackboard &amp; Moodle</p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-neutral-200 text-xs font-mono font-bold text-neutral-800">Monthly Flex</div>
+            </div>
+            <div className="p-5 rounded-2xl bg-[#dbeafe] border-2 border-[#111] shadow-[4px_4px_0px_#111] flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase text-blue-900">Academic Year Pass</span>
+                <div className="text-2xl font-black my-2">$99/yr</div>
+                <p className="text-xs text-blue-950">Just $8.25/mo billed annually for full academic year</p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-blue-300 text-xs font-mono font-bold text-blue-900">$8.25 / mo</div>
+            </div>
+            <div className="p-5 rounded-2xl bg-white border-2 border-[#111] shadow-[4px_4px_0px_#111] flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase text-neutral-600">Degree Pass</span>
+                <div className="text-2xl font-black my-2">$199 Lifetime</div>
+                <p className="text-xs text-neutral-600">Single payment for all 4 years of undergraduate study</p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-neutral-200 text-xs font-mono font-bold text-emerald-700">Lifetime Degree</div>
+            </div>
           </div>
         </div>
       </section>
@@ -996,7 +1023,7 @@ export default function QuizperVsExamGhostPage() {
             NO API KEYS REQUIRED • ZERO HOST DOM MUTATIONS
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Get 50 Free Solves With ExamGhost ($0, No Card)
+            Get 5 Free Solves / Day With ExamGhost ($0, No Card)
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
             Replace 14-user BYOK scripts and detectable blue DOM highlights with ExamGhost&apos;s
@@ -1009,7 +1036,7 @@ export default function QuizperVsExamGhostPage() {
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-blue-400 text-[#111] font-black text-sm hover:bg-blue-300 transition-all"
             >
               <FaChrome className="w-4 h-4" aria-hidden="true" />
-              <span>Start 50 Free Solves · $0 No Card</span>
+              <span>Start 5 Free Solves / Day · $0 No Card</span>
             </Link>
             <Link prefetch={false}
               href="/compare-canvas-hack-extensions"
@@ -1064,7 +1091,11 @@ export default function QuizperVsExamGhostPage() {
           </div>
         </div>
       </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }

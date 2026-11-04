@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import LmsExplainerFilmCard from '@/components/LmsExplainerFilmCard';
 import { 
     Check, Sparkles, CheckCircle2, Lock, 
     RefreshCw, ChevronRight, ChevronLeft, ArrowLeft, ArrowRight, BookOpen, ShieldCheck, Clock, Crop, 
@@ -196,7 +197,7 @@ export default function DemoPage() {
         const handleKeyDown = (e: KeyboardEvent) => {
             const isModifier = e.metaKey || e.ctrlKey;
             
-            if (isModifier && e.shiftKey && e.key.toLowerCase() === 's') {
+            if ((e.altKey && (e.code === 'KeyS' || e.key.toLowerCase() === 's')) || (isModifier && e.shiftKey && e.key.toLowerCase() === 's')) {
                 e.preventDefault();
                 setIsSniping(prev => {
                     const next = !prev;
@@ -207,6 +208,22 @@ export default function DemoPage() {
                     }
                     return next;
                 });
+            }
+
+            if (e.altKey && (e.code === 'Digit1' || e.key === '1')) {
+                e.preventDefault();
+                setDisplayMode('invisible');
+                playAudio('click');
+            }
+            if (e.altKey && (e.code === 'Digit2' || e.key === '2')) {
+                e.preventDefault();
+                setDisplayMode('stealth');
+                playAudio('click');
+            }
+            if (e.altKey && (e.code === 'Digit3' || e.key === '3')) {
+                e.preventDefault();
+                setDisplayMode('explain');
+                playAudio('click');
             }
 
             if (isModifier && e.shiftKey && e.key.toLowerCase() === 'u') {
@@ -670,7 +687,7 @@ export default function DemoPage() {
                             Try ExamGhost on a Live Canvas Quiz
                         </h1>
                         <p className="aeo-summary text-xs sm:text-sm text-ink-muted mt-1.5 max-w-2xl leading-relaxed">
-                            Double-click any simulated Canvas question to solve in 0.3s, test Snap-It Vision OCR (⌘+Shift+S) on Question 5, and inspect live Focus Shield telemetry showing 0 tab-switch or window.onblur flags.
+                            Double-click any simulated Canvas question to solve in 0.3s, test Snap-It Vision OCR (Alt+S) on Question 5, and inspect live Focus Shield telemetry showing 0 tab-switch or window.onblur flags.
                         </p>
                     </div>
 
@@ -1380,16 +1397,16 @@ export default function DemoPage() {
                                 </button>
                             </div>
 
-                            {/* Display Mode Selector (Clean, No Redundant Badges) */}
+                            {/* Display Mode Selector */}
                             <div className="space-y-2">
                                 <span className="text-[11px] font-bold text-ink-muted uppercase tracking-wider block">
-                                    1. Display Mode
+                                    1. Solver Mode (Alt+1 / 2 / 3)
                                 </span>
                                 <div className="grid grid-cols-3 gap-1 p-1 rounded-2xl bg-[#f4f1ea] border border-black/6 text-xs font-semibold">
                                     {[
-                                        { id: 'invisible', label: 'Invisible' },
-                                        { id: 'stealth', label: 'Stealth' },
-                                        { id: 'explain', label: 'Explain' }
+                                        { id: 'invisible', label: 'Invisible', key: 'Alt+1' },
+                                        { id: 'stealth', label: 'Stealth', key: 'Alt+2' },
+                                        { id: 'explain', label: 'Explain', key: 'Alt+3' }
                                     ].map((m) => (
                                         <button
                                             key={m.id}
@@ -1397,11 +1414,12 @@ export default function DemoPage() {
                                                 setDisplayMode(m.id as 'invisible' | 'stealth' | 'explain');
                                                 playAudio('click');
                                             }}
-                                            className={`py-2 rounded-xl transition-all cursor-pointer ${
+                                            className={`py-2 rounded-xl transition-all cursor-pointer flex flex-col items-center justify-center leading-tight ${
                                                 displayMode === m.id ? 'bg-white text-ink font-bold shadow-2xs' : 'text-ink-secondary hover:text-ink'
                                             }`}
                                         >
-                                            {m.label}
+                                            <span>{m.label}</span>
+                                            <span className="text-[9px] font-mono text-ink-muted mt-0.5">{m.key}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -1452,7 +1470,7 @@ export default function DemoPage() {
                                     <Crop className="w-3.5 h-3.5 text-[#cdeecb]" aria-hidden="true" />
                                     <span>Snip Q5 Math Diagram</span>
                                     <kbd className="px-1.5 py-0.5 rounded bg-white/15 font-mono text-[10px] text-white/90">
-                                        ⌘+Shift+S
+                                        Alt+S
                                     </kbd>
                                 </button>
                             </div>
@@ -1507,6 +1525,133 @@ export default function DemoPage() {
             >
                 <div className="max-w-6xl mx-auto space-y-20 sm:space-y-28">
 
+                    {/* 0. 16-Second 2.5D Motion Explainer Film */}
+                    <LmsExplainerFilmCard
+                        slug="canvas-lms-quiz-solver"
+                        platformName="Canvas Free Interactive Sandbox"
+                        heroDotColor="#10b981"
+                    />
+
+                    {/* 0B. Bespoke 5-Question Sandbox Guide & Keyboard Shortcut Matrix */}
+                    <div className="space-y-8">
+                        <div className="max-w-3xl space-y-3">
+                            <p className="eyebrow">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                <span>INTERACTIVE SANDBOX WALKTHROUGH &amp; HOTKEY MATRIX</span>
+                            </p>
+                            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink leading-[1.08]">
+                                What Each of the 5 Sandbox Questions Above Demonstrates
+                            </h2>
+                            <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                Unlike static marketing screenshots on competitor sites (<em>Mindko</em>, <em>ApexVision</em>, <em>StudyFox</em>), our live Canvas Sandbox above runs the actual <strong>ExamGhost client-side interaction engine</strong> inside your browser. Here is how each question format and keyboard shortcut works on a real exam:
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Question 1 &amp; 2 • MCQ
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
+                                        Double-Click DOM
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    1-by-1 Double-Click Radio Solving
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Double-clicking Question 1 or Question 2 parses the <code className="font-mono text-xs">.question_text</code> and <code className="font-mono text-xs">.answer_label</code> nodes locally in 0.3s—never firing <code className="font-mono text-xs">window.onblur</code> or using a reckless &ldquo;Solve All&rdquo; batch script.
+                                </p>
+                            </article>
+
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Question 3 • Multi-Select
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
+                                        Per-Option Check
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    Select-All-That-Apply Verification
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Evaluates every checkbox option independently via dual-model consensus (<strong>DeepSeek-R1 + GPT-4o</strong>) so you never lose partial credit on strict multi-select questions.
+                                </p>
+                            </article>
+
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Question 4 • Fill-in-Blank
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#c4d0f8]/60 text-blue-950 text-[11px] font-bold">
+                                        Exact Syntax
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    Short-Answer &amp; Numerical Precision
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Computes exact case-sensitive terminology and significant-figure numerical answers, either auto-filling the input box or copying silently to your clipboard (<kbd className="font-mono text-[11px]">⌘+Shift+U</kbd>).
+                                </p>
+                            </article>
+
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Question 5 • Vision OCR
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#e2d3fa]/70 text-purple-950 text-[11px] font-bold">
+                                        Alt + S Crop
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    Snap-It Vision OCR on Locked Diagrams
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Drag a crop rectangle over any uncopyable SVG graph, geometry figure, or embedded publisher iframe to capture raw viewport pixels and solve visually in under 0.4s.
+                                </p>
+                            </article>
+
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Alt + 1 / Alt + 2 / Alt + 3
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#ffe9a0] text-amber-950 text-[11px] font-bold">
+                                        3 Display Modes
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    Invisible, Stealth &amp; Explain Modes
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Switch seamlessly between zero-UI Invisible Mode (1px dot indicator for classroom exams), low-contrast Stealth Mode, and full step-by-step Explain Mode for homework.
+                                </p>
+                            </article>
+
+                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
+                                        Proctor Log Inspector
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
+                                        0 page_blurred
+                                    </span>
+                                </div>
+                                <h3 className="font-display text-lg font-bold text-ink">
+                                    Live Canvas Action Log Verification
+                                </h3>
+                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                    Click the <strong>Proctor Log</strong> toggle inside the simulator header above to inspect the live <code className="font-mono text-xs">quiz_submission_events</code> payload and verify that 0 focus-loss events occurred.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
                     {/* 1. Hero Architecture Card (Matches QuestionExamples #privacy OneMacApp Showcase) */}
                     <div className="bg-white rounded-[36px] p-7 sm:p-10 md:p-14 border border-black/10 shadow-lift">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
@@ -1560,7 +1705,7 @@ export default function DemoPage() {
                                     Leaves nothing in the log.
                                 </h2>
                                 <p className="aeo-summary text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                    <strong>ExamGhost</strong> is a client-side Canvas quiz solver Chrome extension that solves assessment questions inline using an isolated <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Closed Shadow DOM</code> container and <strong>Snap-It Vision OCR</strong> (<kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">⌘+Shift+S</kbd>). Because your cursor never leaves the active exam tab to open ChatGPT, <strong>Canvas SpeedGrader</strong>, <strong>Blackboard Ultra</strong>, <strong>Moodle</strong>, and <strong>D2L Brightspace</strong> record zero <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">window.onblur</code> or <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">document.visibilitychange</code> flags.
+                                    <strong>ExamGhost</strong> is a client-side Canvas quiz solver Chrome extension that solves assessment questions inline using an isolated <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Closed Shadow DOM</code> container and <strong>Snap-It Vision OCR</strong> (<kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd>). Because your cursor never leaves the active exam tab to open ChatGPT, <strong>Canvas SpeedGrader</strong>, <strong>Blackboard Ultra</strong>, <strong>Moodle</strong>, and <strong>D2L Brightspace</strong> record zero <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">window.onblur</code> or <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">document.visibilitychange</code> flags.
                                 </p>
 
                                 {/* 3 Visual Pillar Cards with 3D Ghost Thumbnails */}
@@ -1595,7 +1740,7 @@ export default function DemoPage() {
                                                 className="w-9 h-9 rounded-xl object-cover border border-black/10 shrink-0"
                                             />
                                             <h3 className="font-display font-bold text-xs sm:text-sm text-ink leading-snug">
-                                                Snap-It OCR (⌘+Shift+S)
+                                                Snap-It OCR (Alt+S)
                                             </h3>
                                         </div>
                                         <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
@@ -1614,11 +1759,11 @@ export default function DemoPage() {
                                                 className="w-9 h-9 rounded-xl object-cover border border-black/10 shrink-0"
                                             />
                                             <h3 className="font-display font-bold text-xs sm:text-sm text-ink leading-snug">
-                                                3 Modes × 3 Methods
+                                                3 Modes (Alt+1/2/3)
                                             </h3>
                                         </div>
                                         <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
-                                            Combine Invisible, Stealth, or Explain mode with Auto-Fill, Smart Highlight, or Silent Clipboard (<kbd className="font-mono text-ink">⌘+Shift+U</kbd>).
+                                            Combine Invisible (<kbd className="font-mono text-ink">Alt+1</kbd>), Stealth (<kbd className="font-mono text-ink">Alt+2</kbd>), or Explain (<kbd className="font-mono text-ink">Alt+3</kbd>) mode with instant master power toggle (<kbd className="font-mono text-ink">⌘+Shift+U</kbd>).
                                         </p>
                                     </article>
                                 </div>
@@ -1720,7 +1865,7 @@ export default function DemoPage() {
                                             <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
                                                 <span className="inline-flex items-center gap-1.5 text-emerald-900">
                                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>Built-in Snap-It OCR (⌘+Shift+S)</span>
+                                                    <span>Built-in Snap-It OCR (Alt+S)</span>
                                                 </span>
                                             </td>
                                             <td className="py-4 px-6 text-ink-muted">
@@ -1889,7 +2034,7 @@ export default function DemoPage() {
                                 Verified answers.
                             </h2>
                             <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                                Everything you need to know about Canvas SpeedGrader logs, Closed Shadow DOM stealth, Snap-It Vision OCR, and your 50 free solves.
+                                Everything you need to know about Canvas SpeedGrader logs, Closed Shadow DOM stealth, Snap-It Vision OCR, and your 5 free solves / day.
                             </p>
                         </div>
 
@@ -1970,12 +2115,12 @@ export default function DemoPage() {
                                 {
                                     id: "faq-snap-it-vision-ocr-math-diagrams",
                                     category: "ocr",
-                                    badge: "⌘ + Shift + S",
+                                    badge: "Alt + S",
                                     badgeBg: "bg-[#e2d3fa] text-purple-950",
                                     q: "How do I solve locked math graphs, uncopyable PDFs, and chemistry diagrams on ALEKS or WebAssign?",
                                     a: (
                                         <>
-                                            <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">⌘+Shift+S</kbd> on macOS (or <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Ctrl+Shift+S</kbd> on Windows) to activate Snap-It Vision OCR</strong>, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through <strong>DeepSeek-R1</strong> and <strong>GPT-4o Vision</strong>, returning the verified answer and step-by-step derivation in under <strong>0.4 seconds</strong> on{' '}
+                                            <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through <strong>DeepSeek-R1</strong> and <strong>GPT-4o Vision</strong>, returning the verified answer and step-by-step derivation in under <strong>0.4 seconds</strong> on{' '}
                                             <Link prefetch={false} href="/mcgraw-hill-connect-aleks-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">McGraw-Hill ALEKS</Link>,{' '}
                                             <Link prefetch={false} href="/cengage-mindtap-webassign-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Cengage WebAssign</Link>, and{' '}
                                             <Link prefetch={false} href="/gradescope-exam-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Gradescope</Link>.
@@ -2037,14 +2182,14 @@ export default function DemoPage() {
                                     )
                                 },
                                 {
-                                    id: "faq-free-canvas-quiz-solver-demo-50-solves",
+                                    id: "faq-free-canvas-quiz-solver-demo-5-free-solves-daily",
                                     category: "platforms",
-                                    badge: "50 Free Solves",
+                                    badge: "5 Free Solves / Day",
                                     badgeBg: "bg-[#cdeecb] text-emerald-950",
-                                    q: "How do I test the free Canvas quiz solver demo on this page and claim 50 free solves?",
+                                    q: "How do I test the free Canvas quiz solver demo on this page and claim 5 free solves / day?",
                                     a: (
                                         <>
-                                            <strong>Double-click any of the 5 interactive questions in the Canvas simulator at the top of this page</strong> (or tap &ldquo;Solve Question&rdquo; on mobile) to test instant inline solving, and click &ldquo;Snip &amp; Solve Diagram&rdquo; on Question 5 to test Vision OCR. When you are ready to use it on your own coursework, install the ExamGhost Chrome extension for <strong>50 free solves</strong> with no credit card required.
+                                            <strong>Double-click any of the 5 interactive questions in the Canvas simulator at the top of this page</strong> (or tap &ldquo;Solve Question&rdquo; on mobile) to test instant inline solving, and click &ldquo;Snip &amp; Solve Diagram&rdquo; on Question 5 to test Vision OCR. When you are ready to use it on your own coursework, install the ExamGhost Chrome extension for <strong>5 free solves / day</strong> with no credit card required.
                                         </>
                                     )
                                 }

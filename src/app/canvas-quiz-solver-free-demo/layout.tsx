@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Canvas Quiz Solver Free Demo — Live AI Exam Sandbox",
-    description: "Try ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve questions inline in 0.3s, test Snap-It Vision OCR (⌘+Shift+S), and verify 0 tab-switch flags.",
+    title: { absolute: "Canvas Quiz Solver Free Demo — Live AI Sandbox | ExamGhost" },
+    description: "Try ExamGhost free on a live Canvas quiz simulator: double-click to solve in 0.3s, test Alt+S OCR, and check the SpeedGrader log for 0 tab-switch flags.",
     keywords: [
         "canvas quiz solver free demo",
         "canvas quiz solver demo",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "https://examghost.com/canvas-quiz-solver-free-demo",
         siteName: "ExamGhost",
         title: "Canvas Quiz Solver Free Demo — Live AI Exam Sandbox | ExamGhost",
-        description: "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (⌘+Shift+S), and compare all 3 stealth modes.",
+        description: "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (Alt+S), and compare all 3 stealth modes (Alt+1, Alt+2, Alt+3).",
         images: [
             {
                 url: "/og-image.jpg",
@@ -59,7 +59,7 @@ export default function DemoLayout({
                 "@id": "https://examghost.com/canvas-quiz-solver-free-demo#webpage",
                 "url": "https://examghost.com/canvas-quiz-solver-free-demo",
                 "name": "Canvas Quiz Solver Free Demo — Live AI Exam Sandbox | ExamGhost",
-                "description": "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (⌘+Shift+S), and compare all 3 stealth modes.",
+                "description": "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (Alt+S), and compare all 3 stealth modes (Alt+1, Alt+2, Alt+3).",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
@@ -88,7 +88,7 @@ export default function DemoLayout({
                         "price": "0.00",
                         "priceCurrency": "USD",
                         "priceValidUntil": "2027-12-31",
-                        "description": "50 Free Question Solves, no credit card required",
+                        "description": "5 Free Solves / Day, no credit card required",
                         "availability": "https://schema.org/InStock"
                     },
                     {
@@ -118,8 +118,8 @@ export default function DemoLayout({
                 ],
                 "featureList": [
                     "Double-click inline question solving on 20+ LMS platforms",
-                    "Snap-It Vision OCR (⌘+Shift+S) for math equations, graphs, and locked PDFs",
-                    "3 Display Modes: Invisible, Stealth, and Explain Mode",
+                    "Snap-It Vision OCR (Alt+S) for math equations, graphs, and locked PDFs",
+                    "3 Solver Modes: Invisible (Alt+1), Stealth (Alt+2), and Explain Mode (Alt+3)",
                     "3 Answer Delivery Methods: Auto-fill, Smart Highlight, and Silent Clipboard",
                     "Closed Shadow DOM architecture with zero window blur or tab-switch telemetry"
                 ]
@@ -140,8 +140,8 @@ export default function DemoLayout({
                     {
                         "@type": "HowToStep",
                         "position": 2,
-                        "name": "Double-Click or Snip (⌘+Shift+S)",
-                        "text": "Double-click any multiple-choice, multi-select, true/false, dropdown, or short-answer question card—or press ⌘+Shift+S to drag a crop box over locked math graphs."
+                        "name": "Double-Click or Snip (Alt+S)",
+                        "text": "Double-click any multiple-choice, multi-select, true/false, dropdown, or short-answer question card—or press Alt+S to drag a crop box over locked math graphs."
                     },
                     {
                         "@type": "HowToStep",
@@ -150,6 +150,21 @@ export default function DemoLayout({
                         "text": "ExamGhost injects the verified answer inline via Auto-Fill, highlights the correct choice, or displays the complete step-by-step derivation with 0 tab-switch events."
                     }
                 ]
+            },
+            {
+                "@type": "VideoObject",
+                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#video",
+                "name": "Canvas LMS AI Quiz Solver — 2.5D Motion Explainer & Interactive Sandbox Film",
+                "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves Canvas Classic and New Quizzes one question at a time via double-click and Alt+S Vision OCR with 0 SpeedGrader page_blurred flags.",
+                "thumbnailUrl": ["https://examghost.com/videos/posters/canvas-lms-quiz-solver-poster.jpg"],
+                "contentUrl": "https://examghost.com/videos/canvas-lms-quiz-solver.mp4",
+                "uploadDate": "2026-10-22T00:00:00Z",
+                "duration": "PT16S",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ExamGhost",
+                    "url": "https://examghost.com"
+                }
             },
             {
                 "@type": "BreadcrumbList",
@@ -194,7 +209,7 @@ export default function DemoLayout({
                         "name": "How do I solve locked math graphs, uncopyable PDFs, and chemistry diagrams on ALEKS or WebAssign?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Press Cmd+Shift+S on macOS (or Ctrl+Shift+S on Windows) to activate Snap-It Vision OCR, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through DeepSeek-R1 and GPT-4o Vision, returning the verified answer and step-by-step derivation in under 0.4 seconds without copying text."
+                            "text": "Press Alt+S to activate Snap-It Vision OCR, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through DeepSeek-R1 and GPT-4o Vision, returning the verified answer and step-by-step derivation in under 0.4 seconds without copying text."
                         }
                     },
                     {
@@ -231,10 +246,10 @@ export default function DemoLayout({
                     },
                     {
                         "@type": "Question",
-                        "name": "How do I test the free Canvas quiz solver demo on this page and claim 50 free solves?",
+                        "name": "How do I test the free Canvas quiz solver demo on this page and claim 5 free solves / day?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Double-click any of the 5 interactive questions in the Canvas simulator at the top of this page (or tap 'Solve Question' on mobile) to test instant inline solving, and click 'Snip & Solve Diagram' on Question 5 to test Vision OCR. When you are ready to use it on your own coursework, install the ExamGhost Chrome extension for 50 free solves with no credit card required."
+                            "text": "Double-click any of the 5 interactive questions in the Canvas simulator at the top of this page (or tap 'Solve Question' on mobile) to test instant inline solving, and click 'Snip & Solve Diagram' on Question 5 to test Vision OCR. When you are ready to use it on your own coursework, install the ExamGhost Chrome extension for 5 free solves / day with no credit card required."
                         }
                     }
                 ]

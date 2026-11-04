@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import { 
     Check, Sparkles, Shield, Lock, Zap, ArrowRight, 
-    Ghost, Star, GraduationCap, Award, HelpCircle, 
-    CheckCircle2, Calculator, ChevronDown, ChevronUp, 
-    Copy, X, Laptop, Clock, CreditCard
+    Ghost, Star, GraduationCap, Award,
+    Calculator, ChevronDown, ChevronUp, 
+    Copy, X, CreditCard
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
+import StudyAiHubShowcase from './StudyAiHubShowcase';
 
 export default function Pricing() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -27,7 +28,6 @@ export default function Pricing() {
         setTimeout(() => setCopiedKey(false), 2000);
     };
 
-    // Course load calculator stats
     const calculatorData = {
         light: {
             credits: "12 Credits (4 Classes)",
@@ -56,28 +56,28 @@ export default function Pricing() {
 
     const modalData = {
         free: {
-            title: "50 Free Question Solves",
-            subtitle: "Zero credit card required · Test on your live quiz now",
-            key: "GHOST-FREE-50Q-ACTIVATE",
-            desc: "Paste this key into ExamGhost to unlock 50 free AI question solves immediately."
+            title: "5 Free Solves / Day (Auto-Refills Daily)",
+            subtitle: "Zero credit card required · Test on your live quiz every day",
+            key: "GHOST-FREE-5DAY-ACTIVATE",
+            desc: "Paste this key into ExamGhost to unlock 5 free AI question solves every 24 hours immediately."
         },
         monthly: {
             title: "Monthly Pass ($19/mo)",
-            subtitle: "Flexible sprint · Cancel anytime in 1 click",
+            subtitle: "Unlimited Extension + Claude/ChatGPT/DeepSeek Study Hub",
             key: "GHOST-PRO-MONTHLY-UNLIMITED",
-            desc: "Instant activation key for unlimited quiz solving across all your classes."
+            desc: "Instant activation key for unlimited quiz solving plus full access to the Multi-Model Study & Homework AI Workspace."
         },
         yearly: {
             title: "Academic Year Pass ($99/yr)",
-            subtitle: "Only $8.25/mo · Complete Fall, Spring & Finals coverage (Save 56%)",
+            subtitle: "Only $8.25/mo · Unlimited Extension + Study AI Hub (Save 56%)",
             key: "GHOST-ACADEMIC-YEARLY-PASS",
-            desc: "Full academic year stealth license with priority 0.3s AI vision compute."
+            desc: "Full academic year stealth license with priority 0.3s AI vision compute and unlimited Claude, ChatGPT & DeepSeek-R1 Study Hub access."
         },
         lifetime: {
             title: "Lifetime Degree Pass ($199)",
-            subtitle: "Pay once · Covers your entire degree through graduation",
+            subtitle: "Pay once · Covers your entire degree + permanent Study AI Hub",
             key: "GHOST-VIP-10YR-PERMANENT",
-            desc: "Permanent license key valid across undergrad, master's (MSc), and postgrad certifications."
+            desc: "Permanent license key valid across undergrad, master's (MSc), and postgrad—includes permanent access to our Claude/ChatGPT/DeepSeek Study Workspace."
         }
     };
 
@@ -91,17 +91,17 @@ export default function Pricing() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>HONEST STUDENT PRICING</span>
+                        <span>HONEST 2-IN-1 STUDENT PRICING</span>
                     </p>
                     <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-ink leading-[1.08] mb-4">
                         Invest in your degree.<br />
-                        <span className="text-emerald-800">Zero recurring traps.</span>
+                        <span className="text-emerald-800">2-in-1 Extension + Study AI Hub.</span>
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-ink-muted leading-relaxed font-normal max-w-xl mx-auto">
-                        Retaking one failed 3-credit course costs <strong className="text-ink font-semibold">$1,500 – $4,500</strong> in tuition. ExamGhost protects your GPA with undetectable, inline AI assistance on Canvas, Blackboard, and Moodle.
+                    <p className="text-sm sm:text-base md:text-lg text-ink-muted leading-relaxed font-normal max-w-2xl mx-auto">
+                        Start with <strong className="text-ink font-semibold">5 Free Solves / Day</strong> ($0, no card needed). Upgrade to any paid plan for <strong>Unlimited Stealth Quiz Solving</strong> plus full access to our <strong>Claude + ChatGPT + DeepSeek-R1 Study &amp; Homework AI Workspace</strong>—saving you $60+/mo in separate AI subscriptions.
                     </p>
                 </div>
 
@@ -132,7 +132,7 @@ export default function Pricing() {
                                 <button
                                     key={tab.id}
                                     onClick={() => setCourseLoad(tab.id as any)}
-                                    className={`py-2 px-3 rounded-xl transition-all text-center ${
+                                    className={`py-2 px-3 rounded-xl transition-all text-center cursor-pointer ${
                                         courseLoad === tab.id 
                                             ? 'bg-white text-ink shadow-xs' 
                                             : 'text-ink-secondary hover:text-ink'
@@ -149,7 +149,7 @@ export default function Pricing() {
                         <div className="p-3 rounded-2xl bg-[#faf8f5] border border-black/5">
                             <span className="text-[10px] uppercase font-bold text-ink-muted block">Semester Tests</span>
                             <span className="font-display font-bold text-base text-ink block mt-0.5">{activeCalc.exams}</span>
-                            <span className="text-[10px] text-ink-muted">Midterms & Quizzes</span>
+                            <span className="text-[10px] text-ink-muted">Midterms &amp; Quizzes</span>
                         </div>
 
                         <div className="p-3 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
@@ -167,35 +167,35 @@ export default function Pricing() {
                         <div className="p-3 rounded-2xl bg-blue-50/70 border border-blue-200/80">
                             <span className="text-[10px] uppercase font-bold text-blue-900 block">Best Match</span>
                             <span className="font-display font-bold text-xs text-blue-950 block mt-1 truncate">{activeCalc.recommended}</span>
-                            <span className="text-[10px] text-blue-800">Max savings & compute</span>
+                            <span className="text-[10px] text-blue-800">Extension + Study AI Hub</span>
                         </div>
                     </div>
                 </div>
 
-                {/* 50-Questions Free Trial Banner */}
+                {/* 5 Free Solves / Day Trial Banner */}
                 <div className="rounded-3xl bg-white border border-black/10 p-5 sm:p-6 mb-10 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-300 flex flex-col items-center justify-center text-emerald-950 shrink-0 shadow-xs">
-                            <span className="font-display font-black text-base leading-none">50</span>
+                            <span className="font-display font-black text-base leading-none">5/d</span>
                             <span className="text-[9px] font-bold uppercase tracking-tight">Free</span>
                         </div>
                         <div>
-                            <div className="text-sm sm:text-base font-bold text-ink flex items-center gap-2">
-                                <span>Try 50 Free Solves on Your Next Live Exam</span>
+                            <div className="text-sm sm:text-base font-bold text-ink flex flex-wrap items-center gap-2">
+                                <span>Get 5 Free Solves / Day — Auto-Refills Every 24 Hours</span>
                                 <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-950 border border-emerald-300">
-                                    No Card Needed
+                                    $0 · No Card Needed
                                 </span>
                             </div>
                             <p className="text-xs sm:text-sm text-ink-muted mt-0.5">
-                                Test Focus Shield blur masking and Snap-It OCR on live Canvas or Blackboard questions before paying anything.
+                                Test Double-Click inline solving, Alt+1/2/3 Stealth Modes, and Alt+S Snip OCR on 5 real questions every single day before paying anything.
                             </p>
                         </div>
                     </div>
                     <button 
                         onClick={() => handleOpenPlan('free')}
-                        className="btn-soft px-5 py-2.5 text-xs sm:text-sm font-bold shrink-0 rounded-full hover:bg-black/5 inline-flex items-center gap-1.5 whitespace-nowrap bg-cream border border-black/10 text-ink shadow-xs"
+                        className="btn-soft px-5 py-2.5 text-xs sm:text-sm font-bold shrink-0 rounded-full hover:bg-black/5 inline-flex items-center gap-1.5 whitespace-nowrap bg-cream border border-black/10 text-ink shadow-xs cursor-pointer"
                     >
-                        <span>Start Free 50 Solves</span>
+                        <span>Claim 5 Free Solves / Day</span>
                         <ArrowRight className="w-3.5 h-3.5 text-ink" aria-hidden="true" />
                     </button>
                 </div>
@@ -238,7 +238,7 @@ export default function Pricing() {
 
                             <button
                                 onClick={() => handleOpenPlan('monthly')}
-                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-bold rounded-2xl bg-ink hover:bg-black text-white transition-all flex items-center justify-center gap-2 mb-6 shadow-xs"
+                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-bold rounded-2xl bg-ink hover:bg-black text-white transition-all flex items-center justify-center gap-2 mb-6 shadow-xs cursor-pointer"
                             >
                                 <FaChrome className="w-3.5 h-3.5 text-cream shrink-0" aria-hidden="true" />
                                 <span>Get Monthly Pass ($19)</span>
@@ -249,10 +249,10 @@ export default function Pricing() {
                                     What&apos;s Included:
                                 </div>
                                 {[
-                                    { label: "Unlimited AI Question Solves", hint: "Zero throttles during timed quizzes" },
-                                    { label: "Focus Shield Anti-Blur Protection", hint: "window.blur and visibilitychange cloaked" },
-                                    { label: "Snap-It Vision OCR & LaTeX Math", hint: "Reads diagrams, graphs & chemistry" },
-                                    { label: "1-Click Instant Cancellation", hint: "Cancel directly inside the extension popup" }
+                                    { label: "Unlimited Extension Solves & Snips", hint: "Zero daily caps on Canvas, Blackboard & 20+ LMSs" },
+                                    { label: "Claude + ChatGPT + DeepSeek Study Hub", hint: "Full multi-model AI workspace for homework & PDFs" },
+                                    { label: "Focus Shield & 3 Modes (Alt+1/2/3)", hint: "window.blur cloaked + Alt+S Hybrid Vision OCR" },
+                                    { label: "1-Click Instant Cancellation", hint: "Cancel anytime with zero hidden renewal traps" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-start gap-2.5 text-xs">
                                         <div className="w-4 h-4 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-800 shrink-0 mt-0.5">
@@ -295,7 +295,7 @@ export default function Pricing() {
                                 Academic Year Pass
                             </h3>
                             <p className="text-xs text-[#a3b8d6] mt-1 mb-4">
-                                Complete peace of mind through Fall, Spring, Summer & Finals without unexpected monthly charges.
+                                Complete peace of mind through Fall, Spring, Summer &amp; Finals—plus 12 months of our Study AI Hub.
                             </p>
 
                             <div className="mb-5 pb-5 border-b border-white/10">
@@ -309,13 +309,13 @@ export default function Pricing() {
                                 </div>
                                 <div className="text-[11px] text-emerald-300 mt-1 font-semibold flex items-center gap-1.5">
                                     <Sparkles className="w-3 h-3 text-emerald-400" aria-hidden="true" />
-                                    <span>Only $0.27/day · Save $129 vs monthly</span>
+                                    <span>Only $0.27/day · Replaces $65/mo of AI tools</span>
                                 </div>
                             </div>
 
                             <button
                                 onClick={() => handleOpenPlan('yearly')}
-                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-bold rounded-2xl bg-emerald-400 hover:bg-emerald-300 text-black transition-all flex items-center justify-center gap-2 mb-6 shadow-md"
+                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-bold rounded-2xl bg-emerald-400 hover:bg-emerald-300 text-black transition-all flex items-center justify-center gap-2 mb-6 shadow-md cursor-pointer"
                             >
                                 <FaChrome className="w-3.5 h-3.5 text-black shrink-0" aria-hidden="true" />
                                 <span>Get Academic Year Pass ($99)</span>
@@ -326,10 +326,10 @@ export default function Pricing() {
                                     Everything in Monthly, Plus:
                                 </div>
                                 {[
-                                    { label: "Full 12 Months of Uncapped Solves", hint: "Covers Fall, Spring, and Summer terms" },
+                                    { label: "12 Months Unlimited Extension + Study Hub", hint: "Claude 3.7, ChatGPT & DeepSeek-R1 all year" },
                                     { label: "Priority 0.3s Vision Edge Compute", hint: "Dedicated capacity during finals week rush" },
                                     { label: "Multi-Device License (2 Machines)", hint: "Use simultaneously on laptop & dorm PC" },
-                                    { label: "Priority 24/7 Discord Ticket Desk", hint: "Direct engineering support in <10 minutes" }
+                                    { label: "Syllabus & PDF Upload Memory", hint: "Attach full course packs in the Study AI Hub" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-start gap-2.5 text-xs text-white/90">
                                         <div className="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 shrink-0 mt-0.5">
@@ -392,7 +392,7 @@ export default function Pricing() {
 
                             <button
                                 onClick={() => handleOpenPlan('lifetime')}
-                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-black rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:brightness-105 text-black transition-all flex items-center justify-center gap-2 mb-6 shadow-md"
+                                className="w-full py-3.5 px-4 text-xs sm:text-sm font-black rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:brightness-105 text-black transition-all flex items-center justify-center gap-2 mb-6 shadow-md cursor-pointer"
                             >
                                 <FaChrome className="w-3.5 h-3.5 text-black shrink-0" aria-hidden="true" />
                                 <span>Get Lifetime VIP Pass ($199)</span>
@@ -403,10 +403,10 @@ export default function Pricing() {
                                     VIP Permanent Privileges:
                                 </div>
                                 {[
-                                    { label: "Permanent Access — Zero Expiration", hint: "Covers High School, Undergrad, and Master's" },
+                                    { label: "Permanent Extension + Study AI Hub", hint: "Unlimited Claude, ChatGPT & DeepSeek-R1 forever" },
                                     { label: "3-Device Multi-Seat License", hint: "Sync across laptop, dorm desktop & library Mac" },
-                                    { label: "All Future AI Models Included Free", hint: "Automatic upgrades to DeepSeek-R2 & GPT-5" },
-                                    { label: "All Future Canvas Patches Included", hint: "Zero extra charges for new LMS stealth updates" }
+                                    { label: "All Future Frontier Models Included Free", hint: "Automatic upgrades to Claude 4, GPT-5 & DeepSeek-R2" },
+                                    { label: "All Future Canvas & LMS Patches Included", hint: "Zero extra charges for new LMS stealth updates" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-start gap-2.5 text-xs text-white/95">
                                         <div className="w-4 h-4 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300 shrink-0 mt-0.5">
@@ -428,15 +428,20 @@ export default function Pricing() {
 
                 </div>
 
+                {/* Interactive Study & Homework AI Workspace Showcase */}
+                <div className="mb-10">
+                    <StudyAiHubShowcase />
+                </div>
+
                 {/* Collapsible Full Feature Comparison Matrix */}
                 <div className="mb-10">
                     <button
                         onClick={() => setShowComparison(!showComparison)}
-                        className="w-full py-3.5 px-6 rounded-2xl bg-white border border-black/10 shadow-xs hover:shadow-soft transition-all flex items-center justify-between text-xs sm:text-sm font-bold text-ink"
+                        className="w-full py-3.5 px-6 rounded-2xl bg-white border border-black/10 shadow-xs hover:shadow-soft transition-all flex items-center justify-between text-xs sm:text-sm font-bold text-ink cursor-pointer"
                     >
                         <span className="flex items-center gap-2">
                             <Sparkles className="w-4 h-4 text-emerald-700" aria-hidden="true" />
-                            <span>{showComparison ? "Hide Detailed Feature Comparison" : "Compare All Plan Features & Technical Limits Side-by-Side"}</span>
+                            <span>{showComparison ? "Hide Detailed Feature Comparison" : "Compare All Plan Features & Study AI Hub Limits Side-by-Side"}</span>
                         </span>
                         {showComparison ? (
                             <ChevronUp className="w-4 h-4 text-ink-muted" aria-hidden="true" />
@@ -446,69 +451,69 @@ export default function Pricing() {
                     </button>
 
                     <div className={showComparison ? "mt-3 rounded-3xl bg-white border border-black/10 p-5 sm:p-7 shadow-xs overflow-x-auto block" : "hidden"}>
-                            <table className="w-full text-xs text-left">
-                                <thead>
-                                    <tr className="border-b border-black/10 text-ink-muted">
-                                        <th className="py-3 px-2 font-bold uppercase text-[10px]">Feature</th>
-                                        <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Free Trial</th>
-                                        <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Monthly ($19)</th>
-                                        <th className="py-3 px-2 font-bold uppercase text-[10px] text-center text-emerald-800 bg-emerald-50/50 rounded-t-xl">Academic ($99)</th>
-                                        <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Lifetime ($199)</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-black/5">
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">AI Question Solves</td>
-                                        <td className="py-3 px-2 text-center text-ink-muted">50 total</td>
-                                        <td className="py-3 px-2 text-center text-emerald-800 font-bold">Unlimited</td>
-                                        <td className="py-3 px-2 text-center text-emerald-800 font-bold bg-emerald-50/50">Unlimited</td>
-                                        <td className="py-3 px-2 text-center text-emerald-800 font-bold">Unlimited (Forever)</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Focus Shield (Blur Cloaking)</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700 bg-emerald-50/50">✓ Included</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Snap-It Vision OCR & Math</td>
-                                        <td className="py-3 px-2 text-center text-ink-muted">10 snips</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700">✓ Unlimited</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700 bg-emerald-50/50">✓ Unlimited</td>
-                                        <td className="py-3 px-2 text-center text-emerald-700">✓ Unlimited</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Peak Finals Week Speed</td>
-                                        <td className="py-3 px-2 text-center text-ink-muted">Standard</td>
-                                        <td className="py-3 px-2 text-center text-ink">Standard (0.5s)</td>
-                                        <td className="py-3 px-2 text-center font-bold text-emerald-800 bg-emerald-50/50">Priority Edge (0.3s)</td>
-                                        <td className="py-3 px-2 text-center font-bold text-amber-800">VIP Dedicated Queue</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Devices Supported</td>
-                                        <td className="py-3 px-2 text-center text-ink">1 Device</td>
-                                        <td className="py-3 px-2 text-center text-ink">1 Device</td>
-                                        <td className="py-3 px-2 text-center text-ink bg-emerald-50/50 font-bold">2 Devices</td>
-                                        <td className="py-3 px-2 text-center text-ink font-bold">3 Devices</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Future LMS & Model Patches</td>
-                                        <td className="py-3 px-2 text-center text-ink-muted">—</td>
-                                        <td className="py-3 px-2 text-center text-ink">While active</td>
-                                        <td className="py-3 px-2 text-center text-ink bg-emerald-50/50">12 Months</td>
-                                        <td className="py-3 px-2 text-center font-bold text-emerald-800">Permanent Free</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-3 px-2 font-semibold text-ink">Refund Policy</td>
-                                        <td className="py-3 px-2 text-center text-ink-muted">Free trial</td>
-                                        <td className="py-3 px-2 text-center text-ink font-medium">14-Day 100% Guarantee</td>
-                                        <td className="py-3 px-2 text-center text-ink font-medium bg-emerald-50/50">14-Day 100% Guarantee</td>
-                                        <td className="py-3 px-2 text-center text-ink font-medium">14-Day 100% Guarantee</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table className="w-full text-xs text-left">
+                            <thead>
+                                <tr className="border-b border-black/10 text-ink-muted">
+                                    <th className="py-3 px-2 font-bold uppercase text-[10px]">Feature</th>
+                                    <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Free Tier ($0)</th>
+                                    <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Monthly ($19)</th>
+                                    <th className="py-3 px-2 font-bold uppercase text-[10px] text-center text-emerald-800 bg-emerald-50/50 rounded-t-xl">Academic ($99)</th>
+                                    <th className="py-3 px-2 font-bold uppercase text-[10px] text-center">Lifetime ($199)</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-black/5">
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">AI Quiz Question Solves</td>
+                                    <td className="py-3 px-2 text-center text-ink font-semibold">5 / day (Daily Reset)</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold">Unlimited</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold bg-emerald-50/50">Unlimited</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold">Unlimited (Forever)</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
+                                    <td className="py-3 px-2 text-center text-ink-muted">Preview Only</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold">✓ Full Access</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold bg-emerald-50/50">✓ Full Access + PDFs</td>
+                                    <td className="py-3 px-2 text-center text-emerald-800 font-bold">✓ Permanent VIP Access</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Focus Shield &amp; 3 Modes (Alt+1 / 2 / 3)</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700 bg-emerald-50/50">✓ Included</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700">✓ Included</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Snap-It Vision OCR &amp; Math (Alt+S)</td>
+                                    <td className="py-3 px-2 text-center text-ink-muted">Included in 5/day</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700">✓ Unlimited</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700 bg-emerald-50/50">✓ Unlimited</td>
+                                    <td className="py-3 px-2 text-center text-emerald-700">✓ Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Peak Finals Week Speed</td>
+                                    <td className="py-3 px-2 text-center text-ink-muted">Standard</td>
+                                    <td className="py-3 px-2 text-center text-ink">Standard (0.5s)</td>
+                                    <td className="py-3 px-2 text-center font-bold text-emerald-800 bg-emerald-50/50">Priority Edge (0.3s)</td>
+                                    <td className="py-3 px-2 text-center font-bold text-amber-800">VIP Dedicated Queue</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Devices Supported</td>
+                                    <td className="py-3 px-2 text-center text-ink">1 Device</td>
+                                    <td className="py-3 px-2 text-center text-ink">1 Device</td>
+                                    <td className="py-3 px-2 text-center text-ink bg-emerald-50/50 font-bold">2 Devices</td>
+                                    <td className="py-3 px-2 text-center text-ink font-bold">3 Devices</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 px-2 font-semibold text-ink">Refund Policy</td>
+                                    <td className="py-3 px-2 text-center text-ink-muted">Free forever (5/day)</td>
+                                    <td className="py-3 px-2 text-center text-ink font-medium">14-Day 100% Guarantee</td>
+                                    <td className="py-3 px-2 text-center text-ink font-medium bg-emerald-50/50">14-Day 100% Guarantee</td>
+                                    <td className="py-3 px-2 text-center text-ink font-medium">14-Day 100% Guarantee</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 {/* Trust, Security & Discretion Assurances */}
@@ -536,9 +541,9 @@ export default function Pricing() {
                     <div className="p-4 rounded-2xl bg-white border border-black/10 flex items-start gap-3 shadow-xs">
                         <Zap className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
                         <div>
-                            <span className="font-bold text-ink block">Instant Web Store License</span>
+                            <span className="font-bold text-ink block">Instant Extension + Study Hub Key</span>
                             <span className="text-ink-muted leading-relaxed block mt-0.5">
-                                Activation key generated in under 3 seconds. Works immediately on Chrome, Edge, and Brave.
+                                One license key unlocks both the Chrome/Edge/Brave extension and the web Study AI Workspace.
                             </span>
                         </div>
                     </div>

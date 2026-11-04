@@ -36,13 +36,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'schoology-quiz-solver',
         'deltamath-homework-solver',
         'edgenuity-quiz-solver',
+        'wileyplus-quiz-solver',
+        'zybooks-homework-solver',
+        'webwork-math-solver',
+        'sakai-lms-quiz-solver',
+        'macmillan-achieve-smartwork-solver',
+        'tophat-quiz-solver',
+        'knewton-alta-solver',
+        'hawkes-learning-certify-solver',
         'blog/does-canvas-detect-extensions-2026',
         'blog/canvas-quiz-log-explained-what-professors-see',
     ];
 
+    const LAST_MODIFIED_LMS = new Date('2026-10-23T00:00:00.000Z');
     const lmsRoutes = lmsServiceSlugs.map((slug) => ({
         url: `${baseUrl}/${slug}`,
-        lastModified: LAST_MODIFIED_CORE,
+        lastModified: LAST_MODIFIED_LMS,
         changeFrequency: 'weekly' as const,
         priority: 0.9,
     }));

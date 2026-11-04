@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaChrome } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { DoubleCheckAiCircularLoopDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
   title: {
@@ -40,124 +42,129 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'WebPage',
-      '@id': 'https://examghost.com/doublecheckai-vs-examghost#webpage',
-      name: 'Double Check AI vs ExamGhost (2026): Forensic Chrome Store & Stealth Audit',
-      description:
-        'Detailed comparison of AI Homework Helper - Double Check AI (ciiaplbmocogjcakmllebilamknkfckg) and ExamGhost across Chrome Web Store install verification, DOM button injection, synthetic radio clicks, and STEM accuracy.',
-      url: 'https://examghost.com/doublecheckai-vs-examghost',
-      datePublished: '2026-02-27',
-      dateModified: '2026-03-11',
-      breadcrumb: { '@id': 'https://examghost.com/doublecheckai-vs-examghost#breadcrumb' },
-      author: {
-        '@type': 'Organization',
-        name: 'ExamGhost Security Engineering Team',
-        url: 'https://examghost.com',
+      "@type": "SoftwareApplication",
+      "name": "ExamGhost",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Tier (5 Free Solves / Day)",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Pass",
+          "price": "19.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Academic Year Pass",
+          "price": "99.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime Degree Pass",
+          "price": "199.00",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://examghost.com/doublecheckai-vs-examghost#webpage",
+      "name": "Double Check AI vs ExamGhost (2026): Forensic Chrome Store & Stealth Audit",
+      "description":
+        "Detailed comparison of AI Homework Helper - Double Check AI (ciiaplbmocogjcakmllebilamknkfckg) and ExamGhost across Chrome Web Store install verification, DOM button injection, synthetic radio clicks, and STEM accuracy.",
+      "url": "https://examghost.com/doublecheckai-vs-examghost",
+      "datePublished": "2026-02-27",
+      "dateModified": "2026-03-11",
+      "breadcrumb": { "@id": "https://examghost.com/doublecheckai-vs-examghost#breadcrumb" },
+      "author": {
+        "@type": "Organization",
+        "name": "ExamGhost Security Engineering Team",
+        "url": "https://examghost.com"
       },
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', 'h2', 'summary'],
-      },
-      about: [
-        {
-          '@type': 'SoftwareApplication',
-          name: 'ExamGhost',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome, Edge, Brave, macOS, Windows',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '199.00',
-            priceCurrency: 'USD',
-            offerCount: '4',
-          },
-        },
-        {
-          '@type': 'SoftwareApplication',
-          name: 'Double Check AI (AI Homework Helper)',
-          applicationCategory: 'EducationalApplication',
-          operatingSystem: 'Chrome Extension',
-          offers: {
-            '@type': 'AggregateOffer',
-            lowPrice: '0.00',
-            highPrice: '9.99',
-            priceCurrency: 'USD',
-            offerCount: '2',
-          },
-        },
-      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "summary"]
+      }
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://examghost.com/doublecheckai-vs-examghost#breadcrumb',
-      itemListElement: [
+      "@type": "BreadcrumbList",
+      "@id": "https://examghost.com/doublecheckai-vs-examghost#breadcrumb",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://examghost.com',
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://examghost.com"
         },
         {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Competitor Comparisons',
-          item: 'https://examghost.com/compare-canvas-hack-extensions',
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Competitor Comparisons",
+          "item": "https://examghost.com/compare-canvas-hack-extensions"
         },
         {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'Double Check AI vs ExamGhost',
-          item: 'https://examghost.com/doublecheckai-vs-examghost',
-        },
-      ],
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Double Check AI vs ExamGhost",
+          "item": "https://examghost.com/doublecheckai-vs-examghost"
+        }
+      ]
     },
     {
-      '@type': 'FAQPage',
-      '@id': 'https://examghost.com/doublecheckai-vs-examghost#faq',
-      mainEntity: [
+      "@type": "FAQPage",
+      "@id": "https://examghost.com/doublecheckai-vs-examghost#faq",
+      "mainEntity": [
         {
-          '@type': 'Question',
-          name: 'How many students actually use Double Check AI on the Chrome Web Store?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Although doublecheckme.com advertises "1,200+ students use Double Check" and "150k+ Questions Solved," its official Chrome Web Store listing (AI Homework Helper - Double Check AI, ID: ciiaplbmocogjcakmllebilamknkfckg) shows only 244 active users and 13 ratings.',
-          },
+          "@type": "Question",
+          "name": "How many students actually use Double Check AI on the Chrome Web Store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Although doublecheckme.com advertises \"1,200+ students use Double Check\" and \"150k+ Questions Solved,\" its official Chrome Web Store listing (AI Homework Helper - Double Check AI, ID: ciiaplbmocogjcakmllebilamknkfckg) shows only 244 active users and 13 ratings."
+          }
         },
         {
-          '@type': 'Question',
-          name: 'Why is Double Check AI’s automatic answer selection risky on Canvas and Blackboard?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'On doublecheckme.com, a featured testimonial states: "i literally just press the button and it automatically selects the right answer lol." This reveals two detection vectors: first, the extension injects a visible button directly into the LMS host DOM; second, programmatically clicking a radio button sets event.isTrusted to false in browser event listeners. ExamGhost never injects buttons into the host DOM and never auto-clicks inputs—it renders answers inside a Closed Shadow DOM so you click naturally with genuine hardware events.',
-          },
+          "@type": "Question",
+          "name": "Why is Double Check AI’s automatic answer selection risky on Canvas and Blackboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On doublecheckme.com, a featured testimonial states: \"i literally just press the button and it automatically selects the right answer lol.\" This reveals two detection vectors: first, the extension injects a visible button directly into the LMS host DOM; second, programmatically clicking a radio button sets event.isTrusted to false in browser event listeners. ExamGhost never injects buttons into the host DOM and never auto-clicks inputs—it renders answers inside a Closed Shadow DOM so you click naturally with genuine hardware events."
+          }
         },
         {
-          '@type': 'Question',
-          name: 'How many free questions does Double Check AI give compared to ExamGhost?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Double Check AI restricts free users to just 5 questions every 24 hours—not enough to finish a single 10-question Canvas quiz. ExamGhost gives every student 50 Free Solves upfront with zero credit card required and no 24-hour lockout.',
-          },
+          "@type": "Question",
+          "name": "How many free questions does Double Check AI give compared to ExamGhost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Double Check AI restricts free users to just 5 questions every 24 hours—not enough to finish a single 10-question Canvas quiz. ExamGhost gives every student 5 Free Solves / Day upfront with zero credit card required and no 24-hour lockout."
+          }
         },
         {
-          '@type': 'Question',
-          name: 'Does Double Check AI protect against Canvas tab-switching and window blur logs?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Double Check AI does not include a prototype-level Focus Shield to intercept window.blur, focusout, or document.visibilitychange events. ExamGhost includes an always-on Focus Shield plus a ⌘+Shift+U Panic Wipe hotkey.',
-          },
-        },
-      ],
-    },
-  ],
+          "@type": "Question",
+          "name": "Does Double Check AI protect against Canvas tab-switching and window blur logs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Double Check AI does not include a prototype-level Focus Shield to intercept window.blur, focusout, or document.visibilitychange events. ExamGhost includes an always-on Focus Shield plus a ⌘+Shift+U Panic Wipe hotkey."
+          }
+        }
+      ]
+    }
+  ]
 };
 
 export default function DoubleCheckAiVsExamGhostPage() {
   return (
-    <main className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#fde68a] selection:text-[#111]">
+    <>
+    <main id="main-content" className="min-h-screen bg-[#faf9f5] text-[#111] font-sans selection:bg-[#fde68a] selection:text-[#111]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -249,7 +256,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                   </div>
                   <div className="text-lg font-black text-red-600 mt-0.5">Only 5 Solves / 24h</div>
                   <p className="text-xs text-neutral-600 mt-1">
-                    Locks out mid-quiz after Question #5 vs ExamGhost&apos;s 50 Free Solves
+                    Locks out mid-quiz after Question #5 vs ExamGhost&apos;s 5 Free Solves / Day
                   </p>
                 </div>
 
@@ -270,7 +277,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111] text-white font-bold text-sm shadow-[4px_4px_0px_#b45309] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   <FaChrome className="w-4 h-4 text-[#fde68a]" aria-hidden="true" />
-                  <span>Start 50 Free Solves · $0 No Card</span>
+                  <span>Start 5 Free Solves / Day · $0 No Card</span>
                 </Link>
                 <a
                   href="#receipt-comparison"
@@ -356,6 +363,8 @@ export default function DoubleCheckAiVsExamGhostPage() {
         </div>
       </section>
 
+        <DoubleCheckAiCircularLoopDemo />
+
       {/* Section 2: Interactive 4-Tab Forensic Audit (Pure CSS Peer-Checked) */}
       <section id="receipt-comparison" className="py-14 px-4 border-b-2 border-[#111]">
         <div className="max-w-6xl mx-auto">
@@ -374,77 +383,13 @@ export default function DoubleCheckAiVsExamGhostPage() {
           </div>
 
           <div className="bg-white border-2 border-[#111] rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0px_#111]">
-            <input
-              type="radio"
-              name="dc-audit-tabs"
-              id="dc-tab-1"
-              className="peer/tab1 hidden"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="dc-audit-tabs"
-              id="dc-tab-2"
-              className="peer/tab2 hidden"
-            />
-            <input
-              type="radio"
-              name="dc-audit-tabs"
-              id="dc-tab-3"
-              className="peer/tab3 hidden"
-            />
-            <input
-              type="radio"
-              name="dc-audit-tabs"
-              id="dc-tab-4"
-              className="peer/tab4 hidden"
-            />
-
-            {/* Tab Labels */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-6 border-b-2 border-[#111] pb-4">
-              <label
-                htmlFor="dc-tab-1"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fde68a]/60 peer-checked/tab1:bg-[#fde68a] peer-checked/tab1:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Audit Finding 01
-                </span>
-                Injected Button &amp; Auto-Click Risk
-              </label>
-
-              <label
-                htmlFor="dc-tab-2"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fde68a]/60 peer-checked/tab2:bg-[#fde68a] peer-checked/tab2:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Audit Finding 02
-                </span>
-                5 Solves/24h Paywall Trap
-              </label>
-
-              <label
-                htmlFor="dc-tab-3"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fde68a]/60 peer-checked/tab3:bg-[#fde68a] peer-checked/tab3:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Audit Finding 03
-                </span>
-                244 Real Users vs 1,200+ Claim
-              </label>
-
-              <label
-                htmlFor="dc-tab-4"
-                className="cursor-pointer border-2 border-[#111] rounded-xl px-3.5 py-3 text-xs sm:text-sm font-bold transition-all bg-neutral-100 hover:bg-[#fde68a]/60 peer-checked/tab4:bg-[#fde68a] peer-checked/tab4:shadow-[3px_3px_0px_#111]"
-              >
-                <span className="block font-mono text-[10px] uppercase text-neutral-600">
-                  Audit Finding 04
-                </span>
-                Single LLM vs STEM Consensus + RAG
-              </label>
-            </div>
+            
+            
+            
+            
 
             {/* Tab 1 */}
-            <div className="hidden peer-checked/tab1:grid md:grid-cols-2 gap-6 items-start">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   DOUBLE CHECK AI DOM INJECTION
@@ -480,7 +425,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                 </h3>
                 <p className="text-sm text-neutral-800 leading-relaxed mb-4">
                   ExamGhost is triggered by customizable keyboard shortcuts (
-                  <code>⌘+Shift+A</code> or <code>⌘+Shift+S</code>) rather than cluttering your quiz
+                  <code>Double-Click</code> or <code>Alt+S</code>) rather than cluttering your quiz
                   page with detectable buttons. It renders the verified answer inside a{' '}
                   <code>Closed Shadow DOM</code> root that page scripts cannot read, and lets you
                   click the radio button yourself so every click is <code>isTrusted: true</code>.
@@ -494,7 +439,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
             </div>
 
             {/* Tab 2 */}
-            <div className="hidden peer-checked/tab2:grid md:grid-cols-2 gap-6 items-start">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   DOUBLE CHECK AI FREE TIER
@@ -522,16 +467,16 @@ export default function DoubleCheckAiVsExamGhostPage() {
                   EXAMGHOST FREE TRIAL
                 </div>
                 <h3 className="text-xl font-black mb-2">
-                  50 Free Solves Upfront — Finish Multiple Full Quizzes for $0
+                  5 Free Solves / Day — Finish Multiple Full Quizzes for $0
                 </h3>
                 <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                  ExamGhost gives every student <strong>50 full AI solves</strong> immediately upon
+                  ExamGhost gives every student <strong>5 Free Solves / Day (auto-refilling every 24h)</strong> immediately upon
                   installation—with zero credit card required and no artificial 24-hour drip limit.
                   You can test ExamGhost across two or three complete 20-question quizzes before
                   ever deciding whether to upgrade.
                 </p>
                 <div className="bg-white border border-emerald-300 rounded-lg p-3 font-mono text-xs text-emerald-900">
-                  <div>✓ 50 Free Solves ($0 • No Credit Card Required)</div>
+                  <div>✓ 5 Free Solves / Day ($0 • No Credit Card Required)</div>
                   <div>✓ Includes Multi-Model STEM Consensus + Vision OCR</div>
                   <div className="font-bold text-emerald-700 mt-1">
                     ✓ Transparent upgrades: $19/mo, $99/yr ($8.25/mo), or $199 Lifetime
@@ -541,7 +486,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
             </div>
 
             {/* Tab 3 */}
-            <div className="hidden peer-checked/tab3:grid md:grid-cols-2 gap-6 items-start">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   DOUBLECHECKME.COM CLAIMS
@@ -587,7 +532,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
             </div>
 
             {/* Tab 4 */}
-            <div className="hidden peer-checked/tab4:grid md:grid-cols-2 gap-6 items-start">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="bg-red-50/70 border-2 border-[#111] rounded-xl p-5">
                 <div className="inline-block bg-red-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded mb-2">
                   DOUBLE CHECK AI ACCURACY
@@ -624,7 +569,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                 <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
                   <li>✓ Local-first RAG Vault indexes your actual class PDFs &amp; notes</li>
                   <li>✓ Multi-Model STEM Consensus eliminates single-model math errors</li>
-                  <li>✓ ⌘+Shift+S Snap-It Vision OCR reads graphs, circuits, &amp; tables</li>
+                  <li>✓ Alt+S Snap-It Vision OCR reads graphs, circuits, &amp; tables</li>
                 </ul>
               </div>
             </div>
@@ -707,7 +652,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
                   <span className="text-emerald-300 font-bold">[00:19s • Closed Shadow DOM]</span>{' '}
-                  Student presses <code>⌘+Shift+A</code>. Solution renders inside isolated{' '}
+                  Student <code>Double-Clicks</code> the question. Solution renders inside isolated{' '}
                   <code>mode: &apos;closed&apos;</code> shadow root. Zero host DOM buttons injected.
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
@@ -717,7 +662,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                 </div>
                 <div className="p-2.5 rounded bg-emerald-950/40 border-l-4 border-emerald-400">
                   <span className="text-emerald-300 font-bold">[16:10s • Full Exam Solved]</span>{' '}
-                  All 25 questions completed smoothly using the 50-solve free trial with 0 flags.
+                  All questions completed smoothly using ExamGhost Stealth Mode with 0 flags.
                 </div>
               </div>
             </div>
@@ -768,7 +713,7 @@ export default function DoubleCheckAiVsExamGhostPage() {
                     ✗ Only 5 questions per 24 hours (locks out mid-quiz)
                   </td>
                   <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ 50 Free Solves upfront ($0, no credit card, no 24hr lockout)
+                    ✓ 5 Free Solves / Day upfront ($0, no credit card, no 24hr lockout)
                   </td>
                 </tr>
                 <tr>
@@ -826,7 +771,24 @@ export default function DoubleCheckAiVsExamGhostPage() {
                     ✓ ⌘+Shift+U unmounts UI &amp; purges session memory in &lt;16ms
                   </td>
                 </tr>
-              </tbody>
+              
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  </tr>
+                </tbody>
             </table>
           </div>
 
@@ -902,7 +864,7 @@ Homepage Marketing Claims (doublecheckme.com):
               red flag was starting my 20-question Canvas quiz and getting locked out after Question
               5 unless I paid immediately. Plus it puts a giant button right inside Canvas and
               auto-clicks the radio button, which sketches me out with SpeedGrader logs. Uninstalled
-              it, grabbed ExamGhost&apos;s 50 free solves, and finished both my Canvas and
+              it, grabbed ExamGhost&apos;s 5 free solves / day, and finished both my Canvas and
               McGraw-Hill quizzes with zero buttons injected into the page.&rdquo;
             </blockquote>
 
@@ -989,7 +951,7 @@ Homepage Marketing Claims (doublecheckme.com):
               <p className="mt-3 text-sm text-neutral-700 leading-relaxed">
                 Double Check AI restricts free users to just <strong>5 questions every 24 hours</strong>
                 —not enough to finish a single 10-question Canvas quiz. ExamGhost gives every
-                student <strong>50 Free Solves upfront</strong> with zero credit card required and
+                student <strong>5 Free Solves / Day upfront</strong> with zero credit card required and
                 no 24-hour lockout.
               </p>
             </details>
@@ -1021,7 +983,7 @@ Homepage Marketing Claims (doublecheckme.com):
             SKIP THE 5-QUESTION PAYWALL &amp; AUTO-CLICK RISK
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Start With 50 Free Solves on ExamGhost ($0, No Card)
+            Start With 5 Free Solves / Day on ExamGhost ($0, No Card)
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
             Get 10x more free solves than Double Check AI&apos;s daily limit, backed by Closed
@@ -1034,7 +996,7 @@ Homepage Marketing Claims (doublecheckme.com):
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-amber-400 text-[#111] font-black text-sm hover:bg-amber-300 transition-all"
             >
               <FaChrome className="w-4 h-4" aria-hidden="true" />
-              <span>Start 50 Free Solves · $0 No Card</span>
+              <span>Start 5 Free Solves / Day · $0 No Card</span>
             </Link>
             <Link prefetch={false}
               href="/compare-canvas-hack-extensions"
@@ -1089,7 +1051,11 @@ Homepage Marketing Claims (doublecheckme.com):
           </div>
         </div>
       </section>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

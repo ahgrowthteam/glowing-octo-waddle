@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
+
+// Self-hosted via next/font: consistent typography on Chrome/Windows/Android (previously fell back to
+// Hiragino Maru / Segoe UI because ui-rounded and Inter were never actually loaded). Safari keeps SF Pro Rounded.
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const nunito = Nunito({ subsets: ["latin"], weight: ["600", "700", "800"], display: "swap", variable: "--font-nunito" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://examghost.com'),
@@ -7,7 +13,7 @@ export const metadata: Metadata = {
     default: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
     template: "%s | ExamGhost"
   },
-  description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 50 free solves.",
+  description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 5 free solves / day.",
   keywords: [
     "ai quiz solver",
     "canvas quiz solver",
@@ -47,7 +53,7 @@ export const metadata: Metadata = {
     url: "https://examghost.com",
     siteName: "ExamGhost",
     title: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
-    description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 50 free solves.",
+    description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 5 free solves / day.",
     images: [
       {
         url: "/og-image.jpg",
@@ -91,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${nunito.variable}`}>
       <body className="font-sans bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen">
         {children}
       </body>

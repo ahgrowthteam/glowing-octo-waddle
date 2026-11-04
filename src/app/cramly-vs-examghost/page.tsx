@@ -2,7 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { CramlyEssayVsQuizDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   CheckCircle2,
   XCircle,
@@ -27,13 +29,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Cramly AI vs ExamGhost (2026) — Essay Tool vs Quiz Solver",
     },
-    description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (50 Free Solves).",
+    description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (5 Free Solves / Day).",
     alternates: {
         canonical: "https://examghost.com/cramly-vs-examghost",
     },
     openGraph: {
         title: "Cramly AI vs ExamGhost (2026) — Essay Tool vs Quiz Solver",
-        description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (50 Free Solves).",
+        description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (5 Free Solves / Day).",
         url: "https://examghost.com/cramly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Cramly AI vs ExamGhost (2026) — Essay Tool vs Quiz Solver",
-        description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (50 Free Solves).",
+        description: "2026 comparison of Cramly.ai ($19.99/mo) vs ExamGhost. While Cramly drafts essays in separate tabs, ExamGhost solves live LMS quizzes in 0.3s (5 Free Solves / Day).",
         images: ["/og-image.jpg"],
     },
 };
@@ -74,6 +76,33 @@ const jsonLd = {
       breadcrumb: {
         "@id": "https://examghost.com/cramly-vs-examghost#breadcrumb",
       },
+      about: [
+        {
+          "@type": "SoftwareApplication",
+          name: "ExamGhost",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Chrome, Edge, Brave, macOS, Windows",
+          offers: [
+            { "@type": "Offer", name: "Free Tier (5 Free Solves / Day)", price: "0", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Monthly Pass", price: "19.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Academic Year Pass", price: "99.00", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Lifetime Degree Pass", price: "199.00", priceCurrency: "USD" }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          name: "Cramly AI",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Web Application, Chrome Extension",
+          offers: {
+            "@type": "AggregateOffer",
+            lowPrice: "19.99",
+            highPrice: "110.00",
+            priceCurrency: "USD",
+            offerCount: "3"
+          }
+        }
+      ],
     },
     {
       "@type": "BreadcrumbList",
@@ -132,7 +161,7 @@ const jsonLd = {
           name: "How does Cramly.ai pricing compare to ExamGhost in 2026?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Cramly.ai charges ~$19.99/month (after a short trial), ~$48–$60/year, or ~$110 Lifetime for its essay-writing suite. ExamGhost gives you 50 Free Question Solves + 10 Vision OCR Snips ($0, no credit card required) and offers unlimited live exam stealth for $19/month, $99/year ($8.25/mo), or $199 Lifetime.",
+            text: "Cramly.ai charges ~$19.99/month (after a short trial), ~$48–$60/year, or ~$110 Lifetime for its essay-writing suite. ExamGhost gives you 5 Free Solves / Day + 10 Vision OCR Snips ($0, no credit card required) and offers unlimited live exam stealth for $19/month, $99/year ($8.25/mo), or $199 Lifetime.",
           },
         },
       ],
@@ -197,7 +226,7 @@ export default function CramlyVsExamGhostPage() {
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-ink text-white font-semibold hover:bg-ink-light transition-all shadow-sm hover:shadow group text-sm sm:text-base"
               >
                 <FaChrome className="w-4 h-4 text-mint" aria-hidden="true" />
-                <span>Claim 50 Free Live Exam Solves ($0)</span>
+                <span>Claim 5 Free/Day Live Exam Solves ($0)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <Link prefetch={false}
@@ -275,7 +304,7 @@ export default function CramlyVsExamGhostPage() {
                       <span className="font-display font-bold text-sm text-ink">ExamGhost 0.3s Live Exam Stealth Suite</span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                      50 Free Solves ($0)
+                      5 Free Solves / Day ($0)
                     </span>
                   </div>
 
@@ -305,7 +334,7 @@ export default function CramlyVsExamGhostPage() {
                     </div>
                     <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950">
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                      <span><strong>Zero Session Replay + 50 Free Solves:</strong> Ephemeral zero-log edge inference with 50 free trial solves ($0, no card required).</span>
+                      <span><strong>Zero Session Replay + 5 Free Solves / Day:</strong> Ephemeral zero-log edge inference with 5 Free/Day trial solves ($0, no card required).</span>
                     </div>
                   </div>
                 </div>
@@ -319,58 +348,67 @@ export default function CramlyVsExamGhostPage() {
           </div>
         </header>
 
-        {/* INTERACTIVE PURE-CSS 3-TAB COMPARISON */}
+        <CramlyEssayVsQuizDemo />
+
+        {/* MODERN HOTKEYS SUITE */}
+        <section className="py-8 bg-sand/20 border-b border-sand-dark/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+              </div>
+              <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* VISIBLE 3-PILLAR COMPARISON */}
         <section className="py-16 sm:py-20 bg-sand/30 border-b border-sand-dark/20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sand-dark/30 text-xs font-mono font-semibold text-ink-muted mb-3">
                 <Layers className="w-3.5 h-3.5 text-emerald-800" />
-                <span>Interactive Architecture Breakdown · Click Any Tab</span>
+                <span>Architecture Breakdown · 3 Critical Differences</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold font-display text-ink mb-3">
                 Take-Home Essay Drafter vs Live Timed Exam Stealth
               </h2>
               <p className="text-sm sm:text-base text-ink-muted">
-                Switch between tabs to inspect Cramly&apos;s Google Docs workflow, STEM OCR limits, and third-party tracking scripts.
+                Inspect Cramly&apos;s Google Docs workflow, STEM OCR limits, and third-party tracking scripts compared to ExamGhost.
               </p>
             </div>
 
-            <div>
-              <input type="radio" name="cr-tabs" id="cr-tab-essay" className="sr-only peer/essay" defaultChecked />
-              <input type="radio" name="cr-tabs" id="cr-tab-ocr" className="sr-only peer/ocr" />
-              <input type="radio" name="cr-tabs" id="cr-tab-priv" className="sr-only peer/priv" />
-
-              {/* Tab Navigation */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-surface p-2 rounded-2xl border border-sand-dark/30 shadow-sm">
-                <label
-                  htmlFor="cr-tab-essay"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/essay:bg-ink peer-checked/essay:text-white peer-checked/essay:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <PenTool className="w-4 h-4 shrink-0" />
-                  <span>1. Essay Suite vs 0.3s HUD</span>
-                </label>
-                <label
-                  htmlFor="cr-tab-ocr"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/ocr:bg-ink peer-checked/ocr:text-white peer-checked/ocr:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <Camera className="w-4 h-4 shrink-0" />
-                  <span>2. Text-Paste vs STEM Vision OCR</span>
-                </label>
-                <label
-                  htmlFor="cr-tab-priv"
-                  className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/priv:bg-ink peer-checked/priv:text-white peer-checked/priv:shadow-sm flex items-center justify-center gap-2"
-                >
-                  <Lock className="w-4 h-4 shrink-0" />
-                  <span>3. Trackers &amp; Pricing Math</span>
-                </label>
-              </div>
-
-              {/* TAB 1: ESSAY SUITE VS 0.3S HUD */}
-              <div className="hidden peer-checked/essay:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+            <div className="space-y-8">
+              {/* PILLAR 1: ESSAY SUITE VS 0.3S HUD */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <PenTool className="w-3.5 h-3.5" />
-                    <span>Cramly.ai: Built for Google Docs &amp; Essays</span>
+                    <span>Pillar 1 · Cramly.ai: Built for Google Docs &amp; Essays</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Great for Sunday papers—dangerous on Monday morning quizzes
@@ -391,10 +429,10 @@ export default function CramlyVsExamGhostPage() {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>ExamGhost: Engineered for Live Timed Assessments</span>
+                    <span>Pillar 1 · ExamGhost: Engineered for Live Timed Assessments</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
-                    One hotkey (<code className="font-mono text-base">Alt+Q</code>) solves inside a closed Shadow DOM
+                    Double-click solve inside a closed Shadow DOM
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                     ExamGhost is built exclusively for high-stakes quizzes and exams on Canvas, Blackboard, Moodle, D2L, and McGraw Hill Connect:
@@ -411,12 +449,12 @@ export default function CramlyVsExamGhostPage() {
                 </div>
               </div>
 
-              {/* TAB 2: TEXT-PASTE MCQ VS SNAP-IT STEM VISION OCR */}
-              <div className="hidden peer-checked/ocr:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* PILLAR 2: TEXT-PASTE MCQ VS SNAP-IT STEM VISION OCR */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <XCircle className="w-3.5 h-3.5" />
-                    <span>Cramly Multiple Choice Solver: Text-Paste Only</span>
+                    <span>Pillar 2 · Cramly Multiple Choice Solver: Text-Paste Only</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Why text copy-pasting fails on modern STEM portals
@@ -440,7 +478,7 @@ export default function CramlyVsExamGhostPage() {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
                     <Camera className="w-3.5 h-3.5" />
-                    <span>ExamGhost: 0.3s Crosshair Vision OCR</span>
+                    <span>Pillar 2 · ExamGhost: 0.3s Crosshair Vision OCR</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Snip any graph, matrix, or locked iframe right on your screen
@@ -459,12 +497,12 @@ export default function CramlyVsExamGhostPage() {
                 </div>
               </div>
 
-              {/* TAB 3: SESSION REPLAY TRACKERS & PRICING */}
-              <div className="hidden peer-checked/priv:grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
+              {/* PILLAR 3: SESSION REPLAY TRACKERS & PRICING */}
+              <div className="grid md:grid-cols-2 gap-6 rounded-3xl bg-surface border border-sand-dark/30 p-6 sm:p-8 shadow-sm">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-rose-800">
                     <Lock className="w-3.5 h-3.5" />
-                    <span>Cramly.ai: Session Recording &amp; Trial Wall</span>
+                    <span>Pillar 3 · Cramly.ai: Session Recording &amp; Trial Wall</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
                     Microsoft Clarity session replay + card-upfront trial
@@ -491,18 +529,18 @@ export default function CramlyVsExamGhostPage() {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
                     <CreditCard className="w-3.5 h-3.5" />
-                    <span>ExamGhost: Ephemeral Zero-Log Edge Compute</span>
+                    <span>Pillar 3 · ExamGhost: Ephemeral Zero-Log Edge Compute</span>
                   </div>
                   <h3 className="text-xl font-bold font-display text-ink">
-                    Zero session recordings + 50 Free Solves ($0, No Card)
+                    Zero session recordings + 5 Free Solves / Day ($0, No Card)
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                    We never run screen-recording tools like Microsoft Clarity on your exam queries, and you can test ExamGhost on 50 real questions before spending a cent:
+                    We never run screen-recording tools like Microsoft Clarity on your exam queries, and you can test ExamGhost with 5 Free Solves / Day before spending a cent:
                   </p>
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Starter Trial (No Credit Card)</span>
-                      <span className="font-mono font-bold text-emerald-800">50 Free Solves ($0)</span>
+                      <span className="font-mono font-bold text-emerald-800">5 Free Solves / Day ($0)</span>
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Monthly Pass</span>
@@ -510,11 +548,11 @@ export default function CramlyVsExamGhostPage() {
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Academic Year Pass ($8.25/mo)</span>
-                      <span className="font-mono font-bold text-emerald-800">$99 / year</span>
+                      <span className="font-mono font-bold text-emerald-800">$99 / year ($99/yr)</span>
                     </div>
                     <div className="flex justify-between p-3 rounded-xl bg-emerald-50/70 border border-emerald-200">
                       <span className="font-semibold text-emerald-950">Lifetime Degree Pass (3 Devices)</span>
-                      <span className="font-mono font-bold text-emerald-800">$199 One-Time</span>
+                      <span className="font-mono font-bold text-emerald-800">$199 Lifetime</span>
                     </div>
                   </div>
                 </div>
@@ -565,7 +603,7 @@ export default function CramlyVsExamGhostPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>50 Free Solves ($0, No Card):</strong> Verify accuracy on your actual LMS before choosing $19/mo, $99/yr, or $199 Lifetime.</span>
+                  <span><strong>5 Free Solves / Day ($0, No Card):</strong> Verify accuracy on your actual LMS before choosing $19/mo, $99/yr, or $199 Lifetime.</span>
                 </li>
               </ul>
             </div>
@@ -655,14 +693,25 @@ export default function CramlyVsExamGhostPage() {
                   <tr className="bg-cream/40">
                     <td className="py-3.5 px-4 font-semibold text-ink">Free Trial Access</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Testing before entering payment info</td>
-                    <td className="py-3.5 px-4 text-emerald-800 font-bold">50 Free Solves + 10 OCR Snips ($0, No CC)</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">5 Free Solves / Day + 10 OCR Snips ($0, No CC)</td>
                     <td className="py-3.5 px-4 text-ink-muted">Short trial requiring card upfront on most flows</td>
                   </tr>
                   <tr className="bg-surface">
                     <td className="py-3.5 px-4 font-semibold text-ink">2026 Pricing</td>
                     <td className="py-3.5 px-4 text-ink-muted text-xs">Monthly, annual &amp; lifetime options</td>
-                    <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                    <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                     <td className="py-3.5 px-4 text-ink-muted">~$19.99/mo · ~$48–$60/yr · ~$110 Life</td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-xs opacity-75">
+                      Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -709,7 +758,7 @@ export default function CramlyVsExamGhostPage() {
                   Join the ExamGhost Student Discord
                 </h2>
                 <p className="text-xs sm:text-sm text-white/90">
-                  Claim 50 free AI question solves, check live Canvas &amp; Blackboard stealth status, and get 24/7 engineering support.
+                  Claim 5 Free/Day AI question solves, check live Canvas &amp; Blackboard stealth status, and get 24/7 engineering support.
                 </p>
               </div>
             </div>
@@ -719,7 +768,7 @@ export default function CramlyVsExamGhostPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-white text-[#232b88] hover:bg-white/95 text-sm font-bold shadow-sm whitespace-nowrap inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
             >
-              <span>Join Discord &amp; Get 50 Free Solves</span>
+              <span>Join Discord &amp; Get 5 Free Solves / Day</span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -773,7 +822,7 @@ export default function CramlyVsExamGhostPage() {
                 <ChevronDown className="w-5 h-5 text-ink-muted transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
-                Cramly.ai charges <strong>~$19.99/month</strong> (after a short trial), <strong>~$48–$60/year</strong>, or <strong>~$110 Lifetime</strong> for its essay-writing suite. ExamGhost gives you <strong>50 Free Question Solves + 10 Vision OCR Snips ($0)</strong> with no credit card required, and offers unlimited live exam stealth for <strong>$19/month, $99/year ($8.25/mo), or $199 Lifetime</strong>.
+                Cramly.ai charges <strong>~$19.99/month</strong> (after a short trial), <strong>~$48–$60/year</strong>, or <strong>~$110 Lifetime</strong> for its essay-writing suite. ExamGhost gives you <strong>5 Free Solves / Day + 10 Vision OCR Snips ($0)</strong> with no credit card required, and offers unlimited live exam stealth for <strong>$19/month, $99/year ($8.25/mo), or $199 Lifetime</strong>.
               </p>
             </details>
           </div>
@@ -792,7 +841,7 @@ export default function CramlyVsExamGhostPage() {
                   Solve locked STEM graphs and Canvas quizzes in 0.3s.
                 </h2>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                  No copy-pasting into external tabs, no <code className="font-mono text-xs">window.blur</code> logs, and zero session-recording trackers. Start with 50 Free Solves ($0).
+                  No copy-pasting into external tabs, no <code className="font-mono text-xs">window.blur</code> logs, and zero session-recording trackers. Start with 5 Free Solves / Day ($0).
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
@@ -803,7 +852,7 @@ export default function CramlyVsExamGhostPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-bold hover:bg-ink-light transition-all shadow-sm text-sm"
                 >
                   <FaChrome className="w-4 h-4 text-mint" />
-                  <span>Claim 50 Free Solves</span>
+                  <span>Claim 5 Free Solves / Day</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link prefetch={false}
@@ -852,6 +901,9 @@ export default function CramlyVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

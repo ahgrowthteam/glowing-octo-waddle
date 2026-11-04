@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { ExamClutchClipboardPasteDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   Check,
   X,
@@ -28,13 +30,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
     },
-    description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/examclutch-vs-examghost",
     },
     openGraph: {
         title: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
-        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/examclutch-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
-        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -59,6 +61,39 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
     {
       "@type": "WebPage",
                 "datePublished": "2026-02-12",
@@ -139,7 +174,7 @@ const jsonLd = {
           name: "How much does ExamClutch cost in 2026 vs ExamGhost AI?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "ExamClutch charges $9/week ($36/month equivalent), $19/month, $129/year ($10.75/month), or $149 Lifetime Pro (restricted to US customers only), with no free trial solves and a case-by-case 7-day technical refund policy. ExamGhost AI includes 50 free trial solves ($0, no card required), a $19/month Monthly Pass, a $99/year Academic Year Pass ($8.25/month—saving $30/year over ExamClutch), and a $199 worldwide Lifetime Pass backed by an unconditional 14-day 100% money-back guarantee.",
+            text: "ExamClutch charges $9/week ($36/month equivalent), $19/month, $129/year ($10.75/month), or $149 Lifetime Pro (restricted to US customers only), with no free trial solves and a case-by-case 7-day technical refund policy. ExamGhost AI includes 5 Free/Day trial solves ($0, no card required), a $19/month Monthly Pass, a $99/year Academic Year Pass ($8.25/month—saving $30/year over ExamClutch), and a $199 worldwide Lifetime Pass backed by an unconditional 14-day 100% money-back guarantee.",
           },
         },
       ],
@@ -156,7 +191,7 @@ export default function ExamClutchVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-24">
+      <main id="main-content" className="pt-28 pb-24">
         {/* Breadcrumb & Split Hero */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <nav
@@ -238,7 +273,7 @@ export default function ExamClutchVsExamGhostPage() {
                     Annual &amp; Trial Value
                   </div>
                   <div className="text-sm font-bold text-[#111111]">
-                    <span className="text-emerald-800">$99/yr + 50 Free</span>
+                    <span className="text-emerald-800">$99/yr + 5 Free/Day</span>
                   </div>
                   <div className="text-xs text-neutral-600 mt-0.5">
                     vs $129/yr &amp; 0 free solves
@@ -252,7 +287,7 @@ export default function ExamClutchVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors shadow-sm"
                 >
-                  Claim 50 Free Solves ($0)
+                  Claim 5 Free Solves / Day ($0)
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -367,6 +402,8 @@ export default function ExamClutchVsExamGhostPage() {
           </div>
         </section>
 
+        <ExamClutchClipboardPasteDemo />
+
         {/* Interactive Pure-CSS 3-Tab Audit Explorer */}
         <section
           id="interactive-audit"
@@ -389,25 +426,9 @@ export default function ExamClutchVsExamGhostPage() {
 
           <div className="bg-white border-2 border-[#111111] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#111111]">
             {/* Pure CSS Radio Inputs */}
-            <input
-              type="radio"
-              name="ec-tabs"
-              id="tab-ec-speed"
-              className="sr-only peer/ec-speed"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="ec-tabs"
-              id="tab-ec-stealth"
-              className="sr-only peer/ec-stealth"
-            />
-            <input
-              type="radio"
-              name="ec-tabs"
-              id="tab-ec-price"
-              className="sr-only peer/ec-price"
-            />
+            
+            
+            
 
             {/* Tab Labels */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pb-6 mb-8 border-b border-neutral-200">
@@ -446,13 +467,13 @@ export default function ExamClutchVsExamGhostPage() {
                   <span>Tab 03 • Pricing &amp; Refunds</span>
                 </div>
                 <div className="font-bold text-sm sm:text-base">
-                  $9/wk &amp; $129/yr vs $99/yr + 50 Free
+                  $9/wk &amp; $129/yr vs $99/yr + 5 Free/Day
                 </div>
               </label>
             </div>
 
             {/* Panel 1: ~30s Batch Wait & Short-Form Limits */}
-            <div className="hidden peer-checked/ec-speed:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase">
                   Sequential Quiz Bottleneck
@@ -545,7 +566,7 @@ export default function ExamClutchVsExamGhostPage() {
             </div>
 
             {/* Panel 2: Double-Click Auto-Fill vs Human Clicks */}
-            <div className="hidden peer-checked/ec-stealth:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold uppercase">
                   DOM Mutation &amp; Probing Vectors
@@ -630,13 +651,13 @@ export default function ExamClutchVsExamGhostPage() {
             </div>
 
             {/* Panel 3: Pricing, Trial & Refund Audit */}
-            <div className="hidden peer-checked/ec-price:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-mono font-bold uppercase">
                   2026 Cost &amp; Guarantee Comparison
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#111111]">
-                  Why Pay Upfront for a Pairing Code When You Can Test 50 Solves Free?
+                  Why Pay Upfront for a Pairing Code When You Can Test 5 Free Solves / Day?
                 </h3>
                 <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                   ExamClutch requires a paid pairing code before you can solve a
@@ -649,7 +670,7 @@ export default function ExamClutchVsExamGhostPage() {
                 </p>
                 <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                   <strong>ExamGhost AI</strong> gives every student{" "}
-                  <strong>50 Free Question Solves ($0, no credit card required)</strong>{" "}
+                  <strong>5 Free Solves / Day ($0, no credit card required)</strong>{" "}
                   plus a live browser sandbox so you can verify accuracy on your
                   exact course material before paying. When you upgrade, our{" "}
                   <strong>$99/year Academic Year Pass ($8.25/mo)</strong> saves
@@ -683,11 +704,11 @@ export default function ExamClutchVsExamGhostPage() {
                       ExamGhost AI Passes (2026)
                     </span>
                     <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-800 text-white">
-                      50 Free Solves
+                      5 Free Solves / Day
                     </span>
                   </div>
                   <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-800">
-                    <li>• Free Trial: <strong>50 Free Solves ($0)</strong></li>
+                    <li>• Free Trial: <strong>5 Free Solves / Day ($0)</strong></li>
                     <li>• Monthly Pass: <strong>$19/month</strong></li>
                     <li>• Academic Year: <strong>$99/year</strong> ($8.25/mo — save $30/yr)</li>
                     <li>• Lifetime Pass: <strong>$199</strong> (Worldwide access)</li>
@@ -877,7 +898,7 @@ export default function ExamClutchVsExamGhostPage() {
                       <div className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
                         <span>
-                          <strong>50 Free Question Solves ($0)</strong> +{" "}
+                          <strong>5 Free Solves / Day ($0)</strong> +{" "}
                           <Link prefetch={false}
                             href="/canvas-quiz-solver-free-demo"
                             className="underline font-semibold text-emerald-800"
@@ -936,6 +957,14 @@ export default function ExamClutchVsExamGhostPage() {
                       Case-by-case technical issue review within 7 days of
                       purchase (per Section 5 of Terms)
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
               </table>
@@ -1024,7 +1053,7 @@ export default function ExamClutchVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-800 shrink-0 mt-1" />
                   <span>
-                    <strong>50 Free Trial Solves ($0):</strong> Test our{" "}
+                    <strong>5 Free/Day Trial Solves ($0):</strong> Test our{" "}
                     <code className="font-mono text-xs">0.3s</code> Vision OCR
                     and Focus Shield before entering payment details.
                   </span>
@@ -1088,7 +1117,93 @@ export default function ExamClutchVsExamGhostPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        
+                {/* 6 MODERN HOTKEYS COMPARISON */}
+                <section className="py-12 bg-white border-y border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                6 Modern Stealth Hotkeys for Live Exams
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Instantly solve, extract diagrams, or wipe RAM in under 0.3s without touching your mouse or triggering window.blur.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Double-Click</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Instant Inline Solve</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">0.3s Shadow DOM HUD</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+S</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Hybrid Vision Snip</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Captures locked diagrams</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+1</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Ghost Dot Mode</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Zero UI footprint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+2</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Smart Highlight</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Discreet answer tint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+3</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Sidebar Derivation</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Step-by-step proofs</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">⌘+Shift+U</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Panic RAM Wipe</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Instant emergency close</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 2-IN-1 FRONTIER AI MODELS */}
+                <section className="py-12 bg-neutral-50 border-b border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider block mb-2">2-in-1 Study &amp; Homework AI Workspace</span>
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                Powered by 3 Frontier AI Models
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* FAQ Section */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
@@ -1140,7 +1255,7 @@ export default function ExamClutchVsExamGhostPage() {
                 <strong>$19/month</strong>, <strong>$129/year</strong>, or{" "}
                 <strong>$149 Lifetime</strong> (restricted to US customers
                 only), with no free trial tier. ExamGhost AI includes{" "}
-                <strong>50 Free Solves ($0)</strong>,{" "}
+                <strong>5 Free Solves / Day ($0)</strong>,{" "}
                 <strong>$19/month</strong>, <strong>$99/year</strong> ($8.25/mo
                 — $30/year cheaper than ExamClutch), and{" "}
                 <strong>$199 Worldwide Lifetime</strong> with a 14-day 100%
@@ -1174,7 +1289,7 @@ export default function ExamClutchVsExamGhostPage() {
                   Skip the 30-Second Wait &amp; Auto-Click Risk
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-3">
-                  Test ExamGhost AI With 50 Free Solves Today
+                  Test ExamGhost AI With 5 Free Solves / Day Today
                 </h2>
                 <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
                   Try our 0.3s Snap-It Vision OCR and closed Shadow DOM HUD in
@@ -1187,7 +1302,7 @@ export default function ExamClutchVsExamGhostPage() {
                     href="/#pricing"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-emerald-900 transition-colors"
                   >
-                    Claim 50 Free Solves ($0)
+                    Claim 5 Free Solves / Day ($0)
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link prefetch={false}
@@ -1245,6 +1360,9 @@ export default function ExamClutchVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

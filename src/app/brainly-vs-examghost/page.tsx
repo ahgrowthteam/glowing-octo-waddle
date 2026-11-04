@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { BrainlyCrowdsourcedForumDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Brainly vs ExamGhost (2026) — Forum Answers vs 0.3s AI HUD",
     },
-    description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 50 Free Solves ($0).",
+    description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 5 Free Solves / Day ($0).",
     alternates: {
         canonical: "https://examghost.com/brainly-vs-examghost",
     },
     openGraph: {
         title: "Brainly vs ExamGhost (2026) — Forum Answers vs 0.3s AI HUD",
-        description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 50 Free Solves ($0).",
+        description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 5 Free Solves / Day ($0).",
         url: "https://examghost.com/brainly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Brainly vs ExamGhost (2026) — Forum Answers vs 0.3s AI HUD",
-        description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 50 Free Solves ($0).",
+        description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 5 Free Solves / Day ($0).",
         images: ["/og-image.jpg"],
     },
 };
@@ -83,7 +85,7 @@ export default function BrainlyVsExamghostPage() {
                         "offers": [
                             {
                                 "@type": "Offer",
-                                "name": "Free Trial (50 Solves)",
+                                "name": "Free Tier (5 Free Solves / Day)",
                                 "price": "0",
                                 "priceCurrency": "USD"
                             },
@@ -191,7 +193,7 @@ export default function BrainlyVsExamghostPage() {
                         "name": "How much does Brainly cost in 2026 compared to ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Brainly splits its paid subscriptions into two recurring tiers: Brainly Plus (~$9.99/month or $39.99/year) for ad-free database access, and Brainly Tutor (~$29.99/month or $95.99/year) if you need live STEM tutor assistance. Free Brainly users face blurred answers and unskippable video ads. ExamGhost offers 50 Free Question Solves ($0, no credit card, zero ads) with every stealth feature unlocked, plus a $19/month pass, $99/year Academic Year Pass ($8.25/mo), or $199 one-time Lifetime Degree Pass."
+                            "text": "Brainly splits its paid subscriptions into two recurring tiers: Brainly Plus (~$9.99/month or $39.99/year) for ad-free database access, and Brainly Tutor (~$29.99/month or $95.99/year) if you need live STEM tutor assistance. Free Brainly users face blurred answers and unskippable video ads. ExamGhost offers 5 Free Solves / Day ($0, no credit card, zero ads) with every stealth feature unlocked, plus a $19/month pass, $99/year Academic Year Pass ($8.25/mo), or $199 one-time Lifetime Degree Pass."
                         }
                     },
                     {
@@ -266,7 +268,7 @@ export default function BrainlyVsExamghostPage() {
                                     </div>
                                     <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
                                         <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">STEM Pricing</div>
-                                        <div className="font-display font-extrabold text-base text-ink">50 Free · $8.25/mo</div>
+                                        <div className="font-display font-extrabold text-base text-ink">5 Free/Day · $8.25/mo</div>
                                         <div className="text-[11px] text-ink-muted">vs $29.99/mo Brainly Tutor</div>
                                     </div>
                                 </div>
@@ -277,7 +279,7 @@ export default function BrainlyVsExamghostPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves ($0 · Zero Ads)</span>
+                                        <span>Start 5 Free Solves / Day ($0 · Zero Ads)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -342,55 +344,65 @@ export default function BrainlyVsExamghostPage() {
                     </div>
                 </section>
 
-                {/* INTERACTIVE 3-TAB COMPARISON SWITCHER (Pure CSS peer-checked) */}
+        <BrainlyCrowdsourcedForumDemo />
+
+                {/* MODERN HOTKEYS SUITE */}
+                <section className="py-8 bg-[#f5f1ea] border-y border-black/10 mb-16">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center mb-6">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+                            </div>
+                            <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISIBLE 3-PILLAR BREAKDOWN */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="text-center max-w-2xl mx-auto mb-8">
+                    <div className="text-center max-w-2xl mx-auto mb-10">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-xs font-bold text-amber-950 mb-3">
                             <MousePointerClick className="w-3.5 h-3.5" />
-                            Interactive Breakdown · Click Any Tab to Compare
+                            <span>Architecture &amp; Accuracy Breakdown</span>
                         </div>
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
                             Why College Students Outgrow Brainly on Timed Exams
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
-                            Compare how Brainly and ExamGhost handle randomized STEM problems, Canvas Quiz Log detection, and subscription pricing.
+                            Compare how Brainly and ExamGhost handle randomized STEM problems, Canvas Quiz Log detection, and subscription pricing across 3 critical pillars.
                         </p>
                     </div>
 
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <input type="radio" name="br_tabs" id="br-accuracy" className="sr-only peer/accuracy" defaultChecked />
-                        <input type="radio" name="br_tabs" id="br-stealth" className="sr-only peer/stealth" />
-                        <input type="radio" name="br_tabs" id="br-pricing" className="sr-only peer/pricing" />
-
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="br-accuracy"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/accuracy:bg-ink peer-checked/accuracy:text-white peer-checked/accuracy:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <Calculator className="w-4 h-4" />
-                                <span>1. Forum Posts vs Live STEM AI</span>
-                            </label>
-                            <label
-                                htmlFor="br-stealth"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/stealth:bg-ink peer-checked/stealth:text-white peer-checked/stealth:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <EyeOff className="w-4 h-4" />
-                                <span>2. Right-Click Search vs Stealth</span>
-                            </label>
-                            <label
-                                htmlFor="br-pricing"
-                                className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/pricing:bg-ink peer-checked/pricing:text-white peer-checked/pricing:shadow-sm flex items-center justify-center gap-2"
-                            >
-                                <DollarSign className="w-4 h-4" />
-                                <span>3. $29.99 Tutor Upsell vs $8.25/mo</span>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: ACCURACY */}
-                        <div className="hidden peer-checked/accuracy:block">
+                    <div className="space-y-8">
+                        {/* PILLAR 1: ACCURACY & RANDOMIZED MATH */}
+                        <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                             <div className="grid lg:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Brainly Forum Archive</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Pillar 1 · Brainly Forum Archive</div>
                                     <h3 className="font-display font-bold text-xl text-ink mb-3">
                                         Points-Farming Guesses &amp; Static Textbook Threads
                                     </h3>
@@ -411,7 +423,7 @@ export default function BrainlyVsExamghostPage() {
                                 </div>
 
                                 <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost 0.3s STEM Engine</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Pillar 1 · ExamGhost 0.3s STEM Engine</div>
                                     <h3 className="font-display font-bold text-xl text-ink mb-3">
                                         Fresh 99.4% Computation for Your Exact Screen
                                     </h3>
@@ -422,22 +434,22 @@ export default function BrainlyVsExamghostPage() {
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Snap-It Vision OCR (`⌘+Shift+S`):</strong> Crops any locked graph, table, or chemical structure right on your exam page.</span>
+                                            <span><strong>Snap-It Vision OCR (`Alt+S`):</strong> Crops any locked graph, table, or chemical structure right on your exam page.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Zero Ads or CAPTCHAs:</strong> Every solve—including your 50 Free Solves—is instant and ad-free.</span>
+                                            <span><strong>Zero Ads or CAPTCHAs:</strong> Every solve—including your 5 Free Solves / Day—is instant and ad-free.</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        {/* TAB 2: STEALTH */}
-                        <div className="hidden peer-checked/stealth:block">
+                        {/* PILLAR 2: STEALTH & TELEMETRY */}
+                        <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                             <div className="grid lg:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Brainly Homework Help Extension</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">Pillar 2 · Brainly Homework Help Extension</div>
                                     <h3 className="font-display font-bold text-xl text-ink mb-3">
                                         &quot;Select &amp; Search&quot; Triggers Immediate Canvas Quiz Logs
                                     </h3>
@@ -451,7 +463,7 @@ export default function BrainlyVsExamghostPage() {
                                 </div>
 
                                 <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">ExamGhost Stealth Architecture</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Pillar 2 · ExamGhost Stealth Architecture</div>
                                     <h3 className="font-display font-bold text-xl text-ink mb-3">
                                         Built-In Copy Unlocker + 4-Layer Focus Shield
                                     </h3>
@@ -466,8 +478,12 @@ export default function BrainlyVsExamghostPage() {
                             </div>
                         </div>
 
-                        {/* TAB 3: PRICING */}
-                        <div className="hidden peer-checked/pricing:block">
+                        {/* PILLAR 3: PRICING */}
+                        <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                            <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">Pillar 3 · Honest Pricing Comparison</div>
+                            <h3 className="font-display font-bold text-xl text-ink mb-6">
+                                Transparent 4-Tier Stack vs Brainly&apos;s $29.99/mo Tutor Upsell
+                            </h3>
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div className="p-6 rounded-3xl bg-[#faf8f4] border border-black/10">
                                     <div className="text-xs font-mono uppercase text-amber-900 font-bold mb-1">Brainly Plus</div>
@@ -490,9 +506,9 @@ export default function BrainlyVsExamghostPage() {
                                 <div className="p-6 rounded-3xl bg-emerald-950 text-white border border-emerald-700">
                                     <div className="text-xs font-mono uppercase text-[#cdeecb] font-bold mb-1">ExamGhost All-In-One</div>
                                     <div className="font-display text-3xl font-extrabold text-white mb-1">$8.25<span className="text-sm font-normal text-white/75">/mo ($99/yr)</span></div>
-                                    <div className="text-xs text-[#cdeecb] font-semibold mb-4">Or $19/mo · $199 Lifetime + 50 Free Solves</div>
+                                    <div className="text-xs text-[#cdeecb] font-semibold mb-4">Or $19/mo ($19.00 / month) · $199 Lifetime</div>
                                     <p className="text-xs text-white/85 leading-relaxed">
-                                        Includes 0.3s STEM Vision OCR, Auto-Fill, Smart Highlight, and 4-Layer Focus Shield on every plan—starting with 50 Free Solves ($0).
+                                        Includes 0.3s STEM Vision OCR, Auto-Fill, Smart Highlight, and 4-Layer Focus Shield on every plan—starting with 5 Free Solves / Day ($0).
                                     </p>
                                 </div>
                             </div>
@@ -537,12 +553,12 @@ export default function BrainlyVsExamghostPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Diagrams, Graphs &amp; Locked Text</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Snap-It Vision (⌘+Shift+S) + Copy Unlocker</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Snap-It Vision (Alt+S) + Copy Unlocker</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">Requires Selectable Text Strings</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Tier Experience</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0 · No Card · Zero Ads)</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0 · No Card · Zero Ads)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">Blurred Answers &amp; Unskippable Video Ads</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -550,7 +566,15 @@ export default function BrainlyVsExamghostPage() {
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">$9.99/mo (Plus) or $29.99/mo (Brainly Tutor)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
                     </div>
@@ -592,13 +616,13 @@ export default function BrainlyVsExamghostPage() {
                             <div className="max-w-xl text-center lg:text-left">
                                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>Zero Video Ads · Solves Randomized Numbers · 50 Free Solves</span>
+                                    <span>Zero Video Ads · Solves Randomized Numbers · 5 Free Solves / Day</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
                                     Stop copying 2021 forum answers with the wrong numbers.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Double-click any Canvas, Blackboard, or WebAssign question to solve your exact live variables in 0.3 seconds. Start free with 50 solves ($0, no card).
+                                    Double-click any Canvas, Blackboard, or WebAssign question to solve your exact live variables in 0.3 seconds. Start free with 5 Free Solves / Day ($0, no card).
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -607,7 +631,7 @@ export default function BrainlyVsExamghostPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -649,7 +673,10 @@ export default function BrainlyVsExamghostPage() {
                         </Link>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

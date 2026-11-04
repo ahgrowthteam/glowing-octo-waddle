@@ -55,13 +55,13 @@
     },
     {
       "id": "scene_5_cta_outro",
-      "name": "Brand Lockup & 50 Free Solves CTA",
+      "name": "Brand Lockup & 5 Free Solves / Day CTA",
       "start_sec": 13.5,
       "end_sec": 16.0,
       "start_frame": 405,
       "end_frame": 480,
       "camera_mode": "center_hero_lockup",
-      "what_viewer_learns": "Try 50 free solves on Chrome with no credit card required at examghost.com/<slug>."
+      "what_viewer_learns": "Claim 5 free solves / day on Chrome with no credit card required at examghost.com/<slug>."
     }
   ],
   "sfx_events": [

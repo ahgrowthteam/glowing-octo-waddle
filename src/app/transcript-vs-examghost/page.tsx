@@ -13,23 +13,34 @@ import {
     Star,
     BookOpen,
     MousePointerClick,
-    Mic
+    BrainCircuit,
+    Sparkles,
+    Layers,
+    Lock,
+    Terminal,
+    FileText,
+    Cpu,
+    Check,
+    X,
+    Keyboard
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { TranscriptStudyHubDemo } from '@/components/TopComparisonDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Transcript AI vs ExamGhost (2026) — DOM & Blur Audit",
+        absolute: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Study Hub Audit",
     },
-    description: "Compare Transcript (transcript.study) with ExamGhost. Both support course note uploads, but Transcript injects 'The Button' in the DOM and lacks Focus Shield.",
+    description: "Compare Transcript AI (transcript.study) with ExamGhost. See why Transcript's injected 'The Button' triggers Canvas DOM/blur flags while ExamGhost pairs Zero-Button Double-Click Stealth with a 3-Model Study Hub (Claude 3.7, ChatGPT, DeepSeek-R1).",
     alternates: {
         canonical: "https://examghost.com/transcript-vs-examghost",
     },
     openGraph: {
-        title: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Notebook Audit",
-        description: "Compare Transcript (transcript.study) with ExamGhost. Both support course note uploads, but Transcript injects 'The Button' into the DOM and lacks Focus Shield blur protection.",
+        title: "Transcript AI vs ExamGhost (2026) — Zero-Button Stealth & Multi-Model Study Hub",
+        description: "Transcript AI injects 'The Button' into your exam DOM and locks your Notebook to one model. ExamGhost delivers invisible Double-Click solving + a Claude 3.7, ChatGPT & DeepSeek-R1 Study Workspace.",
         url: "https://examghost.com/transcript-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -39,14 +50,14 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Notebook Audit",
+                alt: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Multi-Model Notebook Audit",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Notebook Audit",
-        description: "Compare Transcript (transcript.study) with ExamGhost. Both support course note uploads, but Transcript injects 'The Button' into the DOM and lacks Focus Shield blur protection.",
+        title: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Study Hub Audit",
+        description: "Compare Transcript (transcript.study) with ExamGhost. Get 5 Free Solves / Day, Zero-Button Double-Click Stealth, and our 3-Model Study & Homework AI Workspace.",
         images: ["/og-image.jpg"],
     },
 };
@@ -58,15 +69,15 @@ export default function TranscriptComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-03-10",
+                "dateModified": "2026-10-27",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
                 "@id": "https://examghost.com/transcript-vs-examghost#webpage",
                 "url": "https://examghost.com/transcript-vs-examghost",
-                "name": "Transcript AI vs ExamGhost (2026 Review) | 'The Button' DOM Injection vs Closed Shadow DOM RAG",
-                "description": "Technical evaluation comparing Transcript - AI Homework Helper (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) and ExamGhost across Notebook RAG context, DOM button injection, and Canvas SpeedGrader stealth.",
+                "name": "Transcript AI vs ExamGhost (2026 Review) | 'The Button' DOM Injection vs Zero-Button Stealth + 3-Model Study Hub",
+                "description": "Technical evaluation comparing Transcript - AI Homework Helper (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) and ExamGhost across zero-button in-quiz stealth, Canvas SpeedGrader blur protection, and multi-model study notebooks (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1).",
                 "breadcrumb": { "@id": "https://examghost.com/transcript-vs-examghost#breadcrumb" },
                 "about": [
                     {
@@ -98,6 +109,24 @@ export default function TranscriptComparisonPage() {
                 ]
             },
             {
+                "@type": "TechArticle",
+                "@id": "https://examghost.com/transcript-vs-examghost#article",
+                "headline": "Transcript AI vs ExamGhost (2026): In-Quiz Zero-Button Stealth & Multi-Model Study Notebook Showdown",
+                "datePublished": "2026-02-12",
+                "dateModified": "2026-10-27",
+                "author": {
+                    "@type": "Organization",
+                    "name": "ExamGhost Security & EdTech Lab",
+                    "url": "https://examghost.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ExamGhost",
+                    "url": "https://examghost.com"
+                },
+                "description": "Deep architectural teardown of Transcript AI's injected 'The Button' toolbar and single-model cloud notebook versus ExamGhost's Closed Shadow DOM Double-Click solver and 3-Model Study Hub."
+            },
+            {
                 "@type": "BreadcrumbList",
                 "@id": "https://examghost.com/transcript-vs-examghost#breadcrumb",
                 "itemListElement": [
@@ -115,15 +144,15 @@ export default function TranscriptComparisonPage() {
                         "name": "Can Canvas detect Transcript AI's 'The Button' and Snapshot features?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Transcript (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) relies on highlighting text to trigger 'The Button'—an injected floating helper button in the host page DOM—or opening an interactive AI Chat & Voice panel. Highlighting text and clicking into Transcript's overlay shifts focus away from the exam page and fires window.blur in Canvas SpeedGrader."
+                            "text": "Yes. Transcript (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) relies on highlighting question text to inject 'The Button'—a visible floating helper node in the host page DOM—or opening an interactive AI Chat & Voice sidebar. Highlighting text triggers selectionchange events, fails on CSS user-select: none pages, and clicking into Transcript's overlay fires window.blur in Canvas SpeedGrader."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How does Transcript's 'Notebook' compare to ExamGhost's Course Materials Vault?",
+                        "name": "How does ExamGhost beat Transcript AI at its own Study Notebook game?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Both tools allow you to upload lecture slides, PDFs, and class notes so the AI answers using your professor's exact curriculum. However, Transcript displays those answers inside a high-visibility sidebar/popup with zero tab-blur protection, whereas ExamGhost delivers context-grounded RAG answers inside an undetectable Closed Shadow DOM HUD or a 1px corner indicator dot."
+                            "text": "While Transcript's Notebook lets you upload class notes to query a single default AI model, ExamGhost includes a full Multi-Model Study & Homework AI Workspace where you can upload syllabus PDFs, lecture slides, and lab rubrics and switch instantaneously between Claude 3.7 Sonnet (best for essays & humanities), ChatGPT o3-mini / GPT-4o (best for versatile STEM & coding), and DeepSeek-R1 (best for rigorous step-by-step LaTeX math proofs)."
                         }
                     },
                     {
@@ -131,7 +160,7 @@ export default function TranscriptComparisonPage() {
                         "name": "What happens if a Canvas quiz disables text highlighting while using Transcript?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Transcript's 'Text Selection & The Button' workflow fails when an instructor enables CSS user-select: none or blocks selection events. Students are forced to use Transcript's Cmd/Ctrl+Shift+1 Snapshot drag tool, which opens a visible screen-capture box without Focus Shield blur suppression. ExamGhost reads Canvas Classic and New Quizzes Shadow DOM automatically with zero highlighting required."
+                            "text": "Transcript's 'Text Selection & The Button' workflow breaks when a professor enables CSS user-select: none or blocks selection events. Students are forced to use Transcript's Cmd/Ctrl+Shift+1 Snapshot drag tool, which opens a visible screen-capture box without Focus Shield blur suppression. ExamGhost solves questions with a simple Double-Click or Alt+S Hybrid Vision+DOM Snip inside a Closed Shadow Root with zero text highlighting required."
                         }
                     },
                     {
@@ -139,7 +168,7 @@ export default function TranscriptComparisonPage() {
                         "name": "How does Transcript.study pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Transcript charges a recurring $14.99/month subscription ($179.88/year, or $719.52 over a 4-year degree) with no one-time lifetime license. ExamGhost gives you 50 Free Solves upfront with no credit card required, plus $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
+                            "text": "Transcript charges a recurring $14.99/month subscription ($179.88/year, or $719.52 over a 4-year degree) with no academic-year discount and no lifetime pass. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 no card required), plus 2-in-1 plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that unlock both Unlimited Stealth Extension Solves and full access to the Claude 3.7 + ChatGPT + DeepSeek-R1 Study Workspace."
                         }
                     }
                 ]
@@ -148,66 +177,80 @@ export default function TranscriptComparisonPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink selection:bg-purple-200/60 selection:text-ink font-sans">
+        <div className="min-h-screen bg-[#faf7f2] text-ink selection:bg-purple-200/70 selection:text-ink font-sans">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <main id="main-content">
-                {/* Breadcrumb Navigation */}
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-4">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted">
-                        <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
-                        <span>/</span>
-                        <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
-                        <span>/</span>
-                        <span className="text-ink font-semibold">Transcript AI vs ExamGhost</span>
-                    </nav>
+                {/* Editorial Masthead Breadcrumb */}
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-34 pb-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-black/10 text-xs text-ink-muted">
+                        <nav aria-label="Breadcrumb" className="flex items-center gap-2">
+                            <Link prefetch={false} href="/" className="hover:text-ink transition-colors">Home</Link>
+                            <span>/</span>
+                            <Link prefetch={false} href="/compare-canvas-hack-extensions" className="hover:text-ink transition-colors">Compare Extensions</Link>
+                            <span>/</span>
+                            <span className="text-ink font-bold">Transcript AI vs ExamGhost</span>
+                        </nav>
+                        <div className="flex items-center gap-3 font-mono text-[11px]">
+                            <span className="text-purple-900 font-semibold">AUDIT DOSSIER #04</span>
+                            <span>·</span>
+                            <span>ID: klknhfgkblobpfimidmhkclikdalnoke</span>
+                        </div>
+                    </div>
                 </div>
 
-                {/* BESPOKE HERO: Course Materials RAG With vs Without Exam Stealth */}
-                <header className="max-w-6xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
-                    <div className="rounded-[36px] sm:rounded-[44px] bg-[#e2d3fa] p-6 sm:p-12 md:p-14 border border-black/10 shadow-card relative overflow-hidden">
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-4 border-b border-black/10 relative z-10">
-                            <div className="flex items-center gap-2">
-                                <span className="px-3 py-1 rounded-full bg-purple-950 text-[#e2d3fa] text-[11px] font-bold uppercase tracking-wider">
-                                    Notebook RAG vs Shadow DOM Stealth Audit
-                                </span>
-                                <span className="hidden sm:inline-block text-xs text-ink/70 font-mono">
-                                    transcript.study · ID: klknhfgkblobpfimidmhkclikdalnoke
-                                </span>
-                            </div>
-                            <span className="px-3 py-1 rounded-full bg-white/85 border border-black/10 text-[11px] font-bold text-ink">
-                                100,000 Users · 4.7★ Chrome Store (342 Ratings)
-                            </span>
-                        </div>
+                {/* =====================================================================
+                    UNIQUE ARCHETYPE HERO: SPLIT-FOCUS DUAL-MODE EDITORIAL DOSSIER
+                    (Mode A: In-Quiz Zero-Button Stealth | Mode B: 3-Model Study Hub)
+                ===================================================================== */}
+                <header className="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-16 sm:pb-20">
+                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+                        {/* Left 7 Columns: Editorial Narrative */}
+                        <div className="lg:col-span-7 flex flex-col justify-between rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 md:p-12 shadow-card relative overflow-hidden">
+                            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-purple-200/40 blur-3xl pointer-events-none" />
 
-                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
-                            {/* Left Column */}
-                            <div className="lg:col-span-7">
-                                <div className="inline-block px-3.5 py-1 rounded-full bg-purple-950/10 border border-purple-950/20 text-xs font-bold text-purple-950 mb-4">
-                                    Injected &ldquo;The Button&rdquo; UI · Unshielded Snapshot · $14.99/mo Recurring
+                            <div>
+                                <div className="flex flex-wrap items-center gap-2 mb-6">
+                                    <span className="px-3 py-1 rounded-full bg-purple-950 text-[#f3eaff] text-[11px] font-mono font-bold uppercase tracking-wider">
+                                        2-in-1 Showdown: Exam Stealth + Study Notebook
+                                    </span>
+                                    <span className="px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-950 text-[11px] font-bold">
+                                        5 Free Solves / Day · Auto-Refills Every 24h
+                                    </span>
                                 </div>
-                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
-                                    Transcript has Notebook uploads—but zero Canvas SpeedGrader stealth.
+
+                                <h1 className="font-display text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-ink tracking-tight leading-[1.06] mb-5">
+                                    Transcript AI injects <span className="underline decoration-rose-500/60 decoration-wavy underline-offset-4">&ldquo;The Button&rdquo;</span> into your exam DOM—and locks your Notebook to one model.
                                 </h1>
-                                <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-5 font-normal">
-                                    <strong>Transcript (`transcript.study`)</strong> is a popular homework companion because its <em>Notebook</em> feature lets you upload class slides and notes. But during a live Canvas or Blackboard exam, Transcript relies on highlighting text to inject <strong>&ldquo;The Button&rdquo;</strong> directly into the page DOM and opens a visible AI Chat &amp; Voice panel—firing <code>window.blur</code> and leaving DOM traces.
-                                </p>
-                                <p className="text-sm sm:text-base text-purple-950 font-semibold leading-relaxed mb-8">
-                                    ExamGhost gives you the same lecture-grounded Course Materials RAG Vault—paired with a 100% Focus Shield blur interceptor, Closed Shadow DOM isolation, and 1px corner dot stealth, starting with <strong>50 Free Solves ($0, no credit card)</strong>.
+
+                                <p className="aeo-summary text-sm sm:text-base lg:text-lg text-ink-secondary leading-relaxed mb-5">
+                                    Over 100,000 students installed <strong>Transcript AI (`transcript.study`)</strong> because its cloud <em>Notebook</em> lets you upload lecture slides. But in 2026, Transcript suffers from two critical bottlenecks: during a live Canvas quiz, highlighting text to trigger <strong>&ldquo;The Button&rdquo;</strong> mutates the host DOM and clicking its sidebar fires <code className="px-1.5 py-0.5 rounded bg-rose-100 text-rose-900 font-mono text-xs">window.blur</code> in SpeedGrader—and after class, its Notebook restricts you to a single generic AI wrapper for $14.99/mo.
                                 </p>
 
-                                <div className="flex flex-wrap items-center gap-3">
+                                <div className="p-4 rounded-2xl bg-[#f6f1fe] border border-purple-950/15 mb-7">
+                                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-purple-950 mb-1.5 flex items-center gap-1.5">
+                                        <Sparkles className="w-4 h-4 text-purple-700" />
+                                        <span>The ExamGhost 2-in-1 Upgrade ($8.25/mo Academic Pass)</span>
+                                    </div>
+                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                        ExamGhost replaces Transcript in <strong>both</strong> modes: you get <strong>Zero-Button `Double-Click` Stealth</strong> (`Alt+1` Invisible / `Alt+2` Stealth / `Alt+3` Explain + 100% Focus Shield) inside live exams, <em>plus</em> our <strong>Multi-Model Study &amp; Homework AI Workspace</strong> where you can query <strong>Claude 3.7 Sonnet, ChatGPT (o3-mini / GPT-4o), and DeepSeek-R1</strong> side-by-side on your uploaded syllabus PDFs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className="flex flex-wrap items-center gap-3 mb-5">
                                     <Link prefetch={false}
                                         href="/#pricing"
-                                        className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
+                                        className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#e2d3fa]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves · $0 No Card</span>
+                                        <span>Start 5 Free Solves / Day · $0 No Card</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
-                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-white/90 hover:bg-white text-ink border border-black/10 shadow-sm inline-flex items-center gap-1.5"
+                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-[#faf7f2] hover:bg-purple-50 text-ink border border-black/15 inline-flex items-center gap-1.5 transition-colors"
                                     >
                                         <span>Try Live Canvas Demo</span>
                                         <ArrowRight className="w-4 h-4" />
@@ -216,352 +259,469 @@ export default function TranscriptComparisonPage() {
                                         href="https://discord.gg/aCcsyKYJq4"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="px-5 py-4 rounded-full text-sm font-semibold bg-[#3b47d6] hover:bg-[#313bb5] text-white shadow-sm inline-flex items-center gap-2"
+                                        className="px-4 py-4 rounded-full text-sm font-semibold bg-[#5865F2] hover:bg-[#4752c4] text-white inline-flex items-center gap-2 transition-colors"
                                     >
-                                        <FaDiscord className="w-4 h-4 text-white" aria-hidden="true" />
-                                        <span>Student Discord</span>
+                                        <FaDiscord className="w-4 h-4" aria-hidden="true" />
+                                        <span>Discord</span>
                                     </a>
                                 </div>
-                            </div>
 
-                            {/* Right Column: 3 Verbatim Transcript Architecture Trade-Offs */}
-                            <div className="lg:col-span-5">
-                                <div className="rounded-[28px] bg-white p-5 sm:p-6 border border-black/10 shadow-lift space-y-3.5">
-                                    <div className="flex items-center justify-between border-b border-black/10 pb-3">
-                                        <span className="text-xs font-bold text-purple-900 uppercase tracking-wider flex items-center gap-1.5">
-                                            <FileWarning className="w-4 h-4 text-purple-700" />
-                                            3 Transcript.study Exam Risks
-                                        </span>
-                                        <span className="text-[11px] font-mono text-ink-muted">transcript.study</span>
+                                <div className="grid grid-cols-3 gap-2 pt-4 border-t border-black/10 text-[11px] font-medium text-ink-secondary">
+                                    <div className="flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                                        <span>0 Host DOM Buttons</span>
                                     </div>
-
-                                    <div className="p-3 rounded-2xl bg-rose-50 border border-rose-200 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-rose-800 mb-0.5">
-                                            1. &ldquo;Text Selection &amp; The Button&rdquo; DOM Injection:
-                                        </div>
-                                        <p className="text-rose-950 font-semibold italic">
-                                            &ldquo;Highlight any text on a webpage or platform, and click The Button to get step-by-step explanations.&rdquo;
-                                        </p>
-                                        <span className="text-[10px] text-rose-800 block mt-0.5">
-                                            → Injects a floating button into the host DOM &amp; logs selection/blur
-                                        </span>
+                                    <div className="flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                                        <span>Claude + GPT + DeepSeek</span>
                                     </div>
-
-                                    <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-amber-900 mb-0.5">
-                                            2. Unshielded Snapshot (Cmd/Ctrl+Shift+1) &amp; Chat Sidebar:
-                                        </div>
-                                        <p className="text-amber-950 font-semibold italic">
-                                            &ldquo;Opens an interactive AI Chat &amp; Voice panel with zero window.blur or visibilitychange interception.&rdquo;
-                                        </p>
-                                        <span className="text-[10px] text-amber-800 block mt-0.5">
-                                            → Every click into the Transcript chat panel flags SpeedGrader
-                                        </span>
-                                    </div>
-
-                                    <div className="p-3 rounded-2xl bg-slate-100 border border-slate-300 text-xs">
-                                        <div className="font-mono text-[10px] font-bold uppercase text-slate-800 mb-0.5">
-                                            3. Recurring $14.99/mo Subscription (No Lifetime Pass):
-                                        </div>
-                                        <p className="text-slate-900 font-semibold italic">
-                                            &ldquo;$14.99/month ($179.88/year) ongoing subscription vs ExamGhost&apos;s $99/yr ($8.25/mo) or $199 Lifetime.&rdquo;
-                                        </p>
+                                    <div className="flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                                        <span>⌘+Shift+U Panic Wipe</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Quick Metric Ribbon */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 mt-8 border-t border-black/10 relative z-10 text-xs">
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Course Notes / Syllabus RAG</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: Local-First Vault</span>
-                                <span className="text-ink-muted block text-[10px] mt-0.5">Transcript: Cloud Notebook</span>
+                        {/* Right 5 Columns: Dual-Workflow Architectural Split Dossier */}
+                        <div className="lg:col-span-5 flex flex-col gap-5">
+                            {/* Card A: Mode 1 — Inside a Live Proctored/Timed Quiz */}
+                            <div className="flex-1 rounded-[32px] bg-[#13111c] text-white p-6 sm:p-7 border border-purple-500/30 shadow-lift flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-white/10">
+                                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-purple-300 flex items-center gap-1.5">
+                                            <EyeOff className="w-3.5 h-3.5 text-emerald-400" />
+                                            Mode 01 // Live Canvas Quiz Stealth
+                                        </span>
+                                        <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">
+                                            0 BLUR FLAGS
+                                        </span>
+                                    </div>
+
+                                    <h2 className="font-display text-lg sm:text-xl font-bold text-white mb-3">
+                                        Why &ldquo;The Button&rdquo; Gets Flagged vs Zero-Button `Double-Click`
+                                    </h2>
+
+                                    <div className="space-y-2.5 text-xs">
+                                        <div className="p-3 rounded-2xl bg-rose-950/60 border border-rose-500/30">
+                                            <div className="font-mono text-[10px] text-rose-300 font-bold uppercase mb-0.5">
+                                                ✗ Transcript AI (transcript.study):
+                                            </div>
+                                            <p className="text-slate-200 leading-relaxed">
+                                                Requires dragging across text to inject <code className="text-rose-300">&lt;div class=&quot;transcript-btn&quot;&gt;</code> into the quiz DOM. Fails on <code className="text-rose-300">user-select: none</code> and fires <code className="text-rose-300">window.blur</code> when opening the Voice/Chat drawer.
+                                            </p>
+                                        </div>
+
+                                        <div className="p-3 rounded-2xl bg-emerald-950/60 border border-emerald-500/30">
+                                            <div className="font-mono text-[10px] text-emerald-300 font-bold uppercase mb-0.5">
+                                                ✓ ExamGhost v4.2 (Closed Shadow Root):
+                                            </div>
+                                            <p className="text-slate-200 leading-relaxed">
+                                                <strong>Double-click</strong> any question or press <code className="text-emerald-300">Alt+S</code> to snip locked graphs. Switch between <code className="text-emerald-300">Alt+1</code> Invisible auto-tick, <code className="text-emerald-300">Alt+2</code> Stealth badge, or <code className="text-emerald-300">Alt+3</code> Explain—with 100% Focus Shield.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                    <span>Host DOM Footprint: 0 Nodes</span>
+                                    <span className="text-emerald-300 font-bold">⌘+Shift+U Master Toggle</span>
+                                </div>
                             </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">In-Page Stealth Mode</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: Closed Shadow DOM + 1px Dot</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">Transcript: Injects &ldquo;The Button&rdquo; + Sidebar</span>
-                            </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Focus / Blur Suppression</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 100% Focus Shield</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">Transcript: None (Logs panel clicks)</span>
-                            </div>
-                            <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
-                                <span className="text-ink-muted block text-[11px] mb-0.5">Academic Year Cost</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: $99/yr ($8.25/mo)</span>
-                                <span className="text-rose-800 block text-[10px] mt-0.5">Transcript: $179.88/yr ($14.99/mo)</span>
+
+                            {/* Card B: Mode 2 — Post-Class Study & Homework AI Workspace */}
+                            <div className="flex-1 rounded-[32px] bg-gradient-to-br from-[#e7dafc] via-[#f2ebfe] to-white p-6 sm:p-7 border border-black/10 shadow-card flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-black/10">
+                                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-purple-950 flex items-center gap-1.5">
+                                            <BrainCircuit className="w-3.5 h-3.5 text-purple-800" />
+                                            Mode 02 // Study &amp; Homework AI Hub
+                                        </span>
+                                        <span className="px-2 py-0.5 rounded bg-purple-950 text-white font-mono text-[10px] font-bold">
+                                            3 FRONTIER MODELS
+                                        </span>
+                                    </div>
+
+                                    <h2 className="font-display text-lg sm:text-xl font-bold text-ink mb-2.5">
+                                        Beating Transcript&apos;s Notebook with Claude 3.7 + ChatGPT + DeepSeek-R1
+                                    </h2>
+
+                                    <p className="text-xs text-ink-secondary leading-relaxed mb-3.5">
+                                        Transcript&apos;s main selling point is its Notebook for class PDFs—but it routes every subject through one generic model. ExamGhost&apos;s <strong>Study &amp; Homework AI Workspace</strong> lets you upload your syllabus and toggle between:
+                                    </p>
+
+                                    <div className="grid grid-cols-3 gap-2 text-[11px]">
+                                        <div className="p-2.5 rounded-xl bg-white border border-black/10">
+                                            <div className="font-bold text-purple-950">Claude 3.7</div>
+                                            <div className="text-[10px] text-ink-muted mt-0.5">Essays, Bio &amp; Long PDFs</div>
+                                        </div>
+                                        <div className="p-2.5 rounded-xl bg-white border border-black/10">
+                                            <div className="font-bold text-emerald-900">ChatGPT 4o/o3</div>
+                                            <div className="text-[10px] text-ink-muted mt-0.5">Chem, CS &amp; Multi-Modal</div>
+                                        </div>
+                                        <div className="p-2.5 rounded-xl bg-white border border-black/10">
+                                            <div className="font-bold text-sky-900">DeepSeek-R1</div>
+                                            <div className="text-[10px] text-ink-muted mt-0.5">LaTeX Calc &amp; Physics Proofs</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-[11px] font-semibold text-purple-950">
+                                    <span>Included in all ExamGhost plans</span>
+                                    <span className="font-mono font-bold">$8.25/mo vs $14.99/mo</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* INTERACTIVE 3-TAB TRANSCRIPT VS EXAMGHOST SWITCHER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Interactive Transcript Breakdown">
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
-                            <span className="px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Side-by-Side Architecture Audit
+                {/* =====================================================================
+                    INTERACTIVE MOTION DEMO: TRANSCRIPT STUDY HUB & "THE BUTTON" DEMO
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20" aria-label="Interactive Transcript AI vs ExamGhost Simulation">
+                    <div className="text-center max-w-3xl mx-auto mb-8">
+                        <span className="px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
+                            Interactive Live Simulation
+                        </span>
+                        <h2 className="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3">
+                            Watch Transcript&apos;s &ldquo;The Button&rdquo; vs ExamGhost&apos;s Stealth + 3-Model Study Hub
+                        </h2>
+                        <p className="text-xs sm:text-base text-ink-secondary">
+                            See how Transcript exposes a floating button in the exam DOM while ExamGhost solves silently—and how our multi-model Study Workspace outperforms Transcript&apos;s single-model Notebook.
+                        </p>
+                    </div>
+
+                    <TranscriptStudyHubDemo />
+                </section>
+
+                {/* =====================================================================
+                    BESPOKE INVESTIGATIVE SECTION:
+                    "Why Transcript AI's 'The Button' Fails Visual & DOM Audits +
+                     How ExamGhost Beats Transcript At Its Own Notebook Game"
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20" aria-label="Deep Architectural Audit">
+                    <div className="rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 md:p-12 shadow-card">
+                        <div className="max-w-3xl mb-10">
+                            <span className="px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-950 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
+                                Deep Architectural Teardown
                             </span>
-                            <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-2">
-                                How ExamGhost Upgrades Transcript&apos;s Study Workflow for Live Exams
+                            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight leading-[1.1] mb-4">
+                                Why Transcript AI&apos;s &ldquo;The Button&rdquo; Fails Visual &amp; DOM Audits—And How ExamGhost Beats Transcript at Its Own Notebook Game
                             </h2>
-                            <p className="text-xs sm:text-sm text-ink-muted">
-                                Compare how both extensions handle course material uploads, question extraction, and Canvas SpeedGrader anti-detection.
+                            <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                Transcript was designed as a visible homework companion, not a stealth exam engine. Here is the exact technical sequence that happens when you use Transcript on a timed quiz—and why students are migrating both their live exams and their daily study notes to ExamGhost.
                             </p>
                         </div>
 
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="tr_tabs" id="tr_button" className="sr-only peer/trbutton" defaultChecked />
-                        <input type="radio" name="tr_tabs" id="tr_notebook" className="sr-only peer/trnotebook" />
-                        <input type="radio" name="tr_tabs" id="tr_snapshot" className="sr-only peer/trsnapshot" />
-
-                        {/* Tab Labels */}
-                        <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5effd] border border-purple-950/10 mb-8">
-                            <label
-                                htmlFor="tr_button"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/trbutton:bg-ink peer-checked/trbutton:text-white peer-checked/trbutton:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">1. &ldquo;The Button&rdquo; vs Closed Shadow DOM</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Text highlighting vs Zero-click stealth</div>
-                            </label>
-                            <label
-                                htmlFor="tr_notebook"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/trnotebook:bg-ink peer-checked/trnotebook:text-white peer-checked/trnotebook:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">2. Notebook vs Stealth RAG Vault</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Sidebar chat vs 1px Dot / Shadow HUD</div>
-                            </label>
-                            <label
-                                htmlFor="tr_snapshot"
-                                className="cursor-pointer rounded-xl p-3.5 text-center transition-all border border-transparent peer-checked/trsnapshot:bg-ink peer-checked/trsnapshot:text-white peer-checked/trsnapshot:shadow-sm text-ink hover:bg-black/5"
-                            >
-                                <div className="font-display font-bold text-xs sm:text-sm">3. Snapshot Blur vs Focus Shield</div>
-                                <div className="text-[11px] opacity-75 mt-0.5">Cmd+Shift+1 vs ⌘+Shift+S Snap-It</div>
-                            </label>
-                        </div>
-
-                        {/* TAB 1: The Button vs Closed Shadow DOM */}
-                        <div className="hidden peer-checked/trbutton:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <MousePointerClick className="w-3.5 h-3.5" />
-                                        Transcript AI: Highlight Text → Click &ldquo;The Button&rdquo;
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Highlighting every question and clicking an injected DOM button
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Transcript&apos;s core browser interaction requires you to drag-select the question text on the page, wait for <strong>&ldquo;The Button&rdquo;</strong> to inject into the webpage DOM next to your cursor, and click it to open the Transcript explanation panel.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        During a live quiz, dragging across question text triggers <code>selectionchange</code> events, fails completely on locked pages with <code>user-select: none</code>, and mutates the host DOM tree with injected button markup.
-                                    </p>
-                                </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Footprint: Selection events + injected &ldquo;The Button&rdquo; DOM node
-                                </div>
+                        {/* PART 1: 4-Stage Forensic Timeline of "The Button" Failure */}
+                        <div className="mb-12">
+                            <div className="flex items-center justify-between flex-wrap gap-2 mb-5">
+                                <h3 className="font-display text-lg sm:text-xl font-bold text-ink flex items-center gap-2">
+                                    <FileWarning className="w-5 h-5 text-rose-600" />
+                                    <span>Part 1: The 4-Stage Telemetry Trail of Transcript&apos;s &ldquo;The Button&rdquo;</span>
+                                </h3>
+                                <span className="text-xs font-mono text-ink-muted">Canvas SpeedGrader &amp; DOM Mutation Analysis</span>
                             </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <EyeOff className="w-3.5 h-3.5" />
-                                        ExamGhost: Zero-Click Extraction + 5-Level Chameleon Stealth
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                {/* Stage 1 */}
+                                <div className="rounded-2xl bg-[#faf7f2] border border-black/10 p-5 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 font-mono text-[11px] font-bold">
+                                                STAGE 01
+                                            </span>
+                                            <MousePointerClick className="w-4 h-4 text-rose-700" />
+                                        </div>
+                                        <h4 className="font-display font-bold text-base text-ink mb-2">
+                                            Forced Text Highlighting &amp; `user-select: none` Lockouts
+                                        </h4>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-3">
+                                            Transcript requires you to drag your cursor across question text to wake up its script. On quizzes where instructors enable CSS <code className="bg-black/5 px-1 rounded">user-select: none</code> or block <code className="bg-black/5 px-1 rounded">selectstart</code>, Transcript&apos;s primary trigger is dead on arrival.
+                                        </p>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        No text highlighting. No injected buttons in the host DOM.
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost automatically parses Canvas Classic, Canvas New Quizzes (LTI Shadow DOM), Blackboard, and Moodle questions without requiring you to highlight a single word.
-                                    </p>
-                                    <ul className="space-y-2 text-xs text-ink-secondary mb-4">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Closed Shadow DOM v1:</strong> Host page scripts (`document.querySelectorAll`) return zero ExamGhost elements.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>5 Stealth Levels:</strong> Switch between a 1px corner pixel cue, single radio tick, or adjustable-opacity Ghost HUD.</span>
-                                        </li>
-                                    </ul>
+                                    <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-950 font-semibold">
+                                        ✓ ExamGhost Fix: Zero highlighting. Just <strong>Double-Click</strong> anywhere on the question.
+                                    </div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Footprint: 0 Host DOM Buttons · 0 Selection Events
-                                </div>
-                            </div>
-                        </div>
 
-                        {/* TAB 2: Notebook vs Stealth RAG Vault */}
-                        <div className="hidden peer-checked/trnotebook:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <Mic className="w-3.5 h-3.5" />
-                                        Transcript AI: Cloud Notebook + High-Visibility Chat/Voice UI
+                                {/* Stage 2 */}
+                                <div className="rounded-2xl bg-[#faf7f2] border border-black/10 p-5 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 font-mono text-[11px] font-bold">
+                                                STAGE 02
+                                            </span>
+                                            <Terminal className="w-4 h-4 text-rose-700" />
+                                        </div>
+                                        <h4 className="font-display font-bold text-base text-ink mb-2">
+                                            Host DOM Injection of &ldquo;The Button&rdquo;
+                                        </h4>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-3">
+                                            Once text is selected, Transcript appends a floating action icon (&ldquo;The Button&rdquo;) directly into the host page DOM tree. Any <code className="bg-black/5 px-1 rounded">MutationObserver</code> watching the quiz container immediately detects the foreign node.
+                                        </p>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Great for homework studying—risky during a timed midterm
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Transcript&apos;s <strong>Notebook</strong> lets you upload lecture slides and notes so the AI references your course content. However, to read those answers or ask follow-ups, you must interact with Transcript&apos;s full-size <strong>AI Chat &amp; Voice panel</strong>.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Clicking into that chat widget shifts browser focus out of the Canvas quiz window, logging <em>&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</em> in SpeedGrader.
-                                    </p>
+                                    <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-950 font-semibold">
+                                        ✓ ExamGhost Fix: Encapsulated inside a <strong>Closed Shadow DOM v1</strong> root (`0` host buttons).
+                                    </div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Delivery: High-visibility Chat &amp; Voice sidebar (Unshielded blur)
-                                </div>
-                            </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <BookOpen className="w-3.5 h-3.5" />
-                                        ExamGhost: Course Materials RAG Inside a Stealth Shadow HUD
+                                {/* Stage 3 */}
+                                <div className="rounded-2xl bg-[#faf7f2] border border-black/10 p-5 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 font-mono text-[11px] font-bold">
+                                                STAGE 03
+                                            </span>
+                                            <AlertTriangle className="w-4 h-4 text-rose-700" />
+                                        </div>
+                                        <h4 className="font-display font-bold text-base text-ink mb-2">
+                                            Unshielded `window.blur` on Sidebar &amp; Snapshot
+                                        </h4>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-3">
+                                            Clicking &ldquo;The Button&rdquo; or pressing <code className="bg-black/5 px-1 rounded">Cmd+Shift+1</code> (Snapshot) shifts active focus into Transcript&apos;s AI Chat &amp; Voice panel—firing <code className="bg-black/5 px-1 rounded">window.blur</code> and logging <em>&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</em>.
+                                        </p>
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        Your professor&apos;s exact lecture slides—delivered with zero blur flags
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        Upload your course PDFs, study guides, and lecture slides into ExamGhost&apos;s <strong>Course Materials RAG Vault</strong> before your exam. During the test, ExamGhost cross-references your professor&apos;s exact definitions with multi-model AI consensus and displays the answer silently inside our Closed Shadow DOM HUD or 1px corner dot—with zero focus loss.
-                                    </p>
+                                    <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-950 font-semibold">
+                                        ✓ ExamGhost Fix: <strong>Focus Shield</strong> blocks `blur`, `focusout`, &amp; `visibilitychange` 100%.
+                                    </div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Delivery: Grounded RAG Answers + 100% Focus Shield Protection
+
+                                {/* Stage 4 */}
+                                <div className="rounded-2xl bg-[#faf7f2] border border-black/10 p-5 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 font-mono text-[11px] font-bold">
+                                                STAGE 04
+                                            </span>
+                                            <Keyboard className="w-4 h-4 text-rose-700" />
+                                        </div>
+                                        <h4 className="font-display font-bold text-base text-ink mb-2">
+                                            Visible Sidebar UI with Zero Panic Wipe
+                                        </h4>
+                                        <p className="text-xs text-ink-secondary leading-relaxed mb-3">
+                                            In a lecture hall or lab, Transcript&apos;s bright chat drawer is visible from 15 feet away and has no emergency kill-switch if a TA walks down your row.
+                                        </p>
+                                    </div>
+                                    <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-950 font-semibold">
+                                        ✓ ExamGhost Fix: Use <code className="font-mono">Alt+1</code> Invisible mode or <code className="font-mono">⌘+Shift+U</code> instant RAM wipe.
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* TAB 3: Snapshot Blur vs Focus Shield */}
-                        <div className="hidden peer-checked/trsnapshot:grid md:grid-cols-2 gap-6">
-                            <div className="rounded-2xl bg-rose-50/70 border border-rose-200 p-6 flex flex-col justify-between">
+                        {/* PART 2: How ExamGhost Beats Transcript at Its Own Notebook Game */}
+                        <div className="rounded-3xl bg-gradient-to-br from-[#161224] via-[#1d1830] to-[#121c24] text-white p-6 sm:p-9 border border-purple-500/30">
+                            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-7 border-b border-white/10">
                                 <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-200/80 text-rose-950 text-[11px] font-bold mb-4">
-                                        <AlertTriangle className="w-3.5 h-3.5" />
-                                        Transcript AI: Unshielded Snapshot &amp; $14.99/mo Subscription
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        $179.88/year recurring cost with no anti-detection layer
+                                    <span className="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-xs font-mono font-bold uppercase tracking-wider mb-2.5 inline-block">
+                                        Part 2: Study &amp; Homework Notebook Comparison
+                                    </span>
+                                    <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                                        Why settle for Transcript&apos;s 1-Model Notebook when ExamGhost gives you 3 Frontier AI Brains?
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        When you press <code>Cmd/Ctrl+Shift+1</code> for Transcript&apos;s <em>Scan and Solve (Snapshot)</em>, it injects a drag-selection overlay into the active page without blocking <code>window.blur</code>, <code>focusout</code>, or <code>visibilitychange</code>.
-                                    </p>
-                                    <p className="text-xs text-ink-secondary leading-relaxed mb-4">
-                                        Meanwhile, Transcript bills <strong>$14.99 every month ($179.88/year)</strong> with no discounted academic-year pass or one-time lifetime option.
-                                    </p>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900">
-                                    Cost: $14.99/mo ($179.88/yr) · No Focus Shield · No Panic Hotkey
+                                <div className="text-xs font-mono text-purple-200 bg-white/5 px-3.5 py-2 rounded-xl border border-white/10 shrink-0">
+                                    Syllabus PDF + Lecture Slides RAG + Multi-Model Switching
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl bg-emerald-50/70 border border-emerald-200 p-6 flex flex-col justify-between">
-                                <div>
-                                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-200/80 text-emerald-950 text-[11px] font-bold mb-4">
-                                        <ShieldCheck className="w-3.5 h-3.5" />
-                                        ExamGhost: ⌘+Shift+S Snap-It + $8.25/mo Academic Pass
+                            <div className="grid md:grid-cols-3 gap-5 mb-6">
+                                {/* Model 1: Claude 3.7 Sonnet */}
+                                <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
+                                    <div className="flex items-center justify-between mb-3">
+                                        <span className="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-200 font-mono text-xs font-bold">
+                                            Claude 3.7 Sonnet
+                                        </span>
+                                        <FileText className="w-4 h-4 text-purple-300" />
                                     </div>
-                                    <h3 className="font-display text-xl font-bold text-ink mb-2">
-                                        In-memory OCR with Focus Shield + 50 Free Solves upfront
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                        ExamGhost&apos;s <code>⌘+Shift+S</code> Snap-It captures graphs, circuits, and organic chemistry structures inside a Closed Shadow DOM sandbox while keeping Focus Shield locked on.
+                                    <h4 className="font-display font-bold text-base text-white mb-2">
+                                        Unmatched for Essays, Bio, Nursing &amp; 200-Page PDFs
+                                    </h4>
+                                    <p className="text-xs text-slate-300 leading-relaxed">
+                                        Upload your entire semester syllabus, lab manual, or case study packet. Claude 3.7 Sonnet synthesizes nuanced arguments, nursing NCLEX rationales, and natural human-sounding essay drafts that never read like generic AI slop.
                                     </p>
-                                    <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                </div>
+
+                                {/* Model 2: ChatGPT (GPT-4o / o3-mini) */}
+                                <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
+                                    <div className="flex items-center justify-between mb-3">
+                                        <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 font-mono text-xs font-bold">
+                                            ChatGPT (4o / o3-mini)
+                                        </span>
+                                        <Cpu className="w-4 h-4 text-emerald-300" />
+                                    </div>
+                                    <h4 className="font-display font-bold text-base text-white mb-2">
+                                        Fast Multi-Modal Diagrams, Chemistry &amp; CS Debugging
+                                    </h4>
+                                    <p className="text-xs text-slate-300 leading-relaxed">
+                                        Drop in a photo of a handwritten organic chemistry mechanism, circuit schematic, or Python traceback. ChatGPT 4o &amp; o3-mini parse visual diagrams and generate clean, runnable code and study flashcards in seconds.
+                                    </p>
+                                </div>
+
+                                {/* Model 3: DeepSeek-R1 */}
+                                <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
+                                    <div className="flex items-center justify-between mb-3">
+                                        <span className="px-2.5 py-1 rounded-lg bg-sky-500/20 text-sky-200 font-mono text-xs font-bold">
+                                            DeepSeek-R1 Reasoning
+                                        </span>
+                                        <BrainCircuit className="w-4 h-4 text-sky-300" />
+                                    </div>
+                                    <h4 className="font-display font-bold text-base text-white mb-2">
+                                        Chain-of-Thought LaTeX Calculus, Stats &amp; Physics Proofs
+                                    </h4>
+                                    <p className="text-xs text-slate-300 leading-relaxed">
+                                        When Transcript&apos;s default model hallucinates on multivariable calculus, differential equations, or econometrics, switch to DeepSeek-R1 to inspect every step-by-step chain-of-thought derivation rendered in crisp LaTeX.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+                                <div className="text-emerald-100">
+                                    <strong className="text-white">How Course RAG Connects Both Worlds:</strong> Anything you upload to your ExamGhost Study Workspace automatically grounds your live in-exam <code className="text-emerald-300">Double-Click</code> and <code className="text-emerald-300">Alt+S</code> solves in your professor&apos;s exact lecture slides.
+                                </div>
+                                <Link prefetch={false} href="/#pricing" className="px-4 py-2.5 rounded-full bg-emerald-400 text-slate-950 font-bold shrink-0 hover:bg-emerald-300 transition-colors">
+                                    Try 5 Free Solves / Day →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* =====================================================================
+                    EMBEDDED STUDY AI HUB SHOWCASE (COMPACT)
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20" aria-label="ExamGhost Study and Homework AI Workspace Showcase">
+                    <StudyAiHubShowcase compact />
+                </section>
+
+                {/* =====================================================================
+                    SPEEDGRADER TELEMETRY + 2-IN-1 PRICING VALUE BREAKDOWN
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20" aria-label="Canvas SpeedGrader Log & Pricing Comparison">
+                    <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+                        {/* Left 7 Cols: SpeedGrader Audit Log */}
+                        <div className="lg:col-span-7 rounded-[32px] bg-ink text-white p-6 sm:p-8 shadow-lift flex flex-col justify-between">
+                            <div>
+                                <span className="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-[11px] font-mono font-bold uppercase tracking-wider mb-3 inline-block">
+                                    Live Canvas SpeedGrader Telemetry
+                                </span>
+                                <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+                                    What Your Professor Sees in the Quiz Log
+                                </h2>
+                                <p className="text-xs sm:text-sm text-slate-300 mb-6">
+                                    Highlighting text for Transcript&apos;s &ldquo;The Button&rdquo; vs running ExamGhost&apos;s Zero-Button `Double-Click` with Focus Shield.
+                                </p>
+
+                                <div className="grid sm:grid-cols-2 gap-4 font-mono text-xs">
+                                    {/* Transcript Log */}
+                                    <div className="rounded-2xl bg-slate-900 border border-rose-500/40 p-4">
+                                        <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-rose-500/20 text-rose-300 font-bold text-[11px]">
+                                            <span>Transcript (&ldquo;The Button&rdquo;)</span>
+                                            <span className="bg-rose-950 text-rose-200 px-2 py-0.5 rounded border border-rose-500/40 text-[10px]">FLAGGED</span>
+                                        </div>
+                                        <div className="space-y-2 text-[11px] text-slate-300">
+                                            <div>13:20:01 — Started quiz attempt</div>
+                                            <div className="p-2 rounded-lg bg-rose-950/60 border border-rose-500/30 text-rose-200">
+                                                13:20:18 — DOM Mutation: injected &ldquo;The Button&rdquo;
+                                                <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Text selection + floating toolbar node</span>
+                                            </div>
+                                            <div className="p-2 rounded-lg bg-rose-950/60 border border-rose-500/30 text-rose-200">
+                                                13:20:24 — Stopped viewing quiz (0:34)
+                                                <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Clicked into Transcript Chat / Notebook</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* ExamGhost Log */}
+                                    <div className="rounded-2xl bg-slate-900 border border-emerald-500/40 p-4">
+                                        <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-emerald-500/20 text-emerald-300 font-bold text-[11px]">
+                                            <span>ExamGhost (`Double-Click`)</span>
+                                            <span className="bg-emerald-950 text-emerald-200 px-2 py-0.5 rounded border border-emerald-500/40 text-[10px]">100% CLEAN</span>
+                                        </div>
+                                        <div className="space-y-2 text-[11px] text-slate-300">
+                                            <div>13:20:01 — Started quiz attempt</div>
+                                            <div className="p-2 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-emerald-200">
+                                                13:20:41 — Answered Q1 (Course RAG Match)
+                                                <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Double-Click · Closed Shadow Root · 0 blur</span>
+                                            </div>
+                                            <div className="p-2 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-emerald-200">
+                                                13:21:22 — Answered Q2 (`Alt+S` Vision Snip)
+                                                <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Focus Shield locked · 0 DOM mutations</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
+                                <span>Stealth Hotkeys: <code className="text-emerald-300">Alt+1</code> Invisible · <code className="text-emerald-300">Alt+2</code> Stealth · <code className="text-emerald-300">Alt+3</code> Explain</span>
+                                <span className="font-mono text-emerald-300">Master Kill-Switch: ⌘+Shift+U</span>
+                            </div>
+                        </div>
+
+                        {/* Right 5 Cols: 2-in-1 Pricing Math Card */}
+                        <div className="lg:col-span-5 rounded-[32px] bg-white border border-black/10 p-6 sm:p-8 shadow-card flex flex-col justify-between">
+                            <div>
+                                <span className="px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-950 text-[11px] font-mono font-bold uppercase tracking-wider mb-3 inline-block">
+                                    2026 Tuition &amp; Subscription Math
+                                </span>
+                                <h2 className="font-display text-2xl font-extrabold text-ink mb-2">
+                                    Stop Paying $179.88/yr for a Unshielded Sidebar
+                                </h2>
+                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-5">
+                                    Transcript bills <strong>$14.99 every single month ($179.88/year)</strong> with no academic pass or lifetime license. ExamGhost gives you a daily refilling free tier and a 2-in-1 pro suite for nearly half the annual cost:
+                                </p>
+
+                                <div className="space-y-3 mb-5">
+                                    <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-300 flex items-center justify-between">
+                                        <div>
+                                            <div className="font-display font-bold text-sm text-emerald-950">Free Daily Tier ($0 · No Card)</div>
+                                            <div className="text-[11px] text-emerald-900">Auto-refills every 24 hours ($0 no credit card)</div>
+                                        </div>
+                                        <span className="font-mono font-extrabold text-sm text-emerald-950 bg-white px-2.5 py-1 rounded-lg border border-emerald-300">
+                                            5 / Day Free
+                                        </span>
+                                    </div>
+
+                                    <div className="grid grid-cols-3 gap-2.5 text-center">
+                                        <div className="p-3 rounded-2xl bg-[#faf7f2] border border-black/10">
                                             <div className="font-display font-extrabold text-lg text-ink">$19<span className="text-xs font-normal text-ink-muted">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Monthly Pass</div>
+                                            <div className="text-[11px] font-bold text-ink">Monthly Sprint</div>
+                                            <div className="text-[10px] text-ink-muted mt-0.5">Cancel anytime</div>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-emerald-950 text-white border border-emerald-900">
-                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-emerald-200">/mo</span></div>
-                                            <div className="text-[11px] font-semibold text-emerald-300">$99/yr Academic</div>
+                                        <div className="p-3 rounded-2xl bg-purple-950 text-white border border-purple-900 shadow-sm">
+                                            <div className="font-display font-extrabold text-lg">$8.25<span className="text-xs font-normal text-purple-200">/mo</span></div>
+                                            <div className="text-[11px] font-bold text-purple-200">$99/yr Academic</div>
+                                            <div className="text-[10px] text-emerald-300 mt-0.5">Save $80/yr vs Transcript</div>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-white border border-emerald-200">
+                                        <div className="p-3 rounded-2xl bg-[#faf7f2] border border-black/10">
                                             <div className="font-display font-extrabold text-lg text-ink">$199</div>
-                                            <div className="text-[11px] font-semibold text-emerald-900">Lifetime Pass</div>
+                                            <div className="text-[11px] font-bold text-ink">Lifetime Pass</div>
+                                            <div className="text-[10px] text-ink-muted mt-0.5">One-time forever</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-white border border-emerald-200 text-xs font-mono text-emerald-900">
-                                    Cost: 50 Free Solves · $99/yr ($8.25/mo) · $199 Lifetime
-                                </div>
+                            </div>
+
+                            <div className="p-3.5 rounded-2xl bg-[#f6f1fe] border border-purple-200 text-xs text-purple-950">
+                                <strong>2-in-1 Value Included:</strong> Every paid plan unlocks (1) <strong>Unlimited Stealth Extension Solves</strong> + (2) <strong>Unlimited Claude 3.7 Sonnet, ChatGPT &amp; DeepSeek-R1 Study Hub</strong>.
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* SPEEDGRADER AUDIT LOG COMPARISON */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="SpeedGrader Audit Log Comparison">
-                    <div className="rounded-[32px] bg-ink text-white p-6 sm:p-10 shadow-lift">
-                        <div className="text-center max-w-2xl mx-auto mb-8">
-                            <span className="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-mono font-bold uppercase tracking-wider mb-3 inline-block">
-                                Canvas Professor Audit Log View
-                            </span>
-                            <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2">
-                                Transcript AI vs ExamGhost in Canvas SpeedGrader
-                            </h2>
-                            <p className="text-xs sm:text-sm text-slate-300">
-                                What your instructor sees when you highlight text to click Transcript&apos;s &ldquo;The Button&rdquo; vs running ExamGhost&apos;s Closed Shadow DOM HUD.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {/* Transcript Log */}
-                            <div className="rounded-2xl bg-slate-900 border border-rose-500/40 p-5 font-mono text-xs">
-                                <div className="flex items-center justify-between pb-3 mb-3 border-b border-rose-500/20 text-rose-300 font-bold">
-                                    <span>Transcript AI (&ldquo;The Button&rdquo; + Chat Panel)</span>
-                                    <span className="text-[10px] bg-rose-950 text-rose-200 px-2 py-0.5 rounded border border-rose-500/40">FLAGGED</span>
-                                </div>
-                                <div className="space-y-2 text-slate-300">
-                                    <div className="text-slate-300">13:20:01 — Started quiz attempt</div>
-                                    <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-500/30 text-rose-200">
-                                        13:20:22 — Text selection + injected &ldquo;The Button&rdquo; DOM node
-                                        <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Highlighting Question 1 mutates host page DOM</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-lg bg-rose-950/50 border border-rose-500/30 text-rose-200">
-                                        13:20:26 — Stopped viewing the Canvas quiz (0:31)
-                                        <span className="block text-[10px] text-rose-300 mt-0.5">⚠️ Student clicked into Transcript AI Chat / Notebook panel</span>
-                                    </div>
-                                    <div className="text-slate-300">13:20:57 — Resumed viewing quiz</div>
-                                </div>
-                            </div>
-
-                            {/* ExamGhost Log */}
-                            <div className="rounded-2xl bg-slate-900 border border-emerald-500/40 p-5 font-mono text-xs">
-                                <div className="flex items-center justify-between pb-3 mb-3 border-b border-emerald-500/20 text-emerald-300 font-bold">
-                                    <span>ExamGhost (Focus Shield + RAG Vault)</span>
-                                    <span className="text-[10px] bg-emerald-950 text-emerald-200 px-2 py-0.5 rounded border border-emerald-500/40">100% CLEAN</span>
-                                </div>
-                                <div className="space-y-2 text-slate-300">
-                                    <div className="text-slate-300">13:20:01 — Started quiz attempt</div>
-                                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-200">
-                                        13:20:44 — Answered Question 1 (Grounded in Lecture Slides RAG)
-                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Zero text highlighting · Closed Shadow DOM · 0 blur flags</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-200">
-                                        13:21:28 — Answered Question 2 (Normal human pacing)
-                                        <span className="block text-[10px] text-emerald-300 mt-0.5">✓ Focus Shield active · 0 DOM mutations</span>
-                                    </div>
-                                    <div className="text-slate-300">13:22:10 — Answered Question 3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* HEAD TO HEAD COMPARISON MATRIX + TECHNICAL MANIFEST DRAWER */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Feature Comparison Table">
+                {/* =====================================================================
+                    HEAD-TO-HEAD COMPARISON MATRIX + TECHNICAL MANIFEST DRAWER
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20" aria-label="Feature Comparison Table">
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         <div className="text-center max-w-2xl mx-auto mb-8">
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-2">
-                                Head-to-Head Feature Comparison (2026)
+                            <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-ink mb-2">
+                                Complete Technical Comparison: ExamGhost vs Transcript AI (2026)
                             </h2>
                             <p className="text-xs sm:text-sm text-ink-muted">
-                                Complete technical comparison between ExamGhost and Transcript - AI Homework Helper (transcript.study).
+                                Side-by-side audit of ExamGhost v4.2 and Transcript - AI Homework Helper (transcript.study).
                             </p>
                         </div>
 
@@ -570,44 +730,54 @@ export default function TranscriptComparisonPage() {
                                 <thead>
                                     <tr className="border-b-2 border-black/10">
                                         <th className="py-3.5 px-4 font-bold text-ink">Feature / Capability</th>
-                                        <th className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50 rounded-t-xl">ExamGhost</th>
+                                        <th className="py-3.5 px-4 font-bold text-emerald-900 bg-emerald-50/70 rounded-t-xl">ExamGhost (v4.2 Stealth + Study Hub)</th>
                                         <th className="py-3.5 px-4 font-bold text-ink-muted">Transcript AI (transcript.study)</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-black/5">
                                     <tr>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">In-Quiz Trigger Mechanism</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Zero-Button `Double-Click` or `Alt+S` Hybrid Snip</td>
+                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Highlight text to click injected &ldquo;The Button&rdquo;</td>
+                                    </tr>
+                                    <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Focus Shield (Window Blur Suppression)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 100% Intercepted (0 SpeedGrader flags)</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ None (Chat &amp; Voice panel logs blur)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 100% Intercepted (0 SpeedGrader blur flags)</td>
+                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ None (Clicking Chat/Voice sidebar logs blur)</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">DOM Isolation &amp; Stealth UI</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Closed Shadow DOM + 1px Corner Dot</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Injects &ldquo;The Button&rdquo; on text selection</td>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">DOM Isolation &amp; Stealth Display Modes</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Closed Shadow DOM (`Alt+1` Invisible / `Alt+2` Stealth / `Alt+3` Explain)</td>
+                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Mutates host DOM with &ldquo;The Button&rdquo; + full sidebar</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Course Notes &amp; Lecture Slides (RAG)</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Local-First Course Materials Vault</td>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">Study &amp; Homework AI Models</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 3 Frontier Models: Claude 3.7 Sonnet + ChatGPT (4o/o3-mini) + DeepSeek-R1</td>
+                                        <td className="py-3.5 px-4 text-ink-muted">Single default AI model in Notebook</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">Course Notes &amp; Syllabus PDF Upload (RAG)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Local-First RAG Vault (Syncs to both Study Hub &amp; Live Exams)</td>
                                         <td className="py-3.5 px-4 text-ink-muted">✓ Cloud &ldquo;Notebook&rdquo; upload space</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Works Without Highlighting Text</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Automatic Zero-Click LMS Parsing</td>
-                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Requires highlighting text or manual drag</td>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">Works When Text Selection Is Blocked (`user-select: none`)</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Automatic DOM Traversal + `Alt+S` Vision OCR</td>
+                                        <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Selection button fails; forces unshielded Snapshot</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Emergency Panic Wipe Hotkey</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ ⌘+Shift+U Instantly Wipes RAM</td>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">Emergency Master Kill-Switch</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ `⌘+Shift+U` Instantly Wipes UI &amp; RAM</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ None</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Allowance</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 50 Free Solves (No card required)</td>
+                                        <td className="py-3.5 px-4 font-semibold text-ink">Free Starter Quota</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 5 Free Solves / Day (Auto-refills every 24h · $0 No card)</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Limited trial queries</td>
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Pricing &amp; Academic Value</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ $19/mo · $99/yr ($8.25/mo) · $199 Lifetime (2-in-1 Suite)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">$14.99/mo ($179.88/yr · No Lifetime option)</td>
                                     </tr>
                                 </tbody>
@@ -627,7 +797,7 @@ export default function TranscriptComparisonPage() {
                                 </div>
                                 <div>
                                     <span className="text-ink font-bold block">Store Footprint &amp; Rating:</span>
-                                    100,000 users · 4.7★ (342 ratings) · Domain: <code>transcript.study</code>
+                                    100,000+ users · 4.7★ (342 ratings) · Domain: <code>transcript.study</code>
                                 </div>
                                 <div>
                                     <span className="text-ink font-bold block">Primary Interaction Mechanics:</span>
@@ -642,20 +812,22 @@ export default function TranscriptComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#e2d3fa]/45 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
+                {/* =====================================================================
+                    STUDENT MIGRATION STORY + FAQ ACCORDION
+                ===================================================================== */}
+                <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-20" aria-label="Student Review and FAQ">
+                    <div className="rounded-[32px] bg-gradient-to-br from-[#e2d3fa]/55 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm mb-14">
                         <div className="flex items-center gap-1 text-amber-500 mb-4">
                             {[...Array(5)].map((_, i) => (
                                 <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                             ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
+                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration from Transcript.study</span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I loved Transcript&apos;s Notebook feature for uploading my bio slides, but on actual Canvas quizzes I had to highlight every question to make &lsquo;The Button&rsquo; pop up, and clicking into the Transcript chat window logged tab-switch events in SpeedGrader. ExamGhost lets me upload my exact same lecture PDFs, but delivers the answer inside a 1px stealth dot with zero Canvas blur logs.&rdquo;
+                            &ldquo;I originally subscribed to Transcript for $14.99/mo because I liked uploading my biology lecture PDFs into its Notebook. But during actual Canvas quizzes, highlighting every question to make &lsquo;The Button&rsquo; pop up felt super sketchy, and clicking into the Transcript chat sidebar logged tab-switch events in SpeedGrader. Switching to ExamGhost gave me a 3-model Study Hub where I use Claude 3.7 for lab reports and DeepSeek-R1 for biostats—plus during quizzes I just double-click and get the answer in `Alt+1` Invisible mode with zero blur logs.&rdquo;
                         </blockquote>
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-purple-900 text-white font-bold flex items-center justify-center text-sm">
+                            <div className="w-10 h-10 rounded-full bg-purple-950 text-white font-bold flex items-center justify-center text-sm">
                                 AN
                             </div>
                             <div>
@@ -664,10 +836,7 @@ export default function TranscriptComparisonPage() {
                             </div>
                         </div>
                     </div>
-                </section>
 
-                {/* INTERACTIVE FAQ ACCORDION */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">
                     <div className="text-center mb-8">
                         <span className="px-3 py-1 rounded-full bg-black/5 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted mb-2 inline-block">
                             Student FAQ
@@ -678,61 +847,35 @@ export default function TranscriptComparisonPage() {
                     </div>
 
                     <div className="space-y-4">
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">Can Canvas detect Transcript AI&apos;s &ldquo;The Button&rdquo; and Snapshot features?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Yes. Transcript (<code>transcript.study</code>, Chrome ID <code>klknhfgkblobpfimidmhkclikdalnoke</code>) relies on highlighting text to trigger &ldquo;The Button&rdquo;—an injected floating helper button in the host page DOM—or opening an interactive AI Chat &amp; Voice panel. Highlighting text and clicking into Transcript&apos;s overlay shifts focus away from the exam page and fires <code>window.blur</code> in Canvas SpeedGrader.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">How does Transcript&apos;s &ldquo;Notebook&rdquo; compare to ExamGhost&apos;s Course Materials Vault?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Both tools allow you to upload lecture slides, PDFs, and class notes so the AI answers using your professor&apos;s exact curriculum. However, Transcript displays those answers inside a high-visibility sidebar/popup with zero tab-blur protection, whereas ExamGhost delivers context-grounded RAG answers inside an undetectable Closed Shadow DOM HUD or a 1px corner indicator dot.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">What happens if a Canvas quiz disables text highlighting while using Transcript?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Transcript&apos;s &ldquo;Text Selection &amp; The Button&rdquo; workflow fails when an instructor enables CSS <code>user-select: none</code> or blocks selection events. Students are forced to use Transcript&apos;s <code>Cmd/Ctrl+Shift+1</code> Snapshot drag tool, which opens a visible screen-capture box without Focus Shield blur suppression. ExamGhost reads Canvas Classic and New Quizzes Shadow DOM automatically with zero highlighting required.
-                            </p>
-                        </details>
-
-                        <details className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all">
-                            <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
-                                <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">How does Transcript.study pricing compare to ExamGhost in 2026?</h3>
-                                <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform" />
-                            </summary>
-                            <p className="text-xs sm:text-sm text-ink-muted mt-3 leading-relaxed">
-                                Transcript charges a recurring <strong>$14.99/month</strong> subscription ($179.88/year, or $719.52 over a 4-year degree) with no one-time lifetime license. ExamGhost gives you <strong>50 Free Solves</strong> upfront with no credit card required, plus <strong>$19/mo</strong> Monthly, <strong>$99/yr</strong> Academic Year ($8.25/mo), or <strong>$199 Lifetime</strong>.
-                            </p>
-                        </details>
+                        {(jsonLd["@graph"][3] as any).mainEntity.map((faq: any, i: number) => (
+                            <details key={i} className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all" open={i === 0}>
+                                <summary className="font-display font-bold text-sm sm:text-base text-ink cursor-pointer list-none flex items-center justify-between">
+                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink m-0 inline">{faq.name}</h3>
+                                    <ChevronDown className="w-4 h-4 text-ink-muted group-open:rotate-180 transition-transform shrink-0 ml-3" />
+                                </summary>
+                                <p className="text-xs sm:text-sm text-ink-secondary mt-3 pt-3 border-t border-black/5 leading-relaxed">
+                                    {faq.acceptedAnswer.text}
+                                </p>
+                            </details>
+                        ))}
                     </div>
                 </section>
 
-                {/* BESPOKE PASTEL CONVERSION STRIP + RELATED COMPARISONS */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-12" aria-label="Get Started and Related Comparisons">
+                {/* =====================================================================
+                    CONVERSION FOOTER STRIP + RELATED COMPARISONS
+                ===================================================================== */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-14" aria-label="Get Started and Related Comparisons">
                     <div className="rounded-[32px] bg-gradient-to-r from-[#e2d3fa] via-[#efe7fc] to-[#f4ede2] border border-black/10 p-6 sm:p-10 shadow-sm">
                         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 mb-8 border-b border-black/10">
                             <div>
                                 <span className="inline-block px-3 py-1 rounded-full bg-white/85 border border-black/10 text-[11px] font-bold text-purple-950 uppercase tracking-wider mb-2">
-                                    Course Materials RAG + Closed Shadow DOM Stealth
+                                    Zero-Button Exam Stealth + 3-Model Study Hub
                                 </span>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
-                                    Keep your lecture-slide context. Lose &ldquo;The Button&rdquo; and SpeedGrader flags.
+                                    Ditch &ldquo;The Button&rdquo;. Upgrade to Double-Click Stealth + Claude, ChatGPT &amp; DeepSeek.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary mt-1">
-                                    Start with 50 Free Solves on ExamGhost ($0, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                    Start with <strong>5 Free Solves / Day</strong> (auto-refills every 24h, $0 no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -741,7 +884,7 @@ export default function TranscriptComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#e2d3fa]" aria-hidden="true" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"

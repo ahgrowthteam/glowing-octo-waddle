@@ -25,18 +25,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { AnswerAiSidebarBlurDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Answer.AI vs ExamGhost (2026) — 0.3s Stealth vs Sidebar",
     },
-    description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 50 Free Solves ($0 trial).",
+    description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 5 Free Solves / Day ($0 trial).",
     alternates: {
         canonical: "https://examghost.com/answerai-vs-examghost",
     },
     openGraph: {
         title: "Answer.AI vs ExamGhost (2026) — 0.3s Stealth vs Sidebar",
-        description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 50 Free Solves ($0 trial).",
+        description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 5 Free Solves / Day ($0 trial).",
         url: "https://examghost.com/answerai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Answer.AI vs ExamGhost (2026) — 0.3s Stealth vs Sidebar",
-        description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 50 Free Solves ($0 trial).",
+        description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 5 Free Solves / Day ($0 trial).",
         images: ["/og-image.jpg"],
     },
 };
@@ -81,13 +83,32 @@ export default function AnswerAiComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -121,10 +142,10 @@ export default function AnswerAiComparisonPage() {
                     },
                     {
                         "@type": "Question",
-                        "name": "How do Answer.AI's 'Lightning Bolts' compare to ExamGhost's 50 Free Solves?",
+                        "name": "How do Answer.AI's 'Lightning Bolts' compare to ExamGhost's 5 Free Solves / Day?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Answer.AI restricts free users to tiny daily 'Lightning Bolt' (flash) and SuperAI (gpt4) ticket allowances (around 3 daily scans) before requiring a ~$9.99/month or ~$99.99/year FastSpring or App Store subscription. ExamGhost gives every student 50 Free Solves ($0, no credit card required) with full STEM accuracy, followed by transparent unlimited passes: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
+                            "text": "Answer.AI restricts free users to tiny daily 'Lightning Bolt' (flash) and SuperAI (gpt4) ticket allowances (around 3 daily scans) before requiring a ~$9.99/month or ~$99.99/year FastSpring or App Store subscription. ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required) with full STEM accuracy, followed by transparent unlimited passes: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime."
                         }
                     },
                     {
@@ -212,7 +233,7 @@ export default function AnswerAiComparisonPage() {
                                 <div className="grid sm:grid-cols-3 gap-3 mb-8">
                                     <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
                                         <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Free Trial</div>
-                                        <div className="font-display font-extrabold text-base text-ink">50 Free Solves</div>
+                                        <div className="font-display font-extrabold text-base text-ink">5 Free Solves / Day</div>
                                         <div className="text-[11px] text-ink-muted">vs ~3 daily Lightning Bolts</div>
                                     </div>
                                     <div className="p-3.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm">
@@ -233,7 +254,7 @@ export default function AnswerAiComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 · No Card)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 · No Card)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -285,15 +306,15 @@ export default function AnswerAiComparisonPage() {
                                         <div className="flex items-center justify-between mb-2">
                                             <div className="flex items-center gap-2">
                                                 <BatteryCharging className="w-4 h-4 text-emerald-400" />
-                                                <span className="font-bold text-xs text-emerald-200">ExamGhost Free Trial</span>
+                                                <span className="font-bold text-xs text-emerald-200">ExamGhost Free + Unlimited Pass</span>
                                             </div>
-                                            <span className="font-mono text-xs font-bold text-emerald-300">Solves 50 / 50 Qs</span>
+                                            <span className="font-mono text-xs font-bold text-emerald-300">5 Free / Day · Unlimited Paid</span>
                                         </div>
                                         <div className="w-full h-3 rounded-full bg-black/50 overflow-hidden mb-2.5 border border-white/10">
                                             <div className="h-full w-full bg-gradient-to-r from-emerald-400 to-[#cdeecb] rounded-full" />
                                         </div>
                                         <div className="flex items-center justify-between text-[11px] text-emerald-200/90">
-                                            <span>✓ 50 Full STEM + Vision Solves</span>
+                                            <span>✓ 5 Free Solves / Day (Auto-Refills)</span>
                                             <span className="font-semibold text-emerald-300">$0 · No Card Needed</span>
                                         </div>
                                     </div>
@@ -310,6 +331,8 @@ export default function AnswerAiComparisonPage() {
                         </div>
                     </div>
                 </section>
+
+        <AnswerAiSidebarBlurDemo />
 
                 {/* INTERACTIVE 3-TAB REAL-WORLD COMPARISON SWITCHER (Pure CSS peer-checked) */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
@@ -328,9 +351,9 @@ export default function AnswerAiComparisonPage() {
 
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
                         {/* Hidden Radio Inputs */}
-                        <input type="radio" name="answerai_tabs" id="tab-workflow" className="sr-only peer/workflow" defaultChecked />
-                        <input type="radio" name="answerai_tabs" id="tab-stem" className="sr-only peer/stem" />
-                        <input type="radio" name="answerai_tabs" id="tab-stealth" className="sr-only peer/stealth" />
+                        
+                        
+                        
 
                         {/* Tab Labels */}
                         <div className="grid sm:grid-cols-3 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
@@ -408,7 +431,7 @@ export default function AnswerAiComparisonPage() {
                                     <ol className="space-y-3 text-xs sm:text-sm text-ink-secondary mb-5">
                                         <li className="flex items-start gap-3">
                                             <span className="w-6 h-6 rounded-full bg-emerald-200 text-emerald-950 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
-                                            <div><strong>Double-click any question</strong> (or press <code>⌘+Shift+S</code> to crop locked graphs/diagrams). Zero sidebar clutter.</div>
+                                            <div><strong>Double-click any question</strong> (or press <code>Alt+S</code> to crop locked graphs/diagrams). Zero sidebar clutter.</div>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="w-6 h-6 rounded-full bg-emerald-200 text-emerald-950 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
@@ -476,7 +499,7 @@ export default function AnswerAiComparisonPage() {
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Full Power on Every Solve:</strong> All 50 Free Solves run on our flagship reasoning + STEM vision pipeline—no downgraded "flash" tier.</span>
+                                            <span><strong>Full Power on Every Solve:</strong> All 5 Free Solves / Day run on our flagship reasoning + STEM vision pipeline—no downgraded "flash" tier.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -571,12 +594,12 @@ export default function AnswerAiComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial Included</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0 · No Credit Card)</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0 · No Credit Card)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">~3 Daily &quot;Lightning Bolt&quot; Scans</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">How You Solve a Question</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">0.3s Double-Click or ⌘+Shift+S Crop</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">0.3s Double-Click or Alt+S Crop</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">4.5s–7.0s Crop Box + Confirm Button + Sidebar</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -604,7 +627,24 @@ export default function AnswerAiComparisonPage() {
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">~$9.99/mo or ~$99.99/yr (App Store / FastSpring)</td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -641,14 +681,14 @@ export default function AnswerAiComparisonPage() {
                             ))}
                         </div>
                         <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;I used Answer.AI on my phone in high school, so I installed its Chrome extension for Differential Equations at Georgia Tech. Not only did I run out of free Lightning Bolts in 3 questions, but clicking its sidebar on Canvas logged 14 window blur departures in SpeedGrader. I switched to ExamGhost with the 50 Free Solves trial—it solved every multi-step integral in 0.3s, and Focus Shield kept my audit log 100% spotless.&quot;
+                            &quot;I used Answer.AI on my phone in high school, so I installed its Chrome extension for Differential Equations at Georgia Tech. Not only did I run out of free Lightning Bolts in 3 questions, but clicking its sidebar on Canvas logged 14 window blur departures in SpeedGrader. I switched to ExamGhost with the 5 Free Solves / Day trial—it solved every multi-step integral in 0.3s, and Focus Shield kept my audit log 100% spotless.&quot;
                         </blockquote>
                         <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
                             <div>
                                 <span className="font-bold text-ink">Ryan D.</span> — Mechanical Engineering Junior, Georgia Tech
                             </div>
                             <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified Switcher · 50 Free Solves → Annual Pass
+                                Verified Switcher · 5 Free Solves / Day → Annual Pass
                             </span>
                         </div>
                     </div>
@@ -690,13 +730,13 @@ export default function AnswerAiComparisonPage() {
                             <div className="max-w-xl text-center lg:text-left">
                                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-xs font-bold text-emerald-950 mb-3">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                                    <span>50 Free Solves · Zero Credit Card · 0.3s Double-Click</span>
+                                    <span>5 Free Solves / Day · Zero Credit Card · 0.3s Double-Click</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
                                     Don&apos;t hit a 3-question Lightning Bolt wall mid-exam.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Test ExamGhost on a full 50-question practice exam for $0, or join 14,000+ students on Discord for live Canvas &amp; Blackboard stealth updates.
+                                    Test ExamGhost with 5 Free Solves / Day (auto-refills every 24h for $0), or join 14,000+ students on Discord for live Canvas &amp; Blackboard stealth updates.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -705,7 +745,7 @@ export default function AnswerAiComparisonPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Get 50 Free Solves</span>
+                                    <span>Get 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -748,7 +788,10 @@ export default function AnswerAiComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

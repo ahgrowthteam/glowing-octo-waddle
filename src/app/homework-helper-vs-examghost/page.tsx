@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { HomeworkHelperAdClutterAndLagDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
     },
-    description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+    description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/homework-helper-vs-examghost",
     },
     openGraph: {
         title: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
-        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/homework-helper-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
-        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 50 Free Solves.",
+        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -78,13 +80,32 @@ export default function HomeworkHelperComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -121,7 +142,7 @@ export default function HomeworkHelperComparisonPage() {
                         "name": "Does AI Homework Helper work when right-clicking is disabled on exam pages?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. When professors configure Canvas or Blackboard with oncontextmenu=\"return false;\" or e.preventDefault() and disable text selection, context-menu and highlight-to-sidepanel workflows are paralyzed. ExamGhost operates via global keyboard shortcuts (⌘+B / Ctrl+B) and in-memory Snap-It OCR (⌘+Shift+S), functioning independently of page-level mouse listener blocks."
+                            "text": "No. When professors configure Canvas or Blackboard with oncontextmenu=\"return false;\" or e.preventDefault() and disable text selection, context-menu and highlight-to-sidepanel workflows are paralyzed. ExamGhost operates via global keyboard shortcuts (Alt+1/2/3 & Alt+S) and in-memory Snap-It OCR (Alt+S), functioning independently of page-level mouse listener blocks."
                         }
                     },
                     {
@@ -137,7 +158,7 @@ export default function HomeworkHelperComparisonPage() {
                         "name": "How does pricing compare between AI Homework Helper and ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Homework Helper extensions typically charge $14.99 per month ($179.88 per year or $719.52 across four college years). ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), flexible $19/mo Monthly and $99/yr Academic Year ($8.25/mo) plans, or a one-time $199 Lifetime Degree Pass."
+                            "text": "Homework Helper extensions typically charge $14.99 per month ($179.88 per year or $719.52 across four college years). ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), flexible $19/mo Monthly and $99/yr Academic Year ($8.25/mo) plans, or a one-time $199 Lifetime Degree Pass."
                         }
                     },
                     {
@@ -198,7 +219,7 @@ export default function HomeworkHelperComparisonPage() {
                                     AI Homework Helper fails when right-click is blocked—and <span className="underline decoration-rose-500/60 decoration-wavy underline-offset-4">harvests your email</span>.
                                 </h1>
                                 <p className="aeo-summary text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-2xl font-normal">
-                                    AI Homework Helper (v2.5.1) has a dead primary domain (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">homeworkhelper.ai</code> returns <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">no such host</code>), redirects to a generic addon directory at <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">livepolls.app/chrome_addons</code>, requests <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">identity.email</code> OAuth access to your Google account, and relies on right-click selection + Chrome&apos;s <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">sidePanel</code>—which breaks on locked quizzes and logs blur departures in SpeedGrader. ExamGhost triggers via <strong>global hotkeys (⌘+B)</strong> inside a closed Shadow DOM, starting with <strong>50 Free Solves</strong>.
+                                    AI Homework Helper (v2.5.1) has a dead primary domain (<code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">homeworkhelper.ai</code> returns <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">no such host</code>), redirects to a generic addon directory at <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">livepolls.app/chrome_addons</code>, requests <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">identity.email</code> OAuth access to your Google account, and relies on right-click selection + Chrome&apos;s <code className="text-xs bg-white/80 px-1.5 py-0.5 rounded border border-black/10">sidePanel</code>—which breaks on locked quizzes and logs blur departures in SpeedGrader. ExamGhost triggers via <strong>global hotkeys (Alt+1/2/3 & Alt+S)</strong> inside a closed Shadow DOM, starting with <strong>5 Free Solves / Day</strong>.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -207,7 +228,7 @@ export default function HomeworkHelperComparisonPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0 Trial)</span>
+                                        <span>Claim 5 Free Solves / Day ($0 Trial)</span>
                                     </a>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -228,7 +249,7 @@ export default function HomeworkHelperComparisonPage() {
                                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-secondary font-medium">
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        Bypasses right-click &amp; copy locks (⌘+B)
+                                        Bypasses right-click &amp; copy locks (Alt+1/2/3 & Alt+S)
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -236,7 +257,7 @@ export default function HomeworkHelperComparisonPage() {
                                     </span>
                                     <span className="inline-flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                        No credit card for 50 solves
+                                        5 Free Solves / Day (No Card)
                                     </span>
                                 </div>
                             </div>
@@ -291,7 +312,7 @@ export default function HomeworkHelperComparisonPage() {
                                         <div className="flex items-center justify-between mb-1">
                                             <span className="text-xs font-bold text-emerald-200">ExamGhost v4.2 Stealth Engine</span>
                                             <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-900/70 text-emerald-200">
-                                                ⌘+B + Shadow DOM
+                                                Alt+1/2/3 + Shadow DOM
                                             </span>
                                         </div>
                                         <p className="text-[11px] text-emerald-100/80 leading-relaxed">
@@ -304,6 +325,8 @@ export default function HomeworkHelperComparisonPage() {
                     </div>
                 </section>
 
+        <HomeworkHelperAdClutterAndLagDemo />
+
                 {/* QUICK METRIC RIBBON */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -312,7 +335,7 @@ export default function HomeworkHelperComparisonPage() {
                                 <MousePointer className="w-4 h-4 text-rose-800" />
                                 Trigger Mode
                             </div>
-                            <div className="text-xl sm:text-2xl font-black text-emerald-800">Global ⌘+B</div>
+                            <div className="text-xl sm:text-2xl font-black text-emerald-800">Global Alt+S</div>
                             <div className="text-xs text-ink-muted mt-1">HW Helper: sidePanel &amp; Right-Click</div>
                         </div>
 
@@ -339,8 +362,8 @@ export default function HomeworkHelperComparisonPage() {
                                 <DollarSign className="w-4 h-4 text-emerald-800" />
                                 Pricing &amp; Trial
                             </div>
-                            <div className="text-xl sm:text-2xl font-black text-emerald-800">50 Free Solves</div>
-                            <div className="text-xs text-rose-800 mt-1">Plans: $19/mo, $99/yr, $199 Life</div>
+                            <div className="text-xl sm:text-2xl font-black text-emerald-800">5 Free Solves / Day</div>
+                            <div className="text-xs text-rose-800 mt-1">Plans: $19/mo, $99/yr, $199 Lifetime</div>
                         </div>
                     </div>
                 </section>
@@ -362,9 +385,9 @@ export default function HomeworkHelperComparisonPage() {
                         </div>
 
                         {/* Pure CSS Radio Tabs */}
-                        <input type="radio" name="hwhelper_tab" id="tab-lockout" className="sr-only peer/lockout" defaultChecked />
-                        <input type="radio" name="hwhelper_tab" id="tab-oauth" className="sr-only peer/oauth" />
-                        <input type="radio" name="hwhelper_tab" id="tab-domain" className="sr-only peer/domain" />
+                        
+                        
+                        
 
                         <div className="grid sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f4f1ea] border border-black/10 mb-8">
                             <label
@@ -391,7 +414,7 @@ export default function HomeworkHelperComparisonPage() {
                         </div>
 
                         {/* TAB 1: Right-Click Lockout & SidePanel Blur */}
-                        <div className="hidden peer-checked/lockout:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #1 · Context Menu Lockout &amp; SidePanel Focus Theft
@@ -412,7 +435,7 @@ export default function HomeworkHelperComparisonPage() {
                                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
                                         <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Global Hotkeys</div>
                                         <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            Triggered via <code className="text-[11px]">⌘+B</code> or Snap-It OCR (<code className="text-[11px]">⌘+Shift+S</code>) inside a closed Shadow DOM—never touches right-click or Chrome&apos;s sidePanel.
+                                            Triggered via <code className="text-[11px]">Alt+1/2/3</code> or Snap-It OCR (<code className="text-[11px]">Alt+S</code>) inside a closed Shadow DOM—never touches right-click or Chrome&apos;s sidePanel.
                                         </p>
                                     </div>
                                 </div>
@@ -435,7 +458,7 @@ export default function HomeworkHelperComparisonPage() {
                         </div>
 
                         {/* TAB 2: identity.email & Global CSS */}
-                        <div className="hidden peer-checked/oauth:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #2 · Google OAuth Email Harvesting &amp; &lt;all_urls&gt; CSS
@@ -480,7 +503,7 @@ export default function HomeworkHelperComparisonPage() {
                         </div>
 
                         {/* TAB 3: Dead homeworkhelper.ai DNS & livepolls.app Redirect */}
-                        <div className="hidden peer-checked/domain:grid lg:grid-cols-12 gap-6 items-center">
+                        <div className="grid lg:grid-cols-12 gap-6 items-center">
                             <div className="lg:col-span-7 space-y-4">
                                 <span className="inline-block px-2.5 py-1 rounded-md bg-purple-100 text-purple-900 text-xs font-bold uppercase tracking-wider">
                                     Finding #3 · Dead Domain &amp; Generic Addon Portal
@@ -501,7 +524,7 @@ export default function HomeworkHelperComparisonPage() {
                                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
                                         <div className="text-xs font-bold text-emerald-950 mb-1">ExamGhost Dedicated Platform</div>
                                         <p className="text-xs text-emerald-900/90 leading-relaxed">
-                                            99.98% edge uptime, 1,400+ active Discord members, and <strong>50 Free Solves</strong> ($0 trial) before any upgrade.
+                                            99.98% edge uptime, 1,400+ active Discord members, and <strong>5 Free Solves / Day</strong> ($0 trial) before any upgrade.
                                         </p>
                                     </div>
                                 </div>
@@ -519,7 +542,7 @@ export default function HomeworkHelperComparisonPage() {
                                     </div>
                                     <div className="mt-4 pt-3 border-t border-white/10 text-emerald-300">
                                         <div className="font-bold">✓ ExamGhost:</div>
-                                        <div className="text-white/80">50 Free Solves · $19/mo · $99/yr · $199 Life</div>
+                                        <div className="text-white/80">5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime</div>
                                     </div>
                                 </div>
                             </div>
@@ -599,7 +622,7 @@ export default function HomeworkHelperComparisonPage() {
                                         <span className="text-emerald-200 font-bold">Continuous Focus</span>
                                     </div>
                                     <div className="p-2.5 rounded bg-emerald-950/60 border-l-2 border-emerald-500 flex items-start justify-between">
-                                        <span>10:15:31 AM - [Ghost HUD ⌘+B Triggered · 0ms Event]</span>
+                                        <span>10:15:31 AM - [Ghost HUD Alt+1/2/3 Triggered · 0ms Event]</span>
                                         <span className="text-emerald-200 font-bold">Invisible</span>
                                     </div>
                                     <div className="p-2.5 rounded bg-emerald-950/60 border-l-2 border-emerald-500 flex items-start justify-between">
@@ -637,7 +660,7 @@ export default function HomeworkHelperComparisonPage() {
                                 <tbody className="divide-y divide-black/5">
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-4 px-6 font-semibold text-ink">Trigger Mechanism</td>
-                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Global ⌘+B Hotkey &amp; Vision Area</td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Global Alt+S Hotkey &amp; Vision Area</td>
                                         <td className="py-4 px-6 text-center text-rose-800">Chrome sidePanel &amp; Right-Click Menu</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -662,7 +685,7 @@ export default function HomeworkHelperComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-4 px-6 font-semibold text-ink">Pricing &amp; Free Trial</td>
-                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves · $19/mo · $99/yr · $199 Life</td>
+                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime</td>
                                         <td className="py-4 px-6 text-center text-rose-800">$14.99/mo or $89.99/yr</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -695,7 +718,24 @@ export default function HomeworkHelperComparisonPage() {
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Verified 24/7 Discord Community</td>
                                         <td className="py-4 px-6 text-center text-ink-muted">14 CWS Ratings · Generic Addon Portal</td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -745,7 +785,7 @@ export default function HomeworkHelperComparisonPage() {
                                     &quot;During my sophomore year Thermo exam, my professor enabled strict right-click locking in Canvas. I opened the test, highlighted the first Brayton cycle equation, and right-clicked. <strong>Nothing happened.</strong> When I clicked into AI Homework Helper&apos;s Chrome sidePanel instead, Canvas immediately logged a blur departure. Worse, when I checked why the extension was acting up, its homepage redirected to some generic livepolls.app addon list and its manifest was asking for my <code>identity.email</code>.&quot;
                                 </p>
                                 <p>
-                                    &quot;That weekend, someone in my engineering Discord suggested ExamGhost. I tested the <strong>50 free solves</strong> first and then grabbed the Academic Year pass. ExamGhost doesn’t care about right-click blocks because you trigger it with <strong>⌘+B or Snap-It (⌘+Shift+S)</strong> inside a closed Shadow DOM. It captured my Laplace transforms and circuit diagrams in 0.3s and left zero SpeedGrader logs.&quot;
+                                    &quot;That weekend, someone in my engineering Discord suggested ExamGhost. I tested the <strong>5 free solves / day</strong> first and then grabbed the Academic Year pass. ExamGhost doesn’t care about right-click blocks because you trigger it with <strong>Alt+1/2/3 or Snap-It (Alt+S)</strong> inside a closed Shadow DOM. It captured my Laplace transforms and circuit diagrams in 0.3s and left zero SpeedGrader logs.&quot;
                                 </p>
                                 <div className="pt-2 text-xs font-semibold text-ink">
                                     — Marcus D., B.S. Mechanical Engineering, Georgia Tech Class of 2026
@@ -756,7 +796,7 @@ export default function HomeworkHelperComparisonPage() {
                                 <div className="text-3xl font-display font-black text-rose-950 mb-1">0.3s</div>
                                 <div className="text-xs text-ink-muted mb-4">Average ExamGhost solve time</div>
                                 <div className="h-px bg-black/10 my-3" />
-                                <div className="text-3xl font-display font-black text-emerald-800 mb-1">50 Free</div>
+                                <div className="text-3xl font-display font-black text-emerald-800 mb-1">5 Free/Day</div>
                                 <div className="text-xs text-ink-muted mb-4">Instant trial solves ($0 card required)</div>
                                 <div className="h-px bg-black/10 my-3" />
                                 <div className="text-xs font-bold text-ink">100% Locked Page Safe</div>
@@ -827,13 +867,13 @@ export default function HomeworkHelperComparisonPage() {
                             <div className="max-w-xl">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/10 text-rose-950 text-xs font-bold mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
-                                    Global ⌘+B Hotkeys · 50 Free Solves
+                                    Global Alt+S Hotkeys · 5 Free Solves / Day
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-ink tracking-tight mb-2">
                                     Never get locked out by right-click blockers on test day.
                                 </h2>
                                 <p className="text-sm text-ink-secondary leading-relaxed">
-                                    Start with <strong>50 Free Solves</strong> ($0 trial, no credit card required) and zero Google OAuth email harvesting—then upgrade to $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
+                                    Start with <strong>5 Free Solves / Day</strong> ($0 trial, no credit card required) and zero Google OAuth email harvesting—then upgrade to $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -842,7 +882,7 @@ export default function HomeworkHelperComparisonPage() {
                                     className="btn-dark px-7 py-4 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#ffd5cc]" aria-hidden="true" />
-                                    <span>Start 50 Free Solves</span>
+                                    <span>Start 5 Free Solves / Day</span>
                                 </a>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -880,7 +920,10 @@ export default function HomeworkHelperComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

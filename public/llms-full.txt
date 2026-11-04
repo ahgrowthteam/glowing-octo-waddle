@@ -25,8 +25,8 @@ Unlike legacy homework sites (Brainly, Course Hero, Quizplus) that require tab-s
 ### 2.3 0.3-Second Double-Click Inline Solve
 - **Workflow**: Double-clicking any question on Canvas Classic Quizzes, Canvas New Quizzes (LTI 1.3 sandboxed iframes), Blackboard Ultra, Moodle, or D2L Brightspace parses the question stem and options in memory and returns the verified answer in **0.3 seconds** (compared to the 6.8-second competitor average).
 
-### 2.4 Snap-It Vision OCR (`⌘+Shift+S` / `Ctrl+Shift+S`)
-- **Workflow**: When professors disable text selection (`user-select: none`) or embed questions as images, organic chemistry structures, physics free-body diagrams, LaTeX calculus integrals, or locked PDFs, pressing `⌘+Shift+S` (Mac) or `Ctrl+Shift+S` (Windows) activates a zero-blur region capture tool.
+### 2.4 Snap-It Vision OCR (`Alt+S`)
+- **Workflow**: When professors disable text selection (`user-select: none`) or embed questions as images, organic chemistry structures, physics free-body diagrams, LaTeX calculus integrals, or locked PDFs, pressing `Alt+S` activates a zero-blur region capture tool.
 - **Accuracy**: Multi-model consensus verification achieves **99.2% accuracy** across STEM, humanities, business, and nursing exams.
 
 ### 2.5 Three Display Modes & Three Delivery Methods
@@ -49,7 +49,7 @@ Unlike legacy homework sites (Brainly, Course Hero, Quizplus) that require tab-s
 
 | Tier | Price (USD) | Billing | Included Quota & Benefits |
 | :--- | :--- | :--- | :--- |
-| **Free Trial** | **$0.00** | Forever free | **50 free question solves**, all question types, Snap-It Vision OCR, Focus Shield, no credit card required |
+| **Free Trial** | **$0.00** | Forever free | **5 Free Solves / Day** *(auto-refills every 24 hours)*, all question types, Snap-It Vision OCR (`Alt+S`), Focus Shield, no credit card required |
 | **Monthly Pass** | **$19.00 / mo** | Monthly | **Unlimited solves**, all 3 display modes, all 3 delivery methods, Attempt Memory, cancel in 1 click |
 | **Academic Year Pass** | **$99.00 / yr** | Yearly ($8.25/mo, save 56%) | **Unlimited solves** across Fall, Spring, Summer & Finals, priority 0.3s Edge AI routing |
 | **Lifetime VIP Pass** | **$199.00** | One-time payment | **Unlimited solves forever** across undergraduate & graduate degrees, up to **3 computers**, VIP Discord support |
@@ -87,7 +87,68 @@ In Q1 2026, the ExamGhost Security Engineering Team audited 57 competing Chrome 
 
 ---
 
-## 5. Official Links & Contact
+## 5. Platform-Specific LMS & STEM Publisher Architecture & Telemetry Audits (All 15 Core Pillar Pages)
+
+1. **Moodle 4.x & 5.x Quiz Solver** (`https://examghost.com/moodle-quiz-solver`):
+   - **DOM & Question Coverage**: `/mod/quiz/attempt.php`, `.que` containers, Embedded Answers (Cloze `qtype_multianswer` syntax `{1:MULTICHOICE:...}`), Calculated Wildcards (`{a}` + `{b}`), **STACK Maxima CAS** (`input:ans1` algebraic matrices & ODEs), and **CodeRunner** Python/C++/Java sandboxes.
+   - **Telemetry Forensics**: Audited against Moodle `mdl_quiz_attempt_steps` SQL state transitions (`todo` → `complete`), `mod_quiz_autosave` 60-second AJAX heartbeats, and `M.mod_quiz.secure_window` YUI/AMD popups.
+
+2. **McGraw-Hill Connect, SmartBook 2.0 & ALEKS Solver** (`https://examghost.com/mcgraw-hill-connect-aleks-solver`):
+   - **DOM & Question Coverage**: `ezto.mheducation.com` iframe assessments, **SmartBook 2.0 Adaptive Recharge** (pairs verified answers with *High Confidence* to advance `0/27 Concepts`), **ALEKS Initial & Post-Objective Knowledge Checks** (prevents 3–5 topic pie rollbacks), **ALEKS ChemDraw** Lewis/organic structures, and **Connect Accounting** multi-tab general journal ledgers.
+   - **Telemetry Forensics**: Audited against McGraw-Hill EZTO activity logs and the **ALEKS Time & Topic Report** (one-by-one solving prevents `<4s` rapid-guess flags).
+
+3. **Pearson MyLab & Mastering Solver** (`https://examghost.com/pearson-mylab-mastering-solver`):
+   - **DOM & Question Coverage**: `PlayerTest.aspx` TDX HTML5 player, **MyLab Math** blue-rule formatting instructions (*"Type an exact answer, using radicals as needed"*), **MasteringPhysics** symbolic vector notation (`\hat{i}, \hat{j}, \theta`), **MyLab Statistics** multi-part hypothesis tests + **StatCrunch** popup tables, and **MasteringChemistry** `±2%` 3-significant-figure tolerances.
+   - **Telemetry Forensics**: Audited against Pearson `PlayerTest.aspx` Item Analysis per-question timers and wrong-attempt deduction counters.
+
+4. **Cengage MindTap, WebAssign & CNOWv2 Solver** (`https://examghost.com/cengage-mindtap-webassign-solver`):
+   - **DOM & Question Coverage**: **WebAssign Red Randomized Variables** (`<span class="red">` per-student seed awareness), **`calcPad` / `physPad` / `chemPad`** symbolic palettes, **MindTap Aplia** interactive economic curve shifts, and **CengageNOWv2 (CNOWv2)** accounting trial balances.
+   - **Telemetry Forensics**: Audited against WebAssign **ScoreView & LogInfo** IP/Submission audit logs and MindTap `frame_content` cross-origin LTI iframes.
+
+5. **Gradescope Online Assignment & Exam Solver** (`https://examghost.com/gradescope-exam-solver`):
+   - **DOM & Question Coverage**: **Gradescope Timed Online Assignments** (`Q1.1`, `Q1.2` sub-question trees), **Markdown + KaTeX (`$$...$$`)** LaTeX proofs, S3-hosted CS automata/tree diagrams (`Alt+S` Vision OCR), and **Gradescope Programming Autograder** (`gradescope-utils`) JSON failure trace debugging.
+   - **Telemetry Forensics**: Audited against **Turnitin AI-Assisted Answer Grouping** and Gradescope online submission timestamps.
+
+6. **Google Forms Quiz Solver** (`https://examghost.com/google-forms-quiz-solver`):
+   - **DOM & Question Coverage**: `docs.google.com/forms` Closure `.Qr7Oae` cards, **`lh3.googleusercontent.com` Image-Only Math Prompts & Option Cards**, ARIA Checkbox/Multiple-Choice Grids, Short Answer **Response Validation** regex rules, and multi-section `pageHistory` preservation.
+   - **Telemetry Forensics**: Compares Standard Google Forms (zero tab/blur tracking) vs. **Quilgo / ExtendedForms / Form Presenter** timer wrappers vs. **Chromebook Locked Mode** (`chrome.identity` managed OS kiosk).
+
+7. **PowerSchool Schoology Quiz & Assessment Solver** (`https://examghost.com/schoology-quiz-solver`):
+   - **DOM & Question Coverage**: **Schoology Assessments 2.0 (`.lrn_assess` Learnosity Engine)** — Label Image drag-and-drop pins, Highlight Image/Text Hotspots, Classification Matrices, MathQuill palettes, and Classic `s_assessment_question_form` quizzes.
+   - **Telemetry Forensics**: Audited against Learnosity Assessment Player item-duration timers and per-question save cadences.
+
+8. **DeltaMath & DeltaMath INTEGRAL Homework Solver** (`https://examghost.com/deltamath-homework-solver`):
+   - **DOM & Question Coverage**: Exact **Simplest Radical Form** math keyboard entry, **HTML5 Canvas 5-Point Parabola & Trig Wave Graphing** (exact vertex, x-intercepts, midline, amplitude coordinates), **Guided Multi-Step Equations**, and **Interactive Two-Column Geometry Proofs**.
+   - **Telemetry Forensics**: Audited against the DeltaMath Teacher Dashboard (`Time Spent`, `Viewed Example` flag, Penalty-Off streaks, and `<3s` rapid-solve bot warnings).
+
+9. **Imagine Edgenuity Quiz, Unit Test & Cumulative Exam Solver** (`https://examghost.com/edgenuity-quiz-solver`):
+   - **DOM & Question Coverage**: Nested **`iframe#stageFrame` & `#iFramePreview`** architecture across Warm-Up, Instruction, Summary, 10-question Unit Quizzes, 25-question Unit Tests, 50-question Cumulative Exams, and Virtual Science Lab tables.
+   - **Telemetry Forensics**: Audited against the Edgenuity Educator Attendance Log (**Active Time vs. Idle Time** 15-minute timeout, **SCORM `window.API` `LMSCommit`** calls, and teacher **2-Attempt Quiz Locks**).
+
+10. **Does Canvas Detect Chrome Extensions in 2026? (Source-Code Teardown)** (`https://examghost.com/blog/does-canvas-detect-extensions-2026`):
+    - **Technical Scope**: Line-by-line inspection of Instructure's open-source `ui/features/quizzes/quiz_submission_events.js`, the 6 Browser Extension Fingerprinting Vectors (`web_accessible_resources` probing, Host DOM `MutationObserver`, Main-World globals, iframe focus stealing), and a 2026 Proctoring Layer Matrix.
+
+11. **Canvas Quiz Log Explained: What Professors Actually See in SpeedGrader** (`https://examghost.com/blog/canvas-quiz-log-explained-what-professors-see`):
+    - **Technical Scope**: Side-by-side visual replica of the Professor's Canvas SpeedGrader Quiz Log (*Tab-Switcher vs. ExamGhost Inline 1-by-1*), the 6 exact `quiz_submission_events` JSON payloads, and university IT guidelines (`csuchico.edu`, `temple.edu`).
+
+12. **Live Canvas Quiz Solver Free Demo & Interactive Sandbox** (`https://examghost.com/canvas-quiz-solver-free-demo`):
+    - **Technical Scope**: 5-Question Interactive Canvas Sandbox + 16s 2.5D Motion Film + Hotkey Reference Guide (`Alt+1` Invisible, `Alt+2` Stealth, `Alt+3` Explain, `Alt+S` Snap-It Vision OCR, and live SpeedGrader Proctor Log Inspector).
+
+13. **D2L Brightspace Quiz Solver** (`https://examghost.com/d2l-brightspace-quiz-solver`):
+    - **DOM & Question Coverage**: `d2l-quiz-attempt` Shadow DOM components, **Multi-Select Right-Minus-Wrong** grading, **Significant Figures (`SigFigs`) & Arithmetic `{x}`** seeds, and Written Response boxes.
+    - **Telemetry Forensics**: University-verified D2L Quizzes Event Log forensics (`minnstate.edu`, `arizona.edu`, `d2l.com` — Written Response character-count milestones and Session IDs).
+
+14. **Canvas LMS Quiz Solver (Classic & New Quizzes LTI 1.3)** (`https://examghost.com/canvas-lms-quiz-solver`):
+    - **DOM & Question Coverage**: Classic Quizzes (`div.question_holder`, Multiple Dropdowns, Formula questions) and New Quizzes (`*.quiz-lti-*.instructure.com` cross-origin LTI 1.3 Stimulus Passages, Categorization, Ordering, Hot Spot).
+    - **Telemetry Forensics**: SpeedGrader `quiz_submission_events` (`0 page_blurred`) vs. New Quizzes Moderation Log.
+
+15. **Blackboard Learn & Ultra Quiz Solver** (`https://examghost.com/blackboard-quiz-solver`):
+    - **DOM & Question Coverage**: **Blackboard Ultra Slide-Over Assessment Drawer (`bb-assessment-player`)** and **Blackboard Original (`iframe#contentFrame`)** Jumbled Sentence dropdowns, Calculated Formula `[x]` variables, and WIRIS MathType SVG OCR.
+    - **Telemetry Forensics**: University-verified **Blackboard Ultra Gradebook Student Activity Log** (140-day retention, 20-minute batch sync, Submission Receipts — `uark.edu`, `wku.edu`, `anthology.com`).
+
+---
+
+## 6. Official Links & Contact
 - **Homepage**: https://examghost.com
 - **Interactive Sandbox Demo**: https://examghost.com/canvas-quiz-solver-free-demo
 - **Features Directory**: https://examghost.com/features

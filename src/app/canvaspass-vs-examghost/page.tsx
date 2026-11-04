@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { CanvasPassCognitivePsychDemo } from '@/components/CanvasAndTextbookDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
     CheckCircle2,
     XCircle,
@@ -28,13 +30,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "CanvasPass vs ExamGhost (2026) — Credit Caps vs Unlimited",
     },
-    description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 50 Free Solves.",
+    description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/canvaspass-vs-examghost",
     },
     openGraph: {
         title: "CanvasPass vs ExamGhost (2026) — Credit Caps vs Unlimited",
-        description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 50 Free Solves.",
+        description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 5 Free Solves / Day.",
         url: "https://examghost.com/canvaspass-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CanvasPass vs ExamGhost (2026) — Credit Caps vs Unlimited",
-        description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 50 Free Solves.",
+        description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -59,6 +61,25 @@ export const metadata: Metadata = {
 const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+        {
+            "@type": "SoftwareApplication",
+            "name": "ExamGhost",
+            "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+            "applicationCategory": "EducationalApplication",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": "0.00",
+                "highPrice": "199.00",
+                "priceCurrency": "USD",
+                "offerCount": "4",
+                "offers": [
+                    { "@type": "Offer", "name": "5 Free Solves / Day", "price": "0.00", "priceCurrency": "USD" },
+                    { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                    { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                    { "@type": "Offer", "name": "Lifetime Pass", "price": "199.00", "priceCurrency": "USD" }
+                ]
+            }
+        },
         {
             "@type": "WebPage",
                 "datePublished": "2026-01-27",
@@ -122,7 +143,7 @@ const jsonLd = {
                     name: "Does CanvasPass include a Tab-Switch Blocker on its Free or $5/month Starter plan?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. According to CanvasPass's pricing table on canvaspass.sbs, both the Free ($0) plan and the Starter ($5/month) plan explicitly disable the Tab-Switch Blocker, Kiosk Spoof, and Answer Saver. Students must upgrade to at least the Pro ($10/month) tier before CanvasPass blocks Canvas quiz tab-switching events. ExamGhost includes its full Focus Shield (blocking visibilitychange, window.blur, and focusout) on every tier—including the 50 free trial solves.",
+                        text: "No. According to CanvasPass's pricing table on canvaspass.sbs, both the Free ($0) plan and the Starter ($5/month) plan explicitly disable the Tab-Switch Blocker, Kiosk Spoof, and Answer Saver. Students must upgrade to at least the Pro ($10/month) tier before CanvasPass blocks Canvas quiz tab-switching events. ExamGhost includes its full Focus Shield (blocking visibilitychange, window.blur, and focusout) on every tier—including the 5 Free/Day trial solves.",
                     },
                 },
                 {
@@ -226,7 +247,7 @@ export default function CanvasPassVsExamGhostPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm font-semibold shadow-lift inline-flex items-center gap-2.5"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Start 50 Free Solves (Focus Shield Included)</span>
+                                        <span>Start 5 Free Solves / Day (Focus Shield Included)</span>
                                     </Link>
                                     <Link prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
@@ -296,7 +317,7 @@ export default function CanvasPassVsExamGhostPage() {
                                             </li>
                                             <li className="flex items-center justify-between">
                                                 <span>Free Trial Included:</span>
-                                                <span className="text-emerald-300 font-bold">✓ 50 Full STEM Solves ($0)</span>
+                                                <span className="text-emerald-300 font-bold">✓ 5 Free Solves / Day ($0)</span>
                                             </li>
                                             <li className="flex items-center justify-between">
                                                 <span>Paid Pass Solves:</span>
@@ -314,15 +335,17 @@ export default function CanvasPassVsExamGhostPage() {
                     </div>
                 </section>
 
-                {/* INTERACTIVE 4-TIER CREDIT & FEATURE CALCULATOR (Pure CSS peer-checked) */}
+        <CanvasPassCognitivePsychDemo />
+
+                {/* VISIBLE 4-TIER CREDIT & FEATURE AUDIT */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
                     <div className="text-center max-w-2xl mx-auto mb-8">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-xs font-bold text-indigo-950 mb-3">
                             <Calculator className="w-3.5 h-3.5" />
-                            Interactive Credit &amp; Paywall Inspector
+                            Credit Math &amp; Security Paywall Inspector
                         </div>
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                            800 Credits ≠ 800 Questions: Click Any CanvasPass Tier
+                            800 Credits ≠ 800 Questions: Visible 4-Tier Breakdown
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
                             See what each CanvasPass plan on <code>canvaspass.sbs</code> actually gives you once you factor in per-question credit deductions, character limits, and security paywalls.
@@ -330,237 +353,266 @@ export default function CanvasPassVsExamGhostPage() {
                     </div>
 
                     <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        {/* Hidden Radio Inputs */}
-                        <input type="radio" name="cp_tier" id="cp-free" className="sr-only peer/free" />
-                        <input type="radio" name="cp_tier" id="cp-starter" className="sr-only peer/starter" defaultChecked />
-                        <input type="radio" name="cp_tier" id="cp-pro" className="sr-only peer/pro" />
-                        <input type="radio" name="cp_tier" id="cp-overlay" className="sr-only peer/overlay" />
-
-                        {/* Selector Tabs */}
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 p-2 rounded-2xl bg-[#f5f1ea] border border-black/10 mb-8">
-                            <label
-                                htmlFor="cp-free"
-                                className="cursor-pointer rounded-xl py-3 px-3 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/free:bg-ink peer-checked/free:text-white peer-checked/free:shadow-sm"
-                            >
-                                1. CanvasPass Free ($0)
-                            </label>
-                            <label
-                                htmlFor="cp-starter"
-                                className="cursor-pointer rounded-xl py-3 px-3 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/starter:bg-ink peer-checked/starter:text-white peer-checked/starter:shadow-sm"
-                            >
-                                2. Starter ($5/mo · 800 cr)
-                            </label>
-                            <label
-                                htmlFor="cp-pro"
-                                className="cursor-pointer rounded-xl py-3 px-3 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/pro:bg-ink peer-checked/pro:text-white peer-checked/pro:shadow-sm"
-                            >
-                                3. Pro ($10/mo · 1,500 cr)
-                            </label>
-                            <label
-                                htmlFor="cp-overlay"
-                                className="cursor-pointer rounded-xl py-3 px-3 text-center text-xs sm:text-sm font-bold transition-all text-ink-muted hover:text-ink peer-checked/overlay:bg-ink peer-checked/overlay:text-white peer-checked/overlay:shadow-sm"
-                            >
-                                4. OverlayPass ($25/mo)
-                            </label>
-                        </div>
-
-                        {/* PANEL 1: FREE */}
-                        <div className="hidden peer-checked/free:block">
-                            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">CanvasPass Free ($0)</span>
-                                        <span className="font-mono text-xs font-bold text-rose-800">High Detection Risk</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        No Tab-Switch Blocker + No Image Support + 800-Char Cutoff
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Tab-Switch Blocker is OFF (`✗`):</strong> Testing CanvasPass Free on a live Canvas quiz logs every blur and tab switch in SpeedGrader.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Zero Image / Diagram Support:</strong> Cannot read graphs, chemistry structures, or screenshot crops.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>800-Character Limit:</strong> Truncates any question longer than a single short paragraph (10 solves per 12 hours).</span>
-                                        </li>
-                                    </ul>
+                        <div className="space-y-8">
+                            {/* TIER 1: FREE */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    TIER 1 · CANVASPASS FREE ($0)
                                 </div>
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Free Trial ($0)</span>
-                                        <span className="font-mono text-xs font-bold text-emerald-800">Full Stealth Active</span>
+                                <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+                                    <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">CanvasPass Free ($0)</span>
+                                            <span className="font-mono text-xs font-bold text-rose-800">High Detection Risk</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            No Tab-Switch Blocker + No Image Support + 800-Char Cutoff
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Tab-Switch Blocker is OFF (`✗`):</strong> Testing CanvasPass Free on a live Canvas quiz logs every blur and tab switch in SpeedGrader.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Zero Image / Diagram Support:</strong> Cannot read graphs, chemistry structures, or screenshot crops.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>800-Character Limit:</strong> Truncates any question longer than a single short paragraph (10 solves per 12 hours).</span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        50 Full Solves + 4-Layer Focus Shield + Snap-It Vision Included
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Focus Shield Included for $0:</strong> We never paywall safety—your 50 free solves have the exact same anti-blur shield as our Lifetime pass.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Includes Snap-It Vision (`⌘+Shift+S`):</strong> Test diagram, graph, and equation OCR before paying a cent.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Zero Character Truncation:</strong> Reads full case studies and multi-part tables.</span>
-                                        </li>
-                                    </ul>
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Free Trial ($0)</span>
+                                            <span className="font-mono text-xs font-bold text-emerald-800">Full Stealth Active</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            5 Free Solves / Day + 4-Layer Focus Shield + Snap-It Vision Included
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Focus Shield Included for $0:</strong> We never paywall safety—your 5 free solves / day have the exact same anti-blur shield as our Lifetime pass.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Includes Snap-It Vision (`Alt+S`):</strong> Test diagram, graph, and equation OCR before paying a cent.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Zero Character Truncation:</strong> Reads full case studies and multi-part tables.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* TIER 2: STARTER */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    TIER 2 · STARTER ($5/MO · 800 CR)
+                                </div>
+                                <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+                                    <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">CanvasPass Starter ($5/mo)</span>
+                                            <span className="font-mono text-xs font-bold text-rose-800">800 Credits = Only 80 Smart Solves</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Still Disables Tab-Switch Blocker &amp; Deducts 10 Credits per Smart Solve
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Tab-Switch Blocker Still OFF (`✗`):</strong> Even after paying $5/mo, CanvasPass leaves Tab-Switch Blocker, Kiosk Spoof, and Answer Saver disabled.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>10 Credits per Smart Question:</strong> Smart Mode (Claude Sonnet) costs 10 credits/solve—so 800 credits runs out after just <strong>80 questions</strong> (less than two 50-question exams).</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>2,000-Character Cap:</strong> Long nursing vignettes, history passages, or accounting tables get cut off mid-sentence.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Annual ($8.25/mo) or Monthly ($19/mo)</span>
+                                            <span className="font-mono text-xs font-bold text-emerald-800">Unlimited Solves</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Unlimited Smart Solves + Full Focus Shield + Zero Credit Anxiety
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>No Credit Multipliers:</strong> Solve 80 questions or 8,000 questions—every single solve uses our top-tier STEM &amp; reasoning models.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Complete Focus &amp; Visibility Shield:</strong> Blocks <code>window.blur</code>, <code>visibilitychange</code>, and mouse-leave logs across all 20+ LMSs.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>14-Day 100% Money-Back Guarantee:</strong> Plus 5 Free Solves / Day before you ever pull out a card.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* TIER 3: PRO */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    TIER 3 · PRO ($10/MO · 1,500 CR)
+                                </div>
+                                <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+                                    <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-amber-200 text-amber-950 text-xs font-bold">CanvasPass Pro ($10/mo)</span>
+                                            <span className="font-mono text-xs font-bold text-amber-900">1,500 Credits = 187 Smart Solves</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Unlocks Tab Blocker, But Caps You at ~187 Smart Solves &amp; Canvas Only
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                                                <span><strong>8 Credits per Smart Solve:</strong> Taking 4 classes with weekly 25-question quizzes (400 questions/mo) requires <strong>3,200 credits</strong>—forcing you to buy $5 top-up packs mid-month.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Fails on Embedded Publisher Portals:</strong> Doesn&apos;t work when a Canvas course launches McGraw-Hill Connect, Pearson MyLab, Cengage, or WebAssign.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Injects Buttons Into Canvas DOM:</strong> Appends custom AI button elements inside <code>.question_holder</code> unless manually toggled.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Academic Year ($8.25/mo · $99/yr)</span>
+                                            <span className="font-mono text-xs font-bold text-emerald-800">Cheaper than $10/mo Pro</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Costs Less per Month Than CanvasPass Pro—With Unlimited Solves Everywhere
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>$8.25/mo on Annual Pass ($99/yr):</strong> Lower monthly cost than CanvasPass Pro ($10/mo) with zero credit top-ups ever.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Works on Every LMS &amp; Publisher Portal:</strong> Canvas, Blackboard, Moodle, D2L, McGraw-Hill, Pearson, Cengage, and WebAssign.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Closed Shadow DOM:</strong> Never injects detectable AI buttons into Canvas&apos;s host HTML.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* TIER 4: OVERLAYPASS */}
+                            <div className="p-6 rounded-2xl bg-[#faf8f4] border border-black/10">
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded inline-block mb-3">
+                                    TIER 4 · OVERLAYPASS ($25/MO EXTRA)
+                                </div>
+                                <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+                                    <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">OverlayPass ($25/mo Extra)</span>
+                                            <span className="font-mono text-xs font-bold text-rose-800">Windows Only · No Mac</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            A Separate $25/Month Subscription That Doesn&apos;t Run on MacBooks
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Zero macOS or Chromebook Support:</strong> OverlayPass is a standalone Windows executable—leaving MacBook college students completely locked out.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                                                <span><strong>Still Capped at 2,500 Credits/Mo:</strong> Even at $25/mo ($300/yr), OverlayPass still runs on a credit meter.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Cross-Platform Stealth</span>
+                                            <span className="font-mono text-xs font-bold text-emerald-800">Mac + Windows + ChromeOS</span>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-ink mb-3">
+                                            Native Mac &amp; Windows Support Included in One Pass
+                                        </h3>
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>100% MacBook &amp; Windows Parity:</strong> Runs natively in Chrome, Brave, Edge, and Arc on Apple Silicon Macs and Windows PCs.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                                                <span><strong>Snap-It Vision Included Free:</strong> Crop any locked screen region with <code>Alt+S</code> without paying a separate $25/mo fee.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {/* PANEL 2: STARTER ($5/mo) */}
-                        <div className="hidden peer-checked/starter:block">
-                            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">CanvasPass Starter ($5/mo)</span>
-                                        <span className="font-mono text-xs font-bold text-rose-800">800 Credits = Only 80 Smart Solves</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Still Disables Tab-Switch Blocker &amp; Deducts 10 Credits per Smart Solve
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Tab-Switch Blocker Still OFF (`✗`):</strong> Even after paying $5/mo, CanvasPass leaves Tab-Switch Blocker, Kiosk Spoof, and Answer Saver disabled.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>10 Credits per Smart Question:</strong> Smart Mode (Claude Sonnet) costs 10 credits/solve—so 800 credits runs out after just <strong>80 questions</strong> (less than two 50-question exams).</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>2,000-Character Cap:</strong> Long nursing vignettes, history passages, or accounting tables get cut off mid-sentence.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Annual ($8.25/mo) or Monthly ($19/mo)</span>
-                                        <span className="font-mono text-xs font-bold text-emerald-800">Unlimited Solves</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Unlimited Smart Solves + Full Focus Shield + Zero Credit Anxiety
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>No Credit Multipliers:</strong> Solve 80 questions or 8,000 questions—every single solve uses our top-tier STEM &amp; reasoning models.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Complete Focus &amp; Visibility Shield:</strong> Blocks <code>window.blur</code>, <code>visibilitychange</code>, and mouse-leave logs across all 20+ LMSs.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>14-Day 100% Money-Back Guarantee:</strong> Plus 50 Free Solves before you ever pull out a card.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                {/* 6 MODERN HOTKEYS PARITY GRID */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+                    <div className="p-6 sm:p-8 rounded-[32px] bg-white border border-black/10 shadow-card">
+                        <div className="max-w-3xl mb-6">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded">
+                                FULL 6-HOTKEY SUITE
+                            </span>
+                            <h3 className="font-display text-xl sm:text-2xl font-black text-ink mt-2 mb-1">
+                                Complete Stealth &amp; Speed Controls
+                            </h3>
+                            <p className="text-xs sm:text-sm text-ink-secondary">
+                                Instant in-tab execution with 0 SpeedGrader telemetry events.
+                            </p>
                         </div>
-
-                        {/* PANEL 3: PRO ($10/mo) */}
-                        <div className="hidden peer-checked/pro:block">
-                            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-                                <div className="p-6 rounded-3xl bg-amber-50/70 border border-amber-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-amber-200 text-amber-950 text-xs font-bold">CanvasPass Pro ($10/mo)</span>
-                                        <span className="font-mono text-xs font-bold text-amber-900">1,500 Credits = 187 Smart Solves</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Unlocks Tab Blocker, But Caps You at ~187 Smart Solves &amp; Canvas Only
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-                                            <span><strong>8 Credits per Smart Solve:</strong> Taking 4 classes with weekly 25-question quizzes (400 questions/mo) requires <strong>3,200 credits</strong>—forcing you to buy $5 top-up packs mid-month.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Fails on Embedded Publisher Portals:</strong> Doesn&apos;t work when a Canvas course launches McGraw-Hill Connect, Pearson MyLab, Cengage, or WebAssign.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Injects Buttons Into Canvas DOM:</strong> Appends custom AI button elements inside <code>.question_holder</code> unless manually toggled.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Academic Year ($8.25/mo · $99/yr)</span>
-                                        <span className="font-mono text-xs font-bold text-emerald-800">Cheaper than $10/mo Pro</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Costs Less per Month Than CanvasPass Pro—With Unlimited Solves Everywhere
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>$8.25/mo on Annual Pass ($99/yr):</strong> Lower monthly cost than CanvasPass Pro ($10/mo) with zero credit top-ups ever.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Works on Every LMS &amp; Publisher Portal:</strong> Canvas, Blackboard, Moodle, D2L, McGraw-Hill, Pearson, Cengage, and WebAssign.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Closed Shadow DOM:</strong> Never injects detectable AI buttons into Canvas&apos;s host HTML.</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Double-Click</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">0.3s Inline Solve</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Instant option select</div>
                             </div>
-                        </div>
-
-                        {/* PANEL 4: OVERLAYPASS ($25/mo) */}
-                        <div className="hidden peer-checked/overlay:block">
-                            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-                                <div className="p-6 rounded-3xl bg-rose-50/70 border border-rose-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-rose-200 text-rose-950 text-xs font-bold">OverlayPass ($25/mo Extra)</span>
-                                        <span className="font-mono text-xs font-bold text-rose-800">Windows Only · No Mac</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        A Separate $25/Month Subscription That Doesn&apos;t Run on MacBooks
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Zero macOS or Chromebook Support:</strong> OverlayPass is a standalone Windows executable—leaving MacBook college students completely locked out.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>Still Capped at 2,500 Credits/Mo:</strong> Even at $25/mo ($300/yr), OverlayPass still runs on a credit meter.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-200">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-emerald-200 text-emerald-950 text-xs font-bold">ExamGhost Cross-Platform Stealth</span>
-                                        <span className="font-mono text-xs font-bold text-emerald-800">Mac + Windows + ChromeOS</span>
-                                    </div>
-                                    <h3 className="font-display font-bold text-xl text-ink mb-3">
-                                        Native Mac &amp; Windows Support Included in One Pass
-                                    </h3>
-                                    <ul className="space-y-2.5 text-xs sm:text-sm text-ink-secondary">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>100% MacBook &amp; Windows Parity:</strong> Runs natively in Chrome, Brave, Edge, and Arc on Apple Silicon Macs and Windows PCs.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>Snap-It Vision Included Free:</strong> Crop any locked screen region with <code>⌘+Shift+S</code> without paying a separate $25/mo fee.</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+S</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Vision Snip OCR</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Graphs &amp; chemical rings</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+1</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Invisible Mode</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">15% subtle dot indicator</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+2</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Stealth Micro-HUD</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Closed Shadow DOM badge</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+3</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Inline Explain</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Step-by-step LaTeX drawer</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">⌘+Shift+U</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Emergency Panic</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">&lt;8ms memory flush</div>
                             </div>
                         </div>
                     </div>
@@ -625,7 +677,7 @@ export default function CanvasPassVsExamGhostPage() {
                                 <tbody className="divide-y divide-black/5">
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Free Trial &amp; Protection</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">50 Free Solves ($0) + Full Focus Shield</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">5 Free Solves / Day ($0) + Full Focus Shield</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">10 solves/12h · Tab Blocker &amp; Images Disabled</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
@@ -650,15 +702,23 @@ export default function CanvasPassVsExamGhostPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Screen Crop / Overlay Support</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Included (⌘+Shift+S on Mac &amp; Windows)</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">Included (Alt+S on Mac &amp; Windows)</td>
                                         <td className="py-3.5 px-6 text-center text-rose-800">OverlayPass Costs $25/mo Extra (Windows Only)</td>
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Pass Pricing &amp; Guarantee</td>
-                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$19/mo · $99/yr ($8.25/mo) · $199 Life (14-Day Refund)</td>
+                                        <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime (14-Day Refund)</td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">$5 Starter · $10 Pro · $25 OverlayPass · $5/500 cr top-ups</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -695,7 +755,7 @@ export default function CanvasPassVsExamGhostPage() {
                     </div>
 
                     <div className="space-y-4">
-                        {(jsonLd["@graph"][2] as any).mainEntity.map((faq: any, index: number) => (
+                        {((jsonLd["@graph"].find((node: any) => node["@type"] === "FAQPage") || jsonLd["@graph"][3]) as any).mainEntity.map((faq: any, index: number) => (
                             <details
                                 key={index}
                                 className="group rounded-2xl bg-white border border-black/10 p-5 shadow-sm transition-all open:shadow-md"
@@ -722,7 +782,7 @@ export default function CanvasPassVsExamGhostPage() {
                                     <span>Full Focus Shield Included on Free Trial · Zero Credit Math</span>
                                 </div>
                                 <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
-                                    Test ExamGhost with 50 Free Solves—fully shielded from question #1.
+                                    Test ExamGhost with 5 Free Solves / Day—fully shielded from question #1.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
                                     Don&apos;t risk taking a Canvas exam on a free or $5 plan that leaves tab-switch detection turned on. Start free or unlock unlimited solves for $8.25/mo billed annually ($99/yr).
@@ -734,7 +794,7 @@ export default function CanvasPassVsExamGhostPage() {
                                     className="btn-dark px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lift inline-flex items-center gap-2"
                                 >
                                     <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                 </Link>
                                 <Link prefetch={false}
                                     href="/canvas-quiz-solver-free-demo"
@@ -776,7 +836,10 @@ export default function CanvasPassVsExamGhostPage() {
                         </Link>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

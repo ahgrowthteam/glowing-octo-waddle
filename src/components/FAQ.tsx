@@ -13,19 +13,19 @@ export default function FAQ() {
         },
         {
             q: "How does double-click solving work?",
-            a: "Open your exam on any supported platform, ensure ExamGhost is toggled on (⌘+Shift+U), and double-click any question. ExamGhost reads the question text and options directly from the page DOM and highlights or auto-fills the correct answer in under a second. Need step-by-step reasoning? Shift + double-click opens a full explanation drawer."
+            a: "Open your exam on any supported platform, ensure ExamGhost is toggled on (⌘+Shift+U), and double-click any question. ExamGhost reads the question text and options directly from the page DOM and highlights or auto-fills the correct answer in under a second. Need step-by-step reasoning? Press Alt+3 to switch to Explain Mode and open the full explanation card."
         },
         {
             q: "What are the 3 display modes?",
-            a: "ExamGhost has three display modes you can pick in one click from the extension popup: Invisible applies the answer with nothing shown on screen (0 cursor, 0 overlay, 100% screen-share safe); Stealth (the default) shows a quiet micro-cursor while solving, then applies the answer; Explain applies the answer and displays a full step-by-step reasoning drawer."
+            a: "ExamGhost has three display modes you can pick in one click from the extension popup or via keyboard hotkeys: Invisible (Alt+1) applies the answer and copies it to clipboard with nothing shown on screen (0 cursor, 0 overlay, 100% screen-share safe); Stealth (Alt+2, default) auto-fills answers or marks the right option with a subtle ✓ tick; Explain (Alt+3) applies the answer and slides in a step-by-step reasoning card."
         },
         {
             q: "What are the 3 answer methods?",
-            a: "Independent of your display mode, choose how the answer lands on your quiz: Auto-fill selects the right choice directly on the page; Highlight glows on the correct option for 1–10 seconds (default 4s) so you click it yourself; Clipboard silently copies the answer so you can paste it into short-answer or essay fields."
+            a: "Choose how the answer lands on your quiz: Auto-Fill selects the right radio, checkbox, dropdown, or text input directly on the page; Highlight marks the correct option with a subtle ✓ indicator so you click it yourself; Clipboard silently copies the answer so you can paste it into short-answer or essay fields."
         },
         {
             q: "Can ExamGhost solve image-based questions and locked content?",
-            a: "Yes! Using Snap-It Sniping (⌘+Shift+S or right-click → Solve with Screenshot), you can draw a crop box around any mathematical graph, calculus integral, organic chemistry diagram, or scanned PDF worksheet. Our multimodal vision AI reads the image and returns the solution with step-by-step reasoning."
+            a: "Yes! Using Snap-It Sniping (Alt+S or clicking Launch Snip Tool in the popup), you can draw a crop box around any mathematical graph, calculus integral, organic chemistry diagram, or scanned PDF worksheet. Our hybrid Vision + DOM AI reads the image and returns the solution with step-by-step reasoning."
         },
         {
             q: "What platforms does ExamGhost work on?",
@@ -33,7 +33,7 @@ export default function FAQ() {
         },
         {
             q: "How do I turn ExamGhost on and off?",
-            a: "The extension stays completely dormant until you activate it — it never runs background scripts or polling loops. Toggle it instantly using ⌘+Shift+U (Ctrl+Shift+U on Windows) or click the extension toolbar icon. Screenshot Solve is ⌘+Shift+S (Ctrl+Shift+S on Windows)."
+            a: "The extension stays completely dormant until you activate it — it never runs background polling loops. Toggle the Master Power Switch instantly using ⌘+Shift+U or the ON/OFF pill in the popup header. Switch modes with Alt+1 (Invisible), Alt+2 (Stealth), and Alt+3 (Explain), or trigger Snap-It Region Solve with Alt+S."
         },
         {
             q: "Why not just use ChatGPT?",
@@ -41,11 +41,11 @@ export default function FAQ() {
         },
         {
             q: "Is ExamGhost free to start?",
-            a: "Yes! Every student gets 50 free question solves immediately upon installing the extension. No credit card or billing details are required. You can test all 3 display modes, all 3 answer delivery methods, and Snap-It Vision OCR before deciding whether to upgrade."
+            a: "Yes! Every student gets 5 free question solves per day (auto-refills every 24 hours) immediately upon installing the extension. No credit card or billing details are required. You can test all 3 display modes (Alt+1, Alt+2, Alt+3), all 3 answer delivery methods, and Alt+S Snap-It Vision OCR before deciding whether to upgrade."
         },
         {
-            q: "What pricing plans do you offer?",
-            a: "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access across your undergraduate and graduate degrees). All paid plans include unlimited question solves and priority speed."
+            q: "What pricing plans do you offer, and what is the Study & Homework AI Hub?",
+            a: "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1 for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs (saving $60+/month vs separate AI subscriptions)."
         },
         {
             q: "What is your refund policy?",
@@ -87,7 +87,7 @@ export default function FAQ() {
                         What is ExamGhost and how does its stealth architecture work?
                     </h3>
                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                        ExamGhost is a privacy-first Chrome extension engineered for online assessments on Canvas, Blackboard, Moodle, D2L Brightspace, McGraw-Hill Connect, Pearson MyLab, Cengage MindTap, and WebAssign. Unlike standard AI sidebar extensions such as CanvasHack, CheatMate, or CourseHero that inject visible HTML overlays directly into the host page DOM, ExamGhost renders inside a closed Shadow DOM container paired with Focus Shield event interception. This architecture neutralizes window.blur, document.visibilitychange, and document.hasFocus() proctoring telemetry while leaving zero inspectable footprint in page scripts. Powered by multi-model AI routing combining GPT-4o, Claude 3.5 Sonnet, and DeepSeek-R1, ExamGhost solves multiple-choice, multi-select, fill-in-the-blank, matching, and LaTeX math questions in 0.3 seconds with a 96%+ accuracy rate. Students can test all 24 stealth features with 50 free solves (no credit card required), or unlock unlimited access at $19/month, $99/year ($8.25/month Academic Year Pass), or $199 one-time for the Lifetime VIP Degree Pass.
+                        ExamGhost is a privacy-first Chrome extension engineered for online assessments on Canvas, Blackboard, Moodle, D2L Brightspace, McGraw-Hill Connect, Pearson MyLab, Cengage MindTap, and WebAssign. Unlike standard AI sidebar extensions such as CanvasHack, CheatMate, or CourseHero that inject visible HTML overlays directly into the host page DOM, ExamGhost renders inside a closed Shadow DOM container paired with Focus Shield event interception. This architecture neutralizes window.blur, document.visibilitychange, and document.hasFocus() proctoring telemetry while leaving zero inspectable footprint in page scripts. Powered by multi-model AI routing combining GPT-4o, Claude 3.7 Sonnet, and DeepSeek-R1, ExamGhost solves multiple-choice, multi-select, fill-in-the-blank, matching, and LaTeX math questions in 0.3 seconds with a 96%+ accuracy rate. Students can test all 24 stealth features with 5 free solves per day (no credit card required), or unlock unlimited extension solves plus the full Claude, ChatGPT, and DeepSeek Study &amp; Homework AI Workspace at $19/month, $99/year ($8.25/month Academic Year Pass), or $199 one-time for the Lifetime VIP Degree Pass.
                     </p>
                 </div>
 
@@ -98,35 +98,34 @@ export default function FAQ() {
                         return (
                             <div
                                 key={idx}
-                                className={`rounded-2xl border transition-all duration-200 bg-white ${
+                                data-open={isOpen}
+                                className={`t-acc rounded-2xl border transition-all duration-200 bg-white ${
                                     isOpen
-                                        ? 'border-black/15 shadow-sm'
-                                        : 'border-black/5 hover:border-black/10'
+                                        ? 'border-black/15 shadow-card'
+                                        : 'border-black/5 hover:border-black/10 hover:shadow-soft'
                                 }`}
                             >
                                 <h3>
                                     <button
                                         onClick={() => setOpenIndex(isOpen ? null : idx)}
-                                        className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-display font-semibold text-base sm:text-lg text-ink focus:outline-none"
+                                        className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-display font-semibold text-base sm:text-lg text-ink rounded-2xl"
                                         aria-expanded={isOpen}
                                     >
                                         <span>{faq.q}</span>
-                                        <span className={`w-8 h-8 rounded-full bg-[#faf8f4] flex items-center justify-center shrink-0 text-ink transition-transform duration-200 ${
-                                            isOpen ? 'rotate-180 bg-ink text-white' : ''
+                                        <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                                            isOpen ? 'rotate-180 bg-ink text-white' : 'bg-[#f4f1ea] text-ink'
                                         }`}>
                                             <ChevronDown className="w-4 h-4" />
                                         </span>
                                     </button>
                                 </h3>
 
-                                <div
-                                    className={
-                                        isOpen
-                                            ? 'px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-ink-secondary leading-relaxed border-t border-black/5 mt-1 block'
-                                            : 'hidden'
-                                    }
-                                >
-                                    <p>{faq.a}</p>
+                                <div className="t-acc-panel">
+                                    <div className="t-acc-panel-inner">
+                                        <div className="px-5 sm:px-6 pb-6 pt-4 text-sm text-ink-secondary leading-relaxed border-t border-black/5">
+                                            <p>{faq.a}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         );

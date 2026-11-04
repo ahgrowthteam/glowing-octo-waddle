@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { SolvelyOpticsSnellDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "Solvely vs ExamGhost (2026) — Preload Script & Cap Audit",
     },
-    description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 50 Free Solves.",
+    description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/solvely-vs-examghost",
     },
     openGraph: {
         title: "Solvely vs ExamGhost (2026) — Preload Script & Cap Audit",
-        description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 50 Free Solves.",
+        description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/solvely-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Solvely vs ExamGhost (2026) — Preload Script & Cap Audit",
-        description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 50 Free Solves.",
+        description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,7 +66,7 @@ const faqs = [
   },
   {
     q: "Does Solvely limit how many questions I can solve during an exam?",
-    a: "Yes. While Solvely's Vue 3 web portal (solvely.ai) advertises a free tier alongside its Mock Exam and Multi-Model Cross-Check tools, free accounts are restricted to a strict daily solve quota before triggering the Solvely Unlimited paywall ($12.99/month). Running out of daily solves mid-exam forces you to open a checkout window while the test timer ticks. ExamGhost includes 50 Free Solves ($0 trial, no card required) and unlimited solves on all paid plans.",
+    a: "Yes. While Solvely's Vue 3 web portal (solvely.ai) advertises a free tier alongside its Mock Exam and Multi-Model Cross-Check tools, free accounts are restricted to a strict daily solve quota before triggering the Solvely Unlimited paywall ($12.99/month). Running out of daily solves mid-exam forces you to open a checkout window while the test timer ticks. ExamGhost includes 5 Free Solves / Day ($0 trial, no card required) and unlimited solves on all paid plans.",
   },
   {
     q: "How fast is ExamGhost compared to Solvely's Multi-Model Cross-Check?",
@@ -72,7 +74,7 @@ const faqs = [
   },
   {
     q: "How much does ExamGhost cost compared to Solvely?",
-    a: "Solvely Unlimited charges $12.99 every month ($155.88/year or $623.52 over 4 years of college). ExamGhost gives every student 50 Free Solves ($0 trial, no credit card required), followed by flexible unlimited options: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or a one-time $199 Lifetime pass.",
+    a: "Solvely Unlimited charges $12.99 every month ($155.88/year or $623.52 over 4 years of college). ExamGhost gives every student 5 Free Solves / Day ($0 trial, no credit card required), followed by flexible unlimited options: $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or a one-time $199 Lifetime pass.",
   },
 ];
 
@@ -80,6 +82,39 @@ export default function SolvelyVsExamGhostPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "ExamGhost",
+                        "applicationCategory": "EducationalApplication",
+                        "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Free Tier (5 Free Solves / Day)",
+                                "price": "0.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monthly Pass",
+                                "price": "19.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Academic Year Pass",
+                                "price": "99.00",
+                                "priceCurrency": "USD"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Lifetime Degree Pass",
+                                "price": "199.00",
+                                "priceCurrency": "USD"
+                            }
+                        ]
+                    },
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-24",
@@ -140,7 +175,7 @@ export default function SolvelyVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -237,7 +272,7 @@ export default function SolvelyVsExamGhostPage() {
                     Free Trial &amp; Cost
                   </div>
                   <div className="text-sm font-bold text-emerald-700">
-                    Daily Cap ($155.88/yr) vs 50 Free ($99/yr)
+                    Daily Cap ($155.88/yr) vs 5 Free/Day ($99/yr)
                   </div>
                 </div>
               </div>
@@ -247,7 +282,7 @@ export default function SolvelyVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -355,7 +390,7 @@ export default function SolvelyVsExamGhostPage() {
                       </code>
                       , 8-layer Focus Shielding, and{" "}
                       <span className="text-white font-semibold">
-                        50 free solves
+                        5 free solves / day
                       </span>
                       .
                     </p>
@@ -365,6 +400,8 @@ export default function SolvelyVsExamGhostPage() {
             </div>
           </div>
         </section>
+
+        <SolvelyOpticsSnellDemo />
 
         {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
@@ -387,25 +424,9 @@ export default function SolvelyVsExamGhostPage() {
 
           <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
             {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="solvely-audit-tabs"
-              id="tab-solvely-preload"
-              className="sr-only peer/preload"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="solvely-audit-tabs"
-              id="tab-solvely-blur"
-              className="sr-only peer/blur"
-            />
-            <input
-              type="radio"
-              name="solvely-audit-tabs"
-              id="tab-solvely-quota"
-              className="sr-only peer/quota"
-            />
+            
+            
+            
 
             {/* Tab Headers */}
             <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
@@ -433,7 +454,7 @@ export default function SolvelyVsExamGhostPage() {
             </div>
 
             {/* Panel 1: canvas-layout-preload.js & CSS Leak */}
-            <div className="hidden peer-checked/preload:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
                   DOM &amp; Resource Fingerprint Audit
@@ -527,7 +548,7 @@ export default function SolvelyVsExamGhostPage() {
             </div>
 
             {/* Panel 2: iframe-sidepanel.js Blur Logs */}
-            <div className="hidden peer-checked/blur:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
                   SpeedGrader Telemetry Audit
@@ -612,13 +633,13 @@ export default function SolvelyVsExamGhostPage() {
             </div>
 
             {/* Panel 3: Daily Caps & $12.99/mo Billing */}
-            <div className="hidden peer-checked/quota:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold">
                   Quota &amp; Pricing Breakdown
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Daily Free Solve Cutoffs ($12.99/mo) vs 50 Free Solves &amp;
+                  Daily Free Solve Cutoffs ($12.99/mo) vs 5 Free Solves / Day &amp;
                   $8.25/mo Annual
                 </h3>
                 <p className="text-sm text-neutral-600 leading-relaxed">
@@ -631,7 +652,7 @@ export default function SolvelyVsExamGhostPage() {
                 </p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   <strong>ExamGhost</strong> gives you{" "}
-                  <strong>50 free solves</strong> upfront with zero daily trickle
+                  <strong>5 free solves / day</strong> upfront with zero daily trickle
                   games and no credit card required, followed by{" "}
                   <strong>$19/mo Monthly</strong>,{" "}
                   <strong>$99/yr Annual ($8.25/mo)</strong>, or a one-time{" "}
@@ -662,7 +683,7 @@ export default function SolvelyVsExamGhostPage() {
                       ExamGhost Free Trial
                     </div>
                     <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
+                      5 Free Solves / Day (auto-refills every 24h, no card required)
                     </div>
                   </div>
                   <span className="font-mono font-bold text-emerald-400 text-sm">
@@ -786,7 +807,7 @@ export default function SolvelyVsExamGhostPage() {
                       Strict daily solve cap before mid-exam paywall
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves upfront (no credit card required)
+                      5 Free Solves / Day upfront (no credit card required)
                     </td>
                   </tr>
                   <tr>
@@ -812,6 +833,23 @@ export default function SolvelyVsExamGhostPage() {
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
                       $19/mo • $99/yr ($8.25/mo) • $199 One-Time Lifetime
                     </td>
+                  </tr>
+                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -930,7 +968,7 @@ export default function SolvelyVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> upfront and{" "}
+                    You want <strong>5 free solves / day</strong> upfront and{" "}
                     <strong>$99/yr ($8.25/mo)</strong> or{" "}
                     <strong>$199 Lifetime</strong> instead of $155.88/year.
                   </span>
@@ -980,7 +1018,7 @@ export default function SolvelyVsExamGhostPage() {
                   <span>Multi-Model Accuracy Without the Sidepanel Leak</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Get 50 Free Solves—Zero Layout Preload Scripts, Zero Blur
+                  Get 5 Free Solves / Day—Zero Layout Preload Scripts, Zero Blur
                   Flags.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -993,7 +1031,7 @@ export default function SolvelyVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -1040,6 +1078,9 @@ export default function SolvelyVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

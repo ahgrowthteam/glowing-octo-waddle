@@ -2,7 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import { StudyXCommunityLagDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 import {
   ShieldCheck,
   AlertTriangle,
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     title: {
         absolute: "StudyX vs ExamGhost (2026) — 10s Crop Lag & Manifest Audit",
     },
-    description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 50 Free Solves.",
+    description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/studyx-vs-examghost",
     },
     openGraph: {
         title: "StudyX vs ExamGhost (2026) — 10s Crop Lag & Manifest Audit",
-        description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 50 Free Solves.",
+        description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 5 Free Solves / Day.",
         url: "https://examghost.com/studyx-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "StudyX vs ExamGhost (2026) — 10s Crop Lag & Manifest Audit",
-        description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 50 Free Solves.",
+        description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -68,7 +70,7 @@ const faqs = [
   },
   {
     q: "What is StudyX's UltraUsageThresholdModal and how much does StudyX Pro cost?",
-    a: "Free StudyX users hit a credit wall that triggers the UltraUsageThresholdModal popup mid-session, forcing an upgrade to StudyX Plus/Pro ($9.95 to $19.95/month, or up to $240/year). ExamGhost gives every student 50 Free Solves ($0, no credit card required), followed by transparent $19/mo Monthly, $99/yr Annual ($8.25/mo), or $199 Lifetime plans.",
+    a: "Free StudyX users hit a credit wall that triggers the UltraUsageThresholdModal popup mid-session, forcing an upgrade to StudyX Plus/Pro ($9.95 to $19.95/month, or up to $240/year). ExamGhost gives every student 5 Free Solves / Day ($0, no credit card required), followed by transparent $19/mo Monthly, $99/yr Annual ($8.25/mo), or $199 Lifetime plans.",
   },
   {
     q: "How does ExamGhost prevent professors from seeing the tool during in-person exams?",
@@ -94,6 +96,51 @@ export default function StudyXVsExamGhostPage() {
         description:
           "Detailed 2026 comparison of StudyX: AI Homework Helper (v1.0.324) and ExamGhost covering wildcard web_accessible_resources, missing LTI 1.3 iframe support, crop focus-loss logs, and pricing.",
         isPartOf: { "@id": "https://examghost.com/#website" },
+        "about": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "ExamGhost",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Free Tier (5 Free Solves / Day)",
+                "price": "0.00",
+                "priceCurrency": "USD",
+              },
+              {
+                "@type": "Offer",
+                "name": "Monthly Pass",
+                "price": "19.00",
+                "priceCurrency": "USD",
+              },
+              {
+                "@type": "Offer",
+                "name": "Academic Year Pass",
+                "price": "99.00",
+                "priceCurrency": "USD",
+              },
+              {
+                "@type": "Offer",
+                "name": "Lifetime Degree Pass",
+                "price": "199.00",
+                "priceCurrency": "USD",
+              },
+            ],
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "StudyX",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Chrome Extension (v1.0.324)",
+            "offers": {
+              "@type": "Offer",
+              "price": "19.95",
+              "priceCurrency": "USD",
+            },
+          },
+        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -140,7 +187,7 @@ export default function StudyXVsExamGhostPage() {
       />
       <Navbar />
 
-      <main className="pt-28 pb-20">
+      <main id="main-content" className="pt-28 pb-20">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
           <nav
@@ -238,7 +285,7 @@ export default function StudyXVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Start 50 Free Solves (No Card Needed)</span>
+                  <span>Start 5 Free Solves / Day (No Card Needed)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link prefetch={false}
@@ -341,7 +388,7 @@ export default function StudyXVsExamGhostPage() {
                       </code>{" "}
                       blocking, and{" "}
                       <span className="text-white font-semibold">
-                        50 free solves
+                        5 free solves / day
                       </span>
                       .
                     </p>
@@ -352,303 +399,297 @@ export default function StudyXVsExamGhostPage() {
           </div>
         </section>
 
-        {/* Interactive 3-Tab Deep Dive (Pure CSS peer-checked) */}
+        <StudyXCommunityLagDemo />
+
+        {/* MODERN HOTKEYS SUITE */}
+        <section className="py-8 bg-[#f5f1ea] border-y border-black/10 mb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
+              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Double-Click</span>
+                <span className="text-[11px] text-ink-muted">Quick Text Solve</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+S</span>
+                <span className="text-[11px] text-ink-muted">Vision OCR Snip</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+1</span>
+                <span className="text-[11px] text-ink-muted">Show / Hide HUD</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+2</span>
+                <span className="text-[11px] text-ink-muted">Cycle AI Models</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">Alt+3</span>
+                <span className="text-[11px] text-ink-muted">Focus Shield Toggle</span>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
+                <span className="font-mono font-bold text-xs text-ink block">⌘+Shift+U</span>
+                <span className="text-[11px] text-ink-muted">Panic Memory Purge</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Visible 3-Pillar Breakdown */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
-          <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff5722]">
-              Interactive Breakdown
+              Architecture Breakdown
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111111] mt-2">
               Why StudyX v1.0.324 Fails Inside Timed University Exams
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 mt-2">
-              Click any tab below to inspect StudyX&apos;s wildcard manifest
-              exposure, 10-second community database polling, and credit modal
-              paywalls.
+              Examining StudyX&apos;s wildcard manifest exposure, 10-second community database polling, and credit modal paywalls against modern LMS proctoring.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden">
-            {/* Radio Inputs */}
-            <input
-              type="radio"
-              name="studyx-audit-tabs"
-              id="tab-studyx-manifest"
-              className="sr-only peer/manifest"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="studyx-audit-tabs"
-              id="tab-studyx-lag"
-              className="sr-only peer/lag"
-            />
-            <input
-              type="radio"
-              name="studyx-audit-tabs"
-              id="tab-studyx-modal"
-              className="sr-only peer/modal"
-            />
-
-            {/* Tab Headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-neutral-200 bg-neutral-50/80">
-              <label
-                htmlFor="tab-studyx-manifest"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/manifest:bg-white peer-checked/manifest:text-[#111111] peer-checked/manifest:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <EyeOff className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>1. Wildcard &ldquo;**/*&rdquo; &amp; LTI 1.3 Failure</span>
-              </label>
-              <label
-                htmlFor="tab-studyx-lag"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center border-b sm:border-b-0 sm:border-r border-neutral-200 transition-all peer-checked/lag:bg-white peer-checked/lag:text-[#111111] peer-checked/lag:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <Clock className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>2. 10s Crop-and-Wait &amp; Blur Logs</span>
-              </label>
-              <label
-                htmlFor="tab-studyx-modal"
-                className="cursor-pointer px-4 py-4 text-left sm:text-center transition-all peer-checked/modal:bg-white peer-checked/modal:text-[#111111] peer-checked/modal:font-bold text-neutral-500 hover:text-neutral-800 flex items-center sm:justify-center gap-2.5 text-xs sm:text-sm"
-              >
-                <CreditCard className="w-4 h-4 text-violet-600 shrink-0" />
-                <span>3. UltraUsageThresholdModal &amp; Pricing</span>
-              </label>
-            </div>
-
-            {/* Panel 1: Wildcard Web Accessible Resources & LTI 1.3 Failure */}
-            <div className="hidden peer-checked/manifest:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
-                  Manifest V3 Fingerprint Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why Exposing{" "}
-                  <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    &quot;**/*&quot;
-                  </code>{" "}
-                  and Omitting{" "}
-                  <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    all_frames
-                  </code>{" "}
-                  Breaks Canvas Stealth
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  In Chrome extension security, setting{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    &quot;resources&quot;: [&quot;assets/*&quot;,
-                    &quot;**/*&quot;, &quot;*&quot;]
-                  </code>{" "}
-                  with{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    use_dynamic_url: false
-                  </code>{" "}
-                  is the worst possible configuration for stealth. It allows any
-                  website or proctoring script to directly fetch StudyX&apos;s
-                  internal bundle files (
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    assets/index-CxS0bAgs.css
-                  </code>
-                  ) to confirm the extension is installed.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Additionally, StudyX v1.0.324 omits{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    all_frames: true
-                  </code>{" "}
-                  from its{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    content_scripts
-                  </code>{" "}
-                  array—meaning it cannot read questions inside the cross-origin
-                  LTI 1.3 iframes used by <strong>Canvas New Quizzes</strong>.
-                </p>
-              </div>
-
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
-                <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
-                  <span>MV3 Resource &amp; Iframe Audit</span>
-                  <span className="text-emerald-400">Source Verified</span>
-                </div>
-                <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
-                  <div className="text-rose-300 font-bold">
-                    StudyX v1.0.324 (217KiB Bundle)
+          <div className="space-y-8">
+            {/* Card 1: Wildcard Web Accessible Resources & LTI 1.3 Failure */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-bold">
+                    Manifest V3 Fingerprint Audit
                   </div>
-                  <div className="text-neutral-300">
-                    • Exposes [&quot;assets/*&quot;, &quot;**/*&quot;,
-                    &quot;*&quot;] statically
-                  </div>
-                  <div className="text-neutral-300">
-                    • Injects assets/index-CxS0bAgs.css into host page
-                  </div>
-                  <div className="text-rose-400">
-                    • Omits all_frames: true (fails in LTI 1.3 New Quizzes)
-                  </div>
-                </div>
-                <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
-                  <div className="text-emerald-300 font-bold">
-                    ExamGhost Stealth Engine
-                  </div>
-                  <div className="text-neutral-300">
-                    • 0 public web_accessible_resources exposed
-                  </div>
-                  <div className="text-neutral-300">
-                    • Isolated Closed Shadow DOM v1 container
-                  </div>
-                  <div className="text-emerald-400">
-                    • Native cross-origin LTI 1.3 iframe bridge
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 2: 10s Crop-and-Wait & Blur Logs */}
-            <div className="hidden peer-checked/lag:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
-                  Workflow &amp; SpeedGrader Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Why Manual Cropping + 75M Community Search Costs You Time and
-                  Focus Logs
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Instead of reading quiz questions in-place, StudyX v1.0.324
-                  requires you to click its extension icon, drag a screenshot
-                  box around every single question, click{" "}
-                  <strong>[Get answer]</strong>, and wait{" "}
-                  <strong>8 to 15 seconds</strong> while it searches 75 million
-                  archived community answers and polls its AI backend.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Because StudyX has zero{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    window.blur
-                  </code>{" "}
-                  protection, interacting with its crop box and modal logs a
-                  12-to-15 second{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    Stopped viewing the Canvas quiz-taking page
-                  </code>{" "}
-                  event on every question. <strong>ExamGhost</strong> solves in
-                  place across <strong>3 frontier models in parallel</strong>{" "}
-                  with zero focus loss.
-                </p>
-              </div>
-
-              <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
-                <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                  Per-Question Exam Workflow Comparison
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-amber-200 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      StudyX Crop-and-Poll Workflow
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
-                      8–15s + Blur Flag
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-600">
-                    Click crop → Drag rectangle → Click [Get answer] → Fires{" "}
-                    <code className="font-mono">window.blur</code> → Wait 8–15s
-                    for 75M community DB search.
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why Exposing{" "}
+                    <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      &quot;**/*&quot;
+                    </code>{" "}
+                    and Omitting{" "}
+                    <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      all_frames
+                    </code>{" "}
+                    Breaks Canvas Stealth
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    In Chrome extension security, setting{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      &quot;resources&quot;: [&quot;assets/*&quot;,
+                      &quot;**/*&quot;, &quot;*&quot;]
+                    </code>{" "}
+                    with{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      use_dynamic_url: false
+                    </code>{" "}
+                    is the worst possible configuration for stealth. It allows any
+                    website or proctoring script to directly fetch StudyX&apos;s
+                    internal bundle files (
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      assets/index-CxS0bAgs.css
+                    </code>
+                    ) to confirm the extension is installed.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Additionally, StudyX v1.0.324 omits{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      all_frames: true
+                    </code>{" "}
+                    from its{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      content_scripts
+                    </code>{" "}
+                    array—meaning it cannot read questions inside the cross-origin
+                    LTI 1.3 iframes used by <strong>Canvas New Quizzes</strong>.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#111111]">
-                      ExamGhost 1-Keystroke Consensus
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">
-                      99.2% Verified · 0 Blur
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-700">
-                    Press hotkey → Queries GPT-5.4 + Claude Sonnet 4.6 + Gemini
-                    3.1 Pro simultaneously inside Closed Shadow DOM with Focus
-                    Shield active.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Panel 3: UltraUsageThresholdModal & Pricing */}
-            <div className="hidden peer-checked/modal:grid md:grid-cols-2 gap-8 p-6 sm:p-10 items-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-violet-50 text-violet-800 text-xs font-bold">
-                  Paywall &amp; Quota Audit
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
-                  Mid-Exam{" "}
-                  <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    UltraUsageThresholdModal
-                  </code>{" "}
-                  Lockouts vs 50 Free Solves
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  StudyX splits its solver into basic <em>StudyX AI</em> and
-                  paid <em>StudyX AI Pro</em>. Once free users exhaust their
-                  daily starter credits, the extension triggers its hardcoded{" "}
-                  <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
-                    UltraUsageThresholdModal
-                  </code>{" "}
-                  popup—demanding a{" "}
-                  <strong>$9.95 to $19.95/month ($120–$240/year)</strong>{" "}
-                  subscription to unlock Pro reasoning.
-                </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  <strong>ExamGhost</strong> never downgrades your AI model.
-                  Every user gets <strong>50 free solves</strong> powered by our
-                  full 3-model consensus engine (no credit card required), with
-                  simple upgrades at <strong>$19/mo</strong>,{" "}
-                  <strong>$99/yr ($8.25/mo)</strong>, or{" "}
-                  <strong>$199 Lifetime</strong>.
-                </p>
-              </div>
-
-              <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
-                <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
-                  Quota &amp; Annual Cost Breakdown
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      StudyX Plus / Pro Subscription
-                    </div>
-                    <div className="text-neutral-400">
-                      $9.95–$19.95/mo • Free tier hits UltraUsageThresholdModal
-                    </div>
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-4 font-mono text-xs">
+                  <div className="text-neutral-400 border-b border-neutral-800 pb-2 flex items-center justify-between">
+                    <span>MV3 Resource &amp; Iframe Audit</span>
+                    <span className="text-emerald-400">Source Verified</span>
                   </div>
-                  <span className="font-mono font-bold text-rose-400 text-sm">
-                    $120–$240 / yr
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-neutral-800">
-                  <div>
-                    <div className="font-bold text-white">
-                      ExamGhost Free Trial
-                    </div>
-                    <div className="text-neutral-400">
-                      50 full-stealth 3-model solves (no card required)
-                    </div>
-                  </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    $0.00
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
-                  <div>
-                    <div className="font-bold text-emerald-300">
-                      ExamGhost Annual / Lifetime
+                  <div className="p-3.5 rounded-lg bg-rose-950/40 border border-rose-500/30 space-y-1.5">
+                    <div className="text-rose-300 font-bold">
+                      StudyX v1.0.324 (217KiB Bundle)
                     </div>
                     <div className="text-neutral-300">
-                      Unlimited 3-model solves • $8.25/mo ($99/yr) • $199
-                      Lifetime
+                      • Exposes [&quot;assets/*&quot;, &quot;**/*&quot;,
+                      &quot;*&quot;] statically
+                    </div>
+                    <div className="text-neutral-300">
+                      • Injects assets/index-CxS0bAgs.css into host page
+                    </div>
+                    <div className="text-rose-400">
+                      • Omits all_frames: true (fails in LTI 1.3 New Quizzes)
                     </div>
                   </div>
-                  <span className="font-mono font-bold text-emerald-400 text-sm">
-                    $99/yr or $199 Once
-                  </span>
+                  <div className="p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
+                    <div className="text-emerald-300 font-bold">
+                      ExamGhost Stealth Engine
+                    </div>
+                    <div className="text-neutral-300">
+                      • 0 public web_accessible_resources exposed
+                    </div>
+                    <div className="text-neutral-300">
+                      • Isolated Closed Shadow DOM v1 container
+                    </div>
+                    <div className="text-emerald-400">
+                      • Native cross-origin LTI 1.3 iframe bridge
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: 10s Crop-and-Wait & Blur Logs */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold">
+                    Workflow &amp; SpeedGrader Audit
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Why Manual Cropping + 75M Community Search Costs You Time and
+                    Focus Logs
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Instead of reading quiz questions in-place, StudyX v1.0.324
+                    requires you to click its extension icon, drag a screenshot
+                    box around every single question, click{" "}
+                    <strong>[Get answer]</strong>, and wait{" "}
+                    <strong>8 to 15 seconds</strong> while it searches 75 million
+                    archived community answers and polls its AI backend.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Because StudyX has zero{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      window.blur
+                    </code>{" "}
+                    protection, interacting with its crop box and modal logs a
+                    12-to-15 second{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      Stopped viewing the Canvas quiz-taking page
+                    </code>{" "}
+                    event on every question. <strong>ExamGhost</strong> solves in
+                    place across <strong>Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1</strong>{" "}
+                    with zero focus loss.
+                  </p>
+                </div>
+
+                <div className="bg-[#faf9f6] rounded-xl p-5 border border-neutral-200 space-y-3">
+                  <div className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                    Per-Question Exam Workflow Comparison
+                  </div>
+                  <div className="p-4 rounded-xl bg-white border border-amber-200 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">
+                        StudyX Crop-and-Poll Workflow
+                      </span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
+                        8–15s + Blur Flag
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-600">
+                      Click crop → Drag rectangle → Click [Get answer] → Fires{" "}
+                      <code className="font-mono">window.blur</code> → Wait 8–15s
+                      for 75M community DB search.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#111111]">
+                        ExamGhost 0.3s In-Tab Solve
+                      </span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">
+                        99.2% Verified · 0 Blur
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-700">
+                      Double-click or Alt+S → Solves in 0.3s inside Closed Shadow DOM HUD with Focus Shield active.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: UltraUsageThresholdModal & Pricing */}
+            <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-6 sm:p-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-violet-50 text-violet-800 text-xs font-bold">
+                    Paywall &amp; Quota Audit
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                    Mid-Exam{" "}
+                    <code className="text-base bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      UltraUsageThresholdModal
+                    </code>{" "}
+                    Lockouts vs 5 Free Solves / Day
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    StudyX splits its solver into basic <em>StudyX AI</em> and
+                    paid <em>StudyX AI Pro</em>. Once free users exhaust their
+                    daily starter credits, the extension triggers its hardcoded{" "}
+                    <code className="text-xs bg-neutral-100 px-1.5 py-0.5 rounded font-mono">
+                      UltraUsageThresholdModal
+                    </code>{" "}
+                    popup—demanding a{" "}
+                    <strong>$9.95 to $19.95/month ($120–$240/year)</strong>{" "}
+                    subscription to unlock Pro reasoning.
+                  </p>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    <strong>ExamGhost</strong> never downgrades your AI model.
+                    Every user gets <strong>5 Free Solves / Day</strong> powered by our
+                    full frontier consensus engine (no credit card required), with
+                    simple upgrades at <strong>$19/mo</strong>,{" "}
+                    <strong>$99/yr ($8.25/mo)</strong>, or{" "}
+                    <strong>$199 Lifetime</strong>.
+                  </p>
+                </div>
+
+                <div className="bg-neutral-900 text-white rounded-xl p-5 border border-neutral-800 space-y-3 text-xs">
+                  <div className="text-neutral-400 font-mono uppercase tracking-wider border-b border-neutral-800 pb-2">
+                    Quota &amp; Annual Cost Breakdown
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">
+                        StudyX Plus / Pro Subscription
+                      </div>
+                      <div className="text-neutral-400">
+                        $9.95–$19.95/mo • Free tier hits UltraUsageThresholdModal
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-rose-400 text-sm">
+                      $120–$240 / yr
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-neutral-800">
+                    <div>
+                      <div className="font-bold text-white">
+                        ExamGhost Free Trial
+                      </div>
+                      <div className="text-neutral-400">
+                        5 Free Solves / Day (auto-refills every 24h, no card required)
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">
+                      $0.00
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 bg-emerald-500/10 rounded-lg px-3 border border-emerald-500/30">
+                    <div>
+                      <div className="font-bold text-emerald-300">
+                        ExamGhost Annual / Lifetime
+                      </div>
+                      <div className="text-neutral-300">
+                        Unlimited 3-model solves • $8.25/mo ($99/yr) • $199
+                        Lifetime
+                      </div>
+                    </div>
+                    <span className="font-mono font-bold text-emerald-400 text-sm">
+                      $99/yr or $199 Once
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -772,8 +813,16 @@ export default function StudyXVsExamGhostPage() {
                       ); $9.95–$19.95/mo
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      50 Free Solves • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
+                      5 Free Solves / Day • $19/mo • $99/yr ($8.25/mo) • $199 Lifetime
                     </td>
+                  </tr>
+                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
                   </tr>
                 </tbody>
               </table>
@@ -897,7 +946,7 @@ export default function StudyXVsExamGhostPage() {
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    You want <strong>50 free solves</strong> and{" "}
+                    You want <strong>5 free solves / day</strong> and{" "}
                     <strong>3-model consensus accuracy (99.2%)</strong> without
                     waiting 10+ seconds per manual crop.
                   </span>
@@ -947,7 +996,7 @@ export default function StudyXVsExamGhostPage() {
                   <span>Skip the 10-Second Crop Lag &amp; Wildcard Leaks</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
-                  Start with 50 Free Solves—Native LTI 1.3 Support &amp; Zero
+                  Start with 5 Free Solves / Day—Native LTI 1.3 Support &amp; Zero
                   Blur Logs.
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-2xl">
@@ -961,7 +1010,7 @@ export default function StudyXVsExamGhostPage() {
                   href="/#pricing"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#ff5722] transition-colors shadow-sm"
                 >
-                  <span>Get 50 Free Solves Now</span>
+                  <span>Get 5 Free Solves / Day Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
@@ -1008,6 +1057,9 @@ export default function StudyXVsExamGhostPage() {
             </div>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
       </main>
 
       <Footer />

@@ -24,18 +24,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CoursologyBeaconBlockDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
     },
-    description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
+    description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/coursology-vs-examghost",
     },
     openGraph: {
         title: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
-        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
+        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/coursology-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
-        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 50 Free Solves.",
+        description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -81,7 +83,7 @@ export default function CoursologyVsExamghostPage() {
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
                         "offers": [
-                            { "@type": "Offer", "name": "Free Trial (50 Solves)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
                             { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
@@ -130,7 +132,7 @@ export default function CoursologyVsExamghostPage() {
                         "name": "How does Coursology pricing compare to ExamGhost pricing?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Coursology requires a recurring subscription (~$19.99–$24.99/mo) to unlock unlimited Chrome answers, discussion drafting, and AI humanizer credits. ExamGhost lets you test 50 Free Question Solves immediately with no credit card required, and offers transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
+                            "text": "Coursology requires a recurring subscription (~$19.99–$24.99/mo) to unlock unlimited Chrome answers, discussion drafting, and AI humanizer credits. ExamGhost lets you test 5 Free Solves / Day immediately with no credit card required, and offers transparent plans: $19/month (Midterm Sprint), $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
                         }
                     },
                     {
@@ -203,7 +205,7 @@ export default function CoursologyVsExamghostPage() {
                                         className="btn-dark px-7 py-4 rounded-full text-sm sm:text-base font-bold shadow-lift inline-flex items-center justify-center gap-2.5 group"
                                     >
                                         <FaChrome className="w-4 h-4 text-[#cdeecb]" aria-hidden="true" />
-                                        <span>Try 50 Free Solves (No Card Needed)</span>
+                                        <span>Try 5 Free Solves / Day (No Card Needed)</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
                                     <Link prefetch={false}
@@ -287,6 +289,8 @@ export default function CoursologyVsExamghostPage() {
                     </div>
                 </header>
 
+                <CoursologyBeaconBlockDemo />
+
                 {/* ============================================================
                     INTERACTIVE WORKFLOW TABS: QUIZ STEALTH VS STUDY SUITE
                 ============================================================ */}
@@ -305,9 +309,9 @@ export default function CoursologyVsExamghostPage() {
                     </div>
 
                     <div className="rounded-[36px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <input type="radio" name="crs_tab" id="crs_stealth" className="sr-only peer/stealth" defaultChecked />
-                        <input type="radio" name="crs_tab" id="crs_features" className="sr-only peer/features" />
-                        <input type="radio" name="crs_tab" id="crs_logs" className="sr-only peer/logs" />
+                        
+                        
+                        
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 p-1.5 rounded-2xl bg-[#f3efea] border border-black/10 mb-8">
                             <label
@@ -365,10 +369,10 @@ export default function CoursologyVsExamghostPage() {
                                         <Camera className="w-5 h-5" />
                                     </div>
                                     <h3 className="font-display font-bold text-lg text-ink mb-2">
-                                        0.3s Snap-It OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)
+                                        0.3s Snap-It OCR (<kbd className="font-mono text-xs">Alt+S</kbd>)
                                     </h3>
                                     <p className="text-sm text-ink-secondary leading-relaxed">
-                                        When a professor embeds an unselectable circuit diagram or Canvas New Quizzes LTI iframe equation, press <kbd className="font-mono text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">⌘+Shift+S</kbd> and drag a crop box. ExamGhost decodes LaTeX math and diagrams in 0.3 seconds.
+                                        When a professor embeds an unselectable circuit diagram or Canvas New Quizzes LTI iframe equation, press <kbd className="font-mono text-xs bg-white px-1.5 py-0.5 rounded border border-black/10">Alt+S</kbd> and drag a crop box. ExamGhost decodes LaTeX math and diagrams in 0.3 seconds.
                                     </p>
                                 </div>
                             </div>
@@ -502,7 +506,7 @@ export default function CoursologyVsExamghostPage() {
                                             <div className="text-xs text-ink-muted">Solve without clicking extension buttons</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
-                                            ✓ Auto-Fill, Highlight, or Clipboard
+                                            ✓ Double-Click Auto-Fill, Highlight, or Clipboard
                                         </td>
                                         <td className="py-4 px-6 text-center text-ink-secondary">
                                             Requires Button Click / Snapshot
@@ -522,7 +526,7 @@ export default function CoursologyVsExamghostPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-4 px-6">
-                                            <div className="font-bold text-ink">Snap-It Vision OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)</div>
+                                            <div className="font-bold text-ink">Snap-It Vision OCR (<kbd className="font-mono text-xs">Alt+S</kbd>)</div>
                                             <div className="text-xs text-ink-muted">Reads locked iframes, graphs &amp; STEM equations</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
@@ -562,13 +566,30 @@ export default function CoursologyVsExamghostPage() {
                                             <div className="text-xs text-ink-muted">Test on real quizzes before paying</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
-                                            50 Free Solves · $19/mo · $99/yr · $199 Life
+                                            5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime
                                         </td>
                                         <td className="py-4 px-6 text-center text-ink-secondary">
                                             Limited Free Tier · ~$19.99–$24.99/mo Sub
                                         </td>
                                     </tr>
-                                </tbody>
+                                
+                                    <tr className="bg-amber-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      Stealth Trigger Workflow &amp; Keyboard Shortcuts
+                    </td>
+                    <td className="py-4 px-5 font-semibold text-emerald-800 bg-emerald-50/40">
+                      ✓ Double-Click text solve • Alt+S Snap-It Vision OCR • Alt+1 fast / Alt+2 detailed / Alt+3 steps • ⌘+Shift+U panic unmount
+                    </td>
+                    <td className="py-4 px-5 text-neutral-600">Manual web portal pasting or unshielded sidebar clicks (No stealth shortcuts)</td>
+                  </tr>
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
                     </div>
@@ -617,10 +638,10 @@ export default function CoursologyVsExamghostPage() {
                                 <span>Built for Timed Quizzes &amp; Midterms</span>
                             </span>
                             <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
-                                Solve Live Quizzes Invisibly—Start With 50 Free Solves.
+                                Solve Live Quizzes Invisibly—Start With 5 Free Solves / Day.
                             </h2>
                             <p className="text-sm text-ink-secondary leading-relaxed">
-                                No injected &ldquo;Rate us&rdquo; banners, no window-blur flags, and zero credit card required to test your first 50 questions.
+                                No injected &ldquo;Rate us&rdquo; banners, no window-blur flags, and zero credit card required to test 5 free questions every day.
                             </p>
                         </div>
                         <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -629,7 +650,7 @@ export default function CoursologyVsExamghostPage() {
                                 className="btn-dark px-6 py-3.5 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                             >
                                 <FaChrome className="w-4 h-4 text-[#cdeecb]" />
-                                <span>Start 50 Free Solves</span>
+                                <span>Start 5 Free Solves / Day</span>
                             </Link>
                             <Link prefetch={false}
                                 href="/canvas-quiz-solver-free-demo"
@@ -682,7 +703,10 @@ export default function CoursologyVsExamghostPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
             <Footer />
         </div>
     );

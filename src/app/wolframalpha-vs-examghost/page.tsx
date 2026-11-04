@@ -22,18 +22,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WolframalphaCauchyEulerDemo } from '@/components/GeneralAiAndSymbolicMathDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "Wolfram|Alpha vs ExamGhost (2026) — 680-Char Cap vs 0.3s AI",
     },
-    description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 50 Free Solves.",
+    description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/wolframalpha-vs-examghost",
     },
     openGraph: {
         title: "Wolfram|Alpha vs ExamGhost (2026) — 680-Char Cap vs 0.3s AI",
-        description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 50 Free Solves.",
+        description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 5 Free Solves / Day.",
         url: "https://examghost.com/wolframalpha-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Wolfram|Alpha vs ExamGhost (2026) — 680-Char Cap vs 0.3s AI",
-        description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 50 Free Solves.",
+        description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -83,7 +85,7 @@ export default function WolframalphaVsExamghostPage() {
                         "offers": [
                             {
                                 "@type": "Offer",
-                                "name": "Free Trial (50 Question Solves)",
+                                "name": "Free Tier (5 Free Solves / Day)",
                                 "price": "0.00",
                                 "priceCurrency": "USD"
                             },
@@ -192,7 +194,7 @@ export default function WolframalphaVsExamghostPage() {
                         "name": "How does Wolfram|Alpha Pro Student pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "According to wolframalpha.com/pro/pricing/students (__NEXT_DATA__), Basic is free with sign-in but explicitly states '(Does not include step-by-step solutions)'. Student Pro costs $9.99/month ($32.75/semester or $60/year), and Student Pro Premium costs $12.00/month ($54/semester or $99/year). ExamGhost gives you 50 Free Question Solves (including full step-by-step explanations and Focus Shield) with no credit card required, plus $19/mo, $99/yr ($8.25/mo across all subjects, not just math), or $199 Lifetime."
+                            "text": "According to wolframalpha.com/pro/pricing/students (__NEXT_DATA__), Basic is free with sign-in but explicitly states '(Does not include step-by-step solutions)'. Student Pro costs $9.99/month ($32.75/semester or $60/year), and Student Pro Premium costs $12.00/month ($54/semester or $99/year). ExamGhost gives you 5 Free Solves / Day (including full step-by-step explanations and Focus Shield) with no credit card required, plus $19/mo, $99/yr ($8.25/mo across all subjects, not just math), or $199 Lifetime."
                         }
                     }
                 ]
@@ -247,7 +249,7 @@ export default function WolframalphaVsExamghostPage() {
                                         className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-[#111111] text-white font-bold hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg group text-sm sm:text-base"
                                     >
                                         <FaChrome className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-                                        <span>Claim 50 Free Solves ($0)</span>
+                                        <span>Claim 5 Free Solves / Day ($0)</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
                                     <Link prefetch={false}
@@ -344,7 +346,7 @@ export default function WolframalphaVsExamghostPage() {
                                         </div>
 
                                         <div className="flex items-center justify-between text-xs font-semibold text-emerald-950 pt-0.5">
-                                            <span>50 Free Solves (Steps Included)</span>
+                                            <span>5 Free Solves / Day (Steps Included)</span>
                                             <span className="font-mono text-emerald-800">$8.25/mo ($99/yr)</span>
                                         </div>
                                     </div>
@@ -371,12 +373,14 @@ export default function WolframalphaVsExamghostPage() {
                             </div>
                             <div className="p-4 rounded-2xl bg-white border border-neutral-200 shadow-sm">
                                 <div className="text-xs text-neutral-500 font-medium mb-1">2026 Student Pricing</div>
-                                <div className="text-sm sm:text-base font-bold text-emerald-800">50 Free · $19/mo · $99/yr</div>
+                                <div className="text-sm sm:text-base font-bold text-emerald-800">5 Free/Day · $19/mo · $99/yr</div>
                                 <div className="text-xs text-neutral-600 mt-0.5">Wolfram Pro: $9.99–$12/mo ($60–$99/yr)</div>
                             </div>
                         </div>
                     </div>
                 </header>
+
+                <WolframalphaCauchyEulerDemo />
 
                 {/* INTERACTIVE PURE-CSS TABS: SYMBOLIC SYNTAX PARSER VS LIVE LMS SOLVER */}
                 <section className="py-16 sm:py-20 bg-neutral-100/80 border-b border-neutral-200">
@@ -394,55 +398,9 @@ export default function WolframalphaVsExamghostPage() {
                             </p>
                         </div>
 
-                        {/* Pure CSS Radio Tabs Container */}
-                        <div>
-                            <input
-                                type="radio"
-                                name="wolfram-audit-tabs"
-                                id="tab-wa-syntax"
-                                className="sr-only peer/syntax"
-                                defaultChecked
-                            />
-                            <input
-                                type="radio"
-                                name="wolfram-audit-tabs"
-                                id="tab-wa-stealth"
-                                className="sr-only peer/stealth"
-                            />
-                            <input
-                                type="radio"
-                                name="wolfram-audit-tabs"
-                                id="tab-wa-scope"
-                                className="sr-only peer/scope"
-                            />
-
-                            {/* Tab Labels */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-3xl mx-auto mb-8 bg-white p-2 rounded-2xl border border-neutral-200 shadow-sm">
-                                <label
-                                    htmlFor="tab-wa-syntax"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/syntax:bg-[#111111] peer-checked/syntax:text-white peer-checked/syntax:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Calculator className="w-4 h-4 shrink-0" />
-                                    <span>1. 680-Char Syntax Wall</span>
-                                </label>
-                                <label
-                                    htmlFor="tab-wa-stealth"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/stealth:bg-[#111111] peer-checked/stealth:text-white peer-checked/stealth:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <EyeOff className="w-4 h-4 shrink-0" />
-                                    <span>2. New-Tab Blur &amp; 1.5s Delay</span>
-                                </label>
-                                <label
-                                    htmlFor="tab-wa-scope"
-                                    className="cursor-pointer rounded-xl py-3 px-4 text-center text-xs sm:text-sm font-bold transition-all text-neutral-600 hover:text-[#111111] peer-checked/scope:bg-[#111111] peer-checked/scope:text-white peer-checked/scope:shadow-sm flex items-center justify-center gap-2"
-                                >
-                                    <Cpu className="w-4 h-4 shrink-0" />
-                                    <span>3. Math-Only vs All Majors</span>
-                                </label>
-                            </div>
-
+                        <div className="space-y-8">
                             {/* PANEL 1: 680-CHAR SYNTAX WALL */}
-                            <div className="hidden peer-checked/syntax:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -483,7 +441,7 @@ export default function WolframalphaVsExamghostPage() {
                             </div>
 
                             {/* PANEL 2: NEW-TAB BLUR & 1.5S DELAY */}
-                            <div className="hidden peer-checked/stealth:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -524,7 +482,7 @@ export default function WolframalphaVsExamghostPage() {
                             </div>
 
                             {/* PANEL 3: MATH-ONLY VS ALL MAJORS */}
-                            <div className="hidden peer-checked/scope:grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                                 <div className="p-6 sm:p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-mono font-bold mb-4">
@@ -551,10 +509,10 @@ export default function WolframalphaVsExamghostPage() {
                                             <span>ExamGhost All-Majors Pass</span>
                                         </div>
                                         <h3 className="text-xl sm:text-2xl font-bold font-display text-white mb-3">
-                                            50 Free Step-by-Step Solves ($0) + Every University Course for $8.25/mo
+                                            5 Free/Day Step-by-Step Solves ($0) + Every University Course for $8.25/mo
                                         </h3>
                                         <p className="text-sm text-white/85 leading-relaxed mb-5">
-                                            ExamGhost includes full step-by-step derivations right inside your <strong>50 Free Question Solves ($0)</strong>—with no credit card required. When you upgrade for <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime</strong>, one pass covers Calculus, Linear Algebra, Physics, Organic Chemistry, Nursing, Accounting, CS, and Gen-Ed Humanities.
+                                            ExamGhost includes full step-by-step derivations right inside your <strong>5 Free Solves / Day ($0)</strong>—with no credit card required. When you upgrade for <strong>$19/mo</strong>, <strong>$99/yr ($8.25/mo)</strong>, or <strong>$199 Lifetime</strong>, one pass covers Calculus, Linear Algebra, Physics, Organic Chemistry, Nursing, Accounting, CS, and Gen-Ed Humanities.
                                         </p>
                                     </div>
                                     <div className="flex flex-wrap gap-3">
@@ -562,7 +520,7 @@ export default function WolframalphaVsExamghostPage() {
                                             href="/#pricing"
                                             className="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#111111] font-bold text-xs sm:text-sm transition-colors inline-flex items-center gap-1.5"
                                         >
-                                            <span>Claim 50 Free Solves ($0)</span>
+                                            <span>Claim 5 Free Solves / Day ($0)</span>
                                             <ArrowRight className="w-4 h-4" />
                                         </Link>
                                         <Link prefetch={false}
@@ -652,6 +610,90 @@ export default function WolframalphaVsExamghostPage() {
                     </div>
                 </section>
 
+                {/* 6 MODERN HOTKEYS COMPARISON */}
+                <section className="py-12 bg-white border-y border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                6 Modern Stealth Hotkeys for Live Exams
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Instantly solve, extract diagrams, or wipe RAM in under 0.3s without touching your mouse or triggering window.blur.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Double-Click</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Instant Inline Solve</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">0.3s Shadow DOM HUD</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+S</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Hybrid Vision Snip</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Captures locked diagrams</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+1</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Ghost Dot Mode</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Zero UI footprint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+2</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Smart Highlight</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Discreet answer tint</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">Alt+3</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Sidebar Derivation</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Step-by-step proofs</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-center">
+                                <kbd className="px-2 py-1 bg-white border border-neutral-300 rounded text-xs font-mono font-bold text-[#111111] shadow-sm">⌘+Shift+U</kbd>
+                                <span className="block text-xs font-semibold text-[#111111] mt-2">Panic RAM Wipe</span>
+                                <span className="block text-[11px] text-neutral-500 mt-0.5">Instant emergency close</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 2-IN-1 FRONTIER AI MODELS */}
+                <section className="py-12 bg-neutral-50 border-b border-neutral-200">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider block mb-2">2-in-1 Study &amp; Homework AI Workspace</span>
+                            <h3 className="text-xl sm:text-2xl font-bold font-display text-[#111111] mb-2">
+                                Powered by 3 Frontier AI Models
+                            </h3>
+                            <p className="text-sm text-neutral-600">
+                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
+                                <p className="text-xs text-neutral-600 leading-relaxed">
+                                    Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* SIDE-BY-SIDE COMPARISON TABLE + COLLAPSIBLE TECHNICAL AUDIT DRAWER */}
                 <section className="py-16 bg-white border-y border-neutral-200">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -714,16 +756,23 @@ export default function WolframalphaVsExamghostPage() {
                                     <tr className="bg-[#FAF8F5]/60">
                                         <td className="py-3.5 px-4 font-semibold text-[#111111]">Free Step-by-Step Solutions</td>
                                         <td className="py-3.5 px-4 text-neutral-600 text-xs">Included on free tier without a credit card</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">50 Free Solves (Full Steps Included)</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">5 Free Solves / Day (Full Steps Included)</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">Excluded on Free Basic Plan</td>
                                     </tr>
                                     <tr className="bg-white">
                                         <td className="py-3.5 px-4 font-semibold text-[#111111]">Student Pricing (2026)</td>
                                         <td className="py-3.5 px-4 text-neutral-600 text-xs">Monthly, annual, and lifetime options</td>
-                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Life</td>
+                                        <td className="py-3.5 px-4 text-emerald-800 font-bold">$19/mo · $99/yr ($8.25/mo) · $199 Lifetime</td>
                                         <td className="py-3.5 px-4 text-neutral-700">$9.99–$12/mo ($32.75–$54/sem | $60–$99/yr)</td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
+                    <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -813,7 +862,7 @@ export default function WolframalphaVsExamghostPage() {
                                     href="/#pricing"
                                     className="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#111111] font-bold text-xs sm:text-sm transition-colors inline-flex items-center gap-1.5"
                                 >
-                                    <span>Claim 50 Free Solves</span>
+                                    <span>Claim 5 Free Solves / Day</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
                                 <Link prefetch={false}
@@ -903,7 +952,7 @@ export default function WolframalphaVsExamghostPage() {
                                 <ChevronDown className="w-5 h-5 text-neutral-600 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                                According to <code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">wolframalpha.com/pro/pricing/students</code> (<code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">__NEXT_DATA__</code>), Basic is free with sign-in but explicitly states <em>&ldquo;(Does not include step-by-step solutions)&rdquo;</em>. Student Pro costs <strong>$9.99/month</strong> ($32.75/semester or $60/year), and Student Pro Premium costs <strong>$12.00/month</strong> ($54/semester or $99/year). ExamGhost gives you <strong>50 Free Question Solves</strong> (including full step-by-step explanations and Focus Shield) with no credit card required, plus <strong>$19/mo</strong>, <strong>$99/yr</strong> ($8.25/mo across all subjects, not just math), or <strong>$199 Lifetime</strong>.
+                                According to <code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">wolframalpha.com/pro/pricing/students</code> (<code className="font-mono text-xs bg-neutral-100 px-1 py-0.5 rounded">__NEXT_DATA__</code>), Basic is free with sign-in but explicitly states <em>&ldquo;(Does not include step-by-step solutions)&rdquo;</em>. Student Pro costs <strong>$9.99/month</strong> ($32.75/semester or $60/year), and Student Pro Premium costs <strong>$12.00/month</strong> ($54/semester or $99/year). ExamGhost gives you <strong>5 Free Solves / Day</strong> (including full step-by-step explanations and Focus Shield) with no credit card required, plus <strong>$19/mo</strong>, <strong>$99/yr</strong> ($8.25/mo across all subjects, not just math), or <strong>$199 Lifetime</strong>.
                             </p>
                         </details>
                     </div>
@@ -922,7 +971,7 @@ export default function WolframalphaVsExamghostPage() {
                                     Solve Word Problems, Graphs &amp; Equations In-Tab in 0.3s
                                 </h2>
                                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                                    Start with 50 Free Step-by-Step Solves ($0, no card required). Zero 680-character limits, zero artificial upload delays, and zero Canvas tab-switch logs.
+                                    Start with 5 Free/Day Step-by-Step Solves ($0, no card required). Zero 680-character limits, zero artificial upload delays, and zero Canvas tab-switch logs.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -931,7 +980,7 @@ export default function WolframalphaVsExamghostPage() {
                                     className="px-6 py-3.5 rounded-2xl bg-[#111111] hover:bg-neutral-800 text-white font-bold text-xs sm:text-sm transition-all inline-flex items-center gap-2 shadow-sm"
                                 >
                                     <FaChrome className="w-4 h-4 text-emerald-400" />
-                                    <span>Claim 50 Free Solves ($0)</span>
+                                    <span>Claim 5 Free Solves / Day ($0)</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
                                 <Link prefetch={false}
@@ -992,7 +1041,10 @@ export default function WolframalphaVsExamghostPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>

@@ -1,339 +1,350 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
-    Camera, Sparkles, CheckCircle2, RotateCcw, 
-    ArrowRight, Check, Eye, Lock, FileText, 
-    Sliders, Zap, ShieldCheck, ChevronRight
+    Camera, CheckCircle2, RotateCcw, 
+    Check, Crop, BookOpen, Copy, Sparkles
 } from 'lucide-react';
 
+interface SnipSample {
+    id: 'chemistry' | 'math' | 'locked';
+    label: string;
+    dotColor: string;
+    url: string;
+    course: string;
+    questionNum: string;
+    points: string;
+    prompt: string;
+    options: string[];
+    correctIndex: number;
+    explanation: string;
+}
+
+const SNIP_SAMPLES: SnipSample[] = [
+    {
+        id: 'chemistry',
+        label: 'Organic Chemistry',
+        dotColor: 'bg-emerald-500',
+        url: 'moodle.university.edu/mod/quiz/attempt.php?attempt=4819',
+        course: 'Organic Chemistry II · Final Exam',
+        questionNum: 'Question 23 of 40',
+        points: '3.0 pts',
+        prompt: 'Which reagent best converts a secondary alcohol to a ketone without causing over-oxidation?',
+        options: [
+            'KMnO₄ / H₂SO₄ (hot, concentrated)',
+            'PCC (Pyridinium chlorochromate) in CH₂Cl₂',
+            'Jones reagent (CrO₃ / H₂SO₄ in acetone)',
+            'LiAlH₄ in anhydrous ether'
+        ],
+        correctIndex: 1,
+        explanation: 'PCC is a mild oxidizing agent in anhydrous CH₂Cl₂ that selectively oxidizes secondary alcohols to ketones without C–C bond cleavage or over-oxidation.'
+    },
+    {
+        id: 'math',
+        label: 'Calculus & LaTeX',
+        dotColor: 'bg-blue-500',
+        url: 'canvas.university.edu/courses/MATH-202/quizzes/9182',
+        course: 'Calculus II · Integration Exam',
+        questionNum: 'Question 8 of 25',
+        points: '4.0 pts',
+        prompt: 'Evaluate the definite integral ∫₀^(π/2) cos(x) · e^(sin x) dx:',
+        options: [
+            'e − 1',
+            'e^(π/2) − 1',
+            '1',
+            'e + 1'
+        ],
+        correctIndex: 0,
+        explanation: 'Using u-substitution with u = sin(x) and du = cos(x) dx changes the limits from [0, π/2] to [0, 1], giving ∫₀¹ e^u du = e¹ − e⁰ = e − 1.'
+    },
+    {
+        id: 'locked',
+        label: 'Locked Canvas Quiz',
+        dotColor: 'bg-purple-500',
+        url: 'canvas.university.edu/courses/BIO-304/quizzes/5510',
+        course: 'Cellular Neurobiology · Midterm',
+        questionNum: 'Question 12 of 30',
+        points: '2.5 pts',
+        prompt: 'During the rising phase of a neuronal action potential, rapid depolarization is driven by:',
+        options: [
+            'Efflux of K⁺ ions through voltage-gated potassium channels',
+            'Influx of Na⁺ ions through voltage-gated sodium channels',
+            'Activation of the Na⁺/K⁺-ATPase pump',
+            'Influx of Cl⁻ ions through GABA-A receptors'
+        ],
+        correctIndex: 1,
+        explanation: 'Threshold depolarization opens fast voltage-gated Na⁺ channels, causing a rapid inward Na⁺ current that drives membrane potential toward +40 mV.'
+    }
+];
+
 export default function DemoVideo() {
-    const [step, setStep] = useState<1 | 2 | 3 | 4>(2);
-    const [isSniping, setIsSniping] = useState(false);
-    const [answerApplied, setAnswerApplied] = useState(false);
-    const [activeTab, setActiveTab] = useState<'chemistry' | 'math' | 'diagram'>('chemistry');
+    const [activeSampleId, setActiveSampleId] = useState<'chemistry' | 'math' | 'locked'>('chemistry');
+    const [snipMode, setSnipMode] = useState<'stealth' | 'explain'>('explain');
+    const [isScanning, setIsScanning] = useState(false);
+    const [copied, setCopied] = useState(false);
 
-    // Auto-advance loop if not manually clicked
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setStep((prev) => (prev >= 4 ? 1 : ((prev + 1) as 1 | 2 | 3 | 4)));
-        }, 4000);
-        return () => clearInterval(timer);
-    }, []);
+    const sample = SNIP_SAMPLES.find(s => s.id === activeSampleId) || SNIP_SAMPLES[0];
 
-    // Sync answerApplied state with step 4
-    useEffect(() => {
-        if (step === 4) {
-            setAnswerApplied(true);
-        } else if (step === 1) {
-            setAnswerApplied(false);
-        }
-    }, [step]);
-
-    const handleTriggerSnip = () => {
-        setAnswerApplied(false);
-        setStep(1);
-        setTimeout(() => setStep(2), 600);
-        setTimeout(() => setStep(3), 1600);
+    const handleSimulateSnip = () => {
+        setIsScanning(true);
         setTimeout(() => {
-            setStep(4);
-            setAnswerApplied(true);
-        }, 2800);
+            setIsScanning(false);
+        }, 420);
+    };
+
+    const handleCopy = () => {
+        setCopied(true);
+        if (typeof navigator !== 'undefined' && navigator.clipboard) {
+            navigator.clipboard.writeText(sample.options[sample.correctIndex]).catch(() => {});
+        }
+        setTimeout(() => setCopied(false), 1800);
     };
 
     return (
         <section className="py-20 md:py-32 bg-cream text-ink border-b border-black/5" id="demo">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
                     <p className="eyebrow justify-center mb-3">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>SNAP-IT SNIPING DEMO</span>
+                        <span>SNIP A REGION · ALT+S HYBRID VISION + DOM</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        Screenshot & Draw to Solve.<br />
+                        Screenshot &amp; Draw to Solve.<br />
                         <span className="text-ink-muted font-normal">(“Snap It”)</span>
                     </h2>
-                    <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
-                        Can’t double-click a question? No problem. Hit <kbd className="px-2 py-0.5 rounded bg-white border border-black/10 text-xs font-mono font-bold text-ink shadow-xs">⌘ + Shift + S</kbd> or right-click → <span className="font-semibold text-ink">Solve with Screenshot</span>. Drag a crop box over any diagram, equation, or locked text and let AI solve it instantly.
+                    <p className="max-w-2xl mx-auto text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
+                        Locked text, complex math, or diagrams? Press <kbd className="px-2 py-0.5 rounded bg-white border border-black/10 text-xs font-mono font-bold text-ink shadow-2xs">Alt + S</kbd> and drag a box over any question—ExamGhost combines Vision OCR with page text and auto-fills the answer right inside your crop.
                     </p>
 
-                    {/* Subject Pills */}
+                    {/* Clickable Subject Switcher Pills */}
                     <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-black/10 text-ink shadow-xs flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            Chemistry Reagents
-                        </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-black/10 text-ink shadow-xs flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                            Calculus & LaTeX
-                        </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-black/10 text-ink shadow-xs flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                            Locked Canvas Quizzes
-                        </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-black/10 text-ink shadow-xs flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                            Scanned Worksheets & PDFs
-                        </span>
+                        {SNIP_SAMPLES.map((item) => {
+                            const active = item.id === activeSampleId;
+                            return (
+                                <button
+                                    key={item.id}
+                                    type="button"
+                                    onClick={() => {
+                                        setActiveSampleId(item.id);
+                                        handleSimulateSnip();
+                                    }}
+                                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all flex items-center gap-2 cursor-pointer ${
+                                        active
+                                            ? 'bg-ink text-white border-ink shadow-xs'
+                                            : 'bg-white border-black/10 text-ink hover:border-black/25'
+                                    }`}
+                                >
+                                    <span className={`w-1.5 h-1.5 rounded-full ${item.dotColor}`} />
+                                    <span>{item.label}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
 
-                {/* macOS Interactive Sniping Sandbox Frame */}
-                <div className="max-w-4xl mx-auto rounded-[32px] sm:rounded-[40px] bg-white border border-black/10 shadow-lift overflow-hidden">
+                {/* macOS Snip Sandbox Frame */}
+                <div className="max-w-4xl mx-auto rounded-[32px] bg-white border border-black/10 shadow-lift overflow-hidden">
                     
                     {/* Window Title Bar */}
-                    <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-6 py-3.5 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
-                            <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
-                            <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
-                            <span className="text-xs font-semibold text-ink-muted ml-2 font-mono truncate">
-                                🔒 moodle.university.edu/mod/quiz/attempt.php?attempt=4819
+                    <div className="bg-[#f7f5f0] border-b border-black/5 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                            <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block shrink-0" />
+                            <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block shrink-0" />
+                            <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block shrink-0" />
+                            <span className="text-xs font-medium text-ink-muted ml-2 font-mono truncate hidden sm:inline-block">
+                                {sample.url}
                             </span>
                         </div>
-                        <div className="flex items-center gap-2">
+
+                        <div className="flex items-center gap-2 ml-auto">
+                            {/* Mode Switcher */}
+                            <div className="inline-flex bg-white p-0.5 rounded-full border border-black/10 text-[11px] font-semibold">
+                                <button
+                                    type="button"
+                                    onClick={() => setSnipMode('stealth')}
+                                    className={`px-2.5 py-1 rounded-full transition-colors cursor-pointer ${
+                                        snipMode === 'stealth' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                                    }`}
+                                >
+                                    Stealth (Alt+2)
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSnipMode('explain')}
+                                    className={`px-2.5 py-1 rounded-full transition-colors cursor-pointer ${
+                                        snipMode === 'explain' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                                    }`}
+                                >
+                                    Explain (Alt+3)
+                                </button>
+                            </div>
+
                             <button
-                                onClick={handleTriggerSnip}
-                                className="px-2.5 py-1 rounded-lg bg-ink text-white text-[11px] font-bold flex items-center gap-1.5 hover:bg-black transition-colors"
+                                type="button"
+                                onClick={handleSimulateSnip}
+                                className="px-3 py-1.5 rounded-full bg-ink text-white text-xs font-bold flex items-center gap-1.5 hover:bg-black/85 transition-colors cursor-pointer"
                             >
-                                <Camera className="w-3 h-3 text-emerald-400" />
-                                <span>Simulate ⌘+Shift+S</span>
+                                <Camera className="w-3.5 h-3.5 text-[#3DDC97]" />
+                                <span>Simulate Alt+S</span>
                             </button>
                         </div>
                     </div>
 
-                    {/* Interactive Snip Simulation Viewport */}
-                    <div className="relative bg-[#111319] text-white p-5 sm:p-8 min-h-[460px] flex flex-col justify-between overflow-hidden">
-                        
-                        {/* Overlay Darkening when in Crop Mode (Step 1 & 2) */}
-                        <div 
-                            className={`absolute inset-0 bg-black/60 backdrop-blur-[1px] transition-opacity duration-300 z-10 pointer-events-none ${
-                                step >= 1 && step <= 3 ? 'opacity-100' : 'opacity-0'
-                            }`} 
-                        />
+                    {/* Crisp, High-Contrast Snip Viewport */}
+                    <div className="bg-[#f1efe9] p-5 sm:p-8 relative">
 
-                        {/* Top Bar inside simulated quiz */}
-                        <div className="relative z-0 flex items-center justify-between border-b border-white/10 pb-3 mb-5">
-                            <div>
-                                <span className="text-xs font-mono text-white/75 block">Organic Chemistry II · Final Exam</span>
-                                <span className="text-sm font-semibold text-white">Question 23 of 40 (3.0 pts)</span>
-                            </div>
-                            <span className="text-xs font-mono px-2.5 py-1 rounded bg-white/10 text-white/80">
-                                Time Remaining: 38:42
+                        {/* Top LMS Course Bar */}
+                        <div className="flex items-center justify-between text-xs text-ink-muted mb-4 px-1">
+                            <span className="font-semibold text-ink/75">{sample.course}</span>
+                            <span className="font-mono bg-white/80 px-2.5 py-1 rounded-full border border-black/5 text-ink/75">
+                                {sample.questionNum} · {sample.points}
                             </span>
                         </div>
 
-                        {/* Question Area & Crop Selector */}
-                        <div className="relative z-0 max-w-2xl mx-auto w-full my-auto">
+                        {/* Active Snip Crop Region (#3DDC97 Dashed Selection Box) */}
+                        <div className="relative rounded-2xl border-2 border-dashed border-[#10b981] bg-white p-5 sm:p-6 shadow-[0_0_0_6px_rgba(16,185,129,0.08)] transition-all">
                             
-                            {/* The Question Box */}
-                            <div className="relative p-4 rounded-2xl bg-white/5 border border-white/10 mb-4">
-                                
-                                {/* Dashed Snip Crop Box (Active in Step 2 & 3) */}
-                                {(step === 2 || step === 3) && (
-                                    <div className="absolute -inset-2 border-2 border-dashed border-emerald-400 rounded-2xl bg-emerald-500/10 pointer-events-none z-20 transition-all duration-300 animate-pulse">
-                                        <div className="absolute -top-3 left-4 bg-white text-emerald-950 border border-emerald-400 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
-                                            <Camera className="w-3 h-3 text-emerald-700" />
-                                            <span>Snip Area · OCR Active</span>
-                                        </div>
-                                        {/* Crop Corner Anchors */}
-                                        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border border-emerald-600 rounded-xs" />
-                                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white border border-emerald-600 rounded-xs" />
-                                        <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white border border-emerald-600 rounded-xs" />
-                                        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white border border-emerald-600 rounded-xs" />
-                                    </div>
-                                )}
-
-                                <p className="text-sm sm:text-base font-medium text-white/90 leading-relaxed mb-4">
-                                    <span className="font-bold text-amber-400 mr-2">Q23.</span>
-                                    Which of the following reagents would best accomplish the conversion of a secondary alcohol to a ketone without causing over-oxidation?
-                                </p>
-
-                                {/* Options */}
-                                <div className="space-y-2">
-                                    {[
-                                        { key: 'A', text: 'KMnO₄ / H₂SO₄ (hot, concentrated)', correct: false },
-                                        { key: 'B', text: 'PCC (Pyridinium chlorochromate) in CH₂Cl₂', correct: true },
-                                        { key: 'C', text: 'Jones reagent (CrO₃ / H₂SO₄ in acetone)', correct: false },
-                                        { key: 'D', text: 'LiAlH₄ in anhydrous ether', correct: false }
-                                    ].map((opt) => {
-                                        const isSolved = opt.correct && answerApplied;
-                                        return (
-                                            <div 
-                                                key={opt.key}
-                                                className={`p-3 rounded-xl border transition-all duration-300 flex items-center justify-between text-xs sm:text-sm ${
-                                                    isSolved
-                                                        ? 'bg-emerald-500/20 border-emerald-400 text-white shadow-lg shadow-emerald-500/20'
-                                                        : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10'
-                                                }`}
-                                            >
-                                                <div className="flex items-center gap-3">
-                                                    <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold border transition-colors ${
-                                                        isSolved 
-                                                            ? 'bg-emerald-400 text-black border-emerald-300' 
-                                                            : 'border-white/30 text-white/60'
-                                                    }`}>
-                                                        {isSolved ? '✓' : opt.key}
-                                                    </span>
-                                                    <span>{opt.text}</span>
-                                                </div>
-                                                {isSolved && (
-                                                    <span className="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                                                        Auto-Selected
-                                                    </span>
-                                                )}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Step 3 Loader: AI Analyzing Screen */}
-                        {step === 3 && (
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-black/85 backdrop-blur-md border border-emerald-500/30 rounded-full px-5 py-2.5 flex items-center gap-3 shadow-2xl animate-fade-in">
-                                <div className="flex items-center gap-1.5">
-                                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                                </div>
-                                <span className="text-xs font-semibold text-emerald-300">
-                                    Analyzing screenshot & chemistry reagents...
+                            {/* Extension Snip Badge */}
+                            <div className="absolute -top-3 left-5 bg-ink text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-xs flex items-center gap-1.5">
+                                <Crop className="w-3 h-3 text-[#3DDC97]" />
+                                <span>
+                                    {isScanning ? 'Capturing Region + DOM Text...' : 'Snip Region Captured (Alt+S)'}
                                 </span>
                             </div>
-                        )}
 
-                        {/* Step 4 Popup: Step-by-Step Reasoner Drawer (Explain Mode) */}
-                        {step === 4 && (
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-[92%] sm:w-[420px] bg-[#1a1b24] border border-white/20 rounded-2xl p-5 shadow-2xl shadow-black/80 animate-fade-in">
-                                <div className="flex items-center justify-between pb-2.5 border-b border-white/10 mb-3">
-                                    <div className="flex items-center gap-2">
-                                        <span className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">
-                                            ✓
-                                        </span>
-                                        <span className="text-xs font-bold text-white uppercase tracking-wider">
-                                            ExamGhost Solution
-                                        </span>
-                                    </div>
-                                    <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                                        Answer Identified
-                                    </span>
-                                </div>
+                            {/* 4 Crop Corner Handles */}
+                            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border-2 border-[#10b981] rounded-xs" />
+                            <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white border-2 border-[#10b981] rounded-xs" />
+                            <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white border-2 border-[#10b981] rounded-xs" />
+                            <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white border-2 border-[#10b981] rounded-xs" />
 
-                                <div className="space-y-2.5 text-left mb-4">
-                                    <div>
-                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/75 block mb-1">
-                                            Correct Choice
-                                        </span>
-                                        <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-300 flex items-center gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                                            <span>B. PCC (Pyridinium chlorochromate) in CH₂Cl₂</span>
+                            {/* Question Prompt */}
+                            <p className="font-display text-base sm:text-lg font-bold text-ink leading-snug mb-4 mt-1">
+                                {sample.prompt}
+                            </p>
+
+                            {/* Options List */}
+                            <div className="space-y-2.5">
+                                {sample.options.map((optText, idx) => {
+                                    const isCorrect = idx === sample.correctIndex;
+                                    const solvedNow = isCorrect && !isScanning;
+                                    const letter = String.fromCharCode(65 + idx);
+
+                                    return (
+                                        <div
+                                            key={idx}
+                                            className={`p-3.5 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-between gap-3 ${
+                                                solvedNow
+                                                    ? 'bg-[#cdeecb]/50 border-emerald-500 text-ink shadow-2xs'
+                                                    : 'bg-[#faf8f5] border-black/10 text-ink/80'
+                                            }`}
+                                        >
+                                            <div className="flex items-center gap-3 min-w-0">
+                                                <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 border ${
+                                                    solvedNow
+                                                        ? 'bg-ink text-white border-ink'
+                                                        : 'bg-white text-ink-muted border-black/20'
+                                                }`}>
+                                                    {solvedNow ? '✓' : letter}
+                                                </span>
+                                                <span className="leading-snug">{optText}</span>
+                                            </div>
+
+                                            {solvedNow && (
+                                                <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 shrink-0">
+                                                    <Check className="w-3 h-3 stroke-[2.5]" />
+                                                    <span>Auto-Filled</span>
+                                                </span>
+                                            )}
                                         </div>
-                                    </div>
-
-                                    <div>
-                                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/75 block mb-1">
-                                            Step-by-Step Reasoning
-                                        </span>
-                                        <p className="text-xs text-white/80 leading-relaxed bg-white/5 p-2.5 rounded-xl border border-white/5">
-                                            PCC is a mild oxidizing agent that selectively oxidizes secondary alcohols to ketones. Unlike KMnO₄ or Jones reagent, PCC halts at the ketone stage without cleaving C-C bonds or causing over-oxidation. LiAlH₄ is a reducing agent.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <button 
-                                        onClick={() => setStep(2)}
-                                        className="flex-1 py-2 text-xs font-semibold rounded-xl bg-white/10 text-white/80 hover:bg-white/15 transition-colors"
-                                    >
-                                        Close
-                                    </button>
-                                    <button 
-                                        onClick={() => setAnswerApplied(true)}
-                                        className="flex-1 py-2 text-xs font-bold rounded-xl bg-emerald-500 text-black hover:bg-emerald-400 transition-colors flex items-center justify-center gap-1 shadow-sm"
-                                    >
-                                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                                        <span>Apply Answer</span>
-                                    </button>
-                                </div>
+                                    );
+                                })}
                             </div>
-                        )}
 
-                        {/* Interactive 4-Step Visual Timeline */}
-                        <div className="relative z-0 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
-                            <div className="flex items-center gap-2 sm:gap-4">
-                                {[
-                                    { s: 1, label: '1. Press shortcut (⌘+Shift+S)' },
-                                    { s: 2, label: '2. Crop question' },
-                                    { s: 3, label: '3. AI analyzes' },
-                                    { s: 4, label: '4. Answer applied' }
-                                ].map((item) => (
-                                    <button
-                                        key={item.s}
-                                        onClick={() => setStep(item.s as 1 | 2 | 3 | 4)}
-                                        className={`flex items-center gap-1.5 transition-colors ${
-                                            step === item.s 
-                                                ? 'text-emerald-400 font-bold' 
-                                                : step > item.s 
-                                                    ? 'text-white/80' 
-                                                    : 'text-white/75'
-                                        }`}
-                                    >
-                                        <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${
-                                            step === item.s 
-                                                ? 'bg-emerald-400 text-black' 
-                                                : step > item.s 
-                                                    ? 'bg-white/20 text-white' 
-                                                    : 'bg-white/10 text-white/80'
-                                        }`}>
-                                            {item.s}
-                                        </span>
-                                        <span className="hidden sm:inline">{item.label}</span>
-                                    </button>
-                                ))}
+                            {/* Explain Mode Slide-In Rationale Banner (Shown when Explain Alt+3 is selected) */}
+                            {!isScanning && snipMode === 'explain' && (
+                                <div className="mt-4 p-4 rounded-xl bg-[#0a0e14] text-white border border-[#3DDC97]/40 shadow-md">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                                        <div className="flex items-center gap-2 text-xs font-bold text-[#3DDC97]">
+                                            <BookOpen className="w-3.5 h-3.5 shrink-0" />
+                                            <span>Explain HUD (Alt+3) · Answer {String.fromCharCode(65 + sample.correctIndex)}</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onClick={handleCopy}
+                                            className="inline-flex items-center gap-1 text-[11px] font-semibold text-white/80 hover:text-white bg-white/10 px-2.5 py-0.5 rounded-md cursor-pointer"
+                                        >
+                                            <Copy className="w-3 h-3" />
+                                            <span>{copied ? 'Copied!' : 'Copy'}</span>
+                                        </button>
+                                    </div>
+                                    <p className="text-xs text-white/85 leading-relaxed">
+                                        {sample.explanation}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Clean 3-Step Status Bar */}
+                        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-ink-muted px-1">
+                            <div className="flex flex-wrap items-center gap-4 font-semibold text-ink/80">
+                                <span className="flex items-center gap-1.5">
+                                    <span className="w-4 h-4 rounded-full bg-ink text-white text-[10px] flex items-center justify-center font-bold">1</span>
+                                    <span>Press Alt+S</span>
+                                </span>
+                                <span className="flex items-center gap-1.5">
+                                    <span className="w-4 h-4 rounded-full bg-ink text-white text-[10px] flex items-center justify-center font-bold">2</span>
+                                    <span>Drag box over question</span>
+                                </span>
+                                <span className="flex items-center gap-1.5 text-emerald-800">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                    <span>Auto-filled inside crop in 0.8s</span>
+                                </span>
                             </div>
 
                             <button
-                                onClick={handleTriggerSnip}
-                                className="flex items-center gap-1 text-[11px] text-white/75 hover:text-white transition-colors"
+                                type="button"
+                                onClick={handleSimulateSnip}
+                                className="inline-flex items-center gap-1 text-xs font-semibold text-ink hover:underline cursor-pointer"
                             >
-                                <RotateCcw className="w-3 h-3" />
-                                <span>Replay</span>
+                                <RotateCcw className="w-3.5 h-3.5" />
+                                <span>Replay Snip</span>
                             </button>
                         </div>
 
                     </div>
 
-                    {/* Bottom Features Strip */}
-                    <div className="bg-[#faf8f5] p-5 sm:p-6 border-t border-black/5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                        <div className="flex flex-col items-center">
-                            <span className="text-xs font-bold text-ink">Bypasses Text-Selection Locks</span>
-                            <span className="text-[11px] text-ink-muted">Canvas-rendered math & locked PDFs</span>
+                    {/* Clean 3-Column Bottom Strip */}
+                    <div className="bg-white p-5 border-t border-black/5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div className="text-xs font-bold text-ink">Hybrid Vision + DOM Fusion</div>
+                            <div className="text-[11px] text-ink-muted mt-0.5">Combines Retina screenshot with page text</div>
                         </div>
-                        <div className="flex flex-col items-center border-y sm:border-y-0 sm:border-x border-black/5 py-2 sm:py-0">
-                            <span className="text-xs font-bold text-ink">Under 350ms Vision OCR</span>
-                            <span className="text-[11px] text-ink-muted">In-memory screenshot, zero file uploads</span>
+                        <div className="border-y sm:border-y-0 sm:border-x border-black/5 py-2 sm:py-0">
+                            <div className="text-xs font-bold text-ink">In-Box Auto-Fill</div>
+                            <div className="text-[11px] text-ink-muted mt-0.5">Selects radios &amp; inputs inside your crop</div>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-xs font-bold text-ink">Reasoning Step-by-Step</span>
-                            <span className="text-[11px] text-ink-muted">Shows formula proof before applying</span>
+                        <div>
+                            <div className="text-xs font-bold text-ink">Works on Locked &amp; Image Quizzes</div>
+                            <div className="text-[11px] text-ink-muted mt-0.5">Solves diagrams, PDFs &amp; unselectable math</div>
                         </div>
                     </div>
 
                 </div>
 
-                {/* Sub-banner linking to full Interactive /demo */}
+                {/* Sandbox Link */}
                 <div className="mt-8 text-center">
                     <Link
                         href="/canvas-quiz-solver-free-demo"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-500/30 text-emerald-800 text-xs sm:text-sm font-semibold shadow-xs hover:bg-emerald-50 hover:border-emerald-500/50 transition-all group"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/10 text-ink text-xs sm:text-sm font-semibold shadow-2xs hover:bg-[#faf8f4] transition-all group"
                     >
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Want to test real Canvas double-click solving live?</span>
-                        <span className="font-bold underline group-hover:translate-x-0.5 transition-transform flex items-center">
-                            Try the Interactive Canvas Sandbox →
+                        <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>Want to test live Canvas double-click &amp; snip solving?</span>
+                        <span className="font-bold underline group-hover:translate-x-0.5 transition-transform">
+                            Open Interactive Sandbox →
                         </span>
                     </Link>
                 </div>

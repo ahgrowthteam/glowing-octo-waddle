@@ -9,8 +9,12 @@ export default function Footer() {
 
             {/* Pre-Footer CTA Card (OneMacApp Style) */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 w-full mb-16">
-                <div className="bg-[#111111] text-white rounded-3xl p-8 sm:p-14 text-center shadow-lift">
-                    <div className="flex items-center justify-center mb-5">
+                <div className="relative overflow-hidden bg-[#111111] text-white rounded-3xl p-8 sm:p-14 text-center shadow-lift">
+                    {/* Soft pastel glow (brand palette) */}
+                    <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#c4d0f8] opacity-[0.16] blur-3xl" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-16 w-80 h-80 rounded-full bg-[#cdeecb] opacity-[0.14] blur-3xl" />
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/[0.06]" />
+                    <div className="relative flex items-center justify-center mb-5">
                         <div className="flex -space-x-1.5">
                             {[
                                 { src: '/images/avatars/student_1.jpg', alt: 'Student user' },
@@ -47,15 +51,15 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4 tracking-tight leading-[1.08]">
-                        All your exam tools,<br />
+                    <h2 className="relative font-display text-3xl sm:text-5xl font-bold text-white mb-4 tracking-tight leading-[1.08]">
+                        All your exam tools,{' '}
                         in one invisible box.
                     </h2>
-                    <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
+                    <p className="relative text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
                         Install in 30 seconds. Silences window-blur events, auto-solves quiz questions, and stays 100% invisible to professors.
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center gap-3">
+                    <div className="relative flex flex-wrap items-center justify-center gap-3">
                         <a 
                             href="https://discord.gg/aCcsyKYJq4" 
                             target="_blank"
@@ -159,6 +163,62 @@ export default function Footer() {
                     </div>
 
                 </div>
+
+                {/* Sitewide platform + research hub links (internal linking for crawl depth & topical authority) */}
+                <nav aria-label="Quiz solvers by platform" className="mt-10 pt-6 border-t border-black/5 grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <div className="lg:col-span-9">
+                        <h3 className="font-display font-semibold text-xs uppercase tracking-wider text-ink mb-3">
+                            Quiz Solvers by Platform
+                        </h3>
+                        <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-secondary">
+                            {[
+                                ['/canvas-lms-quiz-solver', 'Canvas Quiz Solver'],
+                                ['/blackboard-quiz-solver', 'Blackboard Quiz Solver'],
+                                ['/moodle-quiz-solver', 'Moodle Quiz Solver'],
+                                ['/d2l-brightspace-quiz-solver', 'D2L Brightspace Quiz Solver'],
+                                ['/mcgraw-hill-connect-aleks-solver', 'McGraw Hill Connect & ALEKS'],
+                                ['/pearson-mylab-mastering-solver', 'Pearson MyLab & Mastering'],
+                                ['/cengage-mindtap-webassign-solver', 'Cengage WebAssign & MindTap'],
+                                ['/gradescope-exam-solver', 'Gradescope Exam Solver'],
+                                ['/google-forms-quiz-solver', 'Google Forms Quiz Solver'],
+                                ['/schoology-quiz-solver', 'Schoology Quiz Solver'],
+                                ['/deltamath-homework-solver', 'DeltaMath Solver'],
+                                ['/edgenuity-quiz-solver', 'Edgenuity Quiz Solver'],
+                                ['/wileyplus-quiz-solver', 'WileyPLUS Quiz Solver'],
+                                ['/zybooks-homework-solver', 'zyBooks & zyLabs Solver'],
+                                ['/webwork-math-solver', 'WeBWorK Math Solver'],
+                                ['/sakai-lms-quiz-solver', 'Sakai LMS Quiz Solver'],
+                                ['/macmillan-achieve-smartwork-solver', 'Macmillan Achieve Solver'],
+                                ['/tophat-quiz-solver', 'Top Hat Quiz Solver'],
+                                ['/knewton-alta-solver', 'Knewton Alta Solver'],
+                                ['/hawkes-learning-certify-solver', 'Hawkes Learning Certify Solver'],
+                            ].map(([href, label]) => (
+                                <li key={href}>
+                                    <Link prefetch={false} href={href} className="hover:text-ink transition-colors inline-block py-1">
+                                        {label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="lg:col-span-3">
+                        <h3 className="font-display font-semibold text-xs uppercase tracking-wider text-ink mb-3">
+                            Telemetry Research
+                        </h3>
+                        <ul className="space-y-1 text-xs text-ink-secondary">
+                            <li>
+                                <Link prefetch={false} href="/blog/does-canvas-detect-extensions-2026" className="hover:text-ink transition-colors inline-block py-1">
+                                    Does Canvas Detect Extensions?
+                                </Link>
+                            </li>
+                            <li>
+                                <Link prefetch={false} href="/blog/canvas-quiz-log-explained-what-professors-see" className="hover:text-ink transition-colors inline-block py-1">
+                                    Canvas Quiz Log Explained
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
                 {/* Bottom Bar */}
                 <div className="mt-12 pt-6 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-muted">

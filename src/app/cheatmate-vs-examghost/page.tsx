@@ -29,18 +29,20 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CheatmateAcquireReleaseDemo } from '@/components/DeceptiveTrapsAndStaticBanksDemos';
+import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
         absolute: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
     },
-    description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 50 Free Solves.",
+    description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
     alternates: {
         canonical: "https://examghost.com/cheatmate-vs-examghost",
     },
     openGraph: {
         title: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
-        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 50 Free Solves.",
+        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
         url: "https://examghost.com/cheatmate-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
-        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 50 Free Solves.",
+        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -85,13 +87,12 @@ export default function CheatMateComparisonPage() {
                         "name": "ExamGhost",
                         "applicationCategory": "EducationalApplication",
                         "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "lowPrice": "0.00",
-                            "highPrice": "199.00",
-                            "priceCurrency": "USD",
-                            "offerCount": "4"
-                        }
+                        "offers": [
+                            { "@type": "Offer", "name": "Free Tier (5 Free Solves / Day)", "price": "0", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Monthly Pass", "price": "19.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Academic Year Pass", "price": "99.00", "priceCurrency": "USD" },
+                            { "@type": "Offer", "name": "Lifetime Degree Pass", "price": "199.00", "priceCurrency": "USD" }
+                        ]
                     },
                     {
                         "@type": "SoftwareApplication",
@@ -128,7 +129,7 @@ export default function CheatMateComparisonPage() {
                         "name": "How much does CheatMate actually cost per month and per year?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "CheatMate advertises a $0.99 trial that automatically enrolls your card into a $9.99 per week recurring charge—equaling $39.96 every 4 weeks or $519.48 per year. ExamGhost gives you 50 Free Solves with zero credit card required, followed by transparent plans: $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
+                            "text": "CheatMate advertises a $0.99 trial that automatically enrolls your card into a $9.99 per week recurring charge—equaling $39.96 every 4 weeks or $519.48 per year. ExamGhost gives you 5 Free Solves / Day with zero credit card required, followed by transparent plans: $19/month, $99/year ($8.25/mo Academic Year Pass), or $199 one-time for the Lifetime Degree Pass."
                         }
                     },
                     {
@@ -203,7 +204,7 @@ export default function CheatMateComparisonPage() {
                                     </p>
 
                                     <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-8">
-                                        <strong>ExamGhost</strong> never touches your credit card to try it. You get <strong>50 Free Question Solves</strong> immediately, <strong>0.3-second</strong> double-click solving inside a closed Shadow DOM, and honest student passes starting at <strong>$8.25/mo ($99/yr)</strong>.
+                                        <strong>ExamGhost</strong> never touches your credit card to try it. You get <strong>5 Free Solves / Day</strong> immediately, <strong>0.3-second</strong> double-click solving inside a closed Shadow DOM, and honest student passes starting at <strong>$8.25/mo ($99/yr)</strong>.
                                     </p>
 
                                     <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 mb-7">
@@ -212,7 +213,7 @@ export default function CheatMateComparisonPage() {
                                             className="px-7 py-4 rounded-full text-sm sm:text-base font-bold bg-[#cdeecb] hover:bg-[#b8e6b5] text-ink shadow-lift inline-flex items-center justify-center gap-2.5 transition-all group"
                                         >
                                             <FaChrome className="w-4 h-4 text-emerald-950" aria-hidden="true" />
-                                            <span>Start 50 Free Solves (No Card Needed)</span>
+                                            <span>Start 5 Free Solves / Day (No Card Needed)</span>
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                         </Link>
                                         <Link prefetch={false}
@@ -295,7 +296,7 @@ export default function CheatMateComparisonPage() {
                                         <div className="p-4 rounded-2xl bg-emerald-950 text-white flex items-center justify-between">
                                             <div>
                                                 <div className="text-xs font-bold text-emerald-300 uppercase">ExamGhost Guarantee</div>
-                                                <div className="text-xs text-white/90 mt-0.5">50 Free Solves · No Card Required</div>
+                                                <div className="text-xs text-white/90 mt-0.5">5 Free Solves / Day · No Card Required</div>
                                             </div>
                                             <Link prefetch={false} href="/#pricing" className="px-3.5 py-2 rounded-xl bg-[#cdeecb] text-ink font-bold text-xs whitespace-nowrap">
                                                 Try Free →
@@ -307,6 +308,8 @@ export default function CheatMateComparisonPage() {
                         </div>
                     </div>
                 </header>
+
+                <CheatmateAcquireReleaseDemo />
 
                 {/* ============================================================
                     VISUAL COST CALCULATOR: THE $9.99/WEEK SUBSCRIPTION DRAIN
@@ -331,7 +334,7 @@ export default function CheatMateComparisonPage() {
                                 <span className="text-xs font-mono font-bold uppercase text-ink-muted block mb-1">Day 1</span>
                                 <div className="font-display text-2xl font-extrabold text-ink mb-1">$0.99 vs $0</div>
                                 <div className="text-xs text-rose-800 font-semibold">CheatMate: Card locked in</div>
-                                <div className="text-xs text-emerald-800 font-bold mt-0.5">ExamGhost: 50 Free Solves ($0)</div>
+                                <div className="text-xs text-emerald-800 font-bold mt-0.5">ExamGhost: 5 Free Solves / Day ($0)</div>
                             </div>
 
                             <div className="p-5 rounded-2xl bg-rose-50/50 border border-rose-200">
@@ -469,9 +472,9 @@ export default function CheatMateComparisonPage() {
                                     </div>
 
                                     <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200">
-                                        <div className="font-bold text-sm text-ink mb-1">3. Snap-It OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>) + Focus Shield</div>
+                                        <div className="font-bold text-sm text-ink mb-1">3. Snap-It OCR (<kbd className="font-mono text-xs">Alt+S</kbd>) + Focus Shield</div>
                                         <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                            Locked diagram or LTI iframe? Press <kbd className="font-mono text-xs">⌘+Shift+S</kbd> and drag over the problem. Meanwhile, <strong>Focus Shield</strong> blocks <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">window.blur</code> and <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">visibilitychange</code> telemetry 100% of the time.
+                                            Locked diagram or LTI iframe? Press <kbd className="font-mono text-xs">Alt+S</kbd> and drag over the problem. Meanwhile, <strong>Focus Shield</strong> blocks <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">window.blur</code> and <code className="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">visibilitychange</code> telemetry 100% of the time.
                                         </p>
                                     </div>
                                 </div>
@@ -484,6 +487,57 @@ export default function CheatMateComparisonPage() {
                             </div>
                         </div>
 
+                    </div>
+                </section>
+
+                {/* ============================================================
+                    MODERN 6-HOTKEY SUITE
+                ============================================================ */}
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-20">
+                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
+                        <div className="max-w-2xl mb-8">
+                            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2.5 py-1 rounded-md">
+                                FULL 6-HOTKEY SUITE
+                            </span>
+                            <h3 className="font-display text-xl sm:text-2xl font-black text-ink mt-2 mb-1">
+                                Complete Stealth &amp; Speed Controls
+                            </h3>
+                            <p className="text-xs sm:text-sm text-ink-secondary">
+                                Instant in-tab execution with 0 SpeedGrader telemetry events.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Double-Click</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">0.3s Inline Solve</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Instant option select</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+S</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Vision Snip OCR</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">LaTeX &amp; locked iframes</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+1</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Invisible Mode</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">15% subtle dot indicator</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+2</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Stealth Micro-HUD</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Closed Shadow DOM badge</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">Alt+3</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Inline Explain</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">Step-by-step LaTeX drawer</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-[#fbf9f4] border border-black/10 text-center">
+                                <kbd className="px-2 py-1 rounded bg-black/5 font-mono text-xs font-bold text-ink">⌘+Shift+U</kbd>
+                                <div className="text-xs font-bold text-ink mt-2">Emergency Panic</div>
+                                <div className="text-[10px] text-ink-secondary mt-0.5">&lt;8ms memory flush</div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -533,7 +587,7 @@ export default function CheatMateComparisonPage() {
                                             <div className="text-xs text-ink-muted">Test before entering payment details</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
-                                            ✓ 50 Free Solves ($0, No Card)
+                                            ✓ 5 Free Solves / Day ($0, No Card)
                                         </td>
                                         <td className="py-4 px-6 text-center font-semibold text-rose-800">
                                             $0.99 Trial → Auto-bills $9.99/week
@@ -577,7 +631,7 @@ export default function CheatMateComparisonPage() {
                                     </tr>
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-4 px-6">
-                                            <div className="font-bold text-ink">Snap-It Screenshot OCR (<kbd className="font-mono text-xs">⌘+Shift+S</kbd>)</div>
+                                            <div className="font-bold text-ink">Snap-It Screenshot OCR (<kbd className="font-mono text-xs">Alt+S</kbd>)</div>
                                             <div className="text-xs text-ink-muted">Solves diagrams, circuits &amp; locked iframes</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
@@ -599,7 +653,15 @@ export default function CheatMateComparisonPage() {
                                             ✗ None
                                         </td>
                                     </tr>
-                                </tbody>
+                                
+                  <tr className="bg-emerald-50/20">
+                    <td className="py-4 px-5 font-bold text-ink">
+                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    </td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
+                  </tr>
+                </tbody>
                             </table>
                         </div>
 
@@ -646,7 +708,7 @@ export default function CheatMateComparisonPage() {
                             </span>
                         </div>
                         <blockquote className="font-display text-lg sm:text-2xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;CheatMate charged my debit card $9.99 every single week for two months after the $0.99 trial before I caught it on my bank statement. Worse, during my Cognitive Science midterm, I had to wait 10+ seconds on every page and it didn&apos;t work on image questions. ExamGhost let me test 50 questions free without a card, and the $99/yr pass solves everything in 0.3s.&rdquo;
+                            &ldquo;CheatMate charged my debit card $9.99 every single week for two months after the $0.99 trial before I caught it on my bank statement. Worse, during my Cognitive Science midterm, I had to wait 10+ seconds on every page and it didn&apos;t work on image questions. ExamGhost let me test 5 free solves / day without a card, and the $99/yr pass solves everything in 0.3s.&rdquo;
                         </blockquote>
                         <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-black/10 text-xs text-ink-secondary">
                             <div>
@@ -696,7 +758,7 @@ export default function CheatMateComparisonPage() {
                                 <span>No $0.99 Trial Traps · No Weekly Billing</span>
                             </span>
                             <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-2">
-                                Test 50 Free Solves Right Now—Zero Credit Card Needed.
+                                Test 5 Free Solves / Day Right Now—Zero Credit Card Needed.
                             </h2>
                             <p className="text-sm text-ink-secondary leading-relaxed">
                                 See why thousands of students ditched $9.99/week extensions for ExamGhost&apos;s 0.3s closed Shadow DOM solver.
@@ -708,7 +770,7 @@ export default function CheatMateComparisonPage() {
                                 className="btn-dark px-6 py-3.5 rounded-full text-sm font-bold shadow-lift inline-flex items-center gap-2"
                             >
                                 <FaChrome className="w-4 h-4 text-[#c4d0f8]" />
-                                <span>Claim 50 Free Solves</span>
+                                <span>Claim 5 Free Solves / Day</span>
                             </Link>
                             <Link prefetch={false}
                                 href="/canvas-quiz-solver-free-demo"
@@ -761,7 +823,10 @@ export default function CheatMateComparisonPage() {
                     </div>
                 </section>
 
-            </main>
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 my-16">
+          <StudyAiHubShowcase compact />
+        </div>
+      </main>
 
             <Footer />
         </div>
