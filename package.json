@@ -11,6 +11,7 @@
     "build:vercel": "cp next.config.vercel.mjs next.config.mjs && next build"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^11.11.10",
     "lucide-react": "^0.575.0",
     "next": "14.2.16",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // Self-hosted via next/font: consistent typography on Chrome/Windows/Android (previously fell back to
@@ -100,6 +101,7 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.variable} ${nunito.variable}`}>
       <body className="font-sans bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen">
         {children}
+        <Analytics />
       </body>
     </html>
   );
