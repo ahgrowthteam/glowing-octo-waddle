@@ -4232,7 +4232,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
                 number: 3,
                 title: "Stable Store Verified Software vs Volatile Ad Mirrors",
                 competitorFlaw: "Homeworkify mirrors get taken down constantly by copyright strikes, redirecting students to spam ad networks during test week.",
-                examghostAdvantage: "ExamGhost is an officially maintained, verified Chrome extension backed by a 30-day money-back guarantee."
+                examghostAdvantage: "ExamGhost is an officially maintained, verified Chrome extension backed by a 14-day money-back guarantee."
             }
         ],
         matrix: [

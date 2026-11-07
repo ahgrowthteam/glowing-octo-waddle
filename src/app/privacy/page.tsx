@@ -80,7 +80,7 @@ export default function PrivacyPage() {
                         Privacy Policy
                     </h1>
                     <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
-                        Last updated: March 1, 2026 · ExamGhost operates with a strict zero-telemetry architecture: quiz questions and Snap-It OCR crops are processed ephemerally in RAM with zero remote query logs, zero school credential harvesting, and zero third-party ad trackers.
+                        Last updated: March 1, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110) and operates with a strict zero-telemetry architecture: quiz questions and Snap-It OCR crops are processed ephemerally in RAM with zero remote query logs, zero school credential harvesting, and zero third-party ad trackers.
                     </p>
                 </div>
 
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
                     <section className="space-y-3">
                         <h2 className="font-display font-bold text-xl text-ink">1. Information We Collect (and What We Do Not)</h2>
                         <p>
-                            ExamGhost was engineered from day one with a strict <strong>privacy-first, zero-knowledge philosophy</strong>. Because our tools operate directly on-device inside your browser, our data collection footprint is minimal:
+                            ExamGhost, operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110), was engineered from day one with a strict <strong>privacy-first, zero-knowledge philosophy</strong>. Because our tools operate directly on-device inside your browser, our data collection footprint is minimal:
                         </p>
                         <ul className="space-y-2 pl-4 list-disc text-xs sm:text-sm">
                             <li><strong>Local Preferences (On-Device Only):</strong> Your chosen solver mode (Alt+1, Alt+2, Alt+3), keybinding preferences (e.g., Alt+S, ⌘+Shift+U), and attempt memory cache are stored strictly within Chrome’s encrypted local storage (`chrome.storage.local`). This data never leaves your laptop.</li>
@@ -172,6 +172,7 @@ export default function PrivacyPage() {
                             If you wish to revoke an anonymous license key or have questions regarding our cryptographic privacy architecture, you may contact our privacy engineering team directly:
                         </p>
                         <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 text-xs space-y-1">
+                            <div><strong>Operating Entity:</strong> FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110)</div>
                             <div><strong>Email:</strong> privacy@examghost.com</div>
                             <div><strong>Discord Support:</strong> Open a private ticket on our <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 font-semibold underline">Official Student Discord</a>.</div>
                             <div><strong>Guaranteed Response:</strong> Under 24 hours (under 2 hours during exam finals).</div>

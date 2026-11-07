@@ -80,7 +80,7 @@ export default function TermsPage() {
                         Terms of Service
                     </h1>
                     <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
-                        Last modified: March 1, 2026 · ExamGhost provides 5 Free Solves / Day (auto-refilling every 24 hours) with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day 100% money-back refund guarantee.
+                        Last modified: March 1, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). We provide 5 Free Solves / Day (auto-refilling every 24 hours) with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day money-back guarantee (100% full refund within 14 days of purchase).
                     </p>
                 </div>
 
@@ -123,7 +123,7 @@ export default function TermsPage() {
                     <section className="space-y-3">
                         <h2 className="font-display font-bold text-xl text-ink">1. Acceptance of Terms</h2>
                         <p>
-                            By downloading, installing, unpacking, or activating ExamGhost (the &quot;Software&quot;, &quot;Extension&quot;, or &quot;Service&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not install or use the software.
+                            ExamGhost (the &quot;Software&quot;, &quot;Extension&quot;, or &quot;Service&quot;) is owned and operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). By downloading, installing, unpacking, or activating ExamGhost, you agree to be bound by these Terms of Service, including our 14-day money-back guarantee. If you do not agree to these terms, do not install or use the software.
                         </p>
                     </section>
 
@@ -151,25 +151,25 @@ export default function TermsPage() {
                     </section>
 
                     <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">4. 14-Day 100% Money-Back Guarantee & Refund Policy</h2>
+                        <h2 className="font-display font-bold text-xl text-ink">4. 14-Day Money-Back Guarantee &amp; Refund Policy</h2>
                         <p>
-                            We stand firmly behind the stealth, accuracy, and reliability of our software. If ExamGhost fails to solve questions or triggers unexpected LMS logs on your supported platforms:
+                            We stand firmly behind the stealth, accuracy, and reliability of our software with a <strong>14-day money-back guarantee</strong> (100% full refund within 14 days of purchase) on all paid plans. If ExamGhost fails to solve questions or triggers unexpected LMS logs on your supported platforms, or if you are unsatisfied for any reason within 14 days of purchase:
                         </p>
                         <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-xs text-emerald-950 space-y-1.5">
                             <div className="font-bold flex items-center gap-1.5 text-emerald-900">
                                 <Check className="w-4 h-4 text-emerald-600" />
-                                <span>No-Hassle 14-Day Refund Window</span>
+                                <span>No-Hassle 14-Day Money-Back Guarantee</span>
                             </div>
                             <p>
-                                Contact our 24/7 Discord support team or email <code>support@examghost.com</code> within 14 days of purchase with your license key or order receipt. Your refund will be processed immediately back to your original payment method.
+                                Contact our 24/7 Discord support team or email <code>support@examghost.com</code> within 14 days of purchase with your license key or order receipt. Your 100% full refund will be processed immediately back to your original payment method.
                             </p>
                         </div>
                     </section>
 
                     <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">5. Intellectual Property & Prohibited Conduct</h2>
+                        <h2 className="font-display font-bold text-xl text-ink">5. Intellectual Property &amp; Prohibited Conduct</h2>
                         <p>
-                            All software code, user interface styling, Shadow DOM hook algorithms, and ExamGhost mascot artwork are the exclusive intellectual property of ExamGhost. You agree NOT to:
+                            All software code, user interface styling, Shadow DOM hook algorithms, and ExamGhost mascot artwork are the exclusive intellectual property of FoundryOne LLC (operating ExamGhost). You agree NOT to:
                         </p>
                         <ul className="space-y-2 pl-4 list-disc text-xs sm:text-sm">
                             <li>Decompile, reverse-engineer, or extract the proprietary source code for commercial resale.</li>
@@ -186,13 +186,14 @@ export default function TermsPage() {
                     </section>
 
                     <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">7. Governing Law & Support Contacts</h2>
+                        <h2 className="font-display font-bold text-xl text-ink">7. Governing Law &amp; Support Contacts</h2>
                         <p>
-                            These terms are governed by the laws of the jurisdiction where the operating entity is registered. For legal inquiries or support requests, please contact:
+                            These terms are governed by the laws of the State of New Mexico, United States, where the operating entity, FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110), is registered. For legal inquiries or support requests, please contact:
                         </p>
                         <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 text-xs space-y-1">
+                            <div><strong>Operating Entity:</strong> FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110)</div>
                             <div><strong>Legal Inquiries:</strong> legal@examghost.com</div>
-                            <div><strong>Customer & Billing Support:</strong> support@examghost.com</div>
+                            <div><strong>Customer &amp; Billing Support:</strong> support@examghost.com</div>
                             <div><strong>Community Server:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a> (instant ticket queue)</div>
                         </div>
                     </section>

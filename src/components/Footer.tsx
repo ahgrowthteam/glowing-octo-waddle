@@ -222,7 +222,7 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="mt-12 pt-6 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-muted">
-                    <p>© 2026 ExamGhost. The invisible AI quiz solver for Canvas, Blackboard &amp; Moodle.</p>
+                    <p>© 2026 FoundryOne LLC. ExamGhost is a product of FoundryOne LLC.</p>
                     <div className="flex items-center gap-4">
                         <Link prefetch={false} href="/privacy" className="hover:text-ink transition-colors inline-block py-1">Privacy</Link>
                         <span>·</span>
