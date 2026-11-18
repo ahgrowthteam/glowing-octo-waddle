@@ -31,16 +31,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Apex Vision AI vs ExamGhost (2026) — SpeedGrader Telemetry & 500-Request Quota Audit",
+        absolute: "Apex Vision AI vs ExamGhost (2026) — Quota & Telemetry",
     },
-    description: "Apex Vision AI explicitly states it does NOT block tab switching or bypass proctoring, fires window.blur on sidebar clicks, and caps plans at 500 requests/mo. ExamGhost keeps document.hasFocus() === true with 5 Free Solves/Day + Claude/ChatGPT/DeepSeek Study Hub.",
+    description: "Apex Vision AI says it does NOT block tab switching and caps plans at 500 requests/mo. ExamGhost keeps focus intact with 5 Free Solves/Day + Study Hub.",
     alternates: {
-        canonical: "https://examghost.com/apexvision-vs-examghost",
+        canonical: "https://www.examghost.com/apexvision-vs-examghost",
     },
     openGraph: {
-        title: "Apex Vision AI vs ExamGhost (2026) — SpeedGrader Telemetry & 500-Request Quota Audit",
+        title: "Apex Vision AI vs ExamGhost (2026) — Quota & Telemetry",
         description: "Apex Vision AI explicitly refuses tab-switch blockers, fires window.blur in Canvas SpeedGrader, and caps plans at 500 requests. Compare with ExamGhost's Focus Shield, Alt+1/2/3 stealth & Multi-Model Study Hub.",
-        url: "https://examghost.com/apexvision-vs-examghost",
+        url: "https://www.examghost.com/apexvision-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Apex Vision AI vs ExamGhost (2026) — SpeedGrader Telemetry & 500-Request Quota Audit",
+        title: "Apex Vision AI vs ExamGhost (2026) — Quota & Telemetry",
         description: "Apex Vision AI explicitly refuses tab-switch blockers, fires window.blur in Canvas SpeedGrader, and caps plans at 500 requests. Compare with ExamGhost's Focus Shield & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
@@ -81,7 +81,7 @@ export default function ApexVisionComparisonPage() {
         },
         {
             question: "Does ExamGhost include a homework & study workspace like Apex Vision's AI tutor?",
-            answer: "Yes—and with far stronger frontier models and zero request caps. Every ExamGhost paid plan ($19/mo, $99/yr [$8.25/mo], or $199 Lifetime) is a 2-in-1 value that unlocks both Unlimited Stealth Extension Solves AND full access to the ExamGhost Study & Homework AI Workspace powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1 for essays, syllabus PDFs, and LaTeX math proofs—saving $60+/month compared to separate AI subscriptions."
+            answer: "Yes—and with far stronger frontier models and zero request caps. Every ExamGhost paid plan ($19/mo, $99/yr [$8.25/mo], or $199 Lifetime) is a 2-in-1 value that unlocks both Unlimited Stealth Extension Solves AND full access to the ExamGhost Study & Homework AI Workspace powered by Claude, ChatGPT, and DeepSeek for essays, syllabus PDFs, and LaTeX math proofs—saving $60+/month compared to separate AI subscriptions."
         },
         {
             question: "Does Apex Vision AI transmit student signup and subscription payment data to OpenAI?",
@@ -94,62 +94,53 @@ export default function ApexVisionComparisonPage() {
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/apexvision-vs-examghost#techarticle",
+                "@id": "https://www.examghost.com/apexvision-vs-examghost#techarticle",
                 "headline": "Apex Vision AI vs ExamGhost (2026) — The SpeedGrader Telemetry & 500-Request Quota Audit",
                 "description": "Forensic browser-event telemetry and quota audit comparing AI Homework Helper – Apex Vision AI (apexvision.ai, Chrome ID ncaknkaehhieldhnmimbjnfgneaiijbd) against ExamGhost v4.2 across Canvas SpeedGrader window.blur logs, document.hasFocus() retention, and monthly request caps.",
                 "datePublished": "2026-01-21",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
-                    "name": "ExamGhost Telemetry & Security Lab",
-                    "url": "https://examghost.com"
+                    "@id": "https://www.examghost.com/#organization",
+                    "name": "ExamGhost",
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
-                "mainEntityOfPage": "https://examghost.com/apexvision-vs-examghost",
+                "mainEntityOfPage": "https://www.examghost.com/apexvision-vs-examghost",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", ".telemetry-verdict"]
                 },
                 "about": [
-                    { "@id": "https://examghost.com/apexvision-vs-examghost#examghost-app" },
-                    { "@id": "https://examghost.com/apexvision-vs-examghost#apexvision-app" }
+                    { "@id": "https://www.examghost.com/apexvision-vs-examghost#examghost-app" },
+                    { "@id": "https://www.examghost.com/apexvision-vs-examghost#apexvision-app" }
                 ]
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/apexvision-vs-examghost#examghost-app",
+                "@id": "https://www.examghost.com/apexvision-vs-examghost#examghost-app",
                 "name": "ExamGhost",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "ratingCount": "1420"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "0.00",
                     "highPrice": "199.00",
                     "priceCurrency": "USD",
                     "offerCount": "4",
-                    "description": "5 Free Solves / Day (auto-refills every 24h, $0 no card), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime with Unlimited Stealth Solves + Claude 3.7 Sonnet, ChatGPT o3-mini/4o & DeepSeek-R1 Study Hub."
+                    "description": "5 Free Solves / Day (auto-refills every 24h, $0 no card), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime with Unlimited Stealth Solves + Claude, ChatGPT & DeepSeek Study Hub."
                 }
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/apexvision-vs-examghost#apexvision-app",
+                "@id": "https://www.examghost.com/apexvision-vs-examghost#apexvision-app",
                 "name": "AI Homework Helper – Apex Vision AI",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome Extension, iOS, Android",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "ratingCount": "2100"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "0.00",
@@ -160,16 +151,16 @@ export default function ApexVisionComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/apexvision-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/apexvision-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Apex Vision AI vs ExamGhost", "item": "https://examghost.com/apexvision-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Apex Vision AI vs ExamGhost", "item": "https://www.examghost.com/apexvision-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/apexvision-vs-examghost#faq",
+                "@id": "https://www.examghost.com/apexvision-vs-examghost#faq",
                 "mainEntity": faqs.map((f) => ({
                     "@type": "Question",
                     "name": f.question,
@@ -222,7 +213,7 @@ export default function ApexVisionComparisonPage() {
         {
             feature: "Study & Homework AI Workspace",
             sub: "Dedicated multi-model web workspace for essays, PDFs & problem sets",
-            examghost: "✓ Included: Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1",
+            examghost: "✓ Included: Claude + ChatGPT + DeepSeek",
             apex: "✓ AI Tutor & Study Tools (metered against your monthly request cap)"
         },
         {
@@ -306,7 +297,7 @@ export default function ApexVisionComparisonPage() {
                                     </p>
 
                                     <p className="text-sm sm:text-base text-ink-secondary leading-relaxed mb-8">
-                                        Worse, Apex meters paid users with strict <strong>100 to 500+ monthly request caps</strong>. <strong>ExamGhost</strong> gives you 100% <strong>Focus Shield</strong> protection (<code className="font-mono text-xs bg-emerald-50 text-emerald-900 px-1.5 py-0.5 rounded border border-emerald-200">document.hasFocus() === true</code>), <code className="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+1/2/3</code> stealth modes, <strong>5 Free Solves / Day</strong> ($0, no card), and uncapped 2-in-1 plans with our <strong>Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1 Study Workspace</strong>.
+                                        Worse, Apex meters paid users with strict <strong>100 to 500+ monthly request caps</strong>. <strong>ExamGhost</strong> gives you 100% <strong>Focus Shield</strong> protection (<code className="font-mono text-xs bg-emerald-50 text-emerald-900 px-1.5 py-0.5 rounded border border-emerald-200">document.hasFocus() === true</code>), <code className="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Alt+1/2/3</code> stealth modes, <strong>5 Free Solves / Day</strong> ($0, no card), and uncapped 2-in-1 plans with our <strong>Claude + ChatGPT + DeepSeek Study Workspace</strong>.
                                     </p>
                                 </div>
 
@@ -691,15 +682,15 @@ export default function ApexVisionComparisonPage() {
                                         <ul className="space-y-2 text-xs text-slate-200">
                                             <li className="flex items-start gap-2">
                                                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                                <span><strong>Claude 3.7 Sonnet</strong> for research papers, coding labs &amp; nuanced humanities</span>
+                                                <span><strong>Claude</strong> for research papers, coding labs &amp; nuanced humanities</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                                <span><strong>ChatGPT (GPT-4o / o3-mini)</strong> for multimodal diagrams &amp; fast synthesis</span>
+                                                <span><strong>ChatGPT</strong> for multimodal diagrams &amp; fast synthesis</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                                <span><strong>DeepSeek-R1</strong> for deep chain-of-thought Calculus, Physics &amp; Orgo proofs</span>
+                                                <span><strong>DeepSeek</strong> for deep chain-of-thought Calculus, Physics &amp; Orgo proofs</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -833,7 +824,7 @@ export default function ApexVisionComparisonPage() {
                                     Don&apos;t bring an unshielded homework sidebar into a timed Canvas exam.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5">
-                                    Start with 5 Free Solves / Day on ExamGhost ($0, auto-refills every 24h, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime including our Claude 3.7 + ChatGPT + DeepSeek Study Hub.
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, auto-refills every 24h, no card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime including our Claude + ChatGPT + DeepSeek Study Hub.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">

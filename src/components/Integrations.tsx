@@ -245,8 +245,8 @@ export default function Integrations() {
                         <span>ALL IN ONE</span>
                     </p>
                     <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        One box. Every tool<br />
-                        you keep reaching for.
+                        What&apos;s inside ExamGhost?<br />
+                        Every tool in one box.
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
                         Stop hunting for a clunky screenshot tool, a risky copy-paste script, or an AI extension that forces you to switch tabs. ExamGhost packages double-click solving, Snap-It screenshot OCR, and 3 stealth display modes in one calm, undetectable browser extension.

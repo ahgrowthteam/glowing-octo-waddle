@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Cheatpal (cheatpal.com) with ExamGhost. See why Cheatpal's legacy overlay is visible on screen share and fails on Canvas New Quizzes and Blackboard.",
     alternates: {
-        canonical: "https://examghost.com/cheatpal-vs-examghost",
+        canonical: "https://www.examghost.com/cheatpal-vs-examghost",
     },
     openGraph: {
         title: "Cheatpal vs ExamGhost (2026) — Legacy Overlay & LMS Failure Audit",
         description: "Compare Cheatpal (cheatpal.com) with ExamGhost. See why Cheatpal's legacy overlay is detectable on screen share and fails on Canvas New Quizzes and Blackboard Ultra.",
-        url: "https://examghost.com/cheatpal-vs-examghost",
+        url: "https://www.examghost.com/cheatpal-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -60,16 +60,16 @@ export default function CheatpalComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-22",
-                "dateModified": "2026-03-08",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/cheatpal-vs-examghost#webpage",
-                "url": "https://examghost.com/cheatpal-vs-examghost",
+                "@id": "https://www.examghost.com/cheatpal-vs-examghost#webpage",
+                "url": "https://www.examghost.com/cheatpal-vs-examghost",
                 "name": "Cheatpal vs ExamGhost (2026 Review) | Legacy Detectable Overlay vs Closed Shadow DOM",
                 "description": "Technical evaluation comparing Cheatpal (cheatpal.com) and ExamGhost across DOM overlay detectability, Canvas New Quizzes LTI support, question type coverage, and AI model accuracy.",
-                "breadcrumb": { "@id": "https://examghost.com/cheatpal-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/cheatpal-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -100,16 +100,16 @@ export default function CheatpalComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/cheatpal-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/cheatpal-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Cheatpal vs ExamGhost", "item": "https://examghost.com/cheatpal-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Cheatpal vs ExamGhost", "item": "https://www.examghost.com/cheatpal-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/cheatpal-vs-examghost#faq",
+                "@id": "https://www.examghost.com/cheatpal-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -419,7 +419,7 @@ export default function CheatpalComparisonPage() {
                                             Flagship reasoning + 5 Free Solves / Day ($0, no card required)
                                         </h3>
                                         <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                            ExamGhost cross-verifies complex STEM calculations across frontier AI models (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1) and grounds answers in your uploaded Course Materials Vault.
+                                            ExamGhost cross-verifies complex STEM calculations across frontier AI models (Claude, ChatGPT, DeepSeek) and grounds answers in your uploaded Course Materials Vault.
                                         </p>
                                         <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
                                             <div className="p-3 rounded-xl bg-white border border-emerald-200">
@@ -606,9 +606,9 @@ export default function CheatpalComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -643,29 +643,7 @@ export default function CheatpalComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#ffd5cc]/45 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;Cheatpal worked on old multiple-choice quizzes a couple years ago, but as soon as my university switched to Canvas New Quizzes and Blackboard Ultra, Cheatpal stopped detecting half the questions and couldn&apos;t handle matching or dropdowns. ExamGhost works on every single New Quizzes format in 0.3 seconds.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-rose-900 text-white font-bold flex items-center justify-center text-sm">
-                                BH
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Brandon H.</div>
-                                <div className="text-xs text-ink-muted">Information Systems · Arizona State University</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

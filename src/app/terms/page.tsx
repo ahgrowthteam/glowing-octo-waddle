@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     title: "Terms of Service & 14-Day Refund Guarantee",
     description: "Official terms of service, educational usage guidelines, subscription billing policies, and our 14-day 100% money-back refund guarantee for ExamGhost.",
     alternates: {
-        canonical: "https://examghost.com/terms",
+        canonical: "https://www.examghost.com/terms",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
         title: "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
         description: "Official licensing terms, academic usage guidelines, and 14-day money-back guarantee for ExamGhost.",
-        url: "https://examghost.com/terms",
+        url: "https://www.examghost.com/terms",
         siteName: "ExamGhost",
         images: [
             {
@@ -35,15 +35,15 @@ export default function TermsPage() {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/terms#webpage",
-                "url": "https://examghost.com/terms",
+                "@id": "https://www.examghost.com/terms#webpage",
+                "url": "https://www.examghost.com/terms",
                 "name": "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
                 "description": "Terms of service, educational usage policies, subscription terms, and 14-day 100% money-back refund guarantee for ExamGhost.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-01",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/terms#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/terms#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary"]
@@ -51,10 +51,10 @@ export default function TermsPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/terms#breadcrumb",
+                "@id": "https://www.examghost.com/terms#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://examghost.com/terms" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://www.examghost.com/terms" }
                 ]
             }
         ]

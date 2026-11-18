@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
     },
-    description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/homework-helper-vs-examghost",
+        canonical: "https://www.examghost.com/homework-helper-vs-examghost",
     },
     openGraph: {
         title: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
-        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/homework-helper-vs-examghost",
+        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/homework-helper-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "AI Homework Helper vs ExamGhost (2026) — SidePanel Audit",
-        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "2026 audit of AI Homework Helper (v2.5.1) vs ExamGhost. Avoid identity.email tracking and sidePanel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,16 +64,16 @@ export default function HomeworkHelperComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-11",
-                "dateModified": "2026-03-05",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/homework-helper-vs-examghost#webpage",
-                "url": "https://examghost.com/homework-helper-vs-examghost",
+                "@id": "https://www.examghost.com/homework-helper-vs-examghost#webpage",
+                "url": "https://www.examghost.com/homework-helper-vs-examghost",
                 "name": "AI Homework Helper vs ExamGhost (2026 Review) | Hotkey Stealth vs SidePanel & Right-Click Lockout",
                 "description": "Technical review comparing AI Homework Helper (Chrome ID ollpfmjpmnbcbenogmfnhbhejlpkfpbo v2.5.1, livepolls.app/chrome_addons) and ExamGhost regarding contextmenu restrictions, identity.email permissions, SpeedGrader logs, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/homework-helper-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/homework-helper-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -118,16 +118,16 @@ export default function HomeworkHelperComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/homework-helper-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/homework-helper-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "AI Homework Helper vs ExamGhost", "item": "https://examghost.com/homework-helper-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "AI Homework Helper vs ExamGhost", "item": "https://www.examghost.com/homework-helper-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/homework-helper-vs-examghost#faq",
+                "@id": "https://www.examghost.com/homework-helper-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -730,9 +730,9 @@ export default function HomeworkHelperComparisonPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -758,53 +758,7 @@ export default function HomeworkHelperComparisonPage() {
                     </div>
                 </section>
 
-                {/* VERIFIED STUDENT MIGRATION STORY */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
-                    <div className="rounded-[32px] bg-white border border-black/10 p-6 sm:p-10 shadow-card">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-900 font-bold shadow-sm">
-                                    GT
-                                </div>
-                                <div>
-                                    <h2 className="font-display font-bold text-base sm:text-lg text-ink">
-                                        Verified Migration Case Study: Georgia Tech Engineering Junior
-                                    </h2>
-                                    <p className="text-xs text-ink-muted">From right-click lockout &amp; sidePanel blur panic during Thermodynamics midterm to 4.0 GPA with ExamGhost</p>
-                                </div>
-                            </div>
-                            <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold inline-flex items-center gap-1.5 self-start sm:self-auto">
-                                <Check className="w-3.5 h-3.5" />
-                                Verified Student Purchase
-                            </span>
-                        </div>
-
-                        <div className="grid md:grid-cols-12 gap-8 items-center">
-                            <div className="md:col-span-8 text-sm sm:text-base text-ink-secondary leading-relaxed space-y-4">
-                                <p>
-                                    &quot;During my sophomore year Thermo exam, my professor enabled strict right-click locking in Canvas. I opened the test, highlighted the first Brayton cycle equation, and right-clicked. <strong>Nothing happened.</strong> When I clicked into AI Homework Helper&apos;s Chrome sidePanel instead, Canvas immediately logged a blur departure. Worse, when I checked why the extension was acting up, its homepage redirected to some generic livepolls.app addon list and its manifest was asking for my <code>identity.email</code>.&quot;
-                                </p>
-                                <p>
-                                    &quot;That weekend, someone in my engineering Discord suggested ExamGhost. I tested the <strong>5 free solves / day</strong> first and then grabbed the Academic Year pass. ExamGhost doesn’t care about right-click blocks because you trigger it with <strong>Alt+1/2/3 or Snap-It (Alt+S)</strong> inside a closed Shadow DOM. It captured my Laplace transforms and circuit diagrams in 0.3s and left zero SpeedGrader logs.&quot;
-                                </p>
-                                <div className="pt-2 text-xs font-semibold text-ink">
-                                    — Marcus D., B.S. Mechanical Engineering, Georgia Tech Class of 2026
-                                </div>
-                            </div>
-
-                            <div className="md:col-span-4 bg-[#fcf9f5] p-5 rounded-2xl border border-black/5 text-center">
-                                <div className="text-3xl font-display font-black text-rose-950 mb-1">0.3s</div>
-                                <div className="text-xs text-ink-muted mb-4">Average ExamGhost solve time</div>
-                                <div className="h-px bg-black/10 my-3" />
-                                <div className="text-3xl font-display font-black text-emerald-800 mb-1">5 Free/Day</div>
-                                <div className="text-xs text-ink-muted mb-4">Instant trial solves ($0 card required)</div>
-                                <div className="h-px bg-black/10 my-3" />
-                                <div className="text-xs font-bold text-ink">100% Locked Page Safe</div>
-                                <div className="text-[11px] text-ink-muted">Zero reliance on context menus or sidePanel</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* OFFICIAL STUDENT DISCORD COMMUNITY BANNER */}
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">

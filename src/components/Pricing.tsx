@@ -71,7 +71,7 @@ export default function Pricing() {
             title: "Academic Year Pass ($99/yr)",
             subtitle: "Only $8.25/mo · Unlimited Extension + Study AI Hub (Save 56%)",
             key: "GHOST-ACADEMIC-YEARLY-PASS",
-            desc: "Full academic year stealth license with priority 0.3s AI vision compute and unlimited Claude, ChatGPT & DeepSeek-R1 Study Hub access."
+            desc: "Full academic year stealth license with priority 0.3s AI vision compute and unlimited Claude, ChatGPT & DeepSeek Study Hub access."
         },
         lifetime: {
             title: "Lifetime Degree Pass ($199)",
@@ -97,11 +97,11 @@ export default function Pricing() {
                         <span>HONEST 2-IN-1 STUDENT PRICING</span>
                     </p>
                     <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-ink leading-[1.08] mb-4">
-                        Invest in your degree.<br />
+                        How much does ExamGhost cost?<br />
                         <span className="text-emerald-800">2-in-1 Extension + Study AI Hub.</span>
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-ink-muted leading-relaxed font-normal max-w-2xl mx-auto">
-                        Start with <strong className="text-ink font-semibold">5 Free Solves / Day</strong> ($0, no card needed). Upgrade to any paid plan for <strong>Unlimited Stealth Quiz Solving</strong> plus full access to our <strong>Claude + ChatGPT + DeepSeek-R1 Study &amp; Homework AI Workspace</strong>—saving you $60+/mo in separate AI subscriptions.
+                        Start with <strong className="text-ink font-semibold">5 Free Solves / Day</strong> ($0, no card needed). Upgrade to any paid plan for <strong>Unlimited Stealth Quiz Solving</strong> plus full access to our <strong>Claude + ChatGPT + DeepSeek Study &amp; Homework AI Workspace</strong>—saving you $60+/mo in separate AI subscriptions.
                     </p>
                 </div>
 
@@ -326,7 +326,7 @@ export default function Pricing() {
                                     Everything in Monthly, Plus:
                                 </div>
                                 {[
-                                    { label: "12 Months Unlimited Extension + Study Hub", hint: "Claude 3.7, ChatGPT & DeepSeek-R1 all year" },
+                                    { label: "12 Months Unlimited Extension + Study Hub", hint: "Claude, ChatGPT & DeepSeek all year" },
                                     { label: "Priority 0.3s Vision Edge Compute", hint: "Dedicated capacity during finals week rush" },
                                     { label: "Multi-Device License (2 Machines)", hint: "Use simultaneously on laptop & dorm PC" },
                                     { label: "Syllabus & PDF Upload Memory", hint: "Attach full course packs in the Study AI Hub" }
@@ -403,7 +403,7 @@ export default function Pricing() {
                                     VIP Permanent Privileges:
                                 </div>
                                 {[
-                                    { label: "Permanent Extension + Study AI Hub", hint: "Unlimited Claude, ChatGPT & DeepSeek-R1 forever" },
+                                    { label: "Permanent Extension + Study AI Hub", hint: "Unlimited Claude, ChatGPT & DeepSeek forever" },
                                     { label: "3-Device Multi-Seat License", hint: "Sync across laptop, dorm desktop & library Mac" },
                                     { label: "All Future Frontier Models Included Free", hint: "Automatic upgrades to Claude 4, GPT-5 & DeepSeek-R2" },
                                     { label: "All Future Canvas & LMS Patches Included", hint: "Zero extra charges for new LMS stealth updates" }

@@ -18,7 +18,7 @@
  * - Category 4: Click Ripples & Animated Cursor Trajectory Verification
  * - Category 5: Interactive Scrubber & Speed Controls Engine Math
  * - Category 6: Full SSR Execution & HTML Leak Audit (Scenes 0, 1, 2)
- * - Category 7: Multi-Model Tab Derivations Audit (Claude 3.7, ChatGPT, DeepSeek-R1)
+ * - Category 7: Multi-Model Tab Derivations Audit (Claude, ChatGPT, DeepSeek)
  * - Category 8: Discrete Timer Ticking & Continuous Loop Simulation (1,000 ticks)
  * - Category 9: Route Integration & Zero-Template Hardening
  */
@@ -635,7 +635,7 @@ export async function runAdversarialM2MotionStressTests() {
       claudeOk = false;
       console.error(`Claude derivation render failed in ${demo.name}:`, err.message);
     }
-    assert(`CAT7-CLAUDE-${demo.name}`, 'ModelDerivations', demo.name, claudeOk && claudeHtml.length > 50, `Claude 3.7 derivation renders cleanly (${claudeHtml.length} bytes)`);
+    assert(`CAT7-CLAUDE-${demo.name}`, 'ModelDerivations', demo.name, claudeOk && claudeHtml.length > 50, `Claude derivation renders cleanly (${claudeHtml.length} bytes)`);
 
     // Render ChatGPT Derivation
     let chatgptHtml = '';
@@ -647,7 +647,7 @@ export async function runAdversarialM2MotionStressTests() {
       chatgptOk = false;
       console.error(`ChatGPT derivation render failed in ${demo.name}:`, err.message);
     }
-    assert(`CAT7-CHATGPT-${demo.name}`, 'ModelDerivations', demo.name, chatgptOk && chatgptHtml.length > 50, `ChatGPT o3-mini/4o derivation renders cleanly (${chatgptHtml.length} bytes)`);
+    assert(`CAT7-CHATGPT-${demo.name}`, 'ModelDerivations', demo.name, chatgptOk && chatgptHtml.length > 50, `ChatGPT derivation renders cleanly (${chatgptHtml.length} bytes)`);
 
     // Render DeepSeek Derivation
     let deepseekHtml = '';
@@ -659,7 +659,7 @@ export async function runAdversarialM2MotionStressTests() {
       deepseekOk = false;
       console.error(`DeepSeek derivation render failed in ${demo.name}:`, err.message);
     }
-    assert(`CAT7-DEEPSEEK-${demo.name}`, 'ModelDerivations', demo.name, deepseekOk && deepseekHtml.length > 50, `DeepSeek-R1 derivation renders cleanly (${deepseekHtml.length} bytes)`);
+    assert(`CAT7-DEEPSEEK-${demo.name}`, 'ModelDerivations', demo.name, deepseekOk && deepseekHtml.length > 50, `DeepSeek derivation renders cleanly (${deepseekHtml.length} bytes)`);
 
     // Distinct derivations check
     assert(

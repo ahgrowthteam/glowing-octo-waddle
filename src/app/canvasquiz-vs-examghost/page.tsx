@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     },
     description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/canvasquiz-vs-examghost",
+        canonical: "https://www.examghost.com/canvasquiz-vs-examghost",
     },
     openGraph: {
         title: "CanvasQuiz vs ExamGhost (2026) — DOM Buttons vs Shadow DOM",
         description: "CanvasQuiz injects detectable HTML buttons into Canvas and bills $48.99/4mo. ExamGhost isolates its 0.3s HUD in a closed Shadow DOM with 5 Free Solves / Day.",
-        url: "https://examghost.com/canvasquiz-vs-examghost",
+        url: "https://www.examghost.com/canvasquiz-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -66,16 +66,16 @@ export default function CanvasQuizComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-03-13",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/canvasquiz-vs-examghost#webpage",
-                "url": "https://examghost.com/canvasquiz-vs-examghost",
+                "@id": "https://www.examghost.com/canvasquiz-vs-examghost#webpage",
+                "url": "https://www.examghost.com/canvasquiz-vs-examghost",
                 "name": "CanvasQuiz vs ExamGhost (2026) | Why CanvasQuiz Admits It Fails Under Proctoring",
                 "description": "Direct comparison between Canvas Quiz Solver (canvasquiz.com / eiceeladfkklbbdlgpfhgclfhlmkpmjb v3.9.0) and ExamGhost regarding DOM injection vulnerabilities, proctoring detection, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/canvasquiz-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvasquiz-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -137,16 +137,16 @@ export default function CanvasQuizComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvasquiz-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvasquiz-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CanvasQuiz vs ExamGhost", "item": "https://examghost.com/canvasquiz-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasQuiz vs ExamGhost", "item": "https://www.examghost.com/canvasquiz-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvasquiz-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvasquiz-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -585,9 +585,9 @@ export default function CanvasQuizComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -615,27 +615,7 @@ export default function CanvasQuizComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT MIGRATION STORY */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;Our professor switched our biology midterms to proctored Canvas quizzes, and my chemistry lab ran on Blackboard. I read CanvasQuiz&apos;s own FAQ admitting it is only for exams without a proctoring tool and only works on Canvas, plus it wanted $48.99 every 4 months. I tested ExamGhost&apos;s 5 Free Solves / Day and upgraded to the $99/year pass—it works on both Canvas and Blackboard inside a closed Shadow DOM with zero flags.&quot;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
-                            <div>
-                                <span className="font-bold text-ink">Camila R.</span> — Biology Junior, Florida State University
-                            </div>
-                            <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified ExamGhost Switcher
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">

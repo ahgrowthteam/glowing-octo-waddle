@@ -89,8 +89,8 @@ export default function GhostMode() {
                         <span className="text-emerald-400 font-bold">MODES &amp; METHODS PLAYGROUND</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.06] mb-5">
-                        Choose your mode.<br />
-                        Pick your landing.
+                        How does the answer appear?<br />
+                        You pick the mode.
                     </h2>
                     <p className="text-base sm:text-lg text-white/60 leading-relaxed font-normal">
                         ExamGhost adapts to your specific testing scenario. Configure your display visibility, choose how the answer lands on the page, and test it in real time below.

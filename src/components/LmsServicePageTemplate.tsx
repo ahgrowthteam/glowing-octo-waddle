@@ -175,8 +175,8 @@ const ALL_COMPETITOR_LINKS = [
 export default function LmsServicePageTemplate({ config }: { config: LmsServicePageConfig }) {
     const filmKey = config.slug.startsWith('blog/') ? config.slug.replace('blog/', '') : config.slug;
     const safeSlug = filmKey.replace(/\//g, '-');
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     // Automatically enrich @graph JSON-LD with VideoObject and HowTo so every page qualifies for Google Video & How-To Rich Results
     const baseGraph = Array.isArray((config.jsonLd as { '@graph'?: unknown[] })['@graph'])
@@ -189,7 +189,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
     if (!hasVideoObject) {
         baseGraph.push({
             '@type': 'VideoObject',
-            '@id': `https://examghost.com/${config.slug}#video`,
+            '@id': `https://www.examghost.com/${config.slug}#video`,
             name: `${config.platformName} AI Quiz Solver — 2.5D Explainer & Product Demo Film`,
             description: `16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves ${config.platformName} questions one by one via double-click and Alt+S Vision OCR inside a Closed Shadow DOM with zero blur events.`,
             thumbnailUrl: [posterUrl],
@@ -199,7 +199,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
             publisher: {
                 '@type': 'Organization',
                 name: 'ExamGhost',
-                url: 'https://examghost.com',
+                url: 'https://www.examghost.com',
             },
         });
     }
@@ -210,7 +210,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
     if (!hasHowTo && config.howToSection) {
         baseGraph.push({
             '@type': 'HowTo',
-            '@id': `https://examghost.com/${config.slug}#howto`,
+            '@id': `https://www.examghost.com/${config.slug}#howto`,
             name: config.howToSection.heading,
             description: `Step-by-step workflow to solve ${config.platformName} quizzes and assignments one question at a time using ExamGhost's Closed Shadow DOM and Alt+S Vision OCR without triggering focus-loss logs.`,
             totalTime: 'PT1M',
@@ -229,7 +229,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
     if (!hasFaqPage && config.faqs && config.faqs.length > 0) {
         baseGraph.push({
             '@type': 'FAQPage',
-            '@id': `https://examghost.com/${config.slug}#faq`,
+            '@id': `https://www.examghost.com/${config.slug}#faq`,
             mainEntity: config.faqs.map((faq) => ({
                 '@type': 'Question',
                 name: faq.q,
@@ -251,7 +251,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
             datePublished: '2026-01-15',
             dateModified: '2026-10-23',
             inLanguage: 'en-US',
-            author: { '@type': 'Organization', name: 'ExamGhost Security Engineering Team', url: 'https://examghost.com' },
+            author: { '@type': 'Organization', '@id': 'https://www.examghost.com/#organization', name: 'ExamGhost', url: 'https://www.examghost.com' },
             ...node,
             ...(node.dateModified ? {} : { dateModified: '2026-10-23' }),
         };
@@ -313,7 +313,7 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>
@@ -339,12 +339,12 @@ export default function LmsServicePageTemplate({ config }: { config: LmsServiceP
                                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-black/8 shadow-2xs">
                                     <img
                                         src="/images/ghost/ghost_mascot_hero.jpg"
-                                        alt="ExamGhost Browser Security Research Lab"
+                                        alt="ExamGhost"
                                         width={22}
                                         height={22}
                                         className="w-5 h-5 rounded-full object-cover border border-black/10"
                                     />
-                                    <span className="font-semibold text-ink">ExamGhost Browser Security Lab</span>
+                                    <span className="font-semibold text-ink">The ExamGhost team</span>
                                 </div>
                                 <span>•</span>
                                 <span>Reviewed against Instructure Canvas Open-Source Repo</span>

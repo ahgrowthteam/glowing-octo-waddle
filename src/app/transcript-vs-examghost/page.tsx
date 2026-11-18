@@ -32,16 +32,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Study Hub Audit",
+        absolute: "Transcript AI vs ExamGhost (2026) — DOM & Study Hub Audit",
     },
-    description: "Compare Transcript AI (transcript.study) with ExamGhost. See why Transcript's injected 'The Button' triggers Canvas DOM/blur flags while ExamGhost pairs Zero-Button Double-Click Stealth with a 3-Model Study Hub (Claude 3.7, ChatGPT, DeepSeek-R1).",
+    description: "Compare Transcript AI with ExamGhost. See why its injected 'The Button' triggers Canvas DOM/blur flags while ExamGhost uses Zero-Button Double-Click stealth.",
     alternates: {
-        canonical: "https://examghost.com/transcript-vs-examghost",
+        canonical: "https://www.examghost.com/transcript-vs-examghost",
     },
     openGraph: {
         title: "Transcript AI vs ExamGhost (2026) — Zero-Button Stealth & Multi-Model Study Hub",
-        description: "Transcript AI injects 'The Button' into your exam DOM and locks your Notebook to one model. ExamGhost delivers invisible Double-Click solving + a Claude 3.7, ChatGPT & DeepSeek-R1 Study Workspace.",
-        url: "https://examghost.com/transcript-vs-examghost",
+        description: "Transcript AI injects 'The Button' into your exam DOM and locks your Notebook to one model. ExamGhost delivers invisible Double-Click solving + a Claude, ChatGPT & DeepSeek Study Workspace.",
+        url: "https://www.examghost.com/transcript-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Transcript AI vs ExamGhost (2026) — 'The Button' DOM & Study Hub Audit",
+        title: "Transcript AI vs ExamGhost (2026) — DOM & Study Hub Audit",
         description: "Compare Transcript (transcript.study) with ExamGhost. Get 5 Free Solves / Day, Zero-Button Double-Click Stealth, and our 3-Model Study & Homework AI Workspace.",
         images: ["/og-image.jpg"],
     },
@@ -69,16 +69,16 @@ export default function TranscriptComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/transcript-vs-examghost#webpage",
-                "url": "https://examghost.com/transcript-vs-examghost",
+                "@id": "https://www.examghost.com/transcript-vs-examghost#webpage",
+                "url": "https://www.examghost.com/transcript-vs-examghost",
                 "name": "Transcript AI vs ExamGhost (2026 Review) | 'The Button' DOM Injection vs Zero-Button Stealth + 3-Model Study Hub",
-                "description": "Technical evaluation comparing Transcript - AI Homework Helper (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) and ExamGhost across zero-button in-quiz stealth, Canvas SpeedGrader blur protection, and multi-model study notebooks (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1).",
-                "breadcrumb": { "@id": "https://examghost.com/transcript-vs-examghost#breadcrumb" },
+                "description": "Technical evaluation comparing Transcript - AI Homework Helper (transcript.study, Chrome ID klknhfgkblobpfimidmhkclikdalnoke) and ExamGhost across zero-button in-quiz stealth, Canvas SpeedGrader blur protection, and multi-model study notebooks (Claude, ChatGPT, DeepSeek).",
+                "breadcrumb": { "@id": "https://www.examghost.com/transcript-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -110,34 +110,34 @@ export default function TranscriptComparisonPage() {
             },
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/transcript-vs-examghost#article",
+                "@id": "https://www.examghost.com/transcript-vs-examghost#article",
                 "headline": "Transcript AI vs ExamGhost (2026): In-Quiz Zero-Button Stealth & Multi-Model Study Notebook Showdown",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Security & EdTech Lab",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "description": "Deep architectural teardown of Transcript AI's injected 'The Button' toolbar and single-model cloud notebook versus ExamGhost's Closed Shadow DOM Double-Click solver and 3-Model Study Hub."
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/transcript-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/transcript-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Transcript AI vs ExamGhost", "item": "https://examghost.com/transcript-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Transcript AI vs ExamGhost", "item": "https://www.examghost.com/transcript-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/transcript-vs-examghost#faq",
+                "@id": "https://www.examghost.com/transcript-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -152,7 +152,7 @@ export default function TranscriptComparisonPage() {
                         "name": "How does ExamGhost beat Transcript AI at its own Study Notebook game?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "While Transcript's Notebook lets you upload class notes to query a single default AI model, ExamGhost includes a full Multi-Model Study & Homework AI Workspace where you can upload syllabus PDFs, lecture slides, and lab rubrics and switch instantaneously between Claude 3.7 Sonnet (best for essays & humanities), ChatGPT o3-mini / GPT-4o (best for versatile STEM & coding), and DeepSeek-R1 (best for rigorous step-by-step LaTeX math proofs)."
+                            "text": "While Transcript's Notebook lets you upload class notes to query a single default AI model, ExamGhost includes a full Multi-Model Study & Homework AI Workspace where you can upload syllabus PDFs, lecture slides, and lab rubrics and switch instantaneously between Claude (best for essays & humanities), ChatGPT (best for versatile STEM & coding), and DeepSeek (best for rigorous step-by-step LaTeX math proofs)."
                         }
                     },
                     {
@@ -168,7 +168,7 @@ export default function TranscriptComparisonPage() {
                         "name": "How does Transcript.study pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Transcript charges a recurring $14.99/month subscription ($179.88/year, or $719.52 over a 4-year degree) with no academic-year discount and no lifetime pass. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 no card required), plus 2-in-1 plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that unlock both Unlimited Stealth Extension Solves and full access to the Claude 3.7 + ChatGPT + DeepSeek-R1 Study Workspace."
+                            "text": "Transcript charges a recurring $14.99/month subscription ($179.88/year, or $719.52 over a 4-year degree) with no academic-year discount and no lifetime pass. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 no card required), plus 2-in-1 plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that unlock both Unlimited Stealth Extension Solves and full access to the Claude + ChatGPT + DeepSeek Study Workspace."
                         }
                     }
                 ]
@@ -234,7 +234,7 @@ export default function TranscriptComparisonPage() {
                                         <span>The ExamGhost 2-in-1 Upgrade ($8.25/mo Academic Pass)</span>
                                     </div>
                                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        ExamGhost replaces Transcript in <strong>both</strong> modes: you get <strong>Zero-Button `Double-Click` Stealth</strong> (`Alt+1` Invisible / `Alt+2` Stealth / `Alt+3` Explain + 100% Focus Shield) inside live exams, <em>plus</em> our <strong>Multi-Model Study &amp; Homework AI Workspace</strong> where you can query <strong>Claude 3.7 Sonnet, ChatGPT (o3-mini / GPT-4o), and DeepSeek-R1</strong> side-by-side on your uploaded syllabus PDFs.
+                                        ExamGhost replaces Transcript in <strong>both</strong> modes: you get <strong>Zero-Button `Double-Click` Stealth</strong> (`Alt+1` Invisible / `Alt+2` Stealth / `Alt+3` Explain + 100% Focus Shield) inside live exams, <em>plus</em> our <strong>Multi-Model Study &amp; Homework AI Workspace</strong> where you can query <strong>Claude, ChatGPT, and DeepSeek</strong> side-by-side on your uploaded syllabus PDFs.
                                     </p>
                                 </div>
                             </div>
@@ -343,7 +343,7 @@ export default function TranscriptComparisonPage() {
                                     </div>
 
                                     <h2 className="font-display text-lg sm:text-xl font-bold text-ink mb-2.5">
-                                        Beating Transcript&apos;s Notebook with Claude 3.7 + ChatGPT + DeepSeek-R1
+                                        Beating Transcript&apos;s Notebook with Claude + ChatGPT + DeepSeek
                                     </h2>
 
                                     <p className="text-xs text-ink-secondary leading-relaxed mb-3.5">
@@ -352,7 +352,7 @@ export default function TranscriptComparisonPage() {
 
                                     <div className="grid grid-cols-3 gap-2 text-[11px]">
                                         <div className="p-2.5 rounded-xl bg-white border border-black/10">
-                                            <div className="font-bold text-purple-950">Claude 3.7</div>
+                                            <div className="font-bold text-purple-950">Claude</div>
                                             <div className="text-[10px] text-ink-muted mt-0.5">Essays, Bio &amp; Long PDFs</div>
                                         </div>
                                         <div className="p-2.5 rounded-xl bg-white border border-black/10">
@@ -360,7 +360,7 @@ export default function TranscriptComparisonPage() {
                                             <div className="text-[10px] text-ink-muted mt-0.5">Chem, CS &amp; Multi-Modal</div>
                                         </div>
                                         <div className="p-2.5 rounded-xl bg-white border border-black/10">
-                                            <div className="font-bold text-sky-900">DeepSeek-R1</div>
+                                            <div className="font-bold text-sky-900">DeepSeek</div>
                                             <div className="text-[10px] text-ink-muted mt-0.5">LaTeX Calc &amp; Physics Proofs</div>
                                         </div>
                                     </div>
@@ -527,11 +527,11 @@ export default function TranscriptComparisonPage() {
                             </div>
 
                             <div className="grid md:grid-cols-3 gap-5 mb-6">
-                                {/* Model 1: Claude 3.7 Sonnet */}
+                                {/* Model 1: Claude */}
                                 <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-200 font-mono text-xs font-bold">
-                                            Claude 3.7 Sonnet
+                                            Claude
                                         </span>
                                         <FileText className="w-4 h-4 text-purple-300" />
                                     </div>
@@ -539,15 +539,15 @@ export default function TranscriptComparisonPage() {
                                         Unmatched for Essays, Bio, Nursing &amp; 200-Page PDFs
                                     </h4>
                                     <p className="text-xs text-slate-300 leading-relaxed">
-                                        Upload your entire semester syllabus, lab manual, or case study packet. Claude 3.7 Sonnet synthesizes nuanced arguments, nursing NCLEX rationales, and natural human-sounding essay drafts that never read like generic AI slop.
+                                        Upload your entire semester syllabus, lab manual, or case study packet. Claude synthesizes nuanced arguments, nursing NCLEX rationales, and natural human-sounding essay drafts that never read like generic AI slop.
                                     </p>
                                 </div>
 
-                                {/* Model 2: ChatGPT (GPT-4o / o3-mini) */}
+                                {/* Model 2: ChatGPT */}
                                 <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 font-mono text-xs font-bold">
-                                            ChatGPT (4o / o3-mini)
+                                            ChatGPT
                                         </span>
                                         <Cpu className="w-4 h-4 text-emerald-300" />
                                     </div>
@@ -555,15 +555,15 @@ export default function TranscriptComparisonPage() {
                                         Fast Multi-Modal Diagrams, Chemistry &amp; CS Debugging
                                     </h4>
                                     <p className="text-xs text-slate-300 leading-relaxed">
-                                        Drop in a photo of a handwritten organic chemistry mechanism, circuit schematic, or Python traceback. ChatGPT 4o &amp; o3-mini parse visual diagrams and generate clean, runnable code and study flashcards in seconds.
+                                        Drop in a photo of a handwritten organic chemistry mechanism, circuit schematic, or Python traceback. ChatGPT parse visual diagrams and generate clean, runnable code and study flashcards in seconds.
                                     </p>
                                 </div>
 
-                                {/* Model 3: DeepSeek-R1 */}
+                                {/* Model 3: DeepSeek */}
                                 <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="px-2.5 py-1 rounded-lg bg-sky-500/20 text-sky-200 font-mono text-xs font-bold">
-                                            DeepSeek-R1 Reasoning
+                                            DeepSeek Reasoning
                                         </span>
                                         <BrainCircuit className="w-4 h-4 text-sky-300" />
                                     </div>
@@ -571,7 +571,7 @@ export default function TranscriptComparisonPage() {
                                         Chain-of-Thought LaTeX Calculus, Stats &amp; Physics Proofs
                                     </h4>
                                     <p className="text-xs text-slate-300 leading-relaxed">
-                                        When Transcript&apos;s default model hallucinates on multivariable calculus, differential equations, or econometrics, switch to DeepSeek-R1 to inspect every step-by-step chain-of-thought derivation rendered in crisp LaTeX.
+                                        When Transcript&apos;s default model hallucinates on multivariable calculus, differential equations, or econometrics, switch to DeepSeek to inspect every step-by-step chain-of-thought derivation rendered in crisp LaTeX.
                                     </p>
                                 </div>
                             </div>
@@ -705,7 +705,7 @@ export default function TranscriptComparisonPage() {
                             </div>
 
                             <div className="p-3.5 rounded-2xl bg-[#f6f1fe] border border-purple-200 text-xs text-purple-950">
-                                <strong>2-in-1 Value Included:</strong> Every paid plan unlocks (1) <strong>Unlimited Stealth Extension Solves</strong> + (2) <strong>Unlimited Claude 3.7 Sonnet, ChatGPT &amp; DeepSeek-R1 Study Hub</strong>.
+                                <strong>2-in-1 Value Included:</strong> Every paid plan unlocks (1) <strong>Unlimited Stealth Extension Solves</strong> + (2) <strong>Unlimited Claude, ChatGPT &amp; DeepSeek Study Hub</strong>.
                             </div>
                         </div>
                     </div>
@@ -752,7 +752,7 @@ export default function TranscriptComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Study &amp; Homework AI Models</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 3 Frontier Models: Claude 3.7 Sonnet + ChatGPT (4o/o3-mini) + DeepSeek-R1</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 3 Frontier Models: Claude + ChatGPT + DeepSeek</td>
                                         <td className="py-3.5 px-4 text-ink-muted">Single default AI model in Notebook</td>
                                     </tr>
                                     <tr>
@@ -816,26 +816,7 @@ export default function TranscriptComparisonPage() {
                     STUDENT MIGRATION STORY + FAQ ACCORDION
                 ===================================================================== */}
                 <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-20" aria-label="Student Review and FAQ">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#e2d3fa]/55 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm mb-14">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration from Transcript.study</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I originally subscribed to Transcript for $14.99/mo because I liked uploading my biology lecture PDFs into its Notebook. But during actual Canvas quizzes, highlighting every question to make &lsquo;The Button&rsquo; pop up felt super sketchy, and clicking into the Transcript chat sidebar logged tab-switch events in SpeedGrader. Switching to ExamGhost gave me a 3-model Study Hub where I use Claude 3.7 for lab reports and DeepSeek-R1 for biostats—plus during quizzes I just double-click and get the answer in `Alt+1` Invisible mode with zero blur logs.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-purple-950 text-white font-bold flex items-center justify-center text-sm">
-                                AN
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Avery N.</div>
-                                <div className="text-xs text-ink-muted">Molecular Biology · University of Washington</div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div className="text-center mb-8">
                         <span className="px-3 py-1 rounded-full bg-black/5 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted mb-2 inline-block">

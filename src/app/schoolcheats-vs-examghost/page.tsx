@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     },
     description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/schoolcheats-vs-examghost",
+        canonical: "https://www.examghost.com/schoolcheats-vs-examghost",
     },
     openGraph: {
         title: "SchoolCheats vs ExamGhost (2026) — K-12 Scripts vs College",
         description: "SchoolCheats charges $8.99/wk for K-12 game scripts and redirects tabs. ExamGhost protects Canvas, Blackboard & Moodle exams in 0.3s with 5 Free Solves / Day.",
-        url: "https://examghost.com/schoolcheats-vs-examghost",
+        url: "https://www.examghost.com/schoolcheats-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,18 +64,18 @@ const jsonLd = {
     {
       "@type": "WebPage",
                 "datePublished": "2026-01-23",
-                "dateModified": "2026-03-07",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-      "@id": "https://examghost.com/schoolcheats-vs-examghost#webpage",
-      url: "https://examghost.com/schoolcheats-vs-examghost",
+      "@id": "https://www.examghost.com/schoolcheats-vs-examghost#webpage",
+      url: "https://www.examghost.com/schoolcheats-vs-examghost",
       name: "SchoolCheats.net vs ExamGhost (2026): K-12 Game Scripts vs University LMS Stealth",
       description:
         "Comprehensive 2026 audit comparing SchoolCheats.net's 7-platform script library and $25/mo pricing against ExamGhost's Canvas/Blackboard Shadow DOM stealth and 0.3s Vision OCR.",
       breadcrumb: {
-        "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/schoolcheats-vs-examghost#breadcrumb",
       },
       about: [
         {
@@ -107,31 +107,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/schoolcheats-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/schoolcheats-vs-examghost#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://examghost.com",
+          item: "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Compare Extensions",
-          item: "https://examghost.com/compare-canvas-hack-extensions",
+          item: "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "SchoolCheats vs ExamGhost",
-          item: "https://examghost.com/schoolcheats-vs-examghost",
+          item: "https://www.examghost.com/schoolcheats-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/schoolcheats-vs-examghost#faq",
+      "@id": "https://www.examghost.com/schoolcheats-vs-examghost#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -368,7 +368,7 @@ export default function SchoolCheatsVsExamGhostPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-6">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+              <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
@@ -732,12 +732,12 @@ export default function SchoolCheatsVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-xs opacity-75">
                       Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>

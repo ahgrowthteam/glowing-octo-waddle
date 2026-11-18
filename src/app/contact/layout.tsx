@@ -4,14 +4,14 @@ export const metadata: Metadata = {
     title: "Contact 24/7 Student Support & Discord Help",
     description: "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
     alternates: {
-        canonical: "https://examghost.com/contact",
+        canonical: "https://www.examghost.com/contact",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
         title: "Contact 24/7 Student Support & Discord Help | ExamGhost",
         description: "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
-        url: "https://examghost.com/contact",
+        url: "https://www.examghost.com/contact",
         siteName: "ExamGhost",
         images: [
             {
@@ -34,24 +34,24 @@ export default function ContactLayout({
         "@graph": [
             {
                 "@type": "ContactPage",
-                "@id": "https://examghost.com/contact#webpage",
-                "url": "https://examghost.com/contact",
+                "@id": "https://www.examghost.com/contact#webpage",
+                "url": "https://www.examghost.com/contact",
                 "name": "Contact 24/7 Student Support & Discord Help | ExamGhost",
                 "description": "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/contact#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/contact#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#support-troubleshooting-heading"]
                 },
                 "mainEntity": {
                     "@type": "Organization",
-                    "@id": "https://examghost.com/#organization",
+                    "@id": "https://www.examghost.com/#organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com",
+                    "url": "https://www.examghost.com",
                     "email": "support@examghost.com",
                     "contactPoint": {
                         "@type": "ContactPoint",
@@ -63,10 +63,10 @@ export default function ContactLayout({
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/contact#breadcrumb",
+                "@id": "https://www.examghost.com/contact#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Contact Support", "item": "https://examghost.com/contact" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Contact Support", "item": "https://www.examghost.com/contact" }
                 ]
             }
         ]

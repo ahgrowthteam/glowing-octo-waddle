@@ -19,12 +19,12 @@ export const metadata: Metadata = {
         "examghost live sandbox"
     ],
     alternates: {
-        canonical: "https://examghost.com/canvas-quiz-solver-free-demo",
+        canonical: "https://www.examghost.com/canvas-quiz-solver-free-demo",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://examghost.com/canvas-quiz-solver-free-demo",
+        url: "https://www.examghost.com/canvas-quiz-solver-free-demo",
         siteName: "ExamGhost",
         title: "Canvas Quiz Solver Free Demo — Live AI Exam Sandbox | ExamGhost",
         description: "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (Alt+S), and compare all 3 stealth modes (Alt+1, Alt+2, Alt+3).",
@@ -56,18 +56,18 @@ export default function DemoLayout({
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#webpage",
-                "url": "https://examghost.com/canvas-quiz-solver-free-demo",
+                "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#webpage",
+                "url": "https://www.examghost.com/canvas-quiz-solver-free-demo",
                 "name": "Canvas Quiz Solver Free Demo — Live AI Exam Sandbox | ExamGhost",
                 "description": "Test ExamGhost live on an interactive Canvas quiz simulator. Double-click to solve, test Snap-It Vision OCR (Alt+S), and compare all 3 stealth modes (Alt+1, Alt+2, Alt+3).",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
                 "isPartOf": {
-                    "@id": "https://examghost.com/#website"
+                    "@id": "https://www.examghost.com/#website"
                 },
                 "breadcrumb": {
-                    "@id": "https://examghost.com/canvas-quiz-solver-free-demo#breadcrumb"
+                    "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#breadcrumb"
                 },
                 "speakable": {
                     "@type": "SpeakableSpecification",
@@ -76,7 +76,7 @@ export default function DemoLayout({
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/#software",
+                "@id": "https://www.examghost.com/#software",
                 "name": "ExamGhost",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -126,7 +126,7 @@ export default function DemoLayout({
             },
             {
                 "@type": "HowTo",
-                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#howto",
+                "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#howto",
                 "name": "How to Solve Canvas, Blackboard & STEM Quiz Questions Inline Without Switching Tabs",
                 "description": "Test and use ExamGhost AI to solve multiple-choice, multi-select, short-answer, and diagram OCR questions directly inside your active browser tab.",
                 "totalTime": "PT10S",
@@ -153,40 +153,40 @@ export default function DemoLayout({
             },
             {
                 "@type": "VideoObject",
-                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#video",
+                "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#video",
                 "name": "Canvas LMS AI Quiz Solver — 2.5D Motion Explainer & Interactive Sandbox Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves Canvas Classic and New Quizzes one question at a time via double-click and Alt+S Vision OCR with 0 SpeedGrader page_blurred flags.",
-                "thumbnailUrl": ["https://examghost.com/videos/posters/canvas-lms-quiz-solver-poster.jpg"],
-                "contentUrl": "https://examghost.com/videos/canvas-lms-quiz-solver.mp4",
+                "thumbnailUrl": ["https://www.examghost.com/videos/posters/canvas-lms-quiz-solver-poster.jpg"],
+                "contentUrl": "https://www.examghost.com/videos/canvas-lms-quiz-solver.mp4",
                 "uploadDate": "2026-10-22T00:00:00Z",
                 "duration": "PT16S",
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#breadcrumb",
+                "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Canvas Quiz Solver Free Demo",
-                        "item": "https://examghost.com/canvas-quiz-solver-free-demo"
+                        "item": "https://www.examghost.com/canvas-quiz-solver-free-demo"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvas-quiz-solver-free-demo#faq",
+                "@id": "https://www.examghost.com/canvas-quiz-solver-free-demo#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -209,7 +209,7 @@ export default function DemoLayout({
                         "name": "How do I solve locked math graphs, uncopyable PDFs, and chemistry diagrams on ALEKS or WebAssign?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Press Alt+S to activate Snap-It Vision OCR, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through DeepSeek-R1 and GPT-4o Vision, returning the verified answer and step-by-step derivation in under 0.4 seconds without copying text."
+                            "text": "Press Alt+S to activate Snap-It Vision OCR, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through DeepSeek and ChatGPT Vision, returning the verified answer and step-by-step derivation in under 0.4 seconds without copying text."
                         }
                     },
                     {
@@ -233,7 +233,7 @@ export default function DemoLayout({
                         "name": "How accurate is ExamGhost compared to ChatGPT, Gauth AI, and CanvasHack?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost achieves 99.4% accuracy on university STEM and humanities assessments by routing symbolic math, calculus, and physics problems to DeepSeek-R1 while sending reading comprehension and image diagrams to GPT-4o Vision. Unlike ChatGPT (which requires 15–30 seconds of tab-switching) or legacy scripts like CanvasHack (which inject detectable DOM nodes), ExamGhost solves inline in 0.3 seconds with zero tab-switch flags."
+                            "text": "ExamGhost achieves 99.4% accuracy on university STEM and humanities assessments by routing symbolic math, calculus, and physics problems to DeepSeek while sending reading comprehension and image diagrams to ChatGPT Vision. Unlike ChatGPT (which requires 15–30 seconds of tab-switching) or legacy scripts like CanvasHack (which inject detectable DOM nodes), ExamGhost solves inline in 0.3 seconds with zero tab-switch flags."
                         }
                     },
                     {

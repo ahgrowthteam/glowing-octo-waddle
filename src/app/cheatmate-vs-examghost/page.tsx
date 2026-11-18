@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
     },
-    description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
+    description: "ExamGhost's 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/cheatmate-vs-examghost",
+        canonical: "https://www.examghost.com/cheatmate-vs-examghost",
     },
     openGraph: {
         title: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
-        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/cheatmate-vs-examghost",
+        description: "ExamGhost's 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
+        url: "https://www.examghost.com/cheatmate-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CheatMate vs ExamGhost (2026) — $9.99/Wk Study Buddy Audit",
-        description: "Independent 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
+        description: "ExamGhost's 2026 audit of CheatMate ('Study Buddy' 2.8★) vs ExamGhost. Skip $9.99/week billing traps and 10s DOM lag with 0.3s stealth & 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -71,16 +71,16 @@ export default function CheatMateComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-20",
-                "dateModified": "2026-03-04",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/cheatmate-vs-examghost#webpage",
-                "url": "https://examghost.com/cheatmate-vs-examghost",
+                "@id": "https://www.examghost.com/cheatmate-vs-examghost#webpage",
+                "url": "https://www.examghost.com/cheatmate-vs-examghost",
                 "name": "CheatMate vs ExamGhost (2026 Review) | The $9.99/Week & 2.8★ 'Study Buddy' Trap",
                 "description": "Comprehensive 2026 comparison of CheatMate ('Study Buddy' Chrome extension ID pifapfmbofjgaenkhhipjhfacfmmhkcp) and ExamGhost across billing transparency, DOM stealth, and response speed.",
-                "breadcrumb": { "@id": "https://examghost.com/cheatmate-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/cheatmate-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -105,16 +105,16 @@ export default function CheatMateComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/cheatmate-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/cheatmate-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CheatMate vs ExamGhost", "item": "https://examghost.com/cheatmate-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CheatMate vs ExamGhost", "item": "https://www.examghost.com/cheatmate-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/cheatmate-vs-examghost#faq",
+                "@id": "https://www.examghost.com/cheatmate-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -571,18 +571,6 @@ export default function CheatMateComparisonPage() {
                                 <tbody className="divide-y divide-black/5">
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-4 px-6">
-                                            <div className="font-bold text-ink">Chrome Web Store Rating</div>
-                                            <div className="text-xs text-ink-muted">Verified student rating on official store</div>
-                                        </td>
-                                        <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/30">
-                                            4.9 ★ Student Verified
-                                        </td>
-                                        <td className="py-4 px-6 text-center font-semibold text-rose-800">
-                                            2.8 ★ (14 ratings · 2,000 users)
-                                        </td>
-                                    </tr>
-                                    <tr className="hover:bg-[#fcf9f5]">
-                                        <td className="py-4 px-6">
                                             <div className="font-bold text-ink">Trial &amp; Entry Price</div>
                                             <div className="text-xs text-ink-muted">Test before entering payment details</div>
                                         </td>
@@ -656,9 +644,9 @@ export default function CheatMateComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -696,27 +684,7 @@ export default function CheatMateComparisonPage() {
                     STUDENT SWITCHER STORY & FAQ
                 ============================================================ */}
                 <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-24">
-                    <div className="rounded-[32px] bg-[#ebeef9] border border-black/10 p-7 sm:p-10 mb-16 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <div className="flex items-center gap-1 text-amber-500">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                ))}
-                            </div>
-                            <span className="px-3 py-1 rounded-full bg-white text-indigo-950 text-xs font-bold border border-black/10">
-                                Verified Switcher from CheatMate
-                            </span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-2xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;CheatMate charged my debit card $9.99 every single week for two months after the $0.99 trial before I caught it on my bank statement. Worse, during my Cognitive Science midterm, I had to wait 10+ seconds on every page and it didn&apos;t work on image questions. ExamGhost let me test 5 free solves / day without a card, and the $99/yr pass solves everything in 0.3s.&rdquo;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-black/10 text-xs text-ink-secondary">
-                            <div>
-                                <strong className="text-ink">Jordan P.</strong> · Cognitive Science Major, UC San Diego
-                            </div>
-                            <span className="font-bold text-emerald-800">Earned an A in COGS 108 · Zero SpeedGrader Flags</span>
-                        </div>
-                    </div>
+                    
 
                     {/* FAQ */}
                     <div className="text-center mb-10">

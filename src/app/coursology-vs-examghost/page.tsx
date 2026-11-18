@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/coursology-vs-examghost",
+        canonical: "https://www.examghost.com/coursology-vs-examghost",
     },
     openGraph: {
         title: "Coursology vs ExamGhost (2026) — Podcasts vs Stealth HUD",
         description: "Compare Coursology with ExamGhost in 2026. Trade visible sidebar overlays for a 0.3s closed Shadow DOM quiz solver, Focus Shield stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/coursology-vs-examghost",
+        url: "https://www.examghost.com/coursology-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -66,16 +66,16 @@ export default function CoursologyVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-18",
-                "dateModified": "2026-03-15",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/coursology-vs-examghost#webpage",
-                "url": "https://examghost.com/coursology-vs-examghost",
+                "@id": "https://www.examghost.com/coursology-vs-examghost#webpage",
+                "url": "https://www.examghost.com/coursology-vs-examghost",
                 "name": "Coursology vs ExamGhost (2026 Comparison) | Study Podcasts vs Invisible 0.3s Quiz Solver",
                 "description": "Technical and workflow comparison between Coursology (coursology.com) and ExamGhost for Canvas, Blackboard, Moodle, and D2L Brightspace assessments.",
-                "breadcrumb": { "@id": "https://examghost.com/coursology-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/coursology-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -100,16 +100,16 @@ export default function CoursologyVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/coursology-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/coursology-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Coursology vs ExamGhost", "item": "https://examghost.com/coursology-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Coursology vs ExamGhost", "item": "https://www.examghost.com/coursology-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/coursology-vs-examghost#faq",
+                "@id": "https://www.examghost.com/coursology-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -584,9 +584,9 @@ export default function CoursologyVsExamghostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

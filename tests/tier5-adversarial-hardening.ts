@@ -9,7 +9,7 @@
  *    - MotionCursor coordinate bounds, action types, click ripple animation
  * 
  * 2. Universal Harness Across All 58 Bespoke Framer Motion Demos (5 Suites):
- *    - Model tab switching & content distinctness (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+ *    - Model tab switching & content distinctness (Claude, ChatGPT, DeepSeek)
  *    - Telemetry HUD bounds across scenes (Scene 0 competitor fail vs Scene 1 ExamGhost 0.3s clean)
  *    - Timer state machine & progress advancement
  *    - Paused invariance and seek-while-paused
@@ -622,19 +622,19 @@ for (const demo of ALL_58_DEMOS) {
   // Set to Scene 2 (Study Workspace scene, index 2)
   harness.setState(1, 2); // currentScene = 2
 
-  // 1. Claude 3.7 Sonnet tab
+  // 1. Claude tab
   harness.setState(4, 'claude');
   const renderClaude = harness.render();
   const htmlClaude = renderToString(renderClaude.element);
   const leaksClaude = detectHtmlLeaks(htmlClaude);
 
-  // 2. ChatGPT o3-mini tab
+  // 2. ChatGPT tab
   harness.setState(4, 'chatgpt');
   const renderChatGpt = harness.render();
   const htmlChatGpt = renderToString(renderChatGpt.element);
   const leaksChatGpt = detectHtmlLeaks(htmlChatGpt);
 
-  // 3. DeepSeek-R1 tab
+  // 3. DeepSeek tab
   harness.setState(4, 'deepseek');
   const renderDeepSeek = harness.render();
   const htmlDeepSeek = renderToString(renderDeepSeek.element);
@@ -836,9 +836,9 @@ for (const demo of ALL_58_DEMOS) {
   const permutations = [
     { scene: 0, tab: 'claude', name: 'Scene 0 (Competitor Failure)' },
     { scene: 1, tab: 'claude', name: 'Scene 1 (ExamGhost 0.3s Solve)' },
-    { scene: 2, tab: 'claude', name: 'Scene 2 (Claude 3.7 Sonnet)' },
-    { scene: 2, tab: 'chatgpt', name: 'Scene 2 (ChatGPT o3-mini/4o)' },
-    { scene: 2, tab: 'deepseek', name: 'Scene 2 (DeepSeek-R1)' },
+    { scene: 2, tab: 'claude', name: 'Scene 2 (Claude)' },
+    { scene: 2, tab: 'chatgpt', name: 'Scene 2 (ChatGPT)' },
+    { scene: 2, tab: 'deepseek', name: 'Scene 2 (DeepSeek)' },
   ];
 
   for (const perm of permutations) {
@@ -940,7 +940,7 @@ for (const route of COMPARISON_ROUTES) {
     !pricingCheck.isComplete ? `Pricing incomplete (Free: ${pricingCheck.hasFreeDaily}, Mo: ${pricingCheck.hasMonthly}, Yr: ${pricingCheck.hasAnnual}, Life: ${pricingCheck.hasLifetime})` : undefined
   );
 
-  // 4. 3 frontier models (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+  // 4. 3 frontier models (Claude, ChatGPT, DeepSeek)
   const modelsCheck = checkFrontierModels(content);
   assert(
     'RouteStatic',

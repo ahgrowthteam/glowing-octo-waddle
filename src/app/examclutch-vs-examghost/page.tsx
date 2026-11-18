@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
     },
-    description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags & $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/examclutch-vs-examghost",
+        canonical: "https://www.examghost.com/examclutch-vs-examghost",
     },
     openGraph: {
         title: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
-        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/examclutch-vs-examghost",
+        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags & $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/examclutch-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "ExamClutch vs ExamGhost (2026) — 30s Batch Lag vs 0.3s AI",
-        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags, and $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "2026 audit of ExamClutch vs ExamGhost. Replace 30-second batch delays, auto-clicker flags & $9/week billing with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -97,13 +97,13 @@ const jsonLd = {
     {
       "@type": "WebPage",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-03-16",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-      "@id": "https://examghost.com/examclutch-vs-examghost#webpage",
-      url: "https://examghost.com/examclutch-vs-examghost",
+      "@id": "https://www.examghost.com/examclutch-vs-examghost#webpage",
+      url: "https://www.examghost.com/examclutch-vs-examghost",
       name: "ExamClutch vs ExamGhost AI (2026): ~30s Batch Wait, Auto-Click Risks & Pricing Audit",
       description:
         "Side-by-side 2026 technical and pricing audit comparing ExamClutch (examclutch.com, v2.0.8) and ExamGhost AI across extension stealth, answer latency, synthetic DOM clicking vs Shadow DOM display, and subscription value.",
@@ -111,39 +111,39 @@ const jsonLd = {
       isPartOf: {
         "@type": "WebSite",
         name: "ExamGhost AI",
-        url: "https://examghost.com",
+        url: "https://www.examghost.com",
       },
       breadcrumb: {
-        "@id": "https://examghost.com/examclutch-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/examclutch-vs-examghost#breadcrumb",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/examclutch-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/examclutch-vs-examghost#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://examghost.com",
+          item: "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Compare LMS Extensions",
-          item: "https://examghost.com/compare-canvas-hack-extensions",
+          item: "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "ExamClutch vs ExamGhost AI",
-          item: "https://examghost.com/examclutch-vs-examghost",
+          item: "https://www.examghost.com/examclutch-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/examclutch-vs-examghost#faq",
+      "@id": "https://www.examghost.com/examclutch-vs-examghost#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -961,9 +961,9 @@ export default function ExamClutchVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -1173,26 +1173,26 @@ export default function ExamClutchVsExamGhostPage() {
                                 Powered by 3 Frontier AI Models
                             </h3>
                             <p className="text-sm text-neutral-600">
-                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                                Full access to Claude, ChatGPT, and DeepSeek for complete step-by-step derivation and homework mastery.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.

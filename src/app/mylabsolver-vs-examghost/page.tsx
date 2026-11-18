@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'MyLab Solver (mylabsolver.com) has officially shut down. See why ExamGhost is the #1 2026 replacement for Pearson MyLab Math, Stats, Accounting, and Canvas.',
   alternates: {
-    canonical: 'https://examghost.com/mylabsolver-vs-examghost',
+    canonical: 'https://www.examghost.com/mylabsolver-vs-examghost',
   },
   openGraph: {
     title: 'MyLab Solver vs ExamGhost (2026) — Shutdown & Replacement Audit',
     description:
       'Verified audit of the MyLabSolver.com discontinuation notice and how ExamGhost solves 2026 Pearson MyLab Math, Statistics, Accounting, Mastering, and Canvas exams.',
-    url: 'https://examghost.com/mylabsolver-vs-examghost',
+    url: 'https://www.examghost.com/mylabsolver-vs-examghost',
     siteName: 'ExamGhost',
     locale: 'en_US',
     type: 'website',
@@ -46,18 +46,19 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://examghost.com/mylabsolver-vs-examghost#webpage",
+      "@id": "https://www.examghost.com/mylabsolver-vs-examghost#webpage",
       "name": "MyLab Solver vs ExamGhost (2026): Discontinuation Audit & Pearson MyLab Alternative",
       "description":
         "Forensic report on the shutdown of MyLab Solver (mylabsolver.com) and technical comparison with ExamGhost for Pearson MyLab Math, Statistics, Accounting, Mastering, and Canvas LMS.",
-      "url": "https://examghost.com/mylabsolver-vs-examghost",
+      "url": "https://www.examghost.com/mylabsolver-vs-examghost",
       "datePublished": "2026-01-22",
-      "dateModified": "2026-03-28",
-      "breadcrumb": { "@id": "https://examghost.com/mylabsolver-vs-examghost#breadcrumb" },
+      "dateModified": "2026-11-18",
+      "breadcrumb": { "@id": "https://www.examghost.com/mylabsolver-vs-examghost#breadcrumb" },
       "author": {
         "@type": "Organization",
-        "name": "ExamGhost Security Engineering Team",
-        "url": "https://examghost.com",
+        "@id": "https://www.examghost.com/#organization",
+        "name": "ExamGhost",
+        "url": "https://www.examghost.com",
       },
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -107,31 +108,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/mylabsolver-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/mylabsolver-vs-examghost#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://examghost.com",
+          "item": "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Competitor Comparisons",
-          "item": "https://examghost.com/compare-canvas-hack-extensions",
+          "item": "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "MyLab Solver vs ExamGhost",
-          "item": "https://examghost.com/mylabsolver-vs-examghost",
+          "item": "https://www.examghost.com/mylabsolver-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/mylabsolver-vs-examghost#faq",
+      "@id": "https://www.examghost.com/mylabsolver-vs-examghost#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -507,7 +508,7 @@ export default function MyLabSolverVsExamGhostPage() {
                     ExamGhost works inside embedded Pearson iframes AND lets you press{' '}
                     <code>Alt+S</code> to snap any graph, piecewise function, Lewis structure, or
                     free-body diagram directly from screen pixels—solving visual STEM problems in
-                    0.3 seconds without touching Pearson&apos;s DOM. Powered by Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1.
+                    0.3 seconds without touching Pearson&apos;s DOM. Powered by Claude, ChatGPT, and DeepSeek.
                   </p>
                   <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
                     <li>✓ Works whether MyLab is opened standalone or embedded inside Canvas</li>
@@ -793,10 +794,10 @@ export default function MyLabSolverVsExamGhostPage() {
                 </tr>
                 <tr className="bg-emerald-50/20">
                   <td className="py-4 px-5 font-bold text-ink">
-                    2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                    2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                   </td>
                   <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                  <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                 </tr>
               </tbody>
             </table>
@@ -846,38 +847,7 @@ Store:   Removed from Chrome Web Store`}
         </div>
       </section>
 
-      {/* Section 5: Verified Student Migration Review */}
-      <section className="py-14 px-4 bg-[#e0e7ff]/40 border-b-2 border-[#111]">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#111]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider bg-[#e0e7ff] border border-[#111] px-2.5 py-1 rounded font-bold">
-                VERIFIED STUDENT MIGRATION // PEARSON MYLAB STATISTICS &amp; CALCULUS
-              </span>
-              <span className="font-mono text-xs font-bold text-emerald-700">
-                ★★★★★ Switched After MyLab Solver Shut Down
-              </span>
-            </div>
-
-            <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
-              &ldquo;When MyLab Solver shut down right before my Business Statistics midterm, I
-              panicked because ChatGPT kept rounding z-scores wrong and getting marked incorrect by
-              Pearson&apos;s 3-decimal-place rule. Found ExamGhost, tested the 5 free solves / day on a
-              6-part MyLab hypothesis testing problem with a pop-up data table, and it nailed every
-              single part to the exact decimal place Pearson wanted—plus it works on my Canvas
-              quizzes too.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between text-xs font-mono text-neutral-600 border-t border-neutral-200 pt-4">
-              <div>
-                <strong className="text-[#111]">Brandon L.</strong> • Sophomore, Business Analytics
-                • Pearson MyLab Statistics &amp; Canvas
-              </div>
-              <div className="text-emerald-700 font-bold">Verified ExamGhost Pro User</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: FAQ */}
       <section className="py-14 px-4 border-b-2 border-[#111]">
@@ -897,7 +867,7 @@ Store:   Removed from Chrome Web Store`}
               open
             >
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>1. Did MyLab Solver (mylabsolver.com) shut down?</span>
+                <h3 className="inline font-bold m-0">1. Did MyLab Solver (mylabsolver.com) shut down?</h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -915,7 +885,7 @@ Store:   Removed from Chrome Web Store`}
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>2. What is the best working replacement for MyLab Solver in 2026?</span>
+                <h3 className="inline font-bold m-0">2. What is the best working replacement for MyLab Solver in 2026?</h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -930,10 +900,10 @@ Store:   Removed from Chrome Web Store`}
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   3. How does ExamGhost handle Pearson MyLab&apos;s strict rounding rules and
                   multi-part math questions?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -949,9 +919,9 @@ Store:   Removed from Chrome Web Store`}
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   4. Can Pearson MyLab or Canvas detect ExamGhost during timed quizzes and tests?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>

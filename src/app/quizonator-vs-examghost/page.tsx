@@ -29,16 +29,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Quizonator vs ExamGhost (2026) — LTI 1.3 Iframe & Canvas New Quizzes Test",
+        absolute: "Quizonator vs ExamGhost (2026) — New Quizzes LTI Test",
     },
-    description: "Compare Quizonator (quizonator.com, 3.5★ Chrome Store) with ExamGhost. See why Quizonator breaks inside Canvas New Quizzes LTI 1.3 iframes and ALEKS HTML5 <canvas> while ExamGhost's Alt+S Hybrid Vision + DOM Snip solves in 0.8s.",
+    description: "Compare Quizonator (3.5★ Chrome Store) with ExamGhost. See why it breaks in Canvas New Quizzes LTI 1.3 iframes and ALEKS while ExamGhost's Alt+S solves in 0.8s.",
     alternates: {
-        canonical: "https://examghost.com/quizonator-vs-examghost",
+        canonical: "https://www.examghost.com/quizonator-vs-examghost",
     },
     openGraph: {
         title: "Quizonator vs ExamGhost (2026) — Cross-Origin LTI 1.3 Iframe & Canvas New Quizzes Stress Test",
         description: "Quizonator ($14.99/mo for 300 answers) only supports Canvas Classic and fails inside cross-origin iframes. ExamGhost solves Canvas New Quizzes, ALEKS <canvas>, and Cengage Shadow DOM in 0.8s.",
-        url: "https://examghost.com/quizonator-vs-examghost",
+        url: "https://www.examghost.com/quizonator-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quizonator vs ExamGhost (2026) — Canvas New Quizzes & LTI Iframe Audit",
-        description: "Compare Quizonator (3.5★ Chrome Store) with ExamGhost. Start with 5 Free Solves / Day + our 3-Model Study Hub (Claude 3.7, ChatGPT, DeepSeek-R1).",
+        description: "Compare Quizonator (3.5★ Chrome Store) with ExamGhost. Start with 5 Free Solves / Day + our 3-Model Study Hub (Claude, ChatGPT, DeepSeek).",
         images: ["/og-image.jpg"],
     },
 };
@@ -66,16 +66,16 @@ export default function QuizonatorComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-18",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/quizonator-vs-examghost#webpage",
-                "url": "https://examghost.com/quizonator-vs-examghost",
+                "@id": "https://www.examghost.com/quizonator-vs-examghost#webpage",
+                "url": "https://www.examghost.com/quizonator-vs-examghost",
                 "name": "Quizonator vs ExamGhost (2026 Review) | Cross-Origin LTI 1.3 Iframe & Canvas New Quizzes Stress Test",
                 "description": "Technical evaluation comparing Quizonator v2.0.5 (quizonator.com, Chrome ID dhphdklknbffcgahfpiipdmafoncnndi, 3.5★) and ExamGhost across Canvas New Quizzes LTI 1.3 cross-origin iframes, ALEKS HTML5 canvas graphs, Cengage Shadow DOM, and metered answer caps.",
-                "breadcrumb": { "@id": "https://examghost.com/quizonator-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/quizonator-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -107,34 +107,34 @@ export default function QuizonatorComparisonPage() {
             },
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/quizonator-vs-examghost#article",
+                "@id": "https://www.examghost.com/quizonator-vs-examghost#article",
                 "headline": "Quizonator vs ExamGhost (2026): The Cross-Origin LTI 1.3 Iframe & Canvas New Quizzes Stress Test",
                 "datePublished": "2026-02-18",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Security & EdTech Lab",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "description": "Engineering breakdown of why top-frame DOM scrapers like Quizonator fail inside Canvas New Quizzes LTI 1.3 iframes, McGraw-Hill ALEKS HTML5 canvas elements, and Cengage MindTap Shadow DOM."
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/quizonator-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/quizonator-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Quizonator vs ExamGhost", "item": "https://examghost.com/quizonator-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Quizonator vs ExamGhost", "item": "https://www.examghost.com/quizonator-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/quizonator-vs-examghost#faq",
+                "@id": "https://www.examghost.com/quizonator-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -165,7 +165,7 @@ export default function QuizonatorComparisonPage() {
                         "name": "How does Quizonator pricing compare to ExamGhost in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Quizonator gives 20 free answers per month, then charges $14.99/month for PRO (capped at 300 answers/month) or $28.99/month for PRO+ (capped at 1,200 answers/month). ExamGhost gives you 5 Free Solves / Day (auto-refills every 24 hours, $0 no card required), plus uncapped 2-in-1 plans at $19/mo Monthly, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime—which include both Unlimited Stealth Extension Solves and our Claude 3.7 Sonnet + ChatGPT + DeepSeek-R1 Study & Homework AI Workspace."
+                            "text": "Quizonator gives 20 free answers per month, then charges $14.99/month for PRO (capped at 300 answers/month) or $28.99/month for PRO+ (capped at 1,200 answers/month). ExamGhost gives you 5 Free Solves / Day (auto-refills every 24 hours, $0 no card required), plus uncapped 2-in-1 plans at $19/mo Monthly, $99/yr Academic Year Pass ($8.25/mo), or $199 Lifetime—which include both Unlimited Stealth Extension Solves and our Claude + ChatGPT + DeepSeek Study & Homework AI Workspace."
                         }
                     }
                 ]
@@ -561,7 +561,7 @@ export default function QuizonatorComparisonPage() {
                                         </div>
                                         <div className="flex items-start gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                                            <span><strong>2) Full Study &amp; Homework AI Workspace:</strong> Unlimited access to <strong>Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1</strong> with syllabus PDF RAG included.</span>
+                                            <span><strong>2) Full Study &amp; Homework AI Workspace:</strong> Unlimited access to <strong>Claude, ChatGPT, and DeepSeek</strong> with syllabus PDF RAG included.</span>
                                         </div>
                                     </div>
 
@@ -621,7 +621,7 @@ export default function QuizonatorComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Chrome Web Store Rating</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 4.9★ Verified Stealth Architecture</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Closed Shadow DOM Stealth Architecture</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">3.5★ (49 ratings · 8,000 users)</td>
                                     </tr>
                                     <tr>
@@ -631,7 +631,7 @@ export default function QuizonatorComparisonPage() {
                                     </tr>
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Study &amp; Homework AI Workspace</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Included: Claude 3.7 Sonnet + ChatGPT (4o/o3) + DeepSeek-R1</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Included: Claude + ChatGPT (4o/o3) + DeepSeek</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ Notes upload locked behind $28.99/mo PRO+ tier</td>
                                     </tr>
                                     <tr>
@@ -685,26 +685,7 @@ export default function QuizonatorComparisonPage() {
                     STUDENT MIGRATION STORY + FAQ ACCORDION
                 ===================================================================== */}
                 <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-20" aria-label="Student Review and FAQ">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#c4d0f8]/50 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm mb-14">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I tried Quizonator first, and it completely froze on my Canvas New Quizzes chemistry midterm because New Quizzes runs inside an LTI iframe—and it didn&apos;t work on McGraw-Hill ALEKS graphs at all. With ExamGhost, I press `Alt+S` to snip any ALEKS graph or double-click any Canvas New Quizzes question and get the answer in 0.8 seconds. Plus the 5 free solves per day let me test it on real homework before grabbing the $99/yr pass.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-indigo-950 text-white font-bold flex items-center justify-center text-sm">
-                                DL
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Damian L.</div>
-                                <div className="text-xs text-ink-muted">Mechanical Engineering · University of Illinois Chicago</div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div className="text-center mb-8">
                         <span className="px-3 py-1 rounded-full bg-black/5 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted mb-2 inline-block">

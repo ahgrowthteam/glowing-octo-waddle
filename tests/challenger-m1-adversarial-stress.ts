@@ -413,7 +413,7 @@ export async function runAdversarialM1Tests() {
         const hasClaude = !!s2?.claudeDerivation;
         const hasChatGpt = !!s2?.chatgptDerivation;
         const hasDeepSeek = !!s2?.deepseekDerivation;
-        assert(`INV9-MODELS-${r.demoExport}`, 'MotionDemos', r.demoExport, hasClaude && hasChatGpt && hasDeepSeek, 'Scene 2 includes Claude 3.7, ChatGPT, and DeepSeek-R1 derivations');
+        assert(`INV9-MODELS-${r.demoExport}`, 'MotionDemos', r.demoExport, hasClaude && hasChatGpt && hasDeepSeek, 'Scene 2 includes Claude, ChatGPT, and DeepSeek derivations');
       }
 
       let demoHtml = '';

@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/studyx-vs-examghost",
+        canonical: "https://www.examghost.com/studyx-vs-examghost",
     },
     openGraph: {
         title: "StudyX vs ExamGhost (2026) — 10s Crop Lag & Manifest Audit",
         description: "Compare StudyX (v1.0.324) with ExamGhost. Avoid 10-second crop waits and wildcard web_accessible_resources leaks with 0.3s stealth and 5 Free Solves / Day.",
-        url: "https://examghost.com/studyx-vs-examghost",
+        url: "https://www.examghost.com/studyx-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -85,17 +85,17 @@ export default function StudyXVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-17",
-                "dateModified": "2026-03-04",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/studyx-vs-examghost/#webpage",
-        url: "https://examghost.com/studyx-vs-examghost",
+        "@id": "https://www.examghost.com/studyx-vs-examghost/#webpage",
+        url: "https://www.examghost.com/studyx-vs-examghost",
         name: "StudyX vs ExamGhost (2026): 75M Community Crop Lag & '**/*' Leak vs True LMS Stealth",
         description:
           "Detailed 2026 comparison of StudyX: AI Homework Helper (v1.0.324) and ExamGhost covering wildcard web_accessible_resources, missing LTI 1.3 iframe support, crop focus-loss logs, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
         "about": [
           {
             "@type": "SoftwareApplication",
@@ -149,19 +149,19 @@ export default function StudyXVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "StudyX vs ExamGhost",
-            item: "https://examghost.com/studyx-vs-examghost",
+            item: "https://www.examghost.com/studyx-vs-examghost",
           },
         ],
       },
@@ -406,7 +406,7 @@ export default function StudyXVsExamGhostPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-6">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+              <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
@@ -570,7 +570,7 @@ export default function StudyXVsExamGhostPage() {
                       Stopped viewing the Canvas quiz-taking page
                     </code>{" "}
                     event on every question. <strong>ExamGhost</strong> solves in
-                    place across <strong>Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1</strong>{" "}
+                    place across <strong>Claude + ChatGPT + DeepSeek</strong>{" "}
                     with zero focus loss.
                   </p>
                 </div>
@@ -819,10 +819,10 @@ export default function StudyXVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

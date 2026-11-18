@@ -26,7 +26,7 @@
  * 7. SEO Invariant: Title strictly 45-65 characters; description strictly 135-160 characters
  * 8. Footer Invariant: All 20 platform links under "Quiz Solvers by Platform" in Footer.tsx
  * 9. Sitemap Invariant: All 22 slugs in lmsServiceSlugs (20 platform + 2 blog) in sitemap.ts, verified via dynamic execution
- * 10. Motion Demos Invariant: Unique bespoke 3-scene Framer Motion video demo mounted on each route, exports verified, scene configs validated (scene0 failure banner, scene1 0.3s HUD, scene2 3 AI models: Claude 3.7 Sonnet, ChatGPT, DeepSeek-R1)
+ * 10. Motion Demos Invariant: Unique bespoke 3-scene Framer Motion video demo mounted on each route, exports verified, scene configs validated (scene0 failure banner, scene1 0.3s HUD, scene2 3 AI models: Claude, ChatGPT, DeepSeek)
  * 11. SSR & Leak Invariant: Full renderToString execution of all 8 routes & all 8 motion demos with zero HTML leaks (NaN, undefined, null, [object Object])
  */
 
@@ -407,7 +407,7 @@ export async function runAdversarialM2StressTests() {
           const webPageNode = graph.find((n: any) => n['@type'] === 'WebPage');
           if (webPageNode) {
             assert(`INV6-WEBPAGE-SPEAK-${r.slug}`, 'SchemaParity', r.slug, !!webPageNode.speakable?.cssSelector, 'WebPage includes speakable.cssSelector');
-            assert(`INV6-WEBPAGE-URL-${r.slug}`, 'SchemaParity', r.slug, webPageNode.url === `https://examghost.com/${r.slug}`, `WebPage.url matches canonical: ${webPageNode.url}`);
+            assert(`INV6-WEBPAGE-URL-${r.slug}`, 'SchemaParity', r.slug, webPageNode.url === `https://www.examghost.com/${r.slug}`, `WebPage.url matches canonical: ${webPageNode.url}`);
           }
 
           // 2. SoftwareApplication node check (4 tiered offers)
@@ -441,7 +441,7 @@ export async function runAdversarialM2StressTests() {
           // 5. VideoObject node check
           const videoNode = graph.find((n: any) => n['@type'] === 'VideoObject');
           if (videoNode) {
-            assert(`INV6-VIDEO-CONTENTURL-${r.slug}`, 'SchemaParity', r.slug, videoNode.contentUrl === `https://examghost.com/videos/${r.slug}.mp4`, `VideoObject contentUrl matches video CDN: ${videoNode.contentUrl}`);
+            assert(`INV6-VIDEO-CONTENTURL-${r.slug}`, 'SchemaParity', r.slug, videoNode.contentUrl === `https://www.examghost.com/videos/${r.slug}.mp4`, `VideoObject contentUrl matches video CDN: ${videoNode.contentUrl}`);
             assert(`INV6-VIDEO-THUMBNAIL-${r.slug}`, 'SchemaParity', r.slug, Array.isArray(videoNode.thumbnailUrl) && videoNode.thumbnailUrl.length > 0, 'VideoObject contains thumbnailUrl');
           }
 
@@ -499,8 +499,8 @@ export async function runAdversarialM2StressTests() {
       `INV7-CANONICAL-${r.slug}`,
       'SEOBounds',
       r.slug,
-      metadata?.alternates?.canonical === `https://examghost.com/${r.slug}`,
-      `Canonical URL is https://examghost.com/${r.slug}`
+      metadata?.alternates?.canonical === `https://www.examghost.com/${r.slug}`,
+      `Canonical URL is https://www.examghost.com/${r.slug}`
     );
   }
 
@@ -552,7 +552,7 @@ export async function runAdversarialM2StressTests() {
     const sitemapUrls = sitemapEntries.map((e: any) => e.url);
 
     for (const slug of ALL_22_LMS_SLUGS) {
-      const expectedUrl = `https://examghost.com/${slug}`;
+      const expectedUrl = `https://www.examghost.com/${slug}`;
       const entry = sitemapEntries.find((e: any) => e.url === expectedUrl);
       assert(`INV9-SITEMAP-ENTRY-${slug}`, 'Sitemap', slug, !!entry, `Sitemap output includes entry for "${expectedUrl}"`);
       if (entry) {
@@ -599,9 +599,9 @@ export async function runAdversarialM2StressTests() {
 
         // Scene 2: Multi-model derivations
         const s2 = config.scene2;
-        assert(`INV10-SCENE2-CLAUDE-${r.demoExport}`, 'MotionDemos', r.demoExport, !!s2?.claudeDerivation, 'Scene 2 includes Claude 3.7 Sonnet derivation');
+        assert(`INV10-SCENE2-CLAUDE-${r.demoExport}`, 'MotionDemos', r.demoExport, !!s2?.claudeDerivation, 'Scene 2 includes Claude derivation');
         assert(`INV10-SCENE2-CHATGPT-${r.demoExport}`, 'MotionDemos', r.demoExport, !!s2?.chatgptDerivation, 'Scene 2 includes ChatGPT reasoning derivation');
-        assert(`INV10-SCENE2-DEEPSEEK-${r.demoExport}`, 'MotionDemos', r.demoExport, !!s2?.deepseekDerivation, 'Scene 2 includes DeepSeek-R1 CAS derivation');
+        assert(`INV10-SCENE2-DEEPSEEK-${r.demoExport}`, 'MotionDemos', r.demoExport, !!s2?.deepseekDerivation, 'Scene 2 includes DeepSeek CAS derivation');
       }
 
       // 4. Demo SSR render check

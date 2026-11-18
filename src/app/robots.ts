@@ -24,8 +24,9 @@ export default function robots(): MetadataRoute.Robots {
                     'CCBot',
                 ],
                 allow: '/',
+                disallow: ['/api/'],
             },
         ],
-        sitemap: 'https://examghost.com/sitemap.xml',
+        sitemap: 'https://www.examghost.com/sitemap.xml',
     };
 }

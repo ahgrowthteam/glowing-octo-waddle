@@ -6,7 +6,7 @@
  * 3. Route Existence & Default Export Integrity
  * 4. Modern 6-Hotkey Suite Presence
  * 5. 4-Tier Pricing Structure Parity
- * 6. 2-in-1 Frontier AI Models (Claude 3.7, ChatGPT o3-mini/4o, DeepSeek-R1)
+ * 6. 2-in-1 Frontier AI Models (Claude, ChatGPT, DeepSeek)
  * 7. JSON-LD @graph Schema Parity
  * 8. Bespoke Framer-Motion Demo Integration (Retirement of shared wrapper)
  */
@@ -144,7 +144,7 @@ test('Tier 1: Pricing Stack Parity — All 58 comparison routes render the 4 sta
   assert.strictEqual(incompletePricing.length, 0);
 });
 
-test('Tier 1: 2-in-1 AI Models — All 58 comparison routes specify Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1', () => {
+test('Tier 1: 2-in-1 AI Models — All 58 comparison routes specify Claude, ChatGPT, DeepSeek', () => {
   const incompleteModels: { slug: string; missing: string[] }[] = [];
 
   for (const route of COMPARISON_ROUTES) {
@@ -153,9 +153,9 @@ test('Tier 1: 2-in-1 AI Models — All 58 comparison routes specify Claude 3.7 S
     const models = checkFrontierModels(content);
     if (!models.isComplete) {
       const missing: string[] = [];
-      if (!models.hasClaude) missing.push('Claude 3.7 Sonnet');
-      if (!models.hasChatGpt) missing.push('ChatGPT o3-mini/4o');
-      if (!models.hasDeepSeek) missing.push('DeepSeek-R1');
+      if (!models.hasClaude) missing.push('Claude');
+      if (!models.hasChatGpt) missing.push('ChatGPT');
+      if (!models.hasDeepSeek) missing.push('DeepSeek');
       incompleteModels.push({ slug: route.slug, missing });
     }
   }

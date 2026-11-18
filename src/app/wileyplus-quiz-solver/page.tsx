@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         absolute: "WileyPLUS Quiz & Homework Solver — Stealth AI (2026)",
     },
     description:
-        "Solve WileyPLUS accounting ledgers, physics and math problems inline in 0.3s with 0 window.blur flags. 5 free solves / day with Claude 3.7 & DeepSeek-R1.",
+        "Solve WileyPLUS accounting ledgers, physics and math problems inline in 0.3s with 0 window.blur flags. 5 free solves / day with Claude & DeepSeek.",
     keywords: [
         "wileyplus quiz solver",
         "wileyplus accounting homework solver",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
         "examghost wileyplus",
     ],
     alternates: {
-        canonical: "https://examghost.com/wileyplus-quiz-solver",
+        canonical: "https://www.examghost.com/wileyplus-quiz-solver",
     },
     openGraph: {
         title: "WileyPLUS Quiz & Homework Solver — Stealth AI (2026) | ExamGhost",
         description:
             "Solve WileyPLUS multi-part accounting ledgers, journal entries, and STEM homework in 0.3s with 0 blur flags. Try the live interactive 3-scene demo.",
-        url: "https://examghost.com/wileyplus-quiz-solver",
+        url: "https://www.examghost.com/wileyplus-quiz-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -331,7 +331,7 @@ const WILEYPLUS_CONFIG = {
             q: "Can ExamGhost solve complex WileyPLUS adjusting journal entries and ledgers?",
             a: (
                 <>
-                    <strong>Yes, ExamGhost parses full multi-column WileyPLUS accounting tables.</strong> Double-clicking any debit or credit box prompts DeepSeek-R1 and Claude 3.7 to compute all balancing journal entries, depreciation schedules, and trial balance totals simultaneously.
+                    <strong>Yes, ExamGhost parses full multi-column WileyPLUS accounting tables.</strong> Double-clicking any debit or credit box prompts DeepSeek and Claude to compute all balancing journal entries, depreciation schedules, and trial balance totals simultaneously.
                 </>
             ),
         },
@@ -400,23 +400,23 @@ const ALL_LMS_LINKS = [
 export default function WileyPlusQuizSolverPage() {
     const config = WILEYPLUS_CONFIG;
     const safeSlug = config.slug;
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": `https://examghost.com/${config.slug}#webpage`,
-                "url": `https://examghost.com/${config.slug}`,
+                "@id": `https://www.examghost.com/${config.slug}#webpage`,
+                "url": `https://www.examghost.com/${config.slug}`,
                 "name": "WileyPLUS Quiz & Homework Solver — Stealth AI (2026) | ExamGhost",
-                "description": "Solve WileyPLUS accounting ledgers, physics and math problems inline in 0.3s with 0 window.blur flags. 5 free solves / day with Claude 3.7 & DeepSeek-R1.",
+                "description": "Solve WileyPLUS accounting ledgers, physics and math problems inline in 0.3s with 0 window.blur flags. 5 free solves / day with Claude & DeepSeek.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-10-27",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": `https://examghost.com/${config.slug}#breadcrumb` },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": `https://www.examghost.com/${config.slug}#breadcrumb` },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -424,7 +424,7 @@ export default function WileyPlusQuizSolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `https://examghost.com/${config.slug}#software`,
+                "@id": `https://www.examghost.com/${config.slug}#software`,
                 "name": "ExamGhost WileyPLUS Quiz Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -444,16 +444,16 @@ export default function WileyPlusQuizSolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": `https://examghost.com/${config.slug}#breadcrumb`,
+                "@id": `https://www.examghost.com/${config.slug}#breadcrumb`,
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://examghost.com/canvas-quiz-solver-free-demo" },
-                    { "@type": "ListItem", "position": 3, "name": "WileyPLUS Quiz Solver", "item": `https://examghost.com/${config.slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://www.examghost.com/canvas-quiz-solver-free-demo" },
+                    { "@type": "ListItem", "position": 3, "name": "WileyPLUS Quiz Solver", "item": `https://www.examghost.com/${config.slug}` }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://examghost.com/${config.slug}#faq`,
+                "@id": `https://www.examghost.com/${config.slug}#faq`,
                 "mainEntity": config.faqs.map((faq) => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -465,7 +465,7 @@ export default function WileyPlusQuizSolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": `https://examghost.com/${config.slug}#video`,
+                "@id": `https://www.examghost.com/${config.slug}#video`,
                 "name": "WileyPLUS AI Quiz Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves WileyPLUS accounting ledgers and STEM problems with zero blur flags.",
                 "thumbnailUrl": [posterUrl],
@@ -475,12 +475,12 @@ export default function WileyPlusQuizSolverPage() {
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "HowTo",
-                "@id": `https://examghost.com/${config.slug}#howto`,
+                "@id": `https://www.examghost.com/${config.slug}#howto`,
                 "name": config.howToSection.heading,
                 "description": "Step-by-step workflow to solve WileyPLUS quizzes and assignments with zero blur events.",
                 "totalTime": "PT1M",
@@ -519,7 +519,7 @@ export default function WileyPlusQuizSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>

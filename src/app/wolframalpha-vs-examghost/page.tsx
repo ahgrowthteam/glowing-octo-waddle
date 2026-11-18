@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/wolframalpha-vs-examghost",
+        canonical: "https://www.examghost.com/wolframalpha-vs-examghost",
     },
     openGraph: {
         title: "Wolfram|Alpha vs ExamGhost (2026) — 680-Char Cap vs 0.3s AI",
         description: "Compare Wolfram|Alpha Pro with ExamGhost. Skip 680-character syntax limits and new-tab switches using 0.3s inline Snap-It Vision OCR and 5 Free Solves / Day.",
-        url: "https://examghost.com/wolframalpha-vs-examghost",
+        url: "https://www.examghost.com/wolframalpha-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,17 +64,17 @@ export default function WolframalphaVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-23",
-                "dateModified": "2026-03-10",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/wolframalpha-vs-examghost#webpage",
-                "url": "https://examghost.com/wolframalpha-vs-examghost",
+                "@id": "https://www.examghost.com/wolframalpha-vs-examghost#webpage",
+                "url": "https://www.examghost.com/wolframalpha-vs-examghost",
                 "name": "Wolfram|Alpha vs ExamGhost (2026 Audit) | 680-Char Syntax Engine vs 0.3s Canvas Stealth AI",
-                "description": "Independent 2026 technical audit comparing Wolfram|Alpha Pro for Students (wolframalpha.com) and its Chrome launcher (icncamkooinmbehmkeilcccmoljfkdhp) against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
+                "description": "ExamGhost's 2026 technical audit comparing Wolfram|Alpha Pro for Students (wolframalpha.com) and its Chrome launcher (icncamkooinmbehmkeilcccmoljfkdhp) against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
                 "breadcrumb": {
-                    "@id": "https://examghost.com/wolframalpha-vs-examghost#breadcrumb"
+                    "@id": "https://www.examghost.com/wolframalpha-vs-examghost#breadcrumb"
                 },
                 "about": [
                     {
@@ -139,31 +139,31 @@ export default function WolframalphaVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/wolframalpha-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/wolframalpha-vs-examghost#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Compare Extensions",
-                        "item": "https://examghost.com/compare-canvas-hack-extensions"
+                        "item": "https://www.examghost.com/compare-canvas-hack-extensions"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Wolfram|Alpha vs ExamGhost",
-                        "item": "https://examghost.com/wolframalpha-vs-examghost"
+                        "item": "https://www.examghost.com/wolframalpha-vs-examghost"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/wolframalpha-vs-examghost#faq",
+                "@id": "https://www.examghost.com/wolframalpha-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -665,26 +665,26 @@ export default function WolframalphaVsExamghostPage() {
                                 Powered by 3 Frontier AI Models
                             </h3>
                             <p className="text-sm text-neutral-600">
-                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                                Full access to Claude, ChatGPT, and DeepSeek for complete step-by-step derivation and homework mastery.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.
@@ -767,7 +767,7 @@ export default function WolframalphaVsExamghostPage() {
                                     </tr>
                                 
                   <tr className="bg-emerald-50/20">
-                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                     <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>

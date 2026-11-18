@@ -28,16 +28,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "BetterCampus vs ExamGhost (2026) — Free Dark Mode + AI Solver Stack",
+        absolute: "BetterCampus vs ExamGhost (2026) — Dark Mode + AI Solver",
     },
-    description: "Keep BetterCampus (formerly BetterCanvas / Tasks for Canvas) for free dark mode & GPA rings, and pair it with ExamGhost (5 Free Solves / Day) instead of paying $19.99/mo for BetterCampus Pro.",
+    description: "Keep BetterCampus for free dark mode & GPA rings and pair it with ExamGhost (5 Free Solves/Day) instead of paying $19.99/mo for BetterCampus Pro.",
     alternates: {
-        canonical: "https://examghost.com/bettercampus-vs-examghost",
+        canonical: "https://www.examghost.com/bettercampus-vs-examghost",
     },
     openGraph: {
         title: "The Ultimate 2026 Canvas Stack: Free BetterCampus Themes + ExamGhost AI Power",
-        description: "Why pay $19.99/mo for BetterCampus Pro (20 trial credits, Canvas-only sidebar)? Pair free BetterCampus Dark Mode with ExamGhost's 0.3s Stealth Solver + Claude 3.7 / ChatGPT / DeepSeek-R1 Study Hub.",
-        url: "https://examghost.com/bettercampus-vs-examghost",
+        description: "Why pay $19.99/mo for BetterCampus Pro (20 trial credits, Canvas-only sidebar)? Pair free BetterCampus Dark Mode with ExamGhost's 0.3s Stealth Solver + Claude / ChatGPT / DeepSeek Study Hub.",
+        url: "https://www.examghost.com/bettercampus-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -65,16 +65,16 @@ export default function BetterCampusComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-11",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/bettercampus-vs-examghost#webpage",
-                "url": "https://examghost.com/bettercampus-vs-examghost",
+                "@id": "https://www.examghost.com/bettercampus-vs-examghost#webpage",
+                "url": "https://www.examghost.com/bettercampus-vs-examghost",
                 "name": "BetterCampus vs ExamGhost (2026 Comparison) | The Ultimate Canvas Stack: Free Dark Mode + 0.3s Stealth AI",
                 "description": "Comparison and co-existence guide for BetterCampus (formerly BetterCanvas / Tasks for Canvas, Chrome ID cndibmoanboadcifjkjbdpjgfedanolh), BetterCampus Pro ($19.99/mo), and ExamGhost across Canvas dark mode compatibility, 0.3s quiz solving, Focus Shield blur protection, and the 3-Model Study Hub.",
-                "breadcrumb": { "@id": "https://examghost.com/bettercampus-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/bettercampus-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -106,41 +106,41 @@ export default function BetterCampusComparisonPage() {
             },
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/bettercampus-vs-examghost#article",
+                "@id": "https://www.examghost.com/bettercampus-vs-examghost#article",
                 "headline": "The Ultimate 2026 Canvas Stack: Free BetterCampus Themes + ExamGhost AI Power (vs BetterCampus Pro $19.99/mo)",
                 "datePublished": "2026-01-11",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Security & EdTech Lab",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "description": "How to run BetterCampus (Free) and ExamGhost side-by-side with zero CSS or Shadow DOM conflicts, and why ExamGhost beats the $19.99/mo BetterCampus Pro AI add-on."
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/bettercampus-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/bettercampus-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "BetterCampus vs ExamGhost", "item": "https://examghost.com/bettercampus-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "BetterCampus vs ExamGhost", "item": "https://www.examghost.com/bettercampus-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/bettercampus-vs-examghost#faq",
+                "@id": "https://www.examghost.com/bettercampus-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
                         "name": "Should I pay $19.99/month for BetterCampus Pro or pair free BetterCampus with ExamGhost?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Keep BetterCampus Free ($0) for its awesome Canvas Dark Mode, custom dashboard cards, and GPA rings—and pair it with ExamGhost. BetterCampus Pro charges $19.99/month ($239.88/year) after a one-time 20-credit trial, only works inside Canvas, opens a visible sidebar without Focus Shield blur protection, and uses a basic single-model AI chat. ExamGhost gives you 5 Free Solves / Day (auto-refills every 24h) or an $8.25/mo ($99/yr) Academic Pass that includes both Unlimited Stealth Extension Solves across 20+ LMSs and a 3-Model Study Hub (Claude 3.7 Sonnet, ChatGPT, and DeepSeek-R1)."
+                            "text": "Keep BetterCampus Free ($0) for its awesome Canvas Dark Mode, custom dashboard cards, and GPA rings—and pair it with ExamGhost. BetterCampus Pro charges $19.99/month ($239.88/year) after a one-time 20-credit trial, only works inside Canvas, opens a visible sidebar without Focus Shield blur protection, and uses a basic single-model AI chat. ExamGhost gives you 5 Free Solves / Day (auto-refills every 24h) or an $8.25/mo ($99/yr) Academic Pass that includes both Unlimited Stealth Extension Solves across 20+ LMSs and a 3-Model Study Hub (Claude, ChatGPT, and DeepSeek)."
                         }
                     },
                     {
@@ -164,7 +164,7 @@ export default function BetterCampusComparisonPage() {
                         "name": "How much does ExamGhost cost if I already use BetterCampus for free?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 with no credit card required). When you want unlimited solves plus full access to our Claude 3.7 Sonnet + ChatGPT + DeepSeek-R1 Study & Homework AI Workspace, you can choose the $19/mo Monthly Pass, the $99/yr Academic Year Pass ($8.25/mo—less than half the price of BetterCampus Pro's $19.99/mo), or the $199 one-time Lifetime Pass."
+                            "text": "ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 with no credit card required). When you want unlimited solves plus full access to our Claude + ChatGPT + DeepSeek Study & Homework AI Workspace, you can choose the $19/mo Monthly Pass, the $99/yr Academic Year Pass ($8.25/mo—less than half the price of BetterCampus Pro's $19.99/mo), or the $199 one-time Lifetime Pass."
                         }
                     }
                 ]
@@ -293,7 +293,7 @@ export default function BetterCampusComparisonPage() {
                                         </li>
                                         <li className="flex items-center gap-2">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
-                                            <span><strong>3-Model Study Hub:</strong> Claude 3.7 Sonnet + ChatGPT + DeepSeek-R1</span>
+                                            <span><strong>3-Model Study Hub:</strong> Claude + ChatGPT + DeepSeek</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -481,7 +481,7 @@ export default function BetterCampusComparisonPage() {
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                                            <span><strong>Basic Single-Model Wrapper:</strong> No ability to switch between Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1.</span>
+                                            <span><strong>Basic Single-Model Wrapper:</strong> No ability to switch between Claude, ChatGPT, and DeepSeek.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -511,7 +511,7 @@ export default function BetterCampusComparisonPage() {
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                            <span><strong>2-in-1 Multi-Model Study Hub:</strong> Full access to <strong>Claude 3.7 Sonnet + ChatGPT (4o/o3-mini) + DeepSeek-R1</strong> for essays, PDFs, and LaTeX math proofs.</span>
+                                            <span><strong>2-in-1 Multi-Model Study Hub:</strong> Full access to <strong>Claude + ChatGPT + DeepSeek</strong> for essays, PDFs, and LaTeX math proofs.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -660,7 +660,7 @@ export default function BetterCampusComparisonPage() {
                                             <div className="text-xs text-ink-muted">Essays, syllabus PDFs &amp; step-by-step LaTeX math</div>
                                         </td>
                                         <td className="py-4 px-5 text-center font-bold text-emerald-800 bg-emerald-50/30">
-                                            ✓ Claude 3.7 Sonnet + ChatGPT (4o/o3) + DeepSeek-R1
+                                            ✓ Claude + ChatGPT (4o/o3) + DeepSeek
                                         </td>
                                         <td className="py-4 px-5 text-center text-ink-muted">
                                             N/A
@@ -729,27 +729,7 @@ export default function BetterCampusComparisonPage() {
                     STUDENT REVIEW + FAQ
                 ===================================================================== */}
                 <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-[32px] bg-[#f3ecfc] border border-black/10 p-7 sm:p-10 mb-16 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <div className="flex items-center gap-1 text-amber-500">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                ))}
-                            </div>
-                            <span className="px-3 py-1 rounded-full bg-white text-purple-950 text-xs font-bold border border-black/10">
-                                Runs BetterCampus (Free) + ExamGhost Together
-                            </span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-2xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;I&apos;ve used BetterCanvas since freshman year for dark mode and GPA rings. When they added a $19.99/mo Pro AI paywall after 20 credits, I tried ExamGhost instead. It gives me 5 free solves every day, never breaks my dark mode theme, works on my McGraw-Hill chemistry homework too, and the $99/yr pass gave me Claude 3.7 and DeepSeek-R1 in the Study Hub for less than half the price.&rdquo;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-black/10 text-xs text-ink-secondary">
-                            <div>
-                                <strong className="text-ink">Maya L.</strong> · Biochemistry Junior, UCLA
-                            </div>
-                            <span className="font-bold text-emerald-800">Zero CSS Conflicts · 100% Clean SpeedGrader Logs</span>
-                        </div>
-                    </div>
+                    
 
                     <div className="text-center mb-10">
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">

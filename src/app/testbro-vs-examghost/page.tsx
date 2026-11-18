@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
     },
-    description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "2026 audit of TestBro vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/testbro-vs-examghost",
+        canonical: "https://www.examghost.com/testbro-vs-examghost",
     },
     openGraph: {
         title: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
-        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/testbro-vs-examghost",
+        description: "2026 audit of TestBro vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/testbro-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "TestBro vs ExamGhost (2026) — Expiring Credits & SidePanel",
-        description: "2026 audit of TestBro (testbro.app) vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "2026 audit of TestBro vs ExamGhost. Replace 30-day expiring credit packs and Side Panel blur logs with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,16 +64,16 @@ export default function TestBroComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-21",
-                "dateModified": "2026-03-14",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/testbro-vs-examghost#webpage",
-                "url": "https://examghost.com/testbro-vs-examghost",
+                "@id": "https://www.examghost.com/testbro-vs-examghost#webpage",
+                "url": "https://www.examghost.com/testbro-vs-examghost",
                 "name": "TestBro (testbro.app) vs ExamGhost (2026 Review) | Expiring Ask Credits & Side Panel Blur",
                 "description": "Technical evaluation comparing Test Bro (testbro.app, Chrome ID dcnmkocojfkeagnfnhbeojbkeicdekmk) and ExamGhost across contextmenu lockout vulnerabilities, 1-month Ask Credit expiration, and stealth architecture.",
-                "breadcrumb": { "@id": "https://examghost.com/testbro-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/testbro-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -104,16 +104,16 @@ export default function TestBroComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/testbro-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/testbro-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "TestBro vs ExamGhost", "item": "https://examghost.com/testbro-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "TestBro vs ExamGhost", "item": "https://www.examghost.com/testbro-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/testbro-vs-examghost#faq",
+                "@id": "https://www.examghost.com/testbro-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -315,7 +315,7 @@ export default function TestBroComparisonPage() {
                 <section className="py-8 bg-sand/20 border-b border-sand-dark/20 max-w-6xl mx-auto px-4 sm:px-6 mb-12">
                     <div className="text-center mb-6">
                         <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-                        <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                        <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                         <div className="p-3 bg-white rounded-xl border border-black/10 text-center">
@@ -656,9 +656,9 @@ export default function TestBroComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -693,29 +693,7 @@ export default function TestBroComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#ffd5cc]/40 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I bought Test Bro&apos;s L Package ($3.99 for 400 Ask Credits) before my anatomy midterms. When I opened the Canvas test, the professor had disabled right-clicking, so I had to use Test Bro&apos;s Chrome Side Panel capture button—which immediately logged tab departures in SpeedGrader! Then, when I opened the extension a month later for finals, all 340 of my remaining Ask Credits had automatically expired. Switching to ExamGhost gave me 5 free solves / day that never expire, root hotkeys that work when right-click is blocked, and the $99/year pass keeps my SpeedGrader log 100% clean.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-rose-950 text-white font-bold flex items-center justify-center text-sm">
-                                EL
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Elena L.</div>
-                                <div className="text-xs text-ink-muted">Nursing Major · Ohio State University</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

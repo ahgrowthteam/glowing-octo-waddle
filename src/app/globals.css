@@ -325,3 +325,38 @@
 .animate-marquee-smooth:hover {
   animation-play-state: paused;
 }
+/* ── Mobile layout safety (sitewide) ─────────────────────────────────────────
+   Grid tracks default to min-width:auto, so one long unbreakable token (an API
+   path, a URL, an extension ID) widens the whole column past the viewport.
+   Let grid items shrink, and let long text wrap instead of overflowing. */
+.grid > * {
+  min-width: 0;
+}
+
+main :is(p, li, h1, h2, h3, h4, td, th, dd, blockquote, span, strong) {
+  overflow-wrap: break-word;
+}
+
+main :is(code, kbd, .font-mono.rounded-full) {
+  overflow-wrap: anywhere;
+}
+
+/* Breadcrumb links are short and stacked close together: give them a 24px+
+   tap target (WCAG 2.2 target size) without changing their visual size. */
+nav[aria-label="Breadcrumb"] a {
+  display: inline-block;
+  padding-block: 4px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+/* Long button labels must wrap on very narrow phones instead of pushing the
+   layout wider than the screen (.btn-* set white-space: nowrap). */
+@media (max-width: 480px) {
+  .btn-dark,
+  .btn-soft {
+    white-space: normal;
+    text-align: center;
+    flex-shrink: 1;
+  }
+}

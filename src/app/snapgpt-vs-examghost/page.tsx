@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     },
     description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/snapgpt-vs-examghost",
+        canonical: "https://www.examghost.com/snapgpt-vs-examghost",
     },
     openGraph: {
         title: "SnapGPT vs ExamGhost (2026) — opacity:0 DOM vs Shadow DOM",
         description: "2026 technical audit of SnapGPT ($7.99/wk) vs ExamGhost. Why opacity:0 DOM nodes and OpenReplay logging lose to 0.3s closed Shadow DOM & 5 Free Solves / Day.",
-        url: "https://examghost.com/snapgpt-vs-examghost",
+        url: "https://www.examghost.com/snapgpt-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -61,18 +61,18 @@ export default function SnapgptVsExamghostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-21",
-                "dateModified": "2026-03-26",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/snapgpt-vs-examghost#webpage",
-        url: "https://examghost.com/snapgpt-vs-examghost",
+        "@id": "https://www.examghost.com/snapgpt-vs-examghost#webpage",
+        url: "https://www.examghost.com/snapgpt-vs-examghost",
         name: "SnapGPT vs ExamGhost (2026) | Closed Shadow DOM vs 'Subtle Mode' opacity:0",
         description:
           "2026 technical comparison between SnapGPT (snapgpt.me) and ExamGhost covering Subtle Mode DOM visibility, Autopilot & Sidebar Chat telemetry, OpenReplay tracking, and pricing.",
         breadcrumb: {
-          "@id": "https://examghost.com/snapgpt-vs-examghost#breadcrumb",
+          "@id": "https://www.examghost.com/snapgpt-vs-examghost#breadcrumb",
         },
         about: [
           {
@@ -144,31 +144,31 @@ export default function SnapgptVsExamghostPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://examghost.com/snapgpt-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/snapgpt-vs-examghost#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SnapGPT vs ExamGhost",
-            item: "https://examghost.com/snapgpt-vs-examghost",
+            item: "https://www.examghost.com/snapgpt-vs-examghost",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://examghost.com/snapgpt-vs-examghost#faq",
+        "@id": "https://www.examghost.com/snapgpt-vs-examghost#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -444,7 +444,7 @@ export default function SnapgptVsExamghostPage() {
                   <Sparkles className="w-3.5 h-3.5" />
                   ExamGhost Stealth Keyboard &amp; Model Suite
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -462,7 +462,7 @@ export default function SnapgptVsExamghostPage() {
               <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                 <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                 <div className="font-bold text-white text-sm">
-                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                  Claude · ChatGPT · DeepSeek
                 </div>
               </div>
             </div>
@@ -912,9 +912,9 @@ export default function SnapgptVsExamghostPage() {
                   </tr>
                 
                   <tr className="bg-emerald-50/20">
-                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
-                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                   </tr>
                 </tbody>
@@ -985,42 +985,7 @@ export default function SnapgptVsExamghostPage() {
           </div>
         </section>
 
-        {/* Verified Student Switcher Proof */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-          <div className="p-8 rounded-3xl bg-white border-2 border-[#111111] shadow-[6px_6px_0px_0px_#111111]">
-            <div className="flex items-center gap-1 text-amber-500 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-amber-400 text-amber-400"
-                />
-              ))}
-              <span className="text-xs font-mono font-bold text-[#111111] ml-2">
-                Verified Student Switcher
-              </span>
-            </div>
-            <blockquote className="text-base sm:text-lg text-[#111111] font-medium leading-relaxed mb-6">
-              &ldquo;First snapgpt.io stopped working, and then snapgpt.me got
-              blocked on our dorm Wi-Fi so I had to use their CloudFront link.
-              When I saw that &apos;Subtle mode&apos; just makes the
-              bottom-left button invisible while still painting green borders
-              directly onto my Canvas quiz answers, I uninstalled it
-              immediately. ExamGhost&apos;s closed Shadow DOM HUD never touches
-              the Canvas page HTML and solves in 0.3 seconds.&rdquo;
-            </blockquote>
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-4">
-              <div>
-                <div className="font-bold text-[#111111] text-sm">Chloe S.</div>
-                <div className="text-xs text-neutral-600">
-                  Florida State University · B.S. Nursing
-                </div>
-              </div>
-              <div className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-mono text-xs font-bold">
-                Switched from SnapGPT Plus
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* FAQ Section */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">

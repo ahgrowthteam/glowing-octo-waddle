@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/studymonkey-vs-examghost",
+        canonical: "https://www.examghost.com/studymonkey-vs-examghost",
     },
     openGraph: {
         title: "StudyMonkey vs ExamGhost (2026) — Web Chat vs 0.3s Stealth",
         description: "Compare StudyMonkey.ai with ExamGhost. Skip tab-switching to web chat dashboards and tier downgrades with 0.3s inline Canvas stealth and 5 Free Solves / Day.",
-        url: "https://examghost.com/studymonkey-vs-examghost",
+        url: "https://www.examghost.com/studymonkey-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,17 +64,17 @@ export default function StudymonkeyVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-19",
-                "dateModified": "2026-03-12",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/studymonkey-vs-examghost#webpage",
-                "url": "https://examghost.com/studymonkey-vs-examghost",
+                "@id": "https://www.examghost.com/studymonkey-vs-examghost#webpage",
+                "url": "https://www.examghost.com/studymonkey-vs-examghost",
                 "name": "StudyMonkey.ai vs ExamGhost (2026 Audit) | Chatsy.ai Web Chat vs 0.3s Canvas Stealth AI",
-                "description": "Independent 2026 technical audit comparing StudyMonkey (studymonkey.ai) by ITW Creative Works against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
+                "description": "ExamGhost's 2026 technical audit comparing StudyMonkey (studymonkey.ai) by ITW Creative Works against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
                 "breadcrumb": {
-                    "@id": "https://examghost.com/studymonkey-vs-examghost#breadcrumb"
+                    "@id": "https://www.examghost.com/studymonkey-vs-examghost#breadcrumb"
                 },
                 "about": [
                     {
@@ -145,31 +145,31 @@ export default function StudymonkeyVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/studymonkey-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/studymonkey-vs-examghost#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Compare Extensions",
-                        "item": "https://examghost.com/compare-canvas-hack-extensions"
+                        "item": "https://www.examghost.com/compare-canvas-hack-extensions"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "StudyMonkey vs ExamGhost",
-                        "item": "https://examghost.com/studymonkey-vs-examghost"
+                        "item": "https://www.examghost.com/studymonkey-vs-examghost"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/studymonkey-vs-examghost#faq",
+                "@id": "https://www.examghost.com/studymonkey-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -399,7 +399,7 @@ export default function StudymonkeyVsExamghostPage() {
                           <Zap className="w-3.5 h-3.5" />
                           ExamGhost Stealth Keyboard &amp; Model Suite
                         </div>
-                        <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                        <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
                       </div>
                       <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                         <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -417,7 +417,7 @@ export default function StudymonkeyVsExamghostPage() {
                       <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                         <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                         <div className="font-bold text-white text-sm">
-                          Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                          Claude · ChatGPT · DeepSeek
                         </div>
                       </div>
                     </div>
@@ -732,9 +732,9 @@ export default function StudymonkeyVsExamghostPage() {
                                     </tr>
                                 
                   <tr className="bg-emerald-50/20">
-                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
-                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                   </tr>
                 </tbody>

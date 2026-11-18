@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const nunito = Nunito({ subsets: ["latin"], weight: ["600", "700", "800"], display: "swap", variable: "--font-nunito" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://examghost.com'),
+  metadataBase: new URL('https://www.examghost.com'),
   title: {
     default: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
     template: "%s | ExamGhost"
@@ -35,23 +35,23 @@ export const metadata: Metadata = {
     "screen share safe exam helper",
     "examghost"
   ],
-  authors: [{ name: "ExamGhost Security Engineering Team", url: "https://examghost.com" }],
+  authors: [{ name: "ExamGhost", url: "https://www.examghost.com" }],
   creator: "ExamGhost",
   publisher: "ExamGhost",
   alternates: {
-    canonical: "https://examghost.com",
+    canonical: "https://www.examghost.com",
     types: {
       "text/markdown": [
-        { url: "https://examghost.com/llms.txt", title: "ExamGhost LLM Summary" },
-        { url: "https://examghost.com/llms-full.txt", title: "ExamGhost Full LLM Dossier" },
-        { url: "https://examghost.com/pricing.md", title: "ExamGhost Pricing & Plans" },
+        { url: "https://www.examghost.com/llms.txt", title: "ExamGhost LLM Summary" },
+        { url: "https://www.examghost.com/llms-full.txt", title: "ExamGhost Full LLM Dossier" },
+        { url: "https://www.examghost.com/pricing.md", title: "ExamGhost Pricing & Plans" },
       ],
     },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://examghost.com",
+    url: "https://www.examghost.com",
     siteName: "ExamGhost",
     title: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
     description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 5 free solves / day.",

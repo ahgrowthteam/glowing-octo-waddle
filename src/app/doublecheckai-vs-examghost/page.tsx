@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'Audit of Double Check AI (doublecheckme.com, 244 Chrome users vs 1,200+ claimed) vs ExamGhost. Exposing the 5-solve daily cap and auto-click DOM risk.',
   alternates: {
-    canonical: 'https://examghost.com/doublecheckai-vs-examghost',
+    canonical: 'https://www.examghost.com/doublecheckai-vs-examghost',
   },
   openGraph: {
     title: 'Double Check AI vs ExamGhost (2026) — 244 Users & DOM Audit',
     description:
       'DoubleCheckMe.com claims "1,200+ students" while the Chrome Web Store shows 244 users. See why its injected button and automatic radio selection trigger flags.',
-    url: 'https://examghost.com/doublecheckai-vs-examghost',
+    url: 'https://www.examghost.com/doublecheckai-vs-examghost',
     siteName: 'ExamGhost',
     locale: 'en_US',
     type: 'website',
@@ -78,18 +78,19 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": "https://examghost.com/doublecheckai-vs-examghost#webpage",
+      "@id": "https://www.examghost.com/doublecheckai-vs-examghost#webpage",
       "name": "Double Check AI vs ExamGhost (2026): Forensic Chrome Store & Stealth Audit",
       "description":
         "Detailed comparison of AI Homework Helper - Double Check AI (ciiaplbmocogjcakmllebilamknkfckg) and ExamGhost across Chrome Web Store install verification, DOM button injection, synthetic radio clicks, and STEM accuracy.",
-      "url": "https://examghost.com/doublecheckai-vs-examghost",
+      "url": "https://www.examghost.com/doublecheckai-vs-examghost",
       "datePublished": "2026-02-27",
-      "dateModified": "2026-03-11",
-      "breadcrumb": { "@id": "https://examghost.com/doublecheckai-vs-examghost#breadcrumb" },
+      "dateModified": "2026-11-18",
+      "breadcrumb": { "@id": "https://www.examghost.com/doublecheckai-vs-examghost#breadcrumb" },
       "author": {
         "@type": "Organization",
-        "name": "ExamGhost Security Engineering Team",
-        "url": "https://examghost.com"
+        "@id": "https://www.examghost.com/#organization",
+        "name": "ExamGhost",
+        "url": "https://www.examghost.com"
       },
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -98,31 +99,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/doublecheckai-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/doublecheckai-vs-examghost#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://examghost.com"
+          "item": "https://www.examghost.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Competitor Comparisons",
-          "item": "https://examghost.com/compare-canvas-hack-extensions"
+          "item": "https://www.examghost.com/compare-canvas-hack-extensions"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Double Check AI vs ExamGhost",
-          "item": "https://examghost.com/doublecheckai-vs-examghost"
+          "item": "https://www.examghost.com/doublecheckai-vs-examghost"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/doublecheckai-vs-examghost#faq",
+      "@id": "https://www.examghost.com/doublecheckai-vs-examghost#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -596,9 +597,9 @@ export default function DoubleCheckAiVsExamGhostPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Double Check AI Log */}
             <div className="bg-neutral-900 border-2 border-red-500/80 rounded-2xl p-5 font-mono text-xs">
-              <div className="flex items-center justify-between border-b border-neutral-700 pb-3 mb-4">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 pb-3 mb-4">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500 shrink-0" />
                   <span className="font-bold text-red-400 uppercase">
                     DOUBLE CHECK AI (ciiaplbmocogjcakmllebilamknkfckg)
                   </span>
@@ -696,17 +697,6 @@ export default function DoubleCheckAiVsExamGhostPage() {
               <tbody className="divide-y-2 divide-[#111]">
                 <tr>
                   <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
-                    Verified Chrome Web Store Users
-                  </td>
-                  <td className="p-4 text-red-700 font-semibold border-r-2 border-[#111]">
-                    244 users / 13 ratings (site falsely claims &ldquo;1,200+ students&rdquo;)
-                  </td>
-                  <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ Verified 4.9★ rating across thousands of active university students
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
                     Free Trial Allowance
                   </td>
                   <td className="p-4 text-red-700 font-semibold border-r-2 border-[#111]">
@@ -783,10 +773,10 @@ export default function DoubleCheckAiVsExamGhostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
             </table>
@@ -845,39 +835,7 @@ Homepage Marketing Claims (doublecheckme.com):
         </div>
       </section>
 
-      {/* Section 5: Verified Student Migration Review */}
-      <section className="py-14 px-4 bg-[#fde68a]/35 border-b-2 border-[#111]">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#111]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider bg-[#fde68a] border border-[#111] px-2.5 py-1 rounded font-bold">
-                VERIFIED STUDENT MIGRATION // CANVAS &amp; MCGRAW-HILL
-              </span>
-              <span className="font-mono text-xs font-bold text-emerald-700">
-                ★★★★★ Switched from Double Check AI
-              </span>
-            </div>
-
-            <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
-              &ldquo;I downloaded Double Check AI from a TikTok clip because the site said 1,200+
-              students used it. First red flag was seeing only 244 users on the Chrome Store. Second
-              red flag was starting my 20-question Canvas quiz and getting locked out after Question
-              5 unless I paid immediately. Plus it puts a giant button right inside Canvas and
-              auto-clicks the radio button, which sketches me out with SpeedGrader logs. Uninstalled
-              it, grabbed ExamGhost&apos;s 5 free solves / day, and finished both my Canvas and
-              McGraw-Hill quizzes with zero buttons injected into the page.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between text-xs font-mono text-neutral-600 border-t border-neutral-200 pt-4">
-              <div>
-                <strong className="text-[#111]">Hannah R.</strong> • Sophomore, Pre-Nursing • Canvas
-                &amp; McGraw-Hill Connect
-              </div>
-              <div className="text-emerald-700 font-bold">Verified ExamGhost Pro User</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: FAQ Section */}
       <section className="py-14 px-4 border-b-2 border-[#111]">
@@ -897,9 +855,9 @@ Homepage Marketing Claims (doublecheckme.com):
               open
             >
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   1. How many students actually use Double Check AI on the Chrome Web Store?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -916,10 +874,10 @@ Homepage Marketing Claims (doublecheckme.com):
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   2. Why is Double Check AI&apos;s automatic answer selection risky on Canvas and
                   Blackboard?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -941,9 +899,9 @@ Homepage Marketing Claims (doublecheckme.com):
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   3. How many free questions does Double Check AI give compared to ExamGhost?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -958,9 +916,9 @@ Homepage Marketing Claims (doublecheckme.com):
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   4. Does Double Check AI protect against Canvas tab-switching and window blur logs?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>

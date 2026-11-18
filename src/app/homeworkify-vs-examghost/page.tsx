@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     },
     description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (5 Free Solves / Day).",
     alternates: {
-        canonical: "https://examghost.com/homeworkify-vs-examghost",
+        canonical: "https://www.examghost.com/homeworkify-vs-examghost",
     },
     openGraph: {
         title: "Homeworkify vs ExamGhost (2026) — Shutdown & Stealth Audit",
         description: "Homeworkify shut down permanently and copycat clones spread malware. See why students use ExamGhost to solve live Canvas quizzes in 0.3s (5 Free Solves / Day).",
-        url: "https://examghost.com/homeworkify-vs-examghost",
+        url: "https://www.examghost.com/homeworkify-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -63,17 +63,17 @@ export default function HomeworkifyVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-10",
-                "dateModified": "2026-03-27",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/homeworkify-vs-examghost#webpage",
-                "url": "https://examghost.com/homeworkify-vs-examghost",
+                "@id": "https://www.examghost.com/homeworkify-vs-examghost#webpage",
+                "url": "https://www.examghost.com/homeworkify-vs-examghost",
                 "name": "Homeworkify vs ExamGhost (2026) | Official Shutdown Notice, Malware Clones & Best Alternative",
                 "description": "2026 comparison of Homeworkify (homeworkify.st / homeworkify.eu) and its copycat clones against ExamGhost's closed Shadow DOM solver and Focus Shield.",
                 "breadcrumb": {
-                    "@id": "https://examghost.com/homeworkify-vs-examghost#breadcrumb"
+                    "@id": "https://www.examghost.com/homeworkify-vs-examghost#breadcrumb"
                 },
                 "about": [
                     {
@@ -118,31 +118,31 @@ export default function HomeworkifyVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/homeworkify-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/homeworkify-vs-examghost#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Compare Extensions",
-                        "item": "https://examghost.com/compare-canvas-hack-extensions"
+                        "item": "https://www.examghost.com/compare-canvas-hack-extensions"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Homeworkify vs ExamGhost",
-                        "item": "https://examghost.com/homeworkify-vs-examghost"
+                        "item": "https://www.examghost.com/homeworkify-vs-examghost"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/homeworkify-vs-examghost#faq",
+                "@id": "https://www.examghost.com/homeworkify-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -316,7 +316,7 @@ export default function HomeworkifyVsExamghostPage() {
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-6">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                            <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                             <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
@@ -522,9 +522,9 @@ export default function HomeworkifyVsExamghostPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

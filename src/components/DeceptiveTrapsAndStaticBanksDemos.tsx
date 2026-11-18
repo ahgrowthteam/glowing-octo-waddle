@@ -28,7 +28,7 @@ import {
    Systems Programming & Concurrency (CS 241 / CS 340) · C11 Acquire-Release
    Scene 0: CheatMate 10.4s lag, DOM mutation, $9.99/wk auto-rebill, 1 blur flag
    Scene 1: ExamGhost 0.3s inline solve, Option B, closed Shadow DOM, 0 blur events
-   Scene 2: Multi-Model Concurrency Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Concurrency Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CheatmateAcquireReleaseDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -134,11 +134,11 @@ export function CheatmateAcquireReleaseDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Happens-Before Proof)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Happens-Before Proof)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Trap Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Trap Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (x86 TSO & Fence Assembly)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (x86 TSO & Fence Assembly)', tag: 'explain' };
       }
     }
   };
@@ -271,7 +271,7 @@ export function CheatmateAcquireReleaseDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -307,7 +307,7 @@ export function CheatmateAcquireReleaseDemo() {
    Molecular Genetics (MCB 102 / BIO 311D) · E. coli Lac Operon Complementation
    Scene 0: Cheatpal floating overlay div, LTI 1.3 iframe access failure, 1 blur flag
    Scene 1: ExamGhost 0.3s solve via Alt+S Hybrid Vision, Option B, closed Shadow DOM
-   Scene 2: Multi-Model Jacob-Monod Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Jacob-Monod Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CheatpalLacOperonDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -411,11 +411,11 @@ export function CheatpalLacOperonDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Jacob-Monod Model)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Jacob-Monod Model)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Cis-Dominance Analysis)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Cis-Dominance Analysis)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Kd Binding Equilibrium)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Kd Binding Equilibrium)', tag: 'explain' };
       }
     }
   };
@@ -520,7 +520,7 @@ export function CheatpalLacOperonDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -556,7 +556,7 @@ export function CheatpalLacOperonDemo() {
    Econometrics & Biostatistics (STAT 420 / ECON 471) · Instrumental Variables 2SLS
    Scene 0: SchoolCheats bookmarklet TypeError, redirects to external retrieve tab, 1 blur flag
    Scene 1: ExamGhost 0.3s inline solve via Double-Click, Option B, closed Shadow DOM
-   Scene 2: Multi-Model 2SLS Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model 2SLS Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function Schoolcheats2SLSEconometricsDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -660,11 +660,11 @@ export function Schoolcheats2SLSEconometricsDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Asymptotic Bias 1/F)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Asymptotic Bias 1/F)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Staiger-Stock F > 10 Rule)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Staiger-Stock F > 10 Rule)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Projection Matrix & Non-Normal t)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Projection Matrix & Non-Normal t)', tag: 'explain' };
       }
     }
   };
@@ -769,7 +769,7 @@ export function Schoolcheats2SLSEconometricsDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -805,7 +805,7 @@ export function Schoolcheats2SLSEconometricsDemo() {
    Constitutional & Administrative Law (LAW 601 / POLS 315) · Loper Bright (2024)
    Scene 0: Right-click disabled, TestBro Side Panel click fires window.blur, credits expire
    Scene 1: ExamGhost 0.3s solve via Alt+S or Double-Click, Option B, closed Shadow DOM
-   Scene 2: Multi-Model APA § 706 Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model APA § 706 Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function TestbroAdminLawDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -909,11 +909,11 @@ export function TestbroAdminLawDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (APA § 706 Analysis)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (APA § 706 Analysis)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Bar Exam Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Bar Exam Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Separation of Powers Lineage)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Separation of Powers Lineage)', tag: 'explain' };
       }
     }
   };
@@ -1017,7 +1017,7 @@ export function TestbroAdminLawDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1053,7 +1053,7 @@ export function TestbroAdminLawDemo() {
    Fluid Dynamics & Mechanical Engineering (ME 333 / PHYS 310) · Hagen-Poiseuille Flow
    Scene 0: QuizMate DOM button injection, 450px wide explanation card, $7.99/wk tuition trap
    Scene 1: ExamGhost 0.3s inline solve via Double-Click, Option B, closed Shadow DOM
-   Scene 2: Multi-Model Navier-Stokes Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Navier-Stokes Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function QuizmateNavierStokesDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1157,11 +1157,11 @@ export function QuizmateNavierStokesDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Navier-Stokes Cylindrical PDE)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Navier-Stokes Cylindrical PDE)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Hagen-Poiseuille R⁴ Scaling)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Hagen-Poiseuille R⁴ Scaling)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Centerline Velocity & Shear Stress)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Centerline Velocity & Shear Stress)', tag: 'explain' };
       }
     }
   };
@@ -1265,7 +1265,7 @@ export function QuizmateNavierStokesDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1301,7 +1301,7 @@ export function QuizmateNavierStokesDemo() {
    Molecular Genetics (GEN 304 / BIOCHEM 410) · CRISPR-Cas9 SpCas9 PAM & HDR Repair
    Scene 0: Quizper blue DOM mutation, isTrusted: false synthetic event, exposed BYOK key
    Scene 1: ExamGhost 0.3s inline solve via Double-Click in closed Shadow DOM, Option B
-   Scene 2: Multi-Model CRISPR-Cas9 Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model CRISPR-Cas9 Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function QuizperByokDomTrapDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1407,11 +1407,11 @@ export function QuizperByokDomTrapDemo() {
       }
     } else {
       if (safeProgress < 33) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Structural PAM Recognition)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Structural PAM Recognition)', tag: 'default' };
       } else if (safeProgress < 66) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (DNA Repair Pathway Matrix)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (DNA Repair Pathway Matrix)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (R-Loop Energetics Proof)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (R-Loop Energetics Proof)', tag: 'explain' };
       }
     }
   };
@@ -1515,7 +1515,7 @@ export function QuizperByokDomTrapDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1551,7 +1551,7 @@ export function QuizperByokDomTrapDemo() {
    Intermediate Microeconomics (ECON 301 / ECON 410) · Asymmetric Cournot Duopoly
    Scene 0: Campus AI Chrome sidePanel opens, document.hasFocus() false, 34.2s SpeedGrader gap
    Scene 1: ExamGhost 0.3s solve via Double-Click in closed Shadow DOM, Option A
-   Scene 2: Multi-Model Reaction Function Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Reaction Function Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CampusAiSidepanelBlurDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1657,11 +1657,11 @@ export function CampusAiSidepanelBlurDemo() {
       }
     } else {
       if (safeProgress < 33) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Reaction Curves)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Reaction Curves)', tag: 'default' };
       } else if (safeProgress < 66) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Deadweight Loss Integral)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Deadweight Loss Integral)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Dynamical Stability Proof)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Dynamical Stability Proof)', tag: 'explain' };
       }
     }
   };
@@ -1765,7 +1765,7 @@ export function CampusAiSidepanelBlurDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1801,7 +1801,7 @@ export function CampusAiSidepanelBlurDemo() {
    Multivariable Calculus (MATH 234 / MATH 251) · Divergence Theorem (Gauss's Theorem)
    Scene 0: AskSia external course importer, 48.5s tab departure to asksia.ai, 1 blur flag
    Scene 1: ExamGhost 0.3s solve via Alt+S Hybrid Vision OCR, Option A, closed Shadow DOM
-   Scene 2: Multi-Model Flux Integral Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Flux Integral Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function AskSiaCourseScraperDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1907,11 +1907,11 @@ export function AskSiaCourseScraperDemo() {
       }
     } else {
       if (safeProgress < 33) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Divergence Calculation)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Divergence Calculation)', tag: 'default' };
       } else if (safeProgress < 66) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Spherical Integral Execution)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Spherical Integral Execution)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Radial Shell Symmetry Proof)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Radial Shell Symmetry Proof)', tag: 'explain' };
       }
     }
   };
@@ -2015,7 +2015,7 @@ export function AskSiaCourseScraperDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2051,7 +2051,7 @@ export function AskSiaCourseScraperDemo() {
    Organic Chemistry II (CHEM 242 / CHEM 330) · Diels-Alder [4+2] FMO Regiochemistry
    Scene 0: Brainly unverified student comments, 52.1s tab departure, honeypot fail
    Scene 1: ExamGhost 0.3s solve via Double-Click in closed Shadow DOM, Option A
-   Scene 2: Multi-Model FMO & Alder Endo Rule Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model FMO & Alder Endo Rule Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function BrainlyCrowdsourcedForumDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2157,11 +2157,11 @@ export function BrainlyCrowdsourcedForumDemo() {
       }
     } else {
       if (safeProgress < 33) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (HOMO-LUMO Overlap)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (HOMO-LUMO Overlap)', tag: 'default' };
       } else if (safeProgress < 66) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Secondary Orbital Interactions)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Secondary Orbital Interactions)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Kinetic Control Proof)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Kinetic Control Proof)', tag: 'explain' };
       }
     }
   };
@@ -2265,7 +2265,7 @@ export function BrainlyCrowdsourcedForumDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2301,7 +2301,7 @@ export function BrainlyCrowdsourcedForumDemo() {
    Philosophy of Mind & Cognitive Science (PHIL 315 / COGS 201) · Searle's Chinese Room
    Scene 0: Cramly essay generator in external tab, 44.8s departure, 95% AI detection flag
    Scene 1: ExamGhost 0.3s solve via Double-Click in closed Shadow DOM, Option A
-   Scene 2: Multi-Model Searle Chinese Room Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Searle Chinese Room Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CramlyEssayVsQuizDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2407,11 +2407,11 @@ export function CramlyEssayVsQuizDemo() {
       }
     } else {
       if (safeProgress < 33) {
-        return { x: 25, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Searle\'s Formal Syllogism)', tag: 'default' };
+        return { x: 25, y: 18, clicking: true, label: 'Claude (Searle\'s Formal Syllogism)', tag: 'default' };
       } else if (safeProgress < 66) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Functionalism & Systems Reply)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Functionalism & Systems Reply)', tag: 'default' };
       } else {
-        return { x: 75, y: 18, clicking: true, label: 'DeepSeek-R1 (Turing Equivalence Proof)', tag: 'explain' };
+        return { x: 75, y: 18, clicking: true, label: 'DeepSeek (Turing Equivalence Proof)', tag: 'explain' };
       }
     }
   };
@@ -2515,7 +2515,7 @@ export function CramlyEssayVsQuizDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2551,7 +2551,7 @@ export function CramlyEssayVsQuizDemo() {
    Dynamics & Vibrations (ENGR 2302 / MATH 3301) · 2nd-Order Damped ODE
    Scene 0: Homeworkify dead domain, adware redirect, 48.2s tab gap, wrong 2018 answer
    Scene 1: ExamGhost 0.3s solve via Double-Click / Alt+S, Option D (3.54 m), closed Shadow DOM
-   Scene 2: Multi-Model Undetermined Coefficients Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Undetermined Coefficients Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function HomeworkifyDeadMirrorDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2657,11 +2657,11 @@ export function HomeworkifyDeadMirrorDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Chain-of-Thought', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Chain-of-Thought', tag: 'explain' };
       }
     }
   };
@@ -2765,7 +2765,7 @@ export function HomeworkifyDeadMirrorDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2801,7 +2801,7 @@ export function HomeworkifyDeadMirrorDemo() {
    Corporate Finance (FIN 301 / ACC 201) · MACRS Capital Budgeting & WACC
    Scene 0: Quizplus delisted extension, tab switch to quizplus.com, $24.99/mo paywall, 35% tax error
    Scene 1: ExamGhost 0.3s solve via Double-Click / Alt+S, Option C ($138,422), closed Shadow DOM
-   Scene 2: Multi-Model Capital Budgeting Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Capital Budgeting Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function QuizplusStaticBankPaywallDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2907,11 +2907,11 @@ export function QuizplusStaticBankPaywallDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Chain-of-Thought', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Chain-of-Thought', tag: 'explain' };
       }
     }
   };
@@ -3015,7 +3015,7 @@ export function QuizplusStaticBankPaywallDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3051,7 +3051,7 @@ export function QuizplusStaticBankPaywallDemo() {
    Computer Systems Architecture (CS 324 / ECE 350) · 64-bit Virtual Memory EMAT
    Scene 0: Canvas New Quizzes cross-origin LTI 1.3 frame blocks StudyX, crop lag, modal lockout
    Scene 1: ExamGhost 0.3s solve via Alt+S Smart Snip over LTI 1.3 frame, Option B (161.46 ns)
-   Scene 2: Multi-Model EMAT & Page Table Hierarchy Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model EMAT & Page Table Hierarchy Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function StudyXCommunityLagDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -3157,11 +3157,11 @@ export function StudyXCommunityLagDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Chain-of-Thought', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Chain-of-Thought', tag: 'explain' };
       }
     }
   };
@@ -3265,7 +3265,7 @@ export function StudyXCommunityLagDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>

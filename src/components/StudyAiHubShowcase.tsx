@@ -27,7 +27,7 @@ interface ModelScenario {
 const MODEL_SCENARIOS: ModelScenario[] = [
     {
         id: 'claude',
-        modelName: 'Claude 3.7 Sonnet',
+        modelName: 'Claude',
         modelBadge: 'Writing, Lab Reports & Nuance',
         specialty: 'Best for essays, humanities, lab discussion sections & clean code',
         accentBg: 'bg-[#f5e6d8]',
@@ -47,7 +47,7 @@ const MODEL_SCENARIOS: ModelScenario[] = [
     },
     {
         id: 'deepseek',
-        modelName: 'DeepSeek-R1 Reasoner',
+        modelName: 'DeepSeek Reasoner',
         modelBadge: 'Step-by-Step Math & STEM Proofs',
         specialty: 'Best for Calculus, Physics, Organic Chemistry & algorithmic proofs',
         accentBg: 'bg-[#dbeafe]',
@@ -55,7 +55,7 @@ const MODEL_SCENARIOS: ModelScenario[] = [
         accentBorder: 'border-blue-400/40',
         attachedFile: 'MATH_202_Problem_Set_6.pdf · Problem #14',
         studentPrompt: 'Solve the improper integral ∫₀^∞ x · e^(−3x) dx step-by-step and verify convergence so I can show full work on my homework.',
-        thinkingStep: 'Chain-of-thought verification (DeepSeek-R1): Applying integration by parts u = x, dv = e^(−3x) dx...',
+        thinkingStep: 'Chain-of-thought verification (DeepSeek): Applying integration by parts u = x, dv = e^(−3x) dx...',
         responseHeadline: 'Step-by-Step Integration by Parts & Limit Proof',
         responseSteps: [
             'Step 1 (Setup): Let u = x ⇒ du = dx, and dv = e^(−3x) dx ⇒ v = −(1/3)e^(−3x).',
@@ -67,7 +67,7 @@ const MODEL_SCENARIOS: ModelScenario[] = [
     },
     {
         id: 'chatgpt',
-        modelName: 'ChatGPT (GPT-4o / o3-mini)',
+        modelName: 'ChatGPT',
         modelBadge: 'Fast Coursework, CS & Flashcards',
         specialty: 'Best for computer science, quick homework checks & study guides',
         accentBg: 'bg-[#d1fae5]',

@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/solvely-vs-examghost",
+        canonical: "https://www.examghost.com/solvely-vs-examghost",
     },
     openGraph: {
         title: "Solvely vs ExamGhost (2026) — Preload Script & Cap Audit",
         description: "Compare Solvely (v0.8.4) with ExamGhost. Avoid detectable canvas-layout-preload.js scripts and sidepanel blur logs with 0.3s stealth and 5 Free Solves / Day.",
-        url: "https://examghost.com/solvely-vs-examghost",
+        url: "https://www.examghost.com/solvely-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -118,17 +118,17 @@ export default function SolvelyVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-24",
-                "dateModified": "2026-03-06",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/solvely-vs-examghost/#webpage",
-        url: "https://examghost.com/solvely-vs-examghost",
+        "@id": "https://www.examghost.com/solvely-vs-examghost/#webpage",
+        url: "https://www.examghost.com/solvely-vs-examghost",
         name: "Solvely vs ExamGhost (2026): canvas-layout-preload.js & Daily Caps vs True LMS Stealth",
         description:
           "Detailed 2026 comparison of SolvelyAI (solvely.ai v0.8.4) and ExamGhost covering canvas-layout-preload.js DOM mutations, exposed sidepanel.html assets, iframe-sidepanel.js focus leaks, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
       },
       {
         "@type": "BreadcrumbList",
@@ -137,19 +137,19 @@ export default function SolvelyVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Solvely vs ExamGhost",
-            item: "https://examghost.com/solvely-vs-examghost",
+            item: "https://www.examghost.com/solvely-vs-examghost",
           },
         ],
       },
@@ -846,10 +846,10 @@ export default function SolvelyVsExamGhostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

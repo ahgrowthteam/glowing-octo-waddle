@@ -4,14 +4,14 @@ export const metadata: Metadata = {
     title: "FAQ — Stealth Architecture, Pricing & LMS Setup",
     description: "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
     alternates: {
-        canonical: "https://examghost.com/faq",
+        canonical: "https://www.examghost.com/faq",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
         title: "FAQ — Stealth Architecture, Pricing & LMS Setup | ExamGhost",
         description: "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
-        url: "https://examghost.com/faq",
+        url: "https://www.examghost.com/faq",
         siteName: "ExamGhost",
         images: [
             {

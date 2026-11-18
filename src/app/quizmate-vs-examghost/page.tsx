@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/quizmate-vs-examghost",
+        canonical: "https://www.examghost.com/quizmate-vs-examghost",
     },
     openGraph: {
         title: "QuizMate vs ExamGhost (2026) — $7.99/Wk Portal Button Audit",
         description: "Compare QuizMate ($7.99/wk) with ExamGhost. Avoid injected portal buttons and SpeedGrader flags with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
-        url: "https://examghost.com/quizmate-vs-examghost",
+        url: "https://www.examghost.com/quizmate-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,16 +64,16 @@ export default function QuizmateVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-13",
-                "dateModified": "2026-03-20",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/quizmate-vs-examghost#webpage",
-                "url": "https://examghost.com/quizmate-vs-examghost",
+                "@id": "https://www.examghost.com/quizmate-vs-examghost#webpage",
+                "url": "https://www.examghost.com/quizmate-vs-examghost",
                 "name": "QuizMate vs ExamGhost (2026) | Portal Button Injector vs Closed Shadow DOM Stealth",
                 "description": "Technical and pricing comparison between QuizMate (quizmate.io) and ExamGhost for Canvas, Blackboard, Moodle, and D2L exams.",
-                "breadcrumb": { "@id": "https://examghost.com/quizmate-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/quizmate-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -103,16 +103,16 @@ export default function QuizmateVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/quizmate-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/quizmate-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "QuizMate vs ExamGhost", "item": "https://examghost.com/quizmate-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "QuizMate vs ExamGhost", "item": "https://www.examghost.com/quizmate-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/quizmate-vs-examghost#faq",
+                "@id": "https://www.examghost.com/quizmate-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -337,7 +337,7 @@ export default function QuizmateVsExamghostPage() {
                 <section className="py-8 bg-sand/20 border-b border-sand-dark/20 max-w-6xl mx-auto px-4 sm:px-6 mb-12">
                     <div className="text-center mb-6">
                         <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-                        <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                        <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                         <div className="p-3 bg-surface rounded-xl border border-sand-dark/30 text-center">
@@ -719,12 +719,12 @@ export default function QuizmateVsExamghostPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-xs opacity-75">
                       Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>

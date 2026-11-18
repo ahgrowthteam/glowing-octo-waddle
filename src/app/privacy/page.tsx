@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     title: "Privacy Policy — Zero-Telemetry Architecture",
     description: "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
     alternates: {
-        canonical: "https://examghost.com/privacy",
+        canonical: "https://www.examghost.com/privacy",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
         title: "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
         description: "Zero server logs, zero LMS telemetry, and zero tracking. Your academic data stays private on your local machine.",
-        url: "https://examghost.com/privacy",
+        url: "https://www.examghost.com/privacy",
         siteName: "ExamGhost",
         images: [
             {
@@ -35,15 +35,15 @@ export default function PrivacyPage() {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/privacy#webpage",
-                "url": "https://examghost.com/privacy",
+                "@id": "https://www.examghost.com/privacy#webpage",
+                "url": "https://www.examghost.com/privacy",
                 "name": "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
                 "description": "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-01",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/privacy#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/privacy#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary"]
@@ -51,10 +51,10 @@ export default function PrivacyPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/privacy#breadcrumb",
+                "@id": "https://www.examghost.com/privacy#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://examghost.com/privacy" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.examghost.com/privacy" }
                 ]
             }
         ]

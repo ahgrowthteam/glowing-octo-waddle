@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/mathosai-vs-examghost",
+        canonical: "https://www.examghost.com/mathosai-vs-examghost",
     },
     openGraph: {
         title: "Mathos AI vs ExamGhost (2026) — $9.98/Wk MathGPTPro Audit",
         description: "Compare Mathos AI (MathGPTPro) with ExamGhost. Skip $9.98/week billing and tab-switch logs using 0.3s Snap-It Vision OCR, Focus Shield, and 5 Free Solves / Day.",
-        url: "https://examghost.com/mathosai-vs-examghost",
+        url: "https://www.examghost.com/mathosai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -94,13 +94,13 @@ const jsonLd = {
     {
       "@type": "WebPage",
                 "datePublished": "2026-01-13",
-                "dateModified": "2026-03-05",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-      "@id": "https://examghost.com/mathosai-vs-examghost#webpage",
-      url: "https://examghost.com/mathosai-vs-examghost",
+      "@id": "https://www.examghost.com/mathosai-vs-examghost#webpage",
+      url: "https://www.examghost.com/mathosai-vs-examghost",
       name: "Mathos AI (MathGPTPro) vs ExamGhost AI (2026): PDF Helper, Video Lessons & Canvas Stealth",
       description:
         "Detailed 2026 audit comparing Mathos AI (mathos.ai / MathGPTPro) and ExamGhost AI across STEM accuracy, PDF homework workflows, AI video generation, LMS tab-switch protection, and weekly vs semester pricing.",
@@ -108,39 +108,39 @@ const jsonLd = {
       isPartOf: {
         "@type": "WebSite",
         name: "ExamGhost AI",
-        url: "https://examghost.com",
+        url: "https://www.examghost.com",
       },
       breadcrumb: {
-        "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/mathosai-vs-examghost#breadcrumb",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/mathosai-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/mathosai-vs-examghost#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://examghost.com",
+          item: "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Compare LMS Extensions",
-          item: "https://examghost.com/compare-canvas-hack-extensions",
+          item: "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Mathos AI vs ExamGhost AI",
-          item: "https://examghost.com/mathosai-vs-examghost",
+          item: "https://www.examghost.com/mathosai-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/mathosai-vs-examghost#faq",
+      "@id": "https://www.examghost.com/mathosai-vs-examghost#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -811,9 +811,9 @@ export default function MathosAiVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -1025,26 +1025,26 @@ export default function MathosAiVsExamGhostPage() {
                                 Powered by 3 Frontier AI Models
                             </h3>
                             <p className="text-sm text-neutral-600">
-                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                                Full access to Claude, ChatGPT, and DeepSeek for complete step-by-step derivation and homework mastery.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.

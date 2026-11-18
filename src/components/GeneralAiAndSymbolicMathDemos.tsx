@@ -126,11 +126,11 @@ export function WolframalphaCauchyEulerDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -260,7 +260,7 @@ export function WolframalphaCauchyEulerDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -269,17 +269,17 @@ export function WolframalphaCauchyEulerDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Characteristic equation for Euler operator xʳ: r(r-1) - 3r + 4 = 0 ⟹ (r-2)² = 0. Repeated root r = 2 gives homogeneous basis y₁(x) = x², y₂(x) = x² ln(x). Wronskian determinant W(y₁, y₂) = x³. Variation of parameters integrals yield u₁'(x) = -8(ln x)²/x ⟹ u₁(x) = -(8/3)(ln x)³, and u₂'(x) = 8(ln x)/x ⟹ u₂(x) = 4(ln x)². Particular solution yₚ(x) = (4/3) x² (ln x)³. General solution y(x) = c₁ x² + c₂ x² ln(x) + (4/3) x² (ln x)³. Initial conditions: y(1) = c₁ = 2, y'(1) = 2(2) + c₂ = 5 ⟹ c₂ = 1. Evaluating at x = e yields y(e) = 2e² + e² + (4/3)e² = (13/3)e²."}
+                    <strong>Claude (Formal Derivation):</strong> {"Characteristic equation for Euler operator xʳ: r(r-1) - 3r + 4 = 0 ⟹ (r-2)² = 0. Repeated root r = 2 gives homogeneous basis y₁(x) = x², y₂(x) = x² ln(x). Wronskian determinant W(y₁, y₂) = x³. Variation of parameters integrals yield u₁'(x) = -8(ln x)²/x ⟹ u₁(x) = -(8/3)(ln x)³, and u₂'(x) = 8(ln x)/x ⟹ u₂(x) = 4(ln x)². Particular solution yₚ(x) = (4/3) x² (ln x)³. General solution y(x) = c₁ x² + c₂ x² ln(x) + (4/3) x² (ln x)³. Initial conditions: y(1) = c₁ = 2, y'(1) = 2(2) + c₂ = 5 ⟹ c₂ = 1. Evaluating at x = e yields y(e) = 2e² + e² + (4/3)e² = (13/3)e²."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Exam Trap Analysis: Substituting x = eᵗ gives y''(t) - 4y'(t) + 4y(t) = 8t e²ᵗ. The forcing function e²ᵗ resonates with the double characteristic root r = 2, requiring a t² multiplier so yₚ = t²(At+B)e²ᵗ = At³ e²ᵗ. Forgetting this resonance produces distractor Option C. Differentiating y₂(x) = x² ln x requires the product rule; dropping the derivative term at x=1 yields Option A."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Exam Trap Analysis: Substituting x = eᵗ gives y''(t) - 4y'(t) + 4y(t) = 8t e²ᵗ. The forcing function e²ᵗ resonates with the double characteristic root r = 2, requiring a t² multiplier so yₚ = t²(At+B)e²ᵗ = At³ e²ᵗ. Forgetting this resonance produces distractor Option C. Differentiating y₂(x) = x² ln x requires the product rule; dropping the derivative term at x=1 yields Option A."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Green's Function Formalism: The causal Green's function for L = x² D² - 3x D + 4 is G(x, ξ) = [y₁(ξ)y₂(x) - y₁(x)y₂(ξ)] / [ξ² W(ξ)] = x²(ln x - ln ξ)/ξ. Convolving with forcing term f(ξ) = 8 ln ξ gives yₚ(x) = 8x² ∫₁ˣ [(ln x - ln ξ)ln ξ / ξ] dξ = (4/3)x²(ln x)³. Confirms Wronskian normalization without coordinate transformations."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Green's Function Formalism: The causal Green's function for L = x² D² - 3x D + 4 is G(x, ξ) = [y₁(ξ)y₂(x) - y₁(x)y₂(ξ)] / [ξ² W(ξ)] = x²(ln x - ln ξ)/ξ. Convolving with forcing term f(ξ) = 8 ln ξ gives yₚ(x) = 8x² ∫₁ˣ [(ln x - ln ξ)ln ξ / ξ] dξ = (4/3)x²(ln x)³. Confirms Wronskian normalization without coordinate transformations."}
                   </p>
                 )}
               </div>
@@ -403,11 +403,11 @@ export function MathosaiContourIntegralDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -537,7 +537,7 @@ export function MathosaiContourIntegralDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -546,17 +546,17 @@ export function MathosaiContourIntegralDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Residue Calculus in Complex Plane: Since the integrand f(x) = x²/(x⁴+1) is even, I = (1/2) ∫[-∞ to ∞] x²/(x⁴+1) dx. Poles of f(z) = z²/(z⁴+1) occur at z⁴ = -1 = e^(iπ). Upper half-plane poles are z₀ = e^(iπ/4) and z₁ = e^(i3π/4). Residue formula for simple pole: Res(f, zₖ) = zₖ² / (4zₖ³) = 1 / (4zₖ) = (1/4) zₖ⁻¹. Thus Res(f, z₀) = (1-i)/(4√2) and Res(f, z₁) = (-1-i)/(4√2). Sum of residues = -2i / (4√2) = -i / (2√2). By Cauchy's Residue Theorem: ∫[-∞ to ∞] x²/(x⁴+1) dx = 2πi (-i / (2√2)) = π / √2. Pre-multiplying by 1/2 yields I = π / (2√2)."}
+                    <strong>Claude (Formal Derivation):</strong> {"Residue Calculus in Complex Plane: Since the integrand f(x) = x²/(x⁴+1) is even, I = (1/2) ∫[-∞ to ∞] x²/(x⁴+1) dx. Poles of f(z) = z²/(z⁴+1) occur at z⁴ = -1 = e^(iπ). Upper half-plane poles are z₀ = e^(iπ/4) and z₁ = e^(i3π/4). Residue formula for simple pole: Res(f, zₖ) = zₖ² / (4zₖ³) = 1 / (4zₖ) = (1/4) zₖ⁻¹. Thus Res(f, z₀) = (1-i)/(4√2) and Res(f, z₁) = (-1-i)/(4√2). Sum of residues = -2i / (4√2) = -i / (2√2). By Cauchy's Residue Theorem: ∫[-∞ to ∞] x²/(x⁴+1) dx = 2πi (-i / (2√2)) = π / √2. Pre-multiplying by 1/2 yields I = π / (2√2)."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Real Variable Symmetry & Inversion Method: Let x = 1/t, dx = -dt/t². Then I = ∫[0 to ∞] (1/t²) / (1/t⁴ + 1) dt/t² = ∫[0 to ∞] 1/(t⁴+1) dt. Adding both forms: 2I = ∫[0 to ∞] (x²+1)/(x⁴+1) dx = ∫[0 to ∞] (1 + 1/x²) / ((x - 1/x)² + 2) dx. Substituting u = x - 1/x with du = (1 + 1/x²)dx gives 2I = ∫[-∞ to ∞] du / (u² + 2) = [ (1/√2) arctan(u/√2) ] = π / √2 ⟹ I = π / (2√2). Missing the 1/2 multiplier causes students to pick distractor Option C."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Real Variable Symmetry & Inversion Method: Let x = 1/t, dx = -dt/t². Then I = ∫[0 to ∞] (1/t²) / (1/t⁴ + 1) dt/t² = ∫[0 to ∞] 1/(t⁴+1) dt. Adding both forms: 2I = ∫[0 to ∞] (x²+1)/(x⁴+1) dx = ∫[0 to ∞] (1 + 1/x²) / ((x - 1/x)² + 2) dx. Substituting u = x - 1/x with du = (1 + 1/x²)dx gives 2I = ∫[-∞ to ∞] du / (u² + 2) = [ (1/√2) arctan(u/√2) ] = π / √2 ⟹ I = π / (2√2). Missing the 1/2 multiplier causes students to pick distractor Option C."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Euler Beta Function Representation: Substitute u = x⁴, x = u^(1/4), dx = (1/4) u^(-3/4) du. The integral becomes I = (1/4) ∫[0 to ∞] u^(-1/4) / (1+u) du. Using the Beta function identity B(p, 1-p) = ∫[0 to ∞] u^(p-1)/(1+u) du = π / sin(pπ) with p = 3/4: I = (1/4) B(3/4, 1/4) = (1/4) π / sin(3π/4) = (1/4) π / (1/√2) = π / (2√2). Verified in 1 step."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Euler Beta Function Representation: Substitute u = x⁴, x = u^(1/4), dx = (1/4) u^(-3/4) du. The integral becomes I = (1/4) ∫[0 to ∞] u^(-1/4) / (1+u) du. Using the Beta function identity B(p, 1-p) = ∫[0 to ∞] u^(p-1)/(1+u) du = π / sin(pπ) with p = 3/4: I = (1/4) B(3/4, 1/4) = (1/4) π / sin(3π/4) = (1/4) π / (1/√2) = π / (2√2). Verified in 1 step."}
                   </p>
                 )}
               </div>
@@ -680,11 +680,11 @@ export function SolvelyOpticsSnellDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -814,7 +814,7 @@ export function SolvelyOpticsSnellDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -823,17 +823,17 @@ export function SolvelyOpticsSnellDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Rigorous Geometric Optics & TIR Proof: At first interface: 1.000 · sin(θ₁) = n · sin(r₁) ⟹ sin(r₁) = sin(45.0°)/1.520 = 0.46520 ⟹ r₁ = 27.72°. Apex geometry for equilateral prism requires r₁ + r₂ = A = 60.00° ⟹ r₂ = 60.00° - 27.72° = 32.28°. Critical angle for glass-air interface: sin(θ_c) = 1/n = 1/1.520 = 0.65789 ⟹ θ_c = 41.14°. Because internal angle r₂ = 32.28° < θ_c = 41.14°, Total Internal Reflection does NOT occur. At second interface: n · sin(r₂) = 1.000 · sin(θ₂) ⟹ sin(θ₂) = 1.520 · sin(32.28°) = 0.81177 ⟹ θ₂ = 54.27°. Total angular deviation δ = θ₁ + θ₂ - A = 45.00° + 54.27° - 60.00° = 39.27° ≈ 39.3°."}
+                    <strong>Claude (Formal Derivation):</strong> {"Rigorous Geometric Optics & TIR Proof: At first interface: 1.000 · sin(θ₁) = n · sin(r₁) ⟹ sin(r₁) = sin(45.0°)/1.520 = 0.46520 ⟹ r₁ = 27.72°. Apex geometry for equilateral prism requires r₁ + r₂ = A = 60.00° ⟹ r₂ = 60.00° - 27.72° = 32.28°. Critical angle for glass-air interface: sin(θ_c) = 1/n = 1/1.520 = 0.65789 ⟹ θ_c = 41.14°. Because internal angle r₂ = 32.28° < θ_c = 41.14°, Total Internal Reflection does NOT occur. At second interface: n · sin(r₂) = 1.000 · sin(θ₂) ⟹ sin(θ₂) = 1.520 · sin(32.28°) = 0.81177 ⟹ θ₂ = 54.27°. Total angular deviation δ = θ₁ + θ₂ - A = 45.00° + 54.27° - 60.00° = 39.27° ≈ 39.3°."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Exam Trap Breakdown: Distractor Option B incorrectly compares the incident angle θ₁ = 45° with critical angle θ_c = 41.1°, concluding TIR occurs. This is a fatal optical error: critical angle checks must occur inside the medium at angle r₂, not external angle θ₁. Distractor Option D calculates minimum deviation δ_m = 2 arcsin(n sin(A/2)) - A = 38.92°, which only occurs at symmetric incidence θ₁ = 49.46°, not θ₁ = 45°."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Exam Trap Breakdown: Distractor Option B incorrectly compares the incident angle θ₁ = 45° with critical angle θ_c = 41.1°, concluding TIR occurs. This is a fatal optical error: critical angle checks must occur inside the medium at angle r₂, not external angle θ₁. Distractor Option D calculates minimum deviation δ_m = 2 arcsin(n sin(A/2)) - A = 38.92°, which only occurs at symmetric incidence θ₁ = 49.46°, not θ₁ = 45°."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Sellmeier Angular Dispersion Analysis: Angular dispersion through the prism is dδ/dn = sin A / (cos θ₂ cos r₁) = sin 60° / (cos 54.27° cos 27.72°) = 0.8660 / (0.5840 · 0.8852) = 1.675 rad/RIU. For crown glass across visible spectrum (F to C Fraunhofer lines, Δn = 0.0086), the angular chromatic splitting is Δδ = 1.675 · 0.0086 = 0.0144 rad = 0.82°."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Sellmeier Angular Dispersion Analysis: Angular dispersion through the prism is dδ/dn = sin A / (cos θ₂ cos r₁) = sin 60° / (cos 54.27° cos 27.72°) = 0.8660 / (0.5840 · 0.8852) = 1.675 rad/RIU. For crown glass across visible spectrum (F to C Fraunhofer lines, Δn = 0.0086), the angular chromatic splitting is Δδ = 1.675 · 0.0086 = 0.0144 rad = 0.82°."}
                   </p>
                 )}
               </div>
@@ -957,11 +957,11 @@ export function FastsolveBraytonCycleDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -1091,7 +1091,7 @@ export function FastsolveBraytonCycleDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1100,17 +1100,17 @@ export function FastsolveBraytonCycleDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Thermodynamic State Equations & Enthalpy Balances: Pressure ratio r_p = 8.0. Isentropic temperature exponent (k-1)/k = 0.4/1.4 = 2/7 ≈ 0.2857. Compressor outlet: T₂ₛ = T₁ · r_p^((k-1)/k) = 300 · 8.0^(2/7) = 543.43 K. Turbine outlet: T₄ₛ = T₃ / r_p^((k-1)/k) = 1300 / 1.81145 = 717.66 K. Maximum regenerator heat transfer: q_regen,max = c_p (T₄ₛ - T₂ₛ) = c_p (717.66 - 543.43) = c_p (174.23 K). Actual heat transfer with ε = 0.80: q_regen = 0.80 · c_p(174.23) = c_p (139.38 K). Combustor inlet: T_x = T₂ₛ + 139.38 = 682.81 K. Heat input: q_in = c_p (T₃ - T_x) = c_p (1300 - 682.81) = c_p (617.19 K). Net work: w_net = w_turb - w_comp = c_p[(1300 - 717.66) - (543.43 - 300)] = c_p(582.34 - 243.43) = c_p(338.91 K). Thermal efficiency: η_th = w_net / q_in = 338.91 / 617.19 = 54.91% ≈ 54.9%."}
+                    <strong>Claude (Formal Derivation):</strong> {"Thermodynamic State Equations & Enthalpy Balances: Pressure ratio r_p = 8.0. Isentropic temperature exponent (k-1)/k = 0.4/1.4 = 2/7 ≈ 0.2857. Compressor outlet: T₂ₛ = T₁ · r_p^((k-1)/k) = 300 · 8.0^(2/7) = 543.43 K. Turbine outlet: T₄ₛ = T₃ / r_p^((k-1)/k) = 1300 / 1.81145 = 717.66 K. Maximum regenerator heat transfer: q_regen,max = c_p (T₄ₛ - T₂ₛ) = c_p (717.66 - 543.43) = c_p (174.23 K). Actual heat transfer with ε = 0.80: q_regen = 0.80 · c_p(174.23) = c_p (139.38 K). Combustor inlet: T_x = T₂ₛ + 139.38 = 682.81 K. Heat input: q_in = c_p (T₃ - T_x) = c_p (1300 - 682.81) = c_p (617.19 K). Net work: w_net = w_turb - w_comp = c_p[(1300 - 717.66) - (543.43 - 300)] = c_p(582.34 - 243.43) = c_p(338.91 K). Thermal efficiency: η_th = w_net / q_in = 338.91 / 617.19 = 54.91% ≈ 54.9%."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Distractor Analysis & FastSolve Shortcut Trap: FastSolve routes math queries to Gemini Flash, which often defaults to the standard non-regenerative formula η_std = 1 - 1/r_p^((k-1)/k) = 1 - 1/1.81145 = 44.80% (Option A), completely omitting the regenerator. Option C (58.2%) incorrectly assumes an ideal regenerator (ε = 1.0, T_x = T₄ₛ), neglecting realistic heat exchanger thermal pinches."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Distractor Analysis & FastSolve Shortcut Trap: FastSolve routes math queries to Gemini Flash, which often defaults to the standard non-regenerative formula η_std = 1 - 1/r_p^((k-1)/k) = 1 - 1/1.81145 = 44.80% (Option A), completely omitting the regenerator. Option C (58.2%) incorrectly assumes an ideal regenerator (ε = 1.0, T_x = T₄ₛ), neglecting realistic heat exchanger thermal pinches."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Second-Law Exergy Destruction Analysis: The entropy generation rate across the regenerator is S_gen,regen = m c_p [ln(T_x/T₂) + ln(T_y/T₄)] where T_y = T₄ - 139.38 = 578.28 K. Evaluating: S_gen = m c_p [ln(682.81/543.43) + ln(578.28/717.66)] = 0.0124 m c_p. The associated exergy destruction is X_dest = T₀ S_gen = 300 · 0.0124 · 1.005 = 3.74 kJ/kg."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Second-Law Exergy Destruction Analysis: The entropy generation rate across the regenerator is S_gen,regen = m c_p [ln(T_x/T₂) + ln(T_y/T₄)] where T_y = T₄ - 139.38 = 578.28 K. Evaluating: S_gen = m c_p [ln(682.81/543.43) + ln(578.28/717.66)] = 0.0124 m c_p. The associated exergy destruction is X_dest = T₀ S_gen = 300 · 0.0124 · 1.005 = 3.74 kJ/kg."}
                   </p>
                 )}
               </div>
@@ -1234,11 +1234,11 @@ export function MindkoHermitianMatrixDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -1368,7 +1368,7 @@ export function MindkoHermitianMatrixDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1377,17 +1377,17 @@ export function MindkoHermitianMatrixDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Hermitian Spectral Decomposition & Projection Operators: Characteristic equation det(H - λI) = (2-λ)(3-λ) - (1-i)(1+i) = λ² - 5λ + 6 - 2 = λ² - 5λ + 4 = 0 ⟹ (λ-1)(λ-4) = 0 ⟹ λ₁ = 1, λ₂ = 4. Lower eigenvalue λ₁ = 1: (H - I)|v₁⟩ = [1, 1-i; 1+i, 2][x, y]ᵀ = [0, 0]ᵀ ⟹ x + (1-i)y = 0 ⟹ x = -(1-i)y. Normalization condition: ‖v₁‖² = |x|² + |y|² = |-(1-i)|² |y|² + |y|² = (1+1)|y|² + |y|² = 3|y|² = 1 ⟹ |y| = 1/√3. Setting y = 1/√3 gives |v₁⟩ = (1/√3) [-(1-i), 1]ᵀ. Projection operator P₁ = |v₁⟩⟨v₁| = (1/3) [2, -(1-i); -(1+i), 1], satisfying P₁² = P₁ and H = 1·P₁ + 4·P₂."}
+                    <strong>Claude (Formal Derivation):</strong> {"Hermitian Spectral Decomposition & Projection Operators: Characteristic equation det(H - λI) = (2-λ)(3-λ) - (1-i)(1+i) = λ² - 5λ + 6 - 2 = λ² - 5λ + 4 = 0 ⟹ (λ-1)(λ-4) = 0 ⟹ λ₁ = 1, λ₂ = 4. Lower eigenvalue λ₁ = 1: (H - I)|v₁⟩ = [1, 1-i; 1+i, 2][x, y]ᵀ = [0, 0]ᵀ ⟹ x + (1-i)y = 0 ⟹ x = -(1-i)y. Normalization condition: ‖v₁‖² = |x|² + |y|² = |-(1-i)|² |y|² + |y|² = (1+1)|y|² + |y|² = 3|y|² = 1 ⟹ |y| = 1/√3. Setting y = 1/√3 gives |v₁⟩ = (1/√3) [-(1-i), 1]ᵀ. Projection operator P₁ = |v₁⟩⟨v₁| = (1/3) [2, -(1-i); -(1+i), 1], satisfying P₁² = P₁ and H = 1·P₁ + 4·P₂."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Complex Conjugation & Phase Conventions: When forming the dual bra ⟨v₁| = (|v₁⟩)†, taking the conjugate transpose gives ⟨v₁| = (1/√3) [-(1+i), 1]. Missing the complex conjugate on the imaginary term creates an invalid norm. Distractor Option A treats diagonal entries (2, 3) as eigenvalues, which only holds when off-diagonal coupling 1-i is zero."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Complex Conjugation & Phase Conventions: When forming the dual bra ⟨v₁| = (|v₁⟩)†, taking the conjugate transpose gives ⟨v₁| = (1/√3) [-(1+i), 1]. Missing the complex conjugate on the imaginary term creates an invalid norm. Distractor Option A treats diagonal entries (2, 3) as eigenvalues, which only holds when off-diagonal coupling 1-i is zero."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Pauli Matrix Decomposition & Spin-1/2 Hamiltonian: Expanding H in Pauli basis H = c₀ I + c_x σ_x + c_y σ_y + c_z σ_z: c₀ = (1/2)Tr(H) = 5/2; c_x = 1; c_y = 1; c_z = -1/2. The Bloch vector is c = (1, 1, -1/2) with magnitude ‖c‖ = √(1 + 1 + 1/4) = 3/2. Under SU(2) rotation, eigenvalues are λ = c₀ ± ‖c‖ = 5/2 ± 3/2 = {1, 4}. Identical outcome in quantum spin algebra."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Pauli Matrix Decomposition & Spin-1/2 Hamiltonian: Expanding H in Pauli basis H = c₀ I + c_x σ_x + c_y σ_y + c_z σ_z: c₀ = (1/2)Tr(H) = 5/2; c_x = 1; c_y = 1; c_z = -1/2. The Bloch vector is c = (1, 1, -1/2) with magnitude ‖c‖ = √(1 + 1 + 1/4) = 3/2. Under SU(2) rotation, eigenvalues are λ = c₀ ± ‖c‖ = 5/2 ± 3/2 = {1, 4}. Identical outcome in quantum spin algebra."}
                   </p>
                 )}
               </div>
@@ -1511,11 +1511,11 @@ export function AnswerAiSidebarBlurDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -1645,7 +1645,7 @@ export function AnswerAiSidebarBlurDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1654,17 +1654,17 @@ export function AnswerAiSidebarBlurDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Hard-Soft Acid-Base (HSAB) & Reversibility Analysis: Dimethylsulfoxonium methylide has charge delocalization over the S=O bond, lowering electron density and making it a soft nucleophile. Initial 1,2-addition to the carbonyl is reversible because the sulfoxonium group is a stable leaving group. Reversible conjugate 1,4-addition to the soft β-carbon forms an enolate that rapidly performs intramolecular nucleophilic displacement of DMSO to yield the trans-cyclopropyl ketone (thermodynamic product). Conversely, unstabilized dimethylsulfonium methylide is an un-delocalized, hard nucleophile whose 1,2-addition is irreversible; rapid alkoxide attack displaces DMS to form the α,β-unsaturated epoxide (kinetic product)."}
+                    <strong>Claude (Formal Derivation):</strong> {"Hard-Soft Acid-Base (HSAB) & Reversibility Analysis: Dimethylsulfoxonium methylide has charge delocalization over the S=O bond, lowering electron density and making it a soft nucleophile. Initial 1,2-addition to the carbonyl is reversible because the sulfoxonium group is a stable leaving group. Reversible conjugate 1,4-addition to the soft β-carbon forms an enolate that rapidly performs intramolecular nucleophilic displacement of DMSO to yield the trans-cyclopropyl ketone (thermodynamic product). Conversely, unstabilized dimethylsulfonium methylide is an un-delocalized, hard nucleophile whose 1,2-addition is irreversible; rapid alkoxide attack displaces DMS to form the α,β-unsaturated epoxide (kinetic product)."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Reagent Diagnostic Comparison: Dimethylsulfoxonium ((CH₃)₂S(=O)CH₂) is soft, reversible 1,2, and yields trans-cyclopropane (steric minimization of benzoyl vs phenyl). Dimethylsulfonium ((CH₃)₂SCH₂) is hard, irreversible 1,2, yielding oxirane epoxide. Distractor Option B ignores HSAB orbital differences; Option C reverses reaction pathways."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Reagent Diagnostic Comparison: Dimethylsulfoxonium ((CH₃)₂S(=O)CH₂) is soft, reversible 1,2, and yields trans-cyclopropane (steric minimization of benzoyl vs phenyl). Dimethylsulfonium ((CH₃)₂SCH₂) is hard, irreversible 1,2, yielding oxirane epoxide. Distractor Option B ignores HSAB orbital differences; Option C reverses reaction pathways."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Frontier Molecular Orbital (FMO) Proof: Enone LUMO coefficients are c = 0.42 at carbonyl carbon and c = 0.58 at β-carbon. Soft ylides with diffuse electron clouds interact under orbital control with the largest LUMO coefficient at the β-carbon (ΔE = 2.14 eV), yielding trans-cyclopropane with 98:2 selectivity. Hard ylides interact under electrostatic charge control at the carbonyl carbon (δ+), yielding epoxide."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Frontier Molecular Orbital (FMO) Proof: Enone LUMO coefficients are c = 0.42 at carbonyl carbon and c = 0.58 at β-carbon. Soft ylides with diffuse electron clouds interact under orbital control with the largest LUMO coefficient at the β-carbon (ΔE = 2.14 eV), yielding trans-cyclopropane with 98:2 selectivity. Hard ylides interact under electrostatic charge control at the carbonyl carbon (δ+), yielding epoxide."}
                   </p>
                 )}
               </div>
@@ -1788,11 +1788,11 @@ export function CoursologyBeaconBlockDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -1922,7 +1922,7 @@ export function CoursologyBeaconBlockDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1931,17 +1931,17 @@ export function CoursologyBeaconBlockDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Backward Induction Derivation: Stage 2 (Follower Firm 2): Maximizes profit π₂ = (240 - 2q₁ - 2q₂ - 40)q₂ = (200 - 2q₁ - 2q₂)q₂. First-order condition: ∂π₂/∂q₂ = 200 - 2q₁ - 4q₂ = 0 ⟹ q₂(q₁) = 50 - 0.5q₁. Stage 1 (Leader Firm 1): Incorporates Follower's reaction into revenue: π₁ = (240 - 2q₁ - 2(50 - 0.5q₁) - 20)q₁ = (140 - q₁ - 20)q₁ = (120 - q₁)q₁. FOC: dπ₁/dq₁ = 120 - 2q₁ = 0 ⟹ q₁* = 60. Follower output: q₂* = 50 - 0.5(60) = 20. Total industry output Q* = 60 + 20 = 80. Equilibrium market price P* = 240 - 2(80) = $80."}
+                    <strong>Claude (Formal Derivation):</strong> {"Backward Induction Derivation: Stage 2 (Follower Firm 2): Maximizes profit π₂ = (240 - 2q₁ - 2q₂ - 40)q₂ = (200 - 2q₁ - 2q₂)q₂. First-order condition: ∂π₂/∂q₂ = 200 - 2q₁ - 4q₂ = 0 ⟹ q₂(q₁) = 50 - 0.5q₁. Stage 1 (Leader Firm 1): Incorporates Follower's reaction into revenue: π₁ = (240 - 2q₁ - 2(50 - 0.5q₁) - 20)q₁ = (140 - q₁ - 20)q₁ = (120 - q₁)q₁. FOC: dπ₁/dq₁ = 120 - 2q₁ = 0 ⟹ q₁* = 60. Follower output: q₂* = 50 - 0.5(60) = 20. Total industry output Q* = 60 + 20 = 80. Equilibrium market price P* = 240 - 2(80) = $80."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Profit & Welfare Benchmark: Leader profit π₁* = (80 - 20) · 60 = $3,600. Follower profit π₂* = (80 - 40) · 20 = $800. Consumer surplus CS = (1/2)(240 - 80) · 80 = $6,400. In Cournot simultaneous competition, outputs are q₁^C = 46.67, q₂^C = 26.67, P^C = $93.33. Stackelberg leadership expands Leader profit from $2,904 to $3,600 while lowering consumer price by $13.33."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Profit & Welfare Benchmark: Leader profit π₁* = (80 - 20) · 60 = $3,600. Follower profit π₂* = (80 - 40) · 20 = $800. Consumer surplus CS = (1/2)(240 - 80) · 80 = $6,400. In Cournot simultaneous competition, outputs are q₁^C = 46.67, q₂^C = 26.67, P^C = $93.33. Stackelberg leadership expands Leader profit from $2,904 to $3,600 while lowering consumer price by $13.33."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Kuhn-Tucker Boundary Analysis: SOC confirms concavity: ∂²π₁/∂q₁² = -2 < 0 and ∂²π₂/∂q₂² = -4 < 0. Entry deterrence requires producing limit quantity q₁ ≥ 100 to force q₂ = 0. However, π₁(100) = (240 - 200 - 20) · 100 = $2,000 < $3,600. Accommodation strictly dominates deterrence."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Kuhn-Tucker Boundary Analysis: SOC confirms concavity: ∂²π₁/∂q₁² = -2 < 0 and ∂²π₂/∂q₂² = -4 < 0. Entry deterrence requires producing limit quantity q₁ ≥ 100 to force q₂ = 0. However, π₁(100) = (240 - 200 - 20) · 100 = $2,000 < $3,600. Accommodation strictly dominates deterrence."}
                   </p>
                 )}
               </div>
@@ -2065,11 +2065,11 @@ export function ClassologyManifestDomDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -2199,7 +2199,7 @@ export function ClassologyManifestDomDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2208,17 +2208,17 @@ export function ClassologyManifestDomDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Architectural Bitwise Decoding of #PF Error Code 0x0005 (0b00000101): Bit 0 (P = 1): Page-protection violation on a page that IS present. Bit 1 (W/R = 0): Caused by a memory read access. Bit 2 (U/S = 1): Processor was executing in user mode (CPL = 3). Bit 3 (RSVD = 0): No reserved bits were overwritten in PTE. Bit 4 (I/D = 0): Not an instruction fetch fault. The kernel reads CR2 to retrieve faulting address, inspects vm_area_struct in mm_struct, finds page present but user read permissions denied, and delivers SIGSEGV (SEGV_ACCERR)."}
+                    <strong>Claude (Formal Derivation):</strong> {"Architectural Bitwise Decoding of #PF Error Code 0x0005 (0b00000101): Bit 0 (P = 1): Page-protection violation on a page that IS present. Bit 1 (W/R = 0): Caused by a memory read access. Bit 2 (U/S = 1): Processor was executing in user mode (CPL = 3). Bit 3 (RSVD = 0): No reserved bits were overwritten in PTE. Bit 4 (I/D = 0): Not an instruction fetch fault. The kernel reads CR2 to retrieve faulting address, inspects vm_area_struct in mm_struct, finds page present but user read permissions denied, and delivers SIGSEGV (SEGV_ACCERR)."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Kernel Flowchart & Trap Frame: Hardware pushes SS, RSP, RFLAGS, CS, RIP, and Error Code (0x0005) onto Interrupt Stack Table (IST). Dispatches to exc_page_fault() ⟹ do_user_addr_fault(). find_vma() verifies faulting address against VMA list: because page is already present, this is not an on-demand allocation. Since vma->vm_flags prohibits user read, kernel invokes force_sig_fault(SIGSEGV, SEGV_ACCERR, address)."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Kernel Flowchart & Trap Frame: Hardware pushes SS, RSP, RFLAGS, CS, RIP, and Error Code (0x0005) onto Interrupt Stack Table (IST). Dispatches to exc_page_fault() ⟹ do_user_addr_fault(). find_vma() verifies faulting address against VMA list: because page is already present, this is not an on-demand allocation. Since vma->vm_flags prohibits user read, kernel invokes force_sig_fault(SIGSEGV, SEGV_ACCERR, address)."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"TLB & 4-Level MMU Walker Math: 48-bit Canonical Virtual Address: [47:39] PML4, [38:30] PDPT, [29:21] PD, [20:12] PT, [11:0] Offset. 512-entry 4-way associative TLB has 128 sets (7-bit set index). On TLB miss, hardware MMU walker reads CR3 ⟹ PML4E ⟹ PDPTE ⟹ PDE ⟹ PTE. Because PTE User bit is 0, hardware translation aborts without caching and fires Vector 14 with 0x0005."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"TLB & 4-Level MMU Walker Math: 48-bit Canonical Virtual Address: [47:39] PML4, [38:30] PDPT, [29:21] PD, [20:12] PT, [11:0] Offset. 512-entry 4-way associative TLB has 128 sets (7-bit set index). On TLB miss, hardware MMU walker reads CR3 ⟹ PML4E ⟹ PDPTE ⟹ PDE ⟹ PTE. Because PTE User bit is 0, hardware translation aborts without caching and fires Vector 14 with 0x0005."}
                   </p>
                 )}
               </div>
@@ -2342,11 +2342,11 @@ export function DoubleCheckAiCircularLoopDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -2476,7 +2476,7 @@ export function DoubleCheckAiCircularLoopDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2485,17 +2485,17 @@ export function DoubleCheckAiCircularLoopDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Two-Tier Scrutiny under Dormant Commerce Clause: (1) Facial discrimination or protectionist purpose/effect triggers strict scrutiny under Philadelphia v. New Jersey (1978); virtually per se unconstitutional unless state proves no non-discriminatory alternative exists. (2) Facially neutral statutes with incidental burdens are governed by Pike v. Bruce Church, Inc. (397 U.S. 137 (1970)): where the statute regulates even-handedly to effectuate a legitimate local public interest, it will be upheld unless the burden imposed on interstate commerce is clearly excessive in relation to putative local benefits. Option B directly states the controlling rule."}
+                    <strong>Claude (Formal Derivation):</strong> {"Two-Tier Scrutiny under Dormant Commerce Clause: (1) Facial discrimination or protectionist purpose/effect triggers strict scrutiny under Philadelphia v. New Jersey (1978); virtually per se unconstitutional unless state proves no non-discriminatory alternative exists. (2) Facially neutral statutes with incidental burdens are governed by Pike v. Bruce Church, Inc. (397 U.S. 137 (1970)): where the statute regulates even-handedly to effectuate a legitimate local public interest, it will be upheld unless the burden imposed on interstate commerce is clearly excessive in relation to putative local benefits. Option B directly states the controlling rule."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Distractor Evaluation: Distractor Option A fails because disparate economic impact alone does NOT trigger strict scrutiny (Minnesota v. Clover Leaf Creamery Co., 1981, upholding plastic milk container ban). Option C is false because federal Commerce Clause powers supersede state police powers. Option D is false because corporations cannot invoke Article IV Privileges and Immunities."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Distractor Evaluation: Distractor Option A fails because disparate economic impact alone does NOT trigger strict scrutiny (Minnesota v. Clover Leaf Creamery Co., 1981, upholding plastic milk container ban). Option C is false because federal Commerce Clause powers supersede state police powers. Option D is false because corporations cannot invoke Article IV Privileges and Immunities."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Comparative Case Precedent Synthesis: Contrast with Hunt v. Washington State Apple Advertising Comm'n (1977): NC statute was facially neutral but eliminated Washington's superior grading system, imposing direct discriminatory competitive effects ⟹ per se invalidity. Contrast with Bibb v. Navajo Freight Lines (1959): Illinois curved mudguard law imposed massive re-rigging costs with zero safety gain ⟹ failed Pike balancing."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Comparative Case Precedent Synthesis: Contrast with Hunt v. Washington State Apple Advertising Comm'n (1977): NC statute was facially neutral but eliminated Washington's superior grading system, imposing direct discriminatory competitive effects ⟹ per se invalidity. Contrast with Bibb v. Navajo Freight Lines (1959): Illinois curved mudguard law imposed massive re-rigging costs with zero safety gain ⟹ failed Pike balancing."}
                   </p>
                 )}
               </div>
@@ -2619,11 +2619,11 @@ export function ExamClutchClipboardPasteDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -2753,7 +2753,7 @@ export function ExamClutchClipboardPasteDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2762,17 +2762,17 @@ export function ExamClutchClipboardPasteDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"3D Genome Architecture & Developmental Silencing: CCCTC-binding factor (CTCF) binds convergent motifs at HS5 of the LCR and downstream 3'HS1. The Cohesin ring complex (SMC1A, SMC3, RAD21) performs ATP-dependent loop extrusion until arrested at convergent CTCF boundaries, creating a topologically associating domain (TAD) that juxtaposes the LCR enhancer core with the promoter. In adult erythroblasts, transcriptional repressors BCL11A and ZBTB7A (LRF) bind fetal γ-globin promoters, recruiting Polycomb Repressive Complex 2 (PRC2, EZH2 methyltransferase) to deposit repressive H3K27me3 marks, silencing γ-globin."}
+                    <strong>Claude (Formal Derivation):</strong> {"3D Genome Architecture & Developmental Silencing: CCCTC-binding factor (CTCF) binds convergent motifs at HS5 of the LCR and downstream 3'HS1. The Cohesin ring complex (SMC1A, SMC3, RAD21) performs ATP-dependent loop extrusion until arrested at convergent CTCF boundaries, creating a topologically associating domain (TAD) that juxtaposes the LCR enhancer core with the promoter. In adult erythroblasts, transcriptional repressors BCL11A and ZBTB7A (LRF) bind fetal γ-globin promoters, recruiting Polycomb Repressive Complex 2 (PRC2, EZH2 methyltransferase) to deposit repressive H3K27me3 marks, silencing γ-globin."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Biological Distractor Evaluation: Option A is false because TBP is part of general TFIID at the core TATA box and does not organize TAD loops; H3K4me3 is an active euchromatic mark. Option C is false because σ⁷⁰ is prokaryotic. Option D is false because Gal4-UAS is yeast recombinant."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Biological Distractor Evaluation: Option A is false because TBP is part of general TFIID at the core TATA box and does not organize TAD loops; H3K4me3 is an active euchromatic mark. Option C is false because σ⁷⁰ is prokaryotic. Option D is false because Gal4-UAS is yeast recombinant."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Clinical & CRISPR Therapeutics (Casgevy): In Sickle Cell Disease (HbS, β^E6V), reactivating fetal hemoglobin (HbF, α₂γ₂) inhibits sickling. FDA-approved CRISPR therapy Exagamglogene autotemcel (Casgevy) uses SpCas9 to disrupt the erythroid-specific GATA1 enhancer of BCL11A (+58 kb intron 2). This prevents BCL11A expression in erythroid lineage, lifting PRC2 H3K27me3 repression and restoring curative HbF (>20%)."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Clinical & CRISPR Therapeutics (Casgevy): In Sickle Cell Disease (HbS, β^E6V), reactivating fetal hemoglobin (HbF, α₂γ₂) inhibits sickling. FDA-approved CRISPR therapy Exagamglogene autotemcel (Casgevy) uses SpCas9 to disrupt the erythroid-specific GATA1 enhancer of BCL11A (+58 kb intron 2). This prevents BCL11A expression in erythroid lineage, lifting PRC2 H3K27me3 repression and restoring curative HbF (>20%)."}
                   </p>
                 )}
               </div>
@@ -2896,11 +2896,11 @@ export function AnswerlyWebScrapingLatencyDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -3030,7 +3030,7 @@ export function AnswerlyWebScrapingLatencyDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3039,17 +3039,17 @@ export function AnswerlyWebScrapingLatencyDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Biophysical NMDA Kinetics & Depolarization Proof: Voltage-dependent Mg²⁺ block of NMDA channel is modeled by Woodhull equation I_NMDA = g_max(V - V_rev) / [1 + ([Mg²⁺]_o/δ) e^(-αV)]. Postsynaptic AMPA-mediated depolarization from -70 mV to -30 mV expels hydrated Mg²⁺ via electrostatic repulsion. Calcium influx through the high-conductance pore binds Calmodulin (CaM), driving CaMKII autophosphorylation at Thr286, converting the dodecameric kinase into an autonomous active state that phosphorylates AMPA GluA1 subunits."}
+                    <strong>Claude (Formal Derivation):</strong> {"Biophysical NMDA Kinetics & Depolarization Proof: Voltage-dependent Mg²⁺ block of NMDA channel is modeled by Woodhull equation I_NMDA = g_max(V - V_rev) / [1 + ([Mg²⁺]_o/δ) e^(-αV)]. Postsynaptic AMPA-mediated depolarization from -70 mV to -30 mV expels hydrated Mg²⁺ via electrostatic repulsion. Calcium influx through the high-conductance pore binds Calmodulin (CaM), driving CaMKII autophosphorylation at Thr286, converting the dodecameric kinase into an autonomous active state that phosphorylates AMPA GluA1 subunits."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Edition Discrepancy & Distractor Breakdown: Option A reflects outdated early-2000s literature (Bear 3rd ed) where nitric oxide gas was hypothesized as the sole retrograde messenger. Modern consensus (Kandel 6th ed, Ch. 67) proves postsynaptic calcium spikes stimulate diacylglycerol lipase (DAGL) to synthesize 2-Arachidonoylglycerol (2-AG), which travels retrogradely across the synaptic cleft to bind presynaptic CB₁ receptors."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Edition Discrepancy & Distractor Breakdown: Option A reflects outdated early-2000s literature (Bear 3rd ed) where nitric oxide gas was hypothesized as the sole retrograde messenger. Modern consensus (Kandel 6th ed, Ch. 67) proves postsynaptic calcium spikes stimulate diacylglycerol lipase (DAGL) to synthesize 2-Arachidonoylglycerol (2-AG), which travels retrogradely across the synaptic cleft to bind presynaptic CB₁ receptors."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Molecular Reaction Proof: Active CaMKII phosphorylates Ser831 on GluA1 and promotes exocytosis of intracellular AMPA receptor storage pools to the postsynaptic density. The probability of sustained LTP transition is modeled by P(LTP) = 1 / [1 + e^(-([Ca²⁺]_i - θ_LTP)/k)]. Option C is non-associative presynaptic facilitation; Option D falsely isolates mGluR1 from NMDA receptor activation."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Molecular Reaction Proof: Active CaMKII phosphorylates Ser831 on GluA1 and promotes exocytosis of intracellular AMPA receptor storage pools to the postsynaptic density. The probability of sustained LTP transition is modeled by P(LTP) = 1 / [1 + e^(-([Ca²⁺]_i - θ_LTP)/k)]. Option C is non-associative presynaptic facilitation; Option D falsely isolates mGluR1 from NMDA receptor activation."}
                   </p>
                 )}
               </div>
@@ -3173,11 +3173,11 @@ export function GetQuizSolvePlaintextPrivacyLeakDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -3307,7 +3307,7 @@ export function GetQuizSolvePlaintextPrivacyLeakDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3316,17 +3316,17 @@ export function GetQuizSolvePlaintextPrivacyLeakDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Statutory & Regulatory Synthesis of 45 CFR 46: Under 45 CFR § 46.104(d)(1), research conducted in educational settings is exempt ONLY IF information recorded cannot be identified directly or through identifiers linked to subjects, and disclosure would not place subjects at risk. Transmitting unencrypted student test data to third-party domains directly breaches 34 CFR § 99.30 (FERPA), which requires prior written consent. Because identifiable educational records were exposed externally, the institutional IRB must escalate from expedited review to full-board oversight and report the confidentiality breach."}
+                    <strong>Claude (Formal Derivation):</strong> {"Statutory & Regulatory Synthesis of 45 CFR 46: Under 45 CFR § 46.104(d)(1), research conducted in educational settings is exempt ONLY IF information recorded cannot be identified directly or through identifiers linked to subjects, and disclosure would not place subjects at risk. Transmitting unencrypted student test data to third-party domains directly breaches 34 CFR § 99.30 (FERPA), which requires prior written consent. Because identifiable educational records were exposed externally, the institutional IRB must escalate from expedited review to full-board oversight and report the confidentiality breach."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Exam Trap Breakdown: Option A fails because Category 1 exemption is strictly contingent on confidentiality; plaintext external leakage invalidates exemption immediately. Option D is an erroneous distractor: Subpart D of 45 CFR 46 provides additional protections specifically for children (<18) and does not grant blanket exemptions to adult university students."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Exam Trap Breakdown: Option A fails because Category 1 exemption is strictly contingent on confidentiality; plaintext external leakage invalidates exemption immediately. Option D is an erroneous distractor: Subpart D of 45 CFR 46 provides additional protections specifically for children (<18) and does not grant blanket exemptions to adult university students."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Network Protocol Forensic Verification: An HTTP POST without TLS 1.3 exposes the packet payload over campus Wi-Fi: Content-Type: application/json; {\"student_id\": \"u84920\", \"exam_url\": \"canvas.edu/quiz/12\", \"prompt\": \"...\"}. Packet sniffing exposes session cookies and authentication headers, violating FTC Act § 5 unfair data practices and university Acceptable Use Policies."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Network Protocol Forensic Verification: An HTTP POST without TLS 1.3 exposes the packet payload over campus Wi-Fi: Content-Type: application/json; {\"student_id\": \"u84920\", \"exam_url\": \"canvas.edu/quiz/12\", \"prompt\": \"...\"}. Packet sniffing exposes session cookies and authentication headers, violating FTC Act § 5 unfair data practices and university Acceptable Use Policies."}
                   </p>
                 )}
               </div>
@@ -3450,11 +3450,11 @@ export function HomeworkHelperAdClutterAndLagDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -3584,7 +3584,7 @@ export function HomeworkHelperAdClutterAndLagDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3593,17 +3593,17 @@ export function HomeworkHelperAdClutterAndLagDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Backward Induction Calculus Derivation: Stage 2 (Follower Firm 2): Maximizes profit π₂ = (240 - 2q₁ - 2q₂ - 40)q₂. First-order condition: ∂π₂/∂q₂ = 200 - 2q₁ - 4q₂ = 0 ⟹ q₂*(q₁) = 50 - 0.5q₁. Stage 1 (Leader Firm 1): Anticipates Firm 2's response: π₁ = (240 - 2q₁ - 2(50 - 0.5q₁) - 20)q₁ = (120 - q₁)q₁. FOC: dπ₁/dq₁ = 120 - 2q₁ = 0 ⟹ q₁* = 55.0. Follower output: q₂* = 50 - 0.5(55) = 22.5. Total market output Q* = 55.0 + 22.5 = 77.5. Market clearing price P* = 240 - 2(77.5) = $85.00."}
+                    <strong>Claude (Formal Derivation):</strong> {"Backward Induction Calculus Derivation: Stage 2 (Follower Firm 2): Maximizes profit π₂ = (240 - 2q₁ - 2q₂ - 40)q₂. First-order condition: ∂π₂/∂q₂ = 200 - 2q₁ - 4q₂ = 0 ⟹ q₂*(q₁) = 50 - 0.5q₁. Stage 1 (Leader Firm 1): Anticipates Firm 2's response: π₁ = (240 - 2q₁ - 2(50 - 0.5q₁) - 20)q₁ = (120 - q₁)q₁. FOC: dπ₁/dq₁ = 120 - 2q₁ = 0 ⟹ q₁* = 55.0. Follower output: q₂* = 50 - 0.5(55) = 22.5. Total market output Q* = 55.0 + 22.5 = 77.5. Market clearing price P* = 240 - 2(77.5) = $85.00."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Deadweight Loss Integration & Distractor Traps: Option A represents the Cournot simultaneous-move equilibrium where q₁^C = 46.67, q₂^C = 26.67. For Deadweight Loss: Competitive benchmark with lower cost leader: P = MC₁ = 20 ⟹ 240 - 2Q = 20 ⟹ Q_comp = 110. DWL integration evaluates the welfare triangle plus follower production penalty, yielding exactly $600.63."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Deadweight Loss Integration & Distractor Traps: Option A represents the Cournot simultaneous-move equilibrium where q₁^C = 46.67, q₂^C = 26.67. For Deadweight Loss: Competitive benchmark with lower cost leader: P = MC₁ = 20 ⟹ 240 - 2Q = 20 ⟹ Q_comp = 110. DWL integration evaluates the welfare triangle plus follower production penalty, yielding exactly $600.63."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Surplus Verification: Leader profit π₁* = (85 - 20)(55) = $3,575.00. Follower profit π₂* = (85 - 40)(22.5) = $1,012.50. Consumer surplus CS = (1/2)(240 - 85)(77.5) = $6,006.25. Total welfare W = 3575 + 1012.50 + 6006.25 = $10,593.75. Maximum potential welfare W_max = (1/2)(240 - 20)(110) = $12,100.00. Welfare gap confirms DWL = $600.63."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Surplus Verification: Leader profit π₁* = (85 - 20)(55) = $3,575.00. Follower profit π₂* = (85 - 40)(22.5) = $1,012.50. Consumer surplus CS = (1/2)(240 - 85)(77.5) = $6,006.25. Total welfare W = 3575 + 1012.50 + 6006.25 = $10,593.75. Maximum potential welfare W_max = (1/2)(240 - 20)(110) = $12,100.00. Welfare gap confirms DWL = $600.63."}
                   </p>
                 )}
               </div>
@@ -3727,11 +3727,11 @@ export function KnowtFlashcardMismatchAndNoStealthDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -3861,7 +3861,7 @@ export function KnowtFlashcardMismatchAndNoStealthDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3870,17 +3870,17 @@ export function KnowtFlashcardMismatchAndNoStealthDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Lineweaver-Burk Mixed Inhibition Derivation: In general mixed inhibition, initial velocity is v = (V_max [S]) / (α K_m + α'[S]) = [(V_max/α')[S]] / [(α/α')K_m + [S]]. Hence: V_max^app = V_max / α' = 120 / 1.5 = 80.0 μmol/min. K_m^app = K_m · (α / α') = 4.0 · (3.0 / 1.5) = 8.0 mM. The double-reciprocal equation is 1/v = (α K_m / V_max)(1/[S]) + α'/V_max. The uninhibited line is 1/v₀ = (K_m / V_max)(1/[S]) + 1/V_max. Equating 1/v = 1/v₀ gives 1/[S] = -(α' - 1) / [(α - 1)K_m] = -0.5 / (2.0 · 4.0) = -0.0625 mM⁻¹. Since 1/[S] < 0 and 1/v = 0.00625 > 0, the intersection occurs in Quadrant II."}
+                    <strong>Claude (Formal Derivation):</strong> {"Lineweaver-Burk Mixed Inhibition Derivation: In general mixed inhibition, initial velocity is v = (V_max [S]) / (α K_m + α'[S]) = [(V_max/α')[S]] / [(α/α')K_m + [S]]. Hence: V_max^app = V_max / α' = 120 / 1.5 = 80.0 μmol/min. K_m^app = K_m · (α / α') = 4.0 · (3.0 / 1.5) = 8.0 mM. The double-reciprocal equation is 1/v = (α K_m / V_max)(1/[S]) + α'/V_max. The uninhibited line is 1/v₀ = (K_m / V_max)(1/[S]) + 1/V_max. Equating 1/v = 1/v₀ gives 1/[S] = -(α' - 1) / [(α - 1)K_m] = -0.5 / (2.0 · 4.0) = -0.0625 mM⁻¹. Since 1/[S] < 0 and 1/v = 0.00625 > 0, the intersection occurs in Quadrant II."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Quizlet Flashcard Error & Distractor Analysis: Static flashcards oversimplify mixed inhibition by treating it as pure non-competitive (α = α'). In pure non-competitive inhibition, inhibitor binds free enzyme and ES complex equally (α/α' = 1), leaving K_m unchanged (Option B). When α > α', the inhibitor binds free enzyme with higher affinity (K_i < K_i'), driving substrate binding into a higher apparent K_m. Option C represents competitive inhibition."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Quizlet Flashcard Error & Distractor Analysis: Static flashcards oversimplify mixed inhibition by treating it as pure non-competitive (α = α'). In pure non-competitive inhibition, inhibitor binds free enzyme and ES complex equally (α/α' = 1), leaving K_m unchanged (Option B). When α > α', the inhibitor binds free enzyme with higher affinity (K_i < K_i'), driving substrate binding into a higher apparent K_m. Option C represents competitive inhibition."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Thermodynamic Affinity & Cleland Diagram Invariants: Binding free energies: ΔG_E = -RT ln(1/2.5 mM) vs ΔG_ES = -RT ln(1/10.0 mM). ΔΔG = RT ln(10/2.5) = RT ln(4) ≈ 3.43 kJ/mol at 298 K. The higher affinity for free E depletes active catalytic units available for substrate binding, increasing K_m^app by a factor of 2.0."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Thermodynamic Affinity & Cleland Diagram Invariants: Binding free energies: ΔG_E = -RT ln(1/2.5 mM) vs ΔG_ES = -RT ln(1/10.0 mM). ΔΔG = RT ln(10/2.5) = RT ln(4) ≈ 3.43 kJ/mol at 298 K. The higher affinity for free E depletes active catalytic units available for substrate binding, increasing K_m^app by a factor of 2.0."}
                   </p>
                 )}
               </div>
@@ -4004,11 +4004,11 @@ export function QuestionAiSingleModelHallucinationDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -4138,7 +4138,7 @@ export function QuestionAiSingleModelHallucinationDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -4147,17 +4147,17 @@ export function QuestionAiSingleModelHallucinationDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Mathematical Derivation: In standard time series notation, the autoregressive operator is Φ(L) = 1 - 1.2L + 0.35L² = (1 - 0.5L)(1 - 0.7L). Setting Φ(z) = 1 - 1.2z + 0.35z² = 0, the quadratic formula yields z = [1.2 ± √(1.44 - 1.40)] / 0.7 = (1.2 ± 0.2) / 0.7. Thus z₁ = 1.4 / 0.7 = 2.0 and z₂ = 1.0 / 0.7 = 1.4286. Because |z₁| = 2.0 > 1 and |z₂| = 1.4286 > 1, all roots lie strictly outside the unit circle, proving covariance stationarity. The moving average polynomial Θ(z) = 1 + 0.6z = 0 yields root z_MA = -1/0.6 = -1.6667. Since |z_MA| > 1, the process is strictly invertible."}
+                    <strong>Claude (Formal Derivation):</strong> {"Mathematical Derivation: In standard time series notation, the autoregressive operator is Φ(L) = 1 - 1.2L + 0.35L² = (1 - 0.5L)(1 - 0.7L). Setting Φ(z) = 1 - 1.2z + 0.35z² = 0, the quadratic formula yields z = [1.2 ± √(1.44 - 1.40)] / 0.7 = (1.2 ± 0.2) / 0.7. Thus z₁ = 1.4 / 0.7 = 2.0 and z₂ = 1.0 / 0.7 = 1.4286. Because |z₁| = 2.0 > 1 and |z₂| = 1.4286 > 1, all roots lie strictly outside the unit circle, proving covariance stationarity. The moving average polynomial Θ(z) = 1 + 0.6z = 0 yields root z_MA = -1/0.6 = -1.6667. Since |z_MA| > 1, the process is strictly invertible."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Root Convention Inversion Fallacy: Generic AI wrappers frequently confuse the lag polynomial formulation Φ(z) = 1 - φ₁ z - φ₂ z² = 0 with the forward characteristic equation λ² - φ₁ λ - φ₂ = 0. The roots λ₁ = 0.7 and λ₂ = 0.5 are the eigenvalues of the companion matrix, which must lie inside the unit circle (|λ| < 1). Because λ = 1/z, z₁ = 1/0.5 = 2.0 and z₂ = 1/0.7 = 1.4286 lie outside the unit circle. QuestionAI hallucinated that 0.5 and 0.7 were the z-roots and applied the |z| > 1 test backwards!"}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Root Convention Inversion Fallacy: Generic AI wrappers frequently confuse the lag polynomial formulation Φ(z) = 1 - φ₁ z - φ₂ z² = 0 with the forward characteristic equation λ² - φ₁ λ - φ₂ = 0. The roots λ₁ = 0.7 and λ₂ = 0.5 are the eigenvalues of the companion matrix, which must lie inside the unit circle (|λ| < 1). Because λ = 1/z, z₁ = 1/0.5 = 2.0 and z₂ = 1/0.7 = 1.4286 lie outside the unit circle. QuestionAI hallucinated that 0.5 and 0.7 were the z-roots and applied the |z| > 1 test backwards!"}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"Spectral Matrix Proof: State space form: [X_t, X_{t-1}]ᵀ = [1.2, -0.35; 1, 0][X_{t-1}, X_{t-2}]ᵀ + [(1+0.6L)ε_t, 0]ᵀ. The spectral radius is ρ(F) = max(|0.7|, |0.5|) = 0.7 < 1. By Gelfand's formula, ‖F^k‖ ⟹ 0 exponentially as k ⟹ ∞, guaranteeing existence of convergent causal MA(∞) representation X_t = ∑ ψ_j ε_{t-j}."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"Spectral Matrix Proof: State space form: [X_t, X_{t-1}]ᵀ = [1.2, -0.35; 1, 0][X_{t-1}, X_{t-2}]ᵀ + [(1+0.6L)ε_t, 0]ᵀ. The spectral radius is ρ(F) = max(|0.7|, |0.5|) = 0.7 < 1. By Gelfand's formula, ‖F^k‖ ⟹ 0 exponentially as k ⟹ ∞, guaranteeing existence of convergent causal MA(∞) representation X_t = ∑ ψ_j ε_{t-j}."}
                   </p>
                 )}
               </div>
@@ -4281,11 +4281,11 @@ export function QuizardDiscordBotAndFocusLossDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Formal Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Formal Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Breakdown)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Breakdown)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Analytical Formalism)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Analytical Formalism)', tag: 'explain' };
       }
     }
   };
@@ -4415,7 +4415,7 @@ export function QuizardDiscordBotAndFocusLossDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -4424,17 +4424,17 @@ export function QuizardDiscordBotAndFocusLossDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Derivation):</strong> {"Raft Specification Section 5.4.1 Formal Proof: Raft Section 5.4.1 defines the log up-to-dateness invariant: 'If the logs have last entries with different terms, then the log with the later term is more up-to-date. If the logs end with the same term, then whichever log is longer is more up-to-date.' Here, Candidate S1 has last entry term 3, whereas Voter S2 has last entry term 4. Since 4 > 3, S2's log is strictly more up-to-date. Therefore, S2 MUST deny the vote (voteGranted = false). If S2 granted the vote, S1 could win and overwrite uncommitted entries from term 4 with stale entries from term 3, violating the Leader Completeness property."}
+                    <strong>Claude (Formal Derivation):</strong> {"Raft Specification Section 5.4.1 Formal Proof: Raft Section 5.4.1 defines the log up-to-dateness invariant: 'If the logs have last entries with different terms, then the log with the later term is more up-to-date. If the logs end with the same term, then whichever log is longer is more up-to-date.' Here, Candidate S1 has last entry term 3, whereas Voter S2 has last entry term 4. Since 4 > 3, S2's log is strictly more up-to-date. Therefore, S2 MUST deny the vote (voteGranted = false). If S2 granted the vote, S1 could win and overwrite uncommitted entries from term 4 with stale entries from term 3, violating the Leader Completeness property."}
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor Analysis):</strong> {"Log Length vs Term Precedence Fallacy: Option A falls for the common log length trap (18 > 17). In distributed consensus, a partitioned candidate might accumulate many uncommitted entries from an obsolete term (term 3). A follower with fewer entries from a newer term (term 4) has witnessed higher-term state transitions. Term precedence strictly dominates log index length. Option C is wrong because followers only convert to candidate when their randomized election timer expires."}
+                    <strong>ChatGPT (Distractor Analysis):</strong> {"Log Length vs Term Precedence Fallacy: Option A falls for the common log length trap (18 > 17). In distributed consensus, a partitioned candidate might accumulate many uncommitted entries from an obsolete term (term 3). A follower with fewer entries from a newer term (term 4) has witnessed higher-term state transitions. Term precedence strictly dominates log index length. Option C is wrong because followers only convert to candidate when their randomized election timer expires."}
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Proof):</strong> {"TLA+ State Machine Verification: Let invariant LeaderCompleteness state that if a log entry is committed in term T, then that entry is present in the logs of the leaders for all terms > T. If S2 granted its vote to S1, S1 could win an election without knowing the committed entries of term 4. In TLA+: ∀ c ∈ Candidates, v ∈ Voters: (v.lastLogTerm > c.lastLogTerm) ⟹ ¬GrantVote(v, c). Denying the vote preserves linearizability across partition recoveries."}
+                    <strong>DeepSeek (Analytical Proof):</strong> {"TLA+ State Machine Verification: Let invariant LeaderCompleteness state that if a log entry is committed in term T, then that entry is present in the logs of the leaders for all terms > T. If S2 granted its vote to S1, S1 could win an election without knowing the committed entries of term 4. In TLA+: ∀ c ∈ Candidates, v ∈ Voters: (v.lastLogTerm > c.lastLogTerm) ⟹ ¬GrantVote(v, c). Denying the vote preserves linearizability across partition recoveries."}
                   </p>
                 )}
               </div>

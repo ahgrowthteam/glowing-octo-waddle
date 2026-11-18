@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         'McGraw Hill accounting solver',
     ],
     alternates: {
-        canonical: 'https://examghost.com/mcgraw-hill-connect-aleks-solver',
+        canonical: 'https://www.examghost.com/mcgraw-hill-connect-aleks-solver',
     },
     openGraph: {
         title: 'McGraw Hill Connect & ALEKS Solver — Live EZTO & SmartBook Demo | ExamGhost',
         description:
             'Watch or test ExamGhost inside a simulated McGraw Hill Connect EZTO & ALEKS session. One-by-one double-click solving, Alt+S ChemDraw & accounting table OCR, and zero tab switches.',
-        url: 'https://examghost.com/mcgraw-hill-connect-aleks-solver',
+        url: 'https://www.examghost.com/mcgraw-hill-connect-aleks-solver',
         siteName: 'ExamGhost',
         type: 'website',
         images: [{ url: '/videos/posters/mcgraw-hill-connect-aleks-solver-poster.jpg', width: 1280, height: 720, alt: 'McGraw Hill Connect & ALEKS Solver — SmartBook AI (2026)' }],
@@ -262,7 +262,7 @@ const mcgrawHillConfig: any = {
                 accuracy: '99.5%',
                 description: (
                     <>
-                        In ALEKS Knowledge Checks, a single careless rounding error drops topics out of your ALEKS Pie. ExamGhost routes ALEKS problems through <strong>DeepSeek-R1</strong> symbolic verification to preserve your topic mastery streak.
+                        In ALEKS Knowledge Checks, a single careless rounding error drops topics out of your ALEKS Pie. ExamGhost routes ALEKS problems through <strong>DeepSeek</strong> symbolic verification to preserve your topic mastery streak.
                     </>
                 ),
             },
@@ -600,12 +600,12 @@ const mcgrawHillConfig: any = {
         '@graph': [
             {
                 '@type': 'WebPage',
-                '@id': 'https://examghost.com/mcgraw-hill-connect-aleks-solver/#webpage',
-                url: 'https://examghost.com/mcgraw-hill-connect-aleks-solver',
+                '@id': 'https://www.examghost.com/mcgraw-hill-connect-aleks-solver/#webpage',
+                url: 'https://www.examghost.com/mcgraw-hill-connect-aleks-solver',
                 name: 'McGraw Hill Connect & ALEKS Solver | SmartBook 2.0 & EZTO AI | ExamGhost',
                 description:
                     'Interactive McGraw Hill Connect EZTO, SmartBook 2.0, and ALEKS quiz solver simulator and technical guide.',
-                isPartOf: { '@id': 'https://examghost.com/#website' },
+                isPartOf: { '@id': 'https://www.examghost.com/#website' },
                 speakable: {
                     '@type': 'SpeakableSpecification',
                     cssSelector: ['#aeo-summary', '#mcgraw-hill-connect-aleks-solver-faq'],
@@ -625,12 +625,12 @@ const mcgrawHillConfig: any = {
             {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://examghost.com' },
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.examghost.com' },
                     {
                         '@type': 'ListItem',
                         position: 2,
                         name: 'McGraw Hill Connect & ALEKS Solver',
-                        item: 'https://examghost.com/mcgraw-hill-connect-aleks-solver',
+                        item: 'https://www.examghost.com/mcgraw-hill-connect-aleks-solver',
                     },
                 ],
             },
@@ -673,8 +673,8 @@ export default function McGrawHillConnectAleksSolverPage() {
     const config = mcgrawHillConfig;
     const filmKey = config.slug.startsWith('blog/') ? config.slug.replace('blog/', '') : config.slug;
     const safeSlug = filmKey.replace(/\//g, '-');
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const rawGraph = Array.isArray(config.jsonLd?.['@graph'])
         ? (config.jsonLd['@graph'] as Record<string, unknown>[])
@@ -685,7 +685,7 @@ export default function McGrawHillConnectAleksSolverPage() {
     if (!hasVideo) {
         baseGraph.push({
             '@type': 'VideoObject',
-            '@id': `https://examghost.com/${config.slug}#video`,
+            '@id': `https://www.examghost.com/${config.slug}#video`,
             name: `${config.platformName} AI Quiz Solver — 2.5D Explainer & Product Demo Film`,
             description: `16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves ${config.platformName} questions one by one via double-click and Alt+S Vision OCR inside a Closed Shadow DOM with zero blur events.`,
             thumbnailUrl: [posterUrl],
@@ -695,7 +695,7 @@ export default function McGrawHillConnectAleksSolverPage() {
             publisher: {
                 '@type': 'Organization',
                 name: 'ExamGhost',
-                url: 'https://examghost.com',
+                url: 'https://www.examghost.com',
             },
         });
     }
@@ -704,7 +704,7 @@ export default function McGrawHillConnectAleksSolverPage() {
     if (!hasHowTo && config.howToSection) {
         baseGraph.push({
             '@type': 'HowTo',
-            '@id': `https://examghost.com/${config.slug}#howto`,
+            '@id': `https://www.examghost.com/${config.slug}#howto`,
             name: config.howToSection.heading,
             description: `Step-by-step workflow to solve ${config.platformName} quizzes and assignments one question at a time using ExamGhost's Closed Shadow DOM and Alt+S Vision OCR without triggering focus-loss logs.`,
             totalTime: 'PT1M',
@@ -721,7 +721,7 @@ export default function McGrawHillConnectAleksSolverPage() {
     if (!hasFaqPage && config.faqs && config.faqs.length > 0) {
         baseGraph.push({
             '@type': 'FAQPage',
-            '@id': `https://examghost.com/${config.slug}#faq`,
+            '@id': `https://www.examghost.com/${config.slug}#faq`,
             mainEntity: config.faqs.map((faq: any) => ({
                 '@type': 'Question',
                 name: faq.q,
@@ -743,7 +743,7 @@ export default function McGrawHillConnectAleksSolverPage() {
                 datePublished: '2026-01-15',
                 dateModified: '2026-10-23',
                 inLanguage: 'en-US',
-                author: { '@type': 'Organization', name: 'ExamGhost Security Engineering Team', url: 'https://examghost.com' },
+                author: { '@type': 'Organization', '@id': 'https://www.examghost.com/#organization', name: 'ExamGhost', url: 'https://www.examghost.com' },
                 ...node,
                 speakable: {
                     '@type': 'SpeakableSpecification',
@@ -817,7 +817,7 @@ export default function McGrawHillConnectAleksSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>
@@ -843,12 +843,12 @@ export default function McGrawHillConnectAleksSolverPage() {
                                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-black/8 shadow-2xs">
                                     <img
                                         src="/images/ghost/ghost_mascot_hero.jpg"
-                                        alt="ExamGhost Browser Security Research Lab"
+                                        alt="ExamGhost"
                                         width={22}
                                         height={22}
                                         className="w-5 h-5 rounded-full object-cover border border-black/10"
                                     />
-                                    <span className="font-semibold text-ink">ExamGhost Browser Security Lab</span>
+                                    <span className="font-semibold text-ink">The ExamGhost team</span>
                                 </div>
                                 <span>•</span>
                                 <span>Reviewed against Instructure Canvas Open-Source Repo</span>

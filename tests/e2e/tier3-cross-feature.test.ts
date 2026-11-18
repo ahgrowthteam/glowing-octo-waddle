@@ -92,7 +92,7 @@ test('Tier 3: Multi-Model Study Workspace Tab Switching — Model tabs switch sp
     const content = readProjectFile(route.filePath);
     return (
       /Claude/i.test(content) &&
-      /ChatGPT|o3-mini|4o/i.test(content) &&
+      /ChatGPT/i.test(content) &&
       /DeepSeek/i.test(content)
     );
   }).length;

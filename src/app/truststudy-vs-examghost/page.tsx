@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/truststudy-vs-examghost",
+        canonical: "https://www.examghost.com/truststudy-vs-examghost",
     },
     openGraph: {
         title: "TrustStudy vs ExamGhost (2026) — Dead DNS & Alt+X Audit",
         description: "2026 audit of TrustStudy (truststudy.ai) vs ExamGhost. Why an offline domain and slow Alt+X study loops lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/truststudy-vs-examghost",
+        url: "https://www.examghost.com/truststudy-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,16 +64,16 @@ export default function TrustStudyComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-15",
-                "dateModified": "2026-03-17",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/truststudy-vs-examghost#webpage",
-                "url": "https://examghost.com/truststudy-vs-examghost",
+                "@id": "https://www.examghost.com/truststudy-vs-examghost#webpage",
+                "url": "https://www.examghost.com/truststudy-vs-examghost",
                 "name": "TrustStudy vs ExamGhost (2026 Review) | Dead DNS & Alt+X Study Loop vs 0.3s Stealth",
                 "description": "Technical forensics comparing TrustStudy (truststudy.ai) and ExamGhost regarding 2026 DNS status, Alt+X Eco/Max active-recall latency, focus-blur interception, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/truststudy-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/truststudy-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -118,16 +118,16 @@ export default function TrustStudyComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/truststudy-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/truststudy-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "TrustStudy vs ExamGhost", "item": "https://examghost.com/truststudy-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "TrustStudy vs ExamGhost", "item": "https://www.examghost.com/truststudy-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/truststudy-vs-examghost#faq",
+                "@id": "https://www.examghost.com/truststudy-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -335,7 +335,7 @@ export default function TrustStudyComparisonPage() {
                   <Zap className="w-3.5 h-3.5" />
                   ExamGhost Stealth Keyboard &amp; Model Suite
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -353,7 +353,7 @@ export default function TrustStudyComparisonPage() {
               <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                 <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                 <div className="font-bold text-white text-sm">
-                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                  Claude · ChatGPT · DeepSeek
                 </div>
               </div>
             </div>
@@ -702,9 +702,9 @@ export default function TrustStudyComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -730,27 +730,7 @@ export default function TrustStudyComparisonPage() {
                     </div>
                 </section>
 
-                {/* VERIFIED STUDENT MIGRATION STORY */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10 relative">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;TrustStudy seemed okay for ungraded flashcards, but during my Financial Accounting quiz at Indiana Kelley, its Alt+X &apos;study, think, reveal&apos; workflow was useless—you had to guess an answer first just to get an Eco/Max explanation! Then this semester truststudy.ai stopped loading completely. I switched to ExamGhost, tested the 5 Free Solves / Day on Canvas, and upgraded to the $99/yr pass. It gives the exact answer in 0.3s with zero games.&quot;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
-                            <div>
-                                <span className="font-bold text-ink">Justin H.</span> — Finance Junior, Indiana University (Kelley)
-                            </div>
-                            <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified ExamGhost Switcher
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* DISCORD COMMUNITY SECTION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">

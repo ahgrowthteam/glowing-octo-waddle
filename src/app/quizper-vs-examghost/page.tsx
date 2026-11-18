@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'Audit of Quizper AI and Quiz Solver Complete (14 users, 0★) vs ExamGhost. See why turning options blue in the DOM and exposing your OpenAI API key gets flagged.',
   alternates: {
-    canonical: 'https://examghost.com/quizper-vs-examghost',
+    canonical: 'https://www.examghost.com/quizper-vs-examghost',
   },
   openGraph: {
     title: 'Quizper AI vs ExamGhost (2026) — BYOK & Blue DOM Highlight Audit',
     description:
       'We audited Quizper AI and Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl, 14 users). See why Highlight Mode ("turns correct options blue") fails on LMS exams.',
-    url: 'https://examghost.com/quizper-vs-examghost',
+    url: 'https://www.examghost.com/quizper-vs-examghost',
     siteName: 'ExamGhost',
     locale: 'en_US',
     type: 'website',
@@ -46,18 +46,18 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://examghost.com/quizper-vs-examghost#webpage",
+      "@id": "https://www.examghost.com/quizper-vs-examghost#webpage",
       name: "Quizper AI & Quiz Solver Complete vs ExamGhost (2026): Technical & BYOK Security Audit",
       description:
         "Side-by-side comparison of Quizper AI, Quiz Solver Complete (elbjclngdonajjihkebgholdgpeklmbl), and ExamGhost across inline CSS DOM mutation, BYOK API key exposure, Focus Shield, and STEM accuracy.",
-      url: "https://examghost.com/quizper-vs-examghost",
+      url: "https://www.examghost.com/quizper-vs-examghost",
       datePublished: "2026-01-18",
-      dateModified: "2026-03-04",
-      breadcrumb: { "@id": "https://examghost.com/quizper-vs-examghost#breadcrumb" },
+      dateModified: "2026-11-18",
+      breadcrumb: { "@id": "https://www.examghost.com/quizper-vs-examghost#breadcrumb" },
       author: {
         "@type": "Organization",
-        name: "ExamGhost Security Engineering Team",
-        url: "https://examghost.com",
+        name: "ExamGhost",
+        url: "https://www.examghost.com",
       },
       speakable: {
         "@type": "SpeakableSpecification",
@@ -91,31 +91,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/quizper-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/quizper-vs-examghost#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://examghost.com",
+          item: "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Competitor Comparisons",
-          item: "https://examghost.com/compare-canvas-hack-extensions",
+          item: "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Quizper AI vs ExamGhost",
-          item: "https://examghost.com/quizper-vs-examghost",
+          item: "https://www.examghost.com/quizper-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/quizper-vs-examghost#faq",
+      "@id": "https://www.examghost.com/quizper-vs-examghost#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -592,7 +592,6 @@ export default function QuizperVsExamGhostPage() {
                 <ul className="space-y-1.5 text-xs font-mono text-emerald-900 bg-white border border-emerald-300 rounded-lg p-3">
                   <li>✓ Alt+S Vision OCR solves any graph, table, or diagram</li>
                   <li>✓ Works inside Canvas New Quizzes LTI, MyLab, ALEKS, &amp; Blackboard</li>
-                  <li>✓ Rated 4.9★ by over 1,400+ verified student reviews</li>
                 </ul>
               </div>
             </div>
@@ -714,17 +713,6 @@ export default function QuizperVsExamGhostPage() {
               <tbody className="divide-y-2 divide-[#111]">
                 <tr>
                   <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
-                    Verified Chrome Web Store Footprint
-                  </td>
-                  <td className="p-4 text-red-700 font-semibold border-r-2 border-[#111]">
-                    14 users • 0.0★ (0 ratings) on ID elbjclngdonajjihkebgholdgpeklmbl
-                  </td>
-                  <td className="p-4 bg-emerald-50/60 font-bold text-emerald-900">
-                    ✓ 4.9★ rating across 1,420+ verified university student reviews
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-bold bg-neutral-50 border-r-2 border-[#111]">
                     Answer Display Architecture
                   </td>
                   <td className="p-4 text-red-700 font-semibold border-r-2 border-[#111]">
@@ -781,10 +769,10 @@ export default function QuizperVsExamGhostPage() {
               
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
             </table>
@@ -841,39 +829,7 @@ export default function QuizperVsExamGhostPage() {
         </div>
       </section>
 
-      {/* Section 5: Verified Student Migration Review */}
-      <section className="py-14 px-4 bg-[#dbeafe]/35 border-b-2 border-[#111]">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#111]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider bg-[#dbeafe] border border-[#111] px-2.5 py-1 rounded font-bold">
-                VERIFIED STUDENT MIGRATION // COMPUTER SCIENCE &amp; PHYSICS
-              </span>
-              <span className="font-mono text-xs font-bold text-emerald-700">
-                ★★★★★ Switched from BYOK Quizper Script
-              </span>
-            </div>
-
-            <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
-              &ldquo;As a CS major I originally tried using QuizperAI and Quiz Solver Complete with
-              my own OpenAI API key. Not only did Canvas&apos;s Content-Security-Policy block the
-              script inside New Quizzes LTI iframes, but Highlight Mode literally edits the HTML
-              style attribute on the radio label to turn it blue—which any basic MutationObserver
-              can catch. Switched to ExamGhost because it uses a real Closed Shadow DOM, includes
-              Focus Shield, and solves Physics diagrams in 0.3s without me messing with API
-              keys.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between text-xs font-mono text-neutral-600 border-t border-neutral-200 pt-4">
-              <div>
-                <strong className="text-[#111]">Ethan V.</strong> • Junior, Computer Science •
-                Canvas New Quizzes &amp; WebAssign
-              </div>
-              <div className="text-emerald-700 font-bold">Verified ExamGhost Pro User</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: FAQ */}
       <section className="py-14 px-4 border-b-2 border-[#111]">
@@ -893,10 +849,10 @@ export default function QuizperVsExamGhostPage() {
               open
             >
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   1. Why is turning correct options blue in the DOM (&ldquo;Highlight Mode&rdquo;)
                   detectable by Canvas and Blackboard?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -916,10 +872,10 @@ export default function QuizperVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   2. What is the risk of pasting your own OpenAI or Gemini API key into Quizper AI
                   or Quiz Solver Complete?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -936,9 +892,9 @@ export default function QuizperVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   3. How many users does Quiz Solver Complete actually have on the Chrome Web Store?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -952,7 +908,7 @@ export default function QuizperVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>4. Does ExamGhost require me to bring my own OpenAI API key?</span>
+                <h3 className="inline font-bold m-0">4. Does ExamGhost require me to bring my own OpenAI API key?</h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>

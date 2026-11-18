@@ -128,11 +128,11 @@ export function QuizSolverAiDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (DCF Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (DCF Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Wall Street Traps)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Wall Street Traps)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Sensitivity Matrix Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Sensitivity Matrix Proof)', tag: 'explain' };
       }
     }
   };
@@ -271,7 +271,7 @@ export function QuizSolverAiDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -280,17 +280,17 @@ export function QuizSolverAiDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal DCF Modeling):</strong> After-tax debt cost r_D(1 - t_C) = 6.0% × (1 - 0.25) = 4.5%. WACC = (0.60 × 11.5%) + (0.40 × 4.5%) = 6.90% + 1.80% = 8.70%. Mid-year discrete FCFF present values: t=1: $120M × (1.087)^(-0.5) = $115.10M; t=2: $145M × (1.087)^(-1.5) = $127.97M; t=3: $180M × (1.087)^(-2.5) = $146.16M. Discrete PV sum = $389.23M. Gordon Terminal Value TV_3 = ($180M × 1.035) / (0.087 - 0.035) = $3,582.69M; PV(TV) = $3,582.69M × (1.087)^(-2.5) = $2,909.11M. Enterprise Value = $3,657.4M. Deducting $450M debt yields Equity Value = $3,207.4M ÷ 50.0M shares = $64.15 per share.
+                    <strong>Claude (Formal DCF Modeling):</strong> After-tax debt cost r_D(1 - t_C) = 6.0% × (1 - 0.25) = 4.5%. WACC = (0.60 × 11.5%) + (0.40 × 4.5%) = 6.90% + 1.80% = 8.70%. Mid-year discrete FCFF present values: t=1: $120M × (1.087)^(-0.5) = $115.10M; t=2: $145M × (1.087)^(-1.5) = $127.97M; t=3: $180M × (1.087)^(-2.5) = $146.16M. Discrete PV sum = $389.23M. Gordon Terminal Value TV_3 = ($180M × 1.035) / (0.087 - 0.035) = $3,582.69M; PV(TV) = $3,582.69M × (1.087)^(-2.5) = $2,909.11M. Enterprise Value = $3,657.4M. Deducting $450M debt yields Equity Value = $3,207.4M ÷ 50.0M shares = $64.15 per share.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Wall Street Distractor Traps):</strong> Distractor A ($48.32) fails by discounting cash flows at integer year-ends (t = 1, 2, 3) rather than using mid-year adjustment (1 + WACC)^(-0.5), understating present value by ~4.2%. Distractor C ($73.15) commits the fatal corporate finance error of dividing Enterprise Value ($3,657.4M) directly by share count without subtracting $450.0M debt! Distractor D ($55.20) misapplied the 25% tax shield to equity instead of debt.
+                    <strong>ChatGPT (Wall Street Distractor Traps):</strong> Distractor A ($48.32) fails by discounting cash flows at integer year-ends (t = 1, 2, 3) rather than using mid-year adjustment (1 + WACC)^(-0.5), understating present value by ~4.2%. Distractor C ($73.15) commits the fatal corporate finance error of dividing Enterprise Value ($3,657.4M) directly by share count without subtracting $450.0M debt! Distractor D ($55.20) misapplied the 25% tax shield to equity instead of debt.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Sensitivity Matrix &amp; Geometric Series Proof):</strong> {"Evaluates gradient ∂Equity/∂WACC: a ±25 bps shift in WACC alters equity per share by $3.84. Confirms convergence of infinite geometric series ∑ ((1+g)/(1+WACC))^k under strict boundary WACC = 8.70% > g = 3.50%. Verifies Debt-to-Equity weighting invariance across forecast horizon."}
+                    <strong>DeepSeek (Sensitivity Matrix &amp; Geometric Series Proof):</strong> {"Evaluates gradient ∂Equity/∂WACC: a ±25 bps shift in WACC alters equity per share by $3.84. Confirms convergence of infinite geometric series ∑ ((1+g)/(1+WACC))^k under strict boundary WACC = 8.70% > g = 3.50%. Verifies Debt-to-Equity weighting invariance across forecast horizon."}
                   </p>
                 )}
               </div>
@@ -414,11 +414,11 @@ export function QuizWizardDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (RLC Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (RLC Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Series vs Parallel Traps)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Series vs Parallel Traps)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Laplace Transfer Function)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Laplace Transfer Function)', tag: 'explain' };
       }
     }
   };
@@ -557,7 +557,7 @@ export function QuizWizardDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -566,17 +566,17 @@ export function QuizWizardDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Differential Transient Equations):</strong> Governing ODE: d²v_C/dt² + (R/L) dv_C/dt + (1/LC) v_C = V_s/(LC). Damping factor α = R/(2L) = 80 / (2 × 0.200) = 200 s⁻¹. Natural undamped frequency ω_0 = 1/√(LC) = 1/√(0.200 × 25×10⁻⁶) = 447.21 rad/s. Damping ratio ζ = α/ω_0 = 200 / 447.21 ≈ 0.447 ⟹ Underdamped (0 &lt; ζ &lt; 1). Damped frequency ω_d = √(ω_0² - α²) = √(200,000 - 40,000) = 400.0 rad/s (tuned component nominal 412.3 rad/s). Time to peak t_p = π/ω_d ≈ 7.85 ms. Peak percent overshoot M_p = exp(-πζ/√(1-ζ²)) ≈ 25.4%. Peak capacitor voltage v_C(max) = 24.0 × (1 + 0.254) = 30.1 V.
+                    <strong>Claude (Differential Transient Equations):</strong> Governing ODE: d²v_C/dt² + (R/L) dv_C/dt + (1/LC) v_C = V_s/(LC). Damping factor α = R/(2L) = 80 / (2 × 0.200) = 200 s⁻¹. Natural undamped frequency ω_0 = 1/√(LC) = 1/√(0.200 × 25×10⁻⁶) = 447.21 rad/s. Damping ratio ζ = α/ω_0 = 200 / 447.21 ≈ 0.447 ⟹ Underdamped (0 &lt; ζ &lt; 1). Damped frequency ω_d = √(ω_0² - α²) = √(200,000 - 40,000) = 400.0 rad/s (tuned component nominal 412.3 rad/s). Time to peak t_p = π/ω_d ≈ 7.85 ms. Peak percent overshoot M_p = exp(-πζ/√(1-ζ²)) ≈ 25.4%. Peak capacitor voltage v_C(max) = 24.0 × (1 + 0.254) = 30.1 V.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Engineering Exam Traps):</strong> Trap D (ζ = 0.80) is an insidious mistake caused by applying the parallel RLC damping formula α = 1/(2RC) = 1/(2 × 80 × 25×10⁻⁶) = 250 s⁻¹ instead of the series formula α = R/(2L) = 200 s⁻¹. Trap A (ζ = 1.25) dropped the factor of 2 in the denominator (computing α = R/L = 400 s⁻¹), incorrectly predicting an overdamped monotonic response with zero overshoot!
+                    <strong>ChatGPT (Engineering Exam Traps):</strong> Trap D (ζ = 0.80) is an insidious mistake caused by applying the parallel RLC damping formula α = 1/(2RC) = 1/(2 × 80 × 25×10⁻⁶) = 250 s⁻¹ instead of the series formula α = R/(2L) = 200 s⁻¹. Trap A (ζ = 1.25) dropped the factor of 2 in the denominator (computing α = R/L = 400 s⁻¹), incorrectly predicting an overdamped monotonic response with zero overshoot!
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Laplace Transfer Function &amp; Pole Coordinates):</strong> S-domain transfer function H(s) = ω_0² / (s² + 2ζω_0 s + ω_0²). Poles located in complex plane at s_1,2 = -α ± jω_d = -200 ± j400 s⁻¹. Real part Re(s) = -200 &lt; 0 confirms exponential envelope decay time constant τ = 1/α = 5.0 ms. Strict BIBO stability verified.
+                    <strong>DeepSeek (Laplace Transfer Function &amp; Pole Coordinates):</strong> S-domain transfer function H(s) = ω_0² / (s² + 2ζω_0 s + ω_0²). Poles located in complex plane at s_1,2 = -α ± jω_d = -200 ± j400 s⁻¹. Real part Re(s) = -200 &lt; 0 confirms exponential envelope decay time constant τ = 1/α = 5.0 ms. Strict BIBO stability verified.
                   </p>
                 )}
               </div>
@@ -700,11 +700,11 @@ export function QuizzyDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Michaelis-Menten PK)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Michaelis-Menten PK)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Clinical Toxicity Traps)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Clinical Toxicity Traps)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Lineweaver-Burk Calculus)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Lineweaver-Burk Calculus)', tag: 'explain' };
       }
     }
   };
@@ -843,7 +843,7 @@ export function QuizzyDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -852,17 +852,17 @@ export function QuizzyDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Clinical Pharmacokinetics Derivation):</strong> Steady-state dosing with Michaelis-Menten elimination: R_0 = (V_max · C_ss) / (K_m + C_ss) = (450 × 15.0) / (4.2 + 15.0) = 6750 / 19.2 = 351.56 mg/day. Apparent clearance at steady state: Cl_app = R_0 / C_ss = 351.56 / 15.0 = 23.44 L/day. Elimination rate constant k = Cl_app / V_d = 23.44 / 45.0 = 0.5208 day⁻¹ = 0.02170 hr⁻¹. Elimination half-life: t_1/2 = ln(2) / k = 0.69315 / 0.02170 = 31.94 hours.
+                    <strong>Claude (Clinical Pharmacokinetics Derivation):</strong> Steady-state dosing with Michaelis-Menten elimination: R_0 = (V_max · C_ss) / (K_m + C_ss) = (450 × 15.0) / (4.2 + 15.0) = 6750 / 19.2 = 351.56 mg/day. Apparent clearance at steady state: Cl_app = R_0 / C_ss = 351.56 / 15.0 = 23.44 L/day. Elimination rate constant k = Cl_app / V_d = 23.44 / 45.0 = 0.5208 day⁻¹ = 0.02170 hr⁻¹. Elimination half-life: t_1/2 = ln(2) / k = 0.69315 / 0.02170 = 31.94 hours.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Medical Traps &amp; Clinical Toxicity):</strong> Trap B (210.0 mg/day) results from treating clearance as a constant linear first-order coefficient. At 210 mg/day, steady-state concentration collapses to C_ss = (210 × 4.2) / (450 - 210) = 3.68 mg/L (far below the 10–20 mg/L therapeutic target), risking fatal status epilepticus! Trap C (425.0 mg/day) omits K_m, dosing near V_max and driving serum levels past 35 mg/L into severe cerebellar toxicity.
+                    <strong>ChatGPT (Medical Traps &amp; Clinical Toxicity):</strong> Trap B (210.0 mg/day) results from treating clearance as a constant linear first-order coefficient. At 210 mg/day, steady-state concentration collapses to C_ss = (210 × 4.2) / (450 - 210) = 3.68 mg/L (far below the 10–20 mg/L therapeutic target), risking fatal status epilepticus! Trap C (425.0 mg/day) omits K_m, dosing near V_max and driving serum levels past 35 mg/L into severe cerebellar toxicity.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Non-Linear Differential Rate Integration):</strong> Integrates non-linear differential equation dC/dt = R_0/V_d - (V_max C)/(V_d(K_m + C)). Analytical solution yields t = (V_d/(V_max - R_0)) [K_m ln((R_0(K_m+C_0) - V_max C_0)/(R_0(K_m+C) - V_max C)) + (C_0 - C)]. Confirms Lineweaver-Burk linear transformation 1/R_0 = (K_m/V_max) (1/C_ss) + 1/V_max.
+                    <strong>DeepSeek (Non-Linear Differential Rate Integration):</strong> Integrates non-linear differential equation dC/dt = R_0/V_d - (V_max C)/(V_d(K_m + C)). Analytical solution yields t = (V_d/(V_max - R_0)) [K_m ln((R_0(K_m+C_0) - V_max C_0)/(R_0(K_m+C) - V_max C)) + (C_0 - C)]. Confirms Lineweaver-Burk linear transformation 1/R_0 = (K_m/V_max) (1/C_ss) + 1/V_max.
                   </p>
                 )}
               </div>
@@ -986,11 +986,11 @@ export function RightClickAiDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Pharmacokinetic ODEs)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Pharmacokinetic ODEs)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Clinical Toxicity Traps)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Clinical Toxicity Traps)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (AUC/MIC Target Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (AUC/MIC Target Proof)', tag: 'explain' };
       }
     }
   };
@@ -1129,7 +1129,7 @@ export function RightClickAiDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1138,17 +1138,17 @@ export function RightClickAiDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Pharmacokinetic Differential Equations):</strong> Step 1: Total volume of distribution V_d = 0.7 L/kg × 70 kg = 49 L. Step 2: Elimination rate constant k_e = CL / V_d = 2.0 L/h / 49 L ≈ 0.04082 h⁻¹. Elimination half-life: t_1/2 = ln(2) / k_e ≈ 16.98 h. Step 3: Steady-state trough concentration for IV infusion: C_trough = (D · e^(-k_e τ)) / (V_d (1 - e^(-k_e τ))). For D = 1000 mg and τ = 24 h: e^(-k_e τ) = e^(-0.9797) ≈ 0.3754. C_trough = (1000 × 0.3754) / (49 × 0.6246) ≈ 12.27 mg/L steady state. Adding the post-load remnant from 1750 mg initial dose (25 mg/kg) gives an exact 24h trough of 15.1 mg/L, hitting the target 15–20 mg/L therapeutic window.
+                    <strong>Claude (Pharmacokinetic Differential Equations):</strong> Step 1: Total volume of distribution V_d = 0.7 L/kg × 70 kg = 49 L. Step 2: Elimination rate constant k_e = CL / V_d = 2.0 L/h / 49 L ≈ 0.04082 h⁻¹. Elimination half-life: t_1/2 = ln(2) / k_e ≈ 16.98 h. Step 3: Steady-state trough concentration for IV infusion: C_trough = (D · e^(-k_e τ)) / (V_d (1 - e^(-k_e τ))). For D = 1000 mg and τ = 24 h: e^(-k_e τ) = e^(-0.9797) ≈ 0.3754. C_trough = (1000 × 0.3754) / (49 × 0.6246) ≈ 12.27 mg/L steady state. Adding the post-load remnant from 1750 mg initial dose (25 mg/kg) gives an exact 24h trough of 15.1 mg/L, hitting the target 15–20 mg/L therapeutic window.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Clinical Distractor &amp; Toxicity Analysis):</strong> Distractor A (1000 mg q12h) fails to adjust for CrCl = 25 mL/min renal insufficiency. An interval τ = 12h gives accumulation factor R = 1 / (1 - e^(-0.04082 × 12)) = 2.58. C_trough accumulates rapidly to 31.8 mg/L, causing severe nephrotoxicity and acute tubular necrosis! Option C (500 mg q8h) produces peak concentration C_peak ≈ 16 mg/L, failing bacterial eradication MIC targets.
+                    <strong>ChatGPT (Clinical Distractor &amp; Toxicity Analysis):</strong> Distractor A (1000 mg q12h) fails to adjust for CrCl = 25 mL/min renal insufficiency. An interval τ = 12h gives accumulation factor R = 1 / (1 - e^(-0.04082 × 12)) = 2.58. C_trough accumulates rapidly to 31.8 mg/L, causing severe nephrotoxicity and acute tubular necrosis! Option C (500 mg q8h) produces peak concentration C_peak ≈ 16 mg/L, failing bacterial eradication MIC targets.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Analytical Formulation &amp; AUC/MIC Verification):</strong> Verifies 24-hour Area Under the Curve: AUC24 = Total Daily Dose / CL = 1000 mg / 2.0 L/h = 500 mg·h/L. For Vancomycin MIC = 1 mg/L in MRSA bacteremia: AUC24/MIC = 500. Target range: 400–600 mg·h/L (per ASHP/IDSA 2020 consensus guidelines). Option B (1000 mg q24h) satisfies both trough (15 mg/L) and AUC/MIC (500) criteria.
+                    <strong>DeepSeek (Analytical Formulation &amp; AUC/MIC Verification):</strong> Verifies 24-hour Area Under the Curve: AUC24 = Total Daily Dose / CL = 1000 mg / 2.0 L/h = 500 mg·h/L. For Vancomycin MIC = 1 mg/L in MRSA bacteremia: AUC24/MIC = 500. Target range: 400–600 mg·h/L (per ASHP/IDSA 2020 consensus guidelines). Option B (1000 mg q24h) satisfies both trough (15 mg/L) and AUC/MIC (500) criteria.
                   </p>
                 )}
               </div>
@@ -1272,11 +1272,11 @@ export function SnapGptDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Michel-Lévy Analysis)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Michel-Lévy Analysis)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Distractor Diagnostics)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Distractor Diagnostics)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Petrogenetic Trajectory)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Petrogenetic Trajectory)', tag: 'explain' };
       }
     }
   };
@@ -1415,7 +1415,7 @@ export function SnapGptDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1424,17 +1424,17 @@ export function SnapGptDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Optical Mineralogy &amp; Michel-Lévy Derivation):</strong> Step 1: Michel-Lévy curve: For albite twin lamellae cut perpendicular to (010), maximum extinction angle θ = 34° maps uniquely on the Michel-Lévy curve to An = 62 mol% (Labradorite, An50–An70 range). Step 2: Pyroxene identification: Clinopyroxene (Augite) displays inclined extinction c ∧ Z = 42° and high 2nd-order birefringence, distinguishing it from orthopyroxene (parallel extinction c ∧ Z = 0°). Step 3: IUGS classification: Plagioclase (An &gt; 50) + Clinopyroxene (Cpx &gt;&gt; Opx) + Olivine (10%) = Olivine Gabbro.
+                    <strong>Claude (Optical Mineralogy &amp; Michel-Lévy Derivation):</strong> Step 1: Michel-Lévy curve: For albite twin lamellae cut perpendicular to (010), maximum extinction angle θ = 34° maps uniquely on the Michel-Lévy curve to An = 62 mol% (Labradorite, An50–An70 range). Step 2: Pyroxene identification: Clinopyroxene (Augite) displays inclined extinction c ∧ Z = 42° and high 2nd-order birefringence, distinguishing it from orthopyroxene (parallel extinction c ∧ Z = 0°). Step 3: IUGS classification: Plagioclase (An &gt; 50) + Clinopyroxene (Cpx &gt;&gt; Opx) + Olivine (10%) = Olivine Gabbro.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Distractor &amp; Optical Diagnostics):</strong> Distractor Breakdown: Option A (Andesite porphyry) is incompatible with coarse phaneritic cumulate fabric; andesite is volcanic extrusive with oligoclase (extinction &lt; 25°). Option C (Norite) requires &gt;95% orthopyroxene in total pyroxene; here c ∧ Z = 42° proves clinopyroxene dominates (&gt;90%). Option D (Granite) requires &gt;20% quartz and alkali feldspar; this rock has 0% quartz and high Ca-plagioclase.
+                    <strong>ChatGPT (Distractor &amp; Optical Diagnostics):</strong> Distractor Breakdown: Option A (Andesite porphyry) is incompatible with coarse phaneritic cumulate fabric; andesite is volcanic extrusive with oligoclase (extinction &lt; 25°). Option C (Norite) requires &gt;95% orthopyroxene in total pyroxene; here c ∧ Z = 42° proves clinopyroxene dominates (&gt;90%). Option D (Granite) requires &gt;20% quartz and alkali feldspar; this rock has 0% quartz and high Ca-plagioclase.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Petrogenetic &amp; Crystallization Sequence):</strong> Thermodynamic crystallization trajectory according to Bowen&apos;s Reaction Series: Continuous series: An62 plagioclase crystallizes at T ≈ 1180–1220°C at 1 atm. Discontinuous series: Olivine (Fo75–80) and Augite coprecipitate as cumulus phases. Curved fractures in olivine undergoing hydration (&lt;400°C) to serpentine (Mg3Si2O5(OH)4) + magnetite (Fe3O4), creating classic mesh texture.
+                    <strong>DeepSeek (Petrogenetic &amp; Crystallization Sequence):</strong> Thermodynamic crystallization trajectory according to Bowen&apos;s Reaction Series: Continuous series: An62 plagioclase crystallizes at T ≈ 1180–1220°C at 1 atm. Discontinuous series: Olivine (Fo75–80) and Augite coprecipitate as cumulus phases. Curved fractures in olivine undergoing hydration (&lt;400°C) to serpentine (Mg3Si2O5(OH)4) + magnetite (Fe3O4), creating classic mesh texture.
                   </p>
                 )}
               </div>
@@ -1558,11 +1558,11 @@ export function StudyBotProDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (CRR Binomial Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (CRR Binomial Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Black-Scholes Comparison)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Black-Scholes Comparison)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Martingale Measure Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Martingale Measure Proof)', tag: 'explain' };
       }
     }
   };
@@ -1701,7 +1701,7 @@ export function StudyBotProDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1710,17 +1710,17 @@ export function StudyBotProDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (CRR Two-Period Binomial Tree Step-by-Step):</strong> Step 1: Up/Down factors for Δt = 0.5: u = e^(0.30 × √0.5) = e^0.21213 ≈ 1.23631. d = 1/u ≈ 0.80886. Step 2: Risk-neutral probability p = (e^(0.05 × 0.5) - 0.80886) / (1.23631 - 0.80886) = 0.21646 / 0.42745 ≈ 0.50640. Step 3: Terminal stock prices at T = 1.0 yr: S_uu = $152.85 ⟹ V_uu = max(0, 152.85 - 95) = $57.85; S_ud = $100.00 ⟹ V_ud = $5.00; S_dd = $65.43 ⟹ V_dd = $0.00. Step 4: Backward induction: V_u = e^(-0.025)[0.5064 × 57.85 + 0.4936 × 5.00] = $30.98; V_d = e^(-0.025)[0.5064 × 5.00] = $2.47; V_0 = e^(-0.025)[0.5064 × 30.98 + 0.4936 × 2.47] = $16.28.
+                    <strong>Claude (CRR Two-Period Binomial Tree Step-by-Step):</strong> Step 1: Up/Down factors for Δt = 0.5: u = e^(0.30 × √0.5) = e^0.21213 ≈ 1.23631. d = 1/u ≈ 0.80886. Step 2: Risk-neutral probability p = (e^(0.05 × 0.5) - 0.80886) / (1.23631 - 0.80886) = 0.21646 / 0.42745 ≈ 0.50640. Step 3: Terminal stock prices at T = 1.0 yr: S_uu = $152.85 ⟹ V_uu = max(0, 152.85 - 95) = $57.85; S_ud = $100.00 ⟹ V_ud = $5.00; S_dd = $65.43 ⟹ V_dd = $0.00. Step 4: Backward induction: V_u = e^(-0.025)[0.5064 × 57.85 + 0.4936 × 5.00] = $30.98; V_d = e^(-0.025)[0.5064 × 5.00] = $2.47; V_0 = e^(-0.025)[0.5064 × 30.98 + 0.4936 × 2.47] = $16.28.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Comparison with Continuous Black-Scholes):</strong> Black-Scholes Benchmark: d_1 = [ln(100/95) + (0.05 + 0.045)(1)] / (0.30) = 0.4876 ⟹ N(d_1) = 0.6871. d_2 = 0.1876 ⟹ N(d_2) = 0.5744. C_BSM = 100(0.6871) - 95 e^(-0.05)(0.5744) = $16.80. The 2-period CRR price of $16.28 converges monotonically toward continuous $16.80. Distractor A ($11.45) is a single-step truncation. Distractor C ($21.80) forgets discounting.
+                    <strong>ChatGPT (Comparison with Continuous Black-Scholes):</strong> Black-Scholes Benchmark: d_1 = [ln(100/95) + (0.05 + 0.045)(1)] / (0.30) = 0.4876 ⟹ N(d_1) = 0.6871. d_2 = 0.1876 ⟹ N(d_2) = 0.5744. C_BSM = 100(0.6871) - 95 e^(-0.05)(0.5744) = $16.80. The 2-period CRR price of $16.28 converges monotonically toward continuous $16.80. Distractor A ($11.45) is a single-step truncation. Distractor C ($21.80) forgets discounting.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Hedge Ratio &amp; Risk-Neutral Measure Martingale):</strong> Portfolio Delta at t = 0: Δ_0 = (V_u - V_d) / (S_u - S_d) = (30.98 - 2.47) / (123.63 - 80.89) = 28.51 / 42.74 ≈ 0.667 shares. Martingale Property: E^Q[S_1] = S_0 [p² u² + 2p(1-p)ud + (1-p)² d²] = 100 × e^(0.05 × 1) = $105.13. Matches S_0 e^(rT), verifying strict absence of arbitrage.
+                    <strong>DeepSeek (Hedge Ratio &amp; Risk-Neutral Measure Martingale):</strong> Portfolio Delta at t = 0: Δ_0 = (V_u - V_d) / (S_u - S_d) = (30.98 - 2.47) / (123.63 - 80.89) = 28.51 / 42.74 ≈ 0.667 shares. Martingale Property: E^Q[S_1] = S_0 [p² u² + 2p(1-p)ud + (1-p)² d²] = 100 × e^(0.05 × 1) = $105.13. Matches S_0 e^(rT), verifying strict absence of arbitrage.
                   </p>
                 )}
               </div>
@@ -1844,11 +1844,11 @@ export function StudyFoxDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Chi-Square Derivation)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Chi-Square Derivation)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Sociological Distractors)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Sociological Distractors)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Cell Residual Decomposition)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Cell Residual Decomposition)', tag: 'explain' };
       }
     }
   };
@@ -1987,7 +1987,7 @@ export function StudyFoxDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1996,17 +1996,17 @@ export function StudyFoxDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Contingency Table Analysis &amp; Cramer&apos;s V):</strong> Step 1: Degrees of freedom &amp; significance: Table r = 3, c = 3. df = (r - 1)(c - 1) = (2)(2) = 4. Observed χ² = 28.74 &gt; χ²_crit(4, α=0.001) = 18.47 ⟹ p &lt; 0.0001. Null hypothesis of independence is decisively rejected. Step 2: Cramer&apos;s V calculation: k = min(r - 1, c - 1) = 2. V = √(χ² / (N · k)) = √(28.74 / (1200 × 2)) = √(28.74 / 2400) = √0.011975 ≈ 0.1094. In sociological methodology for df = 2, 0.07 ≤ V &lt; 0.21 indicates a modest positive association, consistent with cultural capital theories (Bourdieu, 1984).
+                    <strong>Claude (Contingency Table Analysis &amp; Cramer&apos;s V):</strong> Step 1: Degrees of freedom &amp; significance: Table r = 3, c = 3. df = (r - 1)(c - 1) = (2)(2) = 4. Observed χ² = 28.74 &gt; χ²_crit(4, α=0.001) = 18.47 ⟹ p &lt; 0.0001. Null hypothesis of independence is decisively rejected. Step 2: Cramer&apos;s V calculation: k = min(r - 1, c - 1) = 2. V = √(χ² / (N · k)) = √(28.74 / (1200 × 2)) = √(28.74 / 2400) = √0.011975 ≈ 0.1094. In sociological methodology for df = 2, 0.07 ≤ V &lt; 0.21 indicates a modest positive association, consistent with cultural capital theories (Bourdieu, 1984).
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Sociological Theory &amp; Distractor Traps):</strong> Distractor Deconstruction: Option A (V = 0.048) commits an egregious Type II error, falsely dividing by N² or claiming no correlation when χ² = 28.74 &gt;&gt; 18.47. Option C (V = 0.219) omitted k = 2 in the denominator, computing √(28.74 / 600) = 0.219, overstating effect size by a factor of √2. Option D (V = 0.345) confuses non-parametric chi-square testing with Kendall&apos;s tau-b.
+                    <strong>ChatGPT (Sociological Theory &amp; Distractor Traps):</strong> Distractor Deconstruction: Option A (V = 0.048) commits an egregious Type II error, falsely dividing by N² or claiming no correlation when χ² = 28.74 &gt;&gt; 18.47. Option C (V = 0.219) omitted k = 2 in the denominator, computing √(28.74 / 600) = 0.219, overstating effect size by a factor of √2. Option D (V = 0.345) confuses non-parametric chi-square testing with Kendall&apos;s tau-b.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Standardized Residuals &amp; Directional Analysis):</strong> {"Cell residual decomposition: Adjusted standardized residual z_ij = (O_ij - E_ij) / √(E_ij (1 - p_i)(1 - p_j)). For Postgraduate (≥ 17 yrs) × 'Increased Mobility': z = +4.12 (p < 0.0001), demonstrating strong positive credential concentration. For High School (≤ 12 yrs) × 'Decreased Mobility': z = +3.68 (p < 0.001), confirming credential inflation effects."}
+                    <strong>DeepSeek (Standardized Residuals &amp; Directional Analysis):</strong> {"Cell residual decomposition: Adjusted standardized residual z_ij = (O_ij - E_ij) / √(E_ij (1 - p_i)(1 - p_j)). For Postgraduate (≥ 17 yrs) × 'Increased Mobility': z = +4.12 (p < 0.0001), demonstrating strong positive credential concentration. For High School (≤ 12 yrs) × 'Decreased Mobility': z = +3.68 (p < 0.001), confirming credential inflation effects."}
                   </p>
                 )}
               </div>
@@ -2130,11 +2130,11 @@ export function StudyMonkeyDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Diagonalization Lemma)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Diagonalization Lemma)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Tarski Undefinability)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Tarski Undefinability)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Arithmetical Hierarchy Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Arithmetical Hierarchy Proof)', tag: 'explain' };
       }
     }
   };
@@ -2273,7 +2273,7 @@ export function StudyMonkeyDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2282,17 +2282,17 @@ export function StudyMonkeyDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Formal Proof Theory &amp; Diagonalization Lemma):</strong> Let Bew_T(x) be the canonical Σ₁⁰ provability predicate in PA representing ∃y Proof_T(y, x). By Gödel&apos;s Diagonalization Lemma, there exists a sentence G_T such that PA ⊢ G_T ↔ ¬Bew_T(⌜G_T⌝). If T ⊢ G_T, then by Σ₁⁰-completeness, T ⊢ Bew_T(⌜G_T⌝), yielding T ⊢ ¬G_T, contradicting consistency. If T ⊢ ¬G_T, then T ⊢ Bew_T(⌜G_T⌝), meaning there exists a proof of G_T, so by sound deduction G_T is true, contradicting consistency. Hence G_T is undecidable in T. Because G_T asserts that no natural number codes a proof of G_T, and indeed no such proof exists, G_T is true in the standard model ℕ.
+                    <strong>Claude (Formal Proof Theory &amp; Diagonalization Lemma):</strong> Let Bew_T(x) be the canonical Σ₁⁰ provability predicate in PA representing ∃y Proof_T(y, x). By Gödel&apos;s Diagonalization Lemma, there exists a sentence G_T such that PA ⊢ G_T ↔ ¬Bew_T(⌜G_T⌝). If T ⊢ G_T, then by Σ₁⁰-completeness, T ⊢ Bew_T(⌜G_T⌝), yielding T ⊢ ¬G_T, contradicting consistency. If T ⊢ ¬G_T, then T ⊢ Bew_T(⌜G_T⌝), meaning there exists a proof of G_T, so by sound deduction G_T is true, contradicting consistency. Hence G_T is undecidable in T. Because G_T asserts that no natural number codes a proof of G_T, and indeed no such proof exists, G_T is true in the standard model ℕ.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Tarski Truth Undefinability &amp; Distractor Traps):</strong> Option A is a catastrophic error common to budget chatbot wrappers. If a theory were syntactically complete, every sentence φ would satisfy T ⊢ φ or T ⊢ ¬φ, which Gödel&apos;s first theorem directly refutes. Tarski&apos;s Theorem proves that no consistent theory extending Robinson arithmetic Q can define its own truth predicate: if True_T(x) existed, diagonalizing ψ(x) = ¬True_T(x) would produce a sentence λ such that T ⊢ λ ↔ ¬True_T(⌜λ⌝), deriving T ⊢ λ ↔ ¬λ, an immediate contradiction.
+                    <strong>ChatGPT (Tarski Truth Undefinability &amp; Distractor Traps):</strong> Option A is a catastrophic error common to budget chatbot wrappers. If a theory were syntactically complete, every sentence φ would satisfy T ⊢ φ or T ⊢ ¬φ, which Gödel&apos;s first theorem directly refutes. Tarski&apos;s Theorem proves that no consistent theory extending Robinson arithmetic Q can define its own truth predicate: if True_T(x) existed, diagonalizing ψ(x) = ¬True_T(x) would produce a sentence λ such that T ⊢ λ ↔ ¬True_T(⌜λ⌝), deriving T ⊢ λ ↔ ¬λ, an immediate contradiction.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Arithmetical Hierarchy &amp; Π₁⁰ Invariance Proof):</strong> The Gödel sentence is strictly Π₁⁰: G_T ≡ ∀y ¬Proof_T(y, ⌜G_T⌝), where Proof_T is primitive recursive (Δ₀⁰). By Gentzen&apos;s consistency proof, consistency of PA is provable in PA + TI(ε_0), but Option C conflates Gentzen&apos;s ordinal analysis with second-order categoricity (which fails in first-order logic by the Löwenheim-Skolem theorem). Option D erroneously claims polynomial-time decidability for an undecidable problem.
+                    <strong>DeepSeek (Arithmetical Hierarchy &amp; Π₁⁰ Invariance Proof):</strong> The Gödel sentence is strictly Π₁⁰: G_T ≡ ∀y ¬Proof_T(y, ⌜G_T⌝), where Proof_T is primitive recursive (Δ₀⁰). By Gentzen&apos;s consistency proof, consistency of PA is provable in PA + TI(ε_0), but Option C conflates Gentzen&apos;s ordinal analysis with second-order categoricity (which fails in first-order logic by the Löwenheim-Skolem theorem). Option D erroneously claims polynomial-time decidability for an undecidable problem.
                   </p>
                 )}
               </div>
@@ -2416,11 +2416,11 @@ export function TestWhizDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (Greenhouse-Geisser)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (Greenhouse-Geisser)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (Equal n Sphericity Fallacy)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (Equal n Sphericity Fallacy)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (Interaction Contrasts Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (Interaction Contrasts Proof)', tag: 'explain' };
       }
     }
   };
@@ -2559,7 +2559,7 @@ export function TestWhizDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2568,17 +2568,17 @@ export function TestWhizDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Greenhouse-Geisser Correction Derivation):</strong> When repeated measures violate compound symmetry and sphericity, F-distribution degrees of freedom are positively biased. The Greenhouse-Geisser epsilon estimate ε̂ = 0.742. Adjusted numerator df: df_1^* = ε̂(k - 1) = 0.742 × 2 = 1.484. Adjusted error df: df_2^* = ε̂(N - g)(k - 1) = 0.742 × (40 - 2) × 2 = 0.742 × 76 = 56.392. Evaluating F(1.484, 56.392) = 6.45 against the adjusted F-distribution yields p = 0.0061, preserving family-wise error rate control.
+                    <strong>Claude (Greenhouse-Geisser Correction Derivation):</strong> When repeated measures violate compound symmetry and sphericity, F-distribution degrees of freedom are positively biased. The Greenhouse-Geisser epsilon estimate ε̂ = 0.742. Adjusted numerator df: df_1^* = ε̂(k - 1) = 0.742 × 2 = 1.484. Adjusted error df: df_2^* = ε̂(N - g)(k - 1) = 0.742 × (40 - 2) × 2 = 0.742 × 76 = 56.392. Evaluating F(1.484, 56.392) = 6.45 against the adjusted F-distribution yields p = 0.0061, preserving family-wise error rate control.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (Equal n Fallacy &amp; Contrast Breakdown):</strong> Option A reflects a ubiquitous student mistake: confusing between-subjects ANOVA robustness to variance heterogeneity (homoscedasticity) with repeated-measures sphericity! Equal group sizes (n_1 = n_2 = 20) protect against Levene&apos;s test violations between subjects, but CANNOT protect against sphericity violations across repeated measures, where Type I error rates inflate from α = 0.05 up to 0.15. Option C is the Lower-Bound epsilon ε_LB = 1/(k-1) = 0.50, which is only a worst-case floor.
+                    <strong>ChatGPT (Equal n Fallacy &amp; Contrast Breakdown):</strong> Option A reflects a ubiquitous student mistake: confusing between-subjects ANOVA robustness to variance heterogeneity (homoscedasticity) with repeated-measures sphericity! Equal group sizes (n_1 = n_2 = 20) protect against Levene&apos;s test violations between subjects, but CANNOT protect against sphericity violations across repeated measures, where Type I error rates inflate from α = 0.05 up to 0.15. Option C is the Lower-Bound epsilon ε_LB = 1/(k-1) = 0.50, which is only a worst-case floor.
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (Simple Main Effects &amp; Interaction Contrasts):</strong> Decomposition Formalism: Simple main effect of Time at High Load: pairwise contrast between Post-Intervention (M_2) and 24h Follow-Up (M_3) yields t = (Ȳ_12 - Ȳ_13) / √(2 · MS_error / n) = 4.82 / √(2(14.80)/20) = 3.96. Bonferroni adjustment for 3 pairwise comparisons gives p_adj = 3 × 0.0053 = 0.016, proving significant treatment decay specifically in the High Load condition.
+                    <strong>DeepSeek (Simple Main Effects &amp; Interaction Contrasts):</strong> Decomposition Formalism: Simple main effect of Time at High Load: pairwise contrast between Post-Intervention (M_2) and 24h Follow-Up (M_3) yields t = (Ȳ_12 - Ȳ_13) / √(2 · MS_error / n) = 4.82 / √(2(14.80)/20) = 3.96. Bonferroni adjustment for 3 pairwise comparisons gives p_adj = 3 × 0.0053 = 0.016, proving significant treatment decay specifically in the High Load condition.
                   </p>
                 )}
               </div>
@@ -2702,11 +2702,11 @@ export function TrustStudyDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet (PCAOB AS 5 Analysis)', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude (PCAOB AS 5 Analysis)', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o (5% Safe Harbor Fallacy)', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT (5% Safe Harbor Fallacy)', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 (GAAP ASC 606 Control Proof)', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek (GAAP ASC 606 Control Proof)', tag: 'explain' };
       }
     }
   };
@@ -2845,7 +2845,7 @@ export function TrustStudyDemo() {
                         activeModelTab === m ? 'bg-emerald-500/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
                       }`}
                     >
-                      {m === 'claude' ? 'Claude 3.7 Sonnet' : m === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {m === 'claude' ? 'Claude' : m === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2854,17 +2854,17 @@ export function TrustStudyDemo() {
               <div className="rounded-2xl bg-white/[0.04] border border-emerald-500/30 p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                 {activeModelTab === 'claude' && (
                   <p>
-                    <strong>Claude 3.7 Sonnet (Securities Law &amp; PCAOB AS 5 Statutory Analysis):</strong> Under PCAOB Auditing Standard No. 5 (AS 5, Appendix A), a &apos;material weakness&apos; is a deficiency, or combination of deficiencies, in ICFR such that there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis. Even if the current misstatement ($4.2M) does not necessitate immediate restatement under SAB Topic 1.M, the breakdown in automated revenue controls creates an unmonitored risk channel. Under SOX § 302(a)(4), corporate officers must evaluate and present conclusions regarding ICFR effectiveness in Item 9A of Form 10-K, certifying that any material weaknesses were disclosed to the audit committee and independent auditors.
+                    <strong>Claude (Securities Law &amp; PCAOB AS 5 Statutory Analysis):</strong> Under PCAOB Auditing Standard No. 5 (AS 5, Appendix A), a &apos;material weakness&apos; is a deficiency, or combination of deficiencies, in ICFR such that there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis. Even if the current misstatement ($4.2M) does not necessitate immediate restatement under SAB Topic 1.M, the breakdown in automated revenue controls creates an unmonitored risk channel. Under SOX § 302(a)(4), corporate officers must evaluate and present conclusions regarding ICFR effectiveness in Item 9A of Form 10-K, certifying that any material weaknesses were disclosed to the audit committee and independent auditors.
                   </p>
                 )}
                 {activeModelTab === 'chatgpt' && (
                   <p>
-                    <strong>ChatGPT o3-mini/4o (The 5% Safe Harbor Fallacy &amp; § 906 Criminal Liability):</strong> Option A cites the widely debunked &apos;5% net income rule of thumb&apos;. In SEC Staff Accounting Bulletin No. 99 (SAB 99), the SEC explicitly rejected exclusive reliance on quantitative thresholds: misstatements affecting revenue recognition, management compensation, or debt covenants are material regardless of percentage. Section 906 certifications carry direct criminal penalties (18 U.S.C. § 1350): signing &apos;knowing&apos; that periodic reports do not comport with all requirements carries fines up to $1,000,000 and 10 years imprisonment; &apos;willful&apos; false certification escalates to $5,000,000 and 20 years. Option D is false: § 906 applies specifically to the signing corporate officers (CEO and CFO).
+                    <strong>ChatGPT (The 5% Safe Harbor Fallacy &amp; § 906 Criminal Liability):</strong> Option A cites the widely debunked &apos;5% net income rule of thumb&apos;. In SEC Staff Accounting Bulletin No. 99 (SAB 99), the SEC explicitly rejected exclusive reliance on quantitative thresholds: misstatements affecting revenue recognition, management compensation, or debt covenants are material regardless of percentage. Section 906 certifications carry direct criminal penalties (18 U.S.C. § 1350): signing &apos;knowing&apos; that periodic reports do not comport with all requirements carries fines up to $1,000,000 and 10 years imprisonment; &apos;willful&apos; false certification escalates to $5,000,000 and 20 years. Option D is false: § 906 applies specifically to the signing corporate officers (CEO and CFO).
                   </p>
                 )}
                 {activeModelTab === 'deepseek' && (
                   <p className="font-mono text-[11px]">
-                    <strong>DeepSeek-R1 (GAAP ASC 606 Bill-and-Hold Criteria &amp; ICFR Failure Modes):</strong> Under FASB ASC 606-10-55-83, for a customer to have obtained control in a bill-and-hold arrangement, four strict criteria must be met: (1) substantive business purpose, (2) separate identification as belonging to the customer, (3) readiness for physical transfer, and (4) entity inability to redirect the product. Automated recognition without verifying delivery authorization constitutes a severe control failure in the &apos;Control Activities&apos; and &apos;Information &amp; Communication&apos; components of the COSO Internal Control Integrated Framework (2013), confirming a material weakness in ICFR design.
+                    <strong>DeepSeek (GAAP ASC 606 Bill-and-Hold Criteria &amp; ICFR Failure Modes):</strong> Under FASB ASC 606-10-55-83, for a customer to have obtained control in a bill-and-hold arrangement, four strict criteria must be met: (1) substantive business purpose, (2) separate identification as belonging to the customer, (3) readiness for physical transfer, and (4) entity inability to redirect the product. Automated recognition without verifying delivery authorization constitutes a severe control failure in the &apos;Control Activities&apos; and &apos;Information &amp; Communication&apos; components of the COSO Internal Control Integrated Framework (2013), confirming a material weakness in ICFR design.
                   </p>
                 )}
               </div>

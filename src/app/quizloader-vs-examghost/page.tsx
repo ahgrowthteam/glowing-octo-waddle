@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'Audit of Canvas Quiz Loader v0.5.4 (50k users, 4.1★) vs ExamGhost. See why replaying past attempts fails on Attempt #1, formula math, and single-attempt exams.',
   alternates: {
-    canonical: 'https://examghost.com/quizloader-vs-examghost',
+    canonical: 'https://www.examghost.com/quizloader-vs-examghost',
   },
   openGraph: {
     title: 'Canvas Quiz Loader vs ExamGhost (2026) — Attempt Replay Audit',
     description:
       'We audited Canvas Quiz Loader v0.5.4 (pfagnepdndhkmilceinbebdfbmiddagl). See why a non-AI HTML attempt copier leaves you stranded on Attempt #1 and formula math.',
-    url: 'https://examghost.com/quizloader-vs-examghost',
+    url: 'https://www.examghost.com/quizloader-vs-examghost',
     siteName: 'ExamGhost',
     locale: 'en_US',
     type: 'website',
@@ -46,18 +46,19 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://examghost.com/quizloader-vs-examghost#webpage",
+      "@id": "https://www.examghost.com/quizloader-vs-examghost#webpage",
       "name": "Canvas Quiz Loader vs ExamGhost (2026): Technical & Attempt-Replay Audit",
       "description":
         "Side-by-side comparison between Canvas Quiz Loader (pfagnepdndhkmilceinbebdfbmiddagl) and ExamGhost across first-attempt AI solving, dynamic formula calculation, DOM stealth, and Canvas SpeedGrader telemetry.",
-      "url": "https://examghost.com/quizloader-vs-examghost",
+      "url": "https://www.examghost.com/quizloader-vs-examghost",
       "datePublished": "2026-02-12",
-      "dateModified": "2026-03-19",
-      "breadcrumb": { "@id": "https://examghost.com/quizloader-vs-examghost#breadcrumb" },
+      "dateModified": "2026-11-18",
+      "breadcrumb": { "@id": "https://www.examghost.com/quizloader-vs-examghost#breadcrumb" },
       "author": {
         "@type": "Organization",
-        "name": "ExamGhost Security Engineering Team",
-        "url": "https://examghost.com",
+        "@id": "https://www.examghost.com/#organization",
+        "name": "ExamGhost",
+        "url": "https://www.examghost.com",
       },
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -122,31 +123,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/quizloader-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/quizloader-vs-examghost#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://examghost.com",
+          "item": "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Competitor Comparisons",
-          "item": "https://examghost.com/compare-canvas-hack-extensions",
+          "item": "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Canvas Quiz Loader vs ExamGhost",
-          "item": "https://examghost.com/quizloader-vs-examghost",
+          "item": "https://www.examghost.com/quizloader-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/quizloader-vs-examghost#faq",
+      "@id": "https://www.examghost.com/quizloader-vs-examghost#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -805,10 +806,10 @@ export default function QuizLoaderVsExamGhostPage() {
               
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
             </table>
@@ -872,39 +873,7 @@ Verbatim Limitations from Store Description:
         </div>
       </section>
 
-      {/* Section 5: Verified Student Migration Review */}
-      <section className="py-14 px-4 bg-[#d3f8e2]/35 border-b-2 border-[#111]">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#111]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider bg-[#d3f8e2] border border-[#111] px-2.5 py-1 rounded font-bold">
-                VERIFIED STUDENT MIGRATION // CANVAS STEM COURSE
-              </span>
-              <span className="font-mono text-xs font-bold text-emerald-700">
-                ★★★★★ Switched from Canvas Quiz Loader v0.5.4
-              </span>
-            </div>
-
-            <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
-              &ldquo;Canvas Quiz Loader worked fine on my freshman syllabus quiz where we got
-              unlimited retakes. Then I tried using it in Organic Chemistry II and Business Finance.
-              First, our midterm only allowed 1 attempt so Quiz Loader literally did nothing.
-              Second, on weekly problem sets where we got 2 attempts, Canvas changed every single
-              number in the formula on Attempt 2—and Quiz Loader pasted my old Attempt 1 numbers
-              right into the boxes and cost me 30%. Switched to ExamGhost and now I get the actual
-              calculated answer on Attempt #1 without burning a single point.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between text-xs font-mono text-neutral-600 border-t border-neutral-200 pt-4">
-              <div>
-                <strong className="text-[#111]">Marcus T.</strong> • Junior, Finance &amp; Pre-Med •
-                Canvas Classic &amp; New Quizzes
-              </div>
-              <div className="text-emerald-700 font-bold">Verified ExamGhost Pro User</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: FAQ Section */}
       <section className="py-14 px-4 border-b-2 border-[#111]">
@@ -924,10 +893,10 @@ Verbatim Limitations from Store Description:
               open
             >
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   1. Does Canvas Quiz Loader work on your first quiz attempt or single-attempt
                   exams?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -947,10 +916,10 @@ Verbatim Limitations from Store Description:
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   2. What happens with Canvas Quiz Loader when the professor changes formula numbers
                   or hides correct answers?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -970,9 +939,9 @@ Verbatim Limitations from Store Description:
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   3. Can professors detect Canvas Quiz Loader auto-filling answers in SpeedGrader?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -989,10 +958,10 @@ Verbatim Limitations from Store Description:
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   4. Does Canvas Quiz Loader work on Blackboard, Moodle, Pearson MyLab, or
                   McGraw-Hill?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>

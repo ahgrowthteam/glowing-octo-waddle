@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         "examghost macmillan",
     ],
     alternates: {
-        canonical: "https://examghost.com/macmillan-achieve-smartwork-solver",
+        canonical: "https://www.examghost.com/macmillan-achieve-smartwork-solver",
     },
     openGraph: {
         title: "Macmillan Achieve & Smartwork Solver (2026) — ChemAxon & Penalty Shield | ExamGhost",
         description:
             "Double-click any Macmillan Achieve or W.W. Norton Smartwork problem for 0.3s inline answers. Solve ChemAxon drawing canvases with zero attempt penalties.",
-        url: "https://examghost.com/macmillan-achieve-smartwork-solver",
+        url: "https://www.examghost.com/macmillan-achieve-smartwork-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -399,23 +399,23 @@ const ALL_LMS_LINKS = [
 export default function MacmillanAchieveSmartworkSolverPage() {
     const config = MACMILLAN_CONFIG;
     const safeSlug = config.slug;
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": `https://examghost.com/${config.slug}#webpage`,
-                "url": `https://examghost.com/${config.slug}`,
+                "@id": `https://www.examghost.com/${config.slug}#webpage`,
+                "url": `https://www.examghost.com/${config.slug}`,
                 "name": "Macmillan Achieve & Smartwork Solver (2026) — ChemAxon & Penalty Shield | ExamGhost",
                 "description": "Solve Macmillan Achieve and Smartwork questions in 0.3s with zero attempt penalties. Get ChemAxon molecule drawing and math answers. 5 free solves / day.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-10-27",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": `https://examghost.com/${config.slug}#breadcrumb` },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": `https://www.examghost.com/${config.slug}#breadcrumb` },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -423,7 +423,7 @@ export default function MacmillanAchieveSmartworkSolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `https://examghost.com/${config.slug}#software`,
+                "@id": `https://www.examghost.com/${config.slug}#software`,
                 "name": "ExamGhost Macmillan Achieve & Smartwork Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -443,16 +443,16 @@ export default function MacmillanAchieveSmartworkSolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": `https://examghost.com/${config.slug}#breadcrumb`,
+                "@id": `https://www.examghost.com/${config.slug}#breadcrumb`,
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://examghost.com/canvas-quiz-solver-free-demo" },
-                    { "@type": "ListItem", "position": 3, "name": "Macmillan Achieve Solver", "item": `https://examghost.com/${config.slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://www.examghost.com/canvas-quiz-solver-free-demo" },
+                    { "@type": "ListItem", "position": 3, "name": "Macmillan Achieve Solver", "item": `https://www.examghost.com/${config.slug}` }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://examghost.com/${config.slug}#faq`,
+                "@id": `https://www.examghost.com/${config.slug}#faq`,
                 "mainEntity": config.faqs.map((faq) => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -464,7 +464,7 @@ export default function MacmillanAchieveSmartworkSolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": `https://examghost.com/${config.slug}#video`,
+                "@id": `https://www.examghost.com/${config.slug}#video`,
                 "name": "Macmillan Achieve AI Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves Macmillan Achieve ChemAxon drawings with zero attempt penalties.",
                 "thumbnailUrl": [posterUrl],
@@ -474,12 +474,12 @@ export default function MacmillanAchieveSmartworkSolverPage() {
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "HowTo",
-                "@id": `https://examghost.com/${config.slug}#howto`,
+                "@id": `https://www.examghost.com/${config.slug}#howto`,
                 "name": config.howToSection.heading,
                 "description": "Step-by-step workflow to solve Macmillan Achieve and Smartwork5 homework with zero attempt penalties.",
                 "totalTime": "PT1M",
@@ -518,7 +518,7 @@ export default function MacmillanAchieveSmartworkSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>

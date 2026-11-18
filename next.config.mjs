@@ -16,6 +16,17 @@ const nextConfig = {
     async headers() {
         return [
             {
+                // Static images are not content-hashed, so cache for a day and revalidate in the background
+                // (they previously re-validated on every request: max-age=0).
+                source: '/images/:path*',
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=86400, stale-while-revalidate=604800',
+                    },
+                ],
+            },
+            {
                 source: '/(.*)',
                 headers: [
                     {

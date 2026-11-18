@@ -34,16 +34,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Gauth vs ExamGhost (2026) — Webcam Gaze Vector & Desktop Speed Audit",
+        absolute: "Gauth vs ExamGhost (2026) — Webcam Gaze & Speed Audit",
     },
-    description: "Gauth forces a 35° downward phone-camera gaze (24.5s/photo) that triggers webcam proctors. ExamGhost solves on-screen in 0.3s (0.0° gaze) + includes Claude 3.7, ChatGPT & DeepSeek Study Hub. Start with 5 Free Solves / Day.",
+    description: "Gauth forces a 35° downward phone-camera gaze (24.5s/photo) that triggers webcam proctors. ExamGhost solves on-screen in 0.3s. 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/gauth-vs-examghost",
+        canonical: "https://www.examghost.com/gauth-vs-examghost",
     },
     openGraph: {
-        title: "Gauth vs ExamGhost (2026) — Webcam Gaze Vector & Desktop Speed Audit",
+        title: "Gauth vs ExamGhost (2026) — Webcam Gaze & Speed Audit",
         description: "Why raising a phone for Gauth triggers Honorlock & Respondus eye-gaze flags vs ExamGhost's 0.0° On-Screen Desktop HUD (0.3s Double-Click + Alt+S Snip + Multi-Model Study Hub).",
-        url: "https://examghost.com/gauth-vs-examghost",
+        url: "https://www.examghost.com/gauth-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Gauth vs ExamGhost (2026) — Webcam Gaze Vector & Desktop Speed Audit",
-        description: "Stop risking a 35° downward phone glance on Gauth. Solve on-screen in 0.3s with ExamGhost + access Claude 3.7 Sonnet, ChatGPT o3-mini/4o & DeepSeek-R1. 5 Free Solves / Day.",
+        title: "Gauth vs ExamGhost (2026) — Webcam Gaze & Speed Audit",
+        description: "Stop risking a 35° downward phone glance on Gauth. Solve on-screen in 0.3s with ExamGhost + access Claude, ChatGPT & DeepSeek. 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -70,30 +70,30 @@ export default function GauthComparisonPage() {
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/gauth-vs-examghost#article",
+                "@id": "https://www.examghost.com/gauth-vs-examghost#article",
                 "headline": "Gauth vs ExamGhost (2026): Webcam Eye-Gaze Vector & Desktop vs Mobile Speed Audit",
                 "datePublished": "2026-02-13",
-                "dateModified": "2026-04-10",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Proctoring & Ergonomics Lab",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "url": "https://examghost.com/gauth-vs-examghost",
+                "url": "https://www.examghost.com/gauth-vs-examghost",
                 "name": "Gauth vs ExamGhost (2026 Comparison) | Webcam Gaze Risk vs 0.0° Desktop HUD + Study AI Hub",
-                "description": "Biometric and ergonomics audit comparing Gauth (gauthmath.com by ByteDance) and ExamGhost across 35° downward phone gaze flags, corneal lens reflections, 24.5s photo latency vs 0.3s on-screen solving, and the 2-in-1 Claude 3.7 / ChatGPT / DeepSeek-R1 Study Workspace.",
-                "breadcrumb": { "@id": "https://examghost.com/gauth-vs-examghost#breadcrumb" },
+                "description": "Biometric and ergonomics audit comparing Gauth (gauthmath.com by ByteDance) and ExamGhost across 35° downward phone gaze flags, corneal lens reflections, 24.5s photo latency vs 0.3s on-screen solving, and the 2-in-1 Claude / ChatGPT / DeepSeek Study Workspace.",
+                "breadcrumb": { "@id": "https://www.examghost.com/gauth-vs-examghost#breadcrumb" },
                 "about": [
-                    { "@id": "https://examghost.com/gauth-vs-examghost#software" },
+                    { "@id": "https://www.examghost.com/gauth-vs-examghost#software" },
                     {
                         "@type": "SoftwareApplication",
                         "name": "Gauth (ByteDance)",
@@ -110,7 +110,7 @@ export default function GauthComparisonPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/gauth-vs-examghost#software",
+                "@id": "https://www.examghost.com/gauth-vs-examghost#software",
                 "name": "ExamGhost Desktop Stealth Extension & Multi-Model Study Hub",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
@@ -143,16 +143,16 @@ export default function GauthComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/gauth-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/gauth-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Gauth vs ExamGhost", "item": "https://examghost.com/gauth-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Gauth vs ExamGhost", "item": "https://www.examghost.com/gauth-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/gauth-vs-examghost#faq",
+                "@id": "https://www.examghost.com/gauth-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -183,7 +183,7 @@ export default function GauthComparisonPage() {
                         "name": "What is included in ExamGhost's 2-in-1 paid plans compared to Gauth Plus ($99.99/yr)?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "While Gauth Plus charges $11.99/mo or $99.99/yr for a mobile phone app, ExamGhost ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) gives you a 2-in-1 desktop suite: (1) Unlimited Stealth Extension Solves (Double-Click, Alt+S Hybrid Vision+DOM Snip, Alt+1 Invisible, Alt+2 Stealth, Alt+3 Explain, and Cmd+Shift+U Master Toggle) AND (2) Full access to the Study & Homework AI Workspace powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1."
+                            "text": "While Gauth Plus charges $11.99/mo or $99.99/yr for a mobile phone app, ExamGhost ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) gives you a 2-in-1 desktop suite: (1) Unlimited Stealth Extension Solves (Double-Click, Alt+S Hybrid Vision+DOM Snip, Alt+1 Invisible, Alt+2 Stealth, Alt+3 Explain, and Cmd+Shift+U Master Toggle) AND (2) Full access to the Study & Homework AI Workspace powered by Claude, ChatGPT, and DeepSeek."
                         }
                     },
                     {
@@ -306,7 +306,7 @@ export default function GauthComparisonPage() {
                                 </p>
 
                                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-7">
-                                    <strong>ExamGhost</strong> keeps your pupils locked at a <strong>0.0° horizontal reading vector</strong> on your laptop monitor. <kbd className="px-2 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Double-Click</kbd> any question or press <kbd className="px-2 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Alt+S</kbd> to solve equations in <strong>0.3 seconds</strong>—plus unlock our full <strong>Claude 3.7 Sonnet, ChatGPT (o3-mini / 4o) &amp; DeepSeek-R1 Study Workspace</strong>.
+                                    <strong>ExamGhost</strong> keeps your pupils locked at a <strong>0.0° horizontal reading vector</strong> on your laptop monitor. <kbd className="px-2 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Double-Click</kbd> any question or press <kbd className="px-2 py-0.5 rounded bg-white/10 border border-white/20 font-mono text-xs text-emerald-300">Alt+S</kbd> to solve equations in <strong>0.3 seconds</strong>—plus unlock our full <strong>Claude, ChatGPT &amp; DeepSeek Study Workspace</strong>.
                                 </p>
 
                                 {/* Desktop Stealth Hotkey Architecture Strip */}
@@ -452,7 +452,7 @@ export default function GauthComparisonPage() {
                                     <div className="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-between gap-3 text-xs">
                                         <div>
                                             <div className="font-bold text-cyan-200">Includes Multi-Model Study Hub</div>
-                                            <div className="text-[11px] text-slate-300">Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1</div>
+                                            <div className="text-[11px] text-slate-300">Claude + ChatGPT + DeepSeek</div>
                                         </div>
                                         <span className="px-2.5 py-1 rounded-full bg-emerald-400 text-slate-950 font-extrabold text-[11px] shrink-0">
                                             2-in-1 Pass
@@ -603,7 +603,7 @@ export default function GauthComparisonPage() {
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
-                                        <span><strong>Single-Model Bottleneck:</strong> You cannot switch between Claude 3.7 Sonnet, ChatGPT o3-mini, and DeepSeek-R1 to cross-verify proofs or draft essays.</span>
+                                        <span><strong>Single-Model Bottleneck:</strong> You cannot switch between Claude, ChatGPT, and DeepSeek to cross-verify proofs or draft essays.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -656,9 +656,9 @@ export default function GauthComparisonPage() {
                                             3 Frontier Models in 1 Workspace
                                         </div>
                                         <ul className="space-y-1.5 text-xs text-slate-300">
-                                            <li>• <strong className="text-white">Claude 3.7 Sonnet:</strong> Essays, lab reports &amp; syllabus PDFs</li>
-                                            <li>• <strong className="text-white">ChatGPT (GPT-4o / o3-mini):</strong> Multi-modal diagrams &amp; code</li>
-                                            <li>• <strong className="text-white">DeepSeek-R1:</strong> Symbolic calculus &amp; organic chem proofs</li>
+                                            <li>• <strong className="text-white">Claude:</strong> Essays, lab reports &amp; syllabus PDFs</li>
+                                            <li>• <strong className="text-white">ChatGPT:</strong> Multi-modal diagrams &amp; code</li>
+                                            <li>• <strong className="text-white">DeepSeek:</strong> Symbolic calculus &amp; organic chem proofs</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -789,7 +789,7 @@ export default function GauthComparisonPage() {
                                             <div className="text-xs text-ink-muted">Multi-model workspace for essays, PDFs &amp; proofs</div>
                                         </td>
                                         <td className="py-4 px-6 text-center font-bold text-emerald-800 bg-emerald-50/40">
-                                            ✓ Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1
+                                            ✓ Claude + ChatGPT + DeepSeek
                                         </td>
                                         <td className="py-4 px-6 text-center text-ink-secondary">
                                             ✗ Single Proprietary Mobile Wrapper
@@ -829,27 +829,7 @@ export default function GauthComparisonPage() {
                     STUDENT SWITCHER REPORT + FAQ ACCORDION
                 ============================================================ */}
                 <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-24">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#e0f2fe] via-[#ecfeff] to-[#f0fdf4] border border-black/10 p-7 sm:p-10 mb-16 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <div className="flex items-center gap-1 text-amber-500">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                ))}
-                            </div>
-                            <span className="px-3 py-1 rounded-full bg-white text-cyan-950 text-xs font-bold border border-black/10">
-                                Switched from Gauth Plus ($99.99/yr) to ExamGhost Academic Year Pass ($99/yr)
-                            </span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-2xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;I was paying for Gauth Plus and tried holding my iPhone against my water bottle during a Physics 2 quiz. My TA emailed me two days later because Respondus flagged four timestamps where my eyes tilted down 35 degrees and phone glare reflected off my blue-light glasses. I switched to ExamGhost—started with the 5 Free Solves / Day, and now I just double-click on my monitor at a 0.0° gaze angle. Having Claude 3.7 and DeepSeek-R1 built into the Study Hub for my lab reports saved me another $20/mo.&rdquo;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-black/10 text-xs text-ink-secondary">
-                            <div>
-                                <strong className="text-ink">Samantha P.</strong> · Pre-Med Junior, University of Florida
-                            </div>
-                            <span className="font-bold text-emerald-800">0.0° Center Gaze · 2-in-1 Extension + Study Hub</span>
-                        </div>
-                    </div>
+                    
 
                     <div className="text-center mb-10">
                         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
@@ -893,7 +873,7 @@ export default function GauthComparisonPage() {
                                 Put Your Phone Away. Solve on Desktop in 0.3 Seconds.
                             </h2>
                             <p className="text-sm text-slate-300 leading-relaxed">
-                                Start with <strong>5 Free Solves / Day</strong> (auto-refills every 24h, $0 no card needed) or unlock unlimited stealth solves + Claude 3.7, ChatGPT &amp; DeepSeek-R1 from $8.25/mo.
+                                Start with <strong>5 Free Solves / Day</strong> (auto-refills every 24h, $0 no card needed) or unlock unlimited stealth solves + Claude, ChatGPT &amp; DeepSeek from $8.25/mo.
                             </p>
                         </div>
                         <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">

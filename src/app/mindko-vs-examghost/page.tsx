@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/mindko-vs-examghost",
+        canonical: "https://www.examghost.com/mindko-vs-examghost",
     },
     openGraph: {
         title: "Mindko (College Tools) vs ExamGhost (2026) — Stealth Audit",
         description: "2026 teardown of Mindko (College Tools v3.0.5, 3.17★) vs ExamGhost. Replace 24 injected scripts and SidePanel blur logs with 0.3s stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/mindko-vs-examghost",
+        url: "https://www.examghost.com/mindko-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -118,17 +118,17 @@ export default function MindkoVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-14",
-                "dateModified": "2026-03-06",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/mindko-vs-examghost/#webpage",
-        url: "https://examghost.com/mindko-vs-examghost",
+        "@id": "https://www.examghost.com/mindko-vs-examghost/#webpage",
+        url: "https://www.examghost.com/mindko-vs-examghost",
         name: "Mindko (College Tools) vs ExamGhost (2026): 3.17★ 'Camouflage Mode' vs True Shadow DOM Stealth",
         description:
           "Technical comparison of Homework Solver by Mindko (formerly College Tools, v3.0.5) vs ExamGhost covering Camouflage Mode CSS, 24 injected jQuery scripts, 29 bank exclusions, Canvas blur protection, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
       },
       {
         "@type": "BreadcrumbList",
@@ -137,19 +137,19 @@ export default function MindkoVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Mindko vs ExamGhost",
-            item: "https://examghost.com/mindko-vs-examghost",
+            item: "https://www.examghost.com/mindko-vs-examghost",
           },
         ],
       },
@@ -251,7 +251,7 @@ export default function MindkoVsExamGhostPage() {
                     Verified Rating
                   </div>
                   <div className="text-sm font-bold text-[#111111]">
-                    3.17★ (211 Reviews) vs 4.9★ Verified Stealth
+                    3.17★ (211 Reviews) · ExamGhost: 5 Free Solves / Day
                   </div>
                 </div>
                 <div className="bg-white border border-neutral-200/90 rounded-xl p-3.5 shadow-sm">
@@ -701,7 +701,7 @@ export default function MindkoVsExamGhostPage() {
                       ExamGhost Annual / Lifetime
                     </div>
                     <div className="text-neutral-300">
-                      4.9★ Stealth • $8.25/mo ($99/yr) • $199 Lifetime
+                      Stealth • $8.25/mo ($99/yr) • $199 Lifetime
                     </div>
                   </div>
                   <span className="font-mono font-bold text-emerald-400 text-sm">
@@ -750,7 +750,7 @@ export default function MindkoVsExamGhostPage() {
                       3.17★ across 211 reviews (claims 4.8★ on website)
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      4.9★ Student-Verified Stealth Engine
+                      Closed Shadow DOM Stealth Engine
                     </td>
                   </tr>
                   <tr>
@@ -848,10 +848,10 @@ export default function MindkoVsExamGhostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

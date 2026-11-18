@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/studybotpro-vs-examghost",
+        canonical: "https://www.examghost.com/studybotpro-vs-examghost",
     },
     openGraph: {
         title: "StudyBotPro vs ExamGhost (2026) — Untrusted Clicks & SSL",
         description: "2026 audit of StudyBotPro vs ExamGhost. Why isTrusted:false auto-clickers and broken SSL certificates fail compared to 0.3s Shadow DOM & 5 Free Solves / Day.",
-        url: "https://examghost.com/studybotpro-vs-examghost",
+        url: "https://www.examghost.com/studybotpro-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -85,17 +85,17 @@ export default function StudyBotProVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-13",
-                "dateModified": "2026-03-25",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/studybotpro-vs-examghost/#webpage",
-        url: "https://examghost.com/studybotpro-vs-examghost",
+        "@id": "https://www.examghost.com/studybotpro-vs-examghost/#webpage",
+        url: "https://www.examghost.com/studybotpro-vs-examghost",
         name: "StudyBotPro vs ExamGhost (2026): Auto-Select 'isTrusted: false' & Broken SSL vs True Stealth",
         description:
           "2026 technical comparison of StudyBotPro (studybotpro.co) and ExamGhost covering synthetic Auto Select clicks, expired Namecheap SSL certificates, SpeedGrader focus logs, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
         "about": [
           {
             "@type": "SoftwareApplication",
@@ -138,19 +138,19 @@ export default function StudyBotProVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "StudyBotPro vs ExamGhost",
-            item: "https://examghost.com/studybotpro-vs-examghost",
+            item: "https://www.examghost.com/studybotpro-vs-examghost",
           },
         ],
       },
@@ -386,7 +386,7 @@ export default function StudyBotProVsExamGhostPage() {
                   <ShieldCheck className="w-3.5 h-3.5" />
                   ExamGhost Stealth Keyboard &amp; Model Suite
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -404,7 +404,7 @@ export default function StudyBotProVsExamGhostPage() {
               <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                 <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                 <div className="font-bold text-white text-sm">
-                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                  Claude · ChatGPT · DeepSeek
                 </div>
               </div>
             </div>
@@ -610,7 +610,7 @@ export default function StudyBotProVsExamGhostPage() {
                     <strong>ExamGhost</strong> protects your focus state across 8
                     browser layers, cross-verifies every question across{" "}
                     <strong>
-                      Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1
+                      Claude, ChatGPT, and DeepSeek
                     </strong>
                     , and starts with <strong>5 free solves / day</strong> ($0, no
                     card)—or <strong>$99/yr ($8.25/mo)</strong> or <strong>$199 Lifetime Degree Pass</strong>, saving you over
@@ -790,10 +790,10 @@ export default function StudyBotProVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

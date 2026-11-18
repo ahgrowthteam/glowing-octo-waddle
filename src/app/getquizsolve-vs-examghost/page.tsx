@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     },
     description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/getquizsolve-vs-examghost",
+        canonical: "https://www.examghost.com/getquizsolve-vs-examghost",
     },
     openGraph: {
         title: "GetQuizSolve vs ExamGhost (2026) — 5/Day Cap & DOM Audit",
         description: "2026 review of GetQuizSolve vs ExamGhost. Avoid untrusted auto-fill events and 5-question daily caps with ExamGhost's 0.3s Shadow DOM HUD & 5 Free Solves / Day.",
-        url: "https://examghost.com/getquizsolve-vs-examghost",
+        url: "https://www.examghost.com/getquizsolve-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -63,16 +63,16 @@ export default function GetQuizSolveComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-23",
-                "dateModified": "2026-03-16",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/getquizsolve-vs-examghost#webpage",
-                "url": "https://examghost.com/getquizsolve-vs-examghost",
+                "@id": "https://www.examghost.com/getquizsolve-vs-examghost#webpage",
+                "url": "https://www.examghost.com/getquizsolve-vs-examghost",
                 "name": "GetQuizSolve (AI Quiz Solve) vs ExamGhost (2026 Review) | The isTrusted Autofill Danger",
                 "description": "Technical evaluation comparing GetQuizSolve (AI Quiz Solve v1.2.2, cjdhcfbjcepcmlacbaejclglodjghefa) and ExamGhost across DOM injection stealth, event telemetry verification, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/getquizsolve-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/getquizsolve-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -123,16 +123,16 @@ export default function GetQuizSolveComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/getquizsolve-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/getquizsolve-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "GetQuizSolve vs ExamGhost", "item": "https://examghost.com/getquizsolve-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "GetQuizSolve vs ExamGhost", "item": "https://www.examghost.com/getquizsolve-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/getquizsolve-vs-examghost#faq",
+                "@id": "https://www.examghost.com/getquizsolve-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -700,9 +700,9 @@ export default function GetQuizSolveComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -737,29 +737,7 @@ export default function GetQuizSolveComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#e2d3fa]/40 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;During my economics midterm, GetQuizSolve cut me off after my 5th double-click and 2nd graph screenshot with a paywall asking for $4.99/week or $12.99/month. Even worse, its default Auto-fill couldn&apos;t select Canvas New Quizzes radio buttons without opening the toolbar popup to switch to Highlight mode, which logged window blurs. I switched to ExamGhost: 5 Free Solves / Day right out of the box, zero daily limits, and authentic hardware clicks from a closed Shadow DOM HUD.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-purple-900 text-white font-bold flex items-center justify-center text-sm">
-                                MD
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Marcus D.</div>
-                                <div className="text-xs text-ink-muted">Economics Major · UT Austin</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">
@@ -902,26 +880,26 @@ export default function GetQuizSolveComparisonPage() {
                                 Powered by 3 Frontier AI Models
                             </h3>
                             <p className="text-sm text-neutral-600">
-                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                                Full access to Claude, ChatGPT, and DeepSeek for complete step-by-step derivation and homework mastery.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.

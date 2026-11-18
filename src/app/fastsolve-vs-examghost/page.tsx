@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
     },
-    description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "Compare FastSolve with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/fastsolve-vs-examghost",
+        canonical: "https://www.examghost.com/fastsolve-vs-examghost",
     },
     openGraph: {
         title: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
-        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/fastsolve-vs-examghost",
+        description: "Compare FastSolve with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/fastsolve-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "FastSolve vs ExamGhost (2026) — Forced Auto-Fill DOM Audit",
-        description: "Compare FastSolve (fastsolve.app) with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "Compare FastSolve with ExamGhost. Avoid forced DOM auto-fill mutations and cloud question logging with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -63,16 +63,16 @@ export default function FastSolveComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-14",
-                "dateModified": "2026-03-20",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/fastsolve-vs-examghost#webpage",
-                "url": "https://examghost.com/fastsolve-vs-examghost",
+                "@id": "https://www.examghost.com/fastsolve-vs-examghost#webpage",
+                "url": "https://www.examghost.com/fastsolve-vs-examghost",
                 "name": "FastSolve vs ExamGhost (2026 Review) | Gemini Flash Speed vs Focus Stealth",
                 "description": "Technical evaluation comparing FastSolve (fastsolve.app) and ExamGhost across Canvas SpeedGrader audit log stealth, STEM model routing, data retention, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/fastsolve-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/fastsolve-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -123,16 +123,16 @@ export default function FastSolveComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/fastsolve-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/fastsolve-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "FastSolve vs ExamGhost", "item": "https://examghost.com/fastsolve-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "FastSolve vs ExamGhost", "item": "https://www.examghost.com/fastsolve-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/fastsolve-vs-examghost#faq",
+                "@id": "https://www.examghost.com/fastsolve-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -674,9 +674,9 @@ export default function FastSolveComparisonPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -711,29 +711,7 @@ export default function FastSolveComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#bfe3f6]/40 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I paid $9.99 a week for FastSolve thinking its &lsquo;Invisible&rsquo; mode wouldn&apos;t touch the page, but it still forcibly auto-filled radio buttons on Canvas and got two multi-step ALEKS chemistry problems wrong because it routes science to Gemini Flash. Switching to ExamGhost gave me 5 free solves / day to test, accurate STEM steps inside a subtle Shadow DOM dot, and zero SpeedGrader flags.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-sky-900 text-white font-bold flex items-center justify-center text-sm">
-                                JR
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Jason R.</div>
-                                <div className="text-xs text-ink-muted">Biochemistry Major · University of Florida</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         "examghost hawkes",
     ],
     alternates: {
-        canonical: "https://examghost.com/hawkes-learning-certify-solver",
+        canonical: "https://www.examghost.com/hawkes-learning-certify-solver",
     },
     openGraph: {
         title: "Hawkes Learning Certify Solver (2026) — Strike Shield & Algebra AI | ExamGhost",
         description:
             "Double-click any Hawkes Learning Certify mode problem for 0.3s inline answers. Protect your 3-strike allowance and certify on your first run.",
-        url: "https://examghost.com/hawkes-learning-certify-solver",
+        url: "https://www.examghost.com/hawkes-learning-certify-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -318,7 +318,7 @@ const HAWKES_CONFIG = {
             q: "How does ExamGhost protect my 3-strike allowance in Hawkes Certify mode?",
             a: (
                 <>
-                    <strong>ExamGhost verifies solutions using DeepSeek-R1 reasoning models with domain restriction checks before displaying answers.</strong> By filtering out extraneous roots and formatting mathematical expressions exactly as Hawkes expects, ExamGhost ensures every submitted answer is correct, keeping your strikes at zero.
+                    <strong>ExamGhost verifies solutions using DeepSeek reasoning models with domain restriction checks before displaying answers.</strong> By filtering out extraneous roots and formatting mathematical expressions exactly as Hawkes expects, ExamGhost ensures every submitted answer is correct, keeping your strikes at zero.
                 </>
             ),
         },
@@ -399,23 +399,23 @@ const ALL_LMS_LINKS = [
 export default function HawkesLearningCertifySolverPage() {
     const config = HAWKES_CONFIG;
     const safeSlug = config.slug;
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": `https://examghost.com/${config.slug}#webpage`,
-                "url": `https://examghost.com/${config.slug}`,
+                "@id": `https://www.examghost.com/${config.slug}#webpage`,
+                "url": `https://www.examghost.com/${config.slug}`,
                 "name": "Hawkes Learning Certify Solver (2026) — Strike Shield & Algebra AI | ExamGhost",
                 "description": "Pass Hawkes Learning Certify mode without burning strikes. Get 100% accurate college algebra and statistics solutions in 0.3s. 5 free solves / day.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-10-27",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": `https://examghost.com/${config.slug}#breadcrumb` },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": `https://www.examghost.com/${config.slug}#breadcrumb` },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -423,7 +423,7 @@ export default function HawkesLearningCertifySolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `https://examghost.com/${config.slug}#software`,
+                "@id": `https://www.examghost.com/${config.slug}#software`,
                 "name": "ExamGhost Hawkes Learning Certify Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -443,16 +443,16 @@ export default function HawkesLearningCertifySolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": `https://examghost.com/${config.slug}#breadcrumb`,
+                "@id": `https://www.examghost.com/${config.slug}#breadcrumb`,
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://examghost.com/canvas-quiz-solver-free-demo" },
-                    { "@type": "ListItem", "position": 3, "name": "Hawkes Learning Solver", "item": `https://examghost.com/${config.slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://www.examghost.com/canvas-quiz-solver-free-demo" },
+                    { "@type": "ListItem", "position": 3, "name": "Hawkes Learning Solver", "item": `https://www.examghost.com/${config.slug}` }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://examghost.com/${config.slug}#faq`,
+                "@id": `https://www.examghost.com/${config.slug}#faq`,
                 "mainEntity": config.faqs.map((faq) => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -464,7 +464,7 @@ export default function HawkesLearningCertifySolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": `https://examghost.com/${config.slug}#video`,
+                "@id": `https://www.examghost.com/${config.slug}#video`,
                 "name": "Hawkes Learning Certify Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves Hawkes Learning college algebra and statistics problems without burning strikes.",
                 "thumbnailUrl": [posterUrl],
@@ -474,12 +474,12 @@ export default function HawkesLearningCertifySolverPage() {
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "HowTo",
-                "@id": `https://examghost.com/${config.slug}#howto`,
+                "@id": `https://www.examghost.com/${config.slug}#howto`,
                 "name": config.howToSection.heading,
                 "description": "Step-by-step workflow to pass Hawkes Learning Certify mode on Attempt 1 with zero strikes.",
                 "totalTime": "PT1M",
@@ -518,7 +518,7 @@ export default function HawkesLearningCertifySolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>

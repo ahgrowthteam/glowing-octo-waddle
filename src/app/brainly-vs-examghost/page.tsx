@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 5 Free Solves / Day ($0).",
     alternates: {
-        canonical: "https://examghost.com/brainly-vs-examghost",
+        canonical: "https://www.examghost.com/brainly-vs-examghost",
     },
     openGraph: {
         title: "Brainly vs ExamGhost (2026) — Forum Answers vs 0.3s AI HUD",
         description: "Compare Brainly ($29.99/mo) with ExamGhost. Skip outdated forum guesses and tab-switch logs with 0.3s inline Canvas solving and 5 Free Solves / Day ($0).",
-        url: "https://examghost.com/brainly-vs-examghost",
+        url: "https://www.examghost.com/brainly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,17 +64,17 @@ export default function BrainlyVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-27",
-                "dateModified": "2026-03-16",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/brainly-vs-examghost#webpage",
-                "url": "https://examghost.com/brainly-vs-examghost",
+                "@id": "https://www.examghost.com/brainly-vs-examghost#webpage",
+                "url": "https://www.examghost.com/brainly-vs-examghost",
                 "name": "Brainly vs ExamGhost (2026) | Crowdsourced Forum Guesses vs 0.3s Live Canvas Exam Solver",
                 "description": "Comparison of Brainly (brainly.com & Brainly Homework Help extension) vs ExamGhost across randomized STEM accuracy, Canvas Quiz Log stealth, and Brainly Plus ($9.99/mo) / Brainly Tutor ($29.99/mo) pricing.",
                 "breadcrumb": {
-                    "@id": "https://examghost.com/brainly-vs-examghost#breadcrumb"
+                    "@id": "https://www.examghost.com/brainly-vs-examghost#breadcrumb"
                 },
                 "about": [
                     {
@@ -146,31 +146,31 @@ export default function BrainlyVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/brainly-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/brainly-vs-examghost#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Compare Extensions",
-                        "item": "https://examghost.com/compare-canvas-hack-extensions"
+                        "item": "https://www.examghost.com/compare-canvas-hack-extensions"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Brainly vs ExamGhost",
-                        "item": "https://examghost.com/brainly-vs-examghost"
+                        "item": "https://www.examghost.com/brainly-vs-examghost"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/brainly-vs-examghost#faq",
+                "@id": "https://www.examghost.com/brainly-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -351,7 +351,7 @@ export default function BrainlyVsExamghostPage() {
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-6">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                            <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                             <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
@@ -569,9 +569,9 @@ export default function BrainlyVsExamghostPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

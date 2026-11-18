@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 5 Free Solves / Day ($0 trial).",
     alternates: {
-        canonical: "https://examghost.com/quizsolverai-vs-examghost",
+        canonical: "https://www.examghost.com/quizsolverai-vs-examghost",
     },
     openGraph: {
         title: "QuizSolver AI vs ExamGhost (2026) — $224/Yr Cap vs Stealth",
         description: "Compare QuizSolver AI ($64.99–$224.99/yr capped plans) with ExamGhost. Get 0.3s closed Shadow DOM stealth, Focus Shield, and 5 Free Solves / Day ($0 trial).",
-        url: "https://examghost.com/quizsolverai-vs-examghost",
+        url: "https://www.examghost.com/quizsolverai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,16 +64,16 @@ export default function QuizSolverAIComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-11",
-                "dateModified": "2026-03-06",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/quizsolverai-vs-examghost#webpage",
-                "url": "https://examghost.com/quizsolverai-vs-examghost",
+                "@id": "https://www.examghost.com/quizsolverai-vs-examghost#webpage",
+                "url": "https://www.examghost.com/quizsolverai-vs-examghost",
                 "name": "QuizSolver AI vs ExamGhost (2026 Review) | $224.99/yr Tiers & Iframe Blur",
                 "description": "Technical forensics comparing QuizSolver AI (quizsolverai.com, Chrome ID ijlpijnplhhbggppiebkfakonpjdikhl) and ExamGhost regarding Canvas window.blur detection, 120/800 answer caps, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/quizsolverai-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/quizsolverai-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -118,16 +118,16 @@ export default function QuizSolverAIComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/quizsolverai-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/quizsolverai-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "QuizSolver AI vs ExamGhost", "item": "https://examghost.com/quizsolverai-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "QuizSolver AI vs ExamGhost", "item": "https://www.examghost.com/quizsolverai-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/quizsolverai-vs-examghost#faq",
+                "@id": "https://www.examghost.com/quizsolverai-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -341,7 +341,7 @@ export default function QuizSolverAIComparisonPage() {
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b border-white/10">
                             <div>
                                 <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-1">Modern Stealth Controls</span>
-                                <h3 className="font-display text-lg font-bold">Complete 6-Hotkey Suite</h3>
+                                <h2 className="font-display text-lg font-bold">Complete 6-Hotkey Suite</h2>
                             </div>
                             <div className="flex flex-wrap gap-2 text-xs font-mono">
                                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -357,7 +357,7 @@ export default function QuizSolverAIComparisonPage() {
                                 Trigger instant inline solves via <strong>Double-Click</strong> or <strong>Alt+S</strong> Vision Snip. Switch stealth opacity via <strong>Alt+1</strong> (15% Ghost mode), toggle compact HUD with <strong>Alt+2</strong>, reveal step-by-step derivations with <strong>Alt+3</strong>, and execute the instant emergency kill switch with <strong>⌘+Shift+U</strong>.
                             </p>
                             <div className="shrink-0 font-mono text-[11px] text-emerald-300 bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-500/40">
-                                Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                                Claude · ChatGPT · DeepSeek
                             </div>
                         </div>
                     </div>
@@ -674,9 +674,9 @@ export default function QuizSolverAIComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -711,27 +711,7 @@ export default function QuizSolverAIComparisonPage() {
                     </div>
                 </section>
 
-                {/* VERIFIED STUDENT MIGRATION STORY */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10 relative">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &ldquo;My Organic Chemistry TA pulled me into office hours because my Canvas SpeedGrader log showed 22 separate &lsquo;Stopped viewing the quiz&rsquo; entries. I was using QuizSolver AI and had no clue clicking their Custom Answer Box was de-focusing my tab—plus I burned through my 120 monthly Quiz Pass credits in two weeks. I switched to ExamGhost that night. The 5 Free Solves / Day let me test it risk-free, Focus Shield keeps the tab 100% active, and the $99/yr Academic Year Pass ($8.25/mo) is less than half of QuizSolver&apos;s $224.99/yr plan.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center justify-between text-xs text-ink-secondary pt-4 border-t border-black/10">
-                            <div>
-                                <span className="font-bold text-ink">Marcus T.</span> — Pre-Med Sophomore, UC San Diego
-                            </div>
-                            <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified ExamGhost User
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">

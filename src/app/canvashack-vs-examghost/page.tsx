@@ -35,16 +35,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Stopwatch & TCO Audit",
+        absolute: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Audit",
     },
-    description: "CanvasHack charges $24.99/mo or $149.99 just to block tab logs with zero AI solver—forcing a separate $20/mo ChatGPT sub. ExamGhost includes Focus Shield, 0.3s Inline AI, Claude/ChatGPT/DeepSeek Study Hub & 5 Free Solves/Day.",
+    description: "CanvasHack charges $24.99/mo or $149.99 to block tab logs with no AI solver. ExamGhost adds Focus Shield, 0.3s inline AI & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/canvashack-vs-examghost",
+        canonical: "https://www.examghost.com/canvashack-vs-examghost",
     },
     openGraph: {
-        title: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Stopwatch & TCO Audit",
+        title: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Audit",
         description: "CanvasHack charges $24.99/mo or $149.99 just to block tab logs with zero AI solver. ExamGhost includes Focus Shield, 0.3s AI solving, Multi-Model Study Hub & 5 Free Solves/Day.",
-        url: "https://examghost.com/canvashack-vs-examghost",
+        url: "https://www.examghost.com/canvashack-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Stopwatch & TCO Audit",
+        title: "CanvasHack vs ExamGhost (2026) — $149.99 No-AI Audit",
         description: "CanvasHack charges $24.99/mo or $149.99 just to block tab logs with zero AI solver. ExamGhost includes Focus Shield, 0.3s AI solving, Multi-Model Study Hub & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
@@ -69,11 +69,11 @@ export default function CanvasHackComparisonPage() {
     const faqs = [
         {
             question: "Does CanvasHack solve exam questions automatically or include an AI model?",
-            answer: "No. On canvashack.com under the FAQ 'Can it give me answers directly?', CanvasHack explicitly admits: 'Not yet, but you can safely switch tabs to search, copy, or use tools like GPT without being flagged.' It has zero AI model, zero OCR vision engine, and zero inline question solver. ExamGhost solves questions directly on your quiz page in 0.3 seconds via Double-Click or Alt+S Hybrid Vision+DOM Snip, and includes a full Study & Homework AI Workspace powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1."
+            answer: "No. On canvashack.com under the FAQ 'Can it give me answers directly?', CanvasHack explicitly admits: 'Not yet, but you can safely switch tabs to search, copy, or use tools like GPT without being flagged.' It has zero AI model, zero OCR vision engine, and zero inline question solver. ExamGhost solves questions directly on your quiz page in 0.3 seconds via Double-Click or Alt+S Hybrid Vision+DOM Snip, and includes a full Study & Homework AI Workspace powered by Claude, ChatGPT, and DeepSeek."
         },
         {
             question: "What is the real 12-month cost of CanvasHack compared to ExamGhost?",
-            answer: "CanvasHack charges $24.99/month ($299.88/year) or $149.99 one-time solely for tab-blur masking and first-attempt answer saving. Because it has no built-in AI, you must also pay $20/month ($240/year) for a separate ChatGPT Plus or Claude Pro subscription—bringing your actual 1-year total to $389.99–$539.88. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 no credit card needed), and paid plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) include both unlimited stealth extension solves AND full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 inside the Study AI Workspace."
+            answer: "CanvasHack charges $24.99/month ($299.88/year) or $149.99 one-time solely for tab-blur masking and first-attempt answer saving. Because it has no built-in AI, you must also pay $20/month ($240/year) for a separate ChatGPT Plus or Claude Pro subscription—bringing your actual 1-year total to $389.99–$539.88. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0 no credit card needed), and paid plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) include both unlimited stealth extension solves AND full access to Claude, ChatGPT, and DeepSeek inside the Study AI Workspace."
         },
         {
             question: "Can professors still catch CanvasHack users in Canvas SpeedGrader?",
@@ -98,62 +98,52 @@ export default function CanvasHackComparisonPage() {
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/canvashack-vs-examghost#techarticle",
+                "@id": "https://www.examghost.com/canvashack-vs-examghost#techarticle",
                 "headline": "CanvasHack vs ExamGhost (2026) — The $149.99 No-AI Split-Screen Stopwatch & TCO Dossier",
                 "description": "Forensic financial and stopwatch comparison of CanvasHack (canvashack.com, Chrome ID gfpnfbkflmiijpmfknhjbaoiippanmhh) vs ExamGhost v4.2 across split-screen latency, 12-month Total Cost of Ownership, and multi-model AI capabilities.",
                 "datePublished": "2026-01-21",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Security & EdTech Research",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
-                "mainEntityOfPage": "https://examghost.com/canvashack-vs-examghost",
+                "mainEntityOfPage": "https://www.examghost.com/canvashack-vs-examghost",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", ".tco-verdict"]
                 },
                 "about": [
-                    { "@id": "https://examghost.com/canvashack-vs-examghost#examghost-app" },
-                    { "@id": "https://examghost.com/canvashack-vs-examghost#canvashack-app" }
+                    { "@id": "https://www.examghost.com/canvashack-vs-examghost#examghost-app" },
+                    { "@id": "https://www.examghost.com/canvashack-vs-examghost#canvashack-app" }
                 ]
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/canvashack-vs-examghost#examghost-app",
+                "@id": "https://www.examghost.com/canvashack-vs-examghost#examghost-app",
                 "name": "ExamGhost",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "ratingCount": "1420"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "0.00",
                     "highPrice": "199.00",
                     "priceCurrency": "USD",
                     "offerCount": "4",
-                    "description": "5 Free Solves / Day ($0 auto-refill every 24h), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime including Claude 3.7 Sonnet, ChatGPT o3-mini/4o & DeepSeek-R1 Study Workspace."
+                    "description": "5 Free Solves / Day ($0 auto-refill every 24h), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime including Claude, ChatGPT & DeepSeek Study Workspace."
                 }
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/canvashack-vs-examghost#canvashack-app",
+                "@id": "https://www.examghost.com/canvashack-vs-examghost#canvashack-app",
                 "name": "CanvasHack",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome Extension",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "3.9",
-                    "ratingCount": "82"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "24.99",
@@ -164,16 +154,16 @@ export default function CanvasHackComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvashack-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvashack-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CanvasHack vs ExamGhost", "item": "https://examghost.com/canvashack-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasHack vs ExamGhost", "item": "https://www.examghost.com/canvashack-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvashack-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvashack-vs-examghost#faq",
                 "mainEntity": faqs.map((f) => ({
                     "@type": "Question",
                     "name": f.question,
@@ -196,7 +186,7 @@ export default function CanvasHackComparisonPage() {
         {
             feature: "Study & Homework AI Workspace",
             sub: "Full web hub for essays, syllabus PDFs & step-by-step math proofs",
-            examghost: "✓ Included (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)",
+            examghost: "✓ Included (Claude + ChatGPT + DeepSeek)",
             canvashack: "✗ None — forces separate $20/mo ChatGPT Plus sub"
         },
         {
@@ -319,7 +309,7 @@ export default function CanvasHackComparisonPage() {
                                 </p>
 
                                 <p className="text-base sm:text-lg text-emerald-200/90 leading-relaxed mb-8">
-                                    <strong>ExamGhost</strong> replaces both subscriptions in one stealth suite: 100% <strong>Focus Shield</strong> blur interception, a <strong>0.3-second <code className="font-mono text-sm bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/30">Double-Click</code> inline solver</strong>, <code className="font-mono text-sm bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/30">Alt+S</code> Vision Snip, <em>plus</em> the full <strong>Study &amp; Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</strong>. Start with <strong>5 Free Solves / Day</strong>—$0, no card required.
+                                    <strong>ExamGhost</strong> replaces both subscriptions in one stealth suite: 100% <strong>Focus Shield</strong> blur interception, a <strong>0.3-second <code className="font-mono text-sm bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/30">Double-Click</code> inline solver</strong>, <code className="font-mono text-sm bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/30">Alt+S</code> Vision Snip, <em>plus</em> the full <strong>Study &amp; Homework AI Workspace (Claude + ChatGPT + DeepSeek)</strong>. Start with <strong>5 Free Solves / Day</strong>—$0, no card required.
                                 </p>
 
                                 {/* CTAs */}
@@ -511,7 +501,7 @@ export default function CanvasHackComparisonPage() {
 
                                     <div className="flex items-start justify-between pb-3.5 border-b border-dashed border-black/15">
                                         <div>
-                                            <div className="font-bold text-ink">3. Claude 3.7 Sonnet / DeepSeek-R1 Access</div>
+                                            <div className="font-bold text-ink">3. Claude / DeepSeek Access</div>
                                             <div className="text-xs text-ink-muted font-sans mt-0.5">
                                                 Not included — costs another $20/mo if you want Claude Pro for essays/STEM
                                             </div>
@@ -588,7 +578,7 @@ export default function CanvasHackComparisonPage() {
                                         <div>
                                             <div className="font-bold text-emerald-300">3. Study &amp; Homework AI Workspace</div>
                                             <div className="text-xs text-slate-300 font-sans mt-0.5">
-                                                Full web access to <strong>Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini) &amp; DeepSeek-R1</strong> (saves $60+/mo)
+                                                Full web access to <strong>Claude, ChatGPT &amp; DeepSeek</strong> (saves $60+/mo)
                                             </div>
                                         </div>
                                         <span className="font-extrabold text-emerald-300 whitespace-nowrap ml-4">$0 EXTRA</span>
@@ -842,7 +832,7 @@ export default function CanvasHackComparisonPage() {
                                 Stop paying $149.99 for a tab-blocker without AI.
                             </h2>
                             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                                Get 5 Free Solves / Day ($0, no credit card needed), or unlock unlimited stealth solves + the Claude 3.7 Sonnet, ChatGPT o3-mini/4o &amp; DeepSeek-R1 Study Workspace for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
+                                Get 5 Free Solves / Day ($0, no credit card needed), or unlock unlimited stealth solves + the Claude, ChatGPT &amp; DeepSeek Study Workspace for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime.
                             </p>
                         </div>
                         <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">

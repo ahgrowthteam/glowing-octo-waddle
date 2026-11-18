@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
     },
-    description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/canvaswizard-vs-examghost",
+        canonical: "https://www.examghost.com/canvaswizard-vs-examghost",
     },
     openGraph: {
         title: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
-        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/canvaswizard-vs-examghost",
+        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/canvaswizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "CanvasWizard vs ExamGhost (2026) — #wiz_button DOM Audit",
-        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "2026 review of CanvasWizard vs ExamGhost. Avoid detectable #wiz_button DOM injections and 48-hour trial traps with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -66,16 +66,16 @@ export default function CanvasWizardComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-20",
-                "dateModified": "2026-03-06",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/canvaswizard-vs-examghost#webpage",
-                "url": "https://examghost.com/canvaswizard-vs-examghost",
+                "@id": "https://www.examghost.com/canvaswizard-vs-examghost#webpage",
+                "url": "https://www.examghost.com/canvaswizard-vs-examghost",
                 "name": "CanvasWizard vs ExamGhost (2026 Review) | Visible #wiz_button & 48h Trial Trap",
                 "description": "Technical evaluation comparing CanvasWizard (canvaswizard.co, Chrome ID hbofbijkdaghocnmlkenlfjbajkbaafb) and ExamGhost across #wiz_button DOM injection, 48-hour auto-renew trial traps, and latency.",
-                "breadcrumb": { "@id": "https://examghost.com/canvaswizard-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvaswizard-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -131,16 +131,16 @@ export default function CanvasWizardComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvaswizard-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvaswizard-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CanvasWizard vs ExamGhost", "item": "https://examghost.com/canvaswizard-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasWizard vs ExamGhost", "item": "https://www.examghost.com/canvaswizard-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvaswizard-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvaswizard-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -772,9 +772,9 @@ export default function CanvasWizardComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -809,29 +809,7 @@ export default function CanvasWizardComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#ffd5cc]/40 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I almost got written up because CanvasWizard injected a glowing mint-bordered &lsquo;Show Answer&rsquo; button and watermarked explanation box directly onto my Canvas quiz in a lecture hall. A TA spotted it from three rows back. Then they auto-billed my card after their 48-hour &lsquo;Only 6 spots left&rsquo; trial expired. ExamGhost gave me 5 Free Solves / Day with no credit card required, is 100% invisible with zero buttons on screen, and its $99/yr Academic Year Pass ($8.25/mo) is worth every cent.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-rose-950 text-white font-bold flex items-center justify-center text-sm">
-                                BN
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Brandon N.</div>
-                                <div className="text-xs text-ink-muted">Biology Major · University of Michigan</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

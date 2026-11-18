@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     },
     description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/canvaspass-vs-examghost",
+        canonical: "https://www.examghost.com/canvaspass-vs-examghost",
     },
     openGraph: {
         title: "CanvasPass vs ExamGhost (2026) — Credit Caps vs Unlimited",
         description: "CanvasPass paywalls its Tab-Switch Blocker and burns 10 credits per Smart solve. ExamGhost gives you Focus Shield, 0.3s AI stealth, and 5 Free Solves / Day.",
-        url: "https://examghost.com/canvaspass-vs-examghost",
+        url: "https://www.examghost.com/canvaspass-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -83,52 +83,52 @@ const jsonLd = {
         {
             "@type": "WebPage",
                 "datePublished": "2026-01-27",
-                "dateModified": "2026-03-06",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-            "@id": "https://examghost.com/canvaspass-vs-examghost#webpage",
-            url: "https://examghost.com/canvaspass-vs-examghost",
+            "@id": "https://www.examghost.com/canvaspass-vs-examghost#webpage",
+            url: "https://www.examghost.com/canvaspass-vs-examghost",
             name: "CanvasPass vs ExamGhost (2026) | Credit Math, Tab-Switch Paywall & OverlayPass Review",
             description: "Comprehensive 2026 comparison of CanvasPass (canvaspass.sbs) and ExamGhost across credit deduction math, tab-switch protection paywalls, DOM button injection vs zero-DOM stealth, and multi-LMS compatibility.",
             inLanguage: "en-US",
             isPartOf: {
                 "@type": "WebSite",
                 name: "ExamGhost",
-                url: "https://examghost.com",
+                url: "https://www.examghost.com",
             },
             breadcrumb: {
-                "@id": "https://examghost.com/canvaspass-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvaspass-vs-examghost#breadcrumb",
             },
         },
         {
             "@type": "BreadcrumbList",
-            "@id": "https://examghost.com/canvaspass-vs-examghost#breadcrumb",
+            "@id": "https://www.examghost.com/canvaspass-vs-examghost#breadcrumb",
             itemListElement: [
                 {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://examghost.com",
+                    item: "https://www.examghost.com",
                 },
                 {
                     "@type": "ListItem",
                     position: 2,
                     name: "Compare Extensions",
-                    item: "https://examghost.com/compare-canvas-hack-extensions",
+                    item: "https://www.examghost.com/compare-canvas-hack-extensions",
                 },
                 {
                     "@type": "ListItem",
                     position: 3,
                     name: "CanvasPass vs ExamGhost",
-                    item: "https://examghost.com/canvaspass-vs-examghost",
+                    item: "https://www.examghost.com/canvaspass-vs-examghost",
                 },
             ],
         },
         {
             "@type": "FAQPage",
-            "@id": "https://examghost.com/canvaspass-vs-examghost#faq",
+            "@id": "https://www.examghost.com/canvaspass-vs-examghost#faq",
             mainEntity: [
                 {
                     "@type": "Question",
@@ -713,9 +713,9 @@ export default function CanvasPassVsExamGhostPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

@@ -49,8 +49,8 @@ import {
 /* ============================================================================
    1. CANVASHACK VS EXAMGHOST DEMO:
    Organic Chemistry II (DIBAL-H hexanal), 42.4s Stopwatch Latency vs SpeedGrader,
-   0.3s Double-Click inline solve, Study Hub (Claude 3.7 tetrahedral mechanism,
-   ChatGPT o3-mini/4o selectivity matrix, DeepSeek-R1 activation energy proof)
+   0.3s Double-Click inline solve, Study Hub (Claude tetrahedral mechanism,
+   ChatGPT selectivity matrix, DeepSeek activation energy proof)
    ============================================================================ */
 export function CanvasHackStopwatchDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -160,11 +160,11 @@ export function CanvasHackStopwatchDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Math Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Math Proof', tag: 'explain' };
       }
     }
   };
@@ -407,10 +407,10 @@ export function CanvasHackStopwatchDemo() {
                       }`}
                     >
                       {model === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : model === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -568,11 +568,11 @@ export function ApexVisionTelemetryDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Math Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Math Proof', tag: 'explain' };
       }
     }
   };
@@ -782,10 +782,10 @@ export function ApexVisionTelemetryDemo() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -942,11 +942,11 @@ export function CollegeToolsManifestDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 DSB Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek DSB Proof', tag: 'explain' };
       }
     }
   };
@@ -1140,10 +1140,10 @@ export function CollegeToolsManifestDemo() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1224,7 +1224,7 @@ export function TranscriptStudyHubDemo() {
     {
       id: 2,
       label: '3. 2-in-1 Study Hub',
-      title: 'Claude 3.7 + ChatGPT + DeepSeek-R1 Macroeconomics Proof',
+      title: 'Claude + ChatGPT + DeepSeek Macroeconomics Proof',
       durationMs: 7500,
     },
   ];
@@ -1303,11 +1303,11 @@ export function TranscriptStudyHubDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 72, y: 18, clicking: true, label: 'DeepSeek-R1 Math Proof', tag: 'explain' };
+        return { x: 72, y: 18, clicking: true, label: 'DeepSeek Math Proof', tag: 'explain' };
       }
     }
   };
@@ -1516,10 +1516,10 @@ export function TranscriptStudyHubDemo() {
                       }`}
                     >
                       {model === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : model === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1609,7 +1609,7 @@ export function QuizonatorIframeSnipDemo() {
     {
       id: 2,
       label: '3. 2-in-1 Study Hub',
-      title: 'Claude 3.7 + ChatGPT + DeepSeek-R1 Histology Breakdown',
+      title: 'Claude + ChatGPT + DeepSeek Histology Breakdown',
       durationMs: 7500,
     },
   ];
@@ -1688,11 +1688,11 @@ export function QuizonatorIframeSnipDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 30, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 30, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 52, y: 18, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
+        return { x: 52, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Cable Theory', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Cable Theory', tag: 'explain' };
       }
     }
   };
@@ -1884,10 +1884,10 @@ export function QuizonatorIframeSnipDemo() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1968,7 +1968,7 @@ export function BetterCampusCoPilotDemo() {
     {
       id: 2,
       label: '3. 2-in-1 Study Hub',
-      title: 'Claude 3.7 + ChatGPT + DeepSeek-R1 Electrodynamics Proof',
+      title: 'Claude + ChatGPT + DeepSeek Electrodynamics Proof',
       durationMs: 7500,
     },
   ];
@@ -2045,11 +2045,11 @@ export function BetterCampusCoPilotDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 30, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 30, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 52, y: 18, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
+        return { x: 52, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Vector Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Vector Proof', tag: 'explain' };
       }
     }
   };
@@ -2230,10 +2230,10 @@ export function BetterCampusCoPilotDemo() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'chatgpt'
-                        ? 'ChatGPT o3-mini'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2314,7 +2314,7 @@ export function GauthWebcamGazeDemo() {
     {
       id: 2,
       label: '3. 2-in-1 Study Hub',
-      title: 'Study AI Workspace: DeepSeek-R1 + Claude 3.7 + ChatGPT Resonance Proof',
+      title: 'Study AI Workspace: DeepSeek + Claude + ChatGPT Resonance Proof',
       durationMs: 8000,
     },
   ];
@@ -2391,11 +2391,11 @@ export function GauthWebcamGazeDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'DeepSeek-R1 Math Proof', tag: 'explain' };
+        return { x: 28, y: 18, clicking: true, label: 'DeepSeek Math Proof', tag: 'explain' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'ChatGPT o3-mini SymPy', tag: 'default' };
+        return { x: 74, y: 18, clicking: true, label: 'ChatGPT SymPy', tag: 'default' };
       }
     }
   };
@@ -2607,10 +2607,10 @@ export function GauthWebcamGazeDemo() {
                       }`}
                     >
                       {m === 'deepseek'
-                        ? 'DeepSeek-R1'
+                        ? 'DeepSeek'
                         : m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
-                        : 'ChatGPT o3-mini'}
+                        ? 'Claude'
+                        : 'ChatGPT'}
                     </button>
                   ))}
                 </div>
@@ -2785,11 +2785,11 @@ export function CourseHeroPaywallDemo() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'DeepSeek-R1 Amortization', tag: 'explain' };
+        return { x: 50, y: 18, clicking: true, label: 'DeepSeek Amortization', tag: 'explain' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'ChatGPT o3-mini Python', tag: 'default' };
+        return { x: 74, y: 18, clicking: true, label: 'ChatGPT Python', tag: 'default' };
       }
     }
   };
@@ -2980,10 +2980,10 @@ export function CourseHeroPaywallDemo() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'deepseek'
-                        ? 'DeepSeek-R1'
-                        : 'ChatGPT o3-mini'}
+                        ? 'DeepSeek'
+                        : 'ChatGPT'}
                     </button>
                   ))}
                 </div>
@@ -3187,11 +3187,11 @@ export function CompareHubStackCalculator() {
       }
     } else {
       if (sceneProgress < 35) {
-        return { x: 28, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 28, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (sceneProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Math Proofs', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Math Proofs', tag: 'explain' };
       }
     }
   };
@@ -3204,7 +3204,7 @@ export function CompareHubStackCalculator() {
       <MotionDemoFrame
         title="58 Canvas Extensions Master Benchmark &amp; Telemetry Matrix"
         domainBadge="UNIVERSAL LMS"
-        browserUrl="https://examghost.com/compare-canvas-hack-extensions"
+        browserUrl="https://www.examghost.com/compare-canvas-hack-extensions"
         telemetryState={telemetry}
         footer={
           <MotionTimelineScrubber
@@ -3385,10 +3385,10 @@ export function CompareHubStackCalculator() {
                       }`}
                     >
                       {m === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : m === 'chatgpt'
-                        ? 'ChatGPT o3-mini/4o'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -3402,27 +3402,27 @@ export function CompareHubStackCalculator() {
                   </span>
                   <span className="text-[10px] font-mono text-indigo-300 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-500/30">
                     {activeModelTab === 'claude'
-                      ? 'Claude 3.7: Essays, Reasoning & Synthesis'
+                      ? 'Claude: Essays, Reasoning & Synthesis'
                       : activeModelTab === 'chatgpt'
-                      ? 'ChatGPT o3-mini/4o: Fast Quantitative STEM & Code'
-                      : 'DeepSeek-R1: Step-by-Step LaTeX Derivations'}
+                      ? 'ChatGPT: Fast Quantitative STEM & Code'
+                      : 'DeepSeek: Step-by-Step LaTeX Derivations'}
                   </span>
                 </div>
 
                 <div className="text-xs text-slate-300 leading-relaxed font-sans">
                   {activeModelTab === 'claude' && (
                     <p>
-                      <strong>Claude 3.7 Sonnet Specialization:</strong> Long-form humanities essays, complex conceptual logic, multi-page lab reports, and nuanced debate prompts with human-level academic tone.
+                      <strong>Claude Specialization:</strong> Long-form humanities essays, complex conceptual logic, multi-page lab reports, and nuanced debate prompts with human-level academic tone.
                     </p>
                   )}
                   {activeModelTab === 'chatgpt' && (
                     <p>
-                      <strong>ChatGPT (GPT-4o / o3-mini) Specialization:</strong> Lightning-fast code generation, algorithmic proofs, data structures, and rapid STEM calculations.
+                      <strong>ChatGPT Specialization:</strong> Lightning-fast code generation, algorithmic proofs, data structures, and rapid STEM calculations.
                     </p>
                   )}
                   {activeModelTab === 'deepseek' && (
                     <p>
-                      <strong>DeepSeek-R1 Specialization:</strong> Chain-of-thought mathematical proofs, physics tensor mechanics, calculus differential equations, and formal symbolic logic.
+                      <strong>DeepSeek Specialization:</strong> Chain-of-thought mathematical proofs, physics tensor mechanics, calculus differential equations, and formal symbolic logic.
                     </p>
                   )}
                 </div>
@@ -3490,7 +3490,7 @@ export function CompareHubStackCalculator() {
             {
               id: 'chatgpt',
               label: 'ChatGPT Plus',
-              sub: 'OpenAI o3-mini & GPT-4o',
+              sub: 'OpenAI ChatGPT',
               cost: 20,
               checked: hasChatGptPlus,
               toggle: () => setHasChatGptPlus((v) => !v),
@@ -3498,7 +3498,7 @@ export function CompareHubStackCalculator() {
             {
               id: 'claude',
               label: 'Claude Pro',
-              sub: 'Anthropic Claude 3.7 Sonnet',
+              sub: 'Anthropic Claude',
               cost: 20,
               checked: hasClaudePro,
               toggle: () => setHasClaudePro((v) => !v),

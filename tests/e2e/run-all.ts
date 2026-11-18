@@ -104,9 +104,9 @@ async function runE2ESuite() {
     if (!pricing.hasLifetime) pricingMissing.push('$199 Lifetime');
 
     const modelsMissing: string[] = [];
-    if (!models.hasClaude) modelsMissing.push('Claude 3.7 Sonnet');
-    if (!models.hasChatGpt) modelsMissing.push('ChatGPT o3-mini/4o');
-    if (!models.hasDeepSeek) modelsMissing.push('DeepSeek-R1');
+    if (!models.hasClaude) modelsMissing.push('Claude');
+    if (!models.hasChatGpt) modelsMissing.push('ChatGPT');
+    if (!models.hasDeepSeek) modelsMissing.push('DeepSeek');
 
     const schemaIssues: string[] = [];
     if (!schema.hasJsonLdScript) schemaIssues.push('Missing JSON-LD');
@@ -246,14 +246,14 @@ async function runE2ESuite() {
   if (missingModelRoutes.length === 0) {
     results.push({
       tier: 'Tier 1',
-      name: 'All 58 comparison routes showcase Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1',
+      name: 'All 58 comparison routes showcase Claude, ChatGPT, DeepSeek',
       passed: true,
     });
     console.log('  ✔ [PASS] AI Models Parity: All 58 routes showcase 3 frontier models');
   } else {
     results.push({
       tier: 'Tier 1',
-      name: 'All 58 comparison routes showcase Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1',
+      name: 'All 58 comparison routes showcase Claude, ChatGPT, DeepSeek',
       passed: false,
       message: `${missingModelRoutes.length} routes missing model citations`,
       details: missingModelRoutes.map((r) => `${r.route.slug}: missing [${r.models.missing.join(', ')}]`),

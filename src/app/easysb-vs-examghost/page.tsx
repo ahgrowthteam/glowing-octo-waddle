@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'Audit of EasySB (easysb.org) and discontinued SmarterBook vs ExamGhost. Why SmartBook-to-Excel exporters fail on graded McGraw-Hill Connect and Canvas exams.',
   alternates: {
-    canonical: 'https://examghost.com/easysb-vs-examghost',
+    canonical: 'https://www.examghost.com/easysb-vs-examghost',
   },
   openGraph: {
     title: 'EasySB & SmarterBook vs ExamGhost (2026) — SmartBook Audit',
     description:
       'SmarterBook shut down after a publisher cease-and-desist, and EasySB only exports McGraw-Hill SmartBook reading modules to Excel. See how ExamGhost solves all LMS exams.',
-    url: 'https://examghost.com/easysb-vs-examghost',
+    url: 'https://www.examghost.com/easysb-vs-examghost',
     siteName: 'ExamGhost',
     locale: 'en_US',
     type: 'website',
@@ -46,18 +46,19 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://examghost.com/easysb-vs-examghost#webpage",
+      "@id": "https://www.examghost.com/easysb-vs-examghost#webpage",
       "name": "EasySB & SmarterBook vs ExamGhost (2026): McGraw-Hill SmartBook & LMS Audit",
       "description":
         "Technical comparison of EasySB (easysb.org), archived SmarterBook, and ExamGhost across McGraw-Hill SmartBook 2.0, graded Connect exams, Canvas, Blackboard, DOM stealth, and network burst safety.",
-      "url": "https://examghost.com/easysb-vs-examghost",
+      "url": "https://www.examghost.com/easysb-vs-examghost",
       "datePublished": "2026-01-23",
-      "dateModified": "2026-03-24",
-      "breadcrumb": { "@id": "https://examghost.com/easysb-vs-examghost#breadcrumb" },
+      "dateModified": "2026-11-18",
+      "breadcrumb": { "@id": "https://www.examghost.com/easysb-vs-examghost#breadcrumb" },
       "author": {
         "@type": "Organization",
-        "name": "ExamGhost Security Engineering Team",
-        "url": "https://examghost.com",
+        "@id": "https://www.examghost.com/#organization",
+        "name": "ExamGhost",
+        "url": "https://www.examghost.com",
       },
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -114,31 +115,31 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/easysb-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/easysb-vs-examghost#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://examghost.com",
+          "item": "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Competitor Comparisons",
-          "item": "https://examghost.com/compare-canvas-hack-extensions",
+          "item": "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "EasySB & SmarterBook vs ExamGhost",
-          "item": "https://examghost.com/easysb-vs-examghost",
+          "item": "https://www.examghost.com/easysb-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/easysb-vs-examghost#faq",
+      "@id": "https://www.examghost.com/easysb-vs-examghost#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -525,7 +526,7 @@ export default function EasySbVsExamGhostPage() {
                     Actively Maintained, Closed Shadow DOM, Zero Publisher API Scraping
                   </h3>
                   <p className="text-sm text-neutral-800 leading-relaxed mb-4">
-                    Because ExamGhost uses independent Multi-Model AI (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1) + Vision OCR inside an isolated
+                    Because ExamGhost uses independent Multi-Model AI (Claude, ChatGPT, DeepSeek) + Vision OCR inside an isolated
                     <code>Closed Shadow DOM</code> rather than redistributing proprietary McGraw-Hill
                     answer keys, it works reliably across every 2026 textbook edition and platform
                     update.
@@ -859,10 +860,10 @@ export default function EasySbVsExamGhostPage() {
                   </td>
                 </tr>
                 <tr className="bg-emerald-50/20">
-                  <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                   <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                   <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
-                  <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                  <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                 </tr>
               </tbody>
             </table>
@@ -918,38 +919,7 @@ export default function EasySbVsExamGhostPage() {
         </div>
       </section>
 
-      {/* Section 5: Verified Student Review */}
-      <section className="py-14 px-4 bg-[#fed7aa]/35 border-b-2 border-[#111]">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-[#111] rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#111]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider bg-[#fed7aa] border border-[#111] px-2.5 py-1 rounded font-bold">
-                VERIFIED STUDENT MIGRATION // MCGRAW-HILL CONNECT + CANVAS
-              </span>
-              <span className="font-mono text-xs font-bold text-emerald-700">
-                ★★★★★ Switched from EasySB
-              </span>
-            </div>
-
-            <blockquote className="text-base sm:text-xl font-bold leading-relaxed text-[#111] mb-5">
-              &ldquo;I used SmarterBook last year before it got hit with a cease-and-desist, then
-              tried EasySB. The problem is my Managerial Accounting class only counts SmartBook
-              reading for 5% of our grade—the other 95% is graded McGraw-Hill Connect problem sets
-              and Canvas exams where EasySB doesn&apos;t work at all. ExamGhost works right inside
-              SmartBook 2.0 without making me export Excel files AND solves my graded Connect
-              accounting tables and Canvas midterms.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between text-xs font-mono text-neutral-600 border-t border-neutral-200 pt-4">
-              <div>
-                <strong className="text-[#111]">Devon K.</strong> • Junior, Accounting &amp; Supply
-                Chain • McGraw-Hill Connect &amp; Canvas
-              </div>
-              <div className="text-emerald-700 font-bold">Verified ExamGhost Pro User</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: FAQ */}
       <section className="py-14 px-4 border-b-2 border-[#111]">
@@ -969,7 +939,7 @@ export default function EasySbVsExamGhostPage() {
               open
             >
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>1. What happened to the SmarterBook Chrome extension for McGraw-Hill?</span>
+                <h3 className="inline font-bold m-0">1. What happened to the SmarterBook Chrome extension for McGraw-Hill?</h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -984,10 +954,10 @@ export default function EasySbVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   2. Does EasySB (easysb.org) work on graded McGraw-Hill Connect exams or Canvas
                   quizzes?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -1003,9 +973,9 @@ export default function EasySbVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   3. Can exporting SmartBook modules to Excel trigger McGraw-Hill Connect detection?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>
@@ -1022,10 +992,10 @@ export default function EasySbVsExamGhostPage() {
 
             <details className="bg-white border-2 border-[#111] rounded-xl p-5 shadow-[4px_4px_0px_#111] group">
               <summary className="cursor-pointer font-bold text-sm sm:text-base flex items-center justify-between">
-                <span>
+                <h3 className="inline font-bold m-0">
                   4. How does ExamGhost handle McGraw-Hill SmartBook 2.0 confidence ratings and
                   multi-select questions?
-                </span>
+                </h3>
                 <span className="font-mono text-xs group-open:rotate-180 transition-transform">
                   ▼
                 </span>

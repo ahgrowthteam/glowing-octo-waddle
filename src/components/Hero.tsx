@@ -164,7 +164,7 @@ export default function Hero() {
                 <div className="flex justify-center mb-6">
                     <span className="eyebrow bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-black/5 shadow-sm text-xs flex items-center gap-2">
                         <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
-                            <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={20} height={20} className="w-full h-full object-cover" />
+                            <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="ExamGhost Mascot" width={20} height={20} className="w-full h-full object-cover" />
                         </span>
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span className="font-semibold hidden sm:inline">THE INVISIBLE AI QUIZ SOLVER · CANVAS, BLACKBOARD, MOODLE &amp; 20+ MORE</span>
@@ -175,37 +175,27 @@ export default function Hero() {
                 {/* Editorial Headline */}
                 <h1 className="font-display text-[40px] sm:text-6xl lg:text-[68px] font-bold tracking-tight text-ink leading-[1.03] text-center mb-6 max-w-5xl mx-auto">
                     <span className="block">The Invisible AI Quiz Solver</span>
-                    <span className="block text-ink-secondary/80">That Answers Any Question in Seconds.</span>
+                    <span className="block text-ink-secondary/80">
+                        That Answers Any Question{' '}
+                        <span className="relative inline-block whitespace-nowrap text-ink">
+                            <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-[#ffe9a0]" aria-hidden="true" />
+                            in Seconds.
+                        </span>
+                    </span>
                 </h1>
 
                 {/* Subtitle */}
-                <p className="aeo-summary text-base sm:text-lg md:text-xl text-ink-muted text-center max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                <p className="aeo-summary text-base sm:text-lg md:text-xl text-ink-muted text-center max-w-2xl mx-auto mb-9 font-normal leading-relaxed">
                     Double-click any question on Canvas, Moodle, Blackboard or 20+ more and ExamGhost fills in the correct answer right on the page — no tab-switching, no copy-paste, and 100% screen-share safe.
                 </p>
 
-                {/* Live Demo Callout Pill */}
-                <div className="flex justify-center mb-6">
-                    <Link
-                        href="/canvas-quiz-solver-free-demo"
-                        prefetch={false}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-300 text-xs sm:text-[13px] font-semibold text-emerald-900 transition-all hover:scale-[1.02] shadow-xs group"
-                    >
-                        <span className="flex h-2 w-2 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
-                        </span>
-                        <span>Try the interactive Canvas demo — no install required</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 text-emerald-700" />
-                    </Link>
-                </div>
-
                 {/* Call To Actions */}
-                <div className="flex flex-wrap items-center justify-center gap-3.5 mb-5">
+                <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
                     <a
                         href="https://discord.gg/aCcsyKYJq4"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-dark px-7 py-3.5 text-base shadow-soft hover:shadow-lift inline-flex items-center gap-2.5"
+                        className="btn-dark px-8 py-4 text-base shadow-lift hover:shadow-lift inline-flex items-center gap-2.5"
                     >
                         <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                         <span>Add to Chrome — Free</span>
@@ -214,30 +204,49 @@ export default function Hero() {
                     <Link
                         href="/canvas-quiz-solver-free-demo"
                         prefetch={false}
-                        className="btn-soft px-6 py-3.5 text-base group inline-flex items-center gap-2 bg-white border border-black/10 text-ink shadow-xs hover:bg-[#faf8f4]"
+                        className="btn-soft px-7 py-4 text-base group inline-flex items-center gap-2 bg-white border border-black/10 text-ink shadow-xs hover:bg-[#faf8f4]"
                     >
-                        <span>Live Sandbox Demo</span>
+                        <span className="relative flex h-2 w-2" aria-hidden="true">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
+                        </span>
+                        <span>Try Live Demo — No Install</span>
                         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-ink" />
                     </Link>
+                </div>
 
+                {/* Trust row */}
+                <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-[13px] text-ink-muted mb-5">
+                    {['5 free solves / day', 'No credit card', '14-day money-back guarantee'].map((item) => (
+                        <li key={item} className="inline-flex items-center gap-1.5">
+                            <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Secondary community link */}
+                <p className="text-center text-xs text-ink-muted mb-14 sm:mb-16">
+                    Paid plans include the Claude, ChatGPT &amp; DeepSeek Study Hub ·{' '}
                     <a
                         href="https://discord.gg/aCcsyKYJq4"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-dark !bg-[#5865F2] hover:!bg-[#4752c4] px-6 py-3.5 text-base text-white border-transparent inline-flex items-center gap-2.5 group transition-all !shadow-[0_4px_16px_rgba(88,101,242,0.25)] hover:!shadow-[0_6px_22px_rgba(88,101,242,0.4)]"
+                        className="inline-flex items-center gap-1 font-semibold text-[#5865F2] hover:underline"
                     >
-                        <FaDiscord className="w-4 h-4 text-white transition-transform group-hover:scale-110" aria-hidden="true" />
-                        <span>Join Student Discord</span>
+                        <FaDiscord className="w-3.5 h-3.5" aria-hidden="true" />
+                        Join the student Discord
                     </a>
-                </div>
-
-                {/* Fine print */}
-                <p className="text-center text-xs text-ink-muted mb-14 sm:mb-16">
-                    Free · 5 Free Solves / Day · Paid Plans Include Claude, ChatGPT &amp; DeepSeek Study Hub
                 </p>
 
                 {/* Hero Stage Window with Clean Single-Line Floating Chips */}
                 <div className="relative max-w-4xl mx-auto mt-10 mb-8">
+
+                    {/* Soft pastel glow behind the window */}
+                    <div
+                        className="absolute -inset-x-6 -inset-y-4 -z-10 rounded-[48px] bg-gradient-to-br from-[#c4d0f8]/60 via-[#e2d3fa]/40 to-[#cdeecb]/50 blur-3xl"
+                        aria-hidden="true"
+                    />
 
                     {/* Floating 3D Ghost Mascot (Left) */}
                     <button

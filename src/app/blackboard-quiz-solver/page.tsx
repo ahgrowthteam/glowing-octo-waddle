@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         "examghost blackboard"
     ],
     alternates: {
-        canonical: "https://examghost.com/blackboard-quiz-solver",
+        canonical: "https://www.examghost.com/blackboard-quiz-solver",
     },
     openGraph: {
         title: "Blackboard Quiz Solver (2026) — Blackboard Learn & Ultra AI | ExamGhost",
         description:
             "Double-click any Blackboard Learn or Blackboard Ultra test question for 0.3s inline AI answers with 0 Access Log focus-loss warnings.",
-        url: "https://examghost.com/blackboard-quiz-solver",
+        url: "https://www.examghost.com/blackboard-quiz-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -265,7 +265,7 @@ const BLACKBOARD_CONFIG: any = {
                 name: "Calculated Formula, Calculated Numeric & WIRIS MathType SVGs",
                 codeTag: "img.Wirisformula · [x] Randomized Variables",
                 triggerMethod: "Hybrid DOM + OCR",
-                accuracy: "99.5% Symbolic Math (DeepSeek-R1)",
+                accuracy: "99.5% Symbolic Math (DeepSeek)",
                 description: (
                     <>
                         Blackboard’s <strong>Calculated Formula</strong> engine generates unique variable sets per student and renders equations via <strong>WIRIS MathType</strong> as non-selectable SVG or PNG images (<code className="font-mono text-xs text-ink">img.Wirisformula</code>). ExamGhost reads both the accessible MathML <code className="font-mono text-xs text-ink">alt</code> attribute and raw pixels via <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd> Snap-It OCR to compute the exact rounded numeric answer.
@@ -392,7 +392,7 @@ const BLACKBOARD_CONFIG: any = {
         heading: "Trusted across Nursing, Business, Engineering, and STEM Blackboard courses.",
         lead: (
             <>
-                ExamGhost combines <strong>DeepSeek-R1</strong> symbolic math verification with <strong>GPT-4o Vision</strong> to handle the exact question formats used in high-stakes university Blackboard exams.
+                ExamGhost combines <strong>DeepSeek</strong> symbolic math verification with <strong>ChatGPT Vision</strong> to handle the exact question formats used in high-stakes university Blackboard exams.
             </>
         ),
         modules: [
@@ -412,7 +412,7 @@ const BLACKBOARD_CONFIG: any = {
                 department: "Physics, Statics & Engineering Mechanics",
                 courseCodes: "PHYS 201, PHYS 202, ENGR 210, MECH 301",
                 textbooksOrModules: "Blackboard Calculated Formula ([x] randomized variables) & WIRIS MathType Equations",
-                keyChallengeSolved: "Decodes non-selectable WIRIS SVG formulas and solves randomized numerical physics problems via DeepSeek-R1.",
+                keyChallengeSolved: "Decodes non-selectable WIRIS SVG formulas and solves randomized numerical physics problems via DeepSeek.",
             },
             {
                 department: "Microeconomics, Macroeconomics & Business Statistics",
@@ -458,7 +458,7 @@ const BLACKBOARD_CONFIG: any = {
             },
             {
                 capability: "Negative-marking Multiple Answer accuracy",
-                examghost: "Dual-model (DeepSeek-R1 + GPT-4o) consensus",
+                examghost: "Dual-model (DeepSeek + ChatGPT) consensus",
                 chatgpt: "Single-model unverified output",
                 sidebar: "Cannot select multiple checkboxes",
             },
@@ -499,7 +499,7 @@ const BLACKBOARD_CONFIG: any = {
             q: "How does ExamGhost solve Blackboard WIRIS and MathType equation images that cannot be highlighted?",
             a: (
                 <>
-                    <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to launch Snap-It Vision OCR</strong> and drag a selection box over the equation or graph. ExamGhost captures the rendered pixels and decodes the LaTeX expression via <strong>DeepSeek-R1</strong> and <strong>GPT-4o Vision</strong> in under 0.4 seconds.
+                    <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to launch Snap-It Vision OCR</strong> and drag a selection box over the equation or graph. ExamGhost captures the rendered pixels and decodes the LaTeX expression via <strong>DeepSeek</strong> and <strong>ChatGPT Vision</strong> in under 0.4 seconds.
                 </>
             ),
         },
@@ -570,16 +570,16 @@ const BLACKBOARD_CONFIG: any = {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/blackboard-quiz-solver#webpage",
-                "url": "https://examghost.com/blackboard-quiz-solver",
+                "@id": "https://www.examghost.com/blackboard-quiz-solver#webpage",
+                "url": "https://www.examghost.com/blackboard-quiz-solver",
                 "name": "Blackboard Quiz Solver (2026) — Blackboard Learn & Ultra AI | ExamGhost",
                 "description":
                     "Solve Blackboard Learn and Blackboard Ultra tests inline in 0.3s. Zero Access Log focus-loss warnings, Closed Shadow DOM stealth, and Snap-It Vision OCR (Alt+S).",
                 "datePublished": "2026-01-18",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/blackboard-quiz-solver#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/blackboard-quiz-solver#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -587,7 +587,7 @@ const BLACKBOARD_CONFIG: any = {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/blackboard-quiz-solver#software",
+                "@id": "https://www.examghost.com/blackboard-quiz-solver#software",
                 "name": "ExamGhost Blackboard Quiz Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -601,26 +601,26 @@ const BLACKBOARD_CONFIG: any = {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/blackboard-quiz-solver#breadcrumb",
+                "@id": "https://www.examghost.com/blackboard-quiz-solver#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Live Sandbox",
-                        "item": "https://examghost.com/canvas-quiz-solver-free-demo"
+                        "item": "https://www.examghost.com/canvas-quiz-solver-free-demo"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Blackboard Quiz Solver",
-                        "item": "https://examghost.com/blackboard-quiz-solver"
+                        "item": "https://www.examghost.com/blackboard-quiz-solver"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/blackboard-quiz-solver#faq",
+                "@id": "https://www.examghost.com/blackboard-quiz-solver#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -643,7 +643,7 @@ const BLACKBOARD_CONFIG: any = {
                         "name": "How does ExamGhost solve Blackboard WIRIS and MathType equation images that cannot be highlighted?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Press Alt+S to launch Snap-It Vision OCR and drag a selection box over the equation or graph. ExamGhost captures the rendered pixels and decodes the LaTeX expression via DeepSeek-R1 and GPT-4o Vision in under 0.4 seconds."
+                            "text": "Press Alt+S to launch Snap-It Vision OCR and drag a selection box over the equation or graph. ExamGhost captures the rendered pixels and decodes the LaTeX expression via DeepSeek and ChatGPT Vision in under 0.4 seconds."
                         }
                     }
                 ]
@@ -687,8 +687,8 @@ export default function BlackboardQuizSolverPage() {
     const config = BLACKBOARD_CONFIG;
     const filmKey = config.slug.startsWith('blog/') ? config.slug.replace('blog/', '') : config.slug;
     const safeSlug = filmKey.replace(/\//g, '-');
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const rawGraph = Array.isArray(config.jsonLd?.['@graph'])
         ? (config.jsonLd['@graph'] as Record<string, unknown>[])
@@ -699,7 +699,7 @@ export default function BlackboardQuizSolverPage() {
     if (!hasVideo) {
         baseGraph.push({
             '@type': 'VideoObject',
-            '@id': `https://examghost.com/${config.slug}#video`,
+            '@id': `https://www.examghost.com/${config.slug}#video`,
             name: `${config.platformName} AI Quiz Solver — 2.5D Explainer & Product Demo Film`,
             description: `16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves ${config.platformName} questions one by one via double-click and Alt+S Vision OCR inside a Closed Shadow DOM with zero blur events.`,
             thumbnailUrl: [posterUrl],
@@ -709,7 +709,7 @@ export default function BlackboardQuizSolverPage() {
             publisher: {
                 '@type': 'Organization',
                 name: 'ExamGhost',
-                url: 'https://examghost.com',
+                url: 'https://www.examghost.com',
             },
         });
     }
@@ -718,7 +718,7 @@ export default function BlackboardQuizSolverPage() {
     if (!hasHowTo && config.howToSection) {
         baseGraph.push({
             '@type': 'HowTo',
-            '@id': `https://examghost.com/${config.slug}#howto`,
+            '@id': `https://www.examghost.com/${config.slug}#howto`,
             name: config.howToSection.heading,
             description: `Step-by-step workflow to solve ${config.platformName} quizzes and assignments one question at a time using ExamGhost's Closed Shadow DOM and Alt+S Vision OCR without triggering focus-loss logs.`,
             totalTime: 'PT1M',
@@ -735,7 +735,7 @@ export default function BlackboardQuizSolverPage() {
     if (!hasFaqPage && config.faqs && config.faqs.length > 0) {
         baseGraph.push({
             '@type': 'FAQPage',
-            '@id': `https://examghost.com/${config.slug}#faq`,
+            '@id': `https://www.examghost.com/${config.slug}#faq`,
             mainEntity: config.faqs.map((faq: any) => ({
                 '@type': 'Question',
                 name: faq.q,
@@ -757,7 +757,7 @@ export default function BlackboardQuizSolverPage() {
                 datePublished: '2026-01-15',
                 dateModified: '2026-10-23',
                 inLanguage: 'en-US',
-                author: { '@type': 'Organization', name: 'ExamGhost Security Engineering Team', url: 'https://examghost.com' },
+                author: { '@type': 'Organization', '@id': 'https://www.examghost.com/#organization', name: 'ExamGhost', url: 'https://www.examghost.com' },
                 ...node,
                 speakable: {
                     '@type': 'SpeakableSpecification',
@@ -831,7 +831,7 @@ export default function BlackboardQuizSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>
@@ -857,12 +857,12 @@ export default function BlackboardQuizSolverPage() {
                                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-black/8 shadow-2xs">
                                     <img
                                         src="/images/ghost/ghost_mascot_hero.jpg"
-                                        alt="ExamGhost Browser Security Research Lab"
+                                        alt="ExamGhost"
                                         width={22}
                                         height={22}
                                         className="w-5 h-5 rounded-full object-cover border border-black/10"
                                     />
-                                    <span className="font-semibold text-ink">ExamGhost Browser Security Lab</span>
+                                    <span className="font-semibold text-ink">The ExamGhost team</span>
                                 </div>
                                 <span>•</span>
                                 <span>Reviewed against Instructure Canvas Open-Source Repo</span>

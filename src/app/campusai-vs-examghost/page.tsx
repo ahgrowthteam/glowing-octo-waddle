@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/campusai-vs-examghost",
+        canonical: "https://www.examghost.com/campusai-vs-examghost",
     },
     openGraph: {
         title: "Campus AI vs ExamGhost (2026) — SidePanel Blur vs Stealth",
         description: "2026 audit of Campus AI (v0.2.2) vs ExamGhost. Why Chrome sidePanel blur logs and question caps lose to 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/campusai-vs-examghost",
+        url: "https://www.examghost.com/campusai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does ExamGhost compare to Campus AI during live Canvas exams?",
-    a: "ExamGhost is engineered specifically for timed assessments with 3-model consensus (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1), Closed Shadow DOM (mode: 'closed') sandboxing, zero web_accessible_resources, and Focus Shield event interception that keeps document.hasFocus() locked to true. Campus AI is built around flashcard generation, practice quizzes, and a sidePanel UI that leaks tab departures.",
+    a: "ExamGhost is engineered specifically for timed assessments with 3-model consensus (Claude + ChatGPT + DeepSeek), Closed Shadow DOM (mode: 'closed') sandboxing, zero web_accessible_resources, and Focus Shield event interception that keeps document.hasFocus() locked to true. Campus AI is built around flashcard generation, practice quizzes, and a sidePanel UI that leaks tab departures.",
   },
 ];
 
@@ -85,17 +85,17 @@ export default function CampusAiVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-13",
-                "dateModified": "2026-03-26",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/campusai-vs-examghost/#webpage",
-        url: "https://examghost.com/campusai-vs-examghost",
+        "@id": "https://www.examghost.com/campusai-vs-examghost/#webpage",
+        url: "https://www.examghost.com/campusai-vs-examghost",
         name: "Campus AI (Canvas AI) vs ExamGhost (2026): SidePanel & 'Limited Questions' vs True LMS Stealth",
         description:
           "Detailed 2026 comparison of Campus AI (formerly Canvas AI, v0.2.2) and ExamGhost covering sidePanel focus leaks, client.js DOM buttons, Cloud Memory Bank screenshot retention, and paid question caps.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
         about: [
           {
             "@type": "SoftwareApplication",
@@ -131,19 +131,19 @@ export default function CampusAiVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Campus AI vs ExamGhost",
-            item: "https://examghost.com/campusai-vs-examghost",
+            item: "https://www.examghost.com/campusai-vs-examghost",
           },
         ],
       },
@@ -404,7 +404,7 @@ export default function CampusAiVsExamGhostPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-6">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+              <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               <div className="p-3 bg-white rounded-xl border border-neutral-200 text-center shadow-sm">
@@ -529,7 +529,7 @@ export default function CampusAiVsExamGhostPage() {
                       <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600 text-white">Zero Cloud Gallery</span>
                     </div>
                     <p className="text-xs text-neutral-700">
-                      Screen crops are solved in parallel across 3 frontier models (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1) and immediately discarded. Includes a 1ms Panic Switch (<code className="font-mono">⌘+Shift+U</code>).
+                      Screen crops are solved in parallel across 3 frontier models (Claude + ChatGPT + DeepSeek) and immediately discarded. Includes a 1ms Panic Switch (<code className="font-mono">⌘+Shift+U</code>).
                     </p>
                   </div>
                 </div>
@@ -662,7 +662,7 @@ export default function CampusAiVsExamGhostPage() {
                       Single-model chat + flashcard/subject sorting
                     </td>
                     <td className="py-4 px-5 font-semibold text-emerald-700 bg-emerald-50/40">
-                      3-Model Consensus (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      3-Model Consensus (Claude + ChatGPT + DeepSeek)
                     </td>
                   </tr>
                   <tr>
@@ -704,10 +704,10 @@ export default function CampusAiVsExamGhostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

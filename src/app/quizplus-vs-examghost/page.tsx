@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
     },
-    description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
+    description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves/Day).",
     alternates: {
-        canonical: "https://examghost.com/quizplus-vs-examghost",
+        canonical: "https://www.examghost.com/quizplus-vs-examghost",
     },
     openGraph: {
         title: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
-        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
-        url: "https://examghost.com/quizplus-vs-examghost",
+        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves/Day).",
+        url: "https://www.examghost.com/quizplus-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Quizplus vs ExamGhost (2026) — Static Banks vs 0.3s AI HUD",
-        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves / Day).",
+        description: "Quizplus delisted its Chrome extension and charges $24.99/mo for static test banks. ExamGhost solves live randomized LMS questions in 0.3s (5 Free Solves/Day).",
         images: ["/og-image.jpg"],
     },
 };
@@ -60,18 +60,18 @@ export default function QuizplusVsExamghostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-22",
-                "dateModified": "2026-03-14",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/quizplus-vs-examghost#webpage",
-        url: "https://examghost.com/quizplus-vs-examghost",
+        "@id": "https://www.examghost.com/quizplus-vs-examghost#webpage",
+        url: "https://www.examghost.com/quizplus-vs-examghost",
         name: "Quizplus vs ExamGhost (2026 Audit) | Delisted Chrome Extension & Static Test Banks vs 0.3s Stealth AI",
         description:
-          "Independent 2026 technical audit comparing Quizplus (quizplus.com) and its delisted Chrome extension against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
+          "ExamGhost's 2026 technical audit comparing Quizplus (quizplus.com) and its delisted Chrome extension against ExamGhost's closed Shadow DOM HUD and Focus Shield.",
         breadcrumb: {
-          "@id": "https://examghost.com/quizplus-vs-examghost#breadcrumb",
+          "@id": "https://www.examghost.com/quizplus-vs-examghost#breadcrumb",
         },
         "about": [
           {
@@ -121,31 +121,31 @@ export default function QuizplusVsExamghostPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://examghost.com/quizplus-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/quizplus-vs-examghost#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Quizplus vs ExamGhost",
-            item: "https://examghost.com/quizplus-vs-examghost",
+            item: "https://www.examghost.com/quizplus-vs-examghost",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://examghost.com/quizplus-vs-examghost#faq",
+        "@id": "https://www.examghost.com/quizplus-vs-examghost#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -421,7 +421,7 @@ export default function QuizplusVsExamghostPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-6">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-              <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+              <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
@@ -508,7 +508,7 @@ export default function QuizplusVsExamghostPage() {
                     <strong>ExamGhost AI</strong> reads your exact on-screen
                     variables and diagrams via <strong>0.3s Mathpix Vision OCR</strong>{" "}
                     and computes the live derivation from scratch using{" "}
-                    <strong>Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1</strong>.
+                    <strong>Claude + ChatGPT + DeepSeek</strong>.
                   </p>
                 </div>
 
@@ -846,12 +846,12 @@ export default function QuizplusVsExamghostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-xs opacity-75">
                       Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>

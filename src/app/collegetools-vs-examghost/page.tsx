@@ -29,16 +29,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
+        absolute: "College Tools vs ExamGhost (2026) — Mindko Rebrand Audit",
     },
-    description: "Why did College Tools (collegetools.io) rebrand to Mindko (mindko.com)? Inspect its v3.0.5 manifest: 3.17★ rating, 24 web_accessible_resources (jquery-3.1.1, lottie, sentry-4.6.4), and 29 bank/IRS exclusions vs ExamGhost.",
+    description: "Why did College Tools (collegetools.io) rebrand to Mindko? Inspect its v3.0.5 manifest: 3.17★ rating, 24 web_accessible_resources & 29 bank/IRS exclusions.",
     alternates: {
-        canonical: "https://examghost.com/collegetools-vs-examghost",
+        canonical: "https://www.examghost.com/collegetools-vs-examghost",
     },
     openGraph: {
-        title: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
+        title: "College Tools vs ExamGhost (2026) — Mindko Rebrand Audit",
         description: "Investigative engineering audit of College Tools (collegetools.io → mindko.com, v3.0.5): 24 exposed scripts, 29 bank/IRS exclusions & 3.17★ rating vs ExamGhost's Closed Shadow DOM & 5 Free Solves/Day.",
-        url: "https://examghost.com/collegetools-vs-examghost",
+        url: "https://www.examghost.com/collegetools-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "College Tools vs ExamGhost (2026) — v3.0.5 Manifest & Mindko.com Rebrand Dossier",
+        title: "College Tools vs ExamGhost (2026) — Mindko Rebrand Audit",
         description: "Investigative engineering audit of College Tools (collegetools.io → mindko.com, v3.0.5): 24 exposed scripts, 29 bank/IRS exclusions & 3.17★ rating vs ExamGhost.",
         images: ["/og-image.jpg"],
     },
@@ -79,7 +79,7 @@ export default function CollegeToolsComparisonPage() {
         },
         {
             question: "Why does paying up to $24.99/mo for Mindko still leave you without a Study AI Workspace?",
-            answer: "Mindko's 3-day trial auto-converts into a recurring subscription (up to $19.99–$24.99/mo) that only gives you a single-purpose homework popup—meaning you still have to pay an extra $20/mo for ChatGPT Plus or Claude Pro to write essays, analyze syllabus PDFs, or work through problem sets. ExamGhost gives you 5 Free Solves / Day ($0, no card needed, auto-refills every 24h), and its paid plans ($19/mo Monthly, $99/yr Academic Year [$8.25/mo], or $199 Lifetime) are a 2-in-1 value that includes both Unlimited Stealth Extension Solves AND full access to the Study & Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)."
+            answer: "Mindko's 3-day trial auto-converts into a recurring subscription (up to $19.99–$24.99/mo) that only gives you a single-purpose homework popup—meaning you still have to pay an extra $20/mo for ChatGPT Plus or Claude Pro to write essays, analyze syllabus PDFs, or work through problem sets. ExamGhost gives you 5 Free Solves / Day ($0, no card needed, auto-refills every 24h), and its paid plans ($19/mo Monthly, $99/yr Academic Year [$8.25/mo], or $199 Lifetime) are a 2-in-1 value that includes both Unlimited Stealth Extension Solves AND full access to the Study & Homework AI Workspace (Claude + ChatGPT + DeepSeek)."
         },
         {
             question: "How does ExamGhost's Alt+S Hybrid Vision+DOM Snip compare to Mindko's screenshot tool?",
@@ -92,63 +92,54 @@ export default function CollegeToolsComparisonPage() {
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/collegetools-vs-examghost#techarticle",
+                "@id": "https://www.examghost.com/collegetools-vs-examghost#techarticle",
                 "headline": "College Tools vs ExamGhost (2026) — The v3.0.5 Manifest Forensic Dossier & Mindko.com Rebrand Investigation",
                 "description": "Reverse-engineering audit of College Tools (collegetools.io, rebranded to Mindko at mindko.com, Chrome ID iiikmhonbbmbdjfokdmmncdohjionkmf, v3.0.5) examining its 24 web_accessible_resources, jquery-3.1.1.min.js, sentry-4.6.4.min.js, 29 bank/IRS exclusions, and 3.17★ rating compared to ExamGhost v4.2.",
                 "datePublished": "2026-02-14",
-                "dateModified": "2026-10-27",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
-                    "name": "ExamGhost Reverse-Engineering & Extension Security Team",
-                    "url": "https://examghost.com"
+                    "@id": "https://www.examghost.com/#organization",
+                    "name": "ExamGhost",
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
-                "mainEntityOfPage": "https://examghost.com/collegetools-vs-examghost",
+                "mainEntityOfPage": "https://www.examghost.com/collegetools-vs-examghost",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", ".manifest-verdict"]
                 },
                 "about": [
-                    { "@id": "https://examghost.com/collegetools-vs-examghost#examghost-app" },
-                    { "@id": "https://examghost.com/collegetools-vs-examghost#collegetools-app" }
+                    { "@id": "https://www.examghost.com/collegetools-vs-examghost#examghost-app" },
+                    { "@id": "https://www.examghost.com/collegetools-vs-examghost#collegetools-app" }
                 ]
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/collegetools-vs-examghost#examghost-app",
+                "@id": "https://www.examghost.com/collegetools-vs-examghost#examghost-app",
                 "name": "ExamGhost",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "ratingCount": "1420"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "0.00",
                     "highPrice": "199.00",
                     "priceCurrency": "USD",
                     "offerCount": "4",
-                    "description": "5 Free Solves / Day (auto-refills every 24h, $0 no card), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime including Unlimited Stealth Extension Solves + Claude 3.7 Sonnet, ChatGPT o3-mini/4o & DeepSeek-R1 Study Hub."
+                    "description": "5 Free Solves / Day (auto-refills every 24h, $0 no card), $19/mo Monthly, $99/yr Academic Year ($8.25/mo), or $199 Lifetime including Unlimited Stealth Extension Solves + Claude, ChatGPT & DeepSeek Study Hub."
                 }
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/collegetools-vs-examghost#collegetools-app",
+                "@id": "https://www.examghost.com/collegetools-vs-examghost#collegetools-app",
                 "name": "Homework Solver by Mindko (formerly College Tools)",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome Extension, iOS, Android",
                 "softwareVersion": "3.0.5",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "3.17",
-                    "ratingCount": "211"
-                },
                 "offers": {
                     "@type": "AggregateOffer",
                     "lowPrice": "9.99",
@@ -159,16 +150,16 @@ export default function CollegeToolsComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/collegetools-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/collegetools-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "College Tools vs ExamGhost", "item": "https://examghost.com/collegetools-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "College Tools vs ExamGhost", "item": "https://www.examghost.com/collegetools-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/collegetools-vs-examghost#faq",
+                "@id": "https://www.examghost.com/collegetools-vs-examghost#faq",
                 "mainEntity": faqs.map((f) => ({
                     "@type": "Question",
                     "name": f.question,
@@ -185,7 +176,7 @@ export default function CollegeToolsComparisonPage() {
         {
             feature: "Verified Chrome Web Store Rating",
             sub: "Public student feedback across verified installs",
-            examghost: "✓ 4.9★ Verified Stealth Suite",
+            examghost: "✓ Closed Shadow DOM Stealth Suite",
             collegetools: "✗ 3.17★ (211 reviews under ID iiikmhonbbmbdjfokdmmncdohjionkmf)"
         },
         {
@@ -227,7 +218,7 @@ export default function CollegeToolsComparisonPage() {
         {
             feature: "Study & Homework AI Workspace",
             sub: "Multi-model web hub for essays, syllabus PDFs & LaTeX proofs",
-            examghost: "✓ Included: Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1",
+            examghost: "✓ Included: Claude + ChatGPT + DeepSeek",
             collegetools: "✗ None — leaves you paying extra for ChatGPT Plus / Claude Pro"
         },
         {
@@ -311,7 +302,7 @@ export default function CollegeToolsComparisonPage() {
                                 </p>
 
                                 <p className="text-sm sm:text-base text-emerald-300 font-medium leading-relaxed mb-8">
-                                    <strong>ExamGhost v4.2</strong> runs inside an isolated <strong>Closed Shadow DOM</strong> with zero exposed resources, 100% <strong>Focus Shield</strong> blur interception, <code className="font-mono text-xs bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/40">Alt+1/2/3</code> stealth modes, <strong>5 Free Solves / Day</strong> ($0, no card), and a full <strong>Study &amp; Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</strong>.
+                                    <strong>ExamGhost v4.2</strong> runs inside an isolated <strong>Closed Shadow DOM</strong> with zero exposed resources, 100% <strong>Focus Shield</strong> blur interception, <code className="font-mono text-xs bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/40">Alt+1/2/3</code> stealth modes, <strong>5 Free Solves / Day</strong> ($0, no card), and a full <strong>Study &amp; Homework AI Workspace (Claude + ChatGPT + DeepSeek)</strong>.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
@@ -583,7 +574,7 @@ Hotkeys.bind({
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                                            <span><strong>No multi-model Study AI Workspace</strong> — you cannot switch between Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for long-form coursework.</span>
+                                            <span><strong>No multi-model Study AI Workspace</strong> — you cannot switch between Claude, ChatGPT, and DeepSeek for long-form coursework.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
@@ -627,7 +618,7 @@ Hotkeys.bind({
                                                 Part 2: Study &amp; Homework AI Hub
                                             </div>
                                             <p className="text-slate-300 leading-relaxed">
-                                                Full web workspace with <strong>Claude 3.7 Sonnet</strong>, <strong>ChatGPT (GPT-4o / o3-mini)</strong>, and <strong>DeepSeek-R1</strong> included at $0 extra—saving you $60+/month on standalone AI subscriptions.
+                                                Full web workspace with <strong>Claude</strong>, <strong>ChatGPT</strong>, and <strong>DeepSeek</strong> included at $0 extra—saving you $60+/month on standalone AI subscriptions.
                                             </p>
                                         </div>
                                     </div>
@@ -760,7 +751,7 @@ Hotkeys.bind({
                                     A new domain name doesn&apos;t hide 24 injected scripts.
                                 </h2>
                                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5">
-                                    Start with 5 Free Solves / Day on ExamGhost ($0, auto-refills every 24h, no credit card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime with full access to our Claude 3.7 + ChatGPT + DeepSeek Study Hub.
+                                    Start with 5 Free Solves / Day on ExamGhost ($0, auto-refills every 24h, no credit card required). Upgrade anytime for $19/mo, $99/yr ($8.25/mo), or $199 Lifetime with full access to our Claude + ChatGPT + DeepSeek Study Hub.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center gap-3 shrink-0">

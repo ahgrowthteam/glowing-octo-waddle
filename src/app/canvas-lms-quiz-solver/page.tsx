@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         "examghost canvas"
     ],
     alternates: {
-        canonical: "https://examghost.com/canvas-lms-quiz-solver",
+        canonical: "https://www.examghost.com/canvas-lms-quiz-solver",
     },
     openGraph: {
         title: "Canvas LMS Quiz Solver (2026) — Classic & New Quizzes AI | ExamGhost",
         description:
             "Double-click any Canvas Classic or New Quizzes question for 0.3s inline answers with 0 SpeedGrader page_blurred events. Try the live 6-chapter Canvas demo.",
-        url: "https://examghost.com/canvas-lms-quiz-solver",
+        url: "https://www.examghost.com/canvas-lms-quiz-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -215,7 +215,7 @@ const CANVAS_CONFIG: any = {
                 title: "Snap-It Vision OCR (Alt+S)",
                 desc: (
                     <>
-                        Solves locked Canvas stimulus passages, chemistry structures, and embedded PDFs in 0.3s using <strong>DeepSeek-R1 + GPT-4o Vision</strong>.
+                        Solves locked Canvas stimulus passages, chemistry structures, and embedded PDFs in 0.3s using <strong>DeepSeek + ChatGPT Vision</strong>.
                     </>
                 ),
                 image: "/images/ghost/ghost_card_vision.jpg",
@@ -266,10 +266,10 @@ const CANVAS_CONFIG: any = {
                 name: "Canvas Formula Questions, Numerical Tolerances & LaTeX MathJax",
                 codeTag: "span.math_equation_latex · numerical_question",
                 triggerMethod: "Double-Click DOM",
-                accuracy: "99.6% Symbolic Math (DeepSeek-R1)",
+                accuracy: "99.6% Symbolic Math (DeepSeek)",
                 description: (
                     <>
-                        Canvas Numerical and Formula questions grade answers against strict instructor-defined precision rules (<em>Exact Answer with Error Margin</em>, <em>Margin of Error by Percentage</em>, or <em>Precision to N Significant Digits</em>). ExamGhost reads the underlying LaTeX AST from <code className="font-mono text-xs text-ink">span.math_equation_latex</code> or MathJax nodes and computes the exact rounded decimal via <strong>DeepSeek-R1</strong>.
+                        Canvas Numerical and Formula questions grade answers against strict instructor-defined precision rules (<em>Exact Answer with Error Margin</em>, <em>Margin of Error by Percentage</em>, or <em>Precision to N Significant Digits</em>). ExamGhost reads the underlying LaTeX AST from <code className="font-mono text-xs text-ink">span.math_equation_latex</code> or MathJax nodes and computes the exact rounded decimal via <strong>DeepSeek</strong>.
                     </>
                 ),
             },
@@ -280,7 +280,7 @@ const CANVAS_CONFIG: any = {
                 accuracy: "98.9% Dual-Model Vision",
                 description: (
                     <>
-                        When professors upload non-selectable PNG screenshots from lecture slides, New Quizzes <strong>Hot Spot</strong> coordinate images, or IUPAC skeletal structures hosted on <code className="font-mono text-xs text-ink">/courses/:id/files/:file_id/preview</code>, press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd> and drag a region box. ExamGhost extracts all axes, labels, and equations via <strong>GPT-4o Vision</strong> without leaving the quiz tab.
+                        When professors upload non-selectable PNG screenshots from lecture slides, New Quizzes <strong>Hot Spot</strong> coordinate images, or IUPAC skeletal structures hosted on <code className="font-mono text-xs text-ink">/courses/:id/files/:file_id/preview</code>, press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd> and drag a region box. ExamGhost extracts all axes, labels, and equations via <strong>ChatGPT Vision</strong> without leaving the quiz tab.
                     </>
                 ),
             },
@@ -373,7 +373,7 @@ const CANVAS_CONFIG: any = {
                         If a Canvas question contains an image-only graph, organic chemistry mechanism, or split-screen New Quizzes stimulus diagram, press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd> and drag a selection box around the figure.
                     </>
                 ),
-                plainTextForSchema: "Press Alt+S and drag a selection box over any locked Canvas diagram, chemistry structure, or New Quizzes stimulus passage to solve via GPT-4o Vision and DeepSeek-R1.",
+                plainTextForSchema: "Press Alt+S and drag a selection box over any locked Canvas diagram, chemistry structure, or New Quizzes stimulus passage to solve via ChatGPT Vision and DeepSeek.",
             },
             {
                 stepNumber: "04",
@@ -407,7 +407,7 @@ const CANVAS_CONFIG: any = {
                 department: "Calculus, Differential Equations & Linear Algebra",
                 courseCodes: "MATH 151, MATH 152, MATH 251, MATH 308",
                 textbooksOrModules: "Canvas Classic Formula Questions ([x] randomized variables), MathJax & KaTeX New Quizzes",
-                keyChallengeSolved: "Extracts raw LaTeX from Canvas math spans and computes exact symbolic and decimal solutions via DeepSeek-R1.",
+                keyChallengeSolved: "Extracts raw LaTeX from Canvas math spans and computes exact symbolic and decimal solutions via DeepSeek.",
             },
             {
                 department: "Computer Science & Data Structures",
@@ -516,7 +516,7 @@ const CANVAS_CONFIG: any = {
             q: "How do I solve locked Canvas images, chemistry diagrams, and embedded PDFs?",
             a: (
                 <>
-                    <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any diagram, graph, or stimulus passage on your Canvas page. ExamGhost routes the image through <strong>DeepSeek-R1</strong> and <strong>GPT-4o Vision</strong> and returns the answer with step-by-step work in under 0.4 seconds.
+                    <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any diagram, graph, or stimulus passage on your Canvas page. ExamGhost routes the image through <strong>DeepSeek</strong> and <strong>ChatGPT Vision</strong> and returns the answer with step-by-step work in under 0.4 seconds.
                 </>
             ),
         },
@@ -575,16 +575,16 @@ const CANVAS_CONFIG: any = {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/canvas-lms-quiz-solver#webpage",
-                "url": "https://examghost.com/canvas-lms-quiz-solver",
+                "@id": "https://www.examghost.com/canvas-lms-quiz-solver#webpage",
+                "url": "https://www.examghost.com/canvas-lms-quiz-solver",
                 "name": "Canvas LMS Quiz Solver (2026) — Classic & New Quizzes AI | ExamGhost",
                 "description":
                     "Solve Canvas Classic Quizzes and Canvas New Quizzes (LTI 1.3) inline in 0.3s. Zero SpeedGrader page_blurred flags, Closed Shadow DOM stealth, and Snap-It OCR (Alt+S).",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/canvas-lms-quiz-solver#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvas-lms-quiz-solver#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -592,7 +592,7 @@ const CANVAS_CONFIG: any = {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/canvas-lms-quiz-solver#software",
+                "@id": "https://www.examghost.com/canvas-lms-quiz-solver#software",
                 "name": "ExamGhost Canvas LMS Quiz Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -606,26 +606,26 @@ const CANVAS_CONFIG: any = {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvas-lms-quiz-solver#breadcrumb",
+                "@id": "https://www.examghost.com/canvas-lms-quiz-solver#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Live Sandbox",
-                        "item": "https://examghost.com/canvas-quiz-solver-free-demo"
+                        "item": "https://www.examghost.com/canvas-quiz-solver-free-demo"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Canvas LMS Quiz Solver",
-                        "item": "https://examghost.com/canvas-lms-quiz-solver"
+                        "item": "https://www.examghost.com/canvas-lms-quiz-solver"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvas-lms-quiz-solver#faq",
+                "@id": "https://www.examghost.com/canvas-lms-quiz-solver#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -656,7 +656,7 @@ const CANVAS_CONFIG: any = {
                         "name": "How do I solve locked Canvas images, chemistry diagrams, and embedded PDFs?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Press Alt+S to activate Snap-It Vision OCR, then drag a selection box over any diagram, graph, or stimulus passage on your Canvas page. ExamGhost routes the image through DeepSeek-R1 and GPT-4o Vision and returns the answer with step-by-step work in under 0.4 seconds."
+                            "text": "Press Alt+S to activate Snap-It Vision OCR, then drag a selection box over any diagram, graph, or stimulus passage on your Canvas page. ExamGhost routes the image through DeepSeek and ChatGPT Vision and returns the answer with step-by-step work in under 0.4 seconds."
                         }
                     }
                 ]
@@ -700,8 +700,8 @@ export default function CanvasLmsQuizSolverPage() {
     const config = CANVAS_CONFIG;
     const filmKey = config.slug.startsWith('blog/') ? config.slug.replace('blog/', '') : config.slug;
     const safeSlug = filmKey.replace(/\//g, '-');
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const rawGraph = Array.isArray(config.jsonLd?.['@graph'])
         ? (config.jsonLd['@graph'] as Record<string, unknown>[])
@@ -712,7 +712,7 @@ export default function CanvasLmsQuizSolverPage() {
     if (!hasVideo) {
         baseGraph.push({
             '@type': 'VideoObject',
-            '@id': `https://examghost.com/${config.slug}#video`,
+            '@id': `https://www.examghost.com/${config.slug}#video`,
             name: `${config.platformName} AI Quiz Solver — 2.5D Explainer & Product Demo Film`,
             description: `16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves ${config.platformName} questions one by one via double-click and Alt+S Vision OCR inside a Closed Shadow DOM with zero blur events.`,
             thumbnailUrl: [posterUrl],
@@ -722,7 +722,7 @@ export default function CanvasLmsQuizSolverPage() {
             publisher: {
                 '@type': 'Organization',
                 name: 'ExamGhost',
-                url: 'https://examghost.com',
+                url: 'https://www.examghost.com',
             },
         });
     }
@@ -731,7 +731,7 @@ export default function CanvasLmsQuizSolverPage() {
     if (!hasHowTo && config.howToSection) {
         baseGraph.push({
             '@type': 'HowTo',
-            '@id': `https://examghost.com/${config.slug}#howto`,
+            '@id': `https://www.examghost.com/${config.slug}#howto`,
             name: config.howToSection.heading,
             description: `Step-by-step workflow to solve ${config.platformName} quizzes and assignments one question at a time using ExamGhost's Closed Shadow DOM and Alt+S Vision OCR without triggering focus-loss logs.`,
             totalTime: 'PT1M',
@@ -748,7 +748,7 @@ export default function CanvasLmsQuizSolverPage() {
     if (!hasFaqPage && config.faqs && config.faqs.length > 0) {
         baseGraph.push({
             '@type': 'FAQPage',
-            '@id': `https://examghost.com/${config.slug}#faq`,
+            '@id': `https://www.examghost.com/${config.slug}#faq`,
             mainEntity: config.faqs.map((faq: any) => ({
                 '@type': 'Question',
                 name: faq.q,
@@ -770,7 +770,7 @@ export default function CanvasLmsQuizSolverPage() {
                 datePublished: '2026-01-15',
                 dateModified: '2026-10-23',
                 inLanguage: 'en-US',
-                author: { '@type': 'Organization', name: 'ExamGhost Security Engineering Team', url: 'https://examghost.com' },
+                author: { '@type': 'Organization', '@id': 'https://www.examghost.com/#organization', name: 'ExamGhost', url: 'https://www.examghost.com' },
                 ...node,
                 speakable: {
                     '@type': 'SpeakableSpecification',
@@ -844,7 +844,7 @@ export default function CanvasLmsQuizSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>
@@ -870,12 +870,12 @@ export default function CanvasLmsQuizSolverPage() {
                                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-black/8 shadow-2xs">
                                     <img
                                         src="/images/ghost/ghost_mascot_hero.jpg"
-                                        alt="ExamGhost Browser Security Research Lab"
+                                        alt="ExamGhost"
                                         width={22}
                                         height={22}
                                         className="w-5 h-5 rounded-full object-cover border border-black/10"
                                     />
-                                    <span className="font-semibold text-ink">ExamGhost Browser Security Lab</span>
+                                    <span className="font-semibold text-ink">The ExamGhost team</span>
                                 </div>
                                 <span>•</span>
                                 <span>Reviewed against Instructure Canvas Open-Source Repo</span>

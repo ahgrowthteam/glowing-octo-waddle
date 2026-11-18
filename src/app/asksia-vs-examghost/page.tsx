@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     },
     description: "Compare AskSia (asksia.ai) with ExamGhost. See why AskSia only imports Canvas modules to an external web app—forcing tab switches—while billing up to ~$25/mo.",
     alternates: {
-        canonical: "https://examghost.com/asksia-vs-examghost",
+        canonical: "https://www.examghost.com/asksia-vs-examghost",
     },
     openGraph: {
         title: "AskSia vs ExamGhost (2026) — 'Sync to AskSia' Canvas Scraper Audit",
         description: "Compare AskSia (asksia.ai) with ExamGhost. See why AskSia only imports Canvas modules to an external web app—forcing tab switches—while billing up to ~$25/mo.",
-        url: "https://examghost.com/asksia-vs-examghost",
+        url: "https://www.examghost.com/asksia-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -60,16 +60,16 @@ export default function AskSiaComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-20",
-                "dateModified": "2026-03-26",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/asksia-vs-examghost#webpage",
-                "url": "https://examghost.com/asksia-vs-examghost",
+                "@id": "https://www.examghost.com/asksia-vs-examghost#webpage",
+                "url": "https://www.examghost.com/asksia-vs-examghost",
                 "name": "AskSia vs ExamGhost (2026 Review) | External Course Importer vs In-Page Shadow DOM Solver",
                 "description": "Technical evaluation comparing AskSia: All-in-One AI Study Assistant (asksia.ai, Chrome ID hoipbgndfmmjgamfhipgdepddfhmjleo) and ExamGhost across Canvas course scraping, tab-switch telemetry, and Plus/Super/A+ pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/asksia-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/asksia-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -100,16 +100,16 @@ export default function AskSiaComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/asksia-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/asksia-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "AskSia vs ExamGhost", "item": "https://examghost.com/asksia-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "AskSia vs ExamGhost", "item": "https://www.examghost.com/asksia-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/asksia-vs-examghost#faq",
+                "@id": "https://www.examghost.com/asksia-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -305,7 +305,7 @@ export default function AskSiaComparisonPage() {
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-6">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">Complete Control</span>
-                            <h3 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h3>
+                            <h2 className="text-lg font-bold font-display text-ink">ExamGhost Modern Hotkeys Suite</h2>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                             <div className="p-3 bg-white rounded-xl border border-black/10 text-center shadow-sm">
@@ -603,9 +603,9 @@ export default function AskSiaComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -640,29 +640,7 @@ export default function AskSiaComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#fef0c7]/55 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I downloaded the AskSia extension thinking it would solve my Canvas and DeltaMath quizzes on the page, but all the extension did was put a &lsquo;Sync to AskSia&rsquo; button on my Canvas dashboard and make me switch tabs to asksia.ai to upload screenshots. ExamGhost actually solves questions right inside the exam page in 0.3 seconds without ever switching tabs.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-amber-900 text-white font-bold flex items-center justify-center text-sm">
-                                KP
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Kieran P.</div>
-                                <div className="text-xs text-ink-muted">Applied Mathematics · Rutgers University</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

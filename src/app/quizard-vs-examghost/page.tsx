@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/quizard-vs-examghost",
+        canonical: "https://www.examghost.com/quizard-vs-examghost",
     },
     openGraph: {
         title: "Quizard AI vs ExamGhost (2026) — Phone Pairing vs Stealth",
         description: "2026 audit of Quizard AI (v0.1.13) vs ExamGhost. Why mobile Link Device pairing and Cmd+Shift+K overlays lose to 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/quizard-vs-examghost",
+        url: "https://www.examghost.com/quizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -118,17 +118,17 @@ export default function QuizardVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-24",
-                "dateModified": "2026-03-03",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/quizard-vs-examghost/#webpage",
-        url: "https://examghost.com/quizard-vs-examghost",
+        "@id": "https://www.examghost.com/quizard-vs-examghost/#webpage",
+        url: "https://www.examghost.com/quizard-vs-examghost",
         name: "Quizard AI vs ExamGhost (2026): Mobile Link-Device Extension & Quizard.io vs True LMS Stealth",
         description:
           "Detailed 2026 comparison of Quizard AI (quizard.ai / usequizard.com), Quizard.io, and ExamGhost covering mobile Link Device gating, Cmd+Shift+K focus-loss logs, SAT vs college STEM accuracy, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
       },
       {
         "@type": "BreadcrumbList",
@@ -137,19 +137,19 @@ export default function QuizardVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Quizard AI vs ExamGhost",
-            item: "https://examghost.com/quizard-vs-examghost",
+            item: "https://www.examghost.com/quizard-vs-examghost",
           },
         ],
       },
@@ -770,7 +770,7 @@ export default function QuizardVsExamGhostPage() {
                   </tr>
                 
                   <tr className="bg-emerald-50/20">
-                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 + ChatGPT + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                     <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
@@ -959,26 +959,26 @@ export default function QuizardVsExamGhostPage() {
                                 Powered by 3 Frontier AI Models
                             </h3>
                             <p className="text-sm text-neutral-600">
-                                Full access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1 for complete step-by-step derivation and homework mastery.
+                                Full access to Claude, ChatGPT, and DeepSeek for complete step-by-step derivation and homework mastery.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">Claude 3.7 Sonnet</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">Claude</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Hybrid Reasoning &amp; Formal Proofs</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Deep chain-of-thought mathematical derivation and step-by-step verification across STEM, proof-based physics, and advanced calculus.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT o3-mini/4o</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">ChatGPT</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">STEM &amp; Distractor Teardown</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Specialized STEM problem-solving that explains why trick options fail and identifies subtle traps in multiple-choice questions.
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek-R1</div>
+                                <div className="text-sm font-bold text-[#111111] mb-1">DeepSeek</div>
                                 <div className="text-xs text-emerald-800 font-semibold mb-2">Open-Weights Consensus Anchor</div>
                                 <p className="text-xs text-neutral-600 leading-relaxed">
                                     Alternative mathematical formalisms, hardware-level assembly proofs, and independent consensus verification for 99.8% accuracy.

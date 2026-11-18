@@ -637,7 +637,7 @@ export default function DemoPage() {
                         </Link>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-1.5 sm:gap-2.5">
                         <a
                             href="#student-seo-guide"
                             className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-ink-secondary hover:text-ink hover:bg-black/5 transition-colors"
@@ -666,10 +666,11 @@ export default function DemoPage() {
                             href="https://chromewebstore.google.com/detail/curio-ai-tutor-homework-h/dejkoepiachnbgjjooocnnmampldmpde"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn-dark px-4 py-2 text-xs font-semibold rounded-full shadow-xs inline-flex items-center gap-2"
+                            className="btn-dark px-3 sm:px-4 py-2 text-xs font-semibold rounded-full shadow-xs inline-flex items-center gap-2"
                         >
                             <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6]" aria-hidden="true" />
-                            <span>Add to Chrome — Free</span>
+                            <span className="sm:hidden">Install</span>
+                            <span className="hidden sm:inline">Add to Chrome — Free</span>
                         </a>
                     </div>
                 </div>
@@ -1578,7 +1579,7 @@ export default function DemoPage() {
                                     Select-All-That-Apply Verification
                                 </h3>
                                 <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Evaluates every checkbox option independently via dual-model consensus (<strong>DeepSeek-R1 + GPT-4o</strong>) so you never lose partial credit on strict multi-select questions.
+                                    Evaluates every checkbox option independently via dual-model consensus (<strong>DeepSeek + ChatGPT</strong>) so you never lose partial credit on strict multi-select questions.
                                 </p>
                             </article>
 
@@ -2120,7 +2121,7 @@ export default function DemoPage() {
                                     q: "How do I solve locked math graphs, uncopyable PDFs, and chemistry diagrams on ALEKS or WebAssign?",
                                     a: (
                                         <>
-                                            <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through <strong>DeepSeek-R1</strong> and <strong>GPT-4o Vision</strong>, returning the verified answer and step-by-step derivation in under <strong>0.4 seconds</strong> on{' '}
+                                            <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through <strong>DeepSeek</strong> and <strong>ChatGPT Vision</strong>, returning the verified answer and step-by-step derivation in under <strong>0.4 seconds</strong> on{' '}
                                             <Link prefetch={false} href="/mcgraw-hill-connect-aleks-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">McGraw-Hill ALEKS</Link>,{' '}
                                             <Link prefetch={false} href="/cengage-mindtap-webassign-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Cengage WebAssign</Link>, and{' '}
                                             <Link prefetch={false} href="/gradescope-exam-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Gradescope</Link>.
@@ -2163,7 +2164,7 @@ export default function DemoPage() {
                                     q: "How accurate is ExamGhost compared to ChatGPT, Gauth AI, and CanvasHack?",
                                     a: (
                                         <>
-                                            <strong>ExamGhost achieves 99.4% accuracy on university STEM and humanities assessments</strong> by routing symbolic math, calculus, and physics problems to <strong>DeepSeek-R1</strong> while sending reading comprehension and image diagrams to <strong>GPT-4o Vision</strong>. Unlike ChatGPT (which requires 15–30 seconds of tab-switching) or legacy scripts like{' '}
+                                            <strong>ExamGhost achieves 99.4% accuracy on university STEM and humanities assessments</strong> by routing symbolic math, calculus, and physics problems to <strong>DeepSeek</strong> while sending reading comprehension and image diagrams to <strong>ChatGPT Vision</strong>. Unlike ChatGPT (which requires 15–30 seconds of tab-switching) or legacy scripts like{' '}
                                             <Link prefetch={false} href="/canvashack-vs-examghost" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">CanvasHack</Link> and{' '}
                                             <Link prefetch={false} href="/gauth-vs-examghost" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Gauth AI</Link> (which inject visible sidebar nodes), ExamGhost solves inline in <strong>0.3 seconds</strong> with zero tab-switch flags.
                                         </>

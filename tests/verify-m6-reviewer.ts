@@ -167,9 +167,9 @@ for (const route of M6_ROUTES) {
 // -----------------------------------------------------------------------------
 console.log('\n--- Checking 4: Frontier Models ---');
 const REQUIRED_MODELS = [
-  'Claude 3.7 Sonnet',
-  'ChatGPT o3-mini/4o',
-  'DeepSeek-R1',
+  'Claude',
+  'ChatGPT',
+  'DeepSeek',
 ];
 
 for (const route of M6_ROUTES) {

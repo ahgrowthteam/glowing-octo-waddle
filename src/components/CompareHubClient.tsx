@@ -90,7 +90,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                             5 Free Solves / Day ($0 · Auto-Refills Every 24h)
                         </span>
                         <span className="px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 font-bold">
-                            Claude 3.7 + ChatGPT o3-mini/4o + DeepSeek-R1 Included
+                            Claude + ChatGPT + DeepSeek Included
                         </span>
                     </div>
                 </div>
@@ -372,7 +372,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                     <td className="py-4 px-4 text-center text-emerald-800">✓ 100% Isolated</td>
                                     <td className="py-4 px-4 text-center text-emerald-800">✓ 4-Layer Shield</td>
                                     <td className="py-4 px-4 text-center text-indigo-950 font-semibold">
-                                        ✓ Claude 3.7 + GPT-4o/o3 + R1
+                                        ✓ Claude + ChatGPT + DeepSeek
                                     </td>
                                     <td className="py-4 px-4 font-extrabold text-emerald-800 text-xs">
                                         <div>5 Free Solves / Day ($0)</div>

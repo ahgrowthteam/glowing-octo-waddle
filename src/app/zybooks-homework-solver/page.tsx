@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         "examghost zybooks",
     ],
     alternates: {
-        canonical: "https://examghost.com/zybooks-homework-solver",
+        canonical: "https://www.examghost.com/zybooks-homework-solver",
     },
     openGraph: {
         title: "zyBooks & zyLabs Homework Solver — CS Code AI (2026) | ExamGhost",
         description:
-            "Solve zyBooks Participation Activities, Challenge Activities, and zyLabs autograder test cases inline in 0.3s. 5 free solves / day with Claude 3.7 & DeepSeek-R1.",
-        url: "https://examghost.com/zybooks-homework-solver",
+            "Solve zyBooks Participation Activities, Challenge Activities, and zyLabs autograder test cases inline in 0.3s. 5 free solves / day with Claude & DeepSeek.",
+        url: "https://www.examghost.com/zybooks-homework-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -105,7 +105,7 @@ const ZYBOOKS_CONFIG = {
                 codeTag: "code.ast.validation",
                 triggerMethod: "Double-Click DOM",
                 accuracy: "99.9% Compilation",
-                description: "Validates language-specific type systems, memory boundaries, and standard library semantics via DeepSeek-R1.",
+                description: "Validates language-specific type systems, memory boundaries, and standard library semantics via DeepSeek.",
             },
             {
                 name: "Interactive Code Completion Fill-in-Blanks",
@@ -134,7 +134,7 @@ const ZYBOOKS_CONFIG = {
             },
             {
                 title: "Zero Reset Challenge Protection",
-                desc: "Challenge activities reset to Level 1 on wrong answers. DeepSeek-R1 logic guarantees 100% first-pass accuracy.",
+                desc: "Challenge activities reset to Level 1 on wrong answers. DeepSeek logic guarantees 100% first-pass accuracy.",
                 image: "/images/ghost/ghost_stealth.jpg",
             },
             {
@@ -176,7 +176,7 @@ const ZYBOOKS_CONFIG = {
                 eventCode: "zyLabs Hidden Test Case Diff",
                 whenTriggered: "Autograder runs student submission against hidden edge test suites.",
                 professorView: "Displays failed test case assertions, segfaults, and diff mismatches.",
-                examghostStatus: "DeepSeek-R1 tests all boundary cases (empty, max, negatives) prior to submission.",
+                examghostStatus: "DeepSeek tests all boundary cases (empty, max, negatives) prior to submission.",
                 isSafe: true,
             },
         ],
@@ -301,7 +301,7 @@ const ZYBOOKS_CONFIG = {
             },
             {
                 capability: "Multi-language syntax verification",
-                examghost: "DeepSeek-R1 C++/Java/Python compiler",
+                examghost: "DeepSeek C++/Java/Python compiler",
                 chatgpt: "Occasional syntax hallucinations",
                 sidebar: "Basic LLM without compiler check",
             },
@@ -330,7 +330,7 @@ const ZYBOOKS_CONFIG = {
             q: "How does ExamGhost prevent Challenge Activity level resets?",
             a: (
                 <>
-                    <strong>ExamGhost verifies code correctness with DeepSeek-R1 before populating fields.</strong> By achieving 100% first-attempt accuracy, you progress through Level 1, Level 2, and Level 3 without incurring wrong answer penalties that reset your activity.
+                    <strong>ExamGhost verifies code correctness with DeepSeek before populating fields.</strong> By achieving 100% first-attempt accuracy, you progress through Level 1, Level 2, and Level 3 without incurring wrong answer penalties that reset your activity.
                 </>
             ),
         },
@@ -399,23 +399,23 @@ const ALL_LMS_LINKS = [
 export default function ZybooksHomeworkSolverPage() {
     const config = ZYBOOKS_CONFIG;
     const safeSlug = config.slug;
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": `https://examghost.com/${config.slug}#webpage`,
-                "url": `https://examghost.com/${config.slug}`,
+                "@id": `https://www.examghost.com/${config.slug}#webpage`,
+                "url": `https://www.examghost.com/${config.slug}`,
                 "name": "zyBooks & zyLabs Homework Solver — CS Code AI (2026) | ExamGhost",
                 "description": "Solve zyBooks participation activities, challenge activities, and zyLabs test cases inline in 0.3s. 5 free solves / day with zero keystroke anomaly flags.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-10-27",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": `https://examghost.com/${config.slug}#breadcrumb` },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": `https://www.examghost.com/${config.slug}#breadcrumb` },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -423,7 +423,7 @@ export default function ZybooksHomeworkSolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `https://examghost.com/${config.slug}#software`,
+                "@id": `https://www.examghost.com/${config.slug}#software`,
                 "name": "ExamGhost zyBooks & zyLabs Homework Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -443,16 +443,16 @@ export default function ZybooksHomeworkSolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": `https://examghost.com/${config.slug}#breadcrumb`,
+                "@id": `https://www.examghost.com/${config.slug}#breadcrumb`,
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://examghost.com/canvas-quiz-solver-free-demo" },
-                    { "@type": "ListItem", "position": 3, "name": "zyBooks Homework Solver", "item": `https://examghost.com/${config.slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://www.examghost.com/canvas-quiz-solver-free-demo" },
+                    { "@type": "ListItem", "position": 3, "name": "zyBooks Homework Solver", "item": `https://www.examghost.com/${config.slug}` }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://examghost.com/${config.slug}#faq`,
+                "@id": `https://www.examghost.com/${config.slug}#faq`,
                 "mainEntity": config.faqs.map((faq) => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -464,7 +464,7 @@ export default function ZybooksHomeworkSolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": `https://examghost.com/${config.slug}#video`,
+                "@id": `https://www.examghost.com/${config.slug}#video`,
                 "name": "zyBooks & zyLabs AI Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves zyBooks participation and challenge activities with zero paste flags.",
                 "thumbnailUrl": [posterUrl],
@@ -474,12 +474,12 @@ export default function ZybooksHomeworkSolverPage() {
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "HowTo",
-                "@id": `https://examghost.com/${config.slug}#howto`,
+                "@id": `https://www.examghost.com/${config.slug}#howto`,
                 "name": config.howToSection.heading,
                 "description": "Step-by-step workflow to solve zyBooks challenge activities and zyLabs test cases with zero keystroke anomaly flags.",
                 "totalTime": "PT1M",
@@ -518,7 +518,7 @@ export default function ZybooksHomeworkSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>

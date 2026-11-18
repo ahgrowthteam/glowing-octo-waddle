@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     },
     description: "Compare RightClick AI (userightclick.app, 2.6★ Store) with ExamGhost. Inspect RightClick's $0.99 trial trap, blocked right-click menus, and 10x VisionScan cap.",
     alternates: {
-        canonical: "https://examghost.com/rightclickai-vs-examghost",
+        canonical: "https://www.examghost.com/rightclickai-vs-examghost",
     },
     openGraph: {
         title: "RightClick AI vs ExamGhost (2026) — 2.6★ Store & $0.99 Trial Audit",
         description: "Compare RightClick AI (userightclick.app, 2.6★ Chrome Store) with ExamGhost. Inspect RightClick's $0.99 trial trap, blocked right-click menus, and 10x VisionScan cap.",
-        url: "https://examghost.com/rightclickai-vs-examghost",
+        url: "https://www.examghost.com/rightclickai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -60,16 +60,16 @@ export default function RightClickAIComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-20",
-                "dateModified": "2026-03-27",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/rightclickai-vs-examghost#webpage",
-                "url": "https://examghost.com/rightclickai-vs-examghost",
+                "@id": "https://www.examghost.com/rightclickai-vs-examghost#webpage",
+                "url": "https://www.examghost.com/rightclickai-vs-examghost",
                 "name": "RightClick AI vs ExamGhost (2026 Review) | 2.6★ Context-Menu Extension vs Closed Shadow DOM",
                 "description": "Technical evaluation comparing RightClick v6.1 (userightclick.app, Chrome ID jdfkagmmfcpkkapheeidelffnligiekb, 2.6★) and ExamGhost across context-menu blocking, VisionScan daily caps, and trial billing.",
-                "breadcrumb": { "@id": "https://examghost.com/rightclickai-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/rightclickai-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -120,16 +120,16 @@ export default function RightClickAIComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/rightclickai-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/rightclickai-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "RightClick AI vs ExamGhost", "item": "https://examghost.com/rightclickai-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "RightClick AI vs ExamGhost", "item": "https://www.examghost.com/rightclickai-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/rightclickai-vs-examghost#faq",
+                "@id": "https://www.examghost.com/rightclickai-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -296,7 +296,7 @@ export default function RightClickAIComparisonPage() {
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 mt-8 border-t border-black/10 relative z-10 text-xs">
                             <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
                                 <span className="text-ink-muted block text-[11px] mb-0.5">Chrome Store Rating</span>
-                                <span className="font-bold text-emerald-800">ExamGhost: 4.9★ Verified Stealth</span>
+                                <span className="font-bold text-emerald-800">ExamGhost: Closed Shadow DOM Stealth</span>
                                 <span className="text-rose-800 block text-[10px] mt-0.5">RightClick: 2.6★ (17 ratings)</span>
                             </div>
                             <div className="p-3.5 rounded-xl bg-white/85 border border-black/5">
@@ -329,7 +329,7 @@ export default function RightClickAIComparisonPage() {
                           <Zap className="w-3.5 h-3.5" />
                           ExamGhost Stealth Keyboard &amp; Model Suite
                         </div>
-                        <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                        <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
                       </div>
                       <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                         <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -347,7 +347,7 @@ export default function RightClickAIComparisonPage() {
                       <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                         <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                         <div className="font-bold text-white text-sm">
-                          Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                          Claude · ChatGPT · DeepSeek
                         </div>
                       </div>
                     </div>
@@ -609,7 +609,7 @@ export default function RightClickAIComparisonPage() {
                                 <tbody className="divide-y divide-black/5">
                                     <tr>
                                         <td className="py-3.5 px-4 font-semibold text-ink">Chrome Web Store Rating</td>
-                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ 4.9★ Verified Stealth Architecture</td>
+                                        <td className="py-3.5 px-4 font-bold text-emerald-800 bg-emerald-50/50">✓ Closed Shadow DOM Stealth Architecture</td>
                                         <td className="py-3.5 px-4 text-rose-800 font-medium">✗ 2.6★ (17 ratings · 5,000 users)</td>
                                     </tr>
                                     <tr>
@@ -645,9 +645,9 @@ export default function RightClickAIComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -682,29 +682,7 @@ export default function RightClickAIComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#ffd5cc]/45 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I signed up for RightClick&apos;s $0.99 trial before checking its 2.6-star Chrome Web Store reviews. During my Canvas economics quiz, right-clicking was disabled by the test page, and I hit the 10-per-day VisionScan limit on graph #11. Then I scrolled down their website and saw their &lsquo;Secure data&rsquo; box was literally Lorem Ipsum text from a sleep app. Switched to ExamGhost and never looked back.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-rose-900 text-white font-bold flex items-center justify-center text-sm">
-                                CT
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Callum T.</div>
-                                <div className="text-xs text-ink-muted">Economics &amp; Finance · Penn State University</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

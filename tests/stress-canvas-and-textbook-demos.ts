@@ -10,7 +10,7 @@
  * 5. Playback speed toggling (1x, 1.5x, 2x) & rate scaling factors
  * 6. Dynamic cursor physics & bounds ([0, 100]%, finite, no NaNs)
  * 7. SpeedGrader telemetry state transitions
- * 8. Model tab switching (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+ * 8. Model tab switching (Claude, ChatGPT, DeepSeek)
  * 9. Rapid-fire chaos & boundary resilience
  * 10. Module Export & Alias Contract Verification
  */
@@ -472,14 +472,14 @@ for (const demo of DEMO_COMPONENTS) {
   const leaksScene2 = detectHtmlLeaks(htmlScene2);
 
   // Check Frontier Model Presence in Scene 2
-  const hasClaude = htmlScene2.includes('Claude 3.7');
+  const hasClaude = htmlScene2.includes('Claude');
   const hasChatGPT = htmlScene2.includes('ChatGPT');
-  const hasDeepSeek = htmlScene2.includes('DeepSeek-R1');
+  const hasDeepSeek = htmlScene2.includes('DeepSeek');
 
   check(
     `SCENE-2-${demo.name}`,
     'Scene 2 Frontier AI Models',
-    `${demo.name} renders Scene 2 with Claude 3.7 Sonnet, ChatGPT, and DeepSeek-R1`,
+    `${demo.name} renders Scene 2 with Claude, ChatGPT, and DeepSeek`,
     leaksScene2.length === 0 && hasClaude && hasChatGPT && hasDeepSeek,
     `Claude: ${hasClaude}, ChatGPT: ${hasChatGPT}, DeepSeek: ${hasDeepSeek}`
   );

@@ -40,7 +40,7 @@ export default function Navbar() {
                 {/* Brand */}
                 <Link href="/" prefetch={false} className="flex items-center gap-2.5 pl-2 sm:pl-3 group shrink-0">
                     <div className="w-8 h-8 rounded-full overflow-hidden border border-black/10 transition-transform duration-200 group-hover:scale-110 shadow-sm bg-[#c4d0f8] shrink-0">
-                        <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={32} height={32} className="w-full h-full object-cover scale-110" />
+                        <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="ExamGhost Mascot" width={32} height={32} className="w-full h-full object-cover scale-110" />
                     </div>
                     <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-ink whitespace-nowrap">
                         ExamGhost
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Nav Links */}
-                <ul className="hidden md:flex items-center gap-0.5 lg:gap-1 text-[13px] lg:text-[14px] font-medium text-ink-secondary">
+                <ul className="hidden lg:flex items-center gap-0.5 lg:gap-1 text-[13px] lg:text-[14px] font-medium text-ink-secondary">
                     {navLinks.map((link) => (
                         <li key={link.name}>
                             <Link
@@ -81,13 +81,14 @@ export default function Navbar() {
                         className="btn-dark whitespace-nowrap shrink-0 px-4 sm:px-5 py-2 text-xs sm:text-[14px] font-medium rounded-full shadow-sm"
                     >
                         <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6] shrink-0" aria-hidden="true" />
-                        <span className="whitespace-nowrap">Get Extension</span>
+                        <span className="whitespace-nowrap sm:hidden">Install</span>
+                        <span className="whitespace-nowrap hidden sm:inline">Get Extension</span>
                     </a>
 
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden p-2 rounded-full hover:bg-black/5 text-ink transition-colors shrink-0 min-h-[36px] min-w-[36px] flex items-center justify-center"
+                        className="lg:hidden p-2 rounded-full hover:bg-black/5 text-ink transition-colors shrink-0 min-h-[36px] min-w-[36px] flex items-center justify-center"
                         aria-label="Toggle Navigation"
                     >
                         {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
@@ -97,7 +98,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
-                <div className="pointer-events-auto md:hidden mt-2 max-w-[940px] mx-auto bg-white/95 backdrop-blur-2xl border border-black/10 rounded-2xl p-4 shadow-xl flex flex-col gap-2">
+                <div className="pointer-events-auto lg:hidden mt-2 max-w-[940px] mx-auto bg-white/95 backdrop-blur-2xl border border-black/10 rounded-2xl p-4 shadow-xl flex flex-col gap-2">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}

@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/quizwizard-vs-examghost",
+        canonical: "https://www.examghost.com/quizwizard-vs-examghost",
     },
     openGraph: {
         title: "Quiz Wizard vs ExamGhost (2026) — Spell Quotas vs 0.3s AI",
         description: "2026 audit of Quiz Wizard (quizwizard.app) vs ExamGhost. Skip monthly 'Spell' quotas and toolbar blur logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/quizwizard-vs-examghost",
+        url: "https://www.examghost.com/quizwizard-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -62,18 +62,18 @@ export default function QuizwizardVsExamghostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-02-12",
-                "dateModified": "2026-03-07",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/quizwizard-vs-examghost#webpage",
-        url: "https://examghost.com/quizwizard-vs-examghost",
+        "@id": "https://www.examghost.com/quizwizard-vs-examghost#webpage",
+        url: "https://www.examghost.com/quizwizard-vs-examghost",
         name: "Quiz Wizard vs ExamGhost (2026) | 0.3s Stealth HUD vs Beta 'Spell' Quotas",
         description:
           "2026 architectural comparison between Quiz Wizard (quizwizard.app) and ExamGhost covering 'Spell' credit quotas, base-model ceilings, visual screen capture latency, and Canvas Focus Shield stealth.",
         breadcrumb: {
-          "@id": "https://examghost.com/quizwizard-vs-examghost#breadcrumb",
+          "@id": "https://www.examghost.com/quizwizard-vs-examghost#breadcrumb",
         },
         about: [
           {
@@ -145,31 +145,31 @@ export default function QuizwizardVsExamghostPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://examghost.com/quizwizard-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/quizwizard-vs-examghost#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Quiz Wizard vs ExamGhost",
-            item: "https://examghost.com/quizwizard-vs-examghost",
+            item: "https://www.examghost.com/quizwizard-vs-examghost",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://examghost.com/quizwizard-vs-examghost#faq",
+        "@id": "https://www.examghost.com/quizwizard-vs-examghost#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -447,7 +447,7 @@ export default function QuizwizardVsExamghostPage() {
                   <Sparkles className="w-3.5 h-3.5" />
                   ExamGhost Stealth Keyboard &amp; Model Suite
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -465,7 +465,7 @@ export default function QuizwizardVsExamghostPage() {
               <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                 <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                 <div className="font-bold text-white text-sm">
-                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                  Claude · ChatGPT · DeepSeek
                 </div>
               </div>
             </div>
@@ -603,7 +603,7 @@ export default function QuizwizardVsExamghostPage() {
                     multi-step trick stems. <strong>ExamGhost AI</strong> routes
                     every solve—including all 5 Free/Day trial solves—through our{" "}
                     <strong>99.4% Mathpix LaTeX OCR + frontier STEM reasoning pipeline</strong>{" "}
-                    (featuring Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1) in 0.3 seconds.
+                    (featuring Claude, ChatGPT, and DeepSeek) in 0.3 seconds.
                   </p>
                 </div>
 
@@ -909,12 +909,12 @@ export default function QuizwizardVsExamghostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-xs opacity-75">
                       Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>
@@ -981,42 +981,7 @@ export default function QuizwizardVsExamghostPage() {
           </div>
         </section>
 
-        {/* Verified Student Switcher Proof */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
-          <div className="p-8 rounded-3xl bg-white border-2 border-[#111111] shadow-[6px_6px_0px_0px_#111111]">
-            <div className="flex items-center gap-1 text-amber-500 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-amber-400 text-amber-400"
-                />
-              ))}
-              <span className="text-xs font-mono font-bold text-[#111111] ml-2">
-                Verified Student Switcher
-              </span>
-            </div>
-            <blockquote className="text-base sm:text-lg text-[#111111] font-medium leading-relaxed mb-6">
-              &ldquo;I tried Quiz Wizard because of the free Spells, but first I
-              noticed the pricing page only gave 50 Spells instead of the 100
-              promised in their FAQ. Worse, clicking the extension icon during a
-              Canvas practice quiz logged &apos;stopped viewing the Canvas
-              quiz-taking page&apos; every single time. ExamGhost&apos;s
-              $99/year pass gives me unlimited solves, 0.3s speed, and my Canvas
-              quiz logs stay 100% clean.&rdquo;
-            </blockquote>
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-4">
-              <div>
-                <div className="font-bold text-[#111111] text-sm">Tyler M.</div>
-                <div className="text-xs text-neutral-600">
-                  University of Central Florida · Computer Engineering
-                </div>
-              </div>
-              <div className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-mono text-xs font-bold">
-                Switched from Quiz Wizard Pro
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* FAQ Section */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">

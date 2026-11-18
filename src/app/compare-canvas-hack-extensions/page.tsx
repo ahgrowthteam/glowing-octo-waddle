@@ -22,17 +22,17 @@ import { CompareHubStackCalculator } from '@/components/TopComparisonDemos';
 import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
-    title: "58 Canvas & Exam AI Extensions Compared (2026) — Master Benchmark",
-    description: "Compare all 58 Canvas hack extensions and AI quiz solvers vs ExamGhost. Independent 2026 benchmarks on SpeedGrader stealth, Shadow DOM, 0.3s latency, 5 Free Solves / Day, and the 2-in-1 Claude/ChatGPT/DeepSeek Study Hub.",
+    title: "57 Canvas & AI Quiz Extensions Compared (2026)",
+    description: "Compare 57 Canvas extensions and AI quiz solvers with ExamGhost on SpeedGrader logs, Shadow DOM, speed, pricing and the free 5 solves/day tier.",
     alternates: {
-        canonical: "https://examghost.com/compare-canvas-hack-extensions",
+        canonical: "https://www.examghost.com/compare-canvas-hack-extensions",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: "58 Canvas & Exam AI Extensions Compared (2026) | ExamGhost",
+        title: "57 Canvas & AI Quiz Extensions Compared (2026) | ExamGhost",
         description: "Direct technical benchmarks comparing ExamGhost with CanvasHack, CheatMate, FastSolve, Gauth, Course Hero, College Tools, and 50+ Canvas quiz tools on SpeedGrader stealth, Shadow DOM, and 2-in-1 AI stack savings.",
-        url: "https://examghost.com/compare-canvas-hack-extensions",
+        url: "https://www.examghost.com/compare-canvas-hack-extensions",
         siteName: "ExamGhost",
         images: [
             {
@@ -56,22 +56,22 @@ export default function CompareCanvasHackExtensionsPage() {
         "@graph": [
             {
                 "@type": ["CollectionPage", "WebPage"],
-                "@id": "https://examghost.com/compare-canvas-hack-extensions#webpage",
-                "url": "https://examghost.com/compare-canvas-hack-extensions",
-                "name": "58 Canvas & Exam AI Extensions Compared (2026) | Master Extension Benchmark & AI Stack Calculator",
-                "description": "Comprehensive side-by-side technical evaluations of ExamGhost against CanvasHack, FastSolve, CheatMate, Gauth, Course Hero, Apex Vision AI, Quizonator, Transcript AI, College Tools, and all 58 alternative Canvas quiz extensions.",
+                "@id": "https://www.examghost.com/compare-canvas-hack-extensions#webpage",
+                "url": "https://www.examghost.com/compare-canvas-hack-extensions",
+                "name": "57 Canvas & AI Quiz Extensions Compared (2026) | Master Extension Benchmark & AI Stack Calculator",
+                "description": "Comprehensive side-by-side technical evaluations of ExamGhost against CanvasHack, FastSolve, CheatMate, Gauth, Course Hero, Apex Vision AI, Quizonator, Transcript AI, College Tools, and 57 alternative Canvas quiz extensions.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-04-10",
                 "inLanguage": "en-US",
-                "breadcrumb": { "@id": "https://examghost.com/compare-canvas-hack-extensions#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/compare-canvas-hack-extensions#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "h2"]
                 },
                 "isPartOf": {
                     "@type": "WebSite",
-                    "@id": "https://examghost.com/#website",
-                    "url": "https://examghost.com",
+                    "@id": "https://www.examghost.com/#website",
+                    "url": "https://www.examghost.com",
                     "name": "ExamGhost"
                 },
                 "mainEntity": {
@@ -79,14 +79,14 @@ export default function CompareCanvasHackExtensionsPage() {
                     "itemListElement": competitorsList.map((comp, index) => ({
                         "@type": "ListItem",
                         "position": index + 1,
-                        "url": `https://examghost.com/${comp.slug}`,
+                        "url": `https://www.examghost.com/${comp.slug}`,
                         "name": `ExamGhost vs ${comp.name}`
                     }))
                 }
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/compare-canvas-hack-extensions#software",
+                "@id": "https://www.examghost.com/compare-canvas-hack-extensions#software",
                 "name": "ExamGhost Stealth Extension & Multi-Model Study AI Hub",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
@@ -119,15 +119,15 @@ export default function CompareCanvasHackExtensionsPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/compare-canvas-hack-extensions#breadcrumb",
+                "@id": "https://www.examghost.com/compare-canvas-hack-extensions#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Canvas Hack Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Canvas Hack Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/compare-canvas-hack-extensions#faq",
+                "@id": "https://www.examghost.com/compare-canvas-hack-extensions#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -150,7 +150,7 @@ export default function CompareCanvasHackExtensionsPage() {
                         "name": "How does ExamGhost's 5 Free Solves / Day and 2-in-1 pricing compare to weekly subscription traps?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Many competitors lure students with a $0.99 trial before billing $7.99 to $9.99/week ($415+/year), or charge $149.99 without even including an AI solver. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0, no credit card required). Paid plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) deliver a 2-in-1 value: Unlimited Stealth Extension Solves plus the Study & Homework AI Workspace powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1—saving students $680+/year."
+                            "text": "Many competitors lure students with a $0.99 trial before billing $7.99 to $9.99/week ($415+/year), or charge $149.99 without even including an AI solver. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0, no credit card required). Paid plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) deliver a 2-in-1 value: Unlimited Stealth Extension Solves plus the Study & Homework AI Workspace powered by Claude, ChatGPT, and DeepSeek—saving students $680+/year."
                         }
                     }
                 ]
@@ -247,7 +247,7 @@ export default function CompareCanvasHackExtensionsPage() {
                                 />
                                 <div className="text-xs font-extrabold text-ink">2-in-1 Stealth + Study AI Suite</div>
                                 <div className="text-[11px] text-ink-muted mt-0.5">
-                                    Stealth HUD + Claude 3.7 · ChatGPT · DeepSeek-R1
+                                    Stealth HUD + Claude · ChatGPT · DeepSeek
                                 </div>
                                 <div className="mt-2.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-[10px] font-mono font-bold text-emerald-950">
                                     5 Free Solves / Day (Auto-Refills 24h)
@@ -312,7 +312,7 @@ export default function CompareCanvasHackExtensionsPage() {
                         Stop Paying Separately for a Quiz Extension + ChatGPT Plus + Claude Pro + Course Hero
                     </h2>
                     <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                        Every ExamGhost paid pass (<strong>$19/mo Monthly</strong>, <strong>$99/yr Academic Year Pass [$8.25/mo]</strong>, or <strong>$199 Lifetime</strong>) is a <strong>2-in-1 powerhouse</strong>: you get Unlimited Stealth Extension Solves <em>plus</em> full access to our <strong>Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini) &amp; DeepSeek-R1 Study Workspace</strong>—saving over <strong>$680+/year</strong>.
+                        Every ExamGhost paid pass (<strong>$19/mo Monthly</strong>, <strong>$99/yr Academic Year Pass [$8.25/mo]</strong>, or <strong>$199 Lifetime</strong>) is a <strong>2-in-1 powerhouse</strong>: you get Unlimited Stealth Extension Solves <em>plus</em> full access to our <strong>Claude, ChatGPT &amp; DeepSeek Study Workspace</strong>—saving over <strong>$680+/year</strong>.
                     </p>
                 </div>
 
@@ -333,7 +333,7 @@ export default function CompareCanvasHackExtensionsPage() {
                         Which Canvas AI quiz solver extension is best in 2026?
                     </h2>
                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                        In our 2026 technical audit of {competitorsList.length} Canvas and LMS study extensions, <strong>ExamGhost</strong> ranked #1 for stealth, response latency, hotkey ergonomics, and 2-in-1 value. Over 75% of tested alternatives—including CheatMate, CanvasQuiz, Solvely, Gauth, Course Hero, Apex Vision AI, Quizonator, RightClick AI, and College Tools (Mindko)—failed university integrity checks because they inject visible DOM elements into host quiz cards, expose extension assets via <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">web_accessible_resources</code>, or open Chrome&apos;s native <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">sidePanel</code> (which fires <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">window.blur</code> in Canvas SpeedGrader logs). ExamGhost eliminates all three detection vectors by isolating its UI inside a closed Shadow DOM (<code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">mode: &apos;closed&apos;</code>), intercepting focus-loss telemetry via Focus Shield, and solving questions inline in 0.3 seconds via <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">Double-Click</code> or <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">Alt+S</code> Hybrid Vision+DOM Snip. Unlike weekly billing traps charging $7.99–$9.99/week ($415+/year), ExamGhost gives every student <strong>5 Free Solves / Day</strong> (auto-refills every 24 hours, $0, no credit card required), plus 2-in-1 plans at $19/month, $99/year ($8.25/month), or $199 Lifetime that include the Claude 3.7 Sonnet, ChatGPT (o3-mini/4o), and DeepSeek-R1 Study Workspace.
+                        In our 2026 technical audit of {competitorsList.length} Canvas and LMS study extensions, <strong>ExamGhost</strong> ranked #1 for stealth, response latency, hotkey ergonomics, and 2-in-1 value. Over 75% of tested alternatives—including CheatMate, CanvasQuiz, Solvely, Gauth, Course Hero, Apex Vision AI, Quizonator, RightClick AI, and College Tools (Mindko)—failed university integrity checks because they inject visible DOM elements into host quiz cards, expose extension assets via <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">web_accessible_resources</code>, or open Chrome&apos;s native <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">sidePanel</code> (which fires <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">window.blur</code> in Canvas SpeedGrader logs). ExamGhost eliminates all three detection vectors by isolating its UI inside a closed Shadow DOM (<code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">mode: &apos;closed&apos;</code>), intercepting focus-loss telemetry via Focus Shield, and solving questions inline in 0.3 seconds via <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">Double-Click</code> or <code className="bg-black/5 px-1 py-0.5 rounded text-xs font-mono">Alt+S</code> Hybrid Vision+DOM Snip. Unlike weekly billing traps charging $7.99–$9.99/week ($415+/year), ExamGhost gives every student <strong>5 Free Solves / Day</strong> (auto-refills every 24 hours, $0, no credit card required), plus 2-in-1 plans at $19/month, $99/year ($8.25/month), or $199 Lifetime that include the Claude, ChatGPT, and DeepSeek Study Workspace.
                     </p>
                 </div>
             </section>
@@ -437,7 +437,7 @@ export default function CompareCanvasHackExtensionsPage() {
                             How does ExamGhost&apos;s 5 Free Solves / Day and 2-in-1 Study Hub pricing work?
                         </h3>
                         <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                            Many competitors operate on aggressive recurring weekly billing models ($7.99 to $9.99/week) or charge $149.99 without an AI solver. ExamGhost gives every student <strong>5 Free Solves / Day</strong> (auto-refills every 24 hours, $0, no credit card required) to verify our 0.3s closed Shadow DOM HUD first. Paid passes—<strong>$19/mo Monthly Pass</strong>, <strong>$99/yr Academic Year Pass ($8.25/mo)</strong>, or <strong>$199 Lifetime Degree Pass</strong>—include both Unlimited Stealth Extension Solves and full access to our <strong>Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini) &amp; DeepSeek-R1 Study Workspace</strong>.
+                            Many competitors operate on aggressive recurring weekly billing models ($7.99 to $9.99/week) or charge $149.99 without an AI solver. ExamGhost gives every student <strong>5 Free Solves / Day</strong> (auto-refills every 24 hours, $0, no credit card required) to verify our 0.3s closed Shadow DOM HUD first. Paid passes—<strong>$19/mo Monthly Pass</strong>, <strong>$99/yr Academic Year Pass ($8.25/mo)</strong>, or <strong>$199 Lifetime Degree Pass</strong>—include both Unlimited Stealth Extension Solves and full access to our <strong>Claude, ChatGPT &amp; DeepSeek Study Workspace</strong>.
                         </p>
                     </div>
 
@@ -464,7 +464,7 @@ export default function CompareCanvasHackExtensionsPage() {
                             Upgrade to Undetectable 2-in-1 Exam Stealth &amp; Study AI
                         </h2>
                         <p className="text-[#bfbbb3] text-sm sm:text-base mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-                            Stop risking your GPA with detectable scripts and costly weekly subscriptions. Start with 5 Free Solves / Day or unlock Unlimited Stealth + Claude 3.7, ChatGPT &amp; DeepSeek-R1 from $8.25/mo ($99/yr).
+                            Stop risking your GPA with detectable scripts and costly weekly subscriptions. Start with 5 Free Solves / Day or unlock Unlimited Stealth + Claude, ChatGPT &amp; DeepSeek from $8.25/mo ($99/yr).
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                             <a 

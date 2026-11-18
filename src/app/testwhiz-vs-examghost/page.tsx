@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
     },
-    description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/testwhiz-vs-examghost",
+        canonical: "https://www.examghost.com/testwhiz-vs-examghost",
     },
     openGraph: {
         title: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
-        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/testwhiz-vs-examghost",
+        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/testwhiz-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "TestWhiz vs ExamGhost (2026) — $5.99/Wk Trial vs Stealth",
-        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "Compare TestWhiz (testwhiz.co) with ExamGhost. Skip 3-day $5.99/wk trial traps and delisted extensions with 0.3s closed Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -62,18 +62,18 @@ export default function TestwhizVsExamghostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-25",
-                "dateModified": "2026-03-24",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/testwhiz-vs-examghost#webpage",
-        url: "https://examghost.com/testwhiz-vs-examghost",
+        "@id": "https://www.examghost.com/testwhiz-vs-examghost#webpage",
+        url: "https://www.examghost.com/testwhiz-vs-examghost",
         name: "TestWhiz vs ExamGhost (2026 Audit) | 6-in-1 Study Portal vs 0.3s Canvas Stealth",
         description:
-          "Independent 2026 technical audit of TestWhiz (testwhiz.co) vs ExamGhost. Compare TestWhiz's replaced extension, 3-day trial ($5.99/wk or $12.99/mo), and PDF/YouTube chat bundle against ExamGhost's 4-Layer Focus Shield and 5 Free Solves / Day.",
+          "ExamGhost's 2026 technical audit of TestWhiz (testwhiz.co) vs ExamGhost. Compare TestWhiz's replaced extension, 3-day trial ($5.99/wk or $12.99/mo), and PDF/YouTube chat bundle against ExamGhost's 4-Layer Focus Shield and 5 Free Solves / Day.",
         breadcrumb: {
-          "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb",
+          "@id": "https://www.examghost.com/testwhiz-vs-examghost#breadcrumb",
         },
         about: [
           {
@@ -139,31 +139,31 @@ export default function TestwhizVsExamghostPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://examghost.com/testwhiz-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/testwhiz-vs-examghost#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "TestWhiz vs ExamGhost",
-            item: "https://examghost.com/testwhiz-vs-examghost",
+            item: "https://www.examghost.com/testwhiz-vs-examghost",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://examghost.com/testwhiz-vs-examghost#faq",
+        "@id": "https://www.examghost.com/testwhiz-vs-examghost#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -450,7 +450,7 @@ export default function TestwhizVsExamghostPage() {
                   <Zap className="w-3.5 h-3.5" />
                   ExamGhost Stealth Keyboard &amp; Model Suite
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h3>
+                <h2 className="text-xl sm:text-2xl font-bold">Zero-Click Keyboard Execution &amp; Frontier Model Engine</h2>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-emerald-300">
                 <span className="px-2.5 py-1 rounded bg-white/10 border border-white/15">Double-Click</span>
@@ -468,7 +468,7 @@ export default function TestwhizVsExamghostPage() {
               <div className="p-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex flex-col justify-center">
                 <div className="text-neutral-400 text-xs font-mono uppercase tracking-wider mb-1">Frontier AI Multi-Model Hub:</div>
                 <div className="font-bold text-white text-sm">
-                  Claude 3.7 Sonnet · ChatGPT o3-mini/4o · DeepSeek-R1
+                  Claude · ChatGPT · DeepSeek
                 </div>
               </div>
             </div>
@@ -849,9 +849,9 @@ export default function TestwhizVsExamghostPage() {
                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

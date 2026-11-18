@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/classology-vs-examghost",
+        canonical: "https://www.examghost.com/classology-vs-examghost",
     },
     openGraph: {
         title: "Classology AI vs ExamGhost (2026) — 40.8MiB Sidebar Audit",
         description: "Compare Classology AI (v4.0.2) with ExamGhost. Avoid 40.87MiB persistent sidebars and Canvas focus-loss logs with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/classology-vs-examghost",
+        url: "https://www.examghost.com/classology-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -118,17 +118,17 @@ export default function ClassologyVsExamGhostPage() {
       {
         "@type": "WebPage",
                 "datePublished": "2026-01-27",
-                "dateModified": "2026-03-21",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-        "@id": "https://examghost.com/classology-vs-examghost/#webpage",
-        url: "https://examghost.com/classology-vs-examghost",
+        "@id": "https://www.examghost.com/classology-vs-examghost/#webpage",
+        url: "https://www.examghost.com/classology-vs-examghost",
         name: "Classology AI vs ExamGhost (2026): 40.87MiB Persistent Sidebar vs Zero-Footprint LMS Stealth",
         description:
           "2026 comparison of Classology AI (classology.ai v4.0.2 by Zou Labs LLC) and ExamGhost covering the 40.87MiB persistent sidebar, floating Solve button, Cmd+Shift+1 blur logs, privacy disclosures, and pricing.",
-        isPartOf: { "@id": "https://examghost.com/#website" },
+        isPartOf: { "@id": "https://www.examghost.com/#website" },
       },
       {
         "@type": "BreadcrumbList",
@@ -137,19 +137,19 @@ export default function ClassologyVsExamGhostPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://examghost.com",
+            item: "https://www.examghost.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Compare Extensions",
-            item: "https://examghost.com/compare-canvas-hack-extensions",
+            item: "https://www.examghost.com/compare-canvas-hack-extensions",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Classology AI vs ExamGhost",
-            item: "https://examghost.com/classology-vs-examghost",
+            item: "https://www.examghost.com/classology-vs-examghost",
           },
         ],
       },
@@ -785,10 +785,10 @@ export default function ClassologyVsExamGhostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                   </tr>
                 </tbody>
               </table>

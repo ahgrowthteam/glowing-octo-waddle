@@ -1,7 +1,7 @@
 # ExamGhost — Official Pricing & Plan Specifications (2026)
 
-> **Official URL**: https://examghost.com/#pricing  
-> **Machine-Readable Pricing Spec**: https://examghost.com/pricing.md  
+> **Official URL**: https://www.examghost.com/#pricing  
+> **Machine-Readable Pricing Spec**: https://www.examghost.com/pricing.md  
 > **Last Verified**: March 29, 2026  
 
 ExamGhost provides transparent, student-friendly pricing with **zero weekly billing traps** and **zero credit card required** for the 5 Free Solves / Day ($0, auto-refills every 24 hours).

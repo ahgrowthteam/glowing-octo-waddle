@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/canvasscholar-vs-examghost",
+        canonical: "https://www.examghost.com/canvasscholar-vs-examghost",
     },
     openGraph: {
         title: "Canvas Scholar vs ExamGhost (2026) — Clipper vs 0.3s AI",
         description: "Compare Canvas Scholar v3.0 with ExamGhost. Upgrade from manual Ctrl+Shift+C clipboard clipping to 0.3s inline AI solving, Focus Shield & 5 Free Solves / Day.",
-        url: "https://examghost.com/canvasscholar-vs-examghost",
+        url: "https://www.examghost.com/canvasscholar-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -63,16 +63,16 @@ export default function CanvasscholarVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-18",
-                "dateModified": "2026-03-02",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/canvasscholar-vs-examghost#webpage",
-                "url": "https://examghost.com/canvasscholar-vs-examghost",
+                "@id": "https://www.examghost.com/canvasscholar-vs-examghost#webpage",
+                "url": "https://www.examghost.com/canvasscholar-vs-examghost",
                 "name": "Canvas Scholar vs ExamGhost (2026) | Ctrl+Shift+C Question Clipper vs 0.3s AI Stealth HUD",
                 "description": "Technical comparison between the Canvas Scholar Chrome extension (gjpoopikljodipapghmkpdnajkjaphfa) and ExamGhost.",
-                "breadcrumb": { "@id": "https://examghost.com/canvasscholar-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvasscholar-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -98,16 +98,16 @@ export default function CanvasscholarVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvasscholar-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvasscholar-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Canvas Scholar vs ExamGhost", "item": "https://examghost.com/canvasscholar-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Canvas Scholar vs ExamGhost", "item": "https://www.examghost.com/canvasscholar-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvasscholar-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvasscholar-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -741,7 +741,7 @@ export default function CanvasscholarVsExamghostPage() {
                                     </tr>
                                 
                   <tr className="bg-emerald-50/20">
-                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="p-4 font-bold">2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>
                     <td className="p-4 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Replaces $65/mo AI Stack)</td>
                     <td className="p-4 text-rose-800 font-semibold">✗ Not Included</td>

@@ -217,10 +217,10 @@ const CATEGORIES: ToolCategory[] = [
         bg: '#bfe9d9',
         tagline: '5 FREE SOLVES / DAY · MULTI-MODEL STUDY HUB',
         headline: '5 free solves every day + full Study AI Hub on paid plans.',
-        description: 'Start immediately with 5 free solves per day (auto-refills every 24h). Paid plans unlock unlimited extension solves plus the Claude 3.7, ChatGPT, and DeepSeek-R1 Study & Homework AI Workspace.',
+        description: 'Start immediately with 5 free solves per day (auto-refills every 24h). Paid plans unlock unlimited extension solves plus the Claude, ChatGPT, and DeepSeek Study & Homework AI Workspace.',
         bullets: [
             '5 free solves / day included ($0, no card)',
-            'Claude 3.7 + ChatGPT + DeepSeek Study Hub',
+            'Claude + ChatGPT + DeepSeek Study Hub',
             '⌘+Shift+U master pause shortcut',
             'Dark & Light extension popup'
         ],
@@ -279,8 +279,8 @@ export default function Features() {
                         <span>BUILT FOR SPEED &amp; SIMPLICITY</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        Everything you need to solve,<br />
-                        completely invisible.
+                        What can ExamGhost do?<br />
+                        Everything you need to solve.
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
                         Switch modes with <code className="text-ink font-semibold">Alt+1/2/3</code>, double-click any question to auto-fill, or press <code className="text-ink font-semibold">Alt+S</code> to snip diagrams and formulas.

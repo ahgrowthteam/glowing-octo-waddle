@@ -90,7 +90,7 @@ export default function Footer() {
                     <div className="sm:col-span-2 lg:col-span-4">
                         <Link prefetch={false} href="/" className="flex items-center gap-2.5 mb-3 inline-flex group">
                             <div className="w-8 h-8 rounded-full overflow-hidden border border-black/10 bg-[#c4d0f8] shadow-xs shrink-0">
-                                <img src="/images/ghost/ghost_mascot_hero.jpg" alt="ExamGhost Mascot" width={32} height={32} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" />
+                                <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="ExamGhost Mascot" width={32} height={32} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" />
                             </div>
                             <span className="font-display font-bold text-xl tracking-tight text-ink">
                                 ExamGhost
@@ -155,6 +155,7 @@ export default function Footer() {
                             <li><Link prefetch={false} href="/canvas-quiz-solver-free-demo" className="hover:text-ink transition-colors inline-block py-1 font-semibold text-emerald-800">Live Demo Sandbox</Link></li>
                             <li><Link prefetch={false} href="/features" className="hover:text-ink transition-colors inline-block py-1">MVP Features</Link></li>
                             <li><Link prefetch={false} href="/faq" className="hover:text-ink transition-colors inline-block py-1">Knowledge Base &amp; FAQ</Link></li>
+                            <li><Link prefetch={false} href="/about" className="hover:text-ink transition-colors inline-block py-1">About ExamGhost</Link></li>
                             <li><Link prefetch={false} href="/contact" className="hover:text-ink transition-colors inline-block py-1">Contact Support (24/7)</Link></li>
                             <li><Link prefetch={false} href="/privacy" className="hover:text-ink transition-colors inline-block py-1">Privacy Policy</Link></li>
                             <li><Link prefetch={false} href="/terms" className="hover:text-ink transition-colors inline-block py-1">Terms of Service</Link></li>

@@ -55,9 +55,9 @@ export const PRICING_TIERS = {
 } as const;
 
 export const FRONTIER_MODELS = [
-  'Claude 3.7 Sonnet',
-  'ChatGPT o3-mini/4o',
-  'DeepSeek-R1',
+  'Claude',
+  'ChatGPT',
+  'DeepSeek',
 ] as const;
 
 /**

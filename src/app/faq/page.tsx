@@ -128,15 +128,15 @@ export default function FAQPage() {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/faq#webpage",
-                "url": "https://examghost.com/faq",
+                "@id": "https://www.examghost.com/faq#webpage",
+                "url": "https://www.examghost.com/faq",
                 "name": "FAQ — Stealth Architecture, Pricing & LMS Setup | ExamGhost",
                 "description": "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/faq#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/faq#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "h2"]
@@ -144,15 +144,15 @@ export default function FAQPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/faq#breadcrumb",
+                "@id": "https://www.examghost.com/faq#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "FAQ & Knowledge Base", "item": "https://examghost.com/faq" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "FAQ & Knowledge Base", "item": "https://www.examghost.com/faq" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/faq#faqpage",
+                "@id": "https://www.examghost.com/faq#faqpage",
                 "mainEntity": faqs.map(faq => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -197,7 +197,7 @@ export default function FAQPage() {
                             <span>Verified Technical Brief · Updated 2026</span>
                         </div>
                         <span className="text-[11px] text-ink-muted font-medium">
-                            Reviewed by ExamGhost Security Engineering Team
+                            Maintained by the ExamGhost team
                         </span>
                     </div>
                     <h2 className="font-display font-bold text-base sm:text-lg text-ink mb-2">

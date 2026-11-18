@@ -7,7 +7,7 @@
  *    - Zero legacy `CompetitorMotionDemo` imports
  *    - Bespoke demo component imported and mounted
  *    - All 6 hotkeys verbatim present: Double-Click, Alt+S, Alt+1, Alt+2, Alt+3, ⌘+Shift+U
- *    - All 3 frontier models present: Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1
+ *    - All 3 frontier models present: Claude, ChatGPT, DeepSeek
  *    - Table columns count matches across <th> and <td> for every row
  *    - Zero truncated "$199 Life" strings
  *    - Zero "50 Free Solves" for ExamGhost
@@ -711,9 +711,9 @@ for (const demo of M6_DEMOS) {
   harness.setState(1, 2);
   harness.setState(2, 50);
   const s2Html = cleanSsr(renderToString(harness.render().element));
-  const hasClaude = s2Html.includes('Claude 3.7 Sonnet') || s2Html.includes('Claude');
-  const hasChatGpt = s2Html.includes('ChatGPT o3-mini/4o') || s2Html.includes('ChatGPT');
-  const hasDeepSeek = s2Html.includes('DeepSeek-R1') || s2Html.includes('DeepSeek');
+  const hasClaude = s2Html.includes('Claude') || s2Html.includes('Claude');
+  const hasChatGpt = s2Html.includes('ChatGPT') || s2Html.includes('ChatGPT');
+  const hasDeepSeek = s2Html.includes('DeepSeek') || s2Html.includes('DeepSeek');
 
   assertCheck(
     `ACADEMIC-SCENE2-${demo.name}`,
@@ -777,8 +777,8 @@ for (const demo of M6_DEMOS) {
     missingHotkeys.length > 0 ? `Missing: ${missingHotkeys.join(', ')}` : 'All 6 present'
   );
 
-  // 5. All 3 frontier models present: Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1
-  const requiredModels = ['Claude 3.7 Sonnet', 'ChatGPT o3-mini/4o', 'DeepSeek-R1'];
+  // 5. All 3 frontier models present: Claude, ChatGPT, DeepSeek
+  const requiredModels = ['Claude', 'ChatGPT', 'DeepSeek'];
   const missingModels = requiredModels.filter((m) => !fileContent.includes(m));
   assertCheck(
     `M6-ROUTE-MODELS-${demo.slug}`,

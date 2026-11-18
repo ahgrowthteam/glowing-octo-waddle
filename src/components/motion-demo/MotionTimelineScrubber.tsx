@@ -132,7 +132,7 @@ export const MotionTimelineScrubber: React.FC<ScrubberProps> = ({
                                 key={speed}
                                 type="button"
                                 onClick={() => onSpeedChange(speed)}
-                                className={`px-2 py-0.5 rounded-full transition-all cursor-pointer ${
+                                className={`px-2 py-0.5 min-h-[24px] min-w-[28px] rounded-full transition-all cursor-pointer ${
                                     playbackSpeed === speed
                                         ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40 shadow-xs'
                                         : 'text-white/60 hover:text-white hover:bg-white/5'

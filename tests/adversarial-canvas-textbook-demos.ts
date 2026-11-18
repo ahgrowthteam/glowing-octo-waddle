@@ -443,9 +443,9 @@ async function runAdversarialM3Suite() {
     const nextStart = demosSource.indexOf('export function ', start + 10);
     const chunk = demosSource.slice(start, nextStart !== -1 ? nextStart : undefined);
 
-    const hasClaude = chunk.includes('Claude 3.7 Sonnet') || chunk.includes('activeModelTab === \x27claude\x27');
-    const hasChatgpt = chunk.includes('ChatGPT o3-mini/4o') || chunk.includes('activeModelTab === \x27chatgpt\x27');
-    const hasDeepseek = chunk.includes('DeepSeek-R1') || chunk.includes('activeModelTab === \x27deepseek\x27');
+    const hasClaude = chunk.includes('Claude') || chunk.includes('activeModelTab === \x27claude\x27');
+    const hasChatgpt = chunk.includes('ChatGPT') || chunk.includes('activeModelTab === \x27chatgpt\x27');
+    const hasDeepseek = chunk.includes('DeepSeek') || chunk.includes('activeModelTab === \x27deepseek\x27');
     const allModelsPresent = hasClaude && hasChatgpt && hasDeepseek;
 
     recordCheck(
@@ -453,7 +453,7 @@ async function runAdversarialM3Suite() {
       'Frontier Models',
       `${item.name} supports all 3 frontier models (Claude, ChatGPT, DeepSeek)`,
       allModelsPresent,
-      'Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1 tab logic present'
+      'Claude, ChatGPT, DeepSeek tab logic present'
     );
   }
 
@@ -608,7 +608,7 @@ async function runAdversarialM3Suite() {
       'Frontier Models Parity',
       `${slug} cites all 3 frontier AI models`,
       models.isComplete,
-      models.isComplete ? 'Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1 present' : 'Missing frontier models'
+      models.isComplete ? 'Claude, ChatGPT, DeepSeek present' : 'Missing frontier models'
     );
 
     // 7.5 JSON-LD Schema

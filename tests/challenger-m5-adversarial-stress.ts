@@ -811,9 +811,9 @@ for (const demo of DEMOS) {
   harness.setState(1, 2); // Scene 2
   harness.setState(2, 50);
   const s2Html = cleanSsr(renderToString(harness.render().element));
-  const hasClaude = s2Html.includes('Claude 3.7 Sonnet') || s2Html.includes('Claude');
-  const hasChatGpt = s2Html.includes('ChatGPT o3-mini/4o') || s2Html.includes('ChatGPT');
-  const hasDeepSeek = s2Html.includes('DeepSeek-R1') || s2Html.includes('DeepSeek');
+  const hasClaude = s2Html.includes('Claude') || s2Html.includes('Claude');
+  const hasChatGpt = s2Html.includes('ChatGPT') || s2Html.includes('ChatGPT');
+  const hasDeepSeek = s2Html.includes('DeepSeek') || s2Html.includes('DeepSeek');
 
   assertCheck(
     `ACADEMIC-SCENE2-${demo.name}`,
@@ -871,7 +871,7 @@ for (const demo of DEMOS) {
     'Route Contract Compliance',
     demo.slug,
     models.isComplete,
-    `Frontier models verified in route (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)`
+    `Frontier models verified in route (Claude, ChatGPT, DeepSeek)`
   );
 
   // 5. JSON-LD schema

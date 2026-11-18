@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
     },
-    description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+    description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/usequietly-vs-examghost",
+        canonical: "https://www.examghost.com/usequietly-vs-examghost",
     },
     openGraph: {
         title: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
-        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
-        url: "https://examghost.com/usequietly-vs-examghost",
+        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
+        url: "https://www.examghost.com/usequietly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "UseQuietly vs ExamGhost (2026) — .ai-dot DOM vs Shadow DOM",
-        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves / Day.",
+        description: "Compare UseQuietly (Quietly AI) with ExamGhost. Replace 8-question caps and detectable .ai-dot DOM injections with 0.3s Shadow DOM stealth & 5 Free Solves/Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -64,16 +64,16 @@ export default function UseQuietlyComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-18",
-                "dateModified": "2026-03-24",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/usequietly-vs-examghost#webpage",
-                "url": "https://examghost.com/usequietly-vs-examghost",
+                "@id": "https://www.examghost.com/usequietly-vs-examghost#webpage",
+                "url": "https://www.examghost.com/usequietly-vs-examghost",
                 "name": "UseQuietly (Quietly AI) vs ExamGhost (2026 Review) | The .ai-dot DOM Exposure",
                 "description": "Technical evaluation comparing Quietly AI (usequietly.com, Chrome ID opmlbifgjdfgenkcejhdboookegdijcg) and ExamGhost across DOM injection stealth, window blur handling, and subscription costs.",
-                "breadcrumb": { "@id": "https://examghost.com/usequietly-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/usequietly-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -125,16 +125,16 @@ export default function UseQuietlyComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/usequietly-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/usequietly-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "UseQuietly vs ExamGhost", "item": "https://examghost.com/usequietly-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "UseQuietly vs ExamGhost", "item": "https://www.examghost.com/usequietly-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/usequietly-vs-examghost#faq",
+                "@id": "https://www.examghost.com/usequietly-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -441,7 +441,7 @@ export default function UseQuietlyComparisonPage() {
                                             We never nerf your AI accuracy on lower plans.
                                         </h3>
                                         <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-4">
-                                            Whether you are using your <strong>5 Free Solves / Day</strong> or our <strong>$99/yr ($8.25/mo) Academic Year Pass</strong>, ExamGhost routes every question through our full flagship STEM &amp; multimodal vision engine powered by Claude 3.7 Sonnet, ChatGPT o3-mini/4o, and DeepSeek-R1.
+                                            Whether you are using your <strong>5 Free Solves / Day</strong> or our <strong>$99/yr ($8.25/mo) Academic Year Pass</strong>, ExamGhost routes every question through our full flagship STEM &amp; multimodal vision engine powered by Claude, ChatGPT, and DeepSeek.
                                         </p>
                                         <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
                                             <div className="p-3 rounded-xl bg-white border border-emerald-200">
@@ -699,9 +699,9 @@ export default function UseQuietlyComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -736,29 +736,7 @@ export default function UseQuietlyComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT CASE STUDY / SOCIAL PROOF */}
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" aria-label="Student Review">
-                    <div className="rounded-[32px] bg-gradient-to-br from-[#c4d0f8]/40 via-white to-white border border-black/10 p-6 sm:p-10 shadow-sm">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                            <span className="text-xs font-bold text-ink ml-2">Verified Student Migration</span>
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-relaxed mb-6">
-                            &ldquo;I tried Quietly AI for my business statistics quizzes on Canvas and burned through all 8 lifetime free questions on the first practice test. When I started the 3-day trial for the $7.99/mo Premium plan, it kept missing multi-step confidence interval questions because Quietly gates their &lsquo;strongest AI&rsquo; behind the $14.99/mo Pro tier. Even worse, it injected visible colored dots next to the options and docked a huge Step-by-Step Solution panel inside my Canvas tab. Switching to ExamGhost gave me 5 free solves / day right away, zero injected `.ai-dot` elements, and the $99/year pass ($8.25/mo) gives me top-tier math accuracy on every single question.&rdquo;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-indigo-950 text-white font-bold flex items-center justify-center text-sm">
-                                TC
-                            </div>
-                            <div>
-                                <div className="text-sm font-bold text-ink">Tyler C.</div>
-                                <div className="text-xs text-ink-muted">Finance Major · Arizona State University</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* INTERACTIVE FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-16" aria-label="Frequently Asked Questions">

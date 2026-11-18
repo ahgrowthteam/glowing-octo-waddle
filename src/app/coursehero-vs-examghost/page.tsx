@@ -33,16 +33,16 @@ import StudyAiHubShowcase from '@/components/StudyAiHubShowcase';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
+        absolute: "Course Hero vs ExamGhost (2026) — Static PDFs vs Live AI",
     },
-    description: "Why Course Hero's $39.95/mo blurred 2019–2022 PDFs fail on randomized Canvas STEM variables (and trigger professor distractor traps) vs ExamGhost's 0.3s live AI + Claude/ChatGPT/DeepSeek Study Hub. 5 Free Solves / Day.",
+    description: "Why Course Hero's $39.95/mo blurred 2019–2022 PDFs fail on randomized Canvas STEM variables vs ExamGhost's 0.3s live AI. 5 Free Solves/Day.",
     alternates: {
-        canonical: "https://examghost.com/coursehero-vs-examghost",
+        canonical: "https://www.examghost.com/coursehero-vs-examghost",
     },
     openGraph: {
-        title: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
-        description: "Stop paying $39.95/mo to unblur outdated PDFs that give wrong answers on randomized Canvas & WebAssign exams. Solve live variables in 0.3s + get Claude 3.7, ChatGPT & DeepSeek-R1.",
-        url: "https://examghost.com/coursehero-vs-examghost",
+        title: "Course Hero vs ExamGhost (2026) — Static PDFs vs Live AI",
+        description: "Stop paying $39.95/mo to unblur outdated PDFs that give wrong answers on randomized Canvas & WebAssign exams. Solve live variables in 0.3s + get Claude, ChatGPT & DeepSeek.",
+        url: "https://www.examghost.com/coursehero-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Course Hero vs ExamGhost (2026) — $39.95 Static PDFs vs 0.3s Live AI",
-        description: "Course Hero's static PDFs fail on randomized STEM exams. Compute your exact live numbers in 0.3s with ExamGhost + access Claude 3.7, ChatGPT & DeepSeek-R1. 5 Free Solves / Day.",
+        title: "Course Hero vs ExamGhost (2026) — Static PDFs vs Live AI",
+        description: "Course Hero's static PDFs fail on randomized STEM exams. Compute your exact live numbers in 0.3s with ExamGhost + access Claude, ChatGPT & DeepSeek. 5 Free Solves / Day.",
         images: ["/og-image.jpg"],
     },
 };
@@ -69,32 +69,32 @@ export default function CourseheroVsExamghostPage() {
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://examghost.com/coursehero-vs-examghost#article",
+                "@id": "https://www.examghost.com/coursehero-vs-examghost#article",
                 "headline": "Course Hero vs ExamGhost (2026): Dead Static PDFs ($39.95/mo) vs Live 0.3s Symbolic AI + Multi-Model Study Hub",
                 "datePublished": "2026-01-15",
-                "dateModified": "2026-04-10",
+                "dateModified": "2026-11-18",
                 "author": {
                     "@type": "Organization",
                     "name": "ExamGhost Academic Economics & STEM Audit Lab",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "url": "https://examghost.com/coursehero-vs-examghost",
+                "url": "https://www.examghost.com/coursehero-vs-examghost",
                 "name": "Course Hero vs ExamGhost (2026) | $39.95/mo Blurred PDFs vs 0.3s Live Symbolic AI + Multi-Model Study Hub",
-                "description": "Forensic academic audit comparing Course Hero ($39.95/mo 30-unlock cap, static 2019–2022 student PDFs, Educator Exchange faculty tracking, and randomized STEM variable failure) against ExamGhost's 0.3s live in-tab solver and Claude 3.7 Sonnet / ChatGPT / DeepSeek-R1 Study Workspace.",
+                "description": "Forensic academic audit comparing Course Hero ($39.95/mo 30-unlock cap, static 2019–2022 student PDFs, Educator Exchange faculty tracking, and randomized STEM variable failure) against ExamGhost's 0.3s live in-tab solver and Claude / ChatGPT / DeepSeek Study Workspace.",
                 "breadcrumb": {
-                    "@id": "https://examghost.com/coursehero-vs-examghost#breadcrumb"
+                    "@id": "https://www.examghost.com/coursehero-vs-examghost#breadcrumb"
                 },
                 "about": [
-                    { "@id": "https://examghost.com/coursehero-vs-examghost#software" },
+                    { "@id": "https://www.examghost.com/coursehero-vs-examghost#software" },
                     {
                         "@type": "SoftwareApplication",
                         "name": "Course Hero",
@@ -120,7 +120,7 @@ export default function CourseheroVsExamghostPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/coursehero-vs-examghost#software",
+                "@id": "https://www.examghost.com/coursehero-vs-examghost#software",
                 "name": "ExamGhost Stealth Extension & Multi-Model Study AI Hub",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, macOS, Windows",
@@ -153,38 +153,38 @@ export default function CourseheroVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/coursehero-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/coursehero-vs-examghost#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://examghost.com"
+                        "item": "https://www.examghost.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Compare Extensions",
-                        "item": "https://examghost.com/compare-canvas-hack-extensions"
+                        "item": "https://www.examghost.com/compare-canvas-hack-extensions"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Course Hero vs ExamGhost",
-                        "item": "https://examghost.com/coursehero-vs-examghost"
+                        "item": "https://www.examghost.com/coursehero-vs-examghost"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/coursehero-vs-examghost#faq",
+                "@id": "https://www.examghost.com/coursehero-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
                         "name": "What is the 'Professor Distractor Trap' when using Course Hero PDFs on Canvas or WebAssign exams?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "In 2026, Canvas Formula Questions, WebAssign, Pearson MyLab, and McGraw-Hill Connect randomize numerical variables (such as mass, molarity, interest rate, or angle) for every student. Professors frequently find the 2019–2022 PDF of their exam on Course Hero, take the old PDF's numerical answer, and plant it as a wrong multiple-choice distractor on the 2026 exam. Students who copy the unblurred Course Hero PDF get the question wrong AND flag themselves for copying a static answer key. ExamGhost computes your exact live screen numbers in 0.3s and derives the full proof in DeepSeek-R1 and Claude 3.7 Sonnet."
+                            "text": "In 2026, Canvas Formula Questions, WebAssign, Pearson MyLab, and McGraw-Hill Connect randomize numerical variables (such as mass, molarity, interest rate, or angle) for every student. Professors frequently find the 2019–2022 PDF of their exam on Course Hero, take the old PDF's numerical answer, and plant it as a wrong multiple-choice distractor on the 2026 exam. Students who copy the unblurred Course Hero PDF get the question wrong AND flag themselves for copying a static answer key. ExamGhost computes your exact live screen numbers in 0.3s and derives the full proof in DeepSeek and Claude."
                         }
                     },
                     {
@@ -192,7 +192,7 @@ export default function CourseheroVsExamghostPage() {
                         "name": "How much does Course Hero cost in 2026 compared to ExamGhost's 2-in-1 plans?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Course Hero charges ~$39.95/month (or forces you to upload 10 personal study files) and still rations paid subscribers to 30 Document Unlocks and limited Tutor Credits per month. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0, no credit card or uploads required), followed by 2-in-1 Unlimited plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that include both Unlimited Stealth Extension Solves and the Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1 Study Workspace."
+                            "text": "Course Hero charges ~$39.95/month (or forces you to upload 10 personal study files) and still rations paid subscribers to 30 Document Unlocks and limited Tutor Credits per month. ExamGhost gives every student 5 Free Solves / Day (auto-refills every 24 hours, $0, no credit card or uploads required), followed by 2-in-1 Unlimited plans ($19/mo Monthly, $99/yr Academic Year Pass [$8.25/mo], or $199 Lifetime) that include both Unlimited Stealth Extension Solves and the Claude + ChatGPT + DeepSeek Study Workspace."
                         }
                     },
                     {
@@ -283,7 +283,7 @@ export default function CourseheroVsExamghostPage() {
                                 </p>
 
                                 <p className="text-sm sm:text-lg text-ink-secondary leading-relaxed mb-7">
-                                    <strong>ExamGhost</strong> computes <em>your exact live numbers</em> in <strong>0.3 seconds</strong> via <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Double-Click</kbd> or <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Alt+S</kbd> Hybrid Vision+DOM Snip, and derives the full step-by-step proof inside our <strong>Study &amp; Homework AI Workspace (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</strong>.
+                                    <strong>ExamGhost</strong> computes <em>your exact live numbers</em> in <strong>0.3 seconds</strong> via <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Double-Click</kbd> or <kbd className="px-2 py-0.5 rounded bg-white border border-black/20 font-mono text-xs font-bold">Alt+S</kbd> Hybrid Vision+DOM Snip, and derives the full step-by-step proof inside our <strong>Study &amp; Homework AI Workspace (Claude + ChatGPT + DeepSeek)</strong>.
                                 </p>
 
                                 {/* 3-Column Economic Ledger Strip */}
@@ -401,7 +401,7 @@ export default function CourseheroVsExamghostPage() {
                                             <div>Reads Live DOM: <span className="text-white">v₀ = 18.4, θ = 37°, g = 9.8</span></div>
                                             <div>Symbolic Engine: <span className="text-emerald-300 font-bold">R = (18.4² · sin 74°) / 9.8 = 33.2 m (Choice D)</span></div>
                                             <div className="text-cyan-200">
-                                                ✓ Full LaTeX proof verified in DeepSeek-R1 &amp; Claude 3.7 Sonnet
+                                                ✓ Full LaTeX proof verified in DeepSeek &amp; Claude
                                             </div>
                                         </div>
                                     </div>
@@ -566,7 +566,7 @@ export default function CourseheroVsExamghostPage() {
                             30 Blurred Document Unlocks ($39.95/mo) vs Unlimited Live AI + Study Hub ($8.25/mo)
                         </h2>
                         <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                            Why pay $39.95/month for rationed PDF unlocks when ExamGhost gives you <strong>5 Free Solves / Day ($0)</strong> and a <strong>2-in-1 Unlimited Suite</strong> that includes Claude 3.7 Sonnet, ChatGPT (o3-mini/4o), and DeepSeek-R1?
+                            Why pay $39.95/month for rationed PDF unlocks when ExamGhost gives you <strong>5 Free Solves / Day ($0)</strong> and a <strong>2-in-1 Unlimited Suite</strong> that includes Claude, ChatGPT, and DeepSeek?
                         </p>
                     </div>
 
@@ -605,7 +605,7 @@ export default function CourseheroVsExamghostPage() {
                                         <XCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                                         <div>
                                             <strong className="text-ink block">Zero Frontier AI Models Included</strong>
-                                            Does not include direct access to Claude 3.7 Sonnet, ChatGPT o3-mini/4o, or DeepSeek-R1 for essays and proofs.
+                                            Does not include direct access to Claude, ChatGPT, or DeepSeek for essays and proofs.
                                         </div>
                                     </div>
                                 </div>
@@ -667,10 +667,10 @@ export default function CourseheroVsExamghostPage() {
                                             Pillar 2 // Study &amp; Homework AI Hub
                                         </div>
                                         <div className="font-bold text-sm text-white">
-                                            Claude 3.7 + ChatGPT + DeepSeek-R1
+                                            Claude + ChatGPT + DeepSeek
                                         </div>
                                         <p className="text-xs text-slate-300 leading-relaxed">
-                                            Full access to <strong className="text-white">Claude 3.7 Sonnet</strong>, <strong className="text-white">ChatGPT (GPT-4o / o3-mini)</strong>, and <strong className="text-white">DeepSeek-R1</strong> in one workspace for homework sets, essays, syllabus PDFs, and step-by-step LaTeX math proofs.
+                                            Full access to <strong className="text-white">Claude</strong>, <strong className="text-white">ChatGPT</strong>, and <strong className="text-white">DeepSeek</strong> in one workspace for homework sets, essays, syllabus PDFs, and step-by-step LaTeX math proofs.
                                         </p>
                                     </div>
                                 </div>
@@ -752,7 +752,7 @@ export default function CourseheroVsExamghostPage() {
                                     <tr className="hover:bg-[#fcf9f5]">
                                         <td className="py-3.5 px-6 font-semibold text-ink">Included Multi-Model Study Hub</td>
                                         <td className="py-3.5 px-6 text-center font-bold text-emerald-800 bg-emerald-50/20">
-                                            ✓ Claude 3.7 Sonnet + ChatGPT (o3-mini/4o) + DeepSeek-R1
+                                            ✓ Claude + ChatGPT + DeepSeek
                                         </td>
                                         <td className="py-3.5 px-6 text-center text-ink-muted">
                                             ✗ Rationed 10–40 Tutor Credits / Month
@@ -868,7 +868,7 @@ export default function CourseheroVsExamghostPage() {
                                     Done wasting $39.95/mo on blurred, outdated Course Hero PDFs?
                                 </h2>
                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Compute your exact randomized Canvas &amp; WebAssign numbers live in 0.3 seconds—and unlock Claude 3.7 Sonnet, ChatGPT (o3-mini/4o) &amp; DeepSeek-R1 in one 2-in-1 workspace.
+                                    Compute your exact randomized Canvas &amp; WebAssign numbers live in 0.3 seconds—and unlock Claude, ChatGPT &amp; DeepSeek in one 2-in-1 workspace.
                                 </p>
                             </div>
                             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">

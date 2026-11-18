@@ -127,9 +127,9 @@ export function WileyPlusMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 GAAP' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude GAAP' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Fast' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 Audit' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek Audit' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -264,9 +264,9 @@ export function ZybooksMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Invariants' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Invariants' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Trace' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 Safety' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek Safety' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -399,9 +399,9 @@ export function WebWorkMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Jacobian' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Jacobian' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Symbolic' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 AST' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek AST' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -535,9 +535,9 @@ export function SakaiMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Krebs' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Krebs' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Enzymes' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 Bioenergetics' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek Bioenergetics' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -668,9 +668,9 @@ export function MacmillanAchieveMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Walden' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Walden' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Kinetics' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 FMO' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek FMO' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -801,9 +801,9 @@ export function TopHatMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 IS-LM' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude IS-LM' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Summary' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 Telemetry' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek Telemetry' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -934,9 +934,9 @@ export function KnewtonAltaMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Welch' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Welch' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Stats' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 BKT' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek BKT' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',
@@ -1069,9 +1069,9 @@ export function HawkesLearningMotionDemo() {
         </div>
       ),
       getCursor: (progress: number): CursorState => {
-        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude 3.7 Algebra' };
+        if (progress < 35) return { x: 30, y: 22, clicking: progress > 15 && progress < 25, tag: 'explain', label: 'Claude Algebra' };
         if (progress < 70) return { x: 50, y: 22, clicking: progress > 45 && progress < 55, tag: 'explain', label: 'ChatGPT Domain' };
-        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek-R1 Strikes' };
+        return { x: 72, y: 22, clicking: progress > 80 && progress < 90, tag: 'explain', label: 'DeepSeek Strikes' };
       },
       getTelemetry: (): TelemetryState => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG Engine',

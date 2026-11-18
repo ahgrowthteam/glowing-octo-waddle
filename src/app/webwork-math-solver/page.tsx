@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         "examghost webwork",
     ],
     alternates: {
-        canonical: "https://examghost.com/webwork-math-solver",
+        canonical: "https://www.examghost.com/webwork-math-solver",
     },
     openGraph: {
         title: "WeBWorK Math & Calculus Solver — Symbolic AI (2026) | ExamGhost",
         description:
-            "Solve MAA WeBWorK calculus, linear algebra and differential equations inline in 0.3s with exact MathObjects syntax. 5 free solves / day with DeepSeek-R1.",
-        url: "https://examghost.com/webwork-math-solver",
+            "Solve MAA WeBWorK calculus, linear algebra and differential equations inline in 0.3s with exact MathObjects syntax. 5 free solves / day with DeepSeek.",
+        url: "https://www.examghost.com/webwork-math-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -125,7 +125,7 @@ const WEBWORK_CONFIG = {
         pills: ["0 Syntax Errors", "0 Attempt Strikes", "100% Symbolic"],
         eyebrow: "PERL PARSER TELEMETRY FORENSICS",
         heading: "How ExamGhost eliminates WeBWorK attempt burnouts.",
-        lead: "WeBWorK logs every 'Check Answers' click and counts down remaining attempts. ExamGhost's DeepSeek-R1 math kernel compiles exact symbolic solutions on Attempt 1.",
+        lead: "WeBWorK logs every 'Check Answers' click and counts down remaining attempts. ExamGhost's DeepSeek math kernel compiles exact symbolic solutions on Attempt 1.",
         pillars: [
             {
                 title: "MathObjects AST Translation",
@@ -301,7 +301,7 @@ const WEBWORK_CONFIG = {
             },
             {
                 capability: "Advanced multivariable proofs",
-                examghost: "DeepSeek-R1 Jacobian & ODE proofs",
+                examghost: "DeepSeek Jacobian & ODE proofs",
                 chatgpt: "Frequent intermediate sign bugs",
                 sidebar: "Basic LLM without math engine",
             },
@@ -330,7 +330,7 @@ const WEBWORK_CONFIG = {
             q: "How does ExamGhost protect against burning through WeBWorK attempt limits?",
             a: (
                 <>
-                    <strong>ExamGhost achieves 99.9% first-attempt accuracy by running calculations through DeepSeek-R1 and Claude 3.7.</strong> Because your first submission is verified symbolically, you never burn through limited attempts guessing formatting or missing intermediate constants.
+                    <strong>ExamGhost achieves 99.9% first-attempt accuracy by running calculations through DeepSeek and Claude.</strong> Because your first submission is verified symbolically, you never burn through limited attempts guessing formatting or missing intermediate constants.
                 </>
             ),
         },
@@ -399,23 +399,23 @@ const ALL_LMS_LINKS = [
 export default function WebWorkMathSolverPage() {
     const config = WEBWORK_CONFIG;
     const safeSlug = config.slug;
-    const videoUrl = `https://examghost.com/videos/${safeSlug}.mp4`;
-    const posterUrl = `https://examghost.com/videos/posters/${safeSlug}-poster.jpg`;
+    const videoUrl = `https://www.examghost.com/videos/${safeSlug}.mp4`;
+    const posterUrl = `https://www.examghost.com/videos/posters/${safeSlug}-poster.jpg`;
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": `https://examghost.com/${config.slug}#webpage`,
-                "url": `https://examghost.com/${config.slug}`,
+                "@id": `https://www.examghost.com/${config.slug}#webpage`,
+                "url": `https://www.examghost.com/${config.slug}`,
                 "name": "WeBWorK Math & Calculus Solver — Symbolic AI (2026) | ExamGhost",
                 "description": "Solve MAA WeBWorK calculus, linear algebra and ODE problems with exact MathObjects syntax in 0.3s. 5 free solves / day with zero attempt penalty strikes.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-10-27",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": `https://examghost.com/${config.slug}#breadcrumb` },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": `https://www.examghost.com/${config.slug}#breadcrumb` },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -423,7 +423,7 @@ export default function WebWorkMathSolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `https://examghost.com/${config.slug}#software`,
+                "@id": `https://www.examghost.com/${config.slug}#software`,
                 "name": "ExamGhost WeBWorK Math Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -443,16 +443,16 @@ export default function WebWorkMathSolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": `https://examghost.com/${config.slug}#breadcrumb`,
+                "@id": `https://www.examghost.com/${config.slug}#breadcrumb`,
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://examghost.com/canvas-quiz-solver-free-demo" },
-                    { "@type": "ListItem", "position": 3, "name": "WeBWorK Math Solver", "item": `https://examghost.com/${config.slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Live Sandbox", "item": "https://www.examghost.com/canvas-quiz-solver-free-demo" },
+                    { "@type": "ListItem", "position": 3, "name": "WeBWorK Math Solver", "item": `https://www.examghost.com/${config.slug}` }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://examghost.com/${config.slug}#faq`,
+                "@id": `https://www.examghost.com/${config.slug}#faq`,
                 "mainEntity": config.faqs.map((faq) => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -464,7 +464,7 @@ export default function WebWorkMathSolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": `https://examghost.com/${config.slug}#video`,
+                "@id": `https://www.examghost.com/${config.slug}#video`,
                 "name": "WeBWorK AI Math Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves WeBWorK calculus problems with exact MathObjects syntax.",
                 "thumbnailUrl": [posterUrl],
@@ -474,12 +474,12 @@ export default function WebWorkMathSolverPage() {
                 "publisher": {
                     "@type": "Organization",
                     "name": "ExamGhost",
-                    "url": "https://examghost.com"
+                    "url": "https://www.examghost.com"
                 }
             },
             {
                 "@type": "HowTo",
-                "@id": `https://examghost.com/${config.slug}#howto`,
+                "@id": `https://www.examghost.com/${config.slug}#howto`,
                 "name": config.howToSection.heading,
                 "description": "Step-by-step workflow to solve WeBWorK calculus and differential equations with exact MathObjects syntax.",
                 "totalTime": "PT1M",
@@ -518,7 +518,7 @@ export default function WebWorkMathSolverPage() {
                         </div>
                         <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
                             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Audited by ExamGhost Security Lab • Updated Oct 2026</span>
+                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>

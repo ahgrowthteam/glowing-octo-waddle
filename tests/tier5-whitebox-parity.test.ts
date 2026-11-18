@@ -7,7 +7,7 @@
  * Invariants Tested:
  * 1. Quota Parity: Sitewide zero "50 Free Solves" trial text; confirm "5 Free Solves / Day" ($0, auto-refills 24h, no card needed).
  * 2. Hotkey Parity: Confirm all 6 hotkeys (Double-Click, Alt+S, Alt+1, Alt+2, Alt+3, ⌘+Shift+U) in each of the 58 routes.
- * 3. Model Parity: Confirm all 3 frontier models (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1) in each of the 58 routes.
+ * 3. Model Parity: Confirm all 3 frontier models (Claude, ChatGPT, DeepSeek) in each of the 58 routes.
  * 4. Pricing Parity: Confirm 4-tier model ($0 Free, $19/mo, $99/yr [$8.25/mo], $199 Lifetime) and confirm ZERO truncated "$199 Life" occurrences repository-wide.
  * 5. Table Column Parity: Confirm every <tr> row across every <table> in all 58 routes matches its header count.
  * 6. JSON-LD Schemas: Confirm valid structured data across all 58 routes (@context, @graph, WebPage, BreadcrumbList, FAQPage, SoftwareApplication with 4 offers).
@@ -192,23 +192,23 @@ for (const route of COMPARISON_ROUTES) {
 // ============================================================================
 // SECTION 3: Frontier Model Parity (All 3 Models in All 58 Routes)
 // ============================================================================
-console.log('>>> [SECTION 3] Model Parity Audit (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1 in All 58 Routes)...');
+console.log('>>> [SECTION 3] Model Parity Audit (Claude, ChatGPT, DeepSeek in All 58 Routes)...');
 
 for (const route of COMPARISON_ROUTES) {
   const fullPath = path.resolve(REPO_ROOT, route.filePath);
   const content = fs.readFileSync(fullPath, 'utf8');
 
   const hasClaude = /Claude\s*3\.7\s*Sonnet/i.test(content);
-  const hasChatGpt = /ChatGPT\s*(?:o3-mini\/4o|o3-mini|4o)|\(GPT-4o\s*\/\s*o3-mini\)|GPT-4o\/o3/i.test(content);
-  const hasDeepSeek = /DeepSeek-R1|DeepSeek\s*R1/i.test(content);
+  const hasChatGpt = /ChatGPT/i.test(content);
+  const hasDeepSeek = /DeepSeek|DeepSeek\s*R1/i.test(content);
 
   assertParity(
     `T5-MODEL-CLAUDE-${route.slug}`,
     'Model Parity',
     route.slug,
     hasClaude,
-    'Claude 3.7 Sonnet cited',
-    hasClaude ? 'Found Claude 3.7 Sonnet' : 'MISSING Claude 3.7 Sonnet'
+    'Claude cited',
+    hasClaude ? 'Found Claude' : 'MISSING Claude'
   );
 
   assertParity(
@@ -216,8 +216,8 @@ for (const route of COMPARISON_ROUTES) {
     'Model Parity',
     route.slug,
     hasChatGpt,
-    'ChatGPT o3-mini/4o cited',
-    hasChatGpt ? 'Found ChatGPT o3-mini/4o' : 'MISSING ChatGPT o3-mini/4o'
+    'ChatGPT cited',
+    hasChatGpt ? 'Found ChatGPT' : 'MISSING ChatGPT'
   );
 
   assertParity(
@@ -225,8 +225,8 @@ for (const route of COMPARISON_ROUTES) {
     'Model Parity',
     route.slug,
     hasDeepSeek,
-    'DeepSeek-R1 cited',
-    hasDeepSeek ? 'Found DeepSeek-R1' : 'MISSING DeepSeek-R1'
+    'DeepSeek cited',
+    hasDeepSeek ? 'Found DeepSeek' : 'MISSING DeepSeek'
   );
 }
 
@@ -508,7 +508,7 @@ const compareHubCode = fs.readFileSync(compareHubPath, 'utf8');
 
 const hubHasDoubleAltS = /0\.3s\s+Double-Click\s*\+\s*Alt\+S/i.test(compareHubCode);
 const hubHasHotkeys = /Alt\+1\/2\/3\s*·\s*⌘\+Shift\+U/i.test(compareHubCode);
-const hubHasModels = /Claude\s*3\.7\s*\+\s*GPT-4o\/o3\s*\+\s*R1/i.test(compareHubCode);
+const hubHasModels = /Claude\s*3\.7\s*\+\s*ChatGPT\/o3\s*\+\s*R1/i.test(compareHubCode);
 const hubHasPricing = /\$19\/mo\s*·\s*\$99\/yr\s*\(\$8\.25\/mo\)\s*·\s*\$199\s*Lifetime/i.test(compareHubCode);
 const hubHasFree = /5\s*Free\s*Solves\s*\/\s*Day\s*\(\$0\)/i.test(compareHubCode);
 const hubHasZeroTruncation = !/\$199(?:\.00)?\s+Life(?![a-zA-Z])/i.test(compareHubCode);

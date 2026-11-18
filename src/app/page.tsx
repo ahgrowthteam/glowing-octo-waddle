@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
-import Reviews from "@/components/Reviews";
 import DiscordSection from "@/components/DiscordSection";
 import Footer from "@/components/Footer";
 
@@ -19,15 +18,15 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://examghost.com/#webpage",
-        "url": "https://examghost.com",
+        "@id": "https://www.examghost.com/#webpage",
+        "url": "https://www.examghost.com",
         "name": "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
         "description": "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Alt+S Snip OCR, 5 free solves/day, and a full Claude/ChatGPT/DeepSeek Study AI Hub.",
         "datePublished": "2026-01-15",
-        "dateModified": "2026-03-29",
+        "dateModified": "2026-11-18",
         "inLanguage": "en-US",
-        "isPartOf": { "@id": "https://examghost.com/#website" },
-        "about": { "@id": "https://examghost.com/#software" },
+        "isPartOf": { "@id": "https://www.examghost.com/#website" },
+        "about": { "@id": "https://www.examghost.com/#software" },
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", ".aeo-summary", "#faq h3"]
@@ -35,30 +34,40 @@ export default function Home() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://examghost.com/#website",
-        "url": "https://examghost.com",
+        "@id": "https://www.examghost.com/#website",
+        "url": "https://www.examghost.com",
         "name": "ExamGhost",
         "description": "The invisible AI quiz solver for Canvas, Blackboard, Moodle, and 20+ platforms. Double-click any question for instant answers inline.",
-        "publisher": { "@id": "https://examghost.com/#organization" },
+        "publisher": { "@id": "https://www.examghost.com/#organization" },
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://examghost.com/faq?q={search_term_string}"
+            "urlTemplate": "https://www.examghost.com/faq?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://examghost.com/#organization",
+        "@id": "https://www.examghost.com/#organization",
         "name": "ExamGhost",
-        "url": "https://examghost.com",
+        "legalName": "FoundryOne LLC",
+        "url": "https://www.examghost.com",
+        "email": "support@examghost.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1209 Mountain Road Pl NE, Ste N",
+          "addressLocality": "Albuquerque",
+          "addressRegion": "NM",
+          "postalCode": "87110",
+          "addressCountry": "US"
+        },
         "logo": {
           "@type": "ImageObject",
-          "url": "https://examghost.com/images/ghost/ghost_mascot_hero.jpg",
-          "width": 120,
-          "height": 120
+          "url": "https://www.examghost.com/icon-512.png",
+          "width": 512,
+          "height": 512
         },
         "contactPoint": {
           "@type": "ContactPoint",
@@ -75,18 +84,11 @@ export default function Home() {
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://examghost.com/#software",
+        "@id": "https://www.examghost.com/#software",
         "name": "ExamGhost",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
         "description": "The invisible AI quiz solver for Canvas, Blackboard, Moodle, and 20+ LMSs. Double-click any question to solve inline, Snap-It sniping for locked diagrams, 3 stealth display modes, and 3 answer delivery methods.",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "1240",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "offers": [
           {
             "@type": "Offer",
@@ -125,7 +127,7 @@ export default function Home() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://examghost.com/#faq",
+        "@id": "https://www.examghost.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -204,7 +206,7 @@ export default function Home() {
             "name": "What pricing plans do you offer, and what is the Study & Homework AI Hub?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1 for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs."
+              "text": "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude, ChatGPT, and DeepSeek for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs."
             }
           },
           {
@@ -212,7 +214,7 @@ export default function Home() {
             "name": "What is your refund policy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 14 days for a prompt, hassle-free refund."
+              "text": "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, email support@examghost.com or message our 24/7 Discord support team within 14 days of purchase for a full refund."
             }
           }
         ]
@@ -233,7 +235,6 @@ export default function Home() {
       <DemoVideo />
       <GhostMode />
       <QuestionExamples />
-      <Reviews />
       <DiscordSection />
       <Pricing />
       <FAQ />

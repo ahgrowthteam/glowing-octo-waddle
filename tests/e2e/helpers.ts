@@ -186,8 +186,8 @@ export function checkFrontierModels(content: string): {
   isComplete: boolean;
 } {
   const hasClaude = /Claude\s*3\.7\s*Sonnet/i.test(content);
-  const hasChatGpt = /ChatGPT\s*(?:o3-mini\/4o|o3-mini|4o)|\(GPT-4o\s*\/\s*o3-mini\)/i.test(content);
-  const hasDeepSeek = /DeepSeek-R1|DeepSeek\s*R1/i.test(content);
+  const hasChatGpt = /ChatGPT/i.test(content);
+  const hasDeepSeek = /DeepSeek|DeepSeek\s*R1/i.test(content);
 
   return {
     hasClaude,

@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     },
     description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 5 Free Solves / Day ($0 trial).",
     alternates: {
-        canonical: "https://examghost.com/answerai-vs-examghost",
+        canonical: "https://www.examghost.com/answerai-vs-examghost",
     },
     openGraph: {
         title: "Answer.AI vs ExamGhost (2026) — 0.3s Stealth vs Sidebar",
         description: "2026 audit of Answer.AI (v1.5.4) vs ExamGhost. Avoid 3-question caps and sidebar blur logs with 0.3s Shadow DOM stealth and 5 Free Solves / Day ($0 trial).",
-        url: "https://examghost.com/answerai-vs-examghost",
+        url: "https://www.examghost.com/answerai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -67,16 +67,16 @@ export default function AnswerAiComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-01-13",
-                "dateModified": "2026-03-11",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/answerai-vs-examghost#webpage",
-                "url": "https://examghost.com/answerai-vs-examghost",
+                "@id": "https://www.examghost.com/answerai-vs-examghost#webpage",
+                "url": "https://www.examghost.com/answerai-vs-examghost",
                 "name": "Answer.AI vs ExamGhost (2026) | K-12 Mobile Study App vs Invisible College Exam Solver",
                 "description": "Comparison of Answer.AI (bchkdkhfodkkpohjhabdgfhpgjkkgfhg v1.5.4) and ExamGhost across college STEM accuracy, Canvas SpeedGrader focus protection, web_accessible_resources exposure, and free trial limits.",
-                "breadcrumb": { "@id": "https://examghost.com/answerai-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/answerai-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -121,16 +121,16 @@ export default function AnswerAiComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/answerai-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/answerai-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Answer.AI vs ExamGhost", "item": "https://examghost.com/answerai-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Answer.AI vs ExamGhost", "item": "https://www.examghost.com/answerai-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/answerai-vs-examghost#faq",
+                "@id": "https://www.examghost.com/answerai-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -639,9 +639,9 @@ export default function AnswerAiComparisonPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -672,27 +672,7 @@ export default function AnswerAiComparisonPage() {
                     </div>
                 </section>
 
-                {/* STUDENT MIGRATION STORY */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10 relative">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;I used Answer.AI on my phone in high school, so I installed its Chrome extension for Differential Equations at Georgia Tech. Not only did I run out of free Lightning Bolts in 3 questions, but clicking its sidebar on Canvas logged 14 window blur departures in SpeedGrader. I switched to ExamGhost with the 5 Free Solves / Day trial—it solved every multi-step integral in 0.3s, and Focus Shield kept my audit log 100% spotless.&quot;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
-                            <div>
-                                <span className="font-bold text-ink">Ryan D.</span> — Mechanical Engineering Junior, Georgia Tech
-                            </div>
-                            <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified Switcher · 5 Free Solves / Day → Annual Pass
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* FAQ ACCORDION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">

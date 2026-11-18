@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     },
     description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (5 Free Solves / Day).",
     alternates: {
-        canonical: "https://examghost.com/knowt-vs-examghost",
+        canonical: "https://www.examghost.com/knowt-vs-examghost",
     },
     openGraph: {
         title: "Knowt vs ExamGhost (2026) — Flashcard App vs Quiz Stealth",
         description: "Compare Knowt ($24.99/mo Ultra) with ExamGhost. Knowt builds flashcards before tests; ExamGhost solves live Canvas & Moodle exams in 0.3s (5 Free Solves / Day).",
-        url: "https://examghost.com/knowt-vs-examghost",
+        url: "https://www.examghost.com/knowt-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -97,47 +97,47 @@ const jsonLd = {
     {
       "@type": "WebPage",
                 "datePublished": "2026-02-25",
-                "dateModified": "2026-03-16",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-      "@id": "https://examghost.com/knowt-vs-examghost#webpage",
-      url: "https://examghost.com/knowt-vs-examghost",
+      "@id": "https://www.examghost.com/knowt-vs-examghost#webpage",
+      url: "https://www.examghost.com/knowt-vs-examghost",
       name: "Knowt vs ExamGhost (2026): Free Quizlet Flashcard App vs Stealth Canvas Exam Solver",
       description:
         "2026 architectural comparison of Knowt (knowt.com) flashcard/lecture study tools and Knowt Ultra ($24.99/mo) versus ExamGhost's closed Shadow DOM and 0.3s Vision OCR solver.",
       breadcrumb: {
-        "@id": "https://examghost.com/knowt-vs-examghost#breadcrumb",
+        "@id": "https://www.examghost.com/knowt-vs-examghost#breadcrumb",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://examghost.com/knowt-vs-examghost#breadcrumb",
+      "@id": "https://www.examghost.com/knowt-vs-examghost#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://examghost.com",
+          item: "https://www.examghost.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Compare Extensions",
-          item: "https://examghost.com/compare-canvas-hack-extensions",
+          item: "https://www.examghost.com/compare-canvas-hack-extensions",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Knowt vs ExamGhost",
-          item: "https://examghost.com/knowt-vs-examghost",
+          item: "https://www.examghost.com/knowt-vs-examghost",
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://examghost.com/knowt-vs-examghost#faq",
+      "@id": "https://www.examghost.com/knowt-vs-examghost#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -720,13 +720,13 @@ export default function KnowtVsExamGhostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-ink-muted text-xs">
                       Multi-model consensus and derivation breakdown
                     </td>
                     <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">
-                      ✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      ✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">
                       ✗ No Multi-Model Study &amp; Homework AI Hub

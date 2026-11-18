@@ -38,13 +38,13 @@ export const metadata: Metadata = {
         "examghost d2l brightspace"
     ],
     alternates: {
-        canonical: "https://examghost.com/d2l-brightspace-quiz-solver",
+        canonical: "https://www.examghost.com/d2l-brightspace-quiz-solver",
     },
     openGraph: {
         title: "D2L Brightspace Quiz Solver (2026) — Inline AI & 0 Event-Log Flags | ExamGhost",
         description:
             "Double-click any D2L Brightspace quiz question or drag Snap-It Vision OCR (Alt+S) over locked diagrams. Runs inside nested Brightspace iframes with 0 focus-loss flags.",
-        url: "https://examghost.com/d2l-brightspace-quiz-solver",
+        url: "https://www.examghost.com/d2l-brightspace-quiz-solver",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -116,7 +116,7 @@ const D2L_FAQS: LmsFaqItem[] = [
         q: "How does ExamGhost handle D2L Brightspace Multi-Select ('Right Minus Wrong' and 'All or Nothing') questions?",
         a: (
             <>
-                <strong>ExamGhost evaluates every checkbox option independently using dual-model consensus (DeepSeek-R1 + GPT-4o)</strong> before selecting or highlighting answers. Because D2L Brightspace frequently uses strict <em>All or Nothing</em> or punitive <em>Right Minus Wrong</em> grading on Multi-Select (<code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">M-S</code>) questions, ExamGhost verifies each statement individually to prevent partial-credit penalties.
+                <strong>ExamGhost evaluates every checkbox option independently using dual-model consensus (DeepSeek + ChatGPT)</strong> before selecting or highlighting answers. Because D2L Brightspace frequently uses strict <em>All or Nothing</em> or punitive <em>Right Minus Wrong</em> grading on Multi-Select (<code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">M-S</code>) questions, ExamGhost verifies each statement individually to prevent partial-credit penalties.
             </>
         ),
     },
@@ -128,7 +128,7 @@ const D2L_FAQS: LmsFaqItem[] = [
         q: "Does ExamGhost respect D2L Brightspace Arithmetic and Significant Figures tolerances?",
         a: (
             <>
-                <strong>Yes, ExamGhost automatically parses randomized variable values and formats numerical answers to the exact significant figures or decimal places specified in the prompt.</strong> When you double-click a D2L Arithmetic or Significant Figures question, DeepSeek-R1 computes the symbolic formula first and rounds only at the final step to match Brightspace’s grading tolerance.
+                <strong>Yes, ExamGhost automatically parses randomized variable values and formats numerical answers to the exact significant figures or decimal places specified in the prompt.</strong> When you double-click a D2L Arithmetic or Significant Figures question, DeepSeek computes the symbolic formula first and rounds only at the final step to match Brightspace’s grading tolerance.
             </>
         ),
     },
@@ -177,16 +177,16 @@ export default function D2lBrightspaceQuizSolverPage() {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#webpage",
-                "url": "https://examghost.com/d2l-brightspace-quiz-solver",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#webpage",
+                "url": "https://www.examghost.com/d2l-brightspace-quiz-solver",
                 "name": "D2L Brightspace Quiz Solver (2026) — Inline AI & 0 Event-Log Flags | ExamGhost",
                 "description":
                     "Solve D2L Brightspace quizzes inline in 0.3s without leaving the attempt tab. Works inside quiz_start_frame_auto.d2l iframes, supports Snap-It OCR (Alt+S), and logs 0 focus-loss events.",
                 "datePublished": "2026-01-18",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/d2l-brightspace-quiz-solver#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "#lms-faq h2", "#lms-faq h3", ".faq-answer"]
@@ -194,7 +194,7 @@ export default function D2lBrightspaceQuizSolverPage() {
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#software",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#software",
                 "name": "ExamGhost D2L Brightspace Quiz Solver",
                 "applicationCategory": "EducationalApplication",
                 "operatingSystem": "Chrome, Edge, Brave, Arc, macOS, Windows",
@@ -216,7 +216,7 @@ export default function D2lBrightspaceQuizSolverPage() {
             },
             {
                 "@type": "HowTo",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#howto",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#howto",
                 "name": "How to Solve D2L Brightspace Quiz Questions Inline Without Triggering Event Logs",
                 "description":
                     "Use ExamGhost inside D2L Brightspace Quizzes to answer multiple-choice, multi-select, arithmetic, and diagram questions without leaving the active tab.",
@@ -244,26 +244,26 @@ export default function D2lBrightspaceQuizSolverPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#breadcrumb",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Live Exam Sandbox",
-                        "item": "https://examghost.com/canvas-quiz-solver-free-demo"
+                        "item": "https://www.examghost.com/canvas-quiz-solver-free-demo"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "D2L Brightspace Quiz Solver",
-                        "item": "https://examghost.com/d2l-brightspace-quiz-solver"
+                        "item": "https://www.examghost.com/d2l-brightspace-quiz-solver"
                     }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#faq",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -294,7 +294,7 @@ export default function D2lBrightspaceQuizSolverPage() {
                         "name": "How does ExamGhost handle D2L Brightspace Multi-Select ('Right Minus Wrong' and 'All or Nothing') questions?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "ExamGhost evaluates every checkbox option independently using dual-model consensus (DeepSeek-R1 + GPT-4o) before selecting or highlighting answers. Because D2L Brightspace frequently uses strict All or Nothing or punitive Right Minus Wrong grading on Multi-Select (M-S) questions, ExamGhost verifies each statement individually to prevent partial-credit penalties."
+                            "text": "ExamGhost evaluates every checkbox option independently using dual-model consensus (DeepSeek + ChatGPT) before selecting or highlighting answers. Because D2L Brightspace frequently uses strict All or Nothing or punitive Right Minus Wrong grading on Multi-Select (M-S) questions, ExamGhost verifies each statement individually to prevent partial-credit penalties."
                         }
                     },
                     {
@@ -302,7 +302,7 @@ export default function D2lBrightspaceQuizSolverPage() {
                         "name": "Does ExamGhost respect D2L Brightspace Arithmetic and Significant Figures tolerances?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes, ExamGhost automatically parses randomized variable values and formats numerical answers to the exact significant figures or decimal places specified in the prompt. When you double-click a D2L Arithmetic or Significant Figures question, DeepSeek-R1 computes the symbolic formula first and rounds only at the final step to match Brightspace’s grading tolerance."
+                            "text": "Yes, ExamGhost automatically parses randomized variable values and formats numerical answers to the exact significant figures or decimal places specified in the prompt. When you double-click a D2L Arithmetic or Significant Figures question, DeepSeek computes the symbolic formula first and rounds only at the final step to match Brightspace’s grading tolerance."
                         }
                     },
                     {
@@ -333,11 +333,11 @@ export default function D2lBrightspaceQuizSolverPage() {
             },
             {
                 "@type": "VideoObject",
-                "@id": "https://examghost.com/d2l-brightspace-quiz-solver#video",
+                "@id": "https://www.examghost.com/d2l-brightspace-quiz-solver#video",
                 "name": "D2L Brightspace AI Quiz Solver — 2.5D Explainer & Product Demo Film",
                 "description": "16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves D2L Brightspace questions one by one inside quiz_start_frame_auto.d2l with zero focus-loss logs.",
-                "thumbnailUrl": ["https://examghost.com/videos/posters/d2l-brightspace-quiz-solver-poster.jpg"],
-                "contentUrl": "https://examghost.com/videos/d2l-brightspace-quiz-solver.mp4",
+                "thumbnailUrl": ["https://www.examghost.com/videos/posters/d2l-brightspace-quiz-solver-poster.jpg"],
+                "contentUrl": "https://www.examghost.com/videos/d2l-brightspace-quiz-solver.mp4",
                 "uploadDate": "2026-10-22T00:00:00Z",
                 "duration": "PT16S"
             }
@@ -532,7 +532,7 @@ export default function D2lBrightspaceQuizSolverPage() {
                                                 </h3>
                                             </div>
                                             <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
-                                                Solves D2L Arithmetic questions with randomized variables and exact significant-figure rounding via <strong>DeepSeek-R1</strong>.
+                                                Solves D2L Arithmetic questions with randomized variables and exact significant-figure rounding via <strong>DeepSeek</strong>.
                                             </p>
                                         </article>
 
@@ -582,7 +582,7 @@ export default function D2lBrightspaceQuizSolverPage() {
                                         mode: 'Double-Click DOM',
                                         acc: '99.4%',
                                         title: 'Right Minus Wrong & All-or-Nothing Checkboxes',
-                                        desc: 'Evaluates every checkbox statement independently using DeepSeek-R1 + GPT-4o consensus so a single false checkbox never wipes out your points under D2L’s Right Minus Wrong grading.',
+                                        desc: 'Evaluates every checkbox statement independently using DeepSeek + ChatGPT consensus so a single false checkbox never wipes out your points under D2L’s Right Minus Wrong grading.',
                                     },
                                     {
                                         tag: 'Significant Figures (× 10^n)',
@@ -879,7 +879,7 @@ export default function D2lBrightspaceQuizSolverPage() {
                                                 <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
                                                     <span className="inline-flex items-center gap-1.5 text-emerald-900">
                                                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                        <span>DeepSeek-R1 symbolic math + sig-fig rounding</span>
+                                                        <span>DeepSeek symbolic math + sig-fig rounding</span>
                                                     </span>
                                                 </td>
                                                 <td className="py-4 px-6 text-ink-muted">

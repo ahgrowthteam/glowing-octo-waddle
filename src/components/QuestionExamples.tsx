@@ -119,7 +119,7 @@ export default function QuestionExamples() {
                             <span>COMPREHENSIVE QUESTION SOLVER</span>
                         </p>
                         <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-4">
-                            Handles every question format.
+                            Which question types does it solve?
                         </h2>
                         <p className="text-sm sm:text-base text-ink-muted">
                             Whether your quiz uses multiple choice, multi-select checkboxes, true/false statements, or typed short answers.

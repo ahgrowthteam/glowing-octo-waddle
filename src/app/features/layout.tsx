@@ -4,14 +4,14 @@ export const metadata: Metadata = {
     title: "24 Stealth AI Exam & Canvas Features",
     description: "Explore all 24 ExamGhost stealth tools: Focus Shield blur interception, Snap-It Vision OCR, LaTeX math solver, closed Shadow DOM, and 10ms panic switch.",
     alternates: {
-        canonical: "https://examghost.com/features",
+        canonical: "https://www.examghost.com/features",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
         title: "24 Stealth AI Exam & Canvas Features | ExamGhost",
         description: "Explore all 24 ExamGhost stealth tools: Focus Shield blur interception, Snap-It Vision OCR, LaTeX math solver, closed Shadow DOM, and 10ms panic switch.",
-        url: "https://examghost.com/features",
+        url: "https://www.examghost.com/features",
         siteName: "ExamGhost",
         images: [
             {
@@ -34,15 +34,15 @@ export default function FeaturesLayout({
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://examghost.com/features#webpage",
-                "url": "https://examghost.com/features",
+                "@id": "https://www.examghost.com/features#webpage",
+                "url": "https://www.examghost.com/features",
                 "name": "24 Stealth AI Exam & Canvas Features | ExamGhost",
                 "description": "Explore all 24 ExamGhost stealth tools: Focus Shield blur interception, Snap-It Vision OCR, LaTeX math solver, closed Shadow DOM, and 10ms panic switch.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-29",
                 "inLanguage": "en-US",
-                "isPartOf": { "@id": "https://examghost.com/#website" },
-                "breadcrumb": { "@id": "https://examghost.com/features#breadcrumb" },
+                "isPartOf": { "@id": "https://www.examghost.com/#website" },
+                "breadcrumb": { "@id": "https://www.examghost.com/features#breadcrumb" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary"]
@@ -50,15 +50,15 @@ export default function FeaturesLayout({
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/features#breadcrumb",
+                "@id": "https://www.examghost.com/features#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "24 Stealth Features", "item": "https://examghost.com/features" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "24 Stealth Features", "item": "https://www.examghost.com/features" }
                 ]
             },
             {
                 "@type": "ItemList",
-                "@id": "https://examghost.com/features#featurelist",
+                "@id": "https://www.examghost.com/features#featurelist",
                 "name": "ExamGhost 24 Stealth AI Quiz & Exam Features",
                 "numberOfItems": 24,
                 "itemListElement": [

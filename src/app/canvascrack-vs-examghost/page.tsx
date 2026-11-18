@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     },
     description: "CanvasCrack charges $19.99/mo or $139.99 with zero AI solver. ExamGhost combines Focus Shield tab cloaking with 0.3s AI answers and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/canvascrack-vs-examghost",
+        canonical: "https://www.examghost.com/canvascrack-vs-examghost",
     },
     openGraph: {
         title: "CanvasCrack vs ExamGhost (2026) — $139 Tab Blocker Audit",
         description: "CanvasCrack charges $19.99/mo or $139.99 with zero AI solver. ExamGhost combines Focus Shield tab cloaking with 0.3s AI answers and 5 Free Solves / Day.",
-        url: "https://examghost.com/canvascrack-vs-examghost",
+        url: "https://www.examghost.com/canvascrack-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -61,16 +61,16 @@ export default function CanvascrackVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-19",
-                "dateModified": "2026-03-15",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/canvascrack-vs-examghost#webpage",
-                "url": "https://examghost.com/canvascrack-vs-examghost",
+                "@id": "https://www.examghost.com/canvascrack-vs-examghost#webpage",
+                "url": "https://www.examghost.com/canvascrack-vs-examghost",
                 "name": "CanvasCrack vs ExamGhost (2026 Comparison) | $139.99 Tab Blocker vs Complete AI Exam Solver",
                 "description": "In-depth technical and pricing comparison between CanvasCrack (canvascrack.com) and ExamGhost for Canvas, Blackboard, Moodle, and D2L Brightspace exams.",
-                "breadcrumb": { "@id": "https://examghost.com/canvascrack-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvascrack-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -99,16 +99,16 @@ export default function CanvascrackVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvascrack-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvascrack-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CanvasCrack vs ExamGhost", "item": "https://examghost.com/canvascrack-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasCrack vs ExamGhost", "item": "https://www.examghost.com/canvascrack-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvascrack-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvascrack-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -693,12 +693,12 @@ export default function CanvascrackVsExamghostPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-xs opacity-75">
                       Replaces $40/mo in separate ChatGPT Plus + Claude Pro subscriptions
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study AI Hub</td>
                   </tr>
                 </tbody>

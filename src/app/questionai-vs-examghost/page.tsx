@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     title: {
         absolute: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
     },
-    description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
+    description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves/Day ($0).",
     alternates: {
-        canonical: "https://examghost.com/questionai-vs-examghost",
+        canonical: "https://www.examghost.com/questionai-vs-examghost",
     },
     openGraph: {
         title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
-        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
-        url: "https://examghost.com/questionai-vs-examghost",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves/Day ($0).",
+        url: "https://www.examghost.com/questionai-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "QuestionAI vs ExamGhost (2026) — Copilot Sidebar vs Stealth",
-        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves / Day ($0).",
+        description: "Compare QuestionAI with ExamGhost in 2026. Replace visible Copilot chat sidebars and blur logs with a 0.3s closed Shadow DOM solver and 5 Free Solves/Day ($0).",
         images: ["/og-image.jpg"],
     },
 };
@@ -62,16 +62,16 @@ export default function QuestionaiVsExamghostPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-24",
-                "dateModified": "2026-03-05",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/questionai-vs-examghost#webpage",
-                "url": "https://examghost.com/questionai-vs-examghost",
+                "@id": "https://www.examghost.com/questionai-vs-examghost#webpage",
+                "url": "https://www.examghost.com/questionai-vs-examghost",
                 "name": "QuestionAI vs ExamGhost (2026 Comparison) | Homework Chat Sidebar vs Invisible Exam Solver",
                 "description": "Technical evaluation comparing QuestionAI (questionai.com) and ExamGhost across Canvas SpeedGrader telemetry, DOM isolation, STEM accuracy, and student pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/questionai-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/questionai-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -96,16 +96,16 @@ export default function QuestionaiVsExamghostPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/questionai-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/questionai-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "QuestionAI vs ExamGhost", "item": "https://examghost.com/questionai-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "QuestionAI vs ExamGhost", "item": "https://www.examghost.com/questionai-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/questionai-vs-examghost#faq",
+                "@id": "https://www.examghost.com/questionai-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -670,13 +670,13 @@ export default function QuestionaiVsExamghostPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-ink-muted text-xs">
                       Multi-model consensus and derivation breakdown
                     </td>
                     <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">
-                      ✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      ✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)
                     </td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">
                       ✗ No Multi-Model Study &amp; Homework AI Hub

@@ -28,7 +28,7 @@ import {
    General Chemistry I (CHEM 110) · Stoichiometry & Gas Laws (KClO3 decomposition)
    Scene 0: 41.8s manual tab-flipping, document.oncopy logged, dead mouse gap
    Scene 1: ExamGhost 0.3s inline solve, 1.39 L, closed Shadow DOM, 0 blur events
-   Scene 2: Multi-Model Gas Law Derivation (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Gas Law Derivation (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasCrackStoichiometryDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -135,11 +135,11 @@ export function CanvasCrackStoichiometryDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Non-Ideality Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Non-Ideality Proof', tag: 'explain' };
       }
     }
   };
@@ -382,10 +382,10 @@ export function CanvasCrackStoichiometryDemo() {
                       }`}
                     >
                       {model === 'claude'
-                        ? 'Claude 3.7 Sonnet'
+                        ? 'Claude'
                         : model === 'chatgpt'
-                        ? 'ChatGPT o3-mini/4o'
-                        : 'DeepSeek-R1'}
+                        ? 'ChatGPT'
+                        : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -459,7 +459,7 @@ export function CanvasCrackStoichiometryDemo() {
    Discrete Mathematics (CS 240 / MATH 300) · Planar Graphs, Euler's Formula & Kuratowski
    Scene 0: LTI 1.3 iframe cross-origin crash, 19.11MiB telemetry bundle, 2 blur events
    Scene 1: ExamGhost native LTI 1.3 solve, Double-Click, closed Shadow DOM, 0 blur events
-   Scene 2: Multi-Model Graph Theory Proofs (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Graph Theory Proofs (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasNinjaDiscreteMathDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -556,11 +556,11 @@ export function CanvasNinjaDiscreteMathDemo() {
       }
     } else {
       if (safeProgress < 35) {
-        return { x: 26, y: 18, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
+        return { x: 26, y: 18, clicking: true, label: 'Claude', tag: 'default' };
       } else if (safeProgress < 70) {
-        return { x: 50, y: 18, clicking: true, label: 'ChatGPT o3-mini/4o', tag: 'default' };
+        return { x: 50, y: 18, clicking: true, label: 'ChatGPT', tag: 'default' };
       } else {
-        return { x: 74, y: 18, clicking: true, label: 'DeepSeek-R1 Degree Bound Proof', tag: 'explain' };
+        return { x: 74, y: 18, clicking: true, label: 'DeepSeek Degree Bound Proof', tag: 'explain' };
       }
     }
   };
@@ -708,7 +708,7 @@ export function CanvasNinjaDiscreteMathDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -750,7 +750,7 @@ export function CanvasNinjaDiscreteMathDemo() {
    Cognitive Psychology (PSYC 330) · Working Memory & Beck CBT
    Scene 0: 800-char truncation, 10 cr/smart Q meter, disabled tab blocker on $0/$5
    Scene 1: ExamGhost 0.3s solve, full 1,150 chars, 0 credits, 0 blur flags
-   Scene 2: Multi-Model Psychology & CBT Analysis (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Psychology & CBT Analysis (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasPassCognitivePsychDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -940,7 +940,7 @@ export function CanvasPassCognitivePsychDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -976,7 +976,7 @@ export function CanvasPassCognitivePsychDemo() {
    Cellular Biology (BIO 201) · Cellular Respiration & Citric Acid Cycle
    Scene 0: Injected DOM button inside host #questions, MutationObserver alert, $48.99/4mo
    Scene 1: ExamGhost 0 DOM mutations, closed Shadow DOM, 0.3s solve, Focus Shield
-   Scene 2: Multi-Model Metabolic Pathway Derivations (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Metabolic Pathway Derivations (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasQuizMetabolicPathwaysDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1163,7 +1163,7 @@ export function CanvasQuizMetabolicPathwaysDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1203,7 +1203,7 @@ export function CanvasQuizMetabolicPathwaysDemo() {
    Linear Algebra (MATH 214) · Eigenvalues, Characteristic Polynomial & Vector Spaces
    Scene 0: Attempt #1 lockout, Ctrl+Shift+C returns no prior cached answers, 38.6s blur
    Scene 1: ExamGhost 0.3s solve, closed Shadow DOM, 0 blur events, Alt+S matrix snip
-   Scene 2: Multi-Model Linear Algebra Proofs (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Linear Algebra Proofs (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasScholarLinearAlgebraDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1396,7 +1396,7 @@ export function CanvasScholarLinearAlgebraDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1432,7 +1432,7 @@ export function CanvasScholarLinearAlgebraDemo() {
    Sociology (SOC 205) · Social Stratification & Cultural Reproduction
    Scene 0: Neon #wiz_button injected in DOM, fake "Only 6 left" sales popup, $7.99/mo trap
    Scene 1: ExamGhost 0 DOM mutations, closed Shadow DOM, 0.3s solve, Focus Shield
-   Scene 2: Multi-Model Sociology Analysis (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Sociology Analysis (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function CanvasWizardSociologyDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1617,7 +1617,7 @@ export function CanvasWizardSociologyDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1653,7 +1653,7 @@ export function CanvasWizardSociologyDemo() {
    Computer Architecture (CS 350) · Cache Coherence & MESI Snooping Protocol
    Scene 0: Attempt #1 lockout, synthetic bulk auto-fill 25 Qs in 0.2s with isTrusted: false
    Scene 1: ExamGhost Attempt #1 solve, authentic hardware events (isTrusted: true), 0.3s
-   Scene 2: Multi-Model Architecture Proofs (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Architecture Proofs (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function QuizLoaderComputerArchitectureDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -1848,7 +1848,7 @@ export function QuizLoaderComputerArchitectureDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -1884,7 +1884,7 @@ export function QuizLoaderComputerArchitectureDemo() {
    Organic Chemistry I (CHEM 231) · IUPAC Nomenclature & Chair Conformations
    Scene 0: .ai-dot DOM marker left in page even with Shift+Z, "Ask Quietly" sidebar steals focus
    Scene 1: ExamGhost true closed Shadow DOM, 0 DOM contamination, 0.3s solve, Focus Shield
-   Scene 2: Multi-Model Organic Chemistry Derivations (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Organic Chemistry Derivations (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function UseQuietlyOrganicChemistryDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2075,7 +2075,7 @@ export function UseQuietlyOrganicChemistryDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2111,7 +2111,7 @@ export function UseQuietlyOrganicChemistryDemo() {
    McGraw-Hill SmartBook 2.0 & Connect · Managerial Accounting & Activity-Based Costing
    Scene 0: EasySB bot timing signatures trip McGraw-Hill SmartBook adaptive detector, session freeze
    Scene 1: ExamGhost 0.3s inline multi-select, closed Shadow DOM, 0 blur events, High confidence
-   Scene 2: Multi-Model Managerial Accounting Derivations (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Managerial Accounting Derivations (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function EasySBAdaptiveReadingDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2217,7 +2217,7 @@ export function EasySBAdaptiveReadingDemo() {
                 ? { x: 74, y: 46, clicking: safeProgress > 45, label: '⚠️ SB2_BOT_TIMING_SIGNATURE_DETECTED', tag: 'fail' }
                 : currentScene === 1
                 ? { x: 76, y: 85, clicking: safeProgress > 60, label: 'Click High Confidence', tag: 'solve' }
-                : { x: 44, y: 16, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' }
+                : { x: 44, y: 16, clicking: true, label: 'ChatGPT', tag: 'default' }
             }
           />
 
@@ -2305,7 +2305,7 @@ export function EasySBAdaptiveReadingDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>
@@ -2341,7 +2341,7 @@ export function EasySBAdaptiveReadingDemo() {
    Pearson MyLab & Mastering · College Algebra (MATH 110) · Polynomial Zeros
    Scene 0: MathJax cross-origin CORS iframe error, text scraper outputs [NaN / Format Error]
    Scene 1: Alt+S Hybrid Vision Snip captures MathJax pixels, exact fraction 1/2 preserved (not 0.5)
-   Scene 2: Multi-Model Polynomial Roots Derivations (Claude 3.7 Sonnet, ChatGPT o3-mini/4o, DeepSeek-R1)
+   Scene 2: Multi-Model Polynomial Roots Derivations (Claude, ChatGPT, DeepSeek)
    ============================================================================ */
 export function MyLabSolverCollegeAlgebraDemo() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -2447,7 +2447,7 @@ export function MyLabSolverCollegeAlgebraDemo() {
                 ? { x: 50, y: 72, clicking: safeProgress > 45, label: 'PARSER FAIL: [NaN / Format Error]', tag: 'fail' }
                 : currentScene === 1
                 ? { x: 52, y: 74, clicking: safeProgress > 60, label: 'Exact Format (1/2, not 0.5)', tag: 'solve' }
-                : { x: 44, y: 16, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' }
+                : { x: 44, y: 16, clicking: true, label: 'ChatGPT', tag: 'default' }
             }
           />
 
@@ -2537,7 +2537,7 @@ export function MyLabSolverCollegeAlgebraDemo() {
                         activeModelTab === model ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
-                      {model === 'claude' ? 'Claude 3.7 Sonnet' : model === 'chatgpt' ? 'ChatGPT o3-mini/4o' : 'DeepSeek-R1'}
+                      {model === 'claude' ? 'Claude' : model === 'chatgpt' ? 'ChatGPT' : 'DeepSeek'}
                     </button>
                   ))}
                 </div>

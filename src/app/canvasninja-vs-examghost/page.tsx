@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     },
     description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/canvasninja-vs-examghost",
+        canonical: "https://www.examghost.com/canvasninja-vs-examghost",
     },
     openGraph: {
         title: "CanvasNinja vs ExamGhost (2026) — New Quizzes & AI Audit",
         description: "CanvasNinja fails on Canvas New Quizzes and charges $16.99/mo for 3 basic tools. ExamGhost works on Classic & New Quizzes in 0.3s with 5 Free Solves / Day.",
-        url: "https://examghost.com/canvasninja-vs-examghost",
+        url: "https://www.examghost.com/canvasninja-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -64,16 +64,16 @@ export default function CanvasNinjaComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-25",
-                "dateModified": "2026-03-02",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/canvasninja-vs-examghost#webpage",
-                "url": "https://examghost.com/canvasninja-vs-examghost",
+                "@id": "https://www.examghost.com/canvasninja-vs-examghost#webpage",
+                "url": "https://www.examghost.com/canvasninja-vs-examghost",
                 "name": "CanvasNinja vs ExamGhost (2026) | Why CanvasNinja Fails on Canvas New Quizzes",
                 "description": "Feature-to-price comparison between CanvasNinja (ailcnoigddfddkfnppjcgjijaoehiime v1.1.40) and ExamGhost across Canvas New Quizzes AI support, diagram OCR, and stealth.",
-                "breadcrumb": { "@id": "https://examghost.com/canvasninja-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/canvasninja-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -111,16 +111,16 @@ export default function CanvasNinjaComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/canvasninja-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/canvasninja-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "CanvasNinja vs ExamGhost", "item": "https://examghost.com/canvasninja-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "CanvasNinja vs ExamGhost", "item": "https://www.examghost.com/canvasninja-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/canvasninja-vs-examghost#faq",
+                "@id": "https://www.examghost.com/canvasninja-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -540,9 +540,9 @@ export default function CanvasNinjaComparisonPage() {
                                 
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>

@@ -337,7 +337,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   {scene2.hubTitle}
                 </span>
                 <span className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-indigo-950/80 border border-indigo-500/40 text-indigo-300 font-bold">
-                  Claude 3.7 + ChatGPT + DeepSeek-R1
+                  Claude + ChatGPT + DeepSeek
                 </span>
               </div>
 
@@ -354,7 +354,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                     }`}
                   >
                     <Cpu className="w-3.5 h-3.5 text-amber-400" />
-                    Claude 3.7 Sonnet
+                    Claude
                   </button>
                   <button
                     type="button"
@@ -366,7 +366,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                     }`}
                   >
                     <Zap className="w-3.5 h-3.5 text-emerald-400" />
-                    ChatGPT o3-mini/4o
+                    ChatGPT
                   </button>
                   <button
                     type="button"
@@ -378,7 +378,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                     }`}
                   >
                     <BookOpen className="w-3.5 h-3.5 text-sky-400" />
-                    DeepSeek-R1
+                    DeepSeek
                   </button>
                 </div>
 
@@ -386,7 +386,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   {activeModelTab === 'claude' && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-1.5 text-[11px] font-mono text-amber-400 font-bold">
-                        <span>Claude 3.7 Sonnet Extended Reasoning:</span>
+                        <span>Claude Extended Reasoning:</span>
                       </div>
                       {scene2.claudeDerivation}
                     </div>
@@ -394,7 +394,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   {activeModelTab === 'chatgpt' && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 font-bold">
-                        <span>ChatGPT o3-mini/4o Fast Proof:</span>
+                        <span>ChatGPT Fast Proof:</span>
                       </div>
                       {scene2.chatgptDerivation}
                     </div>
@@ -402,7 +402,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   {activeModelTab === 'deepseek' && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-1.5 text-[11px] font-mono text-sky-400 font-bold">
-                        <span>DeepSeek-R1 Deep Verification:</span>
+                        <span>DeepSeek Deep Verification:</span>
                       </div>
                       {scene2.deepseekDerivation}
                     </div>
@@ -503,9 +503,9 @@ export function CanvasLmsQuizMotionDemo() {
         <p className="text-slate-200">{"Proton stoichiometry: 10 $H^+$ pumped per NADH, 6 $H^+$ per $FADH_2$. ATP synthase c-ring rotor requires ~8 $H^+$ per 3 ATP + 1 $H^+$ for phosphate symport, confirming P/O ratios of 2.5 and 1.5. Overall energetic efficiency $\\approx 34\\%$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Stoichiometry', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Stoichiometry', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Bioenergetics Engine',
@@ -605,9 +605,9 @@ export function BlackboardQuizMotionDemo() {
         <p className="text-slate-200">{"Liquidity effect: The shift in bank balance sheets lowers yields along the short end of the term structure. Quantitative easing represents an extended version targeting longer-duration bonds to flatten term premia."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Yield Curve', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Yield Curve', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Monetary Economics Engine',
@@ -707,9 +707,9 @@ export function MoodleQuizMotionDemo() {
         <p className="text-slate-200">{"Tuple header anatomy: PostgreSQL $xmin$ (creating transaction ID) and $xmax$ (deleting transaction ID) determine tuple visibility against the active transaction snapshot $SnapshotData$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 MVCC Proof', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek MVCC Proof', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Database Architecture Engine',
@@ -809,9 +809,9 @@ export function D2LBrightspaceQuizMotionDemo() {
         <p className="text-slate-200">{"Height guarantee: A red-black tree with $n$ internal nodes has height at most $2\\log_2(n+1)$. Insertion takes $O(\\log n)$ time with at most 2 tree rotations."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Invariants', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Invariants', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Data Structures Engine',
@@ -914,9 +914,9 @@ export function McgrawHillAleksQuizMotionDemo() {
         <p className="text-slate-200">{"Balance Sheet equation balance: Liabilities decrease by $4,500, Equity increases by $4,500 via Net Income, preserving $A = L + E$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 GAAP Balancing', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek GAAP Balancing', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Accounting & Finance Suite',
@@ -1022,9 +1022,9 @@ export function PearsonMyLabMasteringDemo() {
         <p className="text-slate-200">{"Convergence verification: Since $\\frac{6x}{(x^2+2)^3} \\sim \\frac{6}{x^5}$ as $x \\to \\infty$, the integral converges by Limit Comparison with the $p$-series $\\sum 1/x^5$ where $p = 5 > 1$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Convergence', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Convergence', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Calculus Consensus Engine',
@@ -1124,9 +1124,9 @@ export function CengageWebAssignDemo() {
         <p className="text-slate-200">{"Definite piecewise integral: $\\int_0^1 (3t^2-12t+9)dt - \\int_1^3 (3t^2-12t+9)dt + \\int_3^4 (3t^2-12t+9)dt = [t^3-6t^2+9t]_0^1 - [t^3-6t^2+9t]_1^3 + [t^3-6t^2+9t]_3^4 = 4 - (-4) + 4 = 12\\text{ m}$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Piecewise Calc', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Piecewise Calc', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model STEM Kinematics Workspace',
@@ -1226,9 +1226,9 @@ export function GradescopeExamDemo() {
         <p className="text-slate-200">{"Recursion tree summation: At depth $j$, total work is $4^j \\left( \\frac{n}{2^j} \\right)^2 \\log\\left( \\frac{n}{2^j} \\right) = n^2 (\\log n - j)$. Summing over $j = 0$ to $\\log_2 n$: $\\sum_{j=0}^{\\log_2 n} n^2 (\\log n - j) = n^2 \\frac{(\\log n)(\\log n + 1)}{2} = \\Theta(n^2 \\log^2 n)$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Akra-Bazzi Proof', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Akra-Bazzi Proof', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Algorithm Analysis Engine',
@@ -1328,9 +1328,9 @@ export function GoogleFormsQuizDemo() {
         <p className="text-slate-200">{"Neural circuit integration: Broca&apos;s area connects to Wernicke&apos;s area via the arcuate fasciculus. Lesions to the arcuate fasciculus alone cause conduction aphasia (impaired repetition with intact comprehension and spontaneous speech)."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Circuit Mapping', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Circuit Mapping', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Cognitive Neuroscience Suite',
@@ -1430,9 +1430,9 @@ export function SchoologyLearnosityDemo() {
         <p className="text-slate-200">{"Mitchell chemiosmotic force ($\\Delta p = \\Delta\\psi - 59\\Delta\\text{pH}$): In chloroplasts, the chemical component ($\\Delta\\text{pH} \\approx 3.5$) dominates due to $Cl^-$ and $Mg^{2+}$ counter-ion flux, driving ATP synthesis as protons exit through CF0-CF1 into the stroma."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Bioenergetics', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Bioenergetics', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model Cellular Bioenergetics Engine',
@@ -1532,9 +1532,9 @@ export function DeltaMathMotionDemo() {
         <p className="text-slate-200">{"Synthetic division verification: Dividing $2x^3 - 7x^2 - 7x + 12$ by $(x - 4)$ yields quotient $2x^2 + x - 3$ with remainder $0$. Further factoring yields $2x^2 + x - 3 = (2x + 3)(x - 1)$, confirming roots at $x \\in \\{4, 1, -1.5\\}$."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Synthetic Division', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Synthetic Division', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Multi-Model RAG & Proof Engine',
@@ -1634,9 +1634,9 @@ export function EdgenuityMotionDemo() {
         <p className="text-slate-200">{"Economic game theory: The FDIC solved the classic Diamond-Dybvig bank run coordination failure by providing credible government-backed liquidity guarantees, transforming unstable fractional-reserve deposits into risk-free assets for retail depositors."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Game Theory', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Game Theory', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Historical Document & Economic Analysis',
@@ -1736,9 +1736,9 @@ export function CanvasExtensionDetectionMotionDemo() {
         <p className="text-slate-200">{"W3C Shadow DOM encapsulation: By invoking attachShadow({ mode: &apos;closed&apos; }), element.shadowRoot returns null to all host-page MutationObservers and querySelectors, rendering the ExamGhost UI completely invisible to Canvas scripts."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 W3C Spec Proof', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek W3C Spec Proof', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Chromium Sandbox & W3C DOM Security Audit',
@@ -1838,9 +1838,9 @@ export function CanvasQuizLogMotionDemo() {
         <p className="text-slate-200">{"Faculty view forensic limits: Canvas cannot see which application or tab was opened during a blur event, nor can it capture webcam or clipboard data during standard unproctored quizzes. Keeping the window focused eliminates all red flags."}</p>
       ),
       getCursor: (p) => {
-        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude 3.7 Sonnet', tag: 'default' };
-        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT o3-mini', tag: 'default' };
-        return { x: 75, y: 15, clicking: true, label: 'DeepSeek-R1 Dwell Modeling', tag: 'explain' };
+        if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
+        if (p < 70) return { x: 50, y: 15, clicking: true, label: 'ChatGPT', tag: 'default' };
+        return { x: 75, y: 15, clicking: true, label: 'DeepSeek Dwell Modeling', tag: 'explain' };
       },
       getTelemetry: () => ({
         speedGrader: 'Study AI Workspace · Event Batch Analytics & Human Cognitive Modeling',

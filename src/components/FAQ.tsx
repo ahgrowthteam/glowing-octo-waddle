@@ -45,11 +45,11 @@ export default function FAQ() {
         },
         {
             q: "What pricing plans do you offer, and what is the Study & Homework AI Hub?",
-            a: "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude 3.7 Sonnet, ChatGPT (GPT-4o / o3-mini), and DeepSeek-R1 for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs (saving $60+/month vs separate AI subscriptions)."
+            a: "We offer three simple, honest plans: Monthly at $19/month (flexible, cancel anytime), Yearly Academic Pass at $99/year (our most popular plan, works out to $8.25/month for the full academic year), and Lifetime VIP at $199 (one-time payment, lifetime access). All paid plans include both unlimited stealth extension solves AND full access to the ExamGhost Study & Homework AI Workspace — a dedicated study chatbot powered by Claude, ChatGPT, and DeepSeek for homework, essays, syllabus PDFs, and step-by-step LaTeX math proofs (saving $60+/month vs separate AI subscriptions)."
         },
         {
             q: "What is your refund policy?",
-            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, contact our 24/7 Discord support team within 14 days for a prompt, hassle-free refund."
+            a: "We offer a 100% money-back guarantee. If ExamGhost does not perform exactly as promised on your quizzes, email support@examghost.com or message our 24/7 Discord support team within 14 days of purchase for a full refund."
         }
     ];
 
@@ -64,8 +64,8 @@ export default function FAQ() {
                         <span>FAQ &amp; TECHNICAL ARCHITECTURE</span>
                     </p>
                     <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        Good questions.<br />
-                        Short answers.
+                        Frequently asked<br />
+                        questions.
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
                         Everything you need to know about stealth technology, SpeedGrader logs, and our refund guarantee.
@@ -80,14 +80,14 @@ export default function FAQ() {
                             <span>Architecture Overview · Last Audited 2026</span>
                         </div>
                         <span className="text-[11px] font-medium text-ink-muted">
-                            ExamGhost Security Engineering Team
+                            the ExamGhost team
                         </span>
                     </div>
                     <h3 className="font-display font-bold text-base sm:text-lg text-ink mb-2">
                         What is ExamGhost and how does its stealth architecture work?
                     </h3>
                     <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                        ExamGhost is a privacy-first Chrome extension engineered for online assessments on Canvas, Blackboard, Moodle, D2L Brightspace, McGraw-Hill Connect, Pearson MyLab, Cengage MindTap, and WebAssign. Unlike standard AI sidebar extensions such as CanvasHack, CheatMate, or CourseHero that inject visible HTML overlays directly into the host page DOM, ExamGhost renders inside a closed Shadow DOM container paired with Focus Shield event interception. This architecture neutralizes window.blur, document.visibilitychange, and document.hasFocus() proctoring telemetry while leaving zero inspectable footprint in page scripts. Powered by multi-model AI routing combining GPT-4o, Claude 3.7 Sonnet, and DeepSeek-R1, ExamGhost solves multiple-choice, multi-select, fill-in-the-blank, matching, and LaTeX math questions in 0.3 seconds with a 96%+ accuracy rate. Students can test all 24 stealth features with 5 free solves per day (no credit card required), or unlock unlimited extension solves plus the full Claude, ChatGPT, and DeepSeek Study &amp; Homework AI Workspace at $19/month, $99/year ($8.25/month Academic Year Pass), or $199 one-time for the Lifetime VIP Degree Pass.
+                        ExamGhost is a privacy-first Chrome extension engineered for online assessments on Canvas, Blackboard, Moodle, D2L Brightspace, McGraw-Hill Connect, Pearson MyLab, Cengage MindTap, and WebAssign. Unlike standard AI sidebar extensions such as CanvasHack, CheatMate, or CourseHero that inject visible HTML overlays directly into the host page DOM, ExamGhost renders inside a closed Shadow DOM container paired with Focus Shield event interception. This architecture neutralizes window.blur, document.visibilitychange, and document.hasFocus() proctoring telemetry while leaving zero inspectable footprint in page scripts. Powered by multi-model AI routing combining ChatGPT, Claude, and DeepSeek, ExamGhost solves multiple-choice, multi-select, fill-in-the-blank, matching, and LaTeX math questions in 0.3 seconds with a 96%+ accuracy rate. Students can test all 24 stealth features with 5 free solves per day (no credit card required), or unlock unlimited extension solves plus the full Claude, ChatGPT, and DeepSeek Study &amp; Homework AI Workspace at $19/month, $99/year ($8.25/month Academic Year Pass), or $199 one-time for the Lifetime VIP Degree Pass.
                     </p>
                 </div>
 

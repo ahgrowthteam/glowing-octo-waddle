@@ -136,8 +136,8 @@ export default function LmsExplainerFilmCard({
                 itemProp="description"
                 content={`16-second 2.5D motion-graphic explainer film demonstrating how ExamGhost solves ${platformName} questions one by one via double-click and Alt+S Vision OCR inside a Closed Shadow DOM with zero blur events.`}
             />
-            <meta itemProp="thumbnailUrl" content={`https://examghost.com${posterSrc}`} />
-            <meta itemProp="contentUrl" content={`https://examghost.com${videoSrc}`} />
+            <meta itemProp="thumbnailUrl" content={`https://www.examghost.com${posterSrc}`} />
+            <meta itemProp="contentUrl" content={`https://www.examghost.com${videoSrc}`} />
             <meta itemProp="uploadDate" content="2026-10-22T00:00:00Z" />
             <meta itemProp="duration" content="PT16S" />
 

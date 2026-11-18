@@ -112,8 +112,8 @@ export default function DemoVideo() {
                         <span>SNIP A REGION · ALT+S HYBRID VISION + DOM</span>
                     </p>
                     <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06] mb-5">
-                        Screenshot &amp; Draw to Solve.<br />
-                        <span className="text-ink-muted font-normal">(“Snap It”)</span>
+                        How do you solve a diagram or screenshot?<br />
+                        <span className="text-ink-muted font-normal">Snap-It (Alt+S)</span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-base sm:text-lg text-ink-muted leading-relaxed font-normal">
                         Locked text, complex math, or diagrams? Press <kbd className="px-2 py-0.5 rounded bg-white border border-black/10 text-xs font-mono font-bold text-ink shadow-2xs">Alt + S</kbd> and drag a box over any question—ExamGhost combines Vision OCR with page text and auto-fills the answer right inside your crop.

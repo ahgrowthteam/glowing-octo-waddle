@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     },
     description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
     alternates: {
-        canonical: "https://examghost.com/answerly-vs-examghost",
+        canonical: "https://www.examghost.com/answerly-vs-examghost",
     },
     openGraph: {
         title: "Answerly AI vs ExamGhost (2026) — Shadow DOM vs 5 Scripts",
         description: "2026 technical audit of Answerly AI (v1.3.52) vs ExamGhost. Replace 5 exposed content scripts with 0.3s closed Shadow DOM stealth and 5 Free Solves / Day.",
-        url: "https://examghost.com/answerly-vs-examghost",
+        url: "https://www.examghost.com/answerly-vs-examghost",
         siteName: "ExamGhost",
         type: "website",
         locale: "en_US",
@@ -63,16 +63,16 @@ export default function AnswerlyComparisonPage() {
             {
                 "@type": "WebPage",
                 "datePublished": "2026-02-16",
-                "dateModified": "2026-03-18",
+                "dateModified": "2026-11-18",
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".aeo-summary", "summary h3"]
                 },
-                "@id": "https://examghost.com/answerly-vs-examghost#webpage",
-                "url": "https://examghost.com/answerly-vs-examghost",
+                "@id": "https://www.examghost.com/answerly-vs-examghost#webpage",
+                "url": "https://www.examghost.com/answerly-vs-examghost",
                 "name": "Answerly AI vs ExamGhost (2026 Review) | 5 Unisolated Content Scripts vs Closed Shadow DOM",
                 "description": "Technical forensics comparing Answerly AI (getanswerlyai.com, Chrome ID gmekadimanglmacabjkmaigckocobnnc v1.3.52) and ExamGhost regarding content script injection, web_accessible_resources fingerprinting, and pricing.",
-                "breadcrumb": { "@id": "https://examghost.com/answerly-vs-examghost#breadcrumb" },
+                "breadcrumb": { "@id": "https://www.examghost.com/answerly-vs-examghost#breadcrumb" },
                 "about": [
                     {
                         "@type": "SoftwareApplication",
@@ -117,16 +117,16 @@ export default function AnswerlyComparisonPage() {
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://examghost.com/answerly-vs-examghost#breadcrumb",
+                "@id": "https://www.examghost.com/answerly-vs-examghost#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examghost.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://examghost.com/compare-canvas-hack-extensions" },
-                    { "@type": "ListItem", "position": 3, "name": "Answerly AI vs ExamGhost", "item": "https://examghost.com/answerly-vs-examghost" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.examghost.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Compare Extensions", "item": "https://www.examghost.com/compare-canvas-hack-extensions" },
+                    { "@type": "ListItem", "position": 3, "name": "Answerly AI vs ExamGhost", "item": "https://www.examghost.com/answerly-vs-examghost" }
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://examghost.com/answerly-vs-examghost#faq",
+                "@id": "https://www.examghost.com/answerly-vs-examghost#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -703,9 +703,9 @@ export default function AnswerlyComparisonPage() {
                   </tr>
                   <tr className="bg-emerald-50/20">
                     <td className="py-4 px-5 font-bold text-ink">
-                      2-in-1 Study &amp; Homework AI Hub (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)
+                      2-in-1 Study &amp; Homework AI Hub (Claude + ChatGPT + DeepSeek)
                     </td>
-                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude 3.7 Sonnet + ChatGPT o3-mini/4o + DeepSeek-R1)</td>
+                    <td className="py-4 px-5 font-bold text-emerald-800 bg-emerald-50/40">✓ Included on Paid Plans (Claude + ChatGPT + DeepSeek)</td>
                     <td className="py-4 px-5 text-rose-800 font-semibold">✗ No Multi-Model Study &amp; Homework AI Hub</td>
                   </tr>
                 </tbody>
@@ -731,27 +731,7 @@ export default function AnswerlyComparisonPage() {
                     </div>
                 </section>
 
-                {/* VERIFIED STUDENT MIGRATION STORY */}
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-                    <div className="rounded-3xl bg-[#f5ede2] p-8 sm:p-10 border border-black/10 relative">
-                        <div className="flex items-center gap-1 text-amber-500 mb-4">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                            ))}
-                        </div>
-                        <blockquote className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-5">
-                            &quot;I was paying $12.99/month for Answerly AI on getanswerlyai.com until my CS friend inspected its v1.3.52 manifest and showed me that it injects five separate scripts—including scoreReporter.js—and exposes content/* in web_accessible_resources to every webpage. Plus, half my classes use Blackboard where Answerly doesn&apos;t even run. I switched to ExamGhost with the 5 free solves / day trial and upgraded to the $99/yr pass. It works on both Canvas and Blackboard inside a closed Shadow DOM.&quot;
-                        </blockquote>
-                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-secondary pt-4 border-t border-black/10">
-                            <div>
-                                <span className="font-bold text-ink">Zachary L.</span> — Senior, Ohio University
-                            </div>
-                            <span className="text-emerald-800 font-semibold bg-emerald-100 px-2.5 py-1 rounded-full">
-                                Verified ExamGhost Switcher
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* DISCORD COMMUNITY SECTION */}
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
