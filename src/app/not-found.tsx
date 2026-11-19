@@ -17,28 +17,35 @@ export default function NotFound() {
   return (
     <main className="min-h-screen bg-cream text-ink">
       <Navbar />
-      <section className="max-w-xl mx-auto px-6 py-32 text-center">
-        <p className="eyebrow mb-4 justify-center">404</p>
-        <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-          That page doesn&apos;t exist.
+      <section className="max-w-xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">404</p>
+        <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-4">
+          Nothing here.
         </h1>
-        <p className="text-ink-muted mb-8">
-          The link may be outdated or mistyped. Start from the homepage or try the free demo.
+        <p className="text-base sm:text-lg text-ink-muted mb-8">
+          The link may be old or mistyped. Here are a few places to go instead.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link href="/" className="btn-dark px-6 py-3 text-base">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link href="/" className="btn-dark px-7 py-4 text-base">
             Back to homepage
           </Link>
           <Link
             href="/canvas-quiz-solver-free-demo"
             prefetch={false}
-            className="btn-soft px-6 py-3 text-base"
+            className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors"
           >
             Try the live demo
           </Link>
+          <Link
+            href="/compare"
+            prefetch={false}
+            className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors"
+          >
+            Compare tools
+          </Link>
         </div>
       </section>
-      <Footer />
+      <Footer hideCta />
     </main>
   );
 }

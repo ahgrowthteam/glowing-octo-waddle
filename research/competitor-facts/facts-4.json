@@ -1,0 +1,262 @@
+[
+  {
+    "domain": "silentstudent.com",
+    "name": "Silent Student",
+    "url": "https://silentstudent.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Monthly plans differing by credits; week pass available; no free plan.",
+      "plans": [
+        {
+          "name": "Week pass",
+          "price": 4.99,
+          "currency": "USD",
+          "period": "7 days",
+          "notes": "500 credits; non-renewing"
+        },
+        {
+          "name": "Base",
+          "price": 11.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "2,000 credits/month"
+        },
+        {
+          "name": "Plus",
+          "price": 24.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "5,000 credits/month"
+        },
+        {
+          "name": "Pro",
+          "price": 49.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Unlimited credits (fair use)"
+        }
+      ],
+      "freeTier": "No free plan stated",
+      "trial": "No free trial for general signups"
+    },
+    "platformsStated": [
+      "Canvas",
+      "Google Classroom",
+      "D2L Brightspace",
+      "Moodle",
+      "Blackboard Learn Ultra",
+      "WebAssign",
+      "Cengage MindTap",
+      "McGraw Hill Connect",
+      "Pearson MyLab",
+      "ALEKS"
+    ],
+    "featuresStated": [
+      "AI agent that completes quizzes, essays, discussions and file uploads",
+      "Web app (cloud) and desktop app (Mac/Windows)",
+      "Review drafts before submit (desktop app)",
+      "Credit-based plans"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://silentstudent.com/",
+      "https://silentstudent.com/pricing"
+    ],
+    "confidence": "high",
+    "notes": "Agent-style AI that does assignments (web/desktop app, not an extension); site does not claim undetectability."
+  },
+  {
+    "domain": "cheatgpt.app",
+    "name": "CheatGPT",
+    "url": "https://www.cheatgpt.app",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Monthly or lifetime via Stripe.",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 10,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Shown as discounted from $15"
+        },
+        {
+          "name": "Lifetime",
+          "price": 50,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "Shown as discounted from $80"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas"
+    ],
+    "featuresStated": [
+      "AI answers on quiz questions with short explanations",
+      "ChatGPT, Claude and Gemini sidebar",
+      "Highlight toolbar to rewrite or summarize text"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/cheatgpt/chlpganipoiedkihmkdaikadgfimbfom",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.cheatgpt.app/"
+    ],
+    "confidence": "medium",
+    "notes": "Mixed product: AI answers/sidebar are the core feature set but the page also markets tab-activity hiding prominently; flagged for owner review (could be treated as activity-hiding)."
+  },
+  {
+    "domain": "quizcloak.com",
+    "name": "QuizCloak",
+    "url": "https://quizcloak.com",
+    "reachable": true,
+    "primaryPurpose": "activity-hiding",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "From $9.99/mo, cancel anytime.",
+      "plans": [
+        {
+          "name": "Starting price",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "'From' price; plan breakdown not read"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://quizcloak.com/"
+    ],
+    "confidence": "high",
+    "notes": "Headline and lead feature are tab-activity hiding; AI answer features are secondary paid add-ons."
+  },
+  {
+    "domain": "canvastabshield.com",
+    "name": "Canvas Tab Shield",
+    "url": "https://canvastabshield.com",
+    "reachable": true,
+    "primaryPurpose": "activity-hiding",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "One-time and monthly options; prices shown on page.",
+      "plans": [
+        {
+          "name": "24-Hour Exam Pass",
+          "price": 8.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": null
+        },
+        {
+          "name": "Monthly Shield",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Shown as discounted from $19.99"
+        },
+        {
+          "name": "Semester Pass",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "4 months"
+        },
+        {
+          "name": "Lifetime Access",
+          "price": 79.0,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "Shown as discounted from $120"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas"
+    ],
+    "featuresStated": [],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-tab-shield/libgdijhcidhkeigehfhnpoiiehjfcbe",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://canvastabshield.com/"
+    ],
+    "confidence": "high",
+    "notes": "Sole product purpose is blocking tab/focus-loss signals on Canvas quizzes; no answer generation."
+  },
+  {
+    "domain": "quizmate.io",
+    "name": "QuizMate",
+    "url": "https://www.quizmate.io",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Weekly, monthly and yearly plans with 3-day free trial for eligible new subscribers.",
+      "plans": [
+        {
+          "name": "Weekly",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Shown as discounted from $9.99"
+        },
+        {
+          "name": "Monthly",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Shown as discounted from $24.99"
+        },
+        {
+          "name": "Yearly",
+          "price": 10.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Billed yearly; shown as discounted from $14.99/month"
+        }
+      ],
+      "freeTier": null,
+      "trial": "3 days free for eligible new subscribers"
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Chrome extension giving answers with step-by-step explanations",
+      "iOS app: scan a question photo for an answer",
+      "Study Hub: notes, flashcards, practice quizzes, essays"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizmate/ojgkoajchjoafbnckklmamjcceiglmkd",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.quizmate.io/home"
+    ],
+    "confidence": "high",
+    "notes": "AI answer extension plus mobile app and study hub; no activity-hiding claims seen."
+  }
+]

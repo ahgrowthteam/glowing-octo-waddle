@@ -21,6 +21,7 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 
 export const metadata: Metadata = {
+    robots: { index: false, follow: false },
     title: { absolute: 'Canvas Quiz Log Explained: What Professors See (2026)' },
     description:
         'Every event in the Canvas Quiz Log explained: session started, answered and red \'Stopped viewing\' flags, with a side-by-side SpeedGrader log replica.',

@@ -1,0 +1,289 @@
+[
+  {
+    "domain": "canvasanswers.com",
+    "name": "Canvas Answers",
+    "url": "https://canvasanswers.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Paid pricing not stated on the site; homepage says 'Get Started - it's free'",
+      "plans": [],
+      "freeTier": "Homepage CTA says 'it's free'; limits not stated",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "other learning platforms (unnamed)"
+    ],
+    "featuresStated": [
+      "Direct integration button on quiz pages",
+      "Snapshot (photo of a problem)",
+      "Highlight to solve",
+      "Visual mode for graphs/diagrams",
+      "Multiple choice, true/false, matching, essay question types"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/lamlihfgchoafpnomkjblficpfeonace",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://canvasanswers.com/",
+      "https://canvasanswers.com/pricing (404)",
+      "https://canvasanswers.com/download/chrome-extension",
+      "https://chromewebstore.google.com/detail/lamlihfgchoafpnomkjblficpfeonace"
+    ],
+    "confidence": "medium",
+    "notes": "Site claims 98.97% accuracy and 100,000+ students (unverified). Download link redirects to a Chrome Web Store listing named 'SmartSolve - AI Homework Tutor' by NIKNEA, LLC (about 30K users, 147 ratings; the displayed rating value read '1.0' and should be checked by a human). The listing repeats the 98.97% claim. Site also links an App Store/iOS download. No pricing found in HTML; may be inside the app."
+  },
+  {
+    "domain": "studyfox.pro",
+    "name": "StudyFox",
+    "url": "https://studyfox.pro",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free Basic plan; paid plans from $2.99/week, $9.99/month, $29.99 per 4 months, $59.99/year, each with a 3-day free trial",
+      "plans": [
+        {
+          "name": "Basic (free)",
+          "price": 0,
+          "currency": "USD",
+          "period": "forever",
+          "notes": "20 homework help, 3 notes, 3 flashcards, 3 quizzes, 3 mind maps per month"
+        },
+        {
+          "name": "Weekly",
+          "price": 2.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "3-day trial"
+        },
+        {
+          "name": "Monthly",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "3-day trial"
+        },
+        {
+          "name": "Semester",
+          "price": 29.99,
+          "currency": "USD",
+          "period": "4 months",
+          "notes": "3-day trial"
+        },
+        {
+          "name": "Yearly",
+          "price": 59.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "3-day trial"
+        }
+      ],
+      "freeTier": "StudyFox Basic: 20 homework help per month plus 3 each of notes, flashcards, quizzes, mind maps; up to 20 pages per document",
+      "trial": "3-day free trial on paid plans (via site plans API); 7-day money-back guarantee stated"
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle"
+    ],
+    "featuresStated": [
+      "Screenshot-and-solve Chrome extension with step-by-step answers",
+      "Flashcards (spaced repetition, Anki/Quizlet import)",
+      "Quiz generator",
+      "AI notes",
+      "Mind maps from PDFs",
+      "Multiple AI models"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/studyfox-ai-smart-quiz-as/afjnceabjgffidgpompolhgkffdcgcgm",
+    "browsersStated": [
+      "Chrome",
+      "Edge"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://studyfox.pro/",
+      "https://studyfox.pro/pricing",
+      "https://api.studyfox.pro/api/plans",
+      "https://chromewebstore.google.com/detail/studyfox-ai-smart-quiz-as/afjnceabjgffidgpompolhgkffdcgcgm"
+    ],
+    "confidence": "high",
+    "notes": "Prices come from the site's own public plans API used by its pricing page (not shown in static HTML). Chrome Web Store listing: 199 users, 5.0 (9 ratings); its description says 'designed to be undetectable' and 'over 10,000 students', while the homepage says 1,000+ active students - conflicting, unverified. Extension is sold bundled with the study suite; the homepage markets mostly study tools, extension is one feature."
+  },
+  {
+    "domain": "apexvision.ai",
+    "name": "Apex Vision AI",
+    "url": "https://apexvision.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "30 free requests then refill every 12 hours; paid plans $7.99-$19.99/month by request quota",
+      "plans": [
+        {
+          "name": "Knowledge Kickstart",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "500 requests/month; 1-day free trial"
+        },
+        {
+          "name": "Savvy Scholar",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "1,000 requests/month; 1-day free trial"
+        },
+        {
+          "name": "Mastermind",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "2,000 requests/month; includes Apex AI Agents; no trial"
+        },
+        {
+          "name": "Request Recharge packs",
+          "price": 3.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "+250 requests; also +500 $7.99, +1,000 $14.99, +2,000 $19.99"
+        }
+      ],
+      "freeTier": "30 free requests to start, plus a refill every 12 hours; no card required",
+      "trial": "1-day free trial on Knowledge Kickstart and Savvy Scholar"
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "Top Hat",
+      "McGraw Hill",
+      "Pearson",
+      "any LMS"
+    ],
+    "featuresStated": [
+      "Highlight or screenshot questions for answers and explanations",
+      "Popup, floating toolbar, side panel",
+      "Apex AI Agent that fills answer boxes on the open course page (Mastermind)",
+      "Study guides, flashcards, practice exams",
+      "Essay and math help",
+      "Voice tutor"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/ai-homework-helper-apex-v/ncaknkaehhieldhnmimbjnfgneaiijbd",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://apexvision.ai/",
+      "https://apexvision.ai/subscriptions/",
+      "https://chromewebstore.google.com/detail/ai-homework-helper-apex-v/ncaknkaehhieldhnmimbjnfgneaiijbd"
+    ],
+    "confidence": "high",
+    "notes": "Chrome Web Store listing: 9,000 users, 5.0 (2.2K ratings). Homepage says 8,000 users, pricing page says 50,000+ students - inconsistent, unverified. Site also lists iOS and Android apps. No 'undetectable' wording found; site mentions a keyboard shortcut to hide its on-screen buttons."
+  },
+  {
+    "domain": "screenshotai.lol",
+    "name": "Screenshot AI",
+    "url": "https://screenshotai.lol",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free plan with 20 credits/month; Pro $9.99/month or $99.99/year",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "20 credits/month, concise explanations"
+        },
+        {
+          "name": "Pro",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "2,000 credits/month, more detailed steps"
+        },
+        {
+          "name": "Pro (yearly)",
+          "price": 99.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": null
+        }
+      ],
+      "freeTier": "20 credits per month (1 credit per processed image)",
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Capture a screen region or paste an image",
+      "Final answer with step explanation",
+      "Formatted math with answer check",
+      "History of latest 50 results",
+      "Chrome side panel"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/inpllijoilgfaklpmokjcnjdlcbhcohh",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://screenshotai.lol/",
+      "https://chromewebstore.google.com/detail/inpllijoilgfaklpmokjcnjdlcbhcohh"
+    ],
+    "confidence": "high",
+    "notes": "Very small: Chrome Web Store listing shows 4 users and 4.0 (1 rating). Site states no specific LMS support and notes AI can make mistakes."
+  },
+  {
+    "domain": "asksia.ai",
+    "name": "AskSia",
+    "url": "https://asksia.ai",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free plan with no credit card; paid plan prices not found in static HTML",
+      "plans": [],
+      "freeTier": "Free plan, no credit card required; paid plans unlock unlimited uploads, full transcription, advanced note organisation",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Brightspace",
+      "Moodle",
+      "Everytime",
+      "CyberCampus",
+      "Echo360",
+      "Panopto"
+    ],
+    "featuresStated": [
+      "AI tutor and homework solver",
+      "Lecture transcription and translation",
+      "Flashcards, quizzes, summaries",
+      "LMS course sync extension",
+      "Sia Agent exam prep (macOS/Windows)",
+      "Web and mobile apps"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/asksia-all-in-one-ai-stud/hoipbgndfmmjgamfhipgdepddfhmjleo",
+    "browsersStated": [
+      "Chrome",
+      "Edge"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.asksia.ai/",
+      "https://www.asksia.ai/plan",
+      "https://chromewebstore.google.com/detail/asksia-all-in-one-ai-stud/hoipbgndfmmjgamfhipgdepddfhmjleo"
+    ],
+    "confidence": "medium",
+    "notes": "Pricing page is client-rendered; plan prices not verified. Site states a one-time $79 for its SAT-prep app (Sia Agent) and mentions a Grade Confidence Guarantee on eligible A+ plans. Homepage text contains $9.99/$14.99/$15.99 in a competitor-comparison table but column attribution was unclear, so not recorded. Site claims 2M+ students at 2,000+ universities (unverified). Chrome Web Store: 6,000 users, 5.0 (28 ratings). Extension syncs LMS course content; main product is a study platform."
+  }
+]

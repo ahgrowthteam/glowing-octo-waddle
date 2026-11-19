@@ -1,0 +1,311 @@
+[
+  {
+    "domain": "usequietly.com",
+    "name": "Quietly AI",
+    "url": "https://usequietly.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free starter (8 questions), Premium $7.99/month with 3-day trial, Pro $14.99/month",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": 0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "8 questions total, do not reset monthly; no account needed to try"
+        },
+        {
+          "name": "Premium",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Unlimited questions; 3-day free trial then billed monthly"
+        },
+        {
+          "name": "Pro",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Routes to stronger AI models; priority access; includes Premium features"
+        }
+      ],
+      "freeTier": "Starter: 8 questions total (one-time allowance)",
+      "trial": "3-day free trial of Premium"
+    },
+    "platformsStated": [
+      "Canvas",
+      "Brightspace",
+      "McGraw Hill"
+    ],
+    "featuresStated": [
+      "Auto-detects quiz questions on page",
+      "Step-by-step explanations and hints",
+      "Ask Quietly: select text to explain/summarize/make notes in a sidebar",
+      "Chat for questions, studying, summarizing, writing (Premium/Pro)",
+      "Automatic routing to stronger AI model (Pro)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quietly-ai-study-assistan/opmlbifgjdfgenkcejhdboookegdijcg",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.usequietly.com/",
+      "https://chromewebstore.google.com/detail/quietly-ai-study-assistan/opmlbifgjdfgenkcejhdboookegdijcg"
+    ],
+    "confidence": "high",
+    "notes": "Chrome Web Store (checked): 4.6 from 11 ratings, ~2,000 users. Site also claims '100,000+ questions processed in May' (unverified site claim). Home page redirects to www. Site frames product as a learning aid and has an 'Honor Code' page; no undetectable claim seen."
+  },
+  {
+    "domain": "canvasninja.app",
+    "name": "Canvas Ninja",
+    "url": "https://www.canvasninja.app",
+    "reachable": true,
+    "primaryPurpose": "activity-hiding",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "$16.99/month or $67.99 one-time lifetime",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 16.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Cancel anytime"
+        },
+        {
+          "name": "Lifetime",
+          "price": 67.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "30-day refund stated"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas"
+    ],
+    "featuresStated": [
+      "Privacy Guard (controls focus/visibility signals on supported quiz pages)",
+      "Answer Saver (uses saved submission history for supported retakes)",
+      "Smart Answers (optional AI help)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-ninja/ailcnoigddfddkfnppjcgjijaoehiime",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.canvasninja.app/",
+      "https://chromewebstore.google.com/detail/canvas-ninja/ailcnoigddfddkfnppjcgjijaoehiime"
+    ],
+    "confidence": "high",
+    "notes": "Main positioning is tab-switch/quiz-log privacy (Chrome Web Store title: 'Tab Detection Blocker for Canvas'), so classified activity-hiding. Site text explicitly disclaims that it proves undetectability, so claimsUndetectable=false; a human may want to review. CWS: 5.0 from 5 ratings, ~739 users (checked). Installing is free; features need a paid plan per site FAQ."
+  },
+  {
+    "domain": "testbro.app",
+    "name": "Test Bro",
+    "url": "https://testbro.app",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "5 free asks/month; one-time credit packs $2.99 (200), $3.99 (400), $5.99 (800), each valid 1 month, no subscription",
+      "plans": [
+        {
+          "name": "S package",
+          "price": 2.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "200 Ask credits, expires after 1 month"
+        },
+        {
+          "name": "L package",
+          "price": 3.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "400 Ask credits, expires after 1 month"
+        },
+        {
+          "name": "XL package",
+          "price": 5.99,
+          "currency": "USD",
+          "period": "one-time",
+          "notes": "800 Ask credits, expires after 1 month"
+        }
+      ],
+      "freeTier": "5 free asks per month",
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Highlight text, right-click and ask AI",
+      "Select a screen area for AI analysis (images or non-selectable text)",
+      "One-click answer on supported platforms (availability varies by site)"
+    ],
+    "extensionStoreUrl": "https://chrome.google.com/webstore/detail/test-bro/dcnmkocojfkeagnfnhbeojbkeicdekmk",
+    "browsersStated": [
+      "Chrome",
+      "Edge",
+      "Opera",
+      "Brave",
+      "Vivaldi",
+      "Yandex Browser",
+      "other Chromium browsers"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://testbro.app/",
+      "https://chromewebstore.google.com/detail/test-bro/dcnmkocojfkeagnfnhbeojbkeicdekmk"
+    ],
+    "confidence": "high",
+    "notes": "CWS (checked): 4.1 from 32 ratings, ~9,000 users. No specific LMS/platform list on home page. No undetectable claim seen."
+  },
+  {
+    "domain": "fastsolve.app",
+    "name": "FastSolve",
+    "url": "https://fastsolve.app",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free 10 questions/day; Pro $9.99/week, $19.99/month, $49/semester, $99/year",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "10 questions/day, multiple-choice support"
+        },
+        {
+          "name": "Pro Weekly",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": null
+        },
+        {
+          "name": "Pro Monthly",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Priority support listed"
+        },
+        {
+          "name": "Pro Semester",
+          "price": 49,
+          "currency": "USD",
+          "period": "semester",
+          "notes": "Described as a 4-month semester; appears in FAQ and comparison table, not in main pricing cards"
+        },
+        {
+          "name": "Pro Annual",
+          "price": 99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Priority support listed"
+        }
+      ],
+      "freeTier": "10 questions per day",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "Brightspace",
+      "ALEKS",
+      "Schoology",
+      "Knewton",
+      "Learnosity",
+      "DeltaMath",
+      "Edpuzzle",
+      "i-Ready",
+      "Edmentum",
+      "MyMathLab",
+      "MathXL",
+      "WeBWorK",
+      "WebAssign",
+      "McGraw Hill Connect",
+      "IXL",
+      "Quizizz",
+      "Hawkes Learning"
+    ],
+    "featuresStated": [
+      "Double-click a question to get an answer",
+      "Fills answer into input field",
+      "Automatic AI model selection by subject",
+      "Supports multiple-choice, essay, fill-in-the-blank, matching",
+      "Unlimited questions on Pro plans"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/fastsolve/gpbmomndeioigacdailloflpngipnfgh",
+    "browsersStated": [
+      "Chrome",
+      "Edge",
+      "Brave",
+      "Arc"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://fastsolve.app/",
+      "https://chromewebstore.google.com/detail/fastsolve/gpbmomndeioigacdailloflpngipnfgh"
+    ],
+    "confidence": "high",
+    "notes": "Site markets itself as undetectable/invisible (claimsUndetectable=true). Unverified site claims: '98% accuracy', 'under 2 seconds'. Site says CWS rating 4.4 from 20 ratings; CWS page fetched shows 4.1 from 27 ratings and ~5,000 users (CWS value is the checked one). Site is inconsistent on AI models (Gemini Flash/Claude Sonnet in one place, Claude + GPT-4o in FAQ/plan text). Main pricing cards omit the Semester plan. Extension stated to be unusable in Respondus LockDown Browser."
+  },
+  {
+    "domain": "coursology.com",
+    "name": "Coursology",
+    "url": "https://coursology.com",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Paid only on pricing page: $24.99/month, or $12.50/month on a 12-month plan (listed as 50% off)",
+      "plans": [
+        {
+          "name": "1 Month",
+          "price": 24.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Unlimited access to all features"
+        },
+        {
+          "name": "12 Months",
+          "price": 12.5,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed as -50% off $24.99/month; total billing structure (upfront vs monthly) not stated on page"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Stated as working on any learning platform / LMS"
+    ],
+    "featuresStated": [
+      "Instant Answers (snap or click a question)",
+      "Study tools: quizzes and flashcards from uploaded materials",
+      "AI podcasts and lecture recorder with notes",
+      "Discussion post drafter, humanizer and essay drafting",
+      "iPhone and Android app"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://coursology.com/",
+      "https://coursology.com/pro"
+    ],
+    "confidence": "medium",
+    "notes": "/pricing redirects to /pro. Sold as an all-in-one study suite but also markets instant answers, discussion-post drafting, a 'humanizer' for AI text, and essay writing; classification as study-tools is a judgment call. No Chrome Web Store link found in the HTML (extension store URL not verified); site says 'Add to Chrome'. Unverified site claims: '1M+ students', 4.8 from 4.4K App Store ratings. No free tier or trial stated on fetched pages (may exist behind signup)."
+  }
+]

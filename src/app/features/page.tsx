@@ -1,404 +1,156 @@
-'use client';
+import React from "react";
+import Link from "next/link";
+import {
+    MousePointerClick, ListChecks, PenLine, MousePointer2, BookOpen, ScanLine,
+    FileSearch, Sigma, GraduationCap, Power, Gift, Check,
+    type LucideIcon,
+} from "lucide-react";
+import { FaChrome } from "react-icons/fa";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FinalCta from "@/components/home/FinalCta";
+import Reveal from "@/components/home/Reveal";
+import MediaSlot from "@/components/home/MediaSlot";
+import MockQuiz from "@/components/home/MockQuiz";
+import { INSTALL_URL, DEMO_URL, MEDIA } from "@/components/home/config";
+import { FEATURE_FAQS } from "@/components/features/featuresData";
 
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { 
-    Shield, EyeOff, Bot, Sparkles, Check, CheckCircle2, 
-    Terminal, Lock, Layers, Search, Command, Maximize2,
-    CheckSquare, History, Power, Camera, Award, ArrowRight
-} from 'lucide-react';
-import { FaChrome } from 'react-icons/fa';
+type Item = { icon: LucideIcon; title: string; body: string; key?: string; tint: string };
+
+const GROUPS: { label: string; items: Item[] }[] = [
+    {
+        label: "Solve on the page",
+        items: [
+            { icon: MousePointerClick, title: "Double-click to solve", body: "Double-click a question and the answer appears next to it.", tint: "bg-[#c4d0f8]" },
+            { icon: ListChecks, title: "Common question types", body: "Multiple choice, multi-select, dropdowns and short answers.", tint: "bg-[#cdeecb]" },
+        ],
+    },
+    {
+        label: "Choose how answers show up",
+        items: [
+            { icon: PenLine, title: "Quick mode", key: "Alt+1", body: "Fills in the answer and copies it to your clipboard.", tint: "bg-[#ffe9a0]" },
+            { icon: MousePointer2, title: "Highlight mode", key: "Alt+2", body: "Marks the right option with a ✓. You do the click.", tint: "bg-[#e2d3fa]" },
+            { icon: BookOpen, title: "Explain mode", key: "Alt+3", body: "Fills in the answer and opens a side panel with the reasoning.", tint: "bg-[#bfe3f6]" },
+        ],
+    },
+    {
+        label: "Beyond the quiz page",
+        items: [
+            { icon: ScanLine, title: "Screenshot snip", key: "Alt+S", body: "Drag a box around a graph, diagram or image-based question.", tint: "bg-[#cdeecb]" },
+            { icon: FileSearch, title: "Scan the whole page", body: "Reads every question on the page and fills answers in batches.", tint: "bg-[#c4d0f8]" },
+            { icon: Sigma, title: "Equations and LaTeX", body: "Math shown as equation images or LaTeX is read before it is solved.", tint: "bg-[#ffe9a0]" },
+            { icon: GraduationCap, title: "13 subjects", body: "Math, physics, chemistry, biology, computer science, economics, history, accounting, geography, literature, psychology, English and logic.", tint: "bg-[#e2d3fa]" },
+        ],
+    },
+    {
+        label: "Stay in control",
+        items: [
+            { icon: Power, title: "Master on/off switch", body: "Turn the extension off from the popup when you are not studying.", tint: "bg-[#bfe3f6]" },
+            { icon: Gift, title: "Free to start", body: "5 free solves a day, no card. Paid plans from $19/month, with a 14-day money-back guarantee.", tint: "bg-[#cdeecb]" },
+        ],
+    },
+];
+
+const DEMOS = [
+    { id: "doubleClick", title: "Double-click on a quiz page", variant: "solve" as const },
+    { id: "snap", title: "Snip a graph or diagram", variant: "snap" as const },
+    { id: "scan", title: "Scan the whole page", variant: "scan" as const },
+] as const;
 
 export default function FeaturesPage() {
-    const [selectedCategory, setSelectedCategory] = useState<string>('all');
-    const [searchQuery, setSearchQuery] = useState('');
-
-    const featureCategories = [
-        { id: 'all', name: 'All 24 Features' },
-        { id: 'stealth', name: 'Anti-Detection' },
-        { id: 'modes', name: 'Display Modes' },
-        { id: 'vision', name: 'Snap-It Vision' },
-        { id: 'formats', name: 'Question Types' },
-        { id: 'memory', name: 'Attempt Memory' },
-        { id: 'security', name: 'Privacy & Security' }
-    ];
-
-    const allFeatures = [
-        // Stealth
-        {
-            category: 'stealth',
-            title: 'Window Blur & Focus Interception',
-            badge: 'Stealth Core',
-            bg: '#c4d0f8',
-            description: 'Silences browser visibilitychange and window.blur listeners directly in the DOM. Canvas continuously receives an active session heartbeat, recording 0 "Stopped viewing quiz page" warnings.',
-            icon: Shield
-        },
-        {
-            category: 'stealth',
-            title: 'Teacher Action Log Neutralizer',
-            badge: 'Audit Proof',
-            bg: '#cdeecb',
-            description: 'Guarantees your professor sees only a normal timeline: "Session started → Viewed question → Answered question" with zero red alert flags.',
-            icon: Terminal
-        },
-        {
-            category: 'stealth',
-            title: 'Isolated Shadow DOM Engine',
-            badge: 'Zero DOM Leak',
-            bg: '#e2d3fa',
-            description: 'All HUD overlays and answers live inside an isolated Shadow Root tree. The host page DOM, proctor scripts, and screen-sharing tools cannot inspect or access it.',
-            icon: Layers
-        },
-        {
-            category: 'stealth',
-            title: 'Zero Clipboard Footprint',
-            badge: 'Privacy Safe',
-            bg: '#bfe3f6',
-            description: 'Unlike basic AI extensions that copy text to your OS clipboard, ExamGhost extracts and solves in-memory only. Your clipboard remains completely untouched.',
-            icon: EyeOff
-        },
-        {
-            category: 'stealth',
-            title: 'Kiosk & Locked-Browser Spoofing',
-            badge: 'Lockdown Bypass',
-            bg: '#ffd5cc',
-            description: 'Emulates fullscreen and kiosk status states, allowing you to use your standard browser environment without being locked into restrictive shells.',
-            icon: Maximize2
-        },
-
-        // Display Modes
-        {
-            category: 'modes',
-            title: 'Invisible Mode (Alt+1) — Silent Auto-Fill',
-            badge: 'Zero Overhead',
-            bg: '#bfe9d9',
-            description: 'Answers are selected directly on native Canvas radio buttons or copied to your clipboard with zero floating windows, banners, or on-screen traces.',
-            icon: CheckCircle2
-        },
-        {
-            category: 'modes',
-            title: 'Stealth Mode (Alt+2) — Subtle ✓ Hint Indicator',
-            badge: 'Whisper Safe',
-            bg: '#cdeecb',
-            description: 'Auto-fills inputs or places a discreet green ✓ tick beside the correct choice. Completely invisible to anyone glancing across your lecture hall or shoulder.',
-            icon: EyeOff
-        },
-        {
-            category: 'modes',
-            title: 'Explain Mode (Alt+3) — Side Breakdown Banner',
-            badge: 'Full Reasoning',
-            bg: '#e2d3fa',
-            description: 'Auto-fills the verified choice and slides in a right-side rationale card explaining why the correct choice is true and why each distractor is wrong.',
-            icon: Bot
-        },
-        {
-            category: 'modes',
-            title: 'Double-Click Question Solver & 3 Delivery Methods',
-            badge: 'Instant Trigger',
-            bg: '#c4d0f8',
-            description: 'Double-click any question card to solve inline. Independent of your mode (Alt+1/2/3), choose Auto-Fill, Subtle ✓ Highlight, or Silent Clipboard Copy.',
-            icon: Command
-        },
-
-        // Snap-It Vision
-        {
-            category: 'vision',
-            title: 'Area Screenshot Crop Tool (Alt+S)',
-            badge: 'Multimodal OCR',
-            bg: '#ffd5cc',
-            description: 'When text cannot be highlighted or right-click is disabled, hit Alt+S and drag a crop box over any area to solve instantly with computer vision in <1.2s.',
-            icon: Camera
-        },
-        {
-            category: 'vision',
-            title: 'Chemical Structures & Reactions',
-            badge: 'Chemistry OCR',
-            bg: '#bfe3f6',
-            description: 'Decodes organic chemistry skeletal drawings, IUPAC nomenclature, reaction mechanisms, electron configurations, and stereochemistry with precision.',
-            icon: Sparkles
-        },
-        {
-            category: 'vision',
-            title: 'Calculus, Graphs & Matrix Algebra',
-            badge: 'Math Engine',
-            bg: '#c4d0f8',
-            description: 'Reads LaTeX symbols, integrals, limits, derivatives, coordinate planes, and matrices directly from image crops or PDF exam elements.',
-            icon: Layers
-        },
-        {
-            category: 'vision',
-            title: 'Cross-Origin Iframe & Canvas Element Sniping',
-            badge: 'Iframe Bypass',
-            bg: '#cdeecb',
-            description: 'Extracts visual questions inside restricted cross-origin iframes (McGraw-Hill ALEKS, Pearson MyLab, Cengage WebAssign) and HTML5 canvas widgets where DOM selection is blocked.',
-            icon: Maximize2
-        },
-
-        // Question Types
-        {
-            category: 'formats',
-            title: 'Single Choice & MCQ Parsing',
-            badge: 'MCQ Ready',
-            bg: '#cdeecb',
-            description: 'Instant auto-identification and solve for standard 4-option and 5-option multiple-choice questions across all LMS engines.',
-            icon: CheckCircle2
-        },
-        {
-            category: 'formats',
-            title: 'Multi-Select Checkbox Bundles',
-            badge: 'Multi-Select',
-            bg: '#bfe3f6',
-            description: 'Accurately selects multiple true statements simultaneously without missing negative constraints ("Select all that apply").',
-            icon: CheckSquare
-        },
-        {
-            category: 'formats',
-            title: 'Fill-In-The-Blank & Numeric Input',
-            badge: 'Auto-Fill',
-            bg: '#e2d3fa',
-            description: 'Solves complex numerical values, rounds to required significant digits, and populates blank text fields seamlessly.',
-            icon: Terminal
-        },
-        {
-            category: 'formats',
-            title: 'Matching & Dropdown Columns',
-            badge: 'Pairing Matrix',
-            bg: '#ffd5cc',
-            description: 'Maps complex relationships, definitions, and chemical formulas across dual-column matching tables in one pass.',
-            icon: Layers
-        },
-        {
-            category: 'formats',
-            title: 'Short-Answer, Code Block & Essay Outline Synthesis',
-            badge: 'Written & Code',
-            bg: '#c4d0f8',
-            description: 'Generates concise rubric-aligned short answers, verified Python/Java/C++ code snippets, and structured essay outlines ready for instant clipboard paste.',
-            icon: Award
-        },
-
-        // Attempt Memory
-        {
-            category: 'memory',
-            title: '2nd-Attempt Auto-Answer Cache',
-            badge: 'GPA Booster',
-            bg: '#c4d0f8',
-            description: 'Caches high-scoring responses from your first submission and pre-populates verified answers on attempt #2 for effortless 100% scores.',
-            icon: History
-        },
-        {
-            category: 'memory',
-            title: 'Incorrect Distractor Elimination',
-            badge: 'Smart Guessing',
-            bg: '#bfe9d9',
-            description: 'Tracks which options resulted in lost points during previous attempts, pruning them to guarantee higher accuracy on re-takes.',
-            icon: Check
-        },
-        {
-            category: 'memory',
-            title: 'Master Hotkey Toggle (⌘+Shift+U) & Zero-Idle Architecture',
-            badge: 'Dormant Mode',
-            bg: '#e2d3fa',
-            description: 'Stays 100% dormant with zero background scripts or network requests until you explicitly activate it via ⌘+Shift+U (Ctrl+Shift+U on Windows).',
-            icon: Command
-        },
-
-        // Security & Privacy
-        {
-            category: 'security',
-            title: 'Instant Panic Kill-Switch (⌘+Shift+U)',
-            badge: 'Safety First',
-            bg: '#ffd5cc',
-            description: 'Press ⌘+Shift+U (or click ON/OFF in the popup) to instantly vaporize all Shadow DOM overlays, purge local solver cache, and revert DOM to standard state in 10ms.',
-            icon: Power
-        },
-        {
-            category: 'security',
-            title: 'Zero-Knowledge Memory Pipeline',
-            badge: 'Zero Logs',
-            bg: '#cdeecb',
-            description: 'All questions are resolved via ephemeral memory buffers. No logs, search histories, or student identifiers are ever stored on remote servers.',
-            icon: Lock
-        },
-        {
-            category: 'security',
-            title: 'Universal Platform Compatibility',
-            badge: 'Cross-LMS',
-            bg: '#bfe3f6',
-            description: 'Engineered and continuously tested against Canvas Classic & New Quizzes, Blackboard Ultra, D2L Brightspace, Moodle, and McGraw-Hill Connect.',
-            icon: Shield
-        }
-    ];
-
-    const filteredFeatures = allFeatures.filter(f => {
-        const matchesCat = selectedCategory === 'all' || f.category === selectedCategory;
-        const matchesSearch = searchQuery === '' || 
-            f.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-            f.description.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCat && matchesSearch;
-    });
-
-    const competitorsList = [
-        { name: 'ExamGhost AI', highlight: true, focusLoss: '✓ Intercepted', shadowDom: '✓ Isolated', displayModes: '3 Modes', snapIt: '✓ <1.2s OCR', attemptMemory: '✓ Smart Cache', panicSwitch: '✓ 10ms Kill' },
-        { name: 'CanvasHack', highlight: false, focusLoss: '✓ Basic', shadowDom: '✕ No', displayModes: '1 Mode', snapIt: '✕ No', attemptMemory: '✕ No', panicSwitch: '✓ Basic' },
-        { name: 'Cheatmate', highlight: false, focusLoss: '✕ Partial', shadowDom: '✕ No', displayModes: '2 Modes', snapIt: '✕ No', attemptMemory: '✓ Yes', panicSwitch: '✕ No' },
-        { name: 'CanvasNinja', highlight: false, focusLoss: '✓ Yes', shadowDom: '✓ Partial', displayModes: '1 Mode', snapIt: '✕ No', attemptMemory: '✕ No', panicSwitch: '✕ No' },
-        { name: 'UseQuietly', highlight: false, focusLoss: '✕ No', shadowDom: '✓ Yes', displayModes: '2 Modes', snapIt: '✕ No', attemptMemory: '✕ No', panicSwitch: '✓ Yes' },
-        { name: 'TestBro', highlight: false, focusLoss: '✕ No', shadowDom: '✕ No', displayModes: '1 Mode', snapIt: '✓ Yes', attemptMemory: '✕ No', panicSwitch: '✕ No' }
-    ];
-
     return (
-        <div className="min-h-screen bg-cream text-ink">
+        <main className="min-h-screen bg-cream text-ink page-glow">
             <Navbar />
 
-            <main id="main-content">
-                {/* Hero Banner (OneMacApp Style) */}
-                <section className="pt-24 sm:pt-32 pb-16 bg-cream border-b border-black/5 relative overflow-hidden">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-                    <p className="eyebrow justify-center mb-3">
-                        <span className="w-5 h-5 rounded-full overflow-hidden border border-black/10 inline-block shrink-0 bg-[#c4d0f8]">
-                            <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="ExamGhost Mascot" width={20} height={20} loading="eager" decoding="async" className="w-full h-full object-cover scale-110" />
+            <section className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 text-center overflow-hidden">
+                <div className="relative max-w-3xl mx-auto px-4 sm:px-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Features</p>
+                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+                        What ExamGhost <span className="relative isolate inline-block">
+                            <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-[#ffe9a0]" aria-hidden="true" />
+                            does
                         </span>
-                        <span>ALL 24 FEATURES</span>
-                    </p>
-                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-5">
-                        Every tool you could ever need,<br />
-                        in one calm app.
                     </h1>
-                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto leading-relaxed font-normal mb-8">
-                        ExamGhost combines 24 specialized stealth and AI solving capabilities—including Focus Shield window.onblur interception, Closed Shadow DOM v1 isolation, Snap-It Vision OCR (Alt+S), Double-Click Question Solving, 3 solver modes (Alt+1, Alt+2, Alt+3), and a 10ms master toggle switch (⌘+Shift+U)—into one client-side Chrome extension.
+                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
+                        A Chrome extension that answers quiz questions right on the page, with an explanation if you want one.
                     </p>
-
-                    {/* Search & Category Filter Pills */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto mb-8">
-                        <div className="relative w-full">
-                            <Search className="w-4 h-4 text-ink-muted absolute left-4 top-1/2 -translate-y-1/2" />
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search all 24 features..."
-                                className="w-full pl-11 pr-4 py-2.5 rounded-full bg-white border border-black/10 text-ink text-sm shadow-xs focus:outline-none focus:border-ink"
-                            />
-                        </div>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-4 text-base shadow-lift">
+                            <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                            Add to Chrome — it&apos;s free
+                        </a>
+                        <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                            Try the live demo
+                        </Link>
                     </div>
+                </div>
+            </section>
 
-                    {/* Filter Tabs */}
-                    <div className="flex justify-center flex-wrap gap-1.5 max-w-3xl mx-auto">
-                        {featureCategories.map(cat => (
-                            <button
-                                key={cat.id}
-                                onClick={() => setSelectedCategory(cat.id)}
-                                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
-                                    selectedCategory === cat.id
-                                        ? 'bg-ink text-white shadow-xs'
-                                        : 'bg-white/80 hover:bg-white text-ink-secondary border border-black/5'
-                                }`}
-                            >
-                                {cat.name}
-                            </button>
+            <section className="pb-16 sm:pb-24">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
+                    {GROUPS.map((g) => (
+                        <Reveal key={g.label}>
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-5">{g.label}</h2>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {g.items.map((it) => {
+                                    const Icon = it.icon;
+                                    return (
+                                        <div key={it.title} className="bg-white rounded-3xl border border-black/10 shadow-card p-6">
+                                            <span className={`grid place-items-center w-11 h-11 rounded-2xl ${it.tint} mb-4`}>
+                                                <Icon className="w-5 h-5 text-ink" aria-hidden="true" />
+                                            </span>
+                                            <h3 className="font-display text-lg font-bold flex items-center gap-2 mb-1.5">
+                                                {it.title}
+                                                {it.key && <kbd className="text-[11px] font-sans font-medium text-ink-muted bg-black/5 rounded-md px-1.5 py-0.5">{it.key}</kbd>}
+                                            </h3>
+                                            <p className="text-[15px] text-ink-muted leading-relaxed">{it.body}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </Reveal>
+                    ))}
+                </div>
+            </section>
+
+            <section className="py-16 sm:py-24 bg-[#18181b] text-white">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-center mb-10 sm:mb-14">See it in action</h2>
+                    <Reveal className="grid md:grid-cols-3 gap-6">
+                        {DEMOS.map((d) => (
+                            <div key={d.id}>
+                                <div className="aspect-video rounded-3xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift mb-3">
+                                    <MediaSlot slot={`features.${d.id}`} src={MEDIA.features[d.id]} label={`${d.title} demo`} fallback={<MockQuiz variant={d.variant} />} />
+                                </div>
+                                <h3 className="font-display text-lg font-bold">{d.title}</h3>
+                            </div>
+                        ))}
+                    </Reveal>
+                </div>
+            </section>
+
+            <section className="py-16 sm:py-24">
+                <Reveal className="max-w-3xl mx-auto px-4 sm:px-6">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
+                    <div className="space-y-3">
+                        {FEATURE_FAQS.map((f) => (
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
+                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                </summary>
+                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                            </details>
                         ))}
                     </div>
-                </div>
+                    <p className="mt-6 flex items-center justify-center gap-2 text-sm text-ink-muted">
+                        <Check className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                        Questions? <a href="mailto:support@examghost.com" className="underline underline-offset-4">support@examghost.com</a>
+                    </p>
+                </Reveal>
             </section>
 
-            {/* Features Cards Grid (OneMacApp Pastel Aesthetic) */}
-            <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6" aria-labelledby="features-catalog-heading">
-                <h2 id="features-catalog-heading" className="sr-only">Features Catalog</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredFeatures.map((feat, idx) => {
-                        const Icon = feat.icon;
-                        return (
-                            <div
-                                key={idx}
-                                className="p-6 rounded-3xl bg-white border border-black/10 shadow-card flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-200"
-                            >
-                                <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div 
-                                            className="w-10 h-10 rounded-2xl flex items-center justify-center text-ink shadow-xs"
-                                            style={{ backgroundColor: feat.bg }}
-                                        >
-                                            <Icon className="w-5 h-5" />
-                                        </div>
-                                        <span className="text-[11px] font-semibold text-ink px-2.5 py-0.5 rounded-full bg-[#f4f1ea] border border-black/5">
-                                            {feat.badge}
-                                        </span>
-                                    </div>
-
-                                    <h3 className="font-display font-bold text-lg text-ink mb-2">
-                                        {feat.title}
-                                    </h3>
-
-                                    <p className="text-xs text-ink-muted leading-relaxed font-normal">
-                                        {feat.description}
-                                    </p>
-                                </div>
-
-                                <div className="mt-6 pt-3 border-t border-black/5 flex items-center justify-between text-[11px] text-ink-muted">
-                                    <span>Status: Active & Shielded</span>
-                                    <span className="text-emerald-700 font-semibold">✓ Verified</span>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </section>
-
-            {/* Competitor Benchmark Comparison Matrix */}
-            <section className="py-16 md:py-24 bg-white border-y border-black/5">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <p className="eyebrow justify-center mb-2">
-                            <span>DIRECT BENCHMARK</span>
-                        </p>
-                        <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-ink mb-3">
-                            How ExamGhost compares against others
-                        </h2>
-                        <p className="text-sm text-ink-muted">
-                            A complete feature breakdown against the leading Canvas and LMS tools.
-                        </p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-3xl border border-black/10 shadow-soft">
-                        <table className="w-full text-left border-collapse text-xs sm:text-sm">
-                            <thead>
-                                <tr className="bg-[#faf8f4] border-b border-black/10">
-                                    <th className="p-4 sm:p-5 font-display font-bold text-ink">Product</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Focus-Loss Shield</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Shadow DOM</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Display Modes</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Snap-It OCR</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Attempt Memory</th>
-                                    <th className="p-4 sm:p-5 font-semibold text-ink">Panic Switch</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-black/5">
-                                {competitorsList.map((c, i) => (
-                                    <tr 
-                                        key={i} 
-                                        className={c.highlight ? 'bg-[#c4d0f8]/20 font-semibold text-ink' : 'hover:bg-black/5 text-ink-secondary'}
-                                    >
-                                        <td className="p-4 sm:p-5 flex items-center gap-2">
-                                            {c.highlight && <span className="w-2 h-2 rounded-full bg-emerald-500" />}
-                                            <span>{c.name}</span>
-                                        </td>
-                                        <td className="p-4 sm:p-5">{c.focusLoss}</td>
-                                        <td className="p-4 sm:p-5">{c.shadowDom}</td>
-                                        <td className="p-4 sm:p-5">{c.displayModes}</td>
-                                        <td className="p-4 sm:p-5">{c.snapIt}</td>
-                                        <td className="p-4 sm:p-5">{c.attemptMemory}</td>
-                                        <td className="p-4 sm:p-5">{c.panicSwitch}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            </main>
-
-            <Footer />
-        </div>
+            <FinalCta secondary="discord" />
+            <Footer hideCta />
+        </main>
     );
 }

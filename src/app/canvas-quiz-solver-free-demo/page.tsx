@@ -3,11 +3,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import LmsExplainerFilmCard from '@/components/LmsExplainerFilmCard';
+import FinalCta from '@/components/home/FinalCta';
+import { DEMO_FAQS } from './demoFaqs';
+import { INSTALL_URL } from '@/components/home/config';
 import { 
     Check, Sparkles, CheckCircle2, Lock, 
     RefreshCw, ChevronRight, ChevronLeft, ArrowLeft, ArrowRight, BookOpen, ShieldCheck, Clock, Crop, 
-    Volume2, VolumeX, Flag, Zap, X, GraduationCap, ChevronDown, MousePointerClick
+    Volume2, VolumeX, Flag, Zap, X, GraduationCap, ChevronDown, MousePointerClick, ScrollText, Power
 } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 
@@ -17,9 +19,16 @@ interface SnipResult {
     detectedText: string;
     answer: string;
     explanation: string;
-    confidence: string;
-    latency: string;
 }
+
+const TOTAL_Q = 8;
+
+const Q8_PAIRS: { term: string; answer: string }[] = [
+    { term: 'Nucleus', answer: 'Stores DNA' },
+    { term: 'Ribosome', answer: 'Builds proteins' },
+    { term: 'Mitochondrion', answer: 'Makes ATP' },
+    { term: 'Chloroplast', answer: 'Carries out photosynthesis' },
+];
 
 export default function DemoPage() {
     // Active Question Tab (1 to 5) — keeps only 1 question visible at a time for zero visual clutter
@@ -37,9 +46,6 @@ export default function DemoPage() {
     const [flaggedQuestions, setFlaggedQuestions] = useState<number[]>([]);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [hasSubmitted, setHasSubmitted] = useState(false);
-    const [showProctorLog, setShowProctorLog] = useState(false);
-    const [openFaqs, setOpenFaqs] = useState<number[]>([0, 1, 2]);
-    const [faqCategory, setFaqCategory] = useState<'all' | 'stealth' | 'ocr' | 'platforms'>('all');
 
     // Question Answers State
     const [q1State, setQ1State] = useState<string | null>(null);
@@ -60,6 +66,17 @@ export default function DemoPage() {
     const [q5State, setQ5State] = useState<string | null>(null);
     const [q5Highlighted, setQ5Highlighted] = useState(false);
     const [q5Explain, setQ5Explain] = useState(false);
+
+    const [q6State, setQ6State] = useState('');
+    const [q6Highlighted, setQ6Highlighted] = useState(false);
+    const [q6Explain, setQ6Explain] = useState(false);
+
+    const [q7Text, setQ7Text] = useState('');
+    const [q7Explain, setQ7Explain] = useState(false);
+
+    const [q8State, setQ8State] = useState<Record<string, string>>({});
+    const [q8Highlighted, setQ8Highlighted] = useState(false);
+    const [q8Explain, setQ8Explain] = useState(false);
 
     // Feedback & Solving State
     const [clipboardNotice, setClipboardNotice] = useState<string | null>(null);
@@ -83,6 +100,9 @@ export default function DemoPage() {
         3: useRef<HTMLDivElement>(null),
         4: useRef<HTMLDivElement>(null),
         5: useRef<HTMLDivElement>(null),
+        6: useRef<HTMLDivElement>(null),
+        7: useRef<HTMLDivElement>(null),
+        8: useRef<HTMLDivElement>(null),
     };
 
     // Calculate Solved Stats
@@ -92,20 +112,18 @@ export default function DemoPage() {
     const q4Solved = q4Text.trim().length > 15;
     const q5Solved = q5State === 'B';
 
-    const solvedCount = 
-        (q1Solved ? 1 : 0) +
-        (q2Solved ? 1 : 0) +
-        (q3Solved ? 1 : 0) +
-        (q4Solved ? 1 : 0) +
-        (q5Solved ? 1 : 0);
+    const q6Solved = q6State === 'canberra';
+    const q7Solved = q7Text.trim() === '4';
+    const q8Solved = Q8_PAIRS.every((pr) => q8State[pr.term] === pr.answer);
+    const solvedFlags = [q1Solved, q2Solved, q3Solved, q4Solved, q5Solved, q6Solved, q7Solved, q8Solved];
+    const pointsPerQ = [2, 1, 3, 4, 5, 2, 3, 4];
 
-    const totalPoints = 15;
-    const earnedPoints = 
-        (q1Solved ? 2 : 0) +
-        (q2Solved ? 1 : 0) +
-        (q3Solved ? 3 : 0) +
-        (q4Solved ? 4 : 0) +
-        (q5Solved ? 5 : 0);
+    const solvedCount = solvedFlags.filter(Boolean).length;
+
+    const totalPoints = pointsPerQ.reduce((a, b) => a + b, 0);
+    const earnedPoints = solvedFlags.reduce((sum, ok, i) => sum + (ok ? pointsPerQ[i] : 0), 0);
+
+    const audioCtxRef = useRef<AudioContext | null>(null);
 
     // Synthesized Audio Feedback
     const playAudio = useCallback((type: 'click' | 'solve' | 'snip' | 'success' | 'alert') => {
@@ -113,7 +131,8 @@ export default function DemoPage() {
         try {
             const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
             if (!AudioCtx) return;
-            const ctx = new AudioCtx();
+            // One shared AudioContext: browsers cap how many can exist at once.
+            const ctx = audioCtxRef.current ?? (audioCtxRef.current = new AudioCtx());
             if (ctx.state === 'suspended') {
                 ctx.resume();
             }
@@ -174,7 +193,14 @@ export default function DemoPage() {
         return `${m}:${s < 10 ? '0' : ''}${s}`;
     };
 
-    const showClipboardToast = (text: string) => {
+    // Mirrors the extension: clipboard delivery really copies the answer, then confirms with a toast.
+    const showClipboardToast = (text: string, copy?: string) => {
+        const value = copy ?? text.match(/'([^']+)'/)?.[1] ?? text;
+        try {
+            navigator.clipboard?.writeText(value).catch(() => {});
+        } catch {
+            // Clipboard access can be blocked by the browser; the toast still shows.
+        }
         setClipboardNotice(text);
         playAudio('click');
         setTimeout(() => setClipboardNotice(null), 3000);
@@ -234,6 +260,11 @@ export default function DemoPage() {
                 });
             }
 
+            if (e.key === 'Escape' && isSubmitModalOpen) {
+                setIsSubmitModalOpen(false);
+                return;
+            }
+
             if (e.key === 'Escape' && isSniping) {
                 setIsSniping(false);
                 setIsDragging(false);
@@ -246,7 +277,7 @@ export default function DemoPage() {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isSniping, playAudio]);
+    }, [isSniping, isSubmitModalOpen, playAudio]);
 
     // Question Solving Handlers
     const handleSolveQ1 = useCallback(() => {
@@ -331,7 +362,7 @@ export default function DemoPage() {
             if (answerMethod === 'autofill' || answerMethod === 'highlight') {
                 setQ4Text(answer);
             } else if (answerMethod === 'clipboard') {
-                showClipboardToast("Copied short-answer response to clipboard!");
+                showClipboardToast("Copied short-answer response to clipboard!", answer);
             }
             if (displayMode === 'explain') {
                 setQ4Explain(true);
@@ -362,12 +393,75 @@ export default function DemoPage() {
         }, delay);
     }, [isExtensionOn, displayMode, answerMethod, playAudio]);
 
+    const handleSolveQ6 = useCallback(() => {
+        if (!isExtensionOn) return;
+        setActiveQuestion(6);
+        setSolvingId(6);
+        playAudio('click');
+        const delay = displayMode === 'invisible' ? 120 : 400;
+        setTimeout(() => {
+            setSolvingId(null);
+            playAudio('solve');
+            if (answerMethod === 'autofill') {
+                setQ6State('canberra');
+            } else if (answerMethod === 'highlight') {
+                setQ6Highlighted(true);
+                setTimeout(() => setQ6Highlighted(false), 4500);
+            } else if (answerMethod === 'clipboard') {
+                showClipboardToast("Copied: 'Canberra'");
+            }
+            if (displayMode === 'explain') setQ6Explain(true);
+        }, delay);
+    }, [isExtensionOn, displayMode, answerMethod, playAudio]);
+
+    const handleSolveQ7 = useCallback(() => {
+        if (!isExtensionOn) return;
+        setActiveQuestion(7);
+        setSolvingId(7);
+        playAudio('click');
+        const delay = displayMode === 'invisible' ? 120 : 400;
+        setTimeout(() => {
+            setSolvingId(null);
+            playAudio('solve');
+            if (answerMethod === 'autofill' || answerMethod === 'highlight') {
+                setQ7Text('4');
+            } else if (answerMethod === 'clipboard') {
+                showClipboardToast("Copied: '4'");
+            }
+            if (displayMode === 'explain') setQ7Explain(true);
+        }, delay);
+    }, [isExtensionOn, displayMode, answerMethod, playAudio]);
+
+    const handleSolveQ8 = useCallback(() => {
+        if (!isExtensionOn) return;
+        setActiveQuestion(8);
+        setSolvingId(8);
+        playAudio('click');
+        const delay = displayMode === 'invisible' ? 120 : 450;
+        setTimeout(() => {
+            setSolvingId(null);
+            playAudio('solve');
+            if (answerMethod === 'autofill') {
+                setQ8State(Object.fromEntries(Q8_PAIRS.map((pr) => [pr.term, pr.answer])));
+            } else if (answerMethod === 'highlight') {
+                setQ8Highlighted(true);
+                setTimeout(() => setQ8Highlighted(false), 4500);
+            } else if (answerMethod === 'clipboard') {
+                showClipboardToast('Copied all four matches to clipboard', Q8_PAIRS.map((pr) => `${pr.term}: ${pr.answer}`).join('\n'));
+            }
+            if (displayMode === 'explain') setQ8Explain(true);
+        }, delay);
+    }, [isExtensionOn, displayMode, answerMethod, playAudio]);
+
     const handleSolveActive = () => {
         if (activeQuestion === 1) handleSolveQ1();
         else if (activeQuestion === 2) handleSolveQ2();
         else if (activeQuestion === 3) handleSolveQ3();
         else if (activeQuestion === 4) handleSolveQ4();
-        else handleSolveQ5();
+        else if (activeQuestion === 5) handleSolveQ5();
+        else if (activeQuestion === 6) handleSolveQ6();
+        else if (activeQuestion === 7) handleSolveQ7();
+        else handleSolveQ8();
     };
 
     // Speedrun: Auto-Solve All Questions in Sequence
@@ -375,16 +469,13 @@ export default function DemoPage() {
         if (!isExtensionOn || isSpeedrunning) return;
         setIsSpeedrunning(true);
         playAudio('snip');
-        
-        handleSolveQ1();
-        setTimeout(() => handleSolveQ2(), 350);
-        setTimeout(() => handleSolveQ3(), 700);
-        setTimeout(() => handleSolveQ4(), 1050);
+
+        const solvers = [handleSolveQ1, handleSolveQ2, handleSolveQ3, handleSolveQ4, handleSolveQ5, handleSolveQ6, handleSolveQ7, handleSolveQ8];
+        solvers.forEach((solve, i) => setTimeout(solve, i * 320));
         setTimeout(() => {
-            handleSolveQ5();
             setIsSpeedrunning(false);
             playAudio('success');
-        }, 1400);
+        }, solvers.length * 320 + 100);
     };
 
     // Reset All State
@@ -408,6 +499,17 @@ export default function DemoPage() {
         setQ5State(null);
         setQ5Highlighted(false);
         setQ5Explain(false);
+
+        setQ6State('');
+        setQ6Highlighted(false);
+        setQ6Explain(false);
+
+        setQ7Text('');
+        setQ7Explain(false);
+
+        setQ8State({});
+        setQ8Highlighted(false);
+        setQ8Explain(false);
 
         setSnipeBox(null);
         setSnipResult(null);
@@ -448,9 +550,7 @@ export default function DemoPage() {
                     detectedText: "Legs a = 6, b = 8; y = 0.5x² - 2x + 4 at x = 4",
                     answer: "c = 10.0, dy/dx = 2.0 (Option B)",
                     explanation: "c = √(6² + 8²) = 10. Derivative dy/dx = x - 2 = 2.0 at x = 4.",
-                    confidence: "99.9%",
-                    latency: "0.26s"
-                };
+                                    };
                 setSnipResult(result);
 
                 if (answerMethod === 'autofill') {
@@ -575,6 +675,21 @@ export default function DemoPage() {
                 detectedText = "Difference between ionic and covalent bonds?";
                 answer = "Ionic transfers electrons; covalent shares electron pairs.";
                 explanation = "Electronegativity differential dictates transfer vs sharing.";
+            } else if (targetQ === 6) {
+                handleSolveQ6();
+                detectedText = "What is the capital of Australia?";
+                answer = "Canberra";
+                explanation = "Canberra is the planned capital; Sydney is the largest city.";
+            } else if (targetQ === 7) {
+                handleSolveQ7();
+                detectedText = "Solve for x: 3x + 7 = 19";
+                answer = "x = 4";
+                explanation = "Subtract 7 to get 3x = 12, then divide by 3.";
+            } else if (targetQ === 8) {
+                handleSolveQ8();
+                detectedText = "Match each organelle with its function";
+                answer = "Nucleus: stores DNA; ribosome: builds proteins; mitochondrion: makes ATP; chloroplast: photosynthesis";
+                explanation = "Each organelle has one main job in the cell.";
             } else {
                 handleSolveQ5();
                 detectedText = "Legs a=6, b=8, hypotenuse c and dy/dx at x=4";
@@ -588,14 +703,37 @@ export default function DemoPage() {
                 detectedText,
                 answer,
                 explanation,
-                confidence: "99.8%",
-                latency: "0.28s"
-            });
+                            });
 
             setTimeout(() => {
                 setIsSniping(false);
             }, 1500);
         }, 750);
+    };
+
+    // Explain mode shows a side panel (like the extension's slide-in banner) for the active question.
+    const EXPLAIN_PANEL: Record<number, { answer: string; why: string }> = {
+        1: { answer: 'ATP production through cellular respiration', why: 'Mitochondria make ATP through the citric acid cycle and oxidative phosphorylation. Ribosomes build proteins and the nucleus handles DNA replication.' },
+        2: { answer: 'True', why: "Pavlov's dogs learned to salivate at a sound paired with food. That learned link is classical conditioning." },
+        3: { answer: 'push(), Stack ADT, pop()', why: 'A stack is last-in, first-out: push adds to the top and pop removes from the top.' },
+        4: { answer: 'Ionic bonds transfer electrons; covalent bonds share them', why: 'Large electronegativity differences move electrons to form ions, while similar atoms share electron pairs.' },
+        6: { answer: 'Canberra', why: 'Canberra was purpose-built as the capital. Sydney and Melbourne are larger, which is why they are common wrong answers.' },
+        7: { answer: 'x = 4', why: 'Subtract 7 from both sides to get 3x = 12, then divide both sides by 3.' },
+        8: { answer: 'Nucleus: stores DNA; Ribosome: builds proteins; Mitochondrion: makes ATP; Chloroplast: photosynthesis', why: 'Each organelle has one main job. The nucleus holds DNA, ribosomes make proteins, mitochondria produce ATP, and chloroplasts capture light for photosynthesis.' },
+        5: { answer: 'c = 10.0, dy/dx = 2.0', why: 'c = √(6² + 8²) = 10. Differentiating y = 0.5x² − 2x + 4 gives dy/dx = x − 2, which is 2.0 at x = 4.' },
+    };
+    const explainOpen: Record<number, boolean> = { 1: q1Explain, 2: q2Explain, 3: q3Explain, 4: q4Explain, 5: q5Explain, 6: q6Explain, 7: q7Explain, 8: q8Explain };
+    const explainPanelOpen = displayMode === 'explain' && explainOpen[activeQuestion];
+    const dismissExplain = (q: number) => {
+        playAudio('click');
+        if (q === 1) setQ1Explain(false);
+        else if (q === 2) setQ2Explain(false);
+        else if (q === 3) setQ3Explain(false);
+        else if (q === 4) setQ4Explain(false);
+        else if (q === 5) setQ5Explain(false);
+        else if (q === 6) setQ6Explain(false);
+        else if (q === 7) setQ7Explain(false);
+        else setQ8Explain(false);
     };
 
     const questionsMeta = [
@@ -604,6 +742,9 @@ export default function DemoPage() {
         { id: 3, title: 'Q3', topic: 'Comp Sci', pts: '3 pts', solved: q3Solved },
         { id: 4, title: 'Q4', topic: 'Chemistry', pts: '4 pts', solved: q4Solved },
         { id: 5, title: 'Q5', topic: 'Math', pts: '5 pts', solved: q5Solved, isOcr: true },
+        { id: 6, title: 'Q6', topic: 'Geography', pts: '2 pts', solved: q6Solved },
+        { id: 7, title: 'Q7', topic: 'Algebra', pts: '3 pts', solved: q7Solved },
+        { id: 8, title: 'Q8', topic: 'Cell Biology', pts: '4 pts', solved: q8Solved },
     ];
 
     return (
@@ -639,11 +780,11 @@ export default function DemoPage() {
 
                     <div className="flex items-center gap-1.5 sm:gap-2.5">
                         <a
-                            href="#student-seo-guide"
+                            href="#what-it-does"
                             className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-ink-secondary hover:text-ink hover:bg-black/5 transition-colors"
                         >
                             <BookOpen className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
-                            <span>How It Stays Hidden</span>
+                            <span>What it does</span>
                         </a>
 
                         <button
@@ -663,7 +804,7 @@ export default function DemoPage() {
                         </button>
 
                         <a
-                            href="https://chromewebstore.google.com/detail/curio-ai-tutor-homework-h/dejkoepiachnbgjjooocnnmampldmpde"
+                            href={INSTALL_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-dark px-3 sm:px-4 py-2 text-xs font-semibold rounded-full shadow-xs inline-flex items-center gap-2"
@@ -682,13 +823,13 @@ export default function DemoPage() {
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/8 shadow-2xs text-[11px] font-semibold text-ink mb-2">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>LIVE SANDBOX · NO INSTALL REQUIRED</span>
+                            <span>LIVE SANDBOX · NOTHING TO INSTALL</span>
                         </div>
                         <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
-                            Try ExamGhost on a Live Canvas Quiz
+                            Try ExamGhost on a Canvas-style quiz
                         </h1>
                         <p className="aeo-summary text-xs sm:text-sm text-ink-muted mt-1.5 max-w-2xl leading-relaxed">
-                            Double-click any simulated Canvas question to solve in 0.3s, test Snap-It Vision OCR (Alt+S) on Question 5, and inspect live Focus Shield telemetry showing 0 tab-switch or window.onblur flags.
+                            Double-click any question, switch modes with Alt+1 / 2 / 3, or press Alt+S and drag a box around the diagram in Question 5. This is a simulation with pre-written answers.
                         </p>
                     </div>
 
@@ -699,7 +840,7 @@ export default function DemoPage() {
                             className="px-4 py-2.5 rounded-full bg-ink hover:bg-ink/90 text-white text-xs font-semibold transition-all flex items-center gap-2 disabled:opacity-50 shadow-soft cursor-pointer"
                         >
                             <Zap className="w-3.5 h-3.5 text-[#ffd23f]" aria-hidden="true" />
-                            <span>{isSpeedrunning ? "Solving All 5..." : "Auto-Solve All (5)"}</span>
+                            <span>{isSpeedrunning ? `Solving All ${TOTAL_Q}...` : `Auto-Solve All (${TOTAL_Q})`}</span>
                         </button>
 
                         <button
@@ -741,59 +882,19 @@ export default function DemoPage() {
                                         <span>{formatTimer(timeLeft)}</span>
                                     </div>
 
-                                    <button
-                                        onClick={() => {
-                                            setShowProctorLog(!showProctorLog);
-                                            playAudio('click');
-                                        }}
-                                        className="px-3 py-1 rounded-full bg-[#cdeecb]/70 hover:bg-[#cdeecb] border border-emerald-600/20 text-ink text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
-                                        title="Inspect live Canvas activity telemetry"
-                                    >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                                        <span>0 Tab-Switch Flags</span>
-                                        <ChevronDown className={`w-3 h-3 transition-transform ${showProctorLog ? 'rotate-180' : ''}`} />
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Collapsible Live Professor Activity Log Proof Drawer (Mounted in DOM for SEO) */}
-                            <div className={showProctorLog ? "bg-[#141413] text-white px-5 sm:px-6 py-4 border-b border-white/10 text-xs space-y-3 animate-fade-in block" : "hidden"}>
-                                <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-white/10">
-                                    <span className="font-mono font-bold text-[#cdeecb] uppercase tracking-wider text-[11px]">
-                                        Live Canvas Instructor Telemetry View
-                                    </span>
-                                    <span className="text-[11px] text-white/60 font-mono">
-                                        Solved: {solvedCount}/5 · Flags: 0
-                                    </span>
-                                </div>
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-[11px]">
-                                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                        <span className="text-white/75 block text-[10px]">window.onblur</span>
-                                        <span className="text-[#cdeecb] font-bold">0 Events</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                        <span className="text-white/75 block text-[10px]">visibilitychange</span>
-                                        <span className="text-[#cdeecb] font-bold">visible</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                        <span className="text-white/75 block text-[10px]">DOM Footprint</span>
-                                        <span className="text-[#cdeecb] font-bold">Closed Shadow</span>
-                                    </div>
-                                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                        <span className="text-white/75 block text-[10px]">Clipboard Paste</span>
-                                        <span className="text-[#cdeecb] font-bold">0 Flagged</span>
-                                    </div>
                                 </div>
                             </div>
 
                             {/* Interactive 5-Question Switcher Bar (Full Width, Zero Scrollbar) */}
-                            <div className="px-4 sm:px-6 py-2.5 bg-[#faf8f5] border-b border-black/6 grid grid-cols-5 gap-1.5 sm:gap-2">
+                            <div className="px-4 sm:px-6 py-2.5 bg-[#faf8f5] border-b border-black/6 grid grid-cols-4 sm:grid-cols-8 gap-1.5 sm:gap-2">
                                 {questionsMeta.map((q) => {
                                     const isActive = activeQuestion === q.id;
                                     return (
                                         <button
                                             key={q.id}
                                             onClick={() => selectQuestion(q.id)}
+                                            title={`${q.title} · ${q.topic} · ${q.pts}`}
+                                            aria-current={isActive ? 'true' : undefined}
                                             className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                                                 isActive
                                                     ? 'bg-ink text-white shadow-xs'
@@ -803,9 +904,7 @@ export default function DemoPage() {
                                             }`}
                                         >
                                             <span>{q.title}</span>
-                                            <span className={`hidden md:inline text-[11px] font-normal truncate ${isActive ? 'text-white/75' : 'text-ink-muted'}`}>
-                                                · {q.topic}
-                                            </span>
+                                            
                                             {q.solved && (
                                                 <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
                                                     isActive ? 'bg-[#cdeecb] text-ink' : 'bg-emerald-600 text-white'
@@ -825,8 +924,15 @@ export default function DemoPage() {
                                 })}
                             </div>
 
+                            {solvedCount === 0 && (
+                                <p className="px-5 sm:px-7 pt-3 text-xs text-ink-muted flex items-center gap-1.5">
+                                    <MousePointerClick className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                    Tip: double-click a question to solve it, or press Alt+S to snip a diagram.
+                                </p>
+                            )}
+
                             {/* Focused Single-Question Stage (All 5 remain in DOM for SEO) */}
-                            <div className="p-5 sm:p-7 bg-white flex flex-col justify-between relative">
+                            <div className={`p-5 sm:p-7 bg-white flex flex-col justify-between relative transition-[padding] duration-200 ${explainPanelOpen ? 'sm:pr-[304px]' : ''}`}>
 
                                 {/* QUESTION 1: Biology MCQ */}
                                 <div 
@@ -841,18 +947,18 @@ export default function DemoPage() {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
                                         <div className="flex items-center gap-2.5">
                                             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
-                                                Question 1 of 5 · Cell Biology
+                                                Question 1 of 8 · Cell Biology
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink">
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
                                                 2.0 pts
                                             </span>
                                         </div>
                                         <button 
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ1(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
                                             <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
                                             <span>{q1Solved ? 'Solved ✓' : 'Solve Question'}</span>
@@ -892,11 +998,6 @@ export default function DemoPage() {
                                                         </span>
                                                         <span>{opt.text}</span>
                                                     </div>
-                                                    {isSelected && (
-                                                        <span className="text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
-                                                            99.8% · 0.3s
-                                                        </span>
-                                                    )}
                                                     {isGlow && (
                                                         <span className="text-[11px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2.5 py-0.5 rounded-full">
                                                             Highlighted
@@ -907,15 +1008,6 @@ export default function DemoPage() {
                                         })}
                                     </div>
 
-                                    {q1Explain && (
-                                        <div className="mt-5 p-4 rounded-2xl bg-[#f7f5f0] border border-black/8 text-xs text-ink-secondary leading-relaxed flex items-start gap-2.5 animate-fade-in">
-                                            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
-                                            <div>
-                                                <strong className="text-ink">Explain Mode: </strong>
-                                                Mitochondria generate over 90% of cellular ATP through the citric acid cycle and oxidative phosphorylation.
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
 
                                 {/* QUESTION 2: Psychology True/False */}
@@ -931,18 +1023,18 @@ export default function DemoPage() {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
                                         <div className="flex items-center gap-2.5">
                                             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
-                                                Question 2 of 5 · Psychology
+                                                Question 2 of 8 · Psychology
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink">
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
                                                 1.0 pt
                                             </span>
                                         </div>
                                         <button 
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ2(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
                                             <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
                                             <span>{q2Solved ? 'Solved ✓' : 'Solve Question'}</span>
@@ -981,15 +1073,6 @@ export default function DemoPage() {
                                         })}
                                     </div>
 
-                                    {q2Explain && (
-                                        <div className="mt-5 p-4 rounded-2xl bg-[#f7f5f0] border border-black/8 text-xs text-ink-secondary leading-relaxed flex items-start gap-2.5 animate-fade-in">
-                                            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
-                                            <div>
-                                                <strong className="text-ink">Explain Mode: </strong>
-                                                Pavlov demonstrated classical conditioning in the 1890s by pairing an unconditioned stimulus (food) with a neutral auditory tone.
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
 
                                 {/* QUESTION 3: Computer Science Multi-Select */}
@@ -1005,18 +1088,18 @@ export default function DemoPage() {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
                                         <div className="flex items-center gap-2.5">
                                             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
-                                                Question 3 of 5 · Data Structures
+                                                Question 3 of 8 · Data Structures
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink">
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
                                                 3.0 pts
                                             </span>
                                         </div>
                                         <button 
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ3(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
                                             <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
                                             <span>{q3Solved ? 'Solved ✓' : 'Solve Question'}</span>
@@ -1068,15 +1151,6 @@ export default function DemoPage() {
                                         })}
                                     </div>
 
-                                    {q3Explain && (
-                                        <div className="mt-5 p-4 rounded-2xl bg-[#f7f5f0] border border-black/8 text-xs text-ink-secondary leading-relaxed flex items-start gap-2.5 animate-fade-in">
-                                            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
-                                            <div>
-                                                <strong className="text-ink">Explain Mode: </strong>
-                                                A stack implements LIFO semantics using <code className="font-mono text-ink">push()</code> and <code className="font-mono text-ink">pop()</code>, whereas a queue is FIFO.
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
 
                                 {/* QUESTION 4: Chemistry Short Answer */}
@@ -1092,18 +1166,18 @@ export default function DemoPage() {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
                                         <div className="flex items-center gap-2.5">
                                             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
-                                                Question 4 of 5 · Chemistry
+                                                Question 4 of 8 · Chemistry
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink">
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
                                                 4.0 pts
                                             </span>
                                         </div>
                                         <button 
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ4(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
                                             <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
                                             <span>{q4Solved ? 'Solved ✓' : 'Solve Question'}</span>
@@ -1130,15 +1204,6 @@ export default function DemoPage() {
                                         )}
                                     </div>
 
-                                    {q4Explain && (
-                                        <div className="mt-5 p-4 rounded-2xl bg-[#f7f5f0] border border-black/8 text-xs text-ink-secondary leading-relaxed flex items-start gap-2.5 animate-fade-in">
-                                            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
-                                            <div>
-                                                <strong className="text-ink">Explain Mode: </strong>
-                                                In ionic bonds (NaCl), one atom transfers valence electrons to another; in covalent bonds (H₂O), electron pairs are shared.
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
 
                                 {/* QUESTION 5: Visual Diagram & Calculus (Snap-It OCR) */}
@@ -1157,9 +1222,9 @@ export default function DemoPage() {
                                     <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-black/6">
                                         <div className="flex items-center gap-2">
                                             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
-                                                Question 5 of 5 · Calculus &amp; Trig
+                                                Question 5 of 8 · Calculus &amp; Trig
                                             </span>
-                                            <span className="text-xs bg-[#e2d3fa] px-2.5 py-0.5 rounded-full font-bold text-ink">
+                                            <span className="text-xs bg-[#e2d3fa] px-2.5 py-0.5 rounded-full font-bold text-ink whitespace-nowrap">
                                                 5.0 pts · Diagram OCR
                                             </span>
                                         </div>
@@ -1168,7 +1233,7 @@ export default function DemoPage() {
                                                 e.stopPropagation();
                                                 triggerPresetSnipe(5);
                                             }}
-                                            className="px-3.5 py-1.5 rounded-full bg-ink hover:bg-ink/90 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+                                            className="px-3.5 py-1.5 rounded-full bg-ink hover:bg-ink/90 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer whitespace-nowrap shrink-0"
                                         >
                                             <Crop className="w-3.5 h-3.5 text-[#cdeecb]" aria-hidden="true" />
                                             <span>Snip &amp; Solve Diagram</span>
@@ -1243,19 +1308,221 @@ export default function DemoPage() {
                                             );
                                         })}
                                     </div>
+                                </div>
 
-                                    {q5Explain && (
-                                        <div className="mt-4 p-3.5 rounded-2xl bg-[#f7f5f0] border border-black/8 text-xs text-ink-secondary leading-relaxed flex items-start gap-2.5 animate-fade-in">
-                                            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
-                                            <div>
-                                                <strong className="text-ink">Explain Mode: </strong>
-                                                c = √(6² + 8²) = 10.0. Differentiating y = 0.5x² - 2x + 4 gives dy/dx = x - 2 = 2.0 at x = 4.
-                                            </div>
+
+                                {/* QUESTION 6 */}
+                                <div
+                                    ref={questionRefs[6]}
+                                    onDoubleClick={handleSolveQ6}
+                                    className={activeQuestion === 6 ? "block animate-fade-in cursor-pointer" : "hidden"}
+                                >
+                                    {solvingId === 6 && (
+                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                            <span>Solving Question 6...</span>
                                         </div>
                                     )}
+
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                        <div className="flex items-center gap-2.5">
+                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                                Question 6 of 8 · Geography
+                                            </span>
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                                1.0 pt
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handleSolveQ6(); }}
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                        >
+                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{q6Solved ? 'Solved ✓' : 'Solve Question'}</span>
+                                        </button>
+                                    </div>
+
+                                    <h2 className="font-display text-lg sm:text-xl font-bold text-ink mb-6 leading-snug">
+                                        What is the capital city of Australia?
+                                    </h2>
+
+                                    <div className="relative">
+                                        <select
+                                            value={q6State}
+                                            onChange={(e) => setQ6State(e.target.value)}
+                                            aria-label="Capital city of Australia"
+                                            className={`w-full appearance-none rounded-2xl border px-4 py-4 text-base font-medium text-ink cursor-pointer transition-all focus:outline-none ${
+                                                q6Solved
+                                                    ? 'bg-[#cdeecb]/40 border-emerald-500'
+                                                    : q6Highlighted
+                                                    ? 'bg-[#ffe9a0]/60 border-amber-400 ring-2 ring-amber-300'
+                                                    : 'bg-white border-black/12 hover:border-black/25'
+                                            }`}
+                                        >
+                                            <option value="">Select an answer…</option>
+                                            <option value="sydney">Sydney</option>
+                                            <option value="melbourne">Melbourne</option>
+                                            <option value="canberra">Canberra</option>
+                                            <option value="perth">Perth</option>
+                                        </select>
+                                        <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" aria-hidden="true" />
+                                        {q6Solved && (
+                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full pointer-events-none">✓ Selected</span>
+                                        )}
+                                        {q6Highlighted && !q6Solved && (
+                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2.5 py-0.5 rounded-full pointer-events-none">Highlighted: Canberra</span>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* QUESTION 7 */}
+                                <div
+                                    ref={questionRefs[7]}
+                                    onDoubleClick={handleSolveQ7}
+                                    className={activeQuestion === 7 ? "block animate-fade-in cursor-pointer" : "hidden"}
+                                >
+                                    {solvingId === 7 && (
+                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                            <span>Solving Question 7...</span>
+                                        </div>
+                                    )}
+
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                        <div className="flex items-center gap-2.5">
+                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                                Question 7 of 8 · Algebra
+                                            </span>
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                                3.0 pts
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handleSolveQ7(); }}
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                        >
+                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{q7Solved ? 'Solved ✓' : 'Solve Question'}</span>
+                                        </button>
+                                    </div>
+
+                                    <h2 className="font-display text-lg sm:text-xl font-bold text-ink mb-6 leading-snug">
+                                        Solve for x: 3x + 7 = 19
+                                    </h2>
+
+                                    <div className="flex items-center gap-3 text-lg font-mono text-ink">
+                                        <span>x =</span>
+                                        <input
+                                            type="text"
+                                            inputMode="numeric"
+                                            value={q7Text}
+                                            onChange={(e) => setQ7Text(e.target.value)}
+                                            placeholder="?"
+                                            aria-label="Answer for x"
+                                            className={`w-28 rounded-xl border px-4 py-3 text-center text-lg font-semibold focus:outline-none transition-colors ${
+                                                q7Solved ? 'bg-[#cdeecb]/40 border-emerald-500' : 'bg-white border-black/15 focus:border-emerald-600'
+                                            }`}
+                                        />
+                                        {q7Solved && (
+                                            <span className="text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">✓ Filled in</span>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* QUESTION 8 */}
+                                <div
+                                    ref={questionRefs[8]}
+                                    onDoubleClick={handleSolveQ8}
+                                    className={activeQuestion === 8 ? "block animate-fade-in cursor-pointer" : "hidden"}
+                                >
+                                    {solvingId === 8 && (
+                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                            <span>Solving Question 8...</span>
+                                        </div>
+                                    )}
+
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                        <div className="flex items-center gap-2.5">
+                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                                Question 8 of 8 · Cell Biology
+                                            </span>
+                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                                4.0 pts
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handleSolveQ8(); }}
+                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                        >
+                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{q8Solved ? 'Solved ✓' : 'Solve Question'}</span>
+                                        </button>
+                                    </div>
+
+                                    <h2 className="font-display text-lg sm:text-xl font-bold text-ink mb-5 leading-snug">
+                                        Match each organelle with its main function.
+                                    </h2>
+
+                                    <div className="space-y-3">
+                                        {Q8_PAIRS.map((pr) => {
+                                            const val = q8State[pr.term] || '';
+                                            const ok = val === pr.answer;
+                                            return (
+                                                <div key={pr.term} className="grid grid-cols-1 sm:grid-cols-[150px_1fr] items-center gap-2 sm:gap-4">
+                                                    <label htmlFor={`q8-${pr.term}`} className="text-sm font-semibold text-ink">{pr.term}</label>
+                                                    <div className="relative">
+                                                        <select
+                                                            id={`q8-${pr.term}`}
+                                                            value={val}
+                                                            onChange={(e) => setQ8State((prev) => ({ ...prev, [pr.term]: e.target.value }))}
+                                                            className={`w-full appearance-none rounded-xl border px-3.5 py-2.5 text-sm cursor-pointer focus:outline-none transition-all ${
+                                                                ok
+                                                                    ? 'bg-[#cdeecb]/40 border-emerald-500 font-semibold'
+                                                                    : q8Highlighted
+                                                                    ? 'bg-[#ffe9a0]/50 border-amber-400 ring-2 ring-amber-300'
+                                                                    : 'bg-white border-black/12 hover:border-black/25'
+                                                            }`}
+                                                        >
+                                                            <option value="">Select function…</option>
+                                                            {Q8_PAIRS.map((o) => (
+                                                                <option key={o.answer} value={o.answer}>{o.answer}</option>
+                                                            ))}
+                                                        </select>
+                                                        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" aria-hidden="true" />
+                                                        {q8Highlighted && !ok && (
+                                                            <span className="absolute right-9 top-1/2 -translate-y-1/2 hidden sm:inline text-[10px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2 py-0.5 rounded-full pointer-events-none">{pr.answer}</span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
 
                             </div>
+
+                            {/* Explain-mode side panel (slides in like the extension's banner) */}
+                            {displayMode === 'explain' && explainOpen[activeQuestion] && (
+                                <aside
+                                    className="animate-fade-in mx-4 mb-4 sm:mx-0 sm:mb-0 sm:absolute sm:z-30 sm:right-4 sm:top-[150px] sm:w-[272px] rounded-2xl bg-[#18181b] text-white p-4 shadow-lift ring-1 ring-white/10"
+                                    aria-label="ExamGhost explanation"
+                                >
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <span className="w-5 h-5 rounded-full overflow-hidden bg-[#c4d0f8] shrink-0">
+                                            <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="" width={20} height={20} className="w-full h-full object-cover scale-110" />
+                                        </span>
+                                        <span className="text-xs font-semibold">ExamGhost</span>
+                                        <span className="ml-auto text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 rounded-full px-2 py-0.5">Solved</span>
+                                        <button onClick={() => dismissExplain(activeQuestion)} className="p-1 -mr-1 rounded hover:bg-white/10 cursor-pointer" aria-label="Close explanation">
+                                            <X className="w-3.5 h-3.5" aria-hidden="true" />
+                                        </button>
+                                    </div>
+                                    <p className="text-[11px] text-white/50 mb-1">Answer</p>
+                                    <p className="rounded-lg bg-white/10 px-3 py-2 text-[13px] font-semibold mb-3">{EXPLAIN_PANEL[activeQuestion].answer}</p>
+                                    <p className="text-[12px] leading-relaxed text-white/70">{EXPLAIN_PANEL[activeQuestion].why}</p>
+                                </aside>
+                            )}
 
                             {/* Clean Bottom Question Pagination & Submit Bar */}
                             <div className="px-5 sm:px-6 py-4 bg-[#f7f5f0] border-t border-black/6 flex flex-wrap items-center justify-between gap-3 text-xs">
@@ -1269,8 +1536,8 @@ export default function DemoPage() {
                                         <span>Prev</span>
                                     </button>
                                     <button
-                                        onClick={() => selectQuestion(Math.min(5, activeQuestion + 1))}
-                                        disabled={activeQuestion === 5}
+                                        onClick={() => selectQuestion(Math.min(TOTAL_Q, activeQuestion + 1))}
+                                        disabled={activeQuestion === TOTAL_Q}
                                         className="px-3.5 py-2 rounded-xl bg-white border border-black/8 text-ink font-semibold hover:bg-black/5 disabled:opacity-40 transition-colors flex items-center gap-1 cursor-pointer"
                                     >
                                         <span>Next Question</span>
@@ -1279,8 +1546,11 @@ export default function DemoPage() {
                                 </div>
 
                                 <div className="flex items-center gap-3">
+                                    <span className="hidden sm:block w-24 h-1.5 rounded-full bg-black/10 overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={TOTAL_Q} aria-valuenow={solvedCount} aria-label="Questions solved">
+                                        <span className="block h-full bg-emerald-500 rounded-full transition-all duration-500" style={{ width: `${(solvedCount / TOTAL_Q) * 100}%` }} />
+                                    </span>
                                     <span className="font-mono font-semibold text-ink-secondary">
-                                        {solvedCount}/5 Solved · <strong className="text-ink">{earnedPoints}/{totalPoints} pts</strong>
+                                        {solvedCount}/{TOTAL_Q} Solved · <strong className="text-ink">{earnedPoints}/{totalPoints} pts</strong>
                                     </span>
                                     <button
                                         onClick={() => {
@@ -1351,7 +1621,7 @@ export default function DemoPage() {
                                                 <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-cyan-300 to-emerald-400 animate-laser-scan" />
                                             )}
                                             <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-ink text-[10px] font-mono font-bold text-[#cdeecb]">
-                                                {isScanning ? "Scanning OCR..." : "✓ OCR Solved (0.26s)"}
+                                                {isScanning ? "Reading screenshot…" : "✓ Solved"}
                                             </div>
                                         </div>
                                     )}
@@ -1490,7 +1760,7 @@ export default function DemoPage() {
                             <div className="rounded-2xl bg-white border border-emerald-500/40 p-4 shadow-soft flex items-center justify-between gap-3 animate-fade-in">
                                 <div className="min-w-0">
                                     <span className="text-[10px] font-mono font-bold text-emerald-800 uppercase block">
-                                        ✓ Vision OCR Solved ({snipResult.latency})
+                                        ✓ Snip solved
                                     </span>
                                     <p className="text-xs font-bold text-ink truncate mt-0.5">
                                         {snipResult.answer}
@@ -1508,7 +1778,7 @@ export default function DemoPage() {
 
                         {/* Clipboard Toast */}
                         {clipboardNotice && (
-                            <div className="p-3.5 rounded-2xl bg-ink text-white text-xs font-semibold flex items-center gap-2 shadow-soft animate-fade-in">
+                            <div role="status" aria-live="polite" className="p-3.5 rounded-2xl bg-ink text-white text-xs font-semibold flex items-center gap-2 shadow-soft animate-fade-in">
                                 <Check className="w-4 h-4 text-[#cdeecb] shrink-0" aria-hidden="true" />
                                 <span>{clipboardNotice}</span>
                             </div>
@@ -1518,759 +1788,59 @@ export default function DemoPage() {
                 </div>
             </main>
 
-            {/* Tactile OneMacApp Architecture, Benchmark & AEO/GEO/SEO Guide */}
-            <section
-                id="student-seo-guide"
-                aria-labelledby="seo-guide-heading"
-                className="border-t border-black/5 bg-cream py-20 sm:py-28 px-4 sm:px-6"
-            >
-                <div className="max-w-6xl mx-auto space-y-20 sm:space-y-28">
-
-                    {/* 0. 16-Second 2.5D Motion Explainer Film */}
-                    <LmsExplainerFilmCard
-                        slug="canvas-lms-quiz-solver"
-                        platformName="Canvas Free Interactive Sandbox"
-                        heroDotColor="#10b981"
-                    />
-
-                    {/* 0B. Bespoke 5-Question Sandbox Guide & Keyboard Shortcut Matrix */}
-                    <div className="space-y-8">
-                        <div className="max-w-3xl space-y-3">
-                            <p className="eyebrow">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                <span>INTERACTIVE SANDBOX WALKTHROUGH &amp; HOTKEY MATRIX</span>
-                            </p>
-                            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink leading-[1.08]">
-                                What Each of the 5 Sandbox Questions Above Demonstrates
-                            </h2>
-                            <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                Unlike static marketing screenshots on competitor sites (<em>Mindko</em>, <em>ApexVision</em>, <em>StudyFox</em>), our live Canvas Sandbox above runs the actual <strong>ExamGhost client-side interaction engine</strong> inside your browser. Here is how each question format and keyboard shortcut works on a real exam:
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Question 1 &amp; 2 • MCQ
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
-                                        Double-Click DOM
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    1-by-1 Double-Click Radio Solving
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Double-clicking Question 1 or Question 2 parses the <code className="font-mono text-xs">.question_text</code> and <code className="font-mono text-xs">.answer_label</code> nodes locally in 0.3s—never firing <code className="font-mono text-xs">window.onblur</code> or using a reckless &ldquo;Solve All&rdquo; batch script.
-                                </p>
-                            </article>
-
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Question 3 • Multi-Select
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
-                                        Per-Option Check
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    Select-All-That-Apply Verification
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Evaluates every checkbox option independently via dual-model consensus (<strong>DeepSeek + ChatGPT</strong>) so you never lose partial credit on strict multi-select questions.
-                                </p>
-                            </article>
-
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Question 4 • Fill-in-Blank
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#c4d0f8]/60 text-blue-950 text-[11px] font-bold">
-                                        Exact Syntax
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    Short-Answer &amp; Numerical Precision
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Computes exact case-sensitive terminology and significant-figure numerical answers, either auto-filling the input box or copying silently to your clipboard (<kbd className="font-mono text-[11px]">⌘+Shift+U</kbd>).
-                                </p>
-                            </article>
-
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Question 5 • Vision OCR
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#e2d3fa]/70 text-purple-950 text-[11px] font-bold">
-                                        Alt + S Crop
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    Snap-It Vision OCR on Locked Diagrams
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Drag a crop rectangle over any uncopyable SVG graph, geometry figure, or embedded publisher iframe to capture raw viewport pixels and solve visually in under 0.4s.
-                                </p>
-                            </article>
-
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Alt + 1 / Alt + 2 / Alt + 3
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#ffe9a0] text-amber-950 text-[11px] font-bold">
-                                        3 Display Modes
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    Invisible, Stealth &amp; Explain Modes
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Switch seamlessly between zero-UI Invisible Mode (1px dot indicator for classroom exams), low-contrast Stealth Mode, and full step-by-step Explain Mode for homework.
-                                </p>
-                            </article>
-
-                            <article className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3">
-                                <div className="flex items-center justify-between">
-                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                        Proctor Log Inspector
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 text-[11px] font-bold">
-                                        0 page_blurred
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-bold text-ink">
-                                    Live Canvas Action Log Verification
-                                </h3>
-                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                    Click the <strong>Proctor Log</strong> toggle inside the simulator header above to inspect the live <code className="font-mono text-xs">quiz_submission_events</code> payload and verify that 0 focus-loss events occurred.
-                                </p>
-                            </article>
-                        </div>
+            {/* What the extension does (matches the extension's real behaviour) */}
+            <section id="what-it-does" className="py-16 sm:py-20 bg-white/60 border-y border-black/5 scroll-mt-20">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                        <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.05] mb-3">
+                            What you just tried
+                        </h2>
+                        <p className="text-base sm:text-lg text-ink-muted">
+                            The same controls the Chrome extension gives you on a real quiz page.
+                        </p>
                     </div>
-
-                    {/* 1. Hero Architecture Card (Matches QuestionExamples #privacy OneMacApp Showcase) */}
-                    <div className="bg-white rounded-[36px] p-7 sm:p-10 md:p-14 border border-black/10 shadow-lift">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-                            
-                            {/* Left 3D Ghost Mascot Showcase */}
-                            <div className="lg:col-span-5">
-                                <div className="rounded-3xl bg-[#cdeecb]/35 p-6 sm:p-8 border border-[#cdeecb] flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                    <div className="w-48 h-48 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border border-black/8 shadow-soft bg-cream relative mb-4">
-                                        <img
-                                            src="/images/ghost/ghost_privacy.jpg"
-                                            alt="ExamGhost Closed Shadow DOM Stealth Mascot"
-                                            width={208}
-                                            height={208}
-                                            loading="lazy"
-                                            decoding="async"
-                                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="font-display font-bold text-xl text-ink mb-1">
-                                        Closed Shadow DOM Isolation
-                                    </div>
-                                    <p className="text-xs text-ink-muted max-w-[260px]">
-                                        Runs 100% inside your active browser tab with zero page-focus loss.
-                                    </p>
-
-                                    <div className="mt-5 flex flex-wrap gap-2 justify-center">
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/8 shadow-xs">
-                                            0 Blur Events
-                                        </span>
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/8 shadow-xs">
-                                            0.3s Inline Solve
-                                        </span>
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/8 shadow-xs">
-                                            Screen-Share Safe
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Right Architecture Summary & AEO Passage */}
-                            <div className="lg:col-span-7 space-y-5">
-                                <p className="eyebrow">
-                                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                    <span>CLIENT-SIDE STEALTH ARCHITECTURE</span>
-                                </p>
-                                <h2
-                                    id="seo-guide-heading"
-                                    className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.08]"
-                                >
-                                    Stays inside your active tab.<br />
-                                    Leaves nothing in the log.
-                                </h2>
-                                <p className="aeo-summary text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                    <strong>ExamGhost</strong> is a client-side Canvas quiz solver Chrome extension that solves assessment questions inline using an isolated <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Closed Shadow DOM</code> container and <strong>Snap-It Vision OCR</strong> (<kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">Alt+S</kbd>). Because your cursor never leaves the active exam tab to open ChatGPT, <strong>Canvas SpeedGrader</strong>, <strong>Blackboard Ultra</strong>, <strong>Moodle</strong>, and <strong>D2L Brightspace</strong> record zero <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">window.onblur</code> or <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-xs text-ink">document.visibilitychange</code> flags.
-                                </p>
-
-                                {/* 3 Visual Pillar Cards with 3D Ghost Thumbnails */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
-                                    <article className="p-4 rounded-2xl bg-[#faf8f5] border border-black/6 space-y-2">
-                                        <div className="flex items-center gap-2.5">
-                                            <img
-                                                src="/images/ghost/ghost_card_stealth.jpg"
-                                                alt="Stealth Focus Shield"
-                                                width={36}
-                                                height={36}
-                                                loading="lazy"
-                                                className="w-9 h-9 rounded-xl object-cover border border-black/10 shrink-0"
-                                            />
-                                            <h3 className="font-display font-bold text-xs sm:text-sm text-ink leading-snug">
-                                                Zero Quiz-Log Flags
-                                            </h3>
-                                        </div>
-                                        <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
-                                            Neutralizes <code className="font-mono text-ink">onblur</code>, <code className="font-mono text-ink">visibilitychange</code>, and clipboard paste telemetry on Canvas &amp; Blackboard.
-                                        </p>
-                                    </article>
-
-                                    <article className="p-4 rounded-2xl bg-[#faf8f5] border border-black/6 space-y-2">
-                                        <div className="flex items-center gap-2.5">
-                                            <img
-                                                src="/images/ghost/ghost_card_vision.jpg"
-                                                alt="Snap-It Vision OCR"
-                                                width={36}
-                                                height={36}
-                                                loading="lazy"
-                                                className="w-9 h-9 rounded-xl object-cover border border-black/10 shrink-0"
-                                            />
-                                            <h3 className="font-display font-bold text-xs sm:text-sm text-ink leading-snug">
-                                                Snap-It OCR (Alt+S)
-                                            </h3>
-                                        </div>
-                                        <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
-                                            Drag a crop box over locked graphs, PDFs, and HTML5 math canvases on ALEKS, WebAssign &amp; Gradescope.
-                                        </p>
-                                    </article>
-
-                                    <article className="p-4 rounded-2xl bg-[#faf8f5] border border-black/6 space-y-2">
-                                        <div className="flex items-center gap-2.5">
-                                            <img
-                                                src="/images/ghost/ghost_card_hud.jpg"
-                                                alt="3 Display Modes and 3 Answer Methods"
-                                                width={36}
-                                                height={36}
-                                                loading="lazy"
-                                                className="w-9 h-9 rounded-xl object-cover border border-black/10 shrink-0"
-                                            />
-                                            <h3 className="font-display font-bold text-xs sm:text-sm text-ink leading-snug">
-                                                3 Modes (Alt+1/2/3)
-                                            </h3>
-                                        </div>
-                                        <p className="text-[11px] sm:text-xs text-ink-muted leading-relaxed">
-                                            Combine Invisible (<kbd className="font-mono text-ink">Alt+1</kbd>), Stealth (<kbd className="font-mono text-ink">Alt+2</kbd>), or Explain (<kbd className="font-mono text-ink">Alt+3</kbd>) mode with instant master power toggle (<kbd className="font-mono text-ink">⌘+Shift+U</kbd>).
-                                        </p>
-                                    </article>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {/* 2. macOS Window Comparison Matrix (SEO / AEO / GEO Table) */}
-                    <div className="space-y-6">
-                        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                            <div>
-                                <p className="eyebrow mb-2">
-                                    <span className="w-2 h-2 rounded-full bg-ink" />
-                                    <span>ARCHITECTURE BENCHMARK</span>
-                                </p>
-                                <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-tight">
-                                    ExamGhost vs. ChatGPT &amp; Sidebar Extensions
-                                </h2>
-                            </div>
-                            <Link
-                                prefetch={false}
-                                href="/compare-canvas-hack-extensions"
-                                className="btn-soft px-4 py-2 text-xs font-semibold"
-                            >
-                                <span>Compare all 57 extensions</span>
-                                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                            </Link>
-                        </div>
-
-                        <div className="rounded-[32px] bg-white border border-black/10 shadow-card overflow-hidden">
-                            {/* macOS Title Bar */}
-                            <div className="bg-[#f7f5f0] border-b border-black/6 px-5 py-3.5 flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
-                                    <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
-                                    <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
-                                    <span className="text-xs font-bold text-ink ml-2">
-                                        2026 LMS Telemetry &amp; Solving Benchmark
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {[
+                            { icon: MousePointerClick, tint: '#c4d0f8', title: 'Double-click to solve', body: 'Double-click a question and the answer lands on the page. Multiple choice, true/false, multi-select, dropdowns and short answers are all handled.' },
+                            { icon: Sparkles, tint: '#cdeecb', title: 'Three modes (Alt+1 / 2 / 3)', body: 'Invisible applies the answer with no panel. Stealth, the default, fills it in or marks it with a small ✓. Explain adds a side panel with the reasoning.' },
+                            { icon: Check, tint: '#e2d3fa', title: 'Three ways to deliver', body: 'Auto-fill selects the answer for you, Highlight marks it so you click it yourself, and Clipboard copies it to paste into a written answer.' },
+                            { icon: Crop, tint: '#bfe3f6', title: 'Snap-It (Alt+S)', body: 'Drag a box around a graph, diagram or image-based question. The extension reads the screenshot and returns the answer with the working.' },
+                            { icon: ScrollText, tint: '#ffe9a0', title: 'Scan the whole page', body: 'Click Scan page & answer in the popup and the extension scrolls the page, reads every question and fills answers in batches.' },
+                            { icon: Power, tint: '#ffd5cc', title: 'Master on/off switch', body: 'One toggle in the extension popup pauses everything, so shortcuts and double-click do nothing while you browse normally.' },
+                        ].map((c) => {
+                            const Icon = c.icon;
+                            return (
+                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 shadow-card">
+                                    <span className="grid place-items-center w-11 h-11 rounded-2xl mb-5" style={{ backgroundColor: c.tint }}>
+                                        <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
                                     </span>
-                                </div>
-                                <span className="text-[11px] font-semibold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
-                                    Verified on Canvas &amp; Blackboard
-                                </span>
-                            </div>
-
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[680px]">
-                                    <thead>
-                                        <tr className="border-b border-black/8 bg-[#faf8f5] text-ink font-display">
-                                            <th className="py-4 px-6 font-bold">Capability / Detection Vector</th>
-                                            <th className="py-4 px-6 font-bold bg-[#cdeecb]/35">
-                                                <span className="inline-flex items-center gap-1.5">
-                                                    <ShieldCheck className="w-4 h-4 text-emerald-700" aria-hidden="true" />
-                                                    <span>ExamGhost (In-Page AI)</span>
-                                                </span>
-                                            </th>
-                                            <th className="py-4 px-6 font-semibold text-ink-secondary">
-                                                ChatGPT Tab-Switching
-                                            </th>
-                                            <th className="py-4 px-6 font-semibold text-ink-secondary">
-                                                Legacy Sidebar Extensions
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-black/6">
-                                        <tr>
-                                            <td className="py-4 px-6 font-semibold text-ink">Canvas &amp; Blackboard focus logs</td>
-                                            <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>0 tab-switch or blur events</span>
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Fires <code className="font-mono text-[11px]">window.onblur</code> on every switch
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Iframe focus loss frequently logged
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-4 px-6 font-semibold text-ink">Host page DOM footprint</td>
-                                            <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>Isolated Closed Shadow DOM</span>
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Triggers copy &amp; paste event listeners
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Injects visible sidebar nodes into page
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-4 px-6 font-semibold text-ink">Locked diagrams &amp; canvas math</td>
-                                            <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>Built-in Snap-It OCR (Alt+S)</span>
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Manual screenshot &amp; file upload (20s+)
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Cannot read non-selectable canvases
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-4 px-6 font-semibold text-ink">Question formats supported</td>
-                                            <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>MCQ, multi-select, dropdowns &amp; essays</span>
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Manual prompt formatting required
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Single-choice text MCQ only
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-4 px-6 font-semibold text-ink">Answer delivery flexibility</td>
-                                            <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                                                    <span>Auto-fill, subtle highlight, or clipboard</span>
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Manual reading &amp; re-typing
-                                            </td>
-                                            <td className="py-4 px-6 text-ink-muted">
-                                                Floating popup box only
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                    <h3 className="font-display text-lg font-bold text-ink mb-1.5">{c.title}</h3>
+                                    <p className="text-[15px] text-ink-muted leading-relaxed">{c.body}</p>
+                                </article>
+                            );
+                        })}
                     </div>
-
-                    {/* 3. Two-Card Pastel Bento Hub: Supported LMS Portals & Competitor Teardowns */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
-                        
-                        {/* Left Bento: 20+ Supported LMS & STEM Portals */}
-                        <div className="lg:col-span-6 rounded-[32px] bg-[#c4d0f8]/45 border border-[#c4d0f8] p-6 sm:p-8 flex flex-col justify-between space-y-5">
-                            <div className="space-y-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <span className="text-[11px] font-bold uppercase tracking-wider text-ink/70">
-                                        20+ Supported Platforms
-                                    </span>
-                                    <img
-                                        src="/images/ghost/ghost_card_lms.jpg"
-                                        alt="Supported University LMS Platforms"
-                                        width={40}
-                                        height={40}
-                                        className="w-10 h-10 rounded-2xl object-cover border border-black/10 shadow-xs"
-                                    />
-                                </div>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Works across every university LMS &amp; STEM portal
-                                </h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    Explore dedicated platform guides covering DOM structure, focus-loss listeners, and Snap-It OCR workflows:
-                                </p>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 text-xs">
-                                {[
-                                    { href: '/canvas-lms-quiz-solver', label: 'Canvas Classic & New Quizzes' },
-                                    { href: '/blackboard-quiz-solver', label: 'Blackboard Learn & Ultra' },
-                                    { href: '/moodle-quiz-solver', label: 'Moodle LMS' },
-                                    { href: '/d2l-brightspace-quiz-solver', label: 'D2L Brightspace' },
-                                    { href: '/mcgraw-hill-connect-aleks-solver', label: 'McGraw-Hill Connect & ALEKS' },
-                                    { href: '/pearson-mylab-mastering-solver', label: 'Pearson MyLab & Mastering' },
-                                    { href: '/cengage-mindtap-webassign-solver', label: 'Cengage WebAssign' },
-                                    { href: '/gradescope-exam-solver', label: 'Gradescope OCR' },
-                                    { href: '/google-forms-quiz-solver', label: 'Google Forms & Classroom' },
-                                    { href: '/schoology-quiz-solver', label: 'Schoology' },
-                                    { href: '/deltamath-homework-solver', label: 'DeltaMath' },
-                                    { href: '/edgenuity-quiz-solver', label: 'Edgenuity' },
-                                ].map((item) => (
-                                    <Link
-                                        prefetch={false}
-                                        key={item.href}
-                                        href={item.href}
-                                        className="px-3 py-1.5 rounded-full bg-white/90 hover:bg-ink hover:text-white border border-black/8 text-ink font-semibold shadow-2xs transition-all"
-                                    >
-                                        {item.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Right Bento: Head-to-Head Extension Comparisons */}
-                        <div className="lg:col-span-6 rounded-[32px] bg-[#e2d3fa]/45 border border-[#e2d3fa] p-6 sm:p-8 flex flex-col justify-between space-y-5">
-                            <div className="space-y-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <span className="text-[11px] font-bold uppercase tracking-wider text-ink/70">
-                                        2026 Extension Teardowns
-                                    </span>
-                                    <img
-                                        src="/images/ghost/ghost_card_proctor.jpg"
-                                        alt="Extension Security Comparisons"
-                                        width={40}
-                                        height={40}
-                                        className="w-10 h-10 rounded-2xl object-cover border border-black/10 shadow-xs"
-                                    />
-                                </div>
-                                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                    Side-by-side accuracy &amp; stealth comparisons
-                                </h3>
-                                <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                    See how ExamGhost’s Closed Shadow DOM and dual-model routing compare against legacy quiz extensions:
-                                </p>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 text-xs">
-                                {[
-                                    { href: '/compare-canvas-hack-extensions', label: 'Best Canvas Extensions (2026)' },
-                                    { href: '/canvashack-vs-examghost', label: 'CanvasHack vs ExamGhost' },
-                                    { href: '/cheatmate-vs-examghost', label: 'CheatMate vs ExamGhost' },
-                                    { href: '/quizard-vs-examghost', label: 'Quizard vs ExamGhost' },
-                                    { href: '/solvely-vs-examghost', label: 'Solvely AI vs ExamGhost' },
-                                    { href: '/gauth-vs-examghost', label: 'Gauth AI vs ExamGhost' },
-                                    { href: '/coursology-vs-examghost', label: 'Coursology vs ExamGhost' },
-                                    { href: '/homeworkify-vs-examghost', label: 'Homeworkify vs ExamGhost' },
-                                    { href: '/mathosai-vs-examghost', label: 'Mathos AI vs ExamGhost' },
-                                    { href: '/brainly-vs-examghost', label: 'Brainly vs ExamGhost' },
-                                    { href: '/apexvision-vs-examghost', label: 'ApexVision vs ExamGhost' },
-                                    { href: '/bettercampus-vs-examghost', label: 'BetterCampus vs ExamGhost' },
-                                ].map((item) => (
-                                    <Link
-                                        prefetch={false}
-                                        key={item.href}
-                                        href={item.href}
-                                        className="px-3 py-1.5 rounded-full bg-white/90 hover:bg-ink hover:text-white border border-black/8 text-ink font-semibold shadow-2xs transition-all"
-                                    >
-                                        {item.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {/* 4. Flagship OneMacApp Interactive FAQ (100% SSR Crawlable + AEO/GEO/SEO Optimized) */}
-                    <div
-                        id="canvas-quiz-solver-faq"
-                        className="max-w-4xl mx-auto space-y-8"
-                        itemScope
-                        itemType="https://schema.org/FAQPage"
-                    >
-                        {/* Section Header (Matches Homepage FAQ.tsx Style) */}
-                        <div className="text-center max-w-2xl mx-auto space-y-3">
-                            <p className="eyebrow justify-center">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                <span>FAQ &amp; TECHNICAL REFERENCE</span>
-                            </p>
-                            <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08]">
-                                Good questions.<br />
-                                Verified answers.
-                            </h2>
-                            <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                                Everything you need to know about Canvas SpeedGrader logs, Closed Shadow DOM stealth, Snap-It Vision OCR, and your 5 free solves / day.
-                            </p>
-                        </div>
-
-                        {/* Interactive Category Filter Bar + Expand All Toggle */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-2 rounded-2xl border border-black/8 shadow-2xs">
-                            <div className="flex flex-wrap items-center gap-1">
-                                {[
-                                    { id: 'all', label: 'All Questions (8)' },
-                                    { id: 'stealth', label: 'Stealth & Quiz Logs' },
-                                    { id: 'ocr', label: 'Snap-It OCR & Math' },
-                                    { id: 'platforms', label: 'Platforms & Free Trial' },
-                                ].map((tab) => (
-                                    <button
-                                        key={tab.id}
-                                        type="button"
-                                        onClick={() => {
-                                            playAudio('click');
-                                            setFaqCategory(tab.id as 'all' | 'stealth' | 'ocr' | 'platforms');
-                                        }}
-                                        className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                                            faqCategory === tab.id
-                                                ? 'bg-ink text-white shadow-2xs'
-                                                : 'text-ink-secondary hover:text-ink hover:bg-black/5'
-                                        }`}
-                                    >
-                                        {tab.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    playAudio('click');
-                                    setOpenFaqs(openFaqs.length === 8 ? [0] : [0, 1, 2, 3, 4, 5, 6, 7]);
-                                }}
-                                className="px-3 py-1.5 rounded-xl text-xs font-semibold text-ink-secondary hover:text-ink hover:bg-black/5 transition-colors cursor-pointer"
-                            >
-                                {openFaqs.length === 8 ? 'Collapse all' : 'Expand all 8'}
-                            </button>
-                        </div>
-
-                        {/* FAQ Accordion Cards (All 8 remain mounted in SSR DOM for Google & AI Bots) */}
-                        <div className="space-y-3">
-                            {[
-                                {
-                                    id: "faq-canvas-blackboard-detection-logs",
-                                    category: "stealth",
-                                    badge: "0 Focus Flags",
-                                    badgeBg: "bg-[#cdeecb] text-emerald-950",
-                                    q: "Can Canvas or Blackboard detect the ExamGhost Chrome extension in quiz activity logs?",
-                                    a: (
-                                        <>
-                                            <strong>No, Canvas LMS and Blackboard cannot detect ExamGhost</strong> because browser sandboxing prevents websites from scanning installed Chrome extensions, and ExamGhost renders inside an isolated{' '}
-                                            <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Closed Shadow DOM</code> container.{' '}
-                                            <Link prefetch={false} href="/canvas-lms-quiz-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Canvas</Link> and{' '}
-                                            <Link prefetch={false} href="/blackboard-quiz-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Blackboard</Link> only log focus-loss events when{' '}
-                                            <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">window.onblur</code> or{' '}
-                                            <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">document.visibilitychange</code> fires—which happens when you switch tabs to ChatGPT, never when solving inline with ExamGhost.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-what-professors-see-canvas-quiz-log",
-                                    category: "stealth",
-                                    badge: "SpeedGrader Safe",
-                                    badgeBg: "bg-[#cdeecb] text-emerald-950",
-                                    q: "What does a professor actually see in the Canvas Quiz Log during an exam?",
-                                    a: (
-                                        <>
-                                            <strong>In a standard Canvas Quiz Log, professors only see session start times, question answer timestamps, and red &ldquo;Stopped viewing the Canvas quiz-taking page&rdquo; flags</strong> triggered by{' '}
-                                            <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">window.onblur</code> or{' '}
-                                            <code className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">document.visibilitychange</code> events. Because ExamGhost solves questions directly inside your active browser tab in <strong>0.3 seconds</strong> without opening popups or switching windows, your{' '}
-                                            <Link prefetch={false} href="/blog/canvas-quiz-log-explained-what-professors-see" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Canvas activity log</Link> records 100% continuous page focus.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-snap-it-vision-ocr-math-diagrams",
-                                    category: "ocr",
-                                    badge: "Alt + S",
-                                    badgeBg: "bg-[#e2d3fa] text-purple-950",
-                                    q: "How do I solve locked math graphs, uncopyable PDFs, and chemistry diagrams on ALEKS or WebAssign?",
-                                    a: (
-                                        <>
-                                            <strong>Press <kbd className="px-1.5 py-0.5 rounded bg-black/5 font-mono text-[11px] text-ink">Alt+S</kbd> to activate Snap-It Vision OCR</strong>, then drag a selection box over any locked graph, geometry figure, chemical structure, or iframe. ExamGhost captures the viewport pixels locally and routes them through <strong>DeepSeek</strong> and <strong>ChatGPT Vision</strong>, returning the verified answer and step-by-step derivation in under <strong>0.4 seconds</strong> on{' '}
-                                            <Link prefetch={false} href="/mcgraw-hill-connect-aleks-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">McGraw-Hill ALEKS</Link>,{' '}
-                                            <Link prefetch={false} href="/cengage-mindtap-webassign-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Cengage WebAssign</Link>, and{' '}
-                                            <Link prefetch={false} href="/gradescope-exam-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Gradescope</Link>.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-supported-lms-canvas-new-quizzes-aleks",
-                                    category: "platforms",
-                                    badge: "20+ LMSs",
-                                    badgeBg: "bg-[#c4d0f8] text-indigo-950",
-                                    q: "Does ExamGhost work on Canvas New Quizzes, McGraw-Hill ALEKS, and Pearson MyLab?",
-                                    a: (
-                                        <>
-                                            <strong>Yes, ExamGhost works natively across both Canvas Classic Quizzes and Canvas New Quizzes (LTI)</strong>, Blackboard Learn and Ultra,{' '}
-                                            <Link prefetch={false} href="/moodle-quiz-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Moodle</Link>,{' '}
-                                            <Link prefetch={false} href="/d2l-brightspace-quiz-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">D2L Brightspace</Link>, and Schoology. It also supports locked STEM publisher portals including McGraw-Hill Connect and ALEKS,{' '}
-                                            <Link prefetch={false} href="/pearson-mylab-mastering-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Pearson MyLab and Mastering</Link>, Cengage MindTap and WebAssign, Gradescope, DeltaMath, and{' '}
-                                            <Link prefetch={false} href="/google-forms-quiz-solver" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Google Forms</Link>.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-invisible-stealth-explain-modes",
-                                    category: "stealth",
-                                    badge: "3 Stealth Modes",
-                                    badgeBg: "bg-[#bfe3f6] text-sky-950",
-                                    q: "What is the difference between Invisible Mode, Stealth Mode, and Explain Mode?",
-                                    a: (
-                                        <>
-                                            <strong>Invisible Mode solves and delivers answers with zero visual UI, popups, or badges on your screen</strong>, pairing with Auto-Fill, Subtle Highlight, or Silent Clipboard copy. <strong>Stealth Mode</strong> displays a minimal, low-contrast status pill while computing the answer. <strong>Explain Mode</strong> opens an inline study card directly beneath the question with the full formula, concept breakdown, and step-by-step reasoning.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-accuracy-vs-chatgpt-gauth-canvashack",
-                                    category: "ocr",
-                                    badge: "99.4% STEM",
-                                    badgeBg: "bg-[#e2d3fa] text-purple-950",
-                                    q: "How accurate is ExamGhost compared to ChatGPT, Gauth AI, and CanvasHack?",
-                                    a: (
-                                        <>
-                                            <strong>ExamGhost achieves 99.4% accuracy on university STEM and humanities assessments</strong> by routing symbolic math, calculus, and physics problems to <strong>DeepSeek</strong> while sending reading comprehension and image diagrams to <strong>ChatGPT Vision</strong>. Unlike ChatGPT (which requires 15–30 seconds of tab-switching) or legacy scripts like{' '}
-                                            <Link prefetch={false} href="/canvashack-vs-examghost" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">CanvasHack</Link> and{' '}
-                                            <Link prefetch={false} href="/gauth-vs-examghost" className="font-semibold text-ink underline decoration-black/25 hover:decoration-ink">Gauth AI</Link> (which inject visible sidebar nodes), ExamGhost solves inline in <strong>0.3 seconds</strong> with zero tab-switch flags.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-respondus-lockdown-browser-honorlock",
-                                    category: "stealth",
-                                    badge: "Browser Scope",
-                                    badgeBg: "bg-[#ffe9a0] text-amber-950",
-                                    q: "Does ExamGhost work with Respondus LockDown Browser, Honorlock, or Proctorio?",
-                                    a: (
-                                        <>
-                                            <strong>ExamGhost runs inside standard Chromium browsers—including Google Chrome, Brave, Microsoft Edge, and Arc</strong>—for web-based Canvas, Blackboard, Moodle, and publisher quizzes. Standalone desktop applications like Respondus LockDown Browser use a custom restricted browser shell that blocks all third-party Chrome extensions by design.
-                                        </>
-                                    )
-                                },
-                                {
-                                    id: "faq-free-canvas-quiz-solver-demo-5-free-solves-daily",
-                                    category: "platforms",
-                                    badge: "5 Free Solves / Day",
-                                    badgeBg: "bg-[#cdeecb] text-emerald-950",
-                                    q: "How do I test the free Canvas quiz solver demo on this page and claim 5 free solves / day?",
-                                    a: (
-                                        <>
-                                            <strong>Double-click any of the 5 interactive questions in the Canvas simulator at the top of this page</strong> (or tap &ldquo;Solve Question&rdquo; on mobile) to test instant inline solving, and click &ldquo;Snip &amp; Solve Diagram&rdquo; on Question 5 to test Vision OCR. When you are ready to use it on your own coursework, install the ExamGhost Chrome extension for <strong>5 free solves / day</strong> with no credit card required.
-                                        </>
-                                    )
-                                }
-                            ].map((faq, idx) => {
-                                const isOpen = openFaqs.includes(idx);
-                                const isVisibleCategory = faqCategory === 'all' || faq.category === faqCategory;
-                                return (
-                                    <div
-                                        key={faq.id}
-                                        id={faq.id}
-                                        itemScope
-                                        itemProp="mainEntity"
-                                        itemType="https://schema.org/Question"
-                                        className={`rounded-2xl bg-white border transition-all duration-200 ${
-                                            isOpen
-                                                ? 'border-black/15 shadow-soft'
-                                                : 'border-black/8 hover:border-black/15'
-                                        } ${isVisibleCategory ? 'block' : 'sr-only'}`}
-                                    >
-                                        <h3>
-                                            <button
-                                                type="button"
-                                                onClick={() => {
-                                                    playAudio('click');
-                                                    setOpenFaqs(prev =>
-                                                        prev.includes(idx)
-                                                            ? prev.filter(i => i !== idx)
-                                                            : [...prev, idx]
-                                                    );
-                                                }}
-                                                className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-ink cursor-pointer"
-                                                aria-expanded={isOpen}
-                                                aria-controls={`${faq.id}-answer`}
-                                            >
-                                                <div className="flex flex-wrap items-center gap-2.5 pr-2">
-                                                    <span itemProp="name">{faq.q}</span>
-                                                    <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${faq.badgeBg}`}>
-                                                        {faq.badge}
-                                                    </span>
-                                                </div>
-                                                <span
-                                                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
-                                                        isOpen
-                                                            ? 'rotate-180 bg-ink text-white'
-                                                            : 'bg-[#faf8f4] text-ink border border-black/6'
-                                                    }`}
-                                                    aria-hidden="true"
-                                                >
-                                                    <ChevronDown className="w-4 h-4" />
-                                                </span>
-                                            </button>
-                                        </h3>
-                                        <div
-                                            id={`${faq.id}-answer`}
-                                            itemScope
-                                            itemProp="acceptedAnswer"
-                                            itemType="https://schema.org/Answer"
-                                            className={`grid transition-all duration-200 ease-out ${
-                                                isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                                            }`}
-                                        >
-                                            <div className="overflow-hidden">
-                                                <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-black/6">
-                                                    <p
-                                                        itemProp="text"
-                                                        className="faq-answer text-xs sm:text-sm text-ink-secondary leading-relaxed"
-                                                    >
-                                                        {faq.a}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-
                 </div>
             </section>
+
+            <section id="demo-faq" className="py-16 sm:py-20 scroll-mt-20">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink text-center mb-8">Questions</h2>
+                    <div className="space-y-3">
+                        {DEMO_FAQS.map((f) => (
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
+                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                </summary>
+                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                            </details>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <FinalCta />
+
 
             {/* Canvas Submit Quiz Confirmation Modal */}
             {isSubmitModalOpen && (
@@ -2300,10 +1870,10 @@ export default function DemoPage() {
                                 ✓
                             </div>
                             <h4 className="font-display text-xl font-bold text-ink">
-                                {solvedCount === 5 ? "Perfect Score: 15 / 15 pts" : `${earnedPoints} / ${totalPoints} Points`}
+                                {solvedCount === TOTAL_Q ? `Perfect Score: ${totalPoints} / ${totalPoints} pts` : `${earnedPoints} / ${totalPoints} Points`}
                             </h4>
                             <p className="text-xs text-ink-secondary max-w-xs mx-auto">
-                                Solved {solvedCount} of 5 questions inline with <strong>0 tab-switch flags</strong>.
+                                Solved {solvedCount} of {TOTAL_Q} questions right on the page with ExamGhost.
                             </p>
                         </div>
 
@@ -2319,7 +1889,7 @@ export default function DemoPage() {
                                 Done
                             </button>
                             <a
-                                href="https://discord.gg/aCcsyKYJq4"
+                                href={INSTALL_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 py-2.5 rounded-xl bg-[#cdeecb] hover:bg-[#bde6ba] text-ink text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
@@ -2332,7 +1902,7 @@ export default function DemoPage() {
                 </div>
             )}
 
-            <Footer />
+            <Footer hideCta />
         </div>
     );
 }

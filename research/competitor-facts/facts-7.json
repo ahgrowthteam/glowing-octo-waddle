@@ -1,0 +1,267 @@
+[
+  {
+    "domain": "doublecheckme.com",
+    "name": "Double Check AI",
+    "url": "https://www.doublecheckme.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free: 5 questions per 24 hours; paid Monthly $7.99/mo (first month $3.99) or Yearly $79.99/yr (first year $39.99), per the /pricing page.",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "First billing period $3.99 with JOIN50 promo shown on page"
+        },
+        {
+          "name": "Yearly",
+          "price": 79.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "First billing period $39.99 with promo shown on page"
+        }
+      ],
+      "freeTier": "5 free questions every 24 hours, no credit card",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "McGraw Hill",
+      "Pearson",
+      "Blackboard"
+    ],
+    "featuresStated": [
+      "One-click answers on supported learning platforms",
+      "Screenshot mode for graphs and images",
+      "Step-by-step explanations",
+      "Free 5 questions per 24 hours",
+      "Unlimited answers on paid plan"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/ai-homework-helper-double/ciiaplbmocogjcakmllebilamknkfckg",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.doublecheckme.com/",
+      "https://www.doublecheckme.com/pricing",
+      "https://chromewebstore.google.com/detail/ai-homework-helper-double/ciiaplbmocogjcakmllebilamknkfckg"
+    ],
+    "confidence": "high",
+    "notes": "Site states it is 'fully undetectable' (claim only, not repeated). Chrome Web Store listing at fetch time: 4.8 out of 5 from 13 ratings, 234 users. Site's own user-count claims are unverified and inconsistent (home page '1,200+ students', /pricing '2,100+'; '150k+ questions solved'). Home page states '3x Faster and 86% More Accurate' (unverified site claim). Pricing promo text says 'Offer valid until October 20' and may be stale. Pricing page also names a model ('GPT-5.6 Luna'), unverified."
+  },
+  {
+    "domain": "quizhack.ai",
+    "name": "QuizHack",
+    "url": "https://quizhack.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Paid subscriptions only on /pricing: Weekly $14.99/wk (first week 50% off $7.49), Monthly billed $14.95/mo (first month 50% off), Annual billed $89.95/yr. Page figures are internally inconsistent.",
+      "plans": [
+        {
+          "name": "Weekly",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Shown as $7.49/week with the 50% first-week discount"
+        },
+        {
+          "name": "Monthly",
+          "price": 14.95,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Billed at $14.95/month; page also displays '$7.49/week' struck to '$3.74/week' which does not match; first month 50% off"
+        },
+        {
+          "name": "Annual",
+          "price": 89.95,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Billed at $89.95/year; page also shows '$14.99/month' struck to '$7.49/month'"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Moodle",
+      "D2L Brightspace",
+      "Blackboard",
+      "edX",
+      "Google Classroom"
+    ],
+    "featuresStated": [
+      "Double-click shortcut to get an answer on the page",
+      "Supports multiple choice, multi-select, numeric, matching questions",
+      "Built-in AI chat for follow-ups",
+      "Optional notes and document upload",
+      "Interface modes: Pulse, Mentor, low-profile",
+      "Unlimited questions on paid plans"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizhack/gembfdgkmegjbpmckacdhokakhobegha",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://quizhack.ai/",
+      "https://quizhack.ai/pricing",
+      "https://chromewebstore.google.com/detail/quizhack/gembfdgkmegjbpmckacdhokakhobegha"
+    ],
+    "confidence": "medium",
+    "notes": "Mainly sold as an AI quiz solver/answer tool with a study-assistant framing in its FAQ; also markets '100% undetectable' (claim only). Site shows a '4.6' rating with no source (unverified). Chrome Web Store at fetch time: 3.7 out of 5 from 3 ratings, 103 users. Pricing page numbers conflict (weekly/monthly/annual per-period labels vs 'billed at' amounts); a human should check checkout. Site has a /responsible-use page not read."
+  },
+  {
+    "domain": "userightclick.app",
+    "name": "RightClick",
+    "url": "https://userightclick.app",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "7-day trial $0.99 (code TRIAL), then renews at $4.99/week; a $9.99/month plan is also mentioned.",
+      "plans": [
+        {
+          "name": "Weekly",
+          "price": 4.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Renews at $4.99/wk after 7-day $0.99 trial; cancel anytime"
+        },
+        {
+          "name": "Monthly",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Mentioned as an alternative plan; link not followed"
+        }
+      ],
+      "freeTier": null,
+      "trial": "7 days unlimited access for $0.99"
+    },
+    "platformsStated": [
+      "Works on any site or document (no specific platforms stated)"
+    ],
+    "featuresStated": [
+      "Highlight a question and right-click for answer, hint or pointers",
+      "Vision Scan for diagrams, graphs and equations (50x per day stated)",
+      "Stealth Tap (beta): double-click to get answer",
+      "Capture for text questions",
+      "Orb: summaries, flashcards, quizzes, glossaries",
+      "Works in all languages"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Chrome",
+      "Edge"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://userightclick.app/"
+    ],
+    "confidence": "medium",
+    "notes": "Site markets 'undetectable' and a 'stealth mode' (claim only; not elaborated). No Chrome Web Store link found in HTML. '10M+ questions answered' and 'used by thousands' are unverified site claims. Home page contains leftover placeholder text (Lorem ipsum, 'Snooze' sleep app copy). Money-back guarantee mentioned without terms. Operator shown as Atrus Ltd. Monthly plan page not fetched, so $9.99 is from home-page text only."
+  },
+  {
+    "domain": "snapsolveai.com",
+    "name": "SnapSolve AI",
+    "url": "https://snapsolveai.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "SnapSolve Pro $14.99 per month; no free tier stated.",
+      "plans": [
+        {
+          "name": "SnapSolve Pro",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": null
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Screenshot any question for an answer",
+      "Instant answers on selected questions",
+      "Step-by-step explanations",
+      "AI tutor chat",
+      "Multi-subject support"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/snapsolve-ai/njfgmibbdnkkobaliaigpcgapdhdggfe",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://snapsolveai.com/",
+      "https://chromewebstore.google.com/detail/snapsolve-ai/njfgmibbdnkkobaliaigpcgapdhdggfe"
+    ],
+    "confidence": "high",
+    "notes": "Single-page site, copyright 2025. Site claims '100K+ active users' and '10M+ questions solved' (unverified); Chrome Web Store at fetch time shows 584 users and 5 out of 5 from 5 ratings, a large discrepancy. Testimonials name universities and look unverifiable."
+  },
+  {
+    "domain": "examninja.io",
+    "name": "ExamNinja",
+    "url": "https://examninja.io",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free: 5 successful answers per day after email sign-in; paid Monthly $8.99/mo or Yearly $89.99/yr.",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 8.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Full access, cancel anytime"
+        },
+        {
+          "name": "Yearly",
+          "price": 89.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Stated as about 17% cheaper than monthly"
+        }
+      ],
+      "freeTier": "5 successful answers daily after email sign-in, no card required",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "D2L Brightspace",
+      "23 recognized platform domains"
+    ],
+    "featuresStated": [
+      "Double-click a question for answer and explanation",
+      "Concise, Hint and Worked Solution response modes",
+      "Multiple-choice, multiple-select, fill-in-the-blank, matching",
+      "Free web tools (quiz solver, answer checker, homework helper)",
+      "Passwordless email sign-in"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/examninja-ai-homework-hel/pblbdegfamhipckgnkbjkmmlbepbjnal",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://examninja.io/",
+      "https://examninja.io/chrome-extension/",
+      "https://chromewebstore.google.com/detail/examninja-ai-homework-hel/pblbdegfamhipckgnkbjkmmlbepbjnal"
+    ],
+    "confidence": "high",
+    "notes": "Site frames itself as for permitted practice/study use, says it does not bypass secure browsers or hide assistance, and notes diagrams/custom widgets/proctored setups may not work. Chrome Web Store at fetch time: 17 users, no rating displayed (0 ratings). Site has many SEO guide pages (not read in depth)."
+  }
+]

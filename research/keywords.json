@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "researchDate": "2026-11-19",
+    "market": "US",
+    "method": "WebSearch SERP review (~20 queries) plus one WebFetch to confirm page type. No search-volume tool used; priority is qualitative from SERP evidence.",
+    "priorityScale": "High / Medium-High / Medium / Medium-Low / Low (qualitative)",
+    "lengthNote": "Titles <= 60 chars and metas <= 155 chars were counted manually; run a length lint before shipping.",
+    "ownerFactMarker": "[needs owner fact]"
+  },
+  "homepage": {
+    "url": "/",
+    "primary": "ai quiz solver chrome extension",
+    "intent": "commercial/transactional",
+    "priority": "High",
+    "secondary": [
+      {"keyword": "ai homework helper chrome extension", "intent": "commercial", "priority": "High"},
+      {"keyword": "canvas quiz helper", "intent": "commercial", "priority": "High"},
+      {"keyword": "screenshot homework solver", "intent": "commercial", "priority": "Medium-High"},
+      {"keyword": "quiz answer extension", "intent": "commercial", "priority": "Medium"},
+      {"keyword": "ai question solver with explanations", "intent": "informational/commercial", "priority": "Medium"},
+      {"keyword": "free ai homework helper extension", "intent": "commercial", "priority": "Medium"},
+      {"keyword": "homework helper for canvas blackboard moodle", "intent": "commercial", "priority": "Medium"}
+    ],
+    "title": "ExamGhost: AI Quiz Solver Chrome Extension, Free Plan",
+    "meta": "Double-click a quiz or homework question for an AI answer and explanation, or snip graphs with Alt+S. Works on Canvas, Blackboard & more. Free plan.",
+    "h1": "AI Quiz and Homework Helper for Chrome",
+    "h2s": ["Double-click any question", "Snip graphs and diagrams with Alt+S", "Works on Canvas, Blackboard, Moodle, D2L, Schoology and Google Forms", "Free plan vs paid plans", "FAQ"],
+    "serpEvidence": "Head terms return mostly Chrome Web Store listings and directory mirrors (chromeboard, extscope, neura.market) plus vendor homepages (quizsolve/cheatly) using a double-tap-any-question plus platform-list pattern. Screenshot solving is table stakes across listings (Solvely, Quizard, Learn8).",
+    "faqIds": [1, 2, 7, 6, 5, 14]
+  },
+  "compareMaster": {
+    "url": "/compare",
+    "primary": "best ai quiz solver chrome extension",
+    "intent": "commercial investigation",
+    "priority": "High",
+    "secondary": ["quiz solver extensions compared", "canvas quiz solver extensions compared", "best canvas quiz helper extension", "best ai homework helper chrome extension", "free quiz solver extension", "ai homework helper extension comparison", "best screenshot homework solver"],
+    "title": "Best AI Quiz Solver Chrome Extensions Compared (2026)",
+    "meta": "Compare ExamGhost with Canvas Wizard, Aceify, Solvely, Answerly and more on free tiers, pricing, LMS support and screenshot solving. By ExamGhost.",
+    "h1": "AI Quiz Solver Chrome Extensions Compared",
+    "intro": "We make ExamGhost, so we're not neutral. This page sets our free and paid plans next to the extensions students most often ask us about, using each tool's own public listing and pricing page, and notes the date each row was last checked. Where a detail isn't published, we say so instead of guessing. All of these tools can be wrong, so use them to check work and learn from explanations, and follow your course's AI policy.",
+    "tableColumns": ["Extension (links to vs page)", "Free tier (published limits)", "Lowest paid price (monthly, vendor site)", "Platforms vendor lists", "Input methods (double-click/highlight, screenshot snip, paste)", "Question types vendor lists", "Explanations shown", "Chrome Web Store rating and users (date checked)", "Privacy policy link and data sent", "Last verified (date)"],
+    "doNotInclude": ["undetectable/stealth column"],
+    "rowPriority": ["Solvely", "Aceify", "ExamClutch", "Canvas Wizard (Wizard Quiz Solver Canvas)", "Answerly AI", "Canvas Quiz Solver", "Homework Solver by Mindko (formerly College Tools)", "AskSia", "CampusAI", "QuizBoost", "FormSolver", "SmartSolve"],
+    "alsoCompared": ["CheatMate", "SnapGPT", "StudyFox"],
+    "serpEvidence": "Fetched quizsolve.vercel.app/alternatives/best-quiz-solver-extensions-2026: vendor-written ranked listicle with product cards (rank, price tagline, pros, cons, best for) and FAQ (best free, detectable, Canvas and Moodle, need to pay). No independent editorial comparison found; aggregators (toolradar, dupple, toolmage, topai.tools) supply other compare/alternatives pages.",
+    "faq": [
+      {"q": "What is the best free AI quiz solver extension?", "a": "It depends on the platform you use and how many questions you need per day; compare the free-tier limits column. ExamGhost's free plan includes [needs owner fact: limits]."},
+      {"q": "Which quiz solver extensions work on Canvas?", "a": "Most tools here say they support Canvas; check the platforms column and whether each reads Canvas New Quizzes or needs a screenshot."},
+      {"q": "Do I need to pay for a quiz solver extension?", "a": "No. Several tools, including ExamGhost, have free plans; paid plans mainly raise limits."},
+      {"q": "Is this comparison neutral?", "a": "No. ExamGhost publishes it, so we link each vendor's own pricing and listing and date-stamp every row so you can verify."},
+      {"q": "Are AI quiz solver extensions safe to install?", "a": "Check each extension's requested permissions and privacy policy before installing; research on AI Chrome extensions shows many collect user data."},
+      {"q": "Can I use these on proctored exams?", "a": "No. Lockdown browsers disable extensions, and using AI on graded or proctored work without permission usually breaks course rules."}
+    ]
+  },
+  "compareTemplate": {
+    "urlPattern": "/{brand}-vs-examghost",
+    "brandNotes": [
+      {"brand": "Canvas Wizard", "note": "Generic query returns Canva/Design Wizard results; use 'Canvas Wizard quiz solver' or store name 'Wizard Quiz Solver Canvas'.", "priority": "Medium"},
+      {"brand": "Answerly", "note": "Collides with Answerly customer-support SaaS on Capterra/G2; always write 'Answerly AI'.", "priority": "Medium"},
+      {"brand": "FormSolver", "note": "Multiple unrelated extensions share the name; specify Google Forms extension.", "priority": "Medium-Low"},
+      {"brand": "Mindko", "note": "Store listing 'Homework Solver by Mindko', formerly College Tools; mention both.", "priority": "Medium"},
+      {"brand": "Solvely", "note": "Strongest third-party compare/alternatives footprint.", "priority": "High"},
+      {"brand": "Aceify", "note": "topai alternatives and aceify-vs-smartsolve compare pages exist; no aceify-vs-examghost page in repo yet.", "priority": "High"},
+      {"brand": "AskSia", "note": "Several compare pages (thedailyworkflow, toolify).", "priority": "Medium"},
+      {"brand": "ExamClutch", "note": "Product Hunt and AlternativeTo alternatives pages.", "priority": "Medium"},
+      {"brand": "CampusAI", "note": "Some directory presence.", "priority": "Medium-Low"},
+      {"brand": "QuizBoost", "note": "Small listing (~40 users); no vs page in repo.", "priority": "Low"},
+      {"brand": "SmartSolve", "note": "Appears in aceify-vs-smartsolve compare; no vs page in repo.", "priority": "Low"},
+      {"brand": "Canvas Quiz Solve", "note": "Close to the Chrome listing 'Canvas Quiz Solver'; disambiguate.", "priority": "Medium"},
+      {"brand": "SnapGPT", "note": "No relevant SERP results found.", "priority": "Low"},
+      {"brand": "StudyFox", "note": "No relevant SERP results found.", "priority": "Low"},
+      {"brand": "CheatMate", "note": "No relevant SERP results found; use brand name only on its own vs page.", "priority": "Low"}
+    ],
+    "vs": {
+      "primary": "{brand} vs examghost",
+      "secondary": ["{brand} vs", "{brand} comparison", "{brand} chrome extension", "{brand} canvas"],
+      "title": "{Brand} vs ExamGhost: Features, Pricing & Free Plan",
+      "titleFixedChars": 44,
+      "titleFallback": "{Brand} vs ExamGhost (2026 Comparison)",
+      "meta": "{Brand} vs ExamGhost compared on free tier, pricing, supported LMS platforms, screenshot solving and explanations. Free plan available.",
+      "metaFixedChars": 128,
+      "h1": "{Brand} vs ExamGhost: Side-by-Side Comparison"
+    },
+    "alternatives": {
+      "primary": "{brand} alternatives",
+      "secondary": ["{brand} alternative free", "apps like {brand}", "{brand} competitors"],
+      "title": "{Brand} Alternatives: ExamGhost and Other Options",
+      "titleFixedChars": 42,
+      "meta": "Looking for a {Brand} alternative? Compare ExamGhost and other AI quiz helpers on free tiers, pricing, platforms and screenshot support.",
+      "metaFixedChars": 129,
+      "h1": "{Brand} Alternatives for Quiz and Homework Help"
+    },
+    "pricing": {
+      "primary": "{brand} pricing",
+      "secondary": ["is {brand} free", "{brand} free trial", "{brand} cost", "{brand} cancel subscription"],
+      "title": "{Brand} Pricing vs ExamGhost: Is {Brand} Free?",
+      "titleFixedChars": "32 + 2x brand (brand <= 14)",
+      "titleFallback": "{Brand} Pricing & Free Plan vs ExamGhost",
+      "meta": "Is {Brand} free? See {Brand}'s published plans next to ExamGhost's free tier and paid plans, with what each tier includes.",
+      "metaFixedChars": "108 + 2x brand",
+      "h1": "{Brand} Pricing: Is It Free, and How Does It Compare?"
+    },
+    "review": {
+      "primary": "{brand} review",
+      "title": "{Brand} Review: Features, Pricing & Alternatives",
+      "note": "Use as an H2 block on the vs page, not a separate URL."
+    },
+    "pageStructure": ["Quick verdict (2 honest sentences)", "Comparison table (same columns as /compare)", "Where {Brand} is a better fit", "Where ExamGhost is a better fit", "Pricing", "FAQ", "Links to /compare and relevant platform page"],
+    "faq": [
+      {"q": "Is {Brand} free?", "a": "[needs owner fact per brand: verify on {Brand}'s pricing page and date-stamp]. ExamGhost has a free plan with [needs owner fact: limits]."},
+      {"q": "Does {Brand} work on Canvas?", "a": "{Brand} lists [platforms from its own listing]; ExamGhost works on Canvas via double-click or the Alt+S snip."},
+      {"q": "What's the main difference between {Brand} and ExamGhost?", "a": "[1 sentence per brand from verified features, e.g. input method or explanations]."},
+      {"q": "Can I switch from {Brand} to ExamGhost?", "a": "Yes. Install ExamGhost from the Chrome Web Store, start on the free plan, and remove {Brand} from chrome://extensions."}
+    ],
+    "serpEvidence": "Brand-vs-brand queries return aggregator compare pages (toolradar, dupple, toolmage, thedailyworkflow, slashdot); alternatives queries return topai.tools, AlternativeTo, Product Hunt and blaze.today listicles. Competitor vendors (Apex Vision, Mathos AI, Save My Exams) publish their own vs pages."
+  },
+  "platforms": [
+    {
+      "platform": "Canvas",
+      "url": "/canvas-lms-quiz-solver",
+      "primary": "canvas quiz solver",
+      "intent": "commercial",
+      "priority": "High",
+      "secondary": ["canvas quiz helper", "canvas quiz solver chrome extension", "canvas quiz solver free", "ai for canvas quizzes", "canvas homework helper", "canvas new quizzes helper", "canvas classic quizzes ai explanations"],
+      "title": "Canvas Quiz Solver: AI Chrome Extension, Free Plan",
+      "meta": "Get AI answers and explanations for Canvas quiz and homework questions. Double-click text or snip images with Alt+S. Start on the free plan.",
+      "h1": "Canvas Quiz Solver and Homework Helper for Chrome",
+      "serpEvidence": "Most-targeted phrase in the set: Chrome Web Store listing named 'Canvas Quiz Solver', plus Wizard, Answerly AI, ExamClutch, Canvas Helper listings and vendor /canvas-quiz-solver pages. Canvas Community thread discusses New Quizzes compatibility."
+    },
+    {
+      "platform": "Blackboard",
+      "url": "/blackboard-quiz-solver",
+      "primary": "blackboard quiz solver",
+      "intent": "commercial",
+      "priority": "Medium-High",
+      "secondary": ["blackboard quiz helper", "blackboard homework helper", "ai for blackboard quizzes", "blackboard ultra quiz helper", "blackboard learn chrome extension"],
+      "title": "Blackboard Quiz Solver: AI Chrome Extension, Free Plan",
+      "meta": "AI answers with explanations for Blackboard Learn quiz and homework questions. Double-click text or snip diagrams with Alt+S. Free plan available.",
+      "h1": "Blackboard Quiz Solver and Homework Helper",
+      "serpEvidence": "No Blackboard-only extension dominates; multi-LMS listings (AI Quiz Solve, Mindko, ExamClutch, Aceify) name Blackboard."
+    },
+    {
+      "platform": "Moodle",
+      "url": "/moodle-quiz-solver",
+      "primary": "moodle quiz solver",
+      "intent": "commercial",
+      "priority": "Medium-High",
+      "secondary": ["moodle quiz helper", "moodle homework helper", "ai for moodle quizzes", "moodle quiz extension", "moodlecloud quiz help"],
+      "title": "Moodle Quiz Solver: AI Chrome Extension, Free Plan",
+      "meta": "AI answers with explanations for Moodle quiz and homework questions, including multiple choice and math. Snip images with Alt+S. Free plan.",
+      "h1": "Moodle Quiz Solver and Homework Helper",
+      "serpEvidence": "Moodle-only Firefox add-on, vendor /moodle-quiz-solver pages and MoodleGPT in listicles; exact-match slug pattern is common."
+    },
+    {
+      "platform": "D2L Brightspace",
+      "url": "/d2l-brightspace-quiz-solver",
+      "primary": "brightspace quiz solver",
+      "intent": "commercial",
+      "priority": "Medium",
+      "secondary": ["d2l quiz helper", "d2l brightspace homework helper", "ai for brightspace quizzes", "brightspace quiz help chrome extension"],
+      "title": "D2L Brightspace Quiz Solver: AI Extension, Free Plan",
+      "meta": "AI answers and step-by-step explanations for D2L Brightspace quiz and homework questions. Double-click or snip with Alt+S. Free plan.",
+      "h1": "D2L Brightspace Quiz Solver and Homework Helper",
+      "serpEvidence": "Dominated by official D2L Lumi instructor content; one vendor page and a D2L community thread asking whether Google Homework Helper works in Brightspace."
+    },
+    {
+      "platform": "Schoology",
+      "url": "/schoology-quiz-solver",
+      "primary": "schoology quiz helper",
+      "intent": "commercial",
+      "priority": "Medium",
+      "secondary": ["schoology quiz solver", "schoology homework helper", "ai for schoology assignments", "schoology chrome extension for students"],
+      "title": "Schoology Quiz Solver: AI Chrome Extension, Free Plan",
+      "meta": "AI answers with explanations for Schoology quizzes and assignments. Double-click a question or snip a graph with Alt+S. Free plan available.",
+      "h1": "Schoology Quiz Helper and Homework Solver",
+      "serpEvidence": "Mix of study-helper extensions, teacher tools (CoGrader) and ExamClutch/College Tools listings; 'helper' phrasing more common than 'solver'."
+    },
+    {
+      "platform": "Google Forms",
+      "url": "/google-forms-quiz-solver",
+      "primary": "google forms quiz solver",
+      "intent": "commercial",
+      "priority": "Medium-High",
+      "secondary": ["ai for google forms quizzes", "google forms quiz helper extension", "google forms answer helper ai", "google classroom quiz helper", "form solver ai alternative"],
+      "title": "Google Forms Quiz Solver: AI Extension, Free Plan",
+      "meta": "AI answers with explanations for Google Forms quiz questions, from multiple choice to short answer. Double-click or snip with Alt+S. Free plan.",
+      "h1": "Google Forms Quiz Solver with Explanations",
+      "serpEvidence": "Dominated by bring-your-own-API-key and open-source tools (QuizGPT, Quiz Wand, AI Answers Forms) and several Form Solver extensions; 'no API key needed' is a possible angle [needs owner fact]."
+    },
+    {
+      "platform": "McGraw Hill Connect / ALEKS",
+      "url": "/mcgraw-hill-connect-aleks-solver",
+      "primary": "mcgraw hill connect homework helper",
+      "intent": "commercial/informational",
+      "priority": "Medium-Low",
+      "secondary": ["connect homework help ai", "aleks help ai", "smartbook help", "mcgraw hill connect ai explanations"],
+      "title": "McGraw Hill Connect Homework Helper (AI, Free Plan)",
+      "meta": "Get AI explanations for McGraw Hill Connect and ALEKS questions in Chrome. Double-click text or snip graphs with Alt+S. Free plan available.",
+      "h1": "McGraw Hill Connect and ALEKS Homework Helper",
+      "serpEvidence": "'extension' is ambiguous (mheducation.com deadline-extension pages rank); third-party Connect tools market auto-solve/undetectable (excluded). [needs owner fact: does ExamGhost read Connect/SmartBook frames or require snip?]"
+    },
+    {
+      "platform": "Pearson MyLab / Mastering",
+      "url": "/pearson-mylab-mastering-solver",
+      "primary": "pearson mylab homework helper",
+      "intent": "commercial/informational",
+      "priority": "Medium-Low",
+      "secondary": ["mylab math help ai", "mastering chemistry help", "mastering physics help ai", "mylab homework solver"],
+      "title": "Pearson MyLab Homework Helper: AI Extension, Free Plan",
+      "meta": "AI explanations for Pearson MyLab and Mastering problems in Chrome. Snip equations and graphs with Alt+S or double-click text. Free plan.",
+      "h1": "Pearson MyLab and Mastering Homework Helper",
+      "serpEvidence": "Dominated by Pearson's own AI Study Tool coverage (pearson.com, Campus Technology) plus one vendor page; hard to rank, lead with step-by-step math explanations."
+    }
+  ],
+  "formats": [
+    {"format": "Multiple choice", "primary": "ai multiple choice solver", "secondary": ["multiple choice question solver", "mcq solver ai free", "multiple choice quiz helper chrome"], "h2": "Multiple choice and true/false", "placement": ["/features", "/"], "priority": "Medium-High", "serpEvidence": "Chrome listing 'AI multiple Choice Quiz Solver', CogniGuide multiple-choice-solver-ai page, numerous.ai listicle."},
+    {"format": "Fill in the blank / short answer", "primary": "fill in the blank solver ai", "secondary": ["fill in the blank answer helper", "short answer ai helper"], "h2": "Fill-in-the-blank and short answer", "placement": ["/features"], "priority": "Low", "serpEvidence": "SERP mostly quiz generators (Quizgecko, Wooclap); weak solver intent, use as feature mention only."},
+    {"format": "Dropdown / matching", "primary": "matching question solver", "secondary": ["dropdown question helper", "matching quiz ai"], "h2": "Dropdown and matching questions", "placement": ["/features"], "priority": "Low", "serpEvidence": "Only appears inside vendor feature lists (AI Quiz Solve); low demand evidence."},
+    {"format": "Math / LaTeX", "primary": "ai math solver chrome extension", "secondary": ["math homework helper extension", "step by step math solver extension", "calculus solver screenshot", "latex equation solver"], "h2": "Math with step-by-step explanations", "placement": ["/features", "/", "/pearson-mylab-mastering-solver", "/mcgraw-hill-connect-aleks-solver"], "priority": "Medium", "serpEvidence": "Very saturated with dedicated math extensions (XMath, MathPal, Symbolab, Calculus AI, Math Solver with Steps)."},
+    {"format": "Diagram / graph screenshot", "primary": "screenshot problem solver", "secondary": ["screenshot homework solver", "graph question solver", "diagram question ai", "snip and solve"], "h2": "Snip graphs and diagrams (Alt+S)", "placement": ["/", "/features"], "priority": "Medium-High", "serpEvidence": "Chrome listings 'Screenshot Solver' and 'Screenshot Problem Solver'; Calculus AI Solver mentions graphs; a guide warns extensions misread diagrams/axes."}
+  ],
+  "faqs": [
+    {"id": 1, "q": "Is ExamGhost free?", "a": "Yes, there's a free plan with [needs owner fact: daily limits]; paid plans raise the limits.", "pages": ["/", "/faq", "/compare"]},
+    {"id": 2, "q": "Does ExamGhost work on Canvas?", "a": "Yes. On Canvas quiz and assignment pages in Chrome, double-click a question or press Alt+S to snip it.", "pages": ["/", "/canvas-lms-quiz-solver", "/faq"]},
+    {"id": 3, "q": "Does it work on Canvas New Quizzes?", "a": "[needs owner fact: confirm double-click works inside New Quizzes]; the Alt+S snip works on anything visible on screen.", "pages": ["/canvas-lms-quiz-solver", "/faq"]},
+    {"id": 4, "q": "Is ExamGhost safe to install?", "a": "It installs from the Chrome Web Store and requests [needs owner fact: permission list]; our privacy policy explains what's collected.", "pages": ["/", "/faq", "/compare"]},
+    {"id": 5, "q": "What data is sent when I solve a question?", "a": "Only the question text or snip you choose is sent to [needs owner fact: AI provider] to generate an answer, retained for [needs owner fact].", "pages": ["/faq", "/"]},
+    {"id": 6, "q": "Are the answers always correct?", "a": "No. AI can make mistakes, so read the explanation and check the answer before relying on it.", "pages": ["/", "/faq", "/features"]},
+    {"id": 7, "q": "Can it solve math, graphs and diagrams?", "a": "Yes. Snip the equation, graph or diagram with Alt+S and ExamGhost explains the answer; double-check small labels and axes.", "pages": ["/", "/features", "/pearson-mylab-mastering-solver", "/mcgraw-hill-connect-aleks-solver"]},
+    {"id": 8, "q": "What question types does it handle?", "a": "Multiple choice, true/false, fill-in-the-blank and short answer, plus [needs owner fact: confirm dropdown and matching support].", "pages": ["/features", "/faq"]},
+    {"id": 9, "q": "Which platforms does it work on?", "a": "Canvas, Blackboard, Moodle, D2L Brightspace, Schoology, Google Forms and other pages in Chrome; if text can't be read, the Alt+S snip covers it.", "pages": ["/", "/faq", "/canvas-lms-quiz-solver", "/blackboard-quiz-solver", "/moodle-quiz-solver", "/d2l-brightspace-quiz-solver", "/schoology-quiz-solver", "/google-forms-quiz-solver"]},
+    {"id": 10, "q": "Does it work in Respondus LockDown Browser or proctored exams?", "a": "No. Lockdown browsers disable extensions, and ExamGhost isn't meant for proctored exams.", "pages": ["/faq", "/compare"]},
+    {"id": 11, "q": "Is using an AI homework helper allowed?", "a": "It depends on your course, so check your instructor's AI policy; ExamGhost is built for homework help, practice and understanding explanations.", "pages": ["/faq", "/"]},
+    {"id": 12, "q": "Does it work in Edge, Brave or other browsers?", "a": "[needs owner fact: Chromium browsers supported?]", "pages": ["/faq"]},
+    {"id": 13, "q": "How is ExamGhost different from ChatGPT?", "a": "It works right on the page through double-click or snip, so you don't copy-paste into another tab, and the explanation appears next to the question.", "pages": ["/", "/compare"]},
+    {"id": 14, "q": "Can I get a refund?", "a": "Paid plans have a 14-day money-back guarantee [needs owner fact: confirm terms wording].", "pages": ["/faq", "/"]},
+    {"id": 15, "q": "Do I need my own OpenAI or Gemini API key?", "a": "[needs owner fact: confirm no key required]; many Google Forms tools in search results require one.", "pages": ["/google-forms-quiz-solver", "/compare"]}
+  ],
+  "excluded": [
+    {"term": "undetectable quiz solver / canvas quiz solver undetectable", "reason": "Intent is evading instructor detection."},
+    {"term": "can canvas detect extensions / does canvas detect tab switching", "reason": "Intent is checking whether misconduct would be caught."},
+    {"term": "canvas hack / canvas hacks / canvas crack", "reason": "Framed around circumventing the LMS."},
+    {"term": "cheat on canvas quiz / canvas cheat extension / school cheats", "reason": "Explicit academic-dishonesty intent."},
+    {"term": "lockdown browser bypass / respondus bypass", "reason": "Circumventing proctoring software."},
+    {"term": "proctorio bypass / honorlock bypass", "reason": "Circumventing proctoring software."},
+    {"term": "tab switch hider / stealth mode quiz / camouflage mode", "reason": "Feature exists to hide use from instructors."},
+    {"term": "quiz hacker / inspect element canvas answers", "reason": "Framed around extracting answers by exploiting the LMS."},
+    {"term": "mcgraw hill connect undetectable / auto solve connect", "reason": "Evasion plus automated submission of graded work."},
+    {"term": "auto submit quiz bot / auto answer graded quiz", "reason": "Automated completion of graded assessments."},
+    {"term": "canvas quiz answer key leak", "reason": "Obtaining protected assessment content."}
+  ],
+  "siteCaveats": [
+    "/compare-canvas-hack-extensions, /canvashack-vs-examghost, /canvascrack-vs-examghost, /schoolcheats-vs-examghost exist: keep competitor brand names only as navigational references on their own vs pages; do not target generic 'canvas hack'/'cheat' phrases; consider 301 of /compare-canvas-hack-extensions to /compare.",
+    "Brands containing 'cheat' (CheatMate, CheatPal) should appear only as names on their own vs pages.",
+    "/gradescope-exam-solver: 'exam solver' leans to graded-exam intent; consider 'Gradescope homework helper' phrasing.",
+    "Missing vs pages with SERP evidence: aceify-vs-examghost (High), smartsolve, quizboost, formsolver (Low)."
+  ]
+}
