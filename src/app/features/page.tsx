@@ -1,10 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import {
-    MousePointerClick, ListChecks, PenLine, MousePointer2, BookOpen, ScanLine,
-    FileSearch, Sigma, GraduationCap, Power, Gift, Check,
-    type LucideIcon,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,66 +9,36 @@ import Reveal from "@/components/home/Reveal";
 import MediaSlot from "@/components/home/MediaSlot";
 import MockQuiz from "@/components/home/MockQuiz";
 import { INSTALL_URL, DEMO_URL, MEDIA } from "@/components/home/config";
-import { FEATURE_FAQS } from "@/components/features/featuresData";
-
-type Item = { icon: LucideIcon; title: string; body: string; key?: string; tint: string };
-
-const GROUPS: { label: string; items: Item[] }[] = [
-    {
-        label: "Solve on the page",
-        items: [
-            { icon: MousePointerClick, title: "Double-click to solve", body: "Double-click a question and the answer appears next to it.", tint: "bg-[#c4d0f8]" },
-            { icon: ListChecks, title: "Common question types", body: "Multiple choice, multi-select, dropdowns and short answers.", tint: "bg-[#cdeecb]" },
-        ],
-    },
-    {
-        label: "Choose how answers show up",
-        items: [
-            { icon: PenLine, title: "Quick mode", key: "Alt+1", body: "Fills in the answer and copies it to your clipboard.", tint: "bg-[#ffe9a0]" },
-            { icon: MousePointer2, title: "Highlight mode", key: "Alt+2", body: "Marks the right option with a ✓. You do the click.", tint: "bg-[#e2d3fa]" },
-            { icon: BookOpen, title: "Explain mode", key: "Alt+3", body: "Fills in the answer and opens a side panel with the reasoning.", tint: "bg-[#bfe3f6]" },
-        ],
-    },
-    {
-        label: "Beyond the quiz page",
-        items: [
-            { icon: ScanLine, title: "Screenshot snip", key: "Alt+S", body: "Drag a box around a graph, diagram or image-based question.", tint: "bg-[#cdeecb]" },
-            { icon: FileSearch, title: "Scan the whole page", body: "Reads every question on the page and fills answers in batches.", tint: "bg-[#c4d0f8]" },
-            { icon: Sigma, title: "Equations and LaTeX", body: "Math shown as equation images or LaTeX is read before it is solved.", tint: "bg-[#ffe9a0]" },
-            { icon: GraduationCap, title: "13 subjects", body: "Math, physics, chemistry, biology, computer science, economics, history, accounting, geography, literature, psychology, English and logic.", tint: "bg-[#e2d3fa]" },
-        ],
-    },
-    {
-        label: "Stay in control",
-        items: [
-            { icon: Power, title: "Master on/off switch", body: "Turn the extension off from the popup when you are not studying.", tint: "bg-[#bfe3f6]" },
-            { icon: Gift, title: "Free to start", body: "5 free solves a day, no card. Paid plans from $19/month, with a 14-day money-back guarantee.", tint: "bg-[#cdeecb]" },
-        ],
-    },
-];
+import FeatureCatalog from "@/components/features/FeatureCatalog";
+import { FEATURES, FEATURE_FAQS } from "@/components/features/featuresData";
+import { allFacts } from "@/data/competitor-facts";
+import { PLATFORMS_DATA } from "@/data/platforms";
 
 const DEMOS = [
-    { id: "doubleClick", title: "Double-click on a quiz page", variant: "solve" as const },
-    { id: "snap", title: "Snip a graph or diagram", variant: "snap" as const },
-    { id: "scan", title: "Scan the whole page", variant: "scan" as const },
+    { id: "doubleClick", title: "Double-click to solve", body: "The answer lands on the question itself.", variant: "solve" as const },
+    { id: "snap", title: "Alt+S screenshot snip", body: "Drag a box around a graph or diagram.", variant: "snap" as const },
+    { id: "scan", title: "Scan the whole page", body: "Every question, filled in batches.", variant: "scan" as const },
 ] as const;
 
 export default function FeaturesPage() {
+    const compared = allFacts().length;
+    const lastChecked = allFacts().reduce((m, f) => (f.lastChecked > m ? f.lastChecked : m), "2026-01-01");
+    const checked = new Date(lastChecked + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+
     return (
         <main className="min-h-screen bg-cream text-ink page-glow">
             <Navbar />
 
-            <section className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 text-center overflow-hidden">
-                <div className="relative max-w-3xl mx-auto px-4 sm:px-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Features</p>
+            <section className="pt-12 sm:pt-16 pb-10 sm:pb-12 text-center">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6">
+                    <p className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2b55c7] bg-[#e8effd] rounded-full px-3 py-1 mb-4">
+                        {FEATURES.length} features
+                    </p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
-                        What ExamGhost <span className="relative isolate inline-block">
-                            <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-[#ffe9a0]" aria-hidden="true" />
-                            does
-                        </span>
+                        Everything ExamGhost does, in one place
                     </h1>
-                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
-                        A Chrome extension that answers quiz questions right on the page, with an explanation if you want one.
+                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto mb-8">
+                        ExamGhost is an AI Chrome extension that answers quiz and homework questions on the page. Double-click a question, snip a graph with Alt+S, or scan a whole page. Every feature below is something the extension does today.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-4 text-base shadow-lift">
@@ -86,30 +52,9 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
-            <section className="pb-16 sm:pb-24">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
-                    {GROUPS.map((g) => (
-                        <Reveal key={g.label}>
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-5">{g.label}</h2>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {g.items.map((it) => {
-                                    const Icon = it.icon;
-                                    return (
-                                        <div key={it.title} className="bg-white rounded-3xl border border-black/10 shadow-card p-6">
-                                            <span className={`grid place-items-center w-11 h-11 rounded-2xl ${it.tint} mb-4`}>
-                                                <Icon className="w-5 h-5 text-ink" aria-hidden="true" />
-                                            </span>
-                                            <h3 className="font-display text-lg font-bold flex items-center gap-2 mb-1.5">
-                                                {it.title}
-                                                {it.key && <kbd className="text-[11px] font-sans font-medium text-ink-muted bg-black/5 rounded-md px-1.5 py-0.5">{it.key}</kbd>}
-                                            </h3>
-                                            <p className="text-[15px] text-ink-muted leading-relaxed">{it.body}</p>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </Reveal>
-                    ))}
+            <section id="catalog" className="pb-16 sm:pb-24 scroll-mt-20">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <FeatureCatalog />
                 </div>
             </section>
 
@@ -123,6 +68,7 @@ export default function FeaturesPage() {
                                     <MediaSlot slot={`features.${d.id}`} src={MEDIA.features[d.id]} label={`${d.title} demo`} fallback={<MockQuiz variant={d.variant} />} />
                                 </div>
                                 <h3 className="font-display text-lg font-bold">{d.title}</h3>
+                                <p className="text-sm text-white/60">{d.body}</p>
                             </div>
                         ))}
                     </Reveal>
@@ -130,7 +76,38 @@ export default function FeaturesPage() {
             </section>
 
             <section className="py-16 sm:py-24">
-                <Reveal className="max-w-3xl mx-auto px-4 sm:px-6">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                    <Reveal>
+                        <div className="rounded-[2rem] bg-white border border-black/10 shadow-card p-7 sm:p-12 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
+                            <div>
+                                <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight leading-[1.1] mb-3">How does it compare?</h2>
+                                <p className="text-ink-muted leading-relaxed mb-6">
+                                    We compared ExamGhost with {compared} other quiz and homework tools on listed price, free tier and supported platforms, using each vendor&apos;s own site (checked {checked}). We make ExamGhost, so we&apos;re not neutral, and we say where details aren&apos;t published.
+                                </p>
+                                <Link href="/compare" className="btn-dark px-6 py-3.5 text-sm">
+                                    See the full comparison <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                                </Link>
+                            </div>
+                            <dl className="grid grid-cols-3 gap-3 text-center">
+                                {[
+                                    { n: String(compared), l: "tools compared" },
+                                    { n: String(PLATFORMS_DATA.length), l: "platforms named" },
+                                    { n: "5/day", l: "free solves" },
+                                ].map((s) => (
+                                    <div key={s.l} className="rounded-2xl bg-cream border border-black/5 px-3 py-5">
+                                        <dt className="sr-only">{s.l}</dt>
+                                        <dd className="font-display text-3xl font-bold text-ink">{s.n}</dd>
+                                        <dd className="text-xs text-ink-muted mt-1">{s.l}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
+                    </Reveal>
+                </div>
+            </section>
+
+            <section className="pb-16 sm:pb-24">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6">
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {FEATURE_FAQS.map((f) => (
@@ -142,14 +119,10 @@ export default function FeaturesPage() {
                             </details>
                         ))}
                     </div>
-                    <p className="mt-6 flex items-center justify-center gap-2 text-sm text-ink-muted">
-                        <Check className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                        Questions? <a href="mailto:support@examghost.com" className="underline underline-offset-4">support@examghost.com</a>
-                    </p>
-                </Reveal>
+                </div>
             </section>
 
-            <FinalCta secondary="discord" />
+            <FinalCta />
             <Footer hideCta />
         </main>
     );

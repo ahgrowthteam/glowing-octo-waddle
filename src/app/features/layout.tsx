@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FEATURE_FAQS } from "@/components/features/featuresData";
+import { FEATURE_FAQS, FEATURE_LIST_FOR_SCHEMA } from "@/components/features/featuresData";
 
 const URL = "https://www.examghost.com/features";
 const TITLE = "ExamGhost Features: Double-Click Solving & Alt+S Snip";
@@ -52,6 +52,7 @@ export default function FeaturesLayout({ children }: { children: React.ReactNode
                 description:
                     "Chrome extension that answers quiz questions on the page with AI: double-click solving, Quick, Highlight and Explain modes, Alt+S screenshot snip and page scan.",
                 url: "https://www.examghost.com",
+                featureList: FEATURE_LIST_FOR_SCHEMA,
                 offers: {
                     "@type": "Offer",
                     price: "0",
