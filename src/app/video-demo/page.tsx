@@ -34,7 +34,7 @@ const VARIANTS = ["solve", "snap", "scan", "study"] as const;
 
 export default function VideoDemoPage() {
     return (
-        <main className="min-h-screen bg-cream text-ink page-glow">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <Navbar />
 
             <section className="relative pt-12 sm:pt-16 pb-14 sm:pb-20 overflow-hidden">

@@ -89,7 +89,7 @@ export default function HomeHero() {
     return (
         <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-24 overflow-hidden">
 
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
+            <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-12 items-center">
                 {/* Left: text */}
                 <div className="text-center lg:text-left">
                     <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/80 border border-black/5 rounded-full px-3 py-1.5 mb-5 shadow-sm">

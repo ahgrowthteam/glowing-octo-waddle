@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-cream text-ink">
+    <main id="main-content" className="min-h-screen bg-cream text-ink">
       <Navbar />
       <section className="max-w-xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">404</p>

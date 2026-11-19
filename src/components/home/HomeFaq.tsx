@@ -6,7 +6,7 @@ import { HOME_FAQS } from "./homeFaqs";
 export default function HomeFaq() {
     return (
         <section id="faq" className="py-16 sm:py-24 bg-white/60 border-y border-black/5 scroll-mt-20">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink text-center mb-10">
                     Questions
                 </h2>

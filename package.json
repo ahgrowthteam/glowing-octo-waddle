@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "build:cpanel": "cp next.config.cpanel.mjs next.config.mjs && next build",
-    "build:vercel": "cp next.config.vercel.mjs next.config.mjs && next build"
+    "build:vercel": "next build"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

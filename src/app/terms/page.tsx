@@ -39,7 +39,7 @@ export default function TermsPage() {
                 "name": "Terms of Service | ExamGhost",
                 "description": "ExamGhost terms of service: educational use, license tiers, the 14-day money-back guarantee, prohibited conduct and governing law.",
                 "datePublished": "2026-01-15",
-                "dateModified": "2026-03-01",
+                "dateModified": "2026-11-19",
                 "inLanguage": "en-US",
                 "isPartOf": { "@id": "https://www.examghost.com/#website" },
                 "breadcrumb": { "@id": "https://www.examghost.com/terms#breadcrumb" }
@@ -63,12 +63,12 @@ export default function TermsPage() {
             />
             <Navbar />
 
-            <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 w-full">
+            <main id="main-content" className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 w-full">
                 <header className="mb-10">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Legal</p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">Terms of Service</h1>
                     <p className="text-base text-ink-muted leading-relaxed">
-                        Last modified: March 1, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). We provide 5 Free Solves / Day (auto-refilling every 24 hours) with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day money-back guarantee (100% full refund within 14 days of purchase).
+                        Last modified: November 19, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). There is a free plan with 5 solves a day and no credit card, paid plans at $19 a month, $99 a year or $199 lifetime, and a 14-day money-back guarantee.
                     </p>
                 </header>
 
@@ -76,7 +76,7 @@ export default function TermsPage() {
                     <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-3">Contents</p>
                     <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-[15px] text-ink-secondary list-decimal pl-5">
                         <li><a href="#s1" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Acceptance of Terms</a></li>
-                        <li><a href="#s2" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Educational & Research Purpose</a></li>
+                        <li><a href="#s2" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Acceptable Use and Academic Integrity</a></li>
                         <li><a href="#s3" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">License Grants & Tier Restrictions</a></li>
                         <li><a href="#s4" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">14-Day Money-Back Guarantee &amp; Refund Policy</a></li>
                         <li><a href="#s5" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Intellectual Property &amp; Prohibited Conduct</a></li>
@@ -89,78 +89,72 @@ export default function TermsPage() {
                     <section id="s1" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Acceptance of Terms</h2>
                         <p>
-                            ExamGhost (the &quot;Software&quot;, &quot;Extension&quot;, or &quot;Service&quot;) is owned and operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). By downloading, installing, unpacking, or activating ExamGhost, you agree to be bound by these Terms of Service, including our 14-day money-back guarantee. If you do not agree to these terms, do not install or use the software.
+                            ExamGhost (the &quot;Software&quot;, &quot;Extension&quot; or &quot;Service&quot;) is owned and operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). By installing or using ExamGhost you agree to these Terms of Service, including our 14-day money-back guarantee. If you do not agree, do not install or use the software.
                         </p>
                     </section>
-
-                    <section id="s2" className="space-y-3 scroll-mt-24">
-                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. Educational & Research Purpose</h2>
+<section id="s2" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. Acceptable Use and Academic Integrity</h2>
                         <p>
-                            ExamGhost is developed as an educational research tool, test preparation simulator, and assistive study utility. It is intended to help students review difficult course material, practice timed exams, and analyze question logic. 
+                            ExamGhost is an AI study and homework assistant. It is meant to help you review course material, practice, and understand how a question is solved.
                         </p>
                         <p>
-                            Users are solely responsible for ensuring their usage adheres to their school, university, or testing organization’s honor codes, academic integrity policies, and syllabus guidelines. ExamGhost assumes no liability for disciplinary actions resulting from institutional honor code violations.
+                            You are solely responsible for using ExamGhost in line with your school, university or testing organization&apos;s rules, honor code and course policy. Many instructors restrict AI tools on graded work. We do not promise that your use will be invisible to your school or instructor, and we are not responsible for any disciplinary action that results from how you use the Service.
                         </p>
                     </section>
-
-                    <section id="s3" className="space-y-3 scroll-mt-24">
-                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. License Grants & Tier Restrictions</h2>
-                        <p>
-                            We grant you a personal, non-transferable, non-exclusive license to use the Extension subject to the plan tier you select:
-                        </p>
-                        <ul className="space-y-2.5 pl-4 list-disc text-xs sm:text-sm">
-                            <li><strong>Free Tier:</strong> Grants 5 free question solves per day (auto-refills every 24 hours) for testing purposes. No credit card or recurring subscription is created.</li>
-                            <li><strong>Monthly Pass ($19/mo):</strong> Grants unlimited extension question solves plus full access to the Claude, ChatGPT &amp; DeepSeek Study &amp; Homework AI Workspace on a month-to-month basis. Automatically renews every 30 days unless canceled through your account or Discord billing support before the renewal date.</li>
-                            <li><strong>Yearly Academic Pass ($99/yr):</strong> Grants unlimited extension question solves plus full Study &amp; Homework AI Workspace access for 365 days (~$8.25/mo), covering Fall, Spring, Summer semesters, and Finals week.</li>
-                            <li><strong>Lifetime VIP Pass ($199 one-time):</strong> Grants permanent, perpetual personal access to both the stealth extension and the Study &amp; Homework AI Workspace with zero future renewals or maintenance fees. Includes multi-device sync for up to 3 authorized student laptops.</li>
+<section id="s3" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. License Grants & Plans</h2>
+                        <p>We grant you a personal, non-transferable, non-exclusive license to use the Extension under the plan you choose:</p>
+                        <ul className="space-y-2.5 pl-4 list-disc text-sm">
+                            <li><strong>Free:</strong> 5 solves per day, no credit card and no recurring charge.</li>
+                            <li><strong>Monthly ($19/month):</strong> removes the daily solve limit, including screenshot solves. Renews every month until you cancel; cancel before the renewal date to avoid the next charge.</li>
+                            <li><strong>Yearly Academic ($99/year):</strong> the same access for 12 months (about $8.25 a month).</li>
+                            <li><strong>Lifetime ($199 one-time):</strong> a one-time payment for continued personal access to the Extension for as long as we offer it, with no renewal fees.</li>
                         </ul>
+                        <p>Plan features and limits may change over time; the plan description shown when you buy is what applies to your purchase.</p>
                     </section>
-
-                    <section id="s4" className="space-y-3 scroll-mt-24">
+<section id="s4" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">4. 14-Day Money-Back Guarantee &amp; Refund Policy</h2>
                         <p>
-                            We stand firmly behind the stealth, accuracy, and reliability of our software with a <strong>14-day money-back guarantee</strong> (100% full refund within 14 days of purchase) on all paid plans. If ExamGhost fails to solve questions or triggers unexpected LMS logs on your supported platforms, or if you are unsatisfied for any reason within 14 days of purchase:
+                            All paid plans come with a <strong>14-day money-back guarantee</strong>: if you are not satisfied, request a full refund within 14 days of purchase.
                         </p>
-                        <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-xs text-emerald-950 space-y-1.5">
+                        <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-sm text-emerald-950 space-y-1.5">
                             <div className="font-bold flex items-center gap-1.5 text-emerald-900">
-                                <Check className="w-4 h-4 text-emerald-600" />
-                                <span>No-Hassle 14-Day Money-Back Guarantee</span>
+                                <Check className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                                <span>14-day money-back guarantee</span>
                             </div>
                             <p>
-                                Contact our 24/7 Discord support team or email <code>support@examghost.com</code> within 14 days of purchase with your license key or order receipt. Your 100% full refund will be processed immediately back to your original payment method.
+                                Email <code>support@examghost.com</code> or message us on Discord within 14 days of purchase with your order receipt. Refunds go back to your original payment method.
                             </p>
                         </div>
                     </section>
-
-                    <section id="s5" className="space-y-3 scroll-mt-24">
+<section id="s5" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">5. Intellectual Property &amp; Prohibited Conduct</h2>
                         <p>
-                            All software code, user interface styling, Shadow DOM hook algorithms, and ExamGhost mascot artwork are the exclusive intellectual property of FoundryOne LLC (operating ExamGhost). You agree NOT to:
+                            The software, its code, user interface and the ExamGhost mascot artwork are the property of FoundryOne LLC. You agree not to:
                         </p>
-                        <ul className="space-y-2 pl-4 list-disc text-xs sm:text-sm">
-                            <li>Decompile, reverse-engineer, or extract the proprietary source code for commercial resale.</li>
-                            <li>Distribute cracked, modified, or unauthorized license keys on public forums or torrent networks.</li>
-                            <li>Resell or lease individual license keys to third parties outside of personal multi-device quotas.</li>
+                        <ul className="space-y-2.5 pl-4 list-disc text-sm">
+                            <li>Decompile, reverse-engineer or extract the source code for commercial resale.</li>
+                            <li>Distribute cracked, modified or unauthorized license keys.</li>
+                            <li>Resell or lease your license to others.</li>
+                            <li>Use the Service to break the law, or to harass or harm others.</li>
                         </ul>
                     </section>
-
-                    <section id="s6" className="space-y-3 scroll-mt-24">
+<section id="s6" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">6. Disclaimer of Warranties & Limitation of Liability</h2>
                         <p>
-                            While ExamGhost's architecture is engineered to prevent SpeedGrader blur event flags and DOM inspection, third-party LMS platforms frequently deploy unexpected updates. The service is provided &quot;as is&quot; without warranties of uninterrupted uptime during third-party server maintenance. Under no circumstance shall ExamGhost be liable for academic sanctions or grade disputes.
+                            AI answers can be wrong. Check important answers yourself. The Service is provided &quot;as is&quot; without warranties, including of uninterrupted availability or of compatibility with every website or platform, which may change without notice. To the fullest extent the law allows, FoundryOne LLC is not liable for academic sanctions, grade disputes or indirect damages arising from your use of the Service.
                         </p>
                     </section>
-
-                    <section id="s7" className="space-y-3 scroll-mt-24">
+<section id="s7" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">7. Governing Law &amp; Support Contacts</h2>
                         <p>
-                            These terms are governed by the laws of the State of New Mexico, United States, where the operating entity, FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110), is registered. For legal inquiries or support requests, please contact:
+                            These terms are governed by the laws of the State of New Mexico, United States, where FoundryOne LLC is registered. For legal inquiries or support requests, contact:
                         </p>
-                        <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 text-xs space-y-1">
+                        <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 text-sm space-y-1">
                             <div><strong>Operating Entity:</strong> FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110)</div>
                             <div><strong>Legal Inquiries:</strong> legal@examghost.com</div>
                             <div><strong>Customer &amp; Billing Support:</strong> support@examghost.com</div>
-                            <div><strong>Community Server:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a> (instant ticket queue)</div>
+                            <div><strong>Community Server:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a></div>
                         </div>
                     </section>
                 </div>

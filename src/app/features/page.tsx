@@ -26,7 +26,7 @@ export default function FeaturesPage() {
     const checked = new Date(lastChecked + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 
     return (
-        <main className="min-h-screen bg-cream text-ink page-glow">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <Navbar />
 
             <section className="pt-12 sm:pt-16 pb-10 sm:pb-12 text-center">
@@ -54,6 +54,7 @@ export default function FeaturesPage() {
 
             <section id="catalog" className="pb-16 sm:pb-24 scroll-mt-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <h2 className="sr-only">All {FEATURES.length} features</h2>
                     <FeatureCatalog />
                 </div>
             </section>

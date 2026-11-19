@@ -137,7 +137,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-cream text-ink page-glow">
+    <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
