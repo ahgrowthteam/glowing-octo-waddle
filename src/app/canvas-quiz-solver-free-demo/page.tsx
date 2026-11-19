@@ -855,7 +855,7 @@ export default function DemoPage() {
             </section>
 
             {/* Main 2-Column Interactive Workspace */}
-            <main className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+            <main id="main-content" className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                     
                     {/* Left Column (8 Cols): Focused macOS Canvas Window */}

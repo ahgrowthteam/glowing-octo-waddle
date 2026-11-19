@@ -114,7 +114,7 @@ export default function ComparePage() {
     };
 
     return (
-        <main className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 

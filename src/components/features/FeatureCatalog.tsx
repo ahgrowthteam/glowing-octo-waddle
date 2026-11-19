@@ -74,7 +74,7 @@ export default function FeatureCatalog() {
                                 </div>
                                 <h3 className="font-display text-lg font-bold text-ink leading-snug mb-1.5">{f.title}</h3>
                                 <p className="text-[15px] text-ink-muted leading-relaxed">{f.body}</p>
-                                <p className="mt-auto pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink-muted/80">{f.category}</p>
+                                <p className="mt-auto pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink-secondary">{f.category}</p>
                             </li>
                         );
                     })}

@@ -32,7 +32,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink">
             <Navbar />
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
@@ -73,7 +73,7 @@ export default function ContactPage() {
                                 <a href={`mailto:${EMAIL}`} className="underline underline-offset-4 decoration-black/30 hover:decoration-black">{EMAIL}</a>
                             </p>
                             <p className="text-sm text-ink-muted leading-relaxed">
-                                We aim to reply within 4 hours. Include your order email so we can find your account.
+                                We reply by email as soon as we can. Include your order email so we can find your account.
                             </p>
                         </div>
                     </div>

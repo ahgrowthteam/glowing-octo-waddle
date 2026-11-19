@@ -1,126 +1,177 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Ghost } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
+import { INSTALL_URL } from '@/components/home/config';
+
+type NavLink = { name: string; href: string; section?: string; live?: boolean };
+
+const NAV_LINKS: NavLink[] = [
+    { name: 'Live Demo', href: '/canvas-quiz-solver-free-demo', live: true },
+    { name: 'Features', href: '/features' },
+    { name: 'How it works', href: '/#how-it-works', section: 'how-it-works' },
+    { name: 'Pricing', href: '/#pricing', section: 'pricing' },
+    { name: 'Compare', href: '/compare' },
+    { name: 'FAQ', href: '/faq' },
+];
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState<string | null>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        const onScroll = () => setScrolled(window.scrollY > 12);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'Live Demo', href: '/canvas-quiz-solver-free-demo', isLive: true },
-        { name: 'Features', href: '/#features' },
-        { name: 'How it works', href: '/#how-it-works' },
-        { name: 'Pricing', href: '/#pricing' },
-        { name: 'Compare', href: '/compare' },
-        { name: 'FAQ', href: '/#faq' }
-    ];
+    // Close the mobile menu on navigation and with Escape; lock page scroll while it's open.
+    useEffect(() => setOpen(false), [pathname]);
+    useEffect(() => {
+        if (!open) return;
+        const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+        window.addEventListener('keydown', onKey);
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            window.removeEventListener('keydown', onKey);
+            document.body.style.overflow = prev;
+        };
+    }, [open]);
+
+    // On the homepage, highlight the section you're reading.
+    useEffect(() => {
+        if (pathname !== '/') {
+            setActiveSection(null);
+            return;
+        }
+        const ids = NAV_LINKS.map((l) => l.section).filter(Boolean) as string[];
+        const els = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+        if (!els.length || typeof IntersectionObserver === 'undefined') return;
+        const inView = new Set<string>();
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((e) => (e.isIntersecting ? inView.add(e.target.id) : inView.delete(e.target.id)));
+                // Latest section in page order that crosses the reading line wins; none = nothing highlighted.
+                const current = ids.filter((id) => inView.has(id)).pop() ?? null;
+                setActiveSection(current);
+            },
+            { rootMargin: '-35% 0px -55% 0px' }
+        );
+        els.forEach((el) => io.observe(el));
+        return () => io.disconnect();
+    }, [pathname]);
+
+    const isActive = (l: NavLink) => (l.section ? pathname === '/' && activeSection === l.section : pathname === l.href);
+
+    const linkClass = (l: NavLink) =>
+        `px-3 lg:px-3.5 py-2 min-h-[36px] rounded-full transition-colors whitespace-nowrap flex items-center gap-1.5 ${
+            l.live
+                ? 'bg-emerald-500/10 text-emerald-800 font-semibold border border-emerald-500/30 hover:bg-emerald-500/20'
+                : isActive(l)
+                ? 'bg-ink text-white'
+                : 'hover:bg-black/5 hover:text-ink'
+        }`;
 
     return (
-        <header className="sticky top-4 sm:top-5 z-50 pointer-events-none px-4 sm:px-6">
-            <nav
-                className={`pointer-events-auto max-w-[980px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between px-3 sm:px-4 py-2 ${
-                    scrolled
-                        ? 'bg-white/90 backdrop-blur-xl border border-black/10 shadow-[0_10px_32px_rgba(40,30,10,0.1)]'
-                        : 'bg-white/70 backdrop-blur-lg border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.06)]'
-                }`}
-                aria-label="Main Navigation"
+        <>
+            <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
             >
-                {/* Brand */}
-                <Link href="/" prefetch={false} className="flex items-center gap-2.5 pl-2 sm:pl-3 group shrink-0">
-                    <div className="w-8 h-8 rounded-full overflow-hidden border border-black/10 transition-transform duration-200 group-hover:scale-110 shadow-sm bg-[#c4d0f8] shrink-0">
-                        <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="ExamGhost Mascot" width={32} height={32} className="w-full h-full object-cover scale-110" />
-                    </div>
-                    <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-ink whitespace-nowrap">
-                        ExamGhost
-                    </span>
-                    <span className="hidden sm:inline-block text-[11px] font-medium text-ink-muted bg-[#f2ede4] px-2 py-0.5 rounded-full border border-black/5 shrink-0">
-                        2026
-                    </span>
-                </Link>
+                Skip to content
+            </a>
+            <header className="sticky top-3 sm:top-4 z-50 pointer-events-none px-3 sm:px-6">
+                <nav
+                    className={`pointer-events-auto max-w-[1040px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between gap-2 px-2.5 sm:px-4 py-2 backdrop-blur-xl ${
+                        scrolled
+                            ? 'bg-white/90 border border-black/10 shadow-[0_12px_36px_rgba(40,30,10,0.14)]'
+                            : 'bg-white/75 border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.07)]'
+                    }`}
+                    aria-label="Main"
+                >
+                    <Link href="/" prefetch={false} className="flex items-center gap-2.5 pl-1.5 sm:pl-2 shrink-0 group" aria-label="ExamGhost home">
+                        <span className="w-8 h-8 rounded-full overflow-hidden border border-black/10 transition-transform duration-200 group-hover:scale-110 shadow-sm bg-[#c4d0f8] shrink-0">
+                            <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="" width={32} height={32} className="w-full h-full object-cover scale-110" />
+                        </span>
+                        <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-ink whitespace-nowrap">ExamGhost</span>
+                    </Link>
 
-                {/* Nav Links */}
-                <ul className="hidden lg:flex items-center gap-0.5 lg:gap-1 text-[13px] lg:text-[14px] font-medium text-ink-secondary">
-                    {navLinks.map((link) => (
-                        <li key={link.name}>
-                            <Link
-                                href={link.href}
-                                prefetch={false}
-                                className={`px-3 lg:px-3.5 py-2 min-h-[32px] rounded-full transition-colors whitespace-nowrap flex items-center gap-1.5 ${
-                                    link.isLive 
-                                        ? 'bg-emerald-500/10 text-emerald-800 font-bold border border-emerald-500/30 hover:bg-emerald-500/20' 
-                                        : 'hover:bg-black/5 hover:text-ink'
-                                }`}
-                            >
-                                {link.isLive && (
-                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                )}
-                                <span>{link.name}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                    <ul className="hidden lg:flex items-center gap-0.5 text-[14px] font-medium text-ink-secondary">
+                        {NAV_LINKS.map((l) => (
+                            <li key={l.name}>
+                                <Link href={l.href} prefetch={false} aria-current={isActive(l) ? 'page' : undefined} className={linkClass(l)}>
+                                    {l.live && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />}
+                                    <span>{l.name}</span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
 
-                {/* CTA Button */}
-                <div className="flex items-center gap-2 pr-1 shrink-0">
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-dark whitespace-nowrap shrink-0 px-4 sm:px-5 py-2 text-xs sm:text-[14px] font-medium rounded-full shadow-sm"
-                    >
-                        <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6] shrink-0" aria-hidden="true" />
-                        <span className="whitespace-nowrap sm:hidden">Install</span>
-                        <span className="whitespace-nowrap hidden sm:inline">Get Extension</span>
-                    </a>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="lg:hidden p-2 rounded-full hover:bg-black/5 text-ink transition-colors shrink-0 min-h-[36px] min-w-[36px] flex items-center justify-center"
-                        aria-label="Toggle Navigation"
-                    >
-                        {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
-                    </button>
-                </div>
-            </nav>
-
-            {/* Mobile Menu Dropdown */}
-            {mobileMenuOpen && (
-                <div className="pointer-events-auto lg:hidden mt-2 max-w-[940px] mx-auto bg-white/95 backdrop-blur-2xl border border-black/10 rounded-2xl p-4 shadow-xl flex flex-col gap-2">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="px-4 py-2.5 rounded-xl text-sm font-medium text-ink-secondary hover:bg-black/5 hover:text-ink transition-colors flex items-center justify-between min-h-[44px]"
+                    <div className="flex items-center gap-1.5 shrink-0">
+                        <a
+                            href={INSTALL_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-dark whitespace-nowrap shrink-0 px-4 sm:px-5 py-2.5 text-[13px] sm:text-[14px] font-medium rounded-full shadow-sm"
                         >
-                            <span>{link.name}</span>
-                            <span className="text-xs text-muted-custom">→</span>
-                        </Link>
-                    ))}
-                    <a
-                        href="https://discord.gg/aCcsyKYJq4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="btn-dark w-full py-3 mt-2 text-sm justify-center rounded-xl min-h-[44px] flex items-center gap-2"
-                    >
-                        <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
-                        <span>Get Extension</span>
-                    </a>
-                </div>
-            )}
-        </header>
+                            <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6] shrink-0" aria-hidden="true" />
+                            <span className="sm:hidden">Install</span>
+                            <span className="hidden sm:inline">Add to Chrome</span>
+                        </a>
+                        <button
+                            type="button"
+                            onClick={() => setOpen((v) => !v)}
+                            className="lg:hidden grid place-items-center w-11 h-11 rounded-full hover:bg-black/5 text-ink transition-colors"
+                            aria-label={open ? 'Close menu' : 'Open menu'}
+                            aria-expanded={open}
+                            aria-controls="mobile-menu"
+                        >
+                            {open ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+                        </button>
+                    </div>
+                </nav>
+
+                {open && (
+                    <div id="mobile-menu" className="pointer-events-auto lg:hidden mt-2 max-w-[1040px] mx-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-black/10 p-3 shadow-xl animate-pop-in">
+                        <ul className="flex flex-col">
+                            {NAV_LINKS.map((l) => (
+                                <li key={l.name}>
+                                    <Link
+                                        href={l.href}
+                                        prefetch={false}
+                                        aria-current={isActive(l) ? 'page' : undefined}
+                                        className={`flex items-center justify-between rounded-2xl px-4 min-h-[48px] text-[15px] font-medium transition-colors ${
+                                            isActive(l) ? 'bg-ink text-white' : 'text-ink-secondary hover:bg-black/5 hover:text-ink'
+                                        }`}
+                                    >
+                                        <span className="flex items-center gap-2">
+                                            {l.live && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />}
+                                            {l.name}
+                                        </span>
+                                        <span aria-hidden="true" className="opacity-50">→</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <a
+                            href={INSTALL_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-dark w-full mt-2 py-3.5 text-[15px] rounded-2xl gap-2"
+                        >
+                            <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                            Add to Chrome — it&apos;s free
+                        </a>
+                    </div>
+                )}
+            </header>
+        </>
     );
 }
