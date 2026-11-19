@@ -1,0 +1,327 @@
+[
+  {
+    "domain": "canvaswizard.co",
+    "name": "Canvas Wizard",
+    "url": "https://canvaswizard.co",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "48-hour free access, then $7.99/month",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Renewal price after free trial"
+        }
+      ],
+      "freeTier": null,
+      "trial": "48-hour free access (site shows limited-spots counter and a Cyber Monday offer; a $0.99 unlimited-access banner also appears)"
+    },
+    "platformsStated": [
+      "Canvas"
+    ],
+    "featuresStated": [
+      "Answers and explanations on Canvas quiz questions",
+      "ChatGPT sidebar chat on any page",
+      "Summarize and rewrite selected text",
+      "24/7 customer support"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/wizard-for-canvas/hbofbijkdaghocnmlkenlfjbajkbaafb",
+    "browsersStated": [
+      "Chrome",
+      "Brave",
+      "Arc",
+      "Opera"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://canvaswizard.co",
+      "https://chromewebstore.google.com/detail/wizard-for-canvas/hbofbijkdaghocnmlkenlfjbajkbaafb"
+    ],
+    "confidence": "high",
+    "notes": "Site claims 4.8/5 from 1067 reviews and 700,000+ questions answered (unverified). Chrome Web Store listing shows 633 users and 3.0 rating (9 ratings) as of check. Promo banner ($0.99 offer / free 48h) is time-limited marketing; base price $7.99/mo."
+  },
+  {
+    "domain": "aceify.ai",
+    "name": "Aceify.ai",
+    "url": "https://aceify.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free plan with restrictions; Aceify Plus $9.99/month",
+      "plans": [
+        {
+          "name": "Aceify Plus",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Includes unlimited Chrome extension use"
+        }
+      ],
+      "freeTier": "Free plan, with restrictions on supported question types",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard (Original)",
+      "MoodleCloud"
+    ],
+    "featuresStated": [
+      "Screenshot Snap & Solve",
+      "AutoSelect answers on supported sites",
+      "Smart search over uploaded files",
+      "YouTube video summarizer",
+      "Paper writing tool"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/aceifyai/gholhpojkalnpdkohpdemfebhccfegnd",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://aceify.ai",
+      "https://chromewebstore.google.com/detail/aceifyai/gholhpojkalnpdkohpdemfebhccfegnd"
+    ],
+    "confidence": "medium",
+    "notes": "Plus price read from dashboard markup in home page HTML; no dedicated pricing page found. Refund within 30 days of most recent charge. Site claims 97,157 students and 'up to 10x faster than competitors' (unverified). Store listing: 7,000 users, 3.1 rating (65 ratings). Autoselect limited to Canvas, Original Blackboard, MoodleCloud per FAQ."
+  },
+  {
+    "domain": "smartsolve.ai",
+    "name": "SmartSolve",
+    "url": "https://smartsolve.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free to start; paid plan prices not shown publicly",
+      "plans": [],
+      "freeTier": "Free to get started (limits not stated)",
+      "trial": "Free trial exists (one per user per site FAQ/app text); length not stated"
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "other study platforms (unspecified)"
+    ],
+    "featuresStated": [
+      "In-browser one-click help",
+      "Highlight any question for step-by-step help",
+      "Snapshot a problem photo",
+      "Web, Chrome extension, iOS and Android apps",
+      "22 interface languages"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/smartsolve-ai-homework-tu/lamlihfgchoafpnomkjblficpfeonace",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://smartsolve.ai",
+      "https://smartsolve.ai/download/chrome-extension?from=web",
+      "https://smartsolve.ai/dashboard/terms",
+      "https://smartsolve.ai/dashboard/plans"
+    ],
+    "confidence": "low",
+    "notes": "Pricing not found: /pricing and /plans return 404; /dashboard/plans likely requires login. Site claims 100,000+ students and 98.97% accuracy (unverified). Chrome Web Store: 30,000 users, 1.0 rating (147 ratings). Publisher Niknea LLC. Needs human check for price."
+  },
+  {
+    "domain": "cheatmate.io",
+    "name": "CheatMate",
+    "url": "https://www.cheatmate.io",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Weekly and monthly plans shown; prices not in static HTML",
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "Brightspace"
+    ],
+    "featuresStated": [
+      "Answers multiple choice, multiple select, fill-in-blank and matching questions",
+      "Keyboard-shortcut / double-click activation",
+      "Invisible, Sneaky and Homework display modes"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/cheatmate/pifapfmbofjgaenkhhipjhfacfmmhkcp",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.cheatmate.io",
+      "https://www.cheatmate.io/pricing",
+      "https://www.cheatmate.io/_next/static/chunks/app/pricing/page-7c164659309b5b8d.js",
+      "https://chromewebstore.google.com/detail/cheatmate/pifapfmbofjgaenkhhipjhfacfmmhkcp"
+    ],
+    "confidence": "low",
+    "notes": "Pricing page lists Weekly and Monthly plans but prices render client-side (static HTML shows $0.00 placeholder); not verified. Site claims 98% average score (unverified). Store listing name 'Study Buddy': 2,000 users, 2.7 rating (15 ratings). Site markets itself for proctored exams."
+  },
+  {
+    "domain": "snapgpt.me",
+    "name": "SnapGPT",
+    "url": "https://www.snapgpt.me",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free (5 screenshot answers/day); Plus $7.99/week, $9.99/month or $89.99/year",
+      "plans": [
+        {
+          "name": "Weekly",
+          "price": 7.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": null
+        },
+        {
+          "name": "Monthly",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": null
+        },
+        {
+          "name": "Yearly",
+          "price": 89.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Shown as $7.49/mo billed annually"
+        }
+      ],
+      "freeTier": "Free forever: 5 screenshot answers per day",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "McGraw Hill Connect",
+      "ALEKS",
+      "Pearson MyLab",
+      "Google Forms",
+      "Quizlet",
+      "Khan Academy",
+      "Kahoot"
+    ],
+    "featuresStated": [
+      "One-click answer with explanation",
+      "Sidebar chat",
+      "Autopilot answers each question on page",
+      "SmartScan for free-response",
+      "Flashcards and study sets",
+      "iOS beta app"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/hfkialeflompnefhcibnaabjpmimablh/",
+    "browsersStated": [
+      "Chrome",
+      "Firefox"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://www.snapgpt.me",
+      "https://www.snapgpt.me/pricing/",
+      "https://chromewebstore.google.com/detail/hfkialeflompnefhcibnaabjpmimablh/"
+    ],
+    "confidence": "high",
+    "notes": "Home page has a 'Subtle mode' demo setting that makes the on-page button transparent; no explicit 'undetectable' claim found. Store listing: 4,000 users, 4.8 rating (5 ratings). Home page HTML also contained internal admin-menu text; ignored."
+  },
+  {
+    "domain": "getanswerlyai.com",
+    "name": "Answerly AI",
+    "url": "https://getanswerlyai.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "$12.99/month, single plan",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 12.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "200 Quiz Solver uses/day and 200 Screenshot Tool uses/day"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas (Classic Quizzes and New Quizzes)"
+    ],
+    "featuresStated": [
+      "Quiz solver with hint then answer",
+      "Solve All questions button",
+      "Screenshot tool for diagrams and images",
+      "Upload notes for course context",
+      "Quiz loader restores prior answers",
+      "Customizable button appearance"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/answerly-ai-%E2%80%94-canvas-home/gmekadimanglmacabjkmaigckocobnnc",
+    "browsersStated": [
+      "Chrome",
+      "Firefox"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://getanswerlyai.com",
+      "https://chromewebstore.google.com/detail/answerly-ai-%E2%80%94-canvas-home/gmekadimanglmacabjkmaigckocobnnc"
+    ],
+    "confidence": "high",
+    "notes": "Store listing: 1,000 users, 5.0 rating (27 ratings). Site states AI is Gemini-based. Not available on iOS/Android. Payment via Stripe."
+  },
+  {
+    "domain": "canvasquizsolve.com",
+    "name": "Canvas Quiz Solver",
+    "url": "https://canvasquizsolve.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "$12.99/month, single plan; promo code gives 50% off first month",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 12.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "150 answers/day; code DISCOUNT50 gives 50% off first month"
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas (Classic Quizzes, New Quizzes, Canvas Lite)"
+    ],
+    "featuresStated": [
+      "Auto Answer with explanations",
+      "Screenshot and image upload",
+      "Solve All",
+      "Auto-Select fills answers",
+      "Reads graphs and diagrams",
+      "Upload notes for context"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-quiz-solver-receiv/ilbbifjoplkjplcdagpliobeldjlcebi",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://canvasquizsolve.com",
+      "https://chromewebstore.google.com/detail/canvas-quiz-solver-receiv/ilbbifjoplkjplcdagpliobeldjlcebi"
+    ],
+    "confidence": "high",
+    "notes": "Chrome Web Store listing shows no user count or rating yet (appears newly listed). Account and subscription required for AI answers. Site has Stealth Mode and Privacy Guard features."
+  }
+]

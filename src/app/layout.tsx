@@ -11,10 +11,10 @@ const nunito = Nunito({ subsets: ["latin"], weight: ["600", "700", "800"], displ
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.examghost.com'),
   title: {
-    default: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
+    default: "ExamGhost: AI Quiz Solver Chrome Extension, Free Plan",
     template: "%s | ExamGhost"
   },
-  description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 5 free solves / day.",
+  description: "Double-click a quiz or homework question for an AI answer and explanation, or snip graphs with Alt+S. Works on Canvas, Blackboard & more. Free plan.",
   keywords: [
     "ai quiz solver",
     "canvas quiz solver",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     "snap it quiz solver",
     "screenshot quiz solver",
     "draw to solve",
-    "invisible quiz solver",
-    "screen share safe exam helper",
+    "ai answer extension",
+    "chrome extension quiz helper",
     "examghost"
   ],
   authors: [{ name: "ExamGhost", url: "https://www.examghost.com" }],
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.examghost.com",
     siteName: "ExamGhost",
-    title: "ExamGhost — Invisible AI Quiz Solver for Canvas & Moodle",
-    description: "Double-click any question on Canvas, Blackboard, Moodle & 20+ platforms for 0.3s inline AI answers. Screen-share safe, Snap-It OCR & 5 free solves / day.",
+    title: "ExamGhost: AI Quiz Solver Chrome Extension, Free Plan",
+    description: "Double-click a quiz or homework question for an AI answer and explanation, or snip graphs with Alt+S. Works on Canvas, Blackboard & more. Free plan.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ExamGhost — Invisible AI Quiz Solver for Canvas, Blackboard & Moodle",
+        alt: "ExamGhost: AI Quiz Solver Chrome Extension, Free Plan",
       },
     ],
   },
@@ -99,6 +99,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${nunito.variable}`}>
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-K4CN7JQF"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`,
+          }}
+        />
+      </head>
       <body className="font-sans bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen">
         {children}
         <Analytics />

@@ -19,12 +19,11 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Live Demo', href: '/canvas-quiz-solver-free-demo', isLive: true },
-        { name: 'Tools', href: '/#tools' },
-        { name: 'Sniping', href: '/#demo' },
+        { name: 'Features', href: '/#features' },
+        { name: 'How it works', href: '/#how-it-works' },
         { name: 'Pricing', href: '/#pricing' },
-        { name: 'FAQ', href: '/faq' },
-        { name: 'Privacy', href: '/privacy' },
-        { name: 'Support', href: '/contact' }
+        { name: 'Compare', href: '/compare' },
+        { name: 'FAQ', href: '/#faq' }
     ];
 
     return (

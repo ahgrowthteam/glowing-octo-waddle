@@ -1,0 +1,417 @@
+[
+ {
+  "domain": "canvashack.com",
+  "name": "CanvasHack",
+  "url": "https://canvashack.com",
+  "reachable": true,
+  "primaryPurpose": "activity-hiding",
+  "claimsUndetectable": true,
+  "pricing": {
+   "summary": "Monthly $24.99 (struck-through $35) or lifetime $149.99 (struck-through $210); 25% off special offer shown",
+   "plans": [
+    {
+     "name": "Monthly",
+     "price": 24.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "Listed at $35; shown with 25% off special offer"
+    },
+    {
+     "name": "Lifetime",
+     "price": 149.99,
+     "currency": "USD",
+     "period": "one-time",
+     "notes": "Listed at $210; shown with 25% off"
+    }
+   ],
+   "freeTier": null,
+   "trial": null
+  },
+  "platformsStated": [
+   "Canvas"
+  ],
+  "featuresStated": [
+   "Main product is an extension that hides tab-switching activity from Canvas",
+   "Saves correct answers across quiz attempts",
+   "Does not give answers directly (site FAQ: 'Not yet')"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-hack/gfpnfbkflmiijpmfknhjbaoiippanmhh",
+  "browsersStated": [
+   "Chrome"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://canvashack.com/ (redirects to https://www.canvashack.com/)",
+   "https://chromewebstore.google.com/detail/canvas-hack/gfpnfbkflmiijpmfknhjbaoiippanmhh"
+  ],
+  "confidence": "high",
+  "notes": "Mainly an activity-hiding tool, not an answer tool: FAQ says it does not give answers directly. Site claims undetectable. Site says refund contact within 7 days. CWS listing at check time: 3.8 rating (83 ratings), 6,000 users; site claims '6,000+ students' (unverified site claim, matches CWS user count)."
+ },
+ {
+  "domain": "canvasquiz.com",
+  "name": "Canvas Quiz Solver",
+  "url": "https://canvasquiz.com",
+  "reachable": true,
+  "primaryPurpose": "ai-answers",
+  "claimsUndetectable": true,
+  "pricing": {
+   "summary": "Free answers (limit not stated); unlimited at $14.99/month or $48.99 per 4 months (semester)",
+   "plans": [
+    {
+     "name": "Monthly",
+     "price": 14.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "Site: 'Lock this price for life'"
+    },
+    {
+     "name": "Semester",
+     "price": 48.99,
+     "currency": "USD",
+     "period": "4 months",
+     "notes": "Site states $12.25/month equivalent, billed every 4 months; renews every 4 months"
+    }
+   ],
+   "freeTier": "Free answers included but 'can run out mid-quiz'; exact limit not stated",
+   "trial": null
+  },
+  "platformsStated": [
+   "Canvas (Classic and New Quizzes)",
+   "McGraw Hill Connect",
+   "SmartBook",
+   "ALEKS",
+   "Pearson MyLab",
+   "IXL",
+   "Khan Academy",
+   "MyOpenMath",
+   "Google Forms",
+   "Quizizz (Wayground)",
+   "Edpuzzle",
+   "Any site via screenshot 'Snap a question'"
+  ],
+  "featuresStated": [
+   "AI answers shown inline under each question",
+   "Supports multiple choice, T/F, short answer, matching, ordering, categorization, numerical/essay",
+   "Screenshot-based 'Snap a question' for other sites",
+   "Discreet display mode (small icon)",
+   "Claims a private database of real Canvas quizzes (unverified)",
+   "7-day money-back guarantee"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-quiz-solver/eiceeladfkklbbdlgpfhgclfhlmkpmjb",
+  "browsersStated": [
+   "Chrome"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://canvasquiz.com/",
+   "https://chromewebstore.google.com/detail/canvas-quiz-solver/eiceeladfkklbbdlgpfhgclfhlmkpmjb"
+  ],
+  "confidence": "high",
+  "notes": "Site claims 'Undetectable'. Unverified site claims: 15,000+ downloads, 128+ universities, 98% accuracy, 4.5 rating on 87 ratings. CWS at check time: 4.2 (79 ratings), 3,000 users, so site figures differ from the store. Pricing page loaded server-side, no pricing API needed. No separate /pricing fetched; pricing is in home page."
+ },
+ {
+  "domain": "quizsolverai.com",
+  "name": "Quiz Solver AI",
+  "url": "https://quizsolverai.com",
+  "reachable": true,
+  "primaryPurpose": "ai-answers",
+  "claimsUndetectable": false,
+  "pricing": {
+   "summary": "Free tier (10 answers); paid Quiz Pass $5.99, Quiz Wiz $9.99, Quiz Master $24.99 per month, or yearly at lower rates",
+   "plans": [
+    {
+     "name": "Quiz Pass (monthly)",
+     "price": 5.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "120 answers/month"
+    },
+    {
+     "name": "Quiz Pass (yearly)",
+     "price": 64.99,
+     "currency": "USD",
+     "period": "year",
+     "notes": "Shown as $5.42/month"
+    },
+    {
+     "name": "Quiz Wiz (monthly)",
+     "price": 9.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "800 answers/month"
+    },
+    {
+     "name": "Quiz Wiz (yearly)",
+     "price": 95.99,
+     "currency": "USD",
+     "period": "year",
+     "notes": "Shown as $8.00/month"
+    },
+    {
+     "name": "Quiz Master (monthly)",
+     "price": 24.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "Unlimited answers"
+    },
+    {
+     "name": "Quiz Master (yearly)",
+     "price": 224.99,
+     "currency": "USD",
+     "period": "year",
+     "notes": "Shown as $18.75/month"
+    }
+   ],
+   "freeTier": "Free plan; site says 'free 10 answers'",
+   "trial": null
+  },
+  "platformsStated": [
+   "20+ LMS and quiz platforms (specific list not extracted)"
+  ],
+  "featuresStated": [
+   "Auto-detects questions on quiz pages",
+   "QuickSnap screenshot solving",
+   "Image solver",
+   "7 request types (solve, explain, calculate, translate etc.)",
+   "Keyboard shortcuts",
+   "'Ghost Mode' discreet interface"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/quiz-solver/ijlpijnplhhbggppiebkfakonpjdikhl",
+  "browsersStated": [
+   "Chrome",
+   "Edge",
+   "Firefox",
+   "Opera",
+   "Yandex",
+   "Safari (coming 2026)"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://quizsolverai.com/",
+   "https://chromewebstore.google.com/detail/quiz-solver/ijlpijnplhhbggppiebkfakonpjdikhl"
+  ],
+  "confidence": "medium",
+  "notes": "Page defaults to yearly billing; monthly prices read from the page's data-monthly-price attributes (5.99, 9.99, 24.99), not visible text by default. Refund policy: only if service technically unusable. Does not state 'undetectable'; has 'Ghost Mode' described as a discreet interface. Unverified site claims: Chrome 20K+ users, 4.0 rating on 71 reviews, Edge 4.2/5K+, Firefox 4.5/1K+. CWS at check time: 3.9 (77 ratings), 20,000 users. Free-tier details beyond '10 answers' not checked."
+ },
+ {
+  "domain": "getquizsolve.com",
+  "name": "AI Quiz Solve",
+  "url": "https://getquizsolve.com",
+  "reachable": true,
+  "primaryPurpose": "ai-answers",
+  "claimsUndetectable": true,
+  "pricing": {
+   "summary": "Free 5 questions/day + 2 screenshot solves/day; Pro $4.99/week, $12.99/month, or $8.33/month billed yearly",
+   "plans": [
+    {
+     "name": "Pro weekly",
+     "price": 4.99,
+     "currency": "USD",
+     "period": "week",
+     "notes": null
+    },
+    {
+     "name": "Pro monthly",
+     "price": 12.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": null
+    },
+    {
+     "name": "Pro yearly",
+     "price": 8.33,
+     "currency": "USD",
+     "period": "month, billed yearly",
+     "notes": "Yearly total not stated in text read; price shown is per-month equivalent"
+    }
+   ],
+   "freeTier": "5 questions/day and 2 screenshot solves/day, no account",
+   "trial": null
+  },
+  "platformsStated": [
+   "Canvas",
+   "Blackboard",
+   "Moodle",
+   "Google Classroom",
+   "Brightspace",
+   "Schoology",
+   "Coursera",
+   "edX",
+   "Quizlet",
+   "McGraw-Hill",
+   "Pearson",
+   "Google Forms",
+   "Microsoft Forms",
+   "Kahoot",
+   "Udemy",
+   "Khan Academy",
+   "Chegg"
+  ],
+  "featuresStated": [
+   "Double-click a question to fill/highlight the answer inline",
+   "Screenshot solve ('Snap It')",
+   "Step-by-step explanation mode",
+   "MCQ, T/F, matching, short answer, image questions",
+   "Off until user switches it on; no account for free tier",
+   "Pro fair use: 1,000 requests/day"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizsolve/cjdhcfbjcepcmlacbaejclglodjghefa",
+  "browsersStated": [
+   "Chrome"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://getquizsolve.com/",
+   "https://getquizsolve.com/pricing",
+   "https://chromewebstore.google.com/detail/quizsolve/cjdhcfbjcepcmlacbaejclglodjghefa"
+  ],
+  "confidence": "high",
+  "notes": "Site claims it is invisible / nothing a proctor or screen-share can catch. Pricing figures come from the FAQ text; the pricing cards themselves render client-side and were not in the HTML. Refund policy: case-by-case by email. CWS at check time: 5.0 (5 ratings), 1,000 users. NOT the same product as getquizsolver.com: different name (QuizSolver vs AI Quiz Solve), different pricing model, different CWS listing and operator."
+ },
+ {
+  "domain": "canvaspass.sbs",
+  "name": "CanvasPass",
+  "url": "https://canvaspass.sbs",
+  "reachable": true,
+  "primaryPurpose": "ai-answers",
+  "claimsUndetectable": true,
+  "pricing": {
+   "summary": "Free 10 questions per 12 hrs; Starter $5/mo, Pro $10/mo, Ultra $14.99/mo; credit top-up from $5/500; desktop OverlayPass $25/mo",
+   "plans": [
+    {
+     "name": "Free",
+     "price": 0,
+     "currency": "USD",
+     "period": "forever",
+     "notes": "10 questions / 12 hrs"
+    },
+    {
+     "name": "Starter",
+     "price": 5,
+     "currency": "USD",
+     "period": "month",
+     "notes": "800 credits/month"
+    },
+    {
+     "name": "Pro",
+     "price": 10,
+     "currency": "USD",
+     "period": "month",
+     "notes": "1,500 credits/month"
+    },
+    {
+     "name": "Ultra",
+     "price": 14.99,
+     "currency": "USD",
+     "period": "month",
+     "notes": "2,500 credits/month; page shows a 'Coming Soon' label near Ultra, availability unclear"
+    },
+    {
+     "name": "Credit top-up",
+     "price": 5,
+     "currency": "USD",
+     "period": "one-time",
+     "notes": "500 credits, no subscription"
+    },
+    {
+     "name": "OverlayPass (Windows desktop app)",
+     "price": 25,
+     "currency": "USD",
+     "period": "month",
+     "notes": "Sold separately from extension plans"
+    }
+   ],
+   "freeTier": "10 questions every 12 hours (rolling)",
+   "trial": null
+  },
+  "platformsStated": [
+   "Canvas LMS (Classic and New Quizzes)"
+  ],
+  "featuresStated": [
+   "AI answers for Canvas quiz questions (Fast and Smart modes)",
+   "All question types",
+   "Answer saver",
+   "Dual AI provider failover on Pro/Ultra",
+   "OverlayPass: Windows desktop screenshot-answer overlay (separate $25/mo)",
+   "Free tier available"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvaspass/hfeeodhaiedlmahknjhcidhcphmnjeam",
+  "browsersStated": [
+   "Chrome"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://canvaspass.sbs/",
+   "https://chromewebstore.google.com/detail/canvaspass/hfeeodhaiedlmahknjhcidhcphmnjeam"
+  ],
+  "confidence": "medium",
+  "notes": "Site claims stealth / undetectable operation and also advertises tab-switch blocking; answers are still the core paid product so classified ai-answers. Page contains stale promo banners (25% off through Oct 17; SUMMER20 code), so discounted prices may differ. CWS at check time: 265 users, no rating shown, and its listing says 'Free plan: 5 questions/week', which conflicts with the site's 10 per 12 hrs. Site's Chrome user/review figures not recorded (counter shows a placeholder). .sbs TLD is an unusual domain; human may want to verify legitimacy."
+ },
+ {
+  "domain": "getquizsolver.com",
+  "name": "QuizSolver",
+  "url": "https://getquizsolver.com",
+  "reachable": true,
+  "primaryPurpose": "ai-answers",
+  "claimsUndetectable": true,
+  "pricing": {
+   "summary": "Prepaid credit packs, no subscription: 4,99 zl/100 answers, 14,99 zl/500, 39,00 zl/2000; new accounts get free starter credits",
+   "plans": [
+    {
+     "name": "Rescue Pack (100 answers)",
+     "price": 4.99,
+     "currency": "PLN",
+     "period": "one-time",
+     "notes": "Shown as '4,99 zl' with BLIK payment; credits never expire"
+    },
+    {
+     "name": "Semester Pack (500 answers)",
+     "price": 14.99,
+     "currency": "PLN",
+     "period": "one-time",
+     "notes": "Marked Most Popular"
+    },
+    {
+     "name": "Annual & Group Pack (2000 answers)",
+     "price": 39.0,
+     "currency": "PLN",
+     "period": "one-time",
+     "notes": null
+    }
+   ],
+   "freeTier": "New accounts get free starting credits (amount not stated); Kahoot Quiz ID answer-bank mode uses no credits; demo uses no credits",
+   "trial": null
+  },
+  "platformsStated": [
+   "Testportal",
+   "Moodle",
+   "Kahoot",
+   "Canvas",
+   "Google Forms",
+   "Microsoft Forms",
+   "Blackboard",
+   "Quizlet",
+   "35+ platforms plus 'Universal Parser'"
+  ],
+  "featuresStated": [
+   "Universal Parser auto-reads quiz pages",
+   "FocusScan screenshot region capture",
+   "Hint mode (marks likely answer, no clicking)",
+   "Step-by-step explanations",
+   "Saved study history and notes",
+   "Interactive demo at /demo (local sample questions, no credits)"
+  ],
+  "extensionStoreUrl": "https://chromewebstore.google.com/detail/quiz-solver-pro/cjchfdnplpjkihigljnicebnhjkpndik",
+  "browsersStated": [
+   "Chrome"
+  ],
+  "lastChecked": "2026-11-19",
+  "sources": [
+   "https://getquizsolver.com/",
+   "https://getquizsolver.com/demo",
+   "https://chromewebstore.google.com/detail/quiz-solver-pro/cjchfdnplpjkihigljnicebnhjkpndik"
+  ],
+  "confidence": "medium",
+  "notes": "NOT the same product as getquizsolve.com (different name, operator, store listing, credit-based vs subscription pricing). Operator listed as an individual in Krakow, Poland (unregistered activity); prices shown in PLN, possibly geo-localised, while FAQ also says extra credits 'from $1.99 for 100 credits' (USD), a mismatch to check. Page title/meta describe it as 'Undetected AI Quiz Solver & Bot'. /demo is a tutorial page with sample questions, not a separate product. CWS at check time: 5.0 (3 ratings), 342 users; site shows 5.0 rating (unverified)."
+ }
+]

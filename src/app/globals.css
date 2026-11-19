@@ -360,3 +360,39 @@ nav[aria-label="Breadcrumb"] a {
     flex-shrink: 1;
   }
 }
+
+/* Scroll reveal: progressive enhancement, content is visible without it. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+.animate-pop-in { animation: pop-in 0.45s var(--ease-smooth) both; }
+@keyframes tab-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Soft lavender glow that starts at the very top of the page, so it also shows behind the floating navbar. */
+.page-glow {
+  background-image: linear-gradient(to bottom, #e9eefc, var(--cream));
+  background-size: 100% 640px;
+  background-repeat: no-repeat;
+}
+
+/* Large screens: scale rem-based type and spacing so sections don't look small in a narrow column. */
+@media (min-width: 1600px) { html { font-size: 112.5%; } }
+@media (min-width: 2200px) { html { font-size: 125%; } }

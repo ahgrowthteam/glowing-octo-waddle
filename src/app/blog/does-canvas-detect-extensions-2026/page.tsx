@@ -21,6 +21,7 @@ import {
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 
 export const metadata: Metadata = {
+    robots: { index: false, follow: false },
     title: { absolute: 'Does Canvas Detect Chrome Extensions? (2026 Code Audit)' },
     description:
         'Can Canvas detect Chrome extensions in 2026? We read Instructure\'s open-source quiz log code to show what is tracked (page_blurred) and what is not.',

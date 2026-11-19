@@ -1,33 +1,25 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next";
+
+const URL = "https://www.examghost.com/faq";
+const TITLE = "ExamGhost FAQ: Pricing, Platforms and How It Works";
+const DESCRIPTION =
+    "Short answers about ExamGhost: how it works, supported platforms, the free tier (5 solves a day), plans from $19/month, refunds and privacy.";
 
 export const metadata: Metadata = {
-    title: "FAQ — Stealth Architecture, Pricing & LMS Setup",
-    description: "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
-    alternates: {
-        canonical: "https://www.examghost.com/faq",
-    },
+    title: { absolute: TITLE },
+    description: DESCRIPTION,
+    alternates: { canonical: URL },
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: "FAQ — Stealth Architecture, Pricing & LMS Setup | ExamGhost",
-        description: "Answers to ExamGhost FAQs: Canvas SpeedGrader audit log stealth, Focus Shield blur masking, Snap-It OCR, pricing ($19/mo, $99/yr), and 5 free solves / day.",
-        url: "https://www.examghost.com/faq",
+        title: TITLE,
+        description: DESCRIPTION,
+        url: URL,
         siteName: "ExamGhost",
-        images: [
-            {
-                url: "/og-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "ExamGhost FAQ & Knowledge Base",
-            },
-        ],
+        images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ExamGhost FAQ" }],
     },
 };
 
-export default function FAQLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function FAQLayout({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
 }

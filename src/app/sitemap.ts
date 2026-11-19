@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
-import { COMPETITORS } from '@/data/competitors';
+import { FACTS, isIndexable } from '@/data/competitor-facts';
+import { PLATFORMS_DATA } from '@/data/platforms';
 
 // lastModified values are real content-change dates, not synthetic ones. Update a group's date only when
 // that group's content changes meaningfully (Google ignores lastmod once it proves unreliable).
@@ -14,37 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.examghost.com';
 
     // Unique canonical competitor slugs (excluding redirecting alias classlogy-vs-examghost)
-    const competitorRoutes = Object.keys(COMPETITORS)
-        .filter((slug) => slug !== 'classlogy-vs-examghost')
+    // Only comparison pages backed by verified facts are indexable; thin legacy pages are noindex and left out.
+    const competitorRoutes = Object.keys(FACTS)
+        .filter((slug) => isIndexable(FACTS[slug]))
         .map((slug) => ({
             url: `${baseUrl}/${slug}`,
             lastModified: LAST_MODIFIED_COMPARISONS,
         }));
 
-    const lmsServiceSlugs = [
-        'canvas-lms-quiz-solver',
-        'blackboard-quiz-solver',
-        'd2l-brightspace-quiz-solver',
-        'moodle-quiz-solver',
-        'mcgraw-hill-connect-aleks-solver',
-        'pearson-mylab-mastering-solver',
-        'cengage-mindtap-webassign-solver',
-        'gradescope-exam-solver',
-        'google-forms-quiz-solver',
-        'schoology-quiz-solver',
-        'deltamath-homework-solver',
-        'edgenuity-quiz-solver',
-        'wileyplus-quiz-solver',
-        'zybooks-homework-solver',
-        'webwork-math-solver',
-        'sakai-lms-quiz-solver',
-        'macmillan-achieve-smartwork-solver',
-        'tophat-quiz-solver',
-        'knewton-alta-solver',
-        'hawkes-learning-certify-solver',
-        'blog/does-canvas-detect-extensions-2026',
-        'blog/canvas-quiz-log-explained-what-professors-see',
-    ];
+    // Only platform pages with unique content are indexable.
+    const lmsServiceSlugs = PLATFORMS_DATA.filter((p) => p.indexable).map((p) => p.slug);
 
     const lmsRoutes = lmsServiceSlugs.map((slug) => ({
         url: `${baseUrl}/${slug}`,
@@ -54,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
         { url: baseUrl, lastModified: LAST_MODIFIED_HOME },
         { url: `${baseUrl}/canvas-quiz-solver-free-demo`, lastModified: LAST_MODIFIED_CORE },
-        { url: `${baseUrl}/compare-canvas-hack-extensions`, lastModified: LAST_MODIFIED_CORE },
+        { url: `${baseUrl}/compare`, lastModified: LAST_MODIFIED_COMPARISONS },
         ...lmsRoutes,
         { url: `${baseUrl}/features`, lastModified: LAST_MODIFIED_CORE },
         { url: `${baseUrl}/faq`, lastModified: LAST_MODIFIED_CORE },

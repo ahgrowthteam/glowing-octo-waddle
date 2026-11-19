@@ -1189,7 +1189,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
     "mindko-vs-examghost": {
         slug: "mindko-vs-examghost",
         name: "Mindko",
-        domain: "mindko.ai",
+        domain: "mindko.com",
         badge: "The #1 Mindko Alternative",
         pricingSummary: "$12.99 - /mo9.99/month subscription",
         examghostPricing: "5 Free Solves / Day · $19/mo · $99/yr · $199 Lifetime",
@@ -1918,7 +1918,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
     "answerly-vs-examghost": {
         slug: "answerly-vs-examghost",
         name: "Answerly AI",
-        domain: "answerly.ai",
+        domain: "getanswerlyai.com",
         badge: "The #1 Answerly AI Alternative",
         pricingSummary: "$9.99/mo or $49.99/yr",
         examghostPricing: "5 Free/Day · $19/mo · $99/yr · $199 Lifetime",
@@ -3521,7 +3521,7 @@ export const COMPETITORS: Record<string, CompetitorData> = {
     "snapgpt-vs-examghost": {
         slug: "snapgpt-vs-examghost",
         name: "SnapGPT",
-        domain: "snapgpt.io",
+        domain: "snapgpt.me",
         badge: "The #1 SnapGPT Alternative",
         pricingSummary: "$9.99/month subscription",
         examghostPricing: "5 Free/Day · $19/mo · $99/yr · $199 Lifetime",

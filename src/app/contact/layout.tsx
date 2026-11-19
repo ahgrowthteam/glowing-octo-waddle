@@ -1,16 +1,16 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Contact 24/7 Student Support & Discord Help",
-    description: "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
+    title: "Contact ExamGhost Support",
+    description: "Contact ExamGhost by email or Discord for help with your license, bug reports and 14-day money-back refund requests.",
     alternates: {
         canonical: "https://www.examghost.com/contact",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: "Contact 24/7 Student Support & Discord Help | ExamGhost",
-        description: "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
+        title: "Contact ExamGhost Support | Email & Discord",
+        description: "Contact ExamGhost by email or Discord for help with your license, bug reports and 14-day money-back refund requests.",
         url: "https://www.examghost.com/contact",
         siteName: "ExamGhost",
         images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Contact ExamGhost 24/7 Student Support",
+                alt: "Contact ExamGhost support",
             },
         ],
     },
@@ -36,17 +36,13 @@ export default function ContactLayout({
                 "@type": "ContactPage",
                 "@id": "https://www.examghost.com/contact#webpage",
                 "url": "https://www.examghost.com/contact",
-                "name": "Contact 24/7 Student Support & Discord Help | ExamGhost",
-                "description": "Contact ExamGhost 24/7 engineering and Discord support for license activation, Canvas New Quizzes updates, and 14-day money-back refund requests.",
+                "name": "Contact ExamGhost Support | Email & Discord",
+                "description": "Contact ExamGhost by email or Discord for help with your license, bug reports and 14-day money-back refund requests.",
                 "datePublished": "2026-01-15",
-                "dateModified": "2026-03-29",
+                "dateModified": "2026-11-18",
                 "inLanguage": "en-US",
                 "isPartOf": { "@id": "https://www.examghost.com/#website" },
                 "breadcrumb": { "@id": "https://www.examghost.com/contact#breadcrumb" },
-                "speakable": {
-                    "@type": "SpeakableSpecification",
-                    "cssSelector": ["h1", ".aeo-summary", "#support-troubleshooting-heading"]
-                },
                 "mainEntity": {
                     "@type": "Organization",
                     "@id": "https://www.examghost.com/#organization",

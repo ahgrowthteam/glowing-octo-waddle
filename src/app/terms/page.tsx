@@ -2,20 +2,19 @@ import React from 'react';
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { FileText, ShieldAlert, Check, RefreshCw, HelpCircle, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: "Terms of Service & 14-Day Refund Guarantee",
-    description: "Official terms of service, educational usage guidelines, subscription billing policies, and our 14-day 100% money-back refund guarantee for ExamGhost.",
+    title: "Terms of Service",
+    description: "ExamGhost terms of service: educational use, license tiers, the 14-day money-back guarantee, prohibited conduct and governing law.",
     alternates: {
         canonical: "https://www.examghost.com/terms",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
-        description: "Official licensing terms, academic usage guidelines, and 14-day money-back guarantee for ExamGhost.",
+        title: "Terms of Service | ExamGhost",
+        description: "ExamGhost terms of service: educational use, license tiers, the 14-day money-back guarantee, prohibited conduct and governing law.",
         url: "https://www.examghost.com/terms",
         siteName: "ExamGhost",
         images: [
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "ExamGhost Terms of Service & Refund Guarantee",
+                alt: "ExamGhost Terms of Service",
             },
         ],
     },
@@ -37,17 +36,13 @@ export default function TermsPage() {
                 "@type": "WebPage",
                 "@id": "https://www.examghost.com/terms#webpage",
                 "url": "https://www.examghost.com/terms",
-                "name": "Terms of Service & 14-Day Refund Guarantee | ExamGhost",
-                "description": "Terms of service, educational usage policies, subscription terms, and 14-day 100% money-back refund guarantee for ExamGhost.",
+                "name": "Terms of Service | ExamGhost",
+                "description": "ExamGhost terms of service: educational use, license tiers, the 14-day money-back guarantee, prohibited conduct and governing law.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-01",
                 "inLanguage": "en-US",
                 "isPartOf": { "@id": "https://www.examghost.com/#website" },
-                "breadcrumb": { "@id": "https://www.examghost.com/terms#breadcrumb" },
-                "speakable": {
-                    "@type": "SpeakableSpecification",
-                    "cssSelector": ["h1", ".aeo-summary"]
-                }
+                "breadcrumb": { "@id": "https://www.examghost.com/terms#breadcrumb" }
             },
             {
                 "@type": "BreadcrumbList",
@@ -68,67 +63,38 @@ export default function TermsPage() {
             />
             <Navbar />
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20 w-full">
-                
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <p className="eyebrow justify-center mb-3">
-                        <span className="w-2 h-2 rounded-full bg-ink" />
-                        <span>USER AGREEMENT & LICENSING</span>
-                    </p>
-                    <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
-                        Terms of Service
-                    </h1>
-                    <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
+            <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 w-full">
+                <header className="mb-10">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Legal</p>
+                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">Terms of Service</h1>
+                    <p className="text-base text-ink-muted leading-relaxed">
                         Last modified: March 1, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). We provide 5 Free Solves / Day (auto-refilling every 24 hours) with no credit card required, transparent Monthly ($19/mo), Yearly ($99/yr), and Lifetime VIP ($199) licensing, and a 14-day money-back guarantee (100% full refund within 14 days of purchase).
                     </p>
-                </div>
+                </header>
 
-                {/* Quick Terms Summary Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-14">
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 block max-w-max mb-3">
-                            Free Trial
-                        </span>
-                        <h2 className="font-display font-bold text-base text-ink mb-1">5 Free Solves / Day</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            Full stealth HUD and Focus Shield unlocked with zero credit card required.
-                        </p>
-                    </div>
+                <nav aria-label="Contents" className="bg-white rounded-3xl border border-black/10 shadow-card p-6 mb-8">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-3">Contents</p>
+                    <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-[15px] text-ink-secondary list-decimal pl-5">
+                        <li><a href="#s1" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Acceptance of Terms</a></li>
+                        <li><a href="#s2" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Educational & Research Purpose</a></li>
+                        <li><a href="#s3" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">License Grants & Tier Restrictions</a></li>
+                        <li><a href="#s4" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">14-Day Money-Back Guarantee &amp; Refund Policy</a></li>
+                        <li><a href="#s5" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Intellectual Property &amp; Prohibited Conduct</a></li>
+                        <li><a href="#s6" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Disclaimer of Warranties & Limitation of Liability</a></li>
+                        <li><a href="#s7" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Governing Law &amp; Support Contacts</a></li>
+                    </ol>
+                </nav>
 
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-900 bg-[#c4d0f8]/50 px-2.5 py-0.5 rounded-full border border-[#c4d0f8] block max-w-max mb-3">
-                            Guarantee
-                        </span>
-                        <h2 className="font-display font-bold text-base text-ink mb-1">14-Day Full Refund</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            100% money-back guarantee if ExamGhost fails to perform on your live quizzes.
-                        </p>
-                    </div>
-
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-purple-900 bg-[#e2d3fa]/60 px-2.5 py-0.5 rounded-full border border-[#e2d3fa] block max-w-max mb-3">
-                            Licensing
-                        </span>
-                        <h2 className="font-display font-bold text-base text-ink mb-1">Single User License</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            Personal non-exclusive license for up to 3 authenticated student devices.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Terms Document Body */}
-                <div className="rounded-3xl bg-white border border-black/10 p-8 sm:p-12 shadow-sm space-y-10 text-sm text-ink-secondary leading-relaxed">
-                    
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">1. Acceptance of Terms</h2>
+                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 shadow-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
+                    <section id="s1" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Acceptance of Terms</h2>
                         <p>
                             ExamGhost (the &quot;Software&quot;, &quot;Extension&quot;, or &quot;Service&quot;) is owned and operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). By downloading, installing, unpacking, or activating ExamGhost, you agree to be bound by these Terms of Service, including our 14-day money-back guarantee. If you do not agree to these terms, do not install or use the software.
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">2. Educational & Research Purpose</h2>
+                    <section id="s2" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. Educational & Research Purpose</h2>
                         <p>
                             ExamGhost is developed as an educational research tool, test preparation simulator, and assistive study utility. It is intended to help students review difficult course material, practice timed exams, and analyze question logic. 
                         </p>
@@ -137,8 +103,8 @@ export default function TermsPage() {
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">3. License Grants & Tier Restrictions</h2>
+                    <section id="s3" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. License Grants & Tier Restrictions</h2>
                         <p>
                             We grant you a personal, non-transferable, non-exclusive license to use the Extension subject to the plan tier you select:
                         </p>
@@ -150,8 +116,8 @@ export default function TermsPage() {
                         </ul>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">4. 14-Day Money-Back Guarantee &amp; Refund Policy</h2>
+                    <section id="s4" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">4. 14-Day Money-Back Guarantee &amp; Refund Policy</h2>
                         <p>
                             We stand firmly behind the stealth, accuracy, and reliability of our software with a <strong>14-day money-back guarantee</strong> (100% full refund within 14 days of purchase) on all paid plans. If ExamGhost fails to solve questions or triggers unexpected LMS logs on your supported platforms, or if you are unsatisfied for any reason within 14 days of purchase:
                         </p>
@@ -166,8 +132,8 @@ export default function TermsPage() {
                         </div>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">5. Intellectual Property &amp; Prohibited Conduct</h2>
+                    <section id="s5" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">5. Intellectual Property &amp; Prohibited Conduct</h2>
                         <p>
                             All software code, user interface styling, Shadow DOM hook algorithms, and ExamGhost mascot artwork are the exclusive intellectual property of FoundryOne LLC (operating ExamGhost). You agree NOT to:
                         </p>
@@ -178,15 +144,15 @@ export default function TermsPage() {
                         </ul>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">6. Disclaimer of Warranties & Limitation of Liability</h2>
+                    <section id="s6" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">6. Disclaimer of Warranties & Limitation of Liability</h2>
                         <p>
                             While ExamGhost's architecture is engineered to prevent SpeedGrader blur event flags and DOM inspection, third-party LMS platforms frequently deploy unexpected updates. The service is provided &quot;as is&quot; without warranties of uninterrupted uptime during third-party server maintenance. Under no circumstance shall ExamGhost be liable for academic sanctions or grade disputes.
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">7. Governing Law &amp; Support Contacts</h2>
+                    <section id="s7" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">7. Governing Law &amp; Support Contacts</h2>
                         <p>
                             These terms are governed by the laws of the State of New Mexico, United States, where the operating entity, FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110), is registered. For legal inquiries or support requests, please contact:
                         </p>
@@ -197,12 +163,10 @@ export default function TermsPage() {
                             <div><strong>Community Server:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a> (instant ticket queue)</div>
                         </div>
                     </section>
-
                 </div>
-
             </main>
 
-            <Footer />
+            <Footer hideCta />
         </div>
     );
 }

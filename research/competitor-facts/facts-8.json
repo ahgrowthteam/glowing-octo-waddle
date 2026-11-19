@@ -1,0 +1,85 @@
+[
+  {
+    "domain": "answersai.com",
+    "name": "AnswersAI",
+    "url": "https://answersai.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free plan; Pro $12.99/month, or $39.99 billed yearly ($3.33/month)",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "5 answers a day"
+        },
+        {
+          "name": "Pro (monthly)",
+          "price": 12.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": null
+        },
+        {
+          "name": "Pro (yearly)",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$3.33/month equivalent"
+        }
+      ],
+      "freeTier": "Free plan: 5 answers a day, resets at midnight",
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Snap a photo or screenshot of a question for the answer with steps",
+      "Follow-up questions",
+      "Lecture recording and notes",
+      "Upload PDFs, documents and slides",
+      "Flashcards and quizzes"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/snapshot-by-answersai/kmdgaoalcjcefbgaiookdaigjeepoldf",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://answersai.com/",
+      "https://answersai.com/pricing"
+    ],
+    "confidence": "high",
+    "notes": "Site renders client-side; read in a real browser. Site claims 2M+ students (unverified)."
+  },
+  {
+    "domain": "transcript.study",
+    "name": "Transcript",
+    "url": "https://transcript.study",
+    "reachable": false,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "AI homework helper listed on the Chrome Web Store"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/transcript/klknhfgkblobpfimidmhkclikdalnoke",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-19",
+    "sources": [
+      "https://chromewebstore.google.com/detail/transcript/klknhfgkblobpfimidmhkclikdalnoke"
+    ],
+    "confidence": "low",
+    "notes": "The site served an automated-access challenge, so pricing and features were not read. The product's Chrome Web Store listing ('Transcript - AI Homework Helper') confirms it exists. Not verified."
+  }
+]

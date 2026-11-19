@@ -2,20 +2,18 @@ import React from 'react';
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Shield, Lock, EyeOff, FileText, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "Privacy Policy — Zero-Telemetry Architecture",
-    description: "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
+    title: "Privacy Policy",
+    description: "How ExamGhost handles your data: what we collect, how AI solves are processed, who we share with, and how to contact us.",
     alternates: {
         canonical: "https://www.examghost.com/privacy",
     },
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
-        description: "Zero server logs, zero LMS telemetry, and zero tracking. Your academic data stays private on your local machine.",
+        title: "Privacy Policy | ExamGhost",
+        description: "How ExamGhost handles your data: what we collect, how AI solves are processed, who we share with, and how to contact us.",
         url: "https://www.examghost.com/privacy",
         siteName: "ExamGhost",
         images: [
@@ -23,7 +21,7 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "ExamGhost Zero-Telemetry Privacy Policy",
+                alt: "ExamGhost Privacy Policy",
             },
         ],
     },
@@ -37,17 +35,13 @@ export default function PrivacyPage() {
                 "@type": "WebPage",
                 "@id": "https://www.examghost.com/privacy#webpage",
                 "url": "https://www.examghost.com/privacy",
-                "name": "Privacy Policy — Zero-Telemetry Architecture | ExamGhost",
-                "description": "Learn how ExamGhost protects your academic privacy with zero server query logs, closed Shadow DOM execution, and zero tracking cookies.",
+                "name": "Privacy Policy | ExamGhost",
+                "description": "How ExamGhost handles your data: what we collect, how AI solves are processed, who we share with, and how to contact us.",
                 "datePublished": "2026-01-15",
                 "dateModified": "2026-03-01",
                 "inLanguage": "en-US",
                 "isPartOf": { "@id": "https://www.examghost.com/#website" },
-                "breadcrumb": { "@id": "https://www.examghost.com/privacy#breadcrumb" },
-                "speakable": {
-                    "@type": "SpeakableSpecification",
-                    "cssSelector": ["h1", ".aeo-summary"]
-                }
+                "breadcrumb": { "@id": "https://www.examghost.com/privacy#breadcrumb" }
             },
             {
                 "@type": "BreadcrumbList",
@@ -68,60 +62,30 @@ export default function PrivacyPage() {
             />
             <Navbar />
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20 w-full">
-                
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <p className="eyebrow justify-center mb-3">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                        <span>ZERO-TELEMETRY POLICY</span>
-                    </p>
-                    <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
-                        Privacy Policy
-                    </h1>
-                    <p className="aeo-summary text-sm sm:text-base text-ink-muted leading-relaxed">
+            <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 w-full">
+                <header className="mb-10">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Legal</p>
+                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">Privacy Policy</h1>
+                    <p className="text-base text-ink-muted leading-relaxed">
                         Last updated: March 1, 2026 · ExamGhost is operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110) and operates with a strict zero-telemetry architecture: quiz questions and Snap-It OCR crops are processed ephemerally in RAM with zero remote query logs, zero school credential harvesting, and zero third-party ad trackers.
                     </p>
-                </div>
+                </header>
 
-                {/* Core Privacy Pillars */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <div className="w-10 h-10 rounded-2xl bg-[#c4d0f8]/50 flex items-center justify-center text-indigo-900 mb-4">
-                            <EyeOff className="w-5 h-5" />
-                        </div>
-                        <h2 className="font-display font-bold text-base text-ink mb-1.5">Zero Remote Logs</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            Questions and diagram crops are solved ephemeral in RAM. We never store quiz content or search histories on remote servers.
-                        </p>
-                    </div>
+                <nav aria-label="Contents" className="bg-white rounded-3xl border border-black/10 shadow-card p-6 mb-8">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-3">Contents</p>
+                    <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-[15px] text-ink-secondary list-decimal pl-5">
+                        <li><a href="#s1" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Information We Collect (and What We Do Not)</a></li>
+                        <li><a href="#s2" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">How Questions and AI Solves Are Handled</a></li>
+                        <li><a href="#s3" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Canvas & LMS Audit Log Protection</a></li>
+                        <li><a href="#s4" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Third-Party Disclosures & Data Sharing</a></li>
+                        <li><a href="#s5" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">FERPA, GDPR & CCPA Compliance</a></li>
+                        <li><a href="#s6" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Contact & Data Deletion Requests</a></li>
+                    </ol>
+                </nav>
 
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <div className="w-10 h-10 rounded-2xl bg-[#cdeecb]/70 flex items-center justify-center text-emerald-900 mb-4">
-                            <Lock className="w-5 h-5" />
-                        </div>
-                        <h2 className="font-display font-bold text-base text-ink mb-1.5">No School Telemetry</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            We never harvest or monitor student credentials, university emails, Canvas tokens, or institutional course IDs.
-                        </p>
-                    </div>
-
-                    <div className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs">
-                        <div className="w-10 h-10 rounded-2xl bg-[#ffd5cc]/70 flex items-center justify-center text-rose-950 mb-4">
-                            <Shield className="w-5 h-5" />
-                        </div>
-                        <h2 className="font-display font-bold text-base text-ink mb-1.5">No Ad Trackers</h2>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                            ExamGhost contains zero third-party advertising scripts, zero tracking pixels, and zero data resale partnerships.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Policy Document Body */}
-                <div className="rounded-3xl bg-white border border-black/10 p-8 sm:p-12 shadow-sm space-y-10 text-sm text-ink-secondary leading-relaxed">
-                    
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">1. Information We Collect (and What We Do Not)</h2>
+                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 shadow-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
+                    <section id="s1" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Information We Collect (and What We Do Not)</h2>
                         <p>
                             ExamGhost, operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110), was engineered from day one with a strict <strong>privacy-first, zero-knowledge philosophy</strong>. Because our tools operate directly on-device inside your browser, our data collection footprint is minimal:
                         </p>
@@ -132,8 +96,8 @@ export default function PrivacyPage() {
                         </ul>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">2. How Questions and AI Solves Are Handled</h2>
+                    <section id="s2" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. How Questions and AI Solves Are Handled</h2>
                         <p>
                             When you Double-Click a question, use hotkey auto-solve, or crop a diagram with Snap-It (Alt+S):
                         </p>
@@ -145,29 +109,29 @@ export default function PrivacyPage() {
                         </ul>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">3. Canvas & LMS Audit Log Protection</h2>
+                    <section id="s3" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. Canvas & LMS Audit Log Protection</h2>
                         <p>
                             Our Focus Shield operates by neutralizing the browser’s `window.blur` and `document.visibilitychange` event dispatches. While this prevents Learning Management Systems (Canvas, Blackboard, Moodle, D2L) from registering false departure logs in SpeedGrader, it does not modify the school's server-side gradebook or corrupt exam databases.
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">4. Third-Party Disclosures & Data Sharing</h2>
+                    <section id="s4" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">4. Third-Party Disclosures & Data Sharing</h2>
                         <p>
                             We do not sell, rent, monetize, or trade student data under any circumstances. We will never share usage statistics with educational institutions, proctoring vendors, academic integrity boards, or advertising syndicates.
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">5. FERPA, GDPR & CCPA Compliance</h2>
+                    <section id="s5" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">5. FERPA, GDPR & CCPA Compliance</h2>
                         <p>
                             Because ExamGhost does not harvest educational records, student PII (Personally Identifiable Information), or grade transcripts, our architecture is compliant with the Family Educational Rights and Privacy Act (FERPA), the General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA).
                         </p>
                     </section>
 
-                    <section className="space-y-3">
-                        <h2 className="font-display font-bold text-xl text-ink">6. Contact & Data Deletion Requests</h2>
+                    <section id="s6" className="space-y-3 scroll-mt-24">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">6. Contact & Data Deletion Requests</h2>
                         <p>
                             If you wish to revoke an anonymous license key or have questions regarding our cryptographic privacy architecture, you may contact our privacy engineering team directly:
                         </p>
@@ -178,12 +142,10 @@ export default function PrivacyPage() {
                             <div><strong>Guaranteed Response:</strong> Under 24 hours (under 2 hours during exam finals).</div>
                         </div>
                     </section>
-
                 </div>
-
             </main>
 
-            <Footer />
+            <Footer hideCta />
         </div>
     );
 }
