@@ -155,7 +155,7 @@ function Row({ label, them, us }: { label: string; them: React.ReactNode; us: Re
         <div className="grid sm:grid-cols-[150px_1fr_1fr] gap-x-6 gap-y-1 px-5 sm:px-6 py-4 border-t border-black/5 first:border-t-0 hover:bg-[#faf8f4]/60 transition-colors">
             <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted sm:pt-0.5">{label}</dt>
             <dd className="text-[15px] text-ink-secondary">{them}</dd>
-            <dd className="text-[15px] text-ink font-medium">{us}</dd>
+            <dd className="text-[15px] text-ink font-medium sm:bg-[#f6f8fe]/55 sm:-my-4 sm:py-4 sm:px-4">{us}</dd>
         </div>
     );
 }
@@ -170,7 +170,7 @@ function Table({ f }: { f: CompetitorFact }) {
                     <div className="hidden sm:grid grid-cols-[150px_1fr_1fr] gap-x-6 px-6 py-4 bg-[#faf8f4] border-b border-black/5 text-sm font-display font-bold">
                         <span />
                         <span>{f.name}</span>
-                        <span className="inline-flex items-center gap-1.5">
+                        <span className="inline-flex items-center gap-1.5 sm:px-4">
                             <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                             ExamGhost
                         </span>
@@ -393,7 +393,9 @@ export default function LeanCompare({ slug }: { slug: string }) {
                             <details key={q.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{q.q}</h3>
-                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
+                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
                                 <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{q.a}</p>
                             </details>

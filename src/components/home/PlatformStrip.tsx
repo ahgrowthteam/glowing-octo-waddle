@@ -4,7 +4,7 @@ import { PLATFORMS_DATA } from "@/data/platforms";
 
 export default function PlatformStrip() {
     return (
-        <section aria-label="Supported platforms" className="py-9 border-y border-black/5 bg-white/50">
+        <section aria-label="Supported platforms" className="py-10 sm:py-12 border-y border-black/[0.06] bg-white/75">
             <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-5">
                 Works on {PLATFORMS_DATA.length} platforms, and any page you can see
             </p>
@@ -27,9 +27,11 @@ export default function PlatformStrip() {
                         </li>
                     ))}
                 </ul>
-                <p className="mt-5 text-center text-sm text-ink-muted">
-                    Not listed? Press <kbd className="kbd-key mx-0.5">Alt+S</kbd> and drag a box around any question: ExamGhost solves whatever is on your screen.
-                </p>
+                <div className="mt-6 text-center">
+                    <p className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full bg-[#faf8f4] border border-black/[0.07] px-4 py-2 text-xs sm:text-[13px] text-ink-secondary">
+                        Not listed? Press <kbd className="kbd-key mx-0.5">Alt+S</kbd> and drag a box around any question: ExamGhost solves whatever is on your screen.
+                    </p>
+                </div>
             </div>
         </section>
     );

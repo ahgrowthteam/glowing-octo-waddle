@@ -44,6 +44,7 @@ function SnapGraphic() {
                 <Bar />
             </div>
             <div className="relative rounded-md border-2 border-dashed border-[#4361ee] bg-[#4361ee]/[0.04] px-4 pt-4 pb-0 h-[88px] flex items-end gap-3">
+                <span className="absolute left-2.5 top-1.5 rounded bg-[#4361ee]/10 px-1.5 py-0.5 text-[9px] font-semibold text-[#2b55c7]">Snipping…</span>
                 {[28, 52, 38, 70].map((h, i) => (
                     <span key={i} className="flex-1 rounded-t-sm" style={{ height: h, background: ["#c4d0f8", "#9fb2f3", "#b6c5f6", "#4361ee"][i] }} />
                 ))}
@@ -74,7 +75,10 @@ function AnswerGraphic() {
                     <X className="w-3 h-3 ml-auto text-ink-muted" aria-hidden="true" />
                 </div>
                 <div className="rounded-lg bg-emerald-50 border border-emerald-200 px-2.5 py-2">
-                    <p className="text-[10px] font-semibold text-emerald-800">Answer</p>
+                    <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <p className="text-[10px] font-semibold text-emerald-800">Answer</p>
+                        <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-semibold text-emerald-800">Explained</span>
+                    </div>
                     <p className="flex items-center gap-1 text-[12px] font-semibold text-ink">
                         <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" /> Mitochondria
                     </p>
@@ -85,9 +89,9 @@ function AnswerGraphic() {
 }
 
 const STEPS = [
-    { n: 1, title: "Add to Chrome", body: "Install the extension and sign in. It takes about 30 seconds.", graphic: <InstallGraphic /> },
-    { n: 2, title: "Double-click or snap", body: "Double-click a question on your quiz page, or press Alt+S and drag a box around anything on screen.", graphic: <SnapGraphic /> },
-    { n: 3, title: "Get your answer", body: "The answer shows up in under a second, right next to the question, with an explanation.", graphic: <AnswerGraphic /> },
+    { n: 1, pillBg: "#e8edfc", title: "Add to Chrome", body: "Install the extension and sign in. It takes about 30 seconds.", graphic: <InstallGraphic /> },
+    { n: 2, pillBg: "#fff0ba", title: "Double-click or snap", body: "Double-click a question on your quiz page, or press Alt+S and drag a box around anything on screen.", graphic: <SnapGraphic /> },
+    { n: 3, pillBg: "#d8f3d7", title: "Get your answer", body: "The answer shows up in under a second, right next to the question, with an explanation.", graphic: <AnswerGraphic /> },
 ];
 
 export default function HowItWorks() {
@@ -96,7 +100,7 @@ export default function HowItWorks() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12 sm:mb-14">
                     <p className="text-sm font-semibold text-ink-muted mb-3">Getting started</p>
-                    <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05]">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] text-ink leading-[1.06]">
                         Three steps.<br />No new tabs.
                     </h2>
                 </div>
@@ -107,7 +111,7 @@ export default function HowItWorks() {
                                 <div className="h-[176px] rounded-2xl bg-[#f7f4ee] border border-black/[0.05] p-4 grid place-items-center mb-6">{s.graphic}</div>
                                 <div className="inline-flex items-center gap-2 mb-3">
                                     <span className="inline-grid place-items-center w-7 h-7 rounded-full bg-ink text-white text-xs font-bold">{s.n}</span>
-                                    <span className="text-xs font-semibold text-ink-muted">Step {s.n}</span>
+                                    <span className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-ink" style={{ backgroundColor: s.pillBg }}>Step {s.n}</span>
                                 </div>
                                 <h3 className="font-display text-xl font-bold text-ink mb-1.5">{s.title}</h3>
                                 <p className="text-[15px] text-ink-muted leading-relaxed">{s.body}</p>

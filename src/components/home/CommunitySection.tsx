@@ -20,10 +20,15 @@ export default function CommunitySection() {
                         <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#5865F2] opacity-[0.08] blur-3xl" />
 
                         <div className="relative text-center lg:text-left">
-                            <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-sm font-semibold text-[#4752c4] shadow-sm mb-5">
-                                <FaDiscord className="w-4 h-4" aria-hidden="true" /> Community
-                            </span>
-                            <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.08] mb-4">
+                            <div className="inline-flex items-center gap-2.5 mb-5">
+                                <span className="w-9 h-9 rounded-full overflow-hidden border border-black/10 bg-white shadow-sm shrink-0">
+                                    <img src="/images/ghost/ghost_peace.jpg" alt="" width={36} height={36} className="w-full h-full object-cover scale-105" />
+                                </span>
+                                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-sm font-semibold text-[#4752c4] shadow-sm">
+                                    <FaDiscord className="w-4 h-4" aria-hidden="true" /> Community
+                                </span>
+                            </div>
+                            <h2 className="font-display text-[32px] sm:text-[44px] font-bold tracking-[-0.03em] text-ink leading-[1.08] mb-4">
                                 Help shape what we build next
                             </h2>
                             <p className="text-base sm:text-lg text-ink-secondary leading-relaxed mb-7 max-w-md mx-auto lg:mx-0">

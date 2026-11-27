@@ -61,12 +61,12 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
-            <section className="dark-surface py-16 sm:py-24 bg-[#18181b] text-white">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <section className="dark-surface relative overflow-hidden bg-dark-grid py-16 sm:py-24 bg-[#18181b] text-white">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
                     <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-center mb-10 sm:mb-14">See it in action</h2>
                     <Reveal className="grid md:grid-cols-3 gap-6">
                         {DEMOS.map((d) => (
-                            <div key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] surface-dark-card p-5 flex flex-col hover:border-white/[0.16] hover:-translate-y-0.5 transition-all duration-300">
+                            <div key={d.id} className="rounded-3xl bg-gradient-to-b from-white/[0.055] to-white/[0.02] border border-white/[0.08] surface-dark-card p-5 flex flex-col hover:border-white/[0.16] hover:-translate-y-0.5 transition-all duration-300">
                                 <div className="aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift mb-4">
                                     <MediaSlot slot={`features.${d.id}`} src={MEDIA.features[d.id]} label={`${d.title} demo`} fallback={<MockQuiz variant={d.variant} />} />
                                 </div>
@@ -117,7 +117,9 @@ export default function FeaturesPage() {
                             <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
+                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
                                 <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>

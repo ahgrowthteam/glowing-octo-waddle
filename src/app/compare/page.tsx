@@ -143,10 +143,16 @@ export default function ComparePage() {
                         </p>
                         <ul className="space-y-2.5" aria-label="Platforms named, by extension">
                             {bars.map((b) => (
-                                <li key={b.name} className="grid grid-cols-[110px_1fr_28px] sm:grid-cols-[150px_1fr_32px] items-center gap-3 text-sm">
+                                <li key={b.name} className="grid grid-cols-[110px_1fr_36px] sm:grid-cols-[150px_1fr_40px] items-center gap-3 text-sm">
                                     <span className={b.us ? "font-semibold text-ink" : "text-ink-secondary"}>{b.name}</span>
                                     <span className="h-2.5 rounded-full bg-black/[0.06] overflow-hidden"><span className={`block h-full rounded-full ${b.us ? "bg-ink" : "bg-black/20"}`} style={{ width: `${(b.count / Math.max(egCount, ...bars.map((x) => x.count))) * 100}%` }} /></span>
-                                    <span className="text-right tabular-nums text-ink-muted">{b.count}</span>
+                                    <span className="text-right">
+                                        {b.us ? (
+                                            <span className="inline-block bg-ink text-white rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums">{b.count}</span>
+                                        ) : (
+                                            <span className="tabular-nums text-ink-muted">{b.count}</span>
+                                        )}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -192,7 +198,9 @@ export default function ComparePage() {
                             <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
+                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
                                 <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>

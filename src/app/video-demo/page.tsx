@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lock } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -44,7 +44,22 @@ export default function VideoDemoPage() {
                     <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
                         See ExamGhost answer a quiz question on the page, then open the guide for your platform.
                     </p>
-                    <div className="mb-8 text-left rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
+                    <div className="mb-8 text-left rounded-[24px] sm:rounded-[30px] bg-white/85 p-2 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
+                        <div className="flex items-center justify-between gap-2 px-3 pt-1 pb-2 text-[11px] text-ink-muted">
+                            <div className="flex items-center gap-1.5" aria-hidden="true">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]/80" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]/80" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]/80" />
+                            </div>
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f4ee] px-2.5 py-0.5 border border-black/[0.06] font-medium text-ink-secondary">
+                                <Lock size={10} className="text-ink-muted" aria-hidden="true" />
+                                quiz-walkthrough · 45s
+                            </span>
+                            <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                                ExamGhost · Active
+                            </span>
+                        </div>
                         <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Play, Check } from "lucide-react";
+import { Play, Check, Lock } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import { DEMO_URL, INSTALL_URL, MEDIA } from "./config";
 import MediaSlot from "./MediaSlot";
@@ -99,10 +99,10 @@ export default function HomeHero() {
                         AI Chrome extension for 20 platforms and any page
                     </p>
 
-                    <h1 className="font-display text-[40px] sm:text-5xl lg:text-[56px] font-bold tracking-[-0.03em] leading-[1.05] text-ink mb-5">
+                    <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[60px] font-bold tracking-[-0.035em] leading-[1.03] text-ink mb-5">
                         Double-click any question.{" "}
                         <span className="relative isolate inline-block">
-                            <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-[#ffe9a0]" aria-hidden="true" />
+                            <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-gradient-to-r from-[#ffe9a0] via-[#ffe27a] to-[#ffe9a0]" aria-hidden="true" />
                             Get the answer.
                         </span>
                     </h1>
@@ -133,7 +133,9 @@ export default function HomeHero() {
                     <ul className="flex flex-wrap gap-x-5 gap-y-1.5 justify-center lg:justify-start text-[13px] font-medium text-ink-secondary/80">
                         {["5 free solves a day", "Cancel anytime", "14-day money-back"].map((t) => (
                             <li key={t} className="inline-flex items-center gap-1.5">
-                                <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                <span className="w-4 h-4 rounded-full bg-emerald-500/15 text-emerald-700 grid place-items-center shrink-0">
+                                    <Check className="w-2.5 h-2.5" strokeWidth={3} aria-hidden="true" />
+                                </span>
                                 {t}
                             </li>
                         ))}
@@ -141,8 +143,27 @@ export default function HomeHero() {
                 </div>
 
                 {/* Right: video */}
-                <div className="rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
-                    <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
+                <div className="relative">
+                    <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -inset-4 rounded-[36px] bg-[radial-gradient(circle_at_30%_20%,rgba(196,208,248,0.55),transparent_60%),radial-gradient(circle_at_80%_85%,rgba(255,233,160,0.45),transparent_60%)] blur-2xl -z-10"
+                    />
+                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/90 p-1.5 sm:p-2 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
+                        <div className="flex items-center gap-2 rounded-t-[18px] sm:rounded-t-[22px] bg-[#f6f3ec] border-b border-black/[0.06] px-3.5 py-2 mb-1.5">
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                            <span className="ml-2 flex-1 min-w-0 inline-flex items-center gap-1.5 rounded-full bg-white/90 border border-black/[0.06] px-2.5 py-0.5 text-[11px] font-mono text-ink-muted">
+                                <Lock className="w-2.5 h-2.5 shrink-0" aria-hidden="true" />
+                                <span className="truncate">canvas.university.edu/quizzes/take</span>
+                            </span>
+                            <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-semibold text-emerald-800 shrink-0">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                                ExamGhost · Active
+                            </span>
+                        </div>
+                        <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
+                    </div>
                 </div>
             </div>
         </section>

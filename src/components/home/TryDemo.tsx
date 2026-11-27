@@ -44,32 +44,38 @@ export default function TryDemo() {
     const current = STYLES.find((s) => s.id === style)!;
 
     return (
-        <section id="try" className="dark-surface py-16 sm:py-24 bg-[#0c0c0e] text-white scroll-mt-20">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <section id="try" className="dark-surface bg-dark-grid relative overflow-hidden py-16 sm:py-24 bg-[#0c0c0e] text-white scroll-mt-20">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(196,208,248,0.14),transparent_75%)]"
+            />
+            <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-8 sm:mb-10">
-                    <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-4">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] leading-[1.06] mb-4">
                         Try it without installing
                     </h2>
-                    <p className="text-white/60 max-w-lg mx-auto">
+                    <p className="text-white/65 max-w-lg mx-auto">
                         Double-click the question and watch ExamGhost answer it. Pick how you want the answer delivered.
                     </p>
                 </div>
 
                 {/* Answer style switch (the extension's real delivery options) */}
-                <div role="radiogroup" aria-label="Answer style" className="flex flex-wrap justify-center gap-2 mb-3">
-                    {STYLES.map((s) => (
-                        <button
-                            key={s.id}
-                            role="radio"
-                            aria-checked={style === s.id}
-                            onClick={() => setStyle(s.id)}
-                            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                                style === s.id ? "bg-white text-ink shadow-sm" : "bg-white/[0.08] text-white/80 ring-1 ring-white/10 hover:bg-white/15"
-                            }`}
-                        >
-                            {s.label}
-                        </button>
-                    ))}
+                <div className="flex justify-center mb-3">
+                    <div role="radiogroup" aria-label="Answer style" className="inline-flex flex-wrap justify-center gap-1 rounded-full bg-white/[0.06] p-1 ring-1 ring-white/[0.1] backdrop-blur">
+                        {STYLES.map((s) => (
+                            <button
+                                key={s.id}
+                                role="radio"
+                                aria-checked={style === s.id}
+                                onClick={() => setStyle(s.id)}
+                                className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                                    style === s.id ? "bg-white text-ink shadow-sm" : "text-white/75 hover:text-white hover:bg-white/[0.08]"
+                                }`}
+                            >
+                                {s.label}
+                            </button>
+                        ))}
+                    </div>
                 </div>
                 <p className="text-center text-sm text-white/55 mb-7 min-h-[1.25rem]" aria-live="polite">{current.hint}</p>
 
@@ -89,9 +95,22 @@ export default function TryDemo() {
                         )}
                     </div>
 
-                    <div className="bg-white text-ink px-4 sm:px-8 py-8 sm:py-10">
-                        {/* Quiz + (optional) explain panel share one row, so nothing overlaps */}
-                        <div className="mx-auto flex flex-col lg:flex-row lg:items-start lg:justify-center gap-6">
+                    <div className="bg-white text-ink flex">
+                        <nav aria-label="Course menu" className="hidden md:flex flex-col gap-1 w-36 shrink-0 border-r border-black/[0.07] bg-[#faf8f4] px-3 py-6 text-xs font-medium text-ink-muted">
+                            {["Home", "Modules", "Quizzes", "Grades"].map((item) => (
+                                <span
+                                    key={item}
+                                    className={`rounded-lg px-2.5 py-1.5 ${
+                                        item === "Quizzes" ? "bg-white text-ink font-semibold border border-black/[0.08] shadow-2xs" : ""
+                                    }`}
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </nav>
+                        <div className="flex-1 min-w-0 px-4 sm:px-8 py-8 sm:py-10">
+                            {/* Quiz + (optional) explain panel share one row, so nothing overlaps */}
+                            <div className="mx-auto flex flex-col lg:flex-row lg:items-start lg:justify-center gap-6">
                             <div className="w-full max-w-xl">
                                 <h3 className="font-display text-lg sm:text-2xl font-medium">Unit 3 Practice — Supply and Demand</h3>
                                 <p className="text-xs sm:text-sm text-ink-muted mb-5">Started: Nov 19 at 7:09pm</p>
@@ -167,8 +186,9 @@ export default function TryDemo() {
                                         </span>
                                     )}
                                     {solved && (
-                                        <span className="animate-pop-in inline-flex items-center gap-2 text-sm font-medium text-emerald-700" role="status">
+                                        <span className="animate-pop-in inline-flex flex-wrap items-center gap-2 text-sm font-medium text-emerald-700" role="status">
                                             <Check className="w-4 h-4" aria-hidden="true" /> Answer applied · {current.label}
+                                            <span className="text-xs font-normal text-ink-muted">— try switching modes above</span>
                                         </span>
                                     )}
                                     <span className="rounded-md bg-[#0770a3] text-white text-sm px-5 py-2.5 ml-auto">Next ›</span>
@@ -189,6 +209,7 @@ export default function TryDemo() {
                                     </p>
                                 </aside>
                             )}
+                            </div>
                         </div>
                     </div>
                 </div>

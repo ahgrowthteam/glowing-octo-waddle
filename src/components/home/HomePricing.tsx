@@ -48,7 +48,7 @@ export default function HomePricing() {
         <section id="pricing" className="py-16 sm:py-24 scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-xl mx-auto mb-12">
-                    <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-3">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] text-ink leading-[1.06] mb-3">
                         Simple pricing
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted">
@@ -68,17 +68,25 @@ export default function HomePricing() {
                             key={p.name}
                             className={`relative rounded-3xl p-6 flex flex-col transition-all duration-300 ${
                                 p.featured
-                                    ? "bg-ink text-white surface-dark-card ring-1 ring-white/10 lg:-translate-y-1.5"
+                                    ? "bg-[#111111] text-white surface-dark-card ring-2 ring-ink lg:-translate-y-2"
+                                    : p.name === "Free"
+                                    ? "bg-[#faf8f4]/90 border border-black/10 surface-card hover:border-black/20 hover:-translate-y-0.5"
                                     : "bg-white border border-black/10 surface-card hover:border-black/20 hover:-translate-y-0.5"
                             }`}
                         >
                             {p.featured && (
-                                <span className="absolute -top-3 left-6 text-[11px] font-bold uppercase tracking-wider bg-[#ffd23f] text-ink px-3 py-1 rounded-full shadow-sm">
+                                <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
+                                    <div className="absolute -top-16 -left-12 w-40 h-40 rounded-full bg-[#c4d0f8] opacity-[0.14] blur-2xl" />
+                                    <div className="absolute -bottom-16 -right-12 w-40 h-40 rounded-full bg-[#cdeecb] opacity-[0.12] blur-2xl" />
+                                </div>
+                            )}
+                            {p.featured && (
+                                <span className="absolute -top-3 left-6 z-10 text-[11px] font-bold uppercase tracking-wider bg-[#ffd23f] text-ink px-3 py-1 rounded-full shadow-sm">
                                     Most popular
                                 </span>
                             )}
-                            <h3 className="font-display text-lg font-bold mb-3">{p.name}</h3>
-                            <p className="flex items-baseline gap-1 mb-1">
+                            <h3 className="relative font-display text-lg font-bold mb-3">{p.name}</h3>
+                            <p className="relative flex items-baseline gap-1 mb-1">
                                 <span className="font-display text-4xl font-bold tabular-nums">{p.price}</span>
                                 <span className={p.featured ? "text-white/60" : "text-ink-muted"}>{p.unit}</span>
                                 {p.featured && (
@@ -87,8 +95,8 @@ export default function HomePricing() {
                                     </span>
                                 )}
                             </p>
-                            <p className={`text-[13px] mb-5 ${p.featured ? "text-white/60" : "text-ink-muted"}`}>{p.note}</p>
-                            <ul className="space-y-2 mb-6 text-[14px] flex-1">
+                            <p className={`relative text-[13px] pb-5 mb-5 border-b ${p.featured ? "text-white/65 border-white/[0.12]" : "text-ink-muted border-black/[0.07]"}`}>{p.note}</p>
+                            <ul className="relative space-y-2.5 mb-6 text-[14px] flex-1">
                                 {p.features.map((f) => (
                                     <li key={f} className="flex items-start gap-2">
                                         <Check className={`w-4 h-4 mt-0.5 shrink-0 ${p.featured ? "text-[#bfe9d9]" : "text-emerald-600"}`} aria-hidden="true" />
@@ -100,11 +108,11 @@ export default function HomePricing() {
                                 href={INSTALL_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`inline-flex items-center justify-center rounded-full py-3 text-[15px] font-medium transition-colors ${
+                                className={`relative inline-flex items-center justify-center rounded-full py-3 text-[15px] font-medium transition-colors ${
                                     p.featured
                                         ? "bg-white text-ink hover:bg-[#ffe9a0]"
                                         : p.name === "Free"
-                                        ? "border border-black/15 bg-[#faf8f4] text-ink hover:bg-ink hover:text-white"
+                                        ? "border border-black/15 bg-white text-ink hover:bg-ink hover:text-white"
                                         : "bg-ink text-white hover:bg-[#252422]"
                                 }`}
                             >

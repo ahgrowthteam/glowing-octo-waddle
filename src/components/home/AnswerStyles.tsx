@@ -12,6 +12,7 @@ const STYLES = [
         id: "quick",
         short: "Quick",
         icon: PenLine,
+        tint: "#c4d0f8",
         key: "Alt+1",
         title: "Quick mode",
         body: "Fills in the answer and copies it to your clipboard. No panel, no extra clicks.",
@@ -22,6 +23,7 @@ const STYLES = [
         id: "highlight",
         short: "Highlight",
         icon: MousePointer2,
+        tint: "#ffe9a0",
         key: "Alt+2",
         title: "Highlight mode",
         body: "Marks the right option with a small ✓ and leaves the click to you.",
@@ -32,6 +34,7 @@ const STYLES = [
         id: "explain",
         short: "Explain",
         icon: BookOpen,
+        tint: "#cdeecb",
         key: "Alt+3",
         title: "Explain mode",
         body: "Fills in the answer and slides in a side panel with the reasoning, so you learn why.",
@@ -42,6 +45,7 @@ const STYLES = [
         id: "screenshot",
         short: "Screenshot",
         icon: ScanLine,
+        tint: "#bfe3f6",
         key: "Alt+S",
         title: "Screenshot mode",
         body: "Drag a box around a graph, diagram or image-based question and get the solution with the working shown.",
@@ -60,7 +64,7 @@ export default function AnswerStyles() {
         <section id="answer-styles" className="py-16 sm:py-24 bg-white/70 border-y border-black/[0.06] scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-                    <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] text-ink leading-[1.06] mb-4">
                         Pick how answers show up
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted">
@@ -107,7 +111,10 @@ export default function AnswerStyles() {
                                         on ? "border-ink bg-white shadow-lift" : "border-black/[0.08] bg-white/75 hover:bg-white hover:border-black/20"
                                     }`}
                                 >
-                                    <span className={`grid place-items-center w-12 h-12 rounded-full shrink-0 transition-colors ${on ? "bg-ink text-white" : "bg-[#f2efe9] text-ink-secondary"}`}>
+                                    <span
+                                        className={`grid place-items-center w-12 h-12 rounded-full shrink-0 transition-colors ${on ? "bg-ink text-white" : "text-ink"}`}
+                                        style={!on ? { backgroundColor: s.tint } : undefined}
+                                    >
                                         <Icon className="w-5 h-5" aria-hidden="true" />
                                     </span>
                                     <span className="block">
@@ -139,6 +146,10 @@ export default function AnswerStyles() {
                                 <span className="ml-3 flex-1 min-w-0 flex items-center gap-2 rounded-full bg-white px-3 py-1 text-[11px] text-ink-muted font-mono">
                                     <Lock className="w-3 h-3 shrink-0" aria-hidden="true" />
                                     <span className="truncate">canvas.university.edu/courses/2/quizzes/7/take</span>
+                                </span>
+                                <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white border border-black/[0.08] px-2.5 py-0.5 text-[11px] font-semibold text-ink shrink-0">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                                    {current.short}
                                 </span>
                             </div>
                             <div className="aspect-video bg-[#faf8f4]">

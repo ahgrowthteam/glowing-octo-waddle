@@ -10,7 +10,7 @@ export default function GuideVideo() {
                 <p className="text-sm font-semibold text-ink-muted mb-3">
                     Full walkthrough
                 </p>
-                <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
+                <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] text-ink leading-[1.06] mb-4">
                     See exactly how it works
                 </h2>
                 <p className="text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-10">
@@ -18,6 +18,15 @@ export default function GuideVideo() {
                 </p>
                 <Reveal>
                     <div className="rounded-[24px] sm:rounded-[30px] bg-white p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card">
+                        <div className="flex items-center justify-between gap-2 px-3.5 py-2 text-xs text-ink-muted border-b border-black/[0.05] bg-[#faf8f4]/80 rounded-t-[18px] sm:rounded-t-[22px] mb-1.5">
+                            <span className="flex items-center gap-1.5">
+                                <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
+                                <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
+                                <span className="w-2 h-2 rounded-full bg-[#28c840]" />
+                            </span>
+                            <span className="truncate font-medium">Walkthrough · Install, modes, double-click &amp; Snap-It</span>
+                            <span className="w-8 hidden sm:block" aria-hidden="true" />
+                        </div>
                         <HeroVideo slot="guide" videoId={MEDIA.guide.youtube} />
                     </div>
                 </Reveal>

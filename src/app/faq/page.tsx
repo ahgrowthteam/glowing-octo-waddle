@@ -54,9 +54,10 @@ export default function FAQPage() {
                             <a
                                 key={g}
                                 href={`#${slug(g)}`}
-                                className="px-4 py-2 rounded-full border border-black/10 bg-white text-sm font-medium text-ink-secondary hover:border-black/25 hover:text-ink transition-colors"
+                                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black/10 bg-white surface-card text-sm font-medium text-ink-secondary hover:border-black/25 hover:text-ink transition-colors"
                             >
-                                {g}
+                                <span>{g}</span>
+                                <span className="text-xs text-ink-muted tabular-nums">{FAQS.filter((f) => f.group === g).length}</span>
                             </a>
                         ))}
                     </nav>
@@ -73,7 +74,9 @@ export default function FAQPage() {
                                     <details key={f.id} id={f.id} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card scroll-mt-24">
                                         <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
                                             <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                            <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
+                                            <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
+                                                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                            </span>
                                         </summary>
                                         <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                                     </details>

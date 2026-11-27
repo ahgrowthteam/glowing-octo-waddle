@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown, Lock } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -128,7 +128,22 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                             </Link>
                         </div>
                     </div>
-                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
+                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/85 p-2 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
+                        <div className="flex items-center justify-between gap-2 px-3 pt-1 pb-2 text-[11px] text-ink-muted">
+                            <div className="flex items-center gap-1.5" aria-hidden="true">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]/80" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]/80" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]/80" />
+                            </div>
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f4ee] px-2.5 py-0.5 border border-black/[0.06] font-medium text-ink-secondary">
+                                <Lock size={10} className="text-ink-muted" aria-hidden="true" />
+                                {p.name} · {p.kind}
+                            </span>
+                            <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                                ExamGhost · Active
+                            </span>
+                        </div>
                         <HeroVideo videoId={p.youtubeId ?? ""} />
                     </div>
                 </div>
@@ -172,7 +187,9 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                             <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
+                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
                                 <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>

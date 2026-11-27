@@ -18,7 +18,7 @@ const TOPICS = [
 ];
 
 const field =
-    'w-full px-4 py-3 rounded-xl border border-black/10 bg-cream text-ink text-[15px] focus:outline-none focus:border-ink transition-colors';
+    'w-full px-4 py-3 rounded-xl border border-black/10 bg-cream text-ink text-[15px] focus:outline-none focus:border-ink focus:ring-2 focus:ring-ink/10 transition-colors';
 
 export default function ContactPage() {
     const [form, setForm] = useState({ name: '', email: '', topic: TOPICS[0], message: '' });
@@ -50,17 +50,18 @@ export default function ContactPage() {
             <section className="pb-16 sm:pb-24">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-5 items-start">
                     <div className="lg:col-span-2 space-y-5">
-                        <div className="dark-surface bg-ink text-white rounded-3xl surface-dark-card ring-1 ring-white/10 p-6 sm:p-8">
-                            <FaDiscord className="w-7 h-7 mb-4 text-white/80" aria-hidden="true" />
-                            <h2 className="font-display text-xl font-bold mb-1.5">Discord</h2>
-                            <p className="text-sm text-white/70 leading-relaxed mb-6">
+                        <div className="dark-surface relative overflow-hidden bg-dark-grid bg-ink text-white rounded-3xl surface-dark-card ring-1 ring-white/10 p-6 sm:p-8">
+                            <div className="pointer-events-none absolute -top-12 -right-12 w-40 h-40 rounded-full blur-2xl" style={{ background: "radial-gradient(circle, rgba(203,241,211,0.16), transparent 70%)" }} aria-hidden="true" />
+                            <FaDiscord className="relative w-7 h-7 mb-4 text-white/80" aria-hidden="true" />
+                            <h2 className="relative font-display text-xl font-bold mb-1.5">Discord</h2>
+                            <p className="relative text-sm text-white/70 leading-relaxed mb-6">
                                 Usually the quickest way to get help. Ask a question or open a private ticket.
                             </p>
                             <a
                                 href={DISCORD_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-6 py-3 text-sm font-semibold hover:bg-cream transition-colors"
+                                className="relative inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-6 py-3 text-sm font-semibold hover:bg-cream transition-colors"
                             >
                                 Join our Discord <ArrowRight className="w-4 h-4" aria-hidden="true" />
                             </a>

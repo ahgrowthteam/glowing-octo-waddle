@@ -86,14 +86,14 @@ export default function TermsPage() {
                     </ol>
                 </nav>
 
-                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 surface-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
-                    <section id="s1" className="space-y-3 scroll-mt-24">
+                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 surface-card divide-y divide-black/[0.06] text-[15px] text-ink-secondary leading-relaxed">
+                    <section id="s1" className="space-y-3 pb-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Acceptance of Terms</h2>
                         <p>
                             ExamGhost (the &quot;Software&quot;, &quot;Extension&quot; or &quot;Service&quot;) is owned and operated by FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110). By installing or using ExamGhost you agree to these Terms of Service, including our 14-day money-back guarantee. If you do not agree, do not install or use the software.
                         </p>
                     </section>
-<section id="s2" className="space-y-3 scroll-mt-24">
+                    <section id="s2" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. Acceptable Use and Academic Integrity</h2>
                         <p>
                             ExamGhost is an AI study and homework assistant. It is meant to help you review course material, practice, and understand how a question is solved.
@@ -102,7 +102,7 @@ export default function TermsPage() {
                             You are solely responsible for using ExamGhost in line with your school, university or testing organization&apos;s rules, honor code and course policy. Many instructors restrict AI tools on graded work. We do not promise that your use will be invisible to your school or instructor, and we are not responsible for any disciplinary action that results from how you use the Service.
                         </p>
                     </section>
-<section id="s3" className="space-y-3 scroll-mt-24">
+                    <section id="s3" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. License Grants & Plans</h2>
                         <p>We grant you a personal, non-transferable, non-exclusive license to use the Extension under the plan you choose:</p>
                         <ul className="space-y-2.5 pl-4 list-disc text-sm">
@@ -113,7 +113,7 @@ export default function TermsPage() {
                         </ul>
                         <p>Plan features and limits may change over time; the plan description shown when you buy is what applies to your purchase.</p>
                     </section>
-<section id="s4" className="space-y-3 scroll-mt-24">
+                    <section id="s4" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">4. 14-Day Money-Back Guarantee &amp; Refund Policy</h2>
                         <p>
                             All paid plans come with a <strong>14-day money-back guarantee</strong>: if you are not satisfied, request a full refund within 14 days of purchase.
@@ -128,7 +128,7 @@ export default function TermsPage() {
                             </p>
                         </div>
                     </section>
-<section id="s5" className="space-y-3 scroll-mt-24">
+                    <section id="s5" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">5. Intellectual Property &amp; Prohibited Conduct</h2>
                         <p>
                             The software, its code, user interface and the ExamGhost mascot artwork are the property of FoundryOne LLC. You agree not to:
@@ -140,13 +140,13 @@ export default function TermsPage() {
                             <li>Use the Service to break the law, or to harass or harm others.</li>
                         </ul>
                     </section>
-<section id="s6" className="space-y-3 scroll-mt-24">
+                    <section id="s6" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">6. Disclaimer of Warranties & Limitation of Liability</h2>
                         <p>
                             AI answers can be wrong. Check important answers yourself. The Service is provided &quot;as is&quot; without warranties, including of uninterrupted availability or of compatibility with every website or platform, which may change without notice. To the fullest extent the law allows, FoundryOne LLC is not liable for academic sanctions, grade disputes or indirect damages arising from your use of the Service.
                         </p>
                     </section>
-<section id="s7" className="space-y-3 scroll-mt-24">
+                    <section id="s7" className="space-y-3 pt-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">7. Governing Law &amp; Support Contacts</h2>
                         <p>
                             These terms are governed by the laws of the State of New Mexico, United States, where FoundryOne LLC is registered. For legal inquiries or support requests, contact:

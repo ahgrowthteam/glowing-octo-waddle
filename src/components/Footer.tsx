@@ -113,7 +113,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
                                 ['FAQ', '/faq'],
                                 ['Video demos', '/video-demo'],
                             ].map(([label, href]) => (
-                                <li key={href}><Link prefetch={false} href={href} className="inline-block py-1 hover:text-ink transition-colors">{label}</Link></li>
+                                <li key={href}><Link prefetch={false} href={href} className="inline-block py-1 hover:text-ink hover:underline underline-offset-4 decoration-black/25 transition-colors">{label}</Link></li>
                             ))}
                         </ul>
                     </nav>
@@ -122,7 +122,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
                         <h3 className="font-display font-semibold text-xs uppercase tracking-wider mb-3">Compare</h3>
                         <ul className="space-y-1 text-sm text-ink-secondary">
                             {allFacts().filter(isIndexable).slice(0, 7).map((f) => (
-                                <li key={f.slug}><Link prefetch={false} href={`/${f.slug}`} className="inline-block py-1 hover:text-ink transition-colors">{f.name} vs ExamGhost</Link></li>
+                                <li key={f.slug}><Link prefetch={false} href={`/${f.slug}`} className="inline-block py-1 hover:text-ink hover:underline underline-offset-4 decoration-black/25 transition-colors">{f.name} vs ExamGhost</Link></li>
                             ))}
                             <li><Link prefetch={false} href="/compare" className="inline-block py-1 font-medium text-ink underline underline-offset-4 decoration-black/20 hover:decoration-ink">All comparisons</Link></li>
                         </ul>
@@ -137,24 +137,30 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
                                 ['Privacy policy', '/privacy'],
                                 ['Terms of service', '/terms'],
                             ].map(([label, href]) => (
-                                <li key={href}><Link prefetch={false} href={href} className="inline-block py-1 hover:text-ink transition-colors">{label}</Link></li>
+                                <li key={href}><Link prefetch={false} href={href} className="inline-block py-1 hover:text-ink hover:underline underline-offset-4 decoration-black/25 transition-colors">{label}</Link></li>
                             ))}
-                            <li><a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="inline-block py-1 hover:text-ink transition-colors">Discord</a></li>
-                            <li><a href="mailto:support@examghost.com" className="inline-block py-1 hover:text-ink transition-colors">support@examghost.com</a></li>
+                            <li><a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="inline-block py-1 hover:text-ink hover:underline underline-offset-4 decoration-black/25 transition-colors">Discord</a></li>
+                            <li><a href="mailto:support@examghost.com" className="inline-block py-1 hover:text-ink hover:underline underline-offset-4 decoration-black/25 transition-colors">support@examghost.com</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <nav aria-label="Quiz solvers by platform" className="mt-10 pt-8 border-t border-black/5">
                     <h3 className="font-display font-semibold text-xs uppercase tracking-wider mb-3">Quiz solvers by platform</h3>
-                    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-secondary">
+                    <ul className="flex flex-wrap gap-1.5 text-[13px] text-ink-secondary">
                         {PLATFORMS_DATA.map((pl) => (
                             <li key={pl.slug}>
-                                {pl.indexable ? <Link prefetch={false} href={`/${pl.slug}`} className="inline-block py-1 hover:text-ink transition-colors">{pl.name}</Link> : <span className="inline-block py-1">{pl.name}</span>}
+                                {pl.indexable ? (
+                                    <Link prefetch={false} href={`/${pl.slug}`} className="inline-block rounded-full bg-white/80 border border-black/[0.07] px-3 py-1 hover:border-black/20 hover:bg-white hover:text-ink transition-all">
+                                        {pl.name}
+                                    </Link>
+                                ) : (
+                                    <span className="inline-block rounded-full bg-white/50 border border-black/[0.05] px-3 py-1 text-ink-muted">{pl.name}</span>
+                                )}
                             </li>
                         ))}
                     </ul>
-                    <p className="mt-3 text-sm text-ink-muted">Not on the list? Press Alt+S to solve any page you can see.</p>
+                    <p className="mt-4 text-sm text-ink-muted">Not on the list? Press <kbd className="kbd-key mx-0.5">Alt+S</kbd> to solve any page you can see.</p>
                 </nav>
 
                 <div className="mt-10 pt-6 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-muted">

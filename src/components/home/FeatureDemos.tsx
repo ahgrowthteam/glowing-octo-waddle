@@ -1,4 +1,5 @@
 import React from "react";
+import { MousePointerClick, ScanLine, ScrollText, Sigma, GraduationCap, Keyboard } from "lucide-react";
 import Reveal from "./Reveal";
 import MediaSlot from "./MediaSlot";
 import MockQuiz from "./MockQuiz";
@@ -10,6 +11,7 @@ const DEMOS = [
     {
         id: "doubleClick",
         tag: "Double-click",
+        icon: MousePointerClick,
         title: "Double-click on your course site",
         body: "On Canvas, Blackboard, Moodle and other quiz pages, double-click a question and the answer appears right next to it. Multiple choice, multi-select, dropdowns and short answers all work.",
         variant: "solve" as const,
@@ -17,6 +19,7 @@ const DEMOS = [
     {
         id: "snap",
         tag: "Alt+S",
+        icon: ScanLine,
         title: "Snap anything, anywhere",
         body: "On any other page, press Alt+S and drag a box around the question. If you can see it, ExamGhost can read it: diagrams, graphs, screenshots and selected text.",
         variant: "snap" as const,
@@ -24,6 +27,7 @@ const DEMOS = [
     {
         id: "scan",
         tag: "Batch scan",
+        icon: ScrollText,
         title: "Scan the whole page",
         body: "Click Scan page & answer and ExamGhost scrolls through the page, reads every question and fills the answers in batches.",
         variant: "scan" as const,
@@ -31,6 +35,7 @@ const DEMOS = [
     {
         id: "equations",
         tag: "LaTeX + OCR",
+        icon: Sigma,
         title: "Reads equations properly",
         body: "Math written as equation images or LaTeX is rebuilt into text before it's solved, so formulas aren't lost on the way to the answer.",
         variant: "snap" as const,
@@ -38,6 +43,7 @@ const DEMOS = [
     {
         id: "subjects",
         tag: "13 subjects",
+        icon: GraduationCap,
         title: "Tuned for 13 subjects",
         body: "Math, physics, chemistry, biology, computer science, economics, history, accounting, geography, literature, psychology, English and logic. Harder subjects get more reasoning time.",
         variant: "scan" as const,
@@ -45,6 +51,7 @@ const DEMOS = [
     {
         id: "shortcuts",
         tag: "Alt+1 / 2 / 3",
+        icon: Keyboard,
         title: "Shortcuts and a power switch",
         body: "Alt+1, Alt+2 and Alt+3 change the answer style, Alt+S starts a snip, and one master switch turns the extension off when you're not studying.",
         variant: "solve" as const,
@@ -53,33 +60,43 @@ const DEMOS = [
 
 export default function FeatureDemos() {
     return (
-        <section id="features" className="dark-surface py-16 sm:py-24 bg-[#18181b] text-white scroll-mt-20">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section id="features" className="dark-surface bg-dark-grid relative overflow-hidden py-16 sm:py-24 bg-[#18181b] text-white scroll-mt-20">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(196,208,248,0.1),transparent_75%)]"
+            />
+            <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                     <p className="text-sm font-semibold text-white/50 mb-3">Features</p>
-                    <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05]">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] leading-[1.06]">
                         Everything it does,<br />in action
                     </h2>
                 </div>
 
                 <Reveal className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                    {DEMOS.map((d) => (
-                        <article key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] surface-dark-card p-5 sm:p-7 flex flex-col hover:border-white/[0.16] hover:-translate-y-0.5 transition-all duration-300">
-                            <div className="flex items-start justify-between gap-3 mb-2.5">
-                                <h3 className="font-display text-2xl sm:text-[26px] font-bold tracking-tight leading-snug">{d.title}</h3>
-                                <span className="kbd-key-dark shrink-0 mt-1">{d.tag}</span>
-                            </div>
-                            <p className="text-[15px] sm:text-base text-white/65 leading-relaxed mb-6">{d.body}</p>
-                            <div className="mt-auto aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift">
-                                <MediaSlot
-                                    slot={`features.${d.id}`}
-                                    src={MEDIA.features[d.id]}
-                                    label={`${d.title} demo`}
-                                    fallback={<MockQuiz variant={d.variant} />}
-                                />
-                            </div>
-                        </article>
-                    ))}
+                    {DEMOS.map((d) => {
+                        const Icon = d.icon;
+                        return (
+                            <article key={d.id} className="rounded-3xl bg-gradient-to-b from-white/[0.055] to-white/[0.02] border border-white/[0.09] surface-dark-card p-5 sm:p-7 flex flex-col hover:border-white/[0.18] hover:-translate-y-0.5 transition-all duration-300">
+                                <div className="flex items-center justify-between gap-3 mb-4">
+                                    <span className="w-9 h-9 rounded-xl bg-white/[0.07] border border-white/[0.1] grid place-items-center text-white/90 shrink-0">
+                                        <Icon className="w-4 h-4" aria-hidden="true" />
+                                    </span>
+                                    <span className="kbd-key-dark shrink-0">{d.tag}</span>
+                                </div>
+                                <h3 className="font-display text-[21px] sm:text-2xl font-bold tracking-tight leading-snug mb-2">{d.title}</h3>
+                                <p className="text-[15px] sm:text-base text-white/65 leading-relaxed mb-6">{d.body}</p>
+                                <div className="mt-auto aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift">
+                                    <MediaSlot
+                                        slot={`features.${d.id}`}
+                                        src={MEDIA.features[d.id]}
+                                        label={`${d.title} demo`}
+                                        fallback={<MockQuiz variant={d.variant} />}
+                                    />
+                                </div>
+                            </article>
+                        );
+                    })}
                 </Reveal>
             </div>
         </section>

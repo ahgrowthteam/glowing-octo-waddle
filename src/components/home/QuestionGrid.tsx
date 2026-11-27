@@ -28,10 +28,19 @@ const WHY: Record<Kind, string> = {
 
 const none = (): Record<Kind, boolean> => ({ choice: false, multi: false, blank: false, dropdown: false, match: false, short: false });
 
+const TAG_TINT: Record<Kind, string> = {
+    choice: "#e8edfc",
+    multi: "#efe6fd",
+    blank: "#fff2c2",
+    dropdown: "#e1f3fc",
+    match: "#ffe5df",
+    short: "#dcf4da",
+};
+
 function Head({ label, kind, solved, onSolve }: { label: string; kind: Kind; solved: boolean; onSolve: (k: Kind) => void }) {
     return (
         <div className="flex items-center justify-between mb-4">
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#2b55c7]">{label}</span>
+            <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-ink" style={{ backgroundColor: TAG_TINT[kind] }}>{label}</span>
             {solved ? (
                 <span className="animate-pop-in inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
                     <Check className="w-3.5 h-3.5" aria-hidden="true" /> Solved
@@ -84,10 +93,10 @@ export default function QuestionGrid() {
 
     const card = (isSolved: boolean) =>
         `relative flex flex-col bg-white rounded-3xl border surface-card p-6 select-none cursor-pointer transition-all duration-200 ${
-            isSolved ? "border-emerald-500/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5"
+            isSolved ? "border-emerald-500/40 bg-emerald-50/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5"
         }`;
     const why = (k: Kind) => (
-        <p className={`mt-auto pt-4 text-[13px] leading-relaxed text-ink-muted transition-opacity duration-500 ${solved[k] ? "opacity-100" : "opacity-0"}`} aria-live="polite">
+        <p className={`mt-auto pt-4 text-[13px] leading-relaxed text-ink-muted transition-opacity duration-500 ${solved[k] ? "opacity-100 border-t border-black/[0.06]" : "opacity-0"}`} aria-live="polite">
             {solved[k] ? <><span className="font-semibold text-ink-secondary">Why: </span>{WHY[k]}</> : "\u00a0"}
         </p>
     );
@@ -102,7 +111,7 @@ export default function QuestionGrid() {
                     <p className="text-sm font-semibold text-ink-muted mb-3">
                         Every question format
                     </p>
-                    <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
+                    <h2 className="font-display text-[32px] sm:text-[46px] font-bold tracking-[-0.03em] text-ink leading-[1.06] mb-4">
                         Solves every question type
                     </h2>
                     <p className="text-base sm:text-lg text-ink-muted max-w-lg mx-auto">
@@ -239,21 +248,21 @@ export default function QuestionGrid() {
                     </article>
                 </div>
 
-                <div className="mt-8 flex flex-col items-center gap-4">
-                    <div className="inline-flex items-center gap-3 rounded-full bg-white border border-black/[0.08] px-4 py-1.5 text-xs font-medium text-ink-secondary shadow-2xs" aria-live="polite">
-                        <span className="w-20 h-1.5 rounded-full bg-black/10 overflow-hidden">
-                            <span className="block h-full rounded-full bg-emerald-500 transition-all duration-300" style={{ width: `${(solvedCount / KINDS.length) * 100}%` }} />
-                        </span>
-                        <span className="tabular-nums">{solvedCount} of {KINDS.length} solved</span>
-                    </div>
-                    <div className="flex justify-center gap-3">
+                <div className="mt-9 flex justify-center">
+                    <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-white border border-black/[0.08] surface-card px-4 py-2">
+                        <div className="inline-flex items-center gap-2.5 pl-1 pr-2 text-xs font-medium text-ink-secondary" aria-live="polite">
+                            <span className="w-20 h-1.5 rounded-full bg-black/10 overflow-hidden">
+                                <span className="block h-full rounded-full bg-emerald-500 transition-all duration-300" style={{ width: `${(solvedCount / KINDS.length) * 100}%` }} />
+                            </span>
+                            <span className="tabular-nums">{solvedCount} of {KINDS.length} solved</span>
+                        </div>
                         {!allSolved && (
-                            <button onClick={() => KINDS.forEach(solve)} className="btn-dark px-6 py-3 text-sm">
+                            <button onClick={() => KINDS.forEach(solve)} className="btn-dark px-5 py-2.5 text-sm">
                                 Solve all six
                             </button>
                         )}
                         {anySolved && (
-                            <button onClick={reset} className="btn-soft px-6 py-3 text-sm">
+                            <button onClick={reset} className="btn-soft px-5 py-2.5 text-sm">
                                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Reset
                             </button>
                         )}

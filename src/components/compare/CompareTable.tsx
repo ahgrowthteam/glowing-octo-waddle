@@ -68,39 +68,41 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between mb-5">
-                <label className="relative md:w-72">
-                    <span className="sr-only">Search extensions</span>
-                    <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-muted" aria-hidden="true" />
-                    <input
-                        value={q}
-                        onChange={(e) => setQ(e.target.value)}
-                        placeholder="Search by name"
-                        className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-sm focus:outline-none focus:border-black/30"
-                    />
-                    {q && (
-                        <button
-                            type="button"
-                            onClick={() => setQ("")}
-                            aria-label="Clear search"
-                            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-black/5 text-ink-muted"
-                        >
-                            <X className="w-3.5 h-3.5" aria-hidden="true" />
-                        </button>
-                    )}
-                </label>
-                <div className="flex flex-wrap gap-2 items-center">
-                    <button type="button" aria-pressed={onlyFree} onClick={() => setOnlyFree((v) => !v)} className={chip(onlyFree)}>Has a free tier or trial</button>
-                    <button type="button" aria-pressed={onlyAnswers} onClick={() => setOnlyAnswers((v) => !v)} className={chip(onlyAnswers)}>AI answer tools only</button>
-                    <button type="button" aria-pressed={onlyCanvas} onClick={() => setOnlyCanvas((v) => !v)} className={chip(onlyCanvas)}>Mentions Canvas</button>
-                    <label className="text-sm text-ink-muted flex items-center gap-2">
-                        Sort
-                        <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="select-chevron appearance-none rounded-full border border-black/10 bg-white pl-3.5 pr-9 py-2 text-sm text-ink">
-                            <option value="name">Name A–Z</option>
-                            <option value="price">Lowest listed price</option>
-                            <option value="platforms">Most platforms named</option>
-                        </select>
+            <div className="rounded-3xl bg-white/85 border border-black/[0.08] surface-card p-3 sm:p-4 backdrop-blur-sm mb-5">
+                <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+                    <label className="relative md:w-72">
+                        <span className="sr-only">Search extensions</span>
+                        <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-muted" aria-hidden="true" />
+                        <input
+                            value={q}
+                            onChange={(e) => setQ(e.target.value)}
+                            placeholder="Search by name"
+                            className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-sm focus:outline-none focus:border-black/30"
+                        />
+                        {q && (
+                            <button
+                                type="button"
+                                onClick={() => setQ("")}
+                                aria-label="Clear search"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-black/5 text-ink-muted"
+                            >
+                                <X className="w-3.5 h-3.5" aria-hidden="true" />
+                            </button>
+                        )}
                     </label>
+                    <div className="flex flex-wrap gap-2 items-center">
+                        <button type="button" aria-pressed={onlyFree} onClick={() => setOnlyFree((v) => !v)} className={chip(onlyFree)}>Has a free tier or trial</button>
+                        <button type="button" aria-pressed={onlyAnswers} onClick={() => setOnlyAnswers((v) => !v)} className={chip(onlyAnswers)}>AI answer tools only</button>
+                        <button type="button" aria-pressed={onlyCanvas} onClick={() => setOnlyCanvas((v) => !v)} className={chip(onlyCanvas)}>Mentions Canvas</button>
+                        <label className="text-sm text-ink-muted flex items-center gap-2">
+                            Sort
+                            <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="select-chevron appearance-none rounded-full border border-black/10 bg-white pl-3.5 pr-9 py-2 text-sm text-ink">
+                                <option value="name">Name A–Z</option>
+                                <option value="price">Lowest listed price</option>
+                                <option value="platforms">Most platforms named</option>
+                            </select>
+                        </label>
+                    </div>
                 </div>
             </div>
             <p className="text-xs text-ink-muted mb-3" aria-live="polite">Showing {shown.length} of {rows.length} extensions plus ExamGhost</p>

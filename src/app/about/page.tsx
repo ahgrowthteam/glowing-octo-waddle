@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -92,10 +93,23 @@ export default function AboutPage() {
 
       <section className="pt-12 sm:pt-16 pb-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">About</p>
-          <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
-            Built to help you study faster.
-          </h1>
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">About</p>
+              <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+                Built to help you study faster.
+              </h1>
+            </div>
+            <div className="hidden sm:block shrink-0 rounded-2xl bg-white p-1.5 border border-black/10 surface-card shadow-card mt-6">
+              <Image
+                src="/images/ghost/ghost_mascot_hero.jpg"
+                alt="ExamGhost mascot"
+                width={88}
+                height={88}
+                className="w-[88px] h-[88px] rounded-xl object-cover"
+              />
+            </div>
+          </div>
           <p className="text-lg sm:text-xl text-ink-secondary leading-relaxed">
             ExamGhost is a Chrome extension that answers quiz and homework questions right on the page, with a
             step-by-step explanation when you want one. It is built and run by FoundryOne LLC in Albuquerque,
@@ -108,7 +122,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <dl className="grid sm:grid-cols-2 gap-3">
             {facts.map((f) => (
-              <div key={f.label} className="bg-white rounded-2xl border border-black/10 surface-card p-4 sm:p-5">
+              <div key={f.label} className="bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors p-4 sm:p-5">
                 <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted mb-1">{f.label}</dt>
                 <dd className="text-[15px] font-medium text-ink">{f.value}</dd>
               </div>

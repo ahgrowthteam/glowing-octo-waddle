@@ -84,8 +84,8 @@ export default function PrivacyPage() {
                     </ol>
                 </nav>
 
-                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 surface-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
-                    <section id="s1" className="space-y-3 scroll-mt-24">
+                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 surface-card divide-y divide-black/[0.06] text-[15px] text-ink-secondary leading-relaxed">
+                    <section id="s1" className="space-y-3 pb-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Information We Collect</h2>
                         <p>We collect only what the extension and website need to work:</p>
                         <ul className="space-y-2 pl-4 list-disc text-sm">
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
                             <li><strong>Messages you send us:</strong> emails and Discord messages you send to support.</li>
                         </ul>
                     </section>
-<section id="s2" className="space-y-3 scroll-mt-24">
+                    <section id="s2" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">2. How Questions and AI Solves Are Handled</h2>
                         <p>When you double-click a question, scan a page, or use the Alt+S screenshot tool:</p>
                         <ul className="space-y-2 pl-4 list-disc text-sm">
@@ -105,25 +105,25 @@ export default function PrivacyPage() {
                             <li>Do not solve content you do not want processed this way. If a page shows personal information, avoid including it in a screenshot.</li>
                         </ul>
                     </section>
-<section id="s3" className="space-y-3 scroll-mt-24">
+                    <section id="s3" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">3. School and Course Monitoring</h2>
                         <p>
                             Your school, instructor or testing platform may record activity on their own systems and may restrict or prohibit AI tools. ExamGhost does not control what those systems record, and we cannot predict it. You are responsible for following your course and institution rules. We do not provide your usage to schools or instructors, and we do not promise that any use will go unnoticed.
                         </p>
                     </section>
-<section id="s4" className="space-y-3 scroll-mt-24">
+                    <section id="s4" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">4. Third-Party Disclosures & Data Sharing</h2>
                         <p>
                             We do not sell your personal information. We share data only with service providers that help us run ExamGhost (such as AI model providers, our payment processor and hosting), or when the law requires it.
                         </p>
                     </section>
-<section id="s5" className="space-y-3 scroll-mt-24">
+                    <section id="s5" className="space-y-3 py-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">5. Your Choices and Rights</h2>
                         <p>
                             You can turn the extension off at any time with the on/off switch in its popup, and you can uninstall it from Chrome. Depending on where you live, you may have rights to access, correct or delete the personal information we hold about you. Contact us at the address below and we will help.
                         </p>
                     </section>
-<section id="s6" className="space-y-3 scroll-mt-24">
+                    <section id="s6" className="space-y-3 pt-8 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">6. Contact & Data Deletion Requests</h2>
                         <p>
                             To ask a question about this policy, or to request access to or deletion of your data, contact us:
