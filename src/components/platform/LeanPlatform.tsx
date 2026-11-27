@@ -103,9 +103,10 @@ export default function LeanPlatform({ slug }: { slug: string }) {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-20 overflow-hidden">
                 <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
@@ -230,8 +231,9 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                 </div>
             </section>
 
+            </main>
             <FinalCta />
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

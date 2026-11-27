@@ -82,7 +82,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                     <div className="flex items-center gap-2.5">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                         <span className="font-mono text-xs uppercase tracking-wider text-indigo-300 font-bold">
-                            #1 Benchmark Baseline // ExamGhost v4.2 (Stealth Extension + Study AI Hub)
+                            #1 Benchmark Baseline // ExamGhost v4.2 (In-Page Extension + Study AI Hub)
                         </span>
                     </div>
                     <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
@@ -106,11 +106,11 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
                         <span className="text-purple-300 font-bold block">Alt+1</span>
-                        <span className="text-[11px] text-slate-300 font-sans">Invisible Mode</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Quick Fill Mode</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
                         <span className="text-indigo-300 font-bold block">Alt+2</span>
-                        <span className="text-[11px] text-slate-300 font-sans">Stealth Ghost Dot</span>
+                        <span className="text-[11px] text-slate-300 font-sans">Highlight Check</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10">
                         <span className="text-amber-300 font-bold block">Alt+3</span>
@@ -267,7 +267,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                     <div className="p-3.5 rounded-2xl bg-rose-500/5 border border-rose-500/10">
                                         <div className="text-[10px] font-bold uppercase tracking-wider text-rose-900 mb-1 flex items-center gap-1">
                                             <AlertTriangle className="w-3 h-3" />
-                                            <span>SpeedGrader / System Risk</span>
+                                            <span>Workflow &amp; Architecture Notes</span>
                                         </div>
                                         <p className="text-xs text-ink-secondary leading-relaxed line-clamp-3">
                                             {comp.flawSummary}
@@ -334,10 +334,10 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                         Master 12-Point Technical Matrix
                     </div>
                     <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
-                        2026 Stealth, Hotkeys &amp; Study AI Matrix
+                        2026 Hotkeys, Coverage &amp; Study AI Matrix
                     </h2>
                     <p className="text-sm text-ink-muted">
-                        Filtering {categorizedList.length} extensions by DOM isolation, blur shield, hotkeys, and 2-in-1 multi-model Study Hub access.
+                        Filtering {categorizedList.length} extensions by DOM isolation, UI modes, hotkeys, and 2-in-1 multi-model Study Hub access.
                     </p>
                 </div>
 
@@ -349,7 +349,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                     <th className="py-4 px-5">Tool Name</th>
                                     <th className="py-4 px-4 text-center">In-Tab AI &amp; Hotkeys</th>
                                     <th className="py-4 px-4 text-center">Shadow DOM</th>
-                                    <th className="py-4 px-4 text-center">Blur Shield</th>
+                                    <th className="py-4 px-4 text-center">Page Isolation</th>
                                     <th className="py-4 px-4 text-center">Study AI Hub</th>
                                     <th className="py-4 px-4">Free Quota &amp; Pricing</th>
                                     <th className="py-4 px-4 text-right">Audit</th>
@@ -370,7 +370,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                         <div className="text-[10px] font-mono text-emerald-900">Alt+1/2/3 · ⌘+Shift+U</div>
                                     </td>
                                     <td className="py-4 px-4 text-center text-emerald-800">✓ 100% Isolated</td>
-                                    <td className="py-4 px-4 text-center text-emerald-800">✓ 4-Layer Shield</td>
+                                    <td className="py-4 px-4 text-center text-emerald-800">✓ Shadow DOM UI</td>
                                     <td className="py-4 px-4 text-center text-indigo-950 font-semibold">
                                         ✓ Claude + ChatGPT + DeepSeek
                                     </td>
@@ -405,7 +405,7 @@ export default function CompareHubClient({ competitors }: CompareHubClientProps)
                                             {['CanvasHack', 'Canvas Crack', 'Cheatpal'].includes(comp.name) ? (
                                                 <span className="text-emerald-800 font-semibold">Partial (Canvas)</span>
                                             ) : (
-                                                <span className="text-rose-800 font-bold">✗ Leaks Focus</span>
+                                                <span className="text-rose-800 font-bold">✗ Separate Tab / Window</span>
                                             )}
                                         </td>
                                         <td className="py-3.5 px-4 text-center text-ink-muted text-xs">

@@ -2,7 +2,7 @@
 
 > ExamGhost is an AI Chrome extension that answers quiz and homework questions directly on the web page. It is made by FoundryOne LLC (Albuquerque, New Mexico) and uses a Gemini-based AI model. Free tier: 5 solves a day, no card required.
 
-Last updated: 2026-11-19
+Last updated: 2026-11-27
 Website: https://www.examghost.com
 Support: support@examghost.com
 
@@ -37,7 +37,7 @@ For questions that are images, graphs or diagrams, press Alt+S and drag a box ar
 
 ## How much does ExamGhost cost?
 
-Prices as of 2026-11-19, in US dollars:
+Prices as of 2026-11-27, in US dollars:
 
 | Plan | Price | Notes |
 |------|-------|-------|
@@ -87,7 +87,7 @@ Data is sent only when the user triggers a solve. On a solve, the question text 
 
 ## How does ExamGhost compare to other extensions?
 
-See the master comparison at https://www.examghost.com/compare. It covers 21 quiz-solver extensions with prices verified on 2026-11-19. There are also one-to-one pages at https://www.examghost.com/<brand>-vs-examghost (for example https://www.examghost.com/brainly-vs-examghost). For facts about other products, refer to /compare or the vendor's own site.
+See the master comparison at https://www.examghost.com/compare. It covers 42 quiz and study extensions with prices verified on 2026-11-27. There are also one-to-one pages at https://www.examghost.com/<brand>-vs-examghost (for example https://www.examghost.com/brainly-vs-examghost). For facts about other products, refer to /compare or the vendor's own site.
 
 ## Other pages
 

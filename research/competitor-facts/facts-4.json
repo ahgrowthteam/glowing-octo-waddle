@@ -7,67 +7,73 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Monthly plans differing by credits; week pass available; no free plan.",
+      "summary": "No free plan and no general free trial. Credit-based monthly subscriptions: Base $11.99/mo (2,000 credits), Plus $24.99/mo (5,000 credits), Pro $49.99/mo (unlimited fair-use); non-renewing 7-day Week Pass $4.99 (500 credits) noted in prior/site text.",
       "plans": [
-        {
-          "name": "Week pass",
-          "price": 4.99,
-          "currency": "USD",
-          "period": "7 days",
-          "notes": "500 credits; non-renewing"
-        },
         {
           "name": "Base",
           "price": 11.99,
           "currency": "USD",
           "period": "month",
-          "notes": "2,000 credits/month"
+          "notes": "2,000 credits/month; includes all platforms, Vision agent, Autopilot, draft review, Learn mode, 2 devices"
         },
         {
           "name": "Plus",
           "price": 24.99,
           "currency": "USD",
           "period": "month",
-          "notes": "5,000 credits/month"
+          "notes": "5,000 credits/month; all platforms and features"
         },
         {
           "name": "Pro",
           "price": 49.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Unlimited credits (fair use)"
+          "notes": "Unlimited credits (fair use); all platforms and features"
         }
       ],
-      "freeTier": "No free plan stated",
-      "trial": "No free trial for general signups"
+      "freeTier": null,
+      "trial": "No free trial for general signups (7-day limited trial available only with eligible promo code and card)"
     },
     "platformsStated": [
-      "Canvas",
+      "Canvas LMS",
       "Google Classroom",
       "D2L Brightspace",
-      "Moodle",
       "Blackboard Learn Ultra",
+      "Moodle",
       "WebAssign",
       "Cengage MindTap",
       "McGraw Hill Connect",
+      "SmartBook",
       "Pearson MyLab",
-      "ALEKS"
+      "ALEKS",
+      "Apex",
+      "Packback",
+      "Yellowdig",
+      "Perusall",
+      "Labster",
+      "Kritik",
+      "Harmonize",
+      "myBusinessCourse"
     ],
     "featuresStated": [
-      "AI agent that completes quizzes, essays, discussions and file uploads",
-      "Web app (cloud) and desktop app (Mac/Windows)",
-      "Review drafts before submit (desktop app)",
-      "Credit-based plans"
+      "Autonomous AI homework agent (not a Chrome extension) operating in cloud web app or isolated ~180MB desktop browser",
+      "Completes Canvas quizzes, essays, discussion posts, DOCX/PDF file uploads, and embedded external tools (Packback, MindTap, Labster, WebAssign)",
+      "Draft review queue holds essays, discussions, uploads, and single-attempt untimed quizzes for human approval",
+      "Writing humanizer pass on drafted prose + Learn study mode",
+      "Covers 2 computers per account"
     ],
     "extensionStoreUrl": null,
-    "browsersStated": [],
-    "lastChecked": "2026-11-19",
+    "browsersStated": [
+      "Web app (any modern browser)",
+      "Desktop app (macOS Apple Silicon & Windows 10/11 64-bit)"
+    ],
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://silentstudent.com/",
+      "https://silentstudent.com",
       "https://silentstudent.com/pricing"
     ],
     "confidence": "high",
-    "notes": "Agent-style AI that does assignments (web/desktop app, not an extension); site does not claim undetectability."
+    "notes": "Verified live 2026-11-27. Not a browser extension — confirmed via silentstudent.com and CWS search. Note: FAQ explicitly excludes proctored exams from supported work and refuses to claim AI-detector bypass outcomes."
   },
   {
     "domain": "cheatgpt.app",
@@ -77,44 +83,53 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "Monthly or lifetime via Stripe.",
+      "summary": "No free tier. Monthly is $10/month (discounted from $15); Lifetime is $50 one-time (discounted from $80), with a 7-day refund policy.",
       "plans": [
         {
           "name": "Monthly",
-          "price": 10,
+          "price": 10.0,
           "currency": "USD",
           "period": "month",
-          "notes": "Shown as discounted from $15"
+          "notes": "Listed at $10/mo (strikethrough $15); instant answers, ChatGPT/Claude/Gemini/Grok sidebar, compact overlay mode, 24/7 support."
         },
         {
           "name": "Lifetime",
-          "price": 50,
+          "price": 50.0,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "Shown as discounted from $80"
+          "period": "once",
+          "notes": "Listed at $50 one-time (strikethrough $80); all future updates and priority support."
         }
       ],
       "freeTier": null,
-      "trial": null
+      "trial": "7-day refund guarantee"
     },
     "platformsStated": [
-      "Canvas"
+      "Canvas LMS (.instructure.com, .edu, .org, custom institution domains)",
+      "All websites (Sidebar Chat and Selection Toolbar)"
     ],
     "featuresStated": [
-      "AI answers on quiz questions with short explanations",
-      "ChatGPT, Claude and Gemini sidebar",
-      "Highlight toolbar to rewrite or summarize text"
+      "Inline Canvas AI answers with confidence score and short explanation",
+      "One-Click Apply fills options or types written responses directly",
+      "Answer Save + Autofill with green badges on multi-attempt quizzes",
+      "Multi-model Sidebar Chat (ChatGPT, Claude, Gemini, Grok) with built-in screenshot capture",
+      "Floating Selection Toolbar on any webpage to rewrite, summarize, or define text",
+      "Compact overlay and display customization toggles"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/cheatgpt/chlpganipoiedkihmkdaikadgfimbfom",
     "browsersStated": [
-      "Chrome"
+      "Chrome",
+      "Edge",
+      "Brave",
+      "Opera"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.cheatgpt.app/"
+      "https://www.cheatgpt.app",
+      "https://www.cheatgpt.app/chrome-extension",
+      "https://chromewebstore.google.com/detail/cheatgpt/chlpganipoiedkihmkdaikadgfimbfom"
     ],
-    "confidence": "medium",
-    "notes": "Mixed product: AI answers/sidebar are the core feature set but the page also markets tab-activity hiding prominently; flagged for owner review (could be treated as activity-hiding)."
+    "confidence": "high",
+    "notes": "Verified live on cheatgpt.app, /chrome-extension, and CWS listing (v1.0.0, Jul 1, 2026)."
   },
   {
     "domain": "quizcloak.com",
@@ -124,31 +139,52 @@
     "primaryPurpose": "activity-hiding",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "From $9.99/mo, cancel anytime.",
+      "summary": "Basic $9.99/mo (tab-switch blocking only), Pro $13.99/mo (adds AI Quiz Helper, Homework AI, cursor-hover AI), or Pro 3-Month $30 ($10/mo effective).",
       "plans": [
         {
-          "name": "Starting price",
+          "name": "Basic",
           "price": 9.99,
           "currency": "USD",
           "period": "month",
-          "notes": "'From' price; plan breakdown not read"
+          "notes": "Tab-activity blocker only; excludes AI Quiz Helper and Homework AI"
+        },
+        {
+          "name": "Pro",
+          "price": 13.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Adds AI Quiz Helper, Homework AI, and cursor-hover AI mode"
+        },
+        {
+          "name": "Pro · 3 Month",
+          "price": 30.0,
+          "currency": "USD",
+          "period": "quarter",
+          "notes": "$30 per 3 months ($10.00/mo effective); full Pro features"
         }
       ],
       "freeTier": null,
       "trial": null
     },
-    "platformsStated": [],
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "Google Forms"
+    ],
     "featuresStated": [],
-    "extensionStoreUrl": null,
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizcloak/eboalegbolmfnmnhiojlejdihbapbnoc",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://quizcloak.com/"
+      "https://quizcloak.com/",
+      "https://quizcloak.com/pricing.html",
+      "https://chromewebstore.google.com/detail/quizcloak/eboalegbolmfnmnhiojlejdihbapbnoc"
     ],
     "confidence": "high",
-    "notes": "Headline and lead feature are tab-activity hiding; AI answer features are secondary paid add-ons."
+    "notes": "Live-verified homepage, /pricing.html, and CWS listing on 2026-11-27. Classified activity-hiding because headline, core value prop, and entry plan focus on tab-switch cloaking."
   },
   {
     "domain": "canvastabshield.com",
@@ -156,37 +192,37 @@
     "url": "https://canvastabshield.com",
     "reachable": true,
     "primaryPurpose": "activity-hiding",
-    "claimsUndetectable": false,
+    "claimsUndetectable": true,
     "pricing": {
-      "summary": "One-time and monthly options; prices shown on page.",
+      "summary": "24-Hour Exam Pass $10.99 one-time, Monthly Shield $14.99/mo (reg. $19.99), Semester Pass $39.99 one-time (4 months), or Lifetime Access $79.00 one-time (reg. $120).",
       "plans": [
         {
           "name": "24-Hour Exam Pass",
-          "price": 8.99,
+          "price": 10.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": null
+          "period": "once",
+          "notes": "Expires 24 hours after payment; price increased from $8.99 in Nov 2026"
         },
         {
           "name": "Monthly Shield",
           "price": 14.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Shown as discounted from $19.99"
+          "notes": "Shown discounted from $19.99/mo; Stripe billing"
         },
         {
           "name": "Semester Pass",
           "price": 39.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "4 months"
+          "period": "semester",
+          "notes": "4 calendar months one-time payment; no auto-renewal"
         },
         {
           "name": "Lifetime Access",
           "price": 79.0,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "Shown as discounted from $120"
+          "period": "once",
+          "notes": "Shown discounted from $120.00"
         }
       ],
       "freeTier": null,
@@ -200,12 +236,13 @@
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://canvastabshield.com/"
+      "https://canvastabshield.com/",
+      "https://chromewebstore.google.com/detail/canvas-tab-shield/libgdijhcidhkeigehfhnpoiiehjfcbe"
     ],
     "confidence": "high",
-    "notes": "Sole product purpose is blocking tab/focus-loss signals on Canvas quizzes; no answer generation."
+    "notes": "Live-verified website and CWS listing on 2026-11-27. Pure activity-hiding extension with no answer generation."
   },
   {
     "domain": "quizmate.io",
@@ -215,48 +252,56 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Weekly, monthly and yearly plans with 3-day free trial for eligible new subscribers.",
+      "summary": "3-day free trial (for eligible new subscribers), then $7.99/week (list $9.99), $19.99/month (list $24.99), or $10.99/month billed yearly ($131.88/yr, list $14.99/mo).",
       "plans": [
         {
           "name": "Weekly",
           "price": 7.99,
           "currency": "USD",
           "period": "week",
-          "notes": "Shown as discounted from $9.99"
+          "notes": "3-day free trial; shown as discounted from $9.99/week"
         },
         {
           "name": "Monthly",
           "price": 19.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Shown as discounted from $24.99"
+          "notes": "3-day free trial; shown as discounted from $24.99/month; marked Most Popular"
         },
         {
           "name": "Yearly",
           "price": 10.99,
           "currency": "USD",
-          "period": "month",
-          "notes": "Billed yearly; shown as discounted from $14.99/month"
+          "period": "month (billed yearly)",
+          "notes": "3-day free trial; $10.99/mo billed yearly ($131.88/yr); shown as discounted from $14.99/mo"
         }
       ],
       "freeTier": null,
-      "trial": "3 days free for eligible new subscribers"
+      "trial": "3-day free trial for eligible new subscribers"
     },
-    "platformsStated": [],
+    "platformsStated": [
+      "Canvas",
+      "McGraw Hill",
+      "Blackboard",
+      "Moodle"
+    ],
     "featuresStated": [
-      "Chrome extension giving answers with step-by-step explanations",
-      "iOS app: scan a question photo for an answer",
-      "Study Hub: notes, flashcards, practice quizzes, essays"
+      "Chrome extension with click-to-solve, Snapshot screen capture, and right-click 'Ask QuizMate'",
+      "AI Context feature that analyzes uploaded notes to improve answer accuracy",
+      "Lecture Learn: 1-click transcription of lectures and YouTube videos into notes",
+      "QuizMate Study Hub (Notebook): lecture summaries, essay writer, flashcards, practice quizzes, and ATS-optimized resume builder",
+      "iOS App Store mobile app (camera snap & solve)"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizmate/ojgkoajchjoafbnckklmamjcceiglmkd",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.quizmate.io/home"
+      "https://www.quizmate.io/home",
+      "https://chromewebstore.google.com/detail/quizmate/ojgkoajchjoafbnckklmamjcceiglmkd"
     ],
     "confidence": "high",
-    "notes": "AI answer extension plus mobile app and study hub; no activity-hiding claims seen."
+    "notes": "Verified live 2026-11-27. https://www.quizmate.io redirects to /home; /pricing returns 404. LMS list (Canvas, McGraw Hill, Blackboard, Moodle) comes from the live CWS listing (4.4 stars, 128 ratings, 30,000 users, v5.1.87)."
   }
 ]

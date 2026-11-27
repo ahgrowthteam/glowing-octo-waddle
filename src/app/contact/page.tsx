@@ -36,8 +36,9 @@ export default function ContactPage() {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="pt-10 sm:pt-14 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -159,7 +160,8 @@ export default function ContactPage() {
                 </div>
             </section>
 
+            </main>
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

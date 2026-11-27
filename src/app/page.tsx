@@ -137,26 +137,28 @@ export default function Home() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+    <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <Navbar />
-      <HomeHero />
-      <PlatformStrip />
-      <HowItWorks />
-      <TryDemo />
-      <GuideVideo />
-      <QuestionGrid />
-      <AnswerStyles />
-      <FeatureDemos />
-      <Difference />
-      <HomePricing />
-      <HomeFaq />
-      <CommunitySection />
+      <main id="main-content" className="flex-1">
+        <HomeHero />
+        <PlatformStrip />
+        <HowItWorks />
+        <TryDemo />
+        <GuideVideo />
+        <QuestionGrid />
+        <AnswerStyles />
+        <FeatureDemos />
+        <Difference />
+        <HomePricing />
+        <HomeFaq />
+        <CommunitySection />
+      </main>
       <FinalCta secondary="demo" />
       <Footer hideCta />
-    </main>
+    </div>
   );
 }

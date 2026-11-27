@@ -1,0 +1,601 @@
+[
+  {
+    "domain": "answerai.pro",
+    "name": "Answer.AI",
+    "url": "https://answerai.pro",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free Limited Plan (3/day Ask AI + 3/day Question Scanner); Monthly $9.99/mo; Yearly $8.33/mo billed annually; optional SuperAI refill packs.",
+      "plans": [
+        {
+          "name": "Limited Plan",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "3 per day Ask AI feature, 3 per day Question Scanner; includes ads; excludes SuperAI, AI Flashcards, PDF Upload."
+        },
+        {
+          "name": "Monthly Plan",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Unlimited Ask AI (web + mobile), Unlimited Question Scanner, 500 SuperAI Points, AI Flashcards, PDF Upload, ad-free, faster response speed, priority email support."
+        },
+        {
+          "name": "Yearly Plan",
+          "price": 99.96,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Listed as $8.33/mo ($99.96/yr). Billed annually (16% off); same as Monthly plus 2x Faster Response Speed."
+        }
+      ],
+      "freeTier": "3/day Ask AI and 3/day Question Scanner; daily check-in tickets mentioned in user reviews",
+      "trial": null
+    },
+    "platformsStated": [
+      "Any webpage (Chrome sidebar)",
+      "Web App",
+      "iOS",
+      "Android"
+    ],
+    "featuresStated": [
+      "Ask AI 24/7 tutor and sidebar chat",
+      "Screenshot upload & highlight-to-solve in Chrome",
+      "Math Camera & Geometry mode",
+      "AI Flashcards & Mock Exercise",
+      "PDF Upload & AI Reader",
+      "Writing helper & AI Detector",
+      "AP Quest, Study Group, AI College Counselor, AI Scholarship Advisor, AI Voice Chat"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/answerai-homework-ai-tuto/bchkdkhfodkkpohjhabdgfhpgjkkgfhg",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://answerai.pro",
+      "https://answerai.pro/pricing",
+      "https://answerai.pro/features",
+      "https://chromewebstore.google.com/detail/answerai-homework-ai-tuto/bchkdkhfodkkpohjhabdgfhpgjkkgfhg?hl=en",
+      "https://apps.apple.com/us/app/answer-ai-your-ai-tutor/id6446047896"
+    ],
+    "confidence": "high",
+    "notes": "Homepage and /pricing rendered via Next.js + client JS (FastSpring checkout). Verified live pricing on answerai.pro/pricing and CWS listing."
+  },
+  {
+    "domain": "bettercampus.app",
+    "name": "BetterCampus",
+    "url": "https://bettercampus.app",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free tier ($0, no card, no time limit) covers dark mode, themes, to-do list, grade goals, and capped AI tools; Pro is $19/mo or $119/yr ($9.92/mo) for unlimited themes, AI notes/transcription, study sets, and calendar sync.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Dark mode, community themes, to-do list, per-class GPA calc, 10 file chats/mo, 4 flashcard/quiz sets/mo, 150 AI transcription min/mo"
+        },
+        {
+          "name": "Pro (Yearly)",
+          "price": 119.0,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$9.92/mo effective (advertised as 48% off $19/mo); unlimited themes, AI notes/transcription, study sets, calendar sync"
+        },
+        {
+          "name": "Pro (Monthly)",
+          "price": 19.0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Full Pro features billed monthly; cancel anytime"
+        }
+      ],
+      "freeTier": "Free forever core extension (dark mode, to-do list, grade calculator, capped AI tools)",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Brightspace",
+      "Blackboard",
+      "Moodle",
+      "Google Classroom"
+    ],
+    "featuresStated": [
+      "LMS UI theming, one-click dark mode, custom dashboards, and community theme sharing",
+      "Unified assignment to-do list, GPA / what-if final grade calculator, and Google/Outlook Calendar sync",
+      "AI lecture note transcription, study sets, flashcards, practice quizzes, and study mini-games (Blocks, Match, Blast, Charms)",
+      "Gamified study companion ('Campy') and Pomodoro focus timers/playlists"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/bettercampus-prev-betterc/cndibmoanboadcifjkjbdpjgfedanolh",
+    "browsersStated": [
+      "Chrome",
+      "Edge",
+      "Firefox"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://bettercampus.com/",
+      "https://bettercampus.com/pricing",
+      "https://chromewebstore.google.com/detail/bettercampus-prev-betterc/cndibmoanboadcifjkjbdpjgfedanolh"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified redirect from bettercampus.app -> bettercampus.com, #pricing feature matrix, and CWS listing on 2026-11-27. Legacy '$4.99/mo' pricing in src/data/competitors.ts is outdated; actual Pro is $19/mo or $119/yr."
+  },
+  {
+    "domain": "brainly.com",
+    "name": "Brainly",
+    "url": "https://brainly.com",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Ad-supported free Basic tier; iOS App Store IAP lists Brainly Plus $9.99/mo or $39.99/yr ($3.33/mo) and Brainly Tutor $29.99/mo or $95.99/yr ($8.00/mo), with promo variants down to $2.00/mo and $15/yr.",
+      "plans": [
+        {
+          "name": "Brainly Basic",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Limited ad-supported community/AI access"
+        },
+        {
+          "name": "Brainly Plus (Annual - iOS IAP)",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$3.33/mo effective; promotional annual IAP variants ($15.00, $16.99) also appear on App Store"
+        },
+        {
+          "name": "Brainly Plus (Monthly - iOS IAP)",
+          "price": 9.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Promotional monthly IAP variants ($2.00, $4.99) also listed on App Store"
+        },
+        {
+          "name": "Brainly Tutor (Annual - iOS IAP)",
+          "price": 95.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$8.00/mo effective; includes live expert help"
+        },
+        {
+          "name": "Brainly Tutor (Monthly - iOS IAP)",
+          "price": 29.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Includes weekly vetted human tutor / live expert access"
+        }
+      ],
+      "freeTier": "Ad-supported limited free tier",
+      "trial": "30-day money-back guarantee advertised on parent homepage"
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "Google Search",
+      "Chegg",
+      "Quizlet",
+      "Google Classroom",
+      "Edpuzzle",
+      "Edgenuity"
+    ],
+    "featuresStated": [
+      "250M+ crowdsourced Q&A knowledge base",
+      "Guided step-by-step Worksheets that lock next step until current step is solved",
+      "Test Prep study guides generated from missed concepts + Explain It + Ask My Docs + Flash Clash",
+      "Dedicated human Learning Advisor and optional weekly human math tutor",
+      "Chrome extension embeds answers in Google Search and adds right-click 'Find answer on Brainly'"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/brainly-homework-help/gfecjpfhkebjjmanebmejoflhajdgbpa",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://brainly.com/",
+      "https://parents.brainly.com/try-a-real-tutor",
+      "https://chromewebstore.google.com/detail/brainly-homework-help/gfecjpfhkebjjmanebmejoflhajdgbpa",
+      "https://apps.apple.com/us/app/brainly-ai-homework-helper/id745089947"
+    ],
+    "confidence": "medium",
+    "notes": "Automated HTTP/curl returned 403 (Cloudflare). Homepage and tutor flow rendered via Chrome, CWS and Apple App Store returned 200. Web /plus pricing URL returned 404, so exact dollar tiers are verified from official Apple App Store IAP listings."
+  },
+  {
+    "domain": "canvascrack.com",
+    "name": "Canvas Crack",
+    "url": "https://canvascrack.com",
+    "reachable": true,
+    "primaryPurpose": "activity-hiding",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "No free tier or trial; Monthly $19.99/mo (discounted from $28.55); Lifetime $139.99 one-time (discounted from $199.99).",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed as 30% off $28.55; hides Canvas tab/window switches; cancel anytime; 7-day refund guarantee."
+        },
+        {
+          "name": "Lifetime Access",
+          "price": 139.99,
+          "currency": "USD",
+          "period": "once",
+          "notes": "Listed as 30% off $199.99; permanent access + future updates; 7-day refund guarantee."
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas LMS"
+    ],
+    "featuresStated": [],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-crack/ckmdigpfbeepdfnindjipmadpboengdm",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://canvascrack.com/en",
+      "https://chromewebstore.google.com/detail/canvas-crack/ckmdigpfbeepdfnindjipmadpboengdm?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "canvascrack.com redirects to /en (HTTP 200). CWS listing has 129 users and 8 ratings; vendor is BTW MAXPROFIT LTD (Cyprus)."
+  },
+  {
+    "domain": "canvasscholar.app",
+    "name": "Canvas Scholar",
+    "url": "https://canvasscholar.app",
+    "reachable": false,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas LMS"
+    ],
+    "featuresStated": [
+      "Question Clipper: copy quiz questions via Ctrl/Cmd+Shift+C",
+      "Quiz Answer Viewer: hover over questions to review prior responses",
+      "Question Recorder: save questions for later study via Ctrl/Cmd+Shift+R",
+      "Keyboard Shortcuts: 1-5 or a-e to select answers, Enter for next question",
+      "Activity Bypass: privacy while navigating courses"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-scholar/gjpoopikljodipapghmkpdnajkjaphfa",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://chromewebstore.google.com/detail/canvas-scholar/gjpoopikljodipapghmkpdnajkjaphfa?hl=en"
+    ],
+    "confidence": "medium",
+    "notes": "canvasscholar.app and www.canvasscholar.app return DNS NXDOMAIN. Marked 'partial' because the official Chrome Web Store listing is live and verified, while website and pricing are unavailable."
+  },
+  {
+    "domain": "cheatpal.com",
+    "name": "Cheatpal",
+    "url": "https://cheatpal.com",
+    "reachable": false,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [],
+    "extensionStoreUrl": null,
+    "browsersStated": [],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://cheatpal.com",
+      "https://cheatpal.com/lander"
+    ],
+    "confidence": "high",
+    "notes": "cheatpal.com returns a 114-byte JS redirect to /lander, which 307-redirects to https://forsale.godaddy.com/forsale/cheatpal.com. No active CWS listing found."
+  },
+  {
+    "domain": "classology.ai",
+    "name": "Classology AI",
+    "url": "https://www.classology.ai/",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free starter tier ('Get Started for Free'); web upgrade pricing at /app/upgrade is login-gated (/pricing 404); iOS App Store IAPs list Weekly $6.99, Monthly $12.99, Yearly $39.99–$59.99.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Website offers 'Get Started for Free' on web app and extension; exact free credit limit not publicly stated."
+        },
+        {
+          "name": "Weekly Plan (iOS IAP)",
+          "price": 6.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Observed on Apple App Store In-App Purchases for Classology AI (Zou Labs LLC)."
+        },
+        {
+          "name": "Monthly Plan (iOS IAP)",
+          "price": 12.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Observed on Apple App Store In-App Purchases for Classology AI."
+        },
+        {
+          "name": "Yearly Plan (iOS IAP)",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Listed price: $39.99 / $59.99. Observed on Apple App Store In-App Purchases ($39.99 and $59.99 variants listed)."
+        }
+      ],
+      "freeTier": "Free starter tier ('Get Started for Free'; exact quota not published without sign-in)",
+      "trial": null
+    },
+    "platformsStated": [
+      "Blackboard",
+      "Canvas",
+      "Brightspace",
+      "McGraw Hill",
+      "Pearson",
+      "Any webpage"
+    ],
+    "featuresStated": [
+      "Highlight & Solve on any webpage",
+      "Snapshot capture via Cmd/Ctrl+Shift+1",
+      "Persistent AI Sidebar for follow-up questions",
+      "Web app study tools: study guides, flashcards, smart quizzes, written tests, audio podcasts, AI note-taking",
+      "iOS and Android mobile Scan & Solve apps"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/classology-ai-%E2%80%93-homework/mgijkcklpcaokmpejjcmchocpmkjdged",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.classology.ai/",
+      "https://www.classology.ai/extension",
+      "https://www.classology.ai/web-app",
+      "https://www.classology.ai/mobile-app",
+      "https://www.classology.ai/app/upgrade",
+      "https://chromewebstore.google.com/detail/classology-ai-%E2%80%93-homework/mgijkcklpcaokmpejjcmchocpmkjdged?hl=en",
+      "https://apps.apple.com/us/app/classology-ai-study-tools/id6760764777"
+    ],
+    "confidence": "medium",
+    "notes": "Marketing site, /extension, /web-app, /mobile-app, CWS listing, and iOS App Store page are live, but web pricing (/app/upgrade) is login-gated (/pricing 404), so pricing relies on iOS IAPs."
+  },
+  {
+    "domain": "collegetools.io",
+    "name": "College Tools (now Mindko)",
+    "url": "https://collegetools.io",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "3-day free unlimited trial, then $19.99/month (cancel anytime); redirects to Mindko (mindko.com).",
+      "plans": [
+        {
+          "name": "3-Day Free Trial -> Monthly",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "3 days free unlimited access, then renews at $19.99/month; covers Chrome/Edge extension, iOS app, and AI Study Set tools."
+        }
+      ],
+      "freeTier": "Free solver web tools on mindko.com; extension requires 3-day trial / $19.99/mo subscription",
+      "trial": "3 days free unlimited access"
+    },
+    "platformsStated": [
+      "Blackboard",
+      "Canvas",
+      "Google Classroom",
+      "Moodle",
+      "Any website"
+    ],
+    "featuresStated": [
+      "Text selection right-click ('Ask Mindko') and auto-select answers",
+      "Image-aware screenshot solver for graphs and math equations",
+      "Course-material-aware answers (upload notes/textbooks/slides)",
+      "AI Sidepanel Chat with web sources & YouTube explainer links",
+      "Full Study Set web app: Lecture Recorder, AI Notes, Flashcards, Mind Map, Study Podcast, Essay Grader"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/homework-solver-by-mindko/iiikmhonbbmbdjfokdmmncdohjionkmf",
+    "browsersStated": [
+      "Chrome",
+      "Edge"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://collegetools.io",
+      "https://www.mindko.com/",
+      "https://www.mindko.com/browser/chrome-extension",
+      "https://www.mindko.com/browser/edge",
+      "https://chromewebstore.google.com/detail/homework-solver-by-mindko/iiikmhonbbmbdjfokdmmncdohjionkmf?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified redirect chain: collegetools.io -> 301 www.collegetools.io -> 301 www.mindko.com (200). CWS listing is titled 'Homework Solver by Mindko (formerly College Tools)'. Strong consolidation/redirect candidate into mindko-vs-examghost in M3."
+  },
+  {
+    "domain": "coursehero.com",
+    "name": "Course Hero AI",
+    "url": "https://coursehero.com",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Cloudflare blocked /plans/ (403). iOS App Store IAP lists subscriptions at $14.99–$38.99, $54.99, $109.99 and unlock packs ($14.99–$44.99); third-party sources cite Premier ~$9.95/mo annual ($119.40/yr), $19.95/mo quarterly, $24.95–$39.99/mo monthly.",
+      "plans": [
+        {
+          "name": "Free / Document Upload Unlocks",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Limited browsing; earn document unlocks by uploading approved study notes"
+        },
+        {
+          "name": "Premier (Annual - secondary sources)",
+          "price": 119.4,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Reported at $9.95/mo billed $119.40/yr; web /plans/ blocked by Cloudflare 403"
+        },
+        {
+          "name": "App Store Subscriptions / Unlock Packs (iOS IAP)",
+          "price": 24.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Official Apple App Store lists $14.99–$38.99 subscriptions, $54.99/$109.99 Premier tiers, and Unlock 5 ($14.99) / 10 ($24.99) / 20 ($44.99)"
+        }
+      ],
+      "freeTier": "Upload study documents to earn free document unlocks",
+      "trial": null
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "Google Docs",
+      "YouTube"
+    ],
+    "featuresStated": [
+      "184M crowdsourced course documents and 77M answered questions across 130K institutions",
+      "24/7 verified expert tutors and textbook solutions",
+      "Bundled Learneo suite: QuillBot AI writing tools + Symbolab math solver",
+      "Chrome extension links questions on Google Docs/YouTube/webpages to Course Hero library and summarizes YouTube lectures"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/course-hero-ai-study-assi/iimcimpbdndjaidollhipbkjilpnmfnh",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.coursehero.com/",
+      "https://chromewebstore.google.com/detail/course-hero-ai-study-assi/iimcimpbdndjaidollhipbkjilpnmfnh",
+      "https://apps.apple.com/us/app/course-hero-ai-homework-help/id922208952"
+    ],
+    "confidence": "medium",
+    "notes": "Automated HTTP/curl returned 403 (Cloudflare). Homepage rendered in Chrome (confirming 184M docs, 77M Q&As, QuillBot/Symbolab bundle), CWS and iOS App Store returned 200, while /plans/ remained Cloudflare-blocked."
+  },
+  {
+    "domain": "cramly.ai",
+    "name": "Cramly AI",
+    "url": "https://www.cramly.ai/",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Monthly $20/mo (1-week trial); Annual $4/mo paid yearly ($48/yr, marked down from $5); Lifetime $110 one-time (marked down from $250); 30-day money-back guarantee.",
+      "plans": [
+        {
+          "name": "Monthly",
+          "price": 20,
+          "currency": "USD",
+          "period": "month",
+          "notes": "1-week trial; unlimited AI assistance, all writing tools, priority support, mobile app access."
+        },
+        {
+          "name": "Annual",
+          "price": 48.0,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Listed as $4/mo ($48/yr). Marked down from $5/mo ('Save 81%'); billed yearly; includes early access to new tools."
+        },
+        {
+          "name": "Lifetime",
+          "price": 110,
+          "currency": "USD",
+          "period": "once",
+          "notes": "Marked down from $250; one-time payment with lifetime access and VIP support."
+        }
+      ],
+      "freeTier": "Free account signup ('Join for free'); paid plans required for unlimited/premium writing tools",
+      "trial": "1-week trial on Monthly plan + 30-day money-back guarantee"
+    },
+    "platformsStated": [
+      "Web App",
+      "Mobile app access"
+    ],
+    "featuresStated": [
+      "Long Essay Assistant (5–10 page essays with real citations)",
+      "Personal Model (learns from user's old essays)",
+      "Multiple Choice Solver",
+      "Paragraph Assistant, Essay Outline, Essay Paraphraser, Sentence Elongator",
+      "Article Summarizer & Cover Letter Generator"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/cramly-ai-homework-helper/mobipeidlicbiphikamgnaafefildggl",
+    "browsersStated": [
+      "Web",
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.cramly.ai/",
+      "https://chromewebstore.google.com/detail/cramly-ai-homework-helper/mobipeidlicbiphikamgnaafefildggl?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified live via headless Chrome render of Alpine.js SPA on cramly.ai plus CWS listing mobipeidlicbiphikamgnaafefildggl (note unrelated CWS extension 'Crammer: Save time using AI' is a different product)."
+  },
+  {
+    "domain": "easysb.org",
+    "name": "EasySB & SmarterBook",
+    "url": "https://easysb.org",
+    "reachable": true,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "EasySB is a $29.99 one-time license (unlimited use, one device; full refund if 3 referrals sign up). Original SmarterBook by Micah Lindley was discontinued in Feb 2024 after a McGraw Hill cease-and-desist.",
+      "plans": [
+        {
+          "name": "Single-Device License",
+          "price": 29.99,
+          "currency": "USD",
+          "period": "once",
+          "notes": "Unlimited SmartBook 2.0 exports on 1 device; Stripe checkout; 30-day refund only if McGraw Hill breaks compatibility"
+        }
+      ],
+      "freeTier": "Referral refund program (refer 3 paying users for full refund)",
+      "trial": null
+    },
+    "platformsStated": [
+      "McGraw-Hill SmartBook 2.0"
+    ],
+    "featuresStated": [
+      "Automates clicking through McGraw-Hill SmartBook 2.0 adaptive reading questions",
+      "Exports collected SmartBook 2.0 questions and answers to an Excel sheet for Quizlet flashcard import",
+      "Terms explicitly state SmartBook 1.0 is unsupported and it does not cover Connect exams"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.easysb.org/",
+      "https://www.easysb.org/static/js/main.16210536.js",
+      "https://smarterbookextension.com/"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified easysb.org React bundle on 2026-11-27 (including Stripe checkout UI, /guide sideload steps, and Terms of Use) plus SmarterBook C&D status and smarterbookextension.com."
+  }
+]

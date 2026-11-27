@@ -26,8 +26,9 @@ export default function FeaturesPage() {
     const checked = new Date(lastChecked + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="pt-12 sm:pt-16 pb-10 sm:pb-12 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -138,8 +139,9 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
+            </main>
             <FinalCta />
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

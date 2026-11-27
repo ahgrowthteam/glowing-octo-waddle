@@ -333,7 +333,7 @@ const canvasDetectionAuditConfig: any = {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     <div className="rounded-2xl bg-[#0B0C10] border border-white/10 p-4 sm:p-5 font-mono text-xs space-y-2 overflow-x-auto">
                         <div className="text-amber-300 font-semibold mb-2">
-                            // 1. Canvas Classic &amp; New Quizzes Focus Listeners
+                            {"// 1. Canvas Classic & New Quizzes Focus Listeners"}
                         </div>
                         <pre className="text-white/85 leading-relaxed whitespace-pre-wrap">{`window.addEventListener('blur', () => {
   // Fires ONLY when browser tab/window loses OS focus
@@ -353,7 +353,7 @@ document.addEventListener('visibilitychange', () => {
 
                     <div className="rounded-2xl bg-emerald-950/35 border border-emerald-400/25 p-4 sm:p-5 font-mono text-xs space-y-2 overflow-x-auto">
                         <div className="text-emerald-400 font-semibold mb-2">
-                            // 2. Why ExamGhost Triggers 0 Events in This Listener
+                            {"// 2. Why ExamGhost Triggers 0 Events in This Listener"}
                         </div>
                         <pre className="text-white/90 leading-relaxed whitespace-pre-wrap">{`// Executed inside Chromium MV3 ISOLATED World:
 // - Host window.onblur is NEVER fired

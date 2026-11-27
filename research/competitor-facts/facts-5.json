@@ -2,37 +2,37 @@
   {
     "domain": "usequietly.com",
     "name": "Quietly AI",
-    "url": "https://usequietly.com",
+    "url": "https://www.usequietly.com",
     "reachable": true,
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Free starter (8 questions), Premium $7.99/month with 3-day trial, Pro $14.99/month",
+      "summary": "Free Starter (8 questions total, one-time); Premium $7.99/month (3-day free trial in extension); Pro $14.99/month (routes to stronger AI models).",
       "plans": [
         {
           "name": "Starter",
           "price": 0,
           "currency": "USD",
-          "period": "month",
-          "notes": "8 questions total, do not reset monthly; no account needed to try"
+          "period": "one-time allowance",
+          "notes": "8 questions total (do not reset monthly); guest use without account"
         },
         {
           "name": "Premium",
           "price": 7.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Unlimited questions; 3-day free trial then billed monthly"
+          "notes": "Unlimited solutions, explanations, and Ask Quietly chat; 3-day free trial in extension"
         },
         {
           "name": "Pro",
           "price": 14.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Routes to stronger AI models; priority access; includes Premium features"
+          "notes": "Automatic routing to stronger AI models for tough/multi-step/math questions + priority access + Premium features"
         }
       ],
-      "freeTier": "Starter: 8 questions total (one-time allowance)",
-      "trial": "3-day free trial of Premium"
+      "freeTier": "Starter: 8 questions total (does not reset monthly; works without creating an account)",
+      "trial": "3-day free trial of Premium inside extension"
     },
     "platformsStated": [
       "Canvas",
@@ -40,23 +40,24 @@
       "McGraw Hill"
     ],
     "featuresStated": [
-      "Auto-detects quiz questions on page",
-      "Step-by-step explanations and hints",
-      "Ask Quietly: select text to explain/summarize/make notes in a sidebar",
-      "Chat for questions, studying, summarizing, writing (Premium/Pro)",
-      "Automatic routing to stronger AI model (Pro)"
+      "Auto-detects quiz questions on Canvas, Brightspace, and McGraw Hill; Shift+Z toggles answer dots",
+      "Ask Quietly sidebar: highlight text to explain, summarize, build study notes, or ELI5",
+      "Step-by-step mode, progressive hints, and similar-problem chips",
+      "Specialized statistics & math reasoning (confidence intervals, hypothesis testing)",
+      "Pro tier automatic routing to stronger AI models; claims local-first/FERPA-aligned encryption"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/quietly-ai-study-assistan/opmlbifgjdfgenkcejhdboookegdijcg",
     "browsersStated": [
-      "Chrome"
+      "Chrome",
+      "Edge"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.usequietly.com/",
+      "https://www.usequietly.com",
       "https://chromewebstore.google.com/detail/quietly-ai-study-assistan/opmlbifgjdfgenkcejhdboookegdijcg"
     ],
     "confidence": "high",
-    "notes": "Chrome Web Store (checked): 4.6 from 11 ratings, ~2,000 users. Site also claims '100,000+ questions processed in May' (unverified site claim). Home page redirects to www. Site frames product as a learning aid and has an 'Honor Code' page; no undetectable claim seen."
+    "notes": "Verified live 2026-11-27. CWS updated Nov 25, 2026 to v2.9.1 (4.6 rating, 11 ratings, 1,000 users). /pricing returns 404; full pricing is on www.usequietly.com."
   },
   {
     "domain": "canvasninja.app",
@@ -64,23 +65,23 @@
     "url": "https://www.canvasninja.app",
     "reachable": true,
     "primaryPurpose": "activity-hiding",
-    "claimsUndetectable": false,
+    "claimsUndetectable": true,
     "pricing": {
-      "summary": "$16.99/month or $67.99 one-time lifetime",
+      "summary": "$16.99/month or $67.99 one-time lifetime; free CWS install but paid plan required to activate features.",
       "plans": [
         {
           "name": "Monthly",
           "price": 16.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Cancel anytime"
+          "notes": "Includes Privacy Guard, Answer Saver, Smart Answers; cancel anytime"
         },
         {
           "name": "Lifetime",
           "price": 67.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "30-day refund stated"
+          "period": "once",
+          "notes": "Includes all features, future updates, priority support; 30-day refund policy"
         }
       ],
       "freeTier": null,
@@ -89,22 +90,18 @@
     "platformsStated": [
       "Canvas"
     ],
-    "featuresStated": [
-      "Privacy Guard (controls focus/visibility signals on supported quiz pages)",
-      "Answer Saver (uses saved submission history for supported retakes)",
-      "Smart Answers (optional AI help)"
-    ],
+    "featuresStated": [],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-ninja/ailcnoigddfddkfnppjcgjijaoehiime",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
       "https://www.canvasninja.app/",
       "https://chromewebstore.google.com/detail/canvas-ninja/ailcnoigddfddkfnppjcgjijaoehiime"
     ],
     "confidence": "high",
-    "notes": "Main positioning is tab-switch/quiz-log privacy (Chrome Web Store title: 'Tab Detection Blocker for Canvas'), so classified activity-hiding. Site text explicitly disclaims that it proves undetectability, so claimsUndetectable=false; a human may want to review. CWS: 5.0 from 5 ratings, ~739 users (checked). Installing is free; features need a paid plan per site FAQ."
+    "notes": "Live-verified website and CWS listing on 2026-11-27. User count on CWS is 710 (v1.1.49 updated Nov 15, 2026). Limited to Canvas; New Quizzes AI/Answer Saver unsupported."
   },
   {
     "domain": "testbro.app",
@@ -114,40 +111,51 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "5 free asks/month; one-time credit packs $2.99 (200), $3.99 (400), $5.99 (800), each valid 1 month, no subscription",
+      "summary": "5 free asks/month; one-time non-renewing credit packs valid 1 month: S $2.99 (200 asks), L $3.99 (400 asks), XL $5.99 (800 asks). No subscriptions.",
       "plans": [
+        {
+          "name": "Free Trial",
+          "price": 0,
+          "currency": "USD",
+          "period": "month",
+          "notes": "5 free asks per month"
+        },
         {
           "name": "S package",
           "price": 2.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "200 Ask credits, expires after 1 month"
+          "period": "one-time (expires 1 month)",
+          "notes": "200 Ask credits (~$0.01495/Ask), no auto-renewal"
         },
         {
           "name": "L package",
           "price": 3.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "400 Ask credits, expires after 1 month"
+          "period": "one-time (expires 1 month)",
+          "notes": "400 Ask credits (~$0.00997/Ask), Popular, no auto-renewal"
         },
         {
           "name": "XL package",
           "price": 5.99,
           "currency": "USD",
-          "period": "one-time",
-          "notes": "800 Ask credits, expires after 1 month"
+          "period": "one-time (expires 1 month)",
+          "notes": "800 Ask credits (~$0.00749/Ask), no auto-renewal"
         }
       ],
       "freeTier": "5 free asks per month",
       "trial": null
     },
-    "platformsStated": [],
-    "featuresStated": [
-      "Highlight text, right-click and ask AI",
-      "Select a screen area for AI analysis (images or non-selectable text)",
-      "One-click answer on supported platforms (availability varies by site)"
+    "platformsStated": [
+      "LinkedIn Skill Assessments (per CWS)",
+      "General web test sites"
     ],
-    "extensionStoreUrl": "https://chrome.google.com/webstore/detail/test-bro/dcnmkocojfkeagnfnhbeojbkeicdekmk",
+    "featuresStated": [
+      "Highlight text and right-click to ask AI",
+      "Select screen area via context menu or side-panel capture when text selection or right-click is blocked",
+      "One-button ASK solve on supported/optimized sites",
+      "14 interface languages"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/test-bro-smart-web-test-a/dcnmkocojfkeagnfnhbeojbkeicdekmk",
     "browsersStated": [
       "Chrome",
       "Edge",
@@ -155,15 +163,16 @@
       "Brave",
       "Vivaldi",
       "Yandex Browser",
-      "other Chromium browsers"
+      "SRWare Iron",
+      "Comodo Dragon"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://testbro.app/",
-      "https://chromewebstore.google.com/detail/test-bro/dcnmkocojfkeagnfnhbeojbkeicdekmk"
+      "https://testbro.app",
+      "https://chromewebstore.google.com/detail/test-bro-smart-web-test-a/dcnmkocojfkeagnfnhbeojbkeicdekmk"
     ],
     "confidence": "high",
-    "notes": "CWS (checked): 4.1 from 32 ratings, ~9,000 users. No specific LMS/platform list on home page. No undetectable claim seen."
+    "notes": "Verified live 2026-11-27. CWS has 9,000 users, 4.1 rating (32 ratings), v1.1.3 (Dec 5, 2025). Note: CWS includes casual Q&A ('Can you cheat on LinkedIn assessments? ... shh...'), though no LMS proctoring or detection-evasion claims are made."
   },
   {
     "domain": "fastsolve.app",
@@ -173,75 +182,64 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "Free 10 questions/day; Pro $9.99/week, $19.99/month, $49/semester, $99/year",
+      "summary": "Free tier (10 questions/day, MCQ); Pro Weekly $9.99/wk, Pro Monthly $19.99/mo, Pro Semester $49/semester, Pro Annual $99/yr.",
       "plans": [
         {
           "name": "Free",
           "price": 0,
           "currency": "USD",
-          "period": "month",
-          "notes": "10 questions/day, multiple-choice support"
+          "period": "free",
+          "notes": "10 solves/day, multiple-choice support (FAQ), all 8 core LMS platforms, no card required."
         },
         {
           "name": "Pro Weekly",
           "price": 9.99,
           "currency": "USD",
           "period": "week",
-          "notes": null
+          "notes": "Unlimited questions, all question types, all display modes, Claude & Gemini routing."
         },
         {
           "name": "Pro Monthly",
           "price": 19.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Priority support listed"
+          "notes": "Marked 'Most Popular'; unlimited questions, Smart AI gateway, priority support."
         },
         {
           "name": "Pro Semester",
-          "price": 49,
+          "price": 49.0,
           "currency": "USD",
           "period": "semester",
-          "notes": "Described as a 4-month semester; appears in FAQ and comparison table, not in main pricing cards"
+          "notes": "Shown in comparison table & FAQ for a 4-month semester; omitted from main 3-card pricing grid."
         },
         {
           "name": "Pro Annual",
-          "price": 99,
+          "price": 99.0,
           "currency": "USD",
           "period": "year",
-          "notes": "Priority support listed"
+          "notes": "Save 58%, unlimited questions, Smart AI gateway, priority support."
         }
       ],
-      "freeTier": "10 questions per day",
+      "freeTier": "10 free solves per day (no credit card required).",
       "trial": null
     },
     "platformsStated": [
-      "Canvas",
-      "Blackboard",
-      "Moodle",
-      "Brightspace",
-      "ALEKS",
+      "Canvas (Classic & New Quizzes)",
+      "Blackboard (Original & Learn Ultra)",
+      "Moodle (3.x & 4.x)",
+      "Brightspace (D2L)",
       "Schoology",
-      "Knewton",
+      "ALEKS",
+      "Knewton Alta",
       "Learnosity",
-      "DeltaMath",
-      "Edpuzzle",
-      "i-Ready",
-      "Edmentum",
-      "MyMathLab",
-      "MathXL",
-      "WeBWorK",
-      "WebAssign",
-      "McGraw Hill Connect",
-      "IXL",
-      "Quizizz",
-      "Hawkes Learning"
+      "Additional grid platforms: DeltaMath, Edpuzzle, i-Ready, Edmentum, MyMathLab, MathXL, WeBWorK, WebAssign, McGraw Hill Connect, IXL, Quizizz/Wayground, Hawkes Learning"
     ],
     "featuresStated": [
-      "Double-click a question to get an answer",
-      "Fills answer into input field",
-      "Automatic AI model selection by subject",
-      "Supports multiple-choice, essay, fill-in-the-blank, matching",
-      "Unlimited questions on Pro plans"
+      "Double-click question trigger (<2s latency, <1s MCQ) with native browser event input filling",
+      "Smart Model Routing: Gemini Flash for math/science speed, Claude Sonnet / GPT-4o for essays and multi-step problems",
+      "Embedded code-editor detection that matches the course editor's programming language",
+      "Confidence score shown in Homework Mode",
+      "Three modes: Homework Mode, Sneaky Mode, Minimal UI Mode"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/fastsolve/gpbmomndeioigacdailloflpngipnfgh",
     "browsersStated": [
@@ -250,13 +248,14 @@
       "Brave",
       "Arc"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://fastsolve.app/",
+      "https://fastsolve.app",
+      "https://fastsolve.app/chrome-extension",
       "https://chromewebstore.google.com/detail/fastsolve/gpbmomndeioigacdailloflpngipnfgh"
     ],
     "confidence": "high",
-    "notes": "Site markets itself as undetectable/invisible (claimsUndetectable=true). Unverified site claims: '98% accuracy', 'under 2 seconds'. Site says CWS rating 4.4 from 20 ratings; CWS page fetched shows 4.1 from 27 ratings and ~5,000 users (CWS value is the checked one). Site is inconsistent on AI models (Gemini Flash/Claude Sonnet in one place, Claude + GPT-4o in FAQ/plan text). Main pricing cards omit the Semester plan. Extension stated to be unusable in Respondus LockDown Browser."
+    "notes": "Verified live across fastsolve.app, /chrome-extension, and CWS listing (v3.3.57, Nov 25, 2026)."
   },
   {
     "domain": "coursology.com",
@@ -266,46 +265,47 @@
     "primaryPurpose": "study-tools",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Paid only on pricing page: $24.99/month, or $12.50/month on a 12-month plan (listed as 50% off)",
+      "summary": "Public /pro pricing page shows 3 Months at $19.99/month (-20% off $24.99) and 12 Months at $12.50/month (-50% off $24.99); affiliate/FAQ text inside page HTML also cites $24.99/mo, $22.99/mo, $122.94/yr, and $149.97/yr.",
       "plans": [
         {
-          "name": "1 Month",
-          "price": 24.99,
+          "name": "3 Months",
+          "price": 19.99,
           "currency": "USD",
-          "period": "month",
-          "notes": "Unlimited access to all features"
+          "period": "month (3-month term)",
+          "notes": "Listed as -20% off $24.99 USD/month; unlimited access to all features"
         },
         {
           "name": "12 Months",
           "price": 12.5,
           "currency": "USD",
-          "period": "month",
-          "notes": "Listed as -50% off $24.99/month; total billing structure (upfront vs monthly) not stated on page"
+          "period": "month (12-month term)",
+          "notes": "Listed as -50% off $24.99 USD/month ($150/yr equivalent); upfront vs monthly billing unclear on /pro card"
         }
       ],
       "freeTier": null,
       "trial": null
     },
     "platformsStated": [
-      "Stated as working on any learning platform / LMS"
+      "Universal LMS support ('any learning platform', Canvas, Blackboard, Moodle, Brightspace)"
     ],
     "featuresStated": [
-      "Instant Answers (snap or click a question)",
-      "Study tools: quizzes and flashcards from uploaded materials",
-      "AI podcasts and lecture recorder with notes",
-      "Discussion post drafter, humanizer and essay drafting",
-      "iPhone and Android app"
+      "Chrome extension with Button, Snapshot, and Text Selection capture + follow-up AI chat",
+      "Dedicated Discussion Post Extension: drafts & humanizes discussion board posts and peer replies",
+      "AI Humanizer with naturalness/AI-detection meter + essay writer with style replication and JSTOR/source citation finder",
+      "Course upload study tools: AI Podcasts, Lecture Recorder, Quizzes, Flashcards, Visual Mindmaps",
+      "iOS and Android mobile apps (claims 4.8 from 4.4K App Store ratings)"
     ],
-    "extensionStoreUrl": null,
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/coursology/ldgogjlogbecagpdpfomiiebiaeilgpd",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://coursology.com/",
-      "https://coursology.com/pro"
+      "https://coursology.com",
+      "https://coursology.com/pro",
+      "https://chromewebstore.google.com/detail/coursology/ldgogjlogbecagpdpfomiiebiaeilgpd"
     ],
-    "confidence": "medium",
-    "notes": "/pricing redirects to /pro. Sold as an all-in-one study suite but also markets instant answers, discussion-post drafting, a 'humanizer' for AI text, and essay writing; classification as study-tools is a judgment call. No Chrome Web Store link found in the HTML (extension store URL not verified); site says 'Add to Chrome'. Unverified site claims: '1M+ students', 4.8 from 4.4K App Store ratings. No free tier or trial stated on fetched pages (may exist behind signup)."
+    "confidence": "high",
+    "notes": "Verified live 2026-11-27. Located official CWS listing missing in facts-5.json (40,000 users, 4.6 rating across 473 ratings, v1.2.6 updated May 27, 2026). /pricing redirects to /pro, which now highlights 3-Month ($19.99/mo) and 12-Month ($12.50/mo) cards."
   }
 ]

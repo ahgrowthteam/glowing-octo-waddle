@@ -1,0 +1,679 @@
+[
+  {
+    "domain": "quizper.ai",
+    "name": "Quizper AI",
+    "url": "https://quizper.ai",
+    "reachable": false,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas LMS"
+    ],
+    "featuresStated": [
+      "Injects an 'Ask Quizper AI' button into Canvas .question_holder headers",
+      "Calls OpenAI Chat Completions API (gpt-4o) with user-hardcoded API key"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Chrome (Developer Mode unpacked only)"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://github.com/sooraj-gupta/quizperai",
+      "https://raw.githubusercontent.com/sooraj-gupta/quizperai/main/manifest.json",
+      "https://raw.githubusercontent.com/sooraj-gupta/quizperai/main/content.js"
+    ],
+    "confidence": "high",
+    "notes": "quizper.ai and www.quizper.ai return DNS NXDOMAIN. Verified GitHub repo sooraj-gupta/quizperai (manifest.json + content.js) as the only surviving artifact."
+  },
+  {
+    "domain": "quizplus.com",
+    "name": "QuizPlus",
+    "url": "https://quizplus.com",
+    "reachable": false,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Web",
+      "iOS"
+    ],
+    "featuresStated": [
+      "Database of expert Q&As and professor-aligned quiz banks across 30+ fields of study (CWS)",
+      "AI Flashcard Generator, spaced repetition Learn Mode, and textbook solutions (per indexed quizplus.com search results)",
+      "Quizplus AI tutor, DocuAssist document Q&A, and AI Video Tutor (per indexed quizplus.com search results)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizplus/aakemokjdfmhchacpbgnacndopgfnjfm",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://chromewebstore.google.com/detail/quizplus/aakemokjdfmhchacpbgnacndopgfnjfm",
+      "https://quizplus.com/"
+    ],
+    "confidence": "low",
+    "notes": "quizplus.com returned HTTP 403 (Cloudflare challenge) to both curl and headless Chrome on 2026-11-27. CWS listing (2,000 users, 5.0/5 across 17 ratings, last updated Oct 2, 2024) was readable; vendor dollar pricing could not be verified directly."
+  },
+  {
+    "domain": "quizwizard.app",
+    "name": "Quiz Wizard",
+    "url": "https://quizwizard.app",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free (50 Spells/mo, no card); Standard $5.99/mo ($59.99/yr, 500 Spells/mo); Pro $14.99/mo ($149.99/yr, 2,000 Spells/mo); Premium $29.99/mo ($299.99/yr, 5,000 Spells/mo); non-expiring top-ups from $6.99.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "50 free Spells every month; no credit card required; 1 Spell = 1 question explained."
+        },
+        {
+          "name": "Standard",
+          "price": 5.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $5.99/mo ($59.99/yr = $5.00/mo). 500 Spells/month, smarter AI model, all supported test platforms, history & session stats."
+        },
+        {
+          "name": "Pro",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $14.99/mo ($149.99/yr = $12.50/mo). 2,000 Spells/month, smarter AI model, all supported test platforms; checkout via PayPro Global."
+        },
+        {
+          "name": "Premium",
+          "price": 29.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $29.99/mo ($299.99/yr = $25.00/mo). 5,000 Spells/month, smarter AI model, maximum quota."
+        },
+        {
+          "name": "One-time Top-ups",
+          "price": 6.99,
+          "currency": "USD",
+          "period": "once",
+          "notes": "Listed price: $6.99 (500) / $9.99 (1,000) / $17.99 (2,000 Spells). Never expire; works on any plan including Free."
+        }
+      ],
+      "freeTier": "50 free Spells every month, no credit card required",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Moodle",
+      "Blackboard",
+      "Google Forms",
+      "Quizizz",
+      "Kahoot!",
+      "Microsoft Forms",
+      "Brightspace",
+      "Schoology",
+      "Pearson",
+      "McGraw Hill",
+      "Coursera",
+      "Blooket",
+      "Gimkit",
+      "Quizlet",
+      "Edpuzzle",
+      "Netacad",
+      "W3Schools",
+      "HESI",
+      "Lippincott"
+    ],
+    "featuresStated": [
+      "Visual screen-reading AI for diagrams, graphs, math formulas, and code snippets",
+      "Step-by-step explanations in 50+ languages",
+      "One-click automated quiz completion (per CWS)",
+      "Non-expiring Spell top-up packs + monthly/yearly plans",
+      "iOS App listed in site navigation"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quiz-wizard-ai-test-solve/dbdlpnflbhppbhpleflgbecaloaombpj",
+    "browsersStated": [
+      "Chrome",
+      "Microsoft Edge",
+      "Opera",
+      "Brave"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://quizwizard.app",
+      "https://quizwizard.app/pricing",
+      "https://chromewebstore.google.com/detail/quiz-wizard-ai-test-solve/dbdlpnflbhppbhpleflgbecaloaombpj?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified both Yearly and Monthly pricing toggles via headless Chrome on quizwizard.app/pricing, plus homepage and CWS listing."
+  },
+  {
+    "domain": "quizzy-app.xyz",
+    "name": "Quizzy AI",
+    "url": "https://www.quizzy-app.xyz/",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "No free tier; Monthly Starter $3.99/mo (250 credits); Monthly Standard $5.99/mo (700 credits); Monthly Premium $19.99/mo (1,500 credits); strict no-refund policy.",
+      "plans": [
+        {
+          "name": "Monthly Starter",
+          "price": 3.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Discounted from $8.99; 250 credits, QuizForge Basic, Quizzy AI Lite Model, Chrome Extension access."
+        },
+        {
+          "name": "Monthly Standard",
+          "price": 5.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Discounted from $12.99; 700 credits, QuizForge Standard, Quizzy AI Standard Model."
+        },
+        {
+          "name": "Monthly Premium",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "1,500 credits, QuizForge Premium, Quizzy AI Expert Model."
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Any webpage (MCQs, graphs, charts, diagrams)"
+    ],
+    "featuresStated": [
+      "Screenshot & selected-text MCQ analysis via right-click or shortcut (Opt+Maj+H Mac / Ctrl+Shift+H Windows)",
+      "Visual MCQ support for graphs, charts, and diagrams",
+      "QuizForge custom AI practice quiz generator"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizzy-app-ai-tutor-for-e/oofhfhmonpoolbbmakdgnafmnlomfkfn",
+    "browsersStated": [
+      "Chrome",
+      "Microsoft Edge",
+      "Opera",
+      "Vivaldi",
+      "Brave",
+      "Arc"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.quizzy-app.xyz/",
+      "https://www.quizzy-app.xyz/pricing",
+      "https://chromewebstore.google.com/detail/quizzy-app-ai-tutor-for-e/oofhfhmonpoolbbmakdgnafmnlomfkfn?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified homepage, /pricing, and CWS listing. Note /features returns HTTP 500."
+  },
+  {
+    "domain": "schoolcheats.net",
+    "name": "SchoolCheats",
+    "url": "https://schoolcheats.net",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free limited answer retrieval; Premium Weekly Trial $8.99/wk, Monthly $25.00/mo, 3 Months $50.00, Yearly $100.00/yr; separate Cloud Desktop (vm.schoolcheats.net) $50/hr ($25/30m, 15m free trial).",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Limited answer retrieval on select platforms; excludes Auto Complete."
+        },
+        {
+          "name": "Weekly Trial (Extension)",
+          "price": 8.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Full extension Premium access; Stripe checkout."
+        },
+        {
+          "name": "Monthly (Extension)",
+          "price": 25,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Answer retrieval + Auto Complete across supported platforms; money-back guarantee if a cheat didn't work."
+        },
+        {
+          "name": "3 Months (Extension)",
+          "price": 50,
+          "currency": "USD",
+          "period": "3 months",
+          "notes": "Save 33% (~$16.67/mo equivalent)."
+        },
+        {
+          "name": "Yearly (Extension)",
+          "price": 100,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Save 67% (~$8.33/mo equivalent)."
+        },
+        {
+          "name": "Cloud Desktop (vm.schoolcheats.net)",
+          "price": 25,
+          "currency": "USD",
+          "period": "hourly",
+          "notes": "Listed price: $25.00 (30 min) / $50.00 (1h+15m) / $100.00 (2h+30m). Pay-per-hour browser Windows VM; prepaid packs up to $1,000 (20h+5h free); 15 min free trial with $1 card hold."
+        }
+      ],
+      "freeTier": "Free limited answer retrieval; 15-min free Desktop VM trial (with $1 card hold)",
+      "trial": "15-min free Desktop VM trial; $8.99 Weekly Trial for extension"
+    },
+    "platformsStated": [
+      "DeltaMath",
+      "ZyBooks",
+      "Wayground (Quizizz)",
+      "Blooket",
+      "Edpuzzle",
+      "Edmentum",
+      "Lexia",
+      "Kahoot",
+      "Honorlock (Cloud Desktop)",
+      "Pearson VUE OnVUE (Cloud Desktop)",
+      "Safe Exam Browser (Cloud Desktop)"
+    ],
+    "featuresStated": [
+      "Platform-specific non-AI answer retrieval & bearer-token scripts (e.g., Edpuzzle public & private videos)",
+      "Auto-complete bots, video-skipping, and game-lobby flood bots (Wayground/Blooket/Kahoot)",
+      "Dedicated AI for open-ended Edpuzzle questions",
+      "Browser-tab Cloud Windows Desktop (vm.schoolcheats.net) with screen snip, human-paced keystroke typing, webcam/mic passthrough, and two-person session sharing"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/school-cheats/dcecjjjnjecoiehclollekjmfgblkkha",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://schoolcheats.net",
+      "https://schoolcheats.net/pricing",
+      "https://schoolcheats.net/cheats",
+      "https://schoolcheats.net/edpuzzle",
+      "https://vm.schoolcheats.net/",
+      "https://vm.schoolcheats.net/pricing",
+      "https://chromewebstore.google.com/detail/school-cheats/dcecjjjnjecoiehclollekjmfgblkkha?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified schoolcheats.net, /pricing, /cheats, /edpuzzle, vm.schoolcheats.net, vm.schoolcheats.net/pricing, and CWS listing."
+  },
+  {
+    "domain": "studybotpro.co",
+    "name": "StudyBotPro",
+    "url": "https://studybotpro.co",
+    "reachable": false,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Countless educational websites / LMS platforms (unspecified)"
+    ],
+    "featuresStated": [
+      "Highlight or snapshot queries for instant answers (per CWS)",
+      "Interactive Chatbox & StudyMode practice questions (per CWS)",
+      "One-click auto-select problem solving (per CWS)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/studybotpro/dgoecbmoaamkkdclgmfnjnjlebnbpkac",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "http://studybotpro.co",
+      "https://chromewebstore.google.com/detail/studybotpro/dgoecbmoaamkkdclgmfnjnjlebnbpkac?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "HTTP port serves Namecheap expired-domain parking banner (httpStatus: 200), while HTTPS fails TLS handshake (SSL_ERROR_SYSCALL), so the live StudyBotPro service is unreachable (reachable: false). CWS listing survives with 39 users (last updated April 5, 2024)."
+  },
+  {
+    "domain": "studymonkey.ai",
+    "name": "StudyMonkey",
+    "url": "https://studymonkey.ai",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Basic Free (100 questions, 5 subjects); Plus $9/mo ($90/yr); Pro $16/mo ($160/yr); Max $29/mo ($290/yr); Enterprise custom.",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "100 questions, 5 subjects, Standard AI model, no card required."
+        },
+        {
+          "name": "Plus",
+          "price": 9,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $9/mo (or $90/yr advertised as '$7/month'). 500 questions, Unlimited subjects, Standard AI model, Premium Support."
+        },
+        {
+          "name": "Pro",
+          "price": 16,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $16/mo (or $160/yr advertised as '$13/month'). 3,000 questions, Unlimited subjects, Advanced AI model, Essay writer, Premium Support."
+        },
+        {
+          "name": "Max",
+          "price": 29,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $29/mo (or $290/yr advertised as '$24/month'). Unlimited questions, Unlimited subjects, Advanced AI model, Essay writer, Priority Support."
+        }
+      ],
+      "freeTier": "Basic Free: 100 questions, 5 subjects, no card required",
+      "trial": "FAQ states 14-day free trial of premium plans; plan cards state 7-day money-back guarantee"
+    },
+    "platformsStated": [
+      "Web app (100+ academic subjects, 1st grade through Master's/exam prep)"
+    ],
+    "featuresStated": [
+      "Web Q&A homework tutor across 100+ subjects and grade levels (1st grade to Master's/BAR/MCAT/USMLE)",
+      "Step-by-step explanations for multiple choice, short answers, and essays",
+      "Essay writer (Pro and Max plans)",
+      "Question & answer history review"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [
+      "Web (no verified Chrome extension)"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://studymonkey.ai",
+      "https://studymonkey.ai/pricing",
+      "https://studymonkey.ai/download",
+      "https://studymonkey.ai/about",
+      "https://studymonkey.ai/solutions"
+    ],
+    "confidence": "high",
+    "notes": "Verified both Monthly and Annual pricing toggles via headless Chrome on studymonkey.ai/pricing, plus /download and /about. No official CWS extension found."
+  },
+  {
+    "domain": "studyx.ai",
+    "name": "StudyX",
+    "url": "https://studyx.ai",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free Basic tier (30 daily refresh credits); annual-billed plans on /plan: Plus $5.83/mo ($69.99/yr, reg. $9.99/mo), Pro $8.92/mo ($106.99/yr, reg. $19.99/mo), Max $59.92/mo ($718.99/yr, reg. $99.99/mo).",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Free online tools with daily credit limits"
+        },
+        {
+          "name": "Plus (Annual)",
+          "price": 69.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$5.83/mo effective (struck-through $9.99); 3,000 credits/mo + 30 daily refresh credits; 3-day trial"
+        },
+        {
+          "name": "Pro (Annual)",
+          "price": 106.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$8.92/mo effective (struck-through $19.99); 6,000 credits/mo + 30 daily refresh credits"
+        },
+        {
+          "name": "Max (Annual)",
+          "price": 718.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$59.92/mo effective (struck-through $99.99); 50,000 credits/mo; referred to as 'Ultra' in FAQ"
+        }
+      ],
+      "freeTier": "Free access with daily credit limits; no sign-up required for basic web tools",
+      "trial": "3-day trial on Yearly Plus / Ultra plans (auto-renews to annual)"
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "Discord",
+      "Any webpage via extension"
+    ],
+    "featuresStated": [
+      "100M+ verified Q&A bank (75M+ per CWS) + multi-model AI solver (GPT-4o, Claude 3.5, o1 per CWS)",
+      "AI Note Taker, Live Lecture Transcription, PDF/Slide/YouTube Video Summarizer",
+      "AI Flashcard Maker & Quiz Generator with spaced repetition",
+      "AI Detector, AI Humanizer, Plagiarism Checker, and AI Paraphraser",
+      "Certification prep solvers (NCLEX, CPA, PMP, CPI, DoD)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/studyx-ai-homework-helper/illkpkffnkfiipoglfmhalijmcakbhjh",
+    "browsersStated": [
+      "Chrome",
+      "Edge"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://studyx.ai/",
+      "https://studyx.ai/plan",
+      "https://studyx.ai/browser-extension",
+      "https://chromewebstore.google.com/detail/studyx-ai-homework-helper/illkpkffnkfiipoglfmhalijmcakbhjh",
+      "https://apps.apple.com/us/app/studyx-ai-homework-helper/id1571844479"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified homepage, /plan (via browser to resolve JS-rendered prices), /browser-extension, CWS, and iOS App Store on 2026-11-27."
+  },
+  {
+    "domain": "testwhiz.co",
+    "name": "TestWhiz",
+    "url": "https://testwhiz.co",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "3-day free trial; Weekly $5.99/wk; Monthly $12.99/mo; Semester $39.99/4 months ($10.00/mo); no permanent free tier.",
+      "plans": [
+        {
+          "name": "Weekly",
+          "price": 5.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "3-day free trial; unlimited flashcards, quizzes, notes, worksheets, AI problem solver, priority support."
+        },
+        {
+          "name": "Monthly",
+          "price": 12.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "3-day free trial; same all-inclusive feature set."
+        },
+        {
+          "name": "Semester",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "4 months",
+          "notes": "3-day free trial; $10.00/mo equivalent over 4 months."
+        }
+      ],
+      "freeTier": null,
+      "trial": "3-day free trial (cancel anytime)"
+    },
+    "platformsStated": [
+      "Blackboard",
+      "Canvas",
+      "Moodle",
+      "Any online class, website, or portal"
+    ],
+    "featuresStated": [
+      "AI Solver Chrome extension for multiple-choice, open-ended, and close-ended questions",
+      "AI Quiz, Worksheet, Notes, and Flashcard generators",
+      "Chat with PDF & Chat with YouTube",
+      "Compact display mode"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/testwhiz-ai-for-quizzes-a/ekjfclmenjmonmkojbdbenkfnekgieaf",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://testwhiz.co",
+      "https://testwhiz.co/pricing",
+      "https://chromewebstore.google.com/detail/testwhiz-ai-for-quizzes-a/ekjfclmenjmonmkojbdbenkfnekgieaf?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified live pricing on testwhiz.co/pricing via headless Chrome, expanded FAQ answers on testwhiz.co, and verified CWS listing."
+  },
+  {
+    "domain": "truststudy.app",
+    "name": "TrustStudy",
+    "url": "https://truststudy.ca",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free trial (20 credits on truststudy.ca / 3 credits on trustsaas.me); Basic $5/mo (300 credits); Plus $10/mo (1,000 credits); Pro $20/mo (2,000 credits).",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "20 free credits on truststudy.ca (3 trial credits on trustsaas.me/truststudy/); all AI models and input modes."
+        },
+        {
+          "name": "Basic",
+          "price": 5,
+          "currency": "USD",
+          "period": "month",
+          "notes": "300 credits/month; all AI models (GPT, Claude, Gemini, DeepSeek) and input modes."
+        },
+        {
+          "name": "Plus",
+          "price": 10,
+          "currency": "USD",
+          "period": "month",
+          "notes": "1,000 credits/month; all AI models and input modes."
+        },
+        {
+          "name": "Pro",
+          "price": 20,
+          "currency": "USD",
+          "period": "month",
+          "notes": "2,000 credits/month; all AI models and input modes."
+        }
+      ],
+      "freeTier": "20 free trial credits on truststudy.ca (3 trial credits on trustsaas.me/truststudy/)",
+      "trial": "Trial credits on Free plan"
+    },
+    "platformsStated": [
+      "Moodle",
+      "Canvas",
+      "Google Forms",
+      "QCM",
+      "PDFs",
+      "Slides",
+      "Any webpage"
+    ],
+    "featuresStated": [
+      "Keyboard-first reveal: Alt+X to solve, Alt+C to show/hide corner overlay ('1 : b')",
+      "4 input modes: Select, Page Text, Screenshot (vision), Double-click",
+      "Multi-model switching: GPT, Claude, Gemini, DeepSeek",
+      "3 reasoning tiers: Lite (fast direct), Eco, and Max (with reasoning)",
+      "Active-recall study planner & spaced-repetition tools on trustsaas.me"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/truststudy-%E2%80%93-ai-quiz-solv/afdkfocgmhpiclkfadfdnbfddajinipa",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://truststudy.ca",
+      "https://trustsaas.me/truststudy/",
+      "https://chromewebstore.google.com/detail/truststudy-%E2%80%93-ai-quiz-solv/afdkfocgmhpiclkfadfdnbfddajinipa?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "truststudy.app is NXDOMAIN, but verified live sites at truststudy.ca (linked by CWS) and trustsaas.me/truststudy/, plus CWS listing (65 users, v3.2, updated Oct 17, 2026)."
+  },
+  {
+    "domain": "wolframalpha.com",
+    "name": "Wolfram|Alpha",
+    "url": "https://wolframalpha.com",
+    "reachable": true,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Basic account is free (no step-by-step solutions); Pro is $5.00/mo billed $60.00/yr ($9.99/mo monthly); Pro Premium is $8.25/mo billed $99.00/yr ($12.00/mo monthly).",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Free with sign-in; excludes step-by-step solutions and file uploads"
+        },
+        {
+          "name": "Pro (Annual)",
+          "price": 60.0,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$5.00/mo billed annually ($9.99/mo if monthly); step-by-step solutions, practice problems, 2x compute, 2MB upload, mobile photo input"
+        },
+        {
+          "name": "Pro Premium (Annual)",
+          "price": 99.0,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$8.25/mo billed annually ($12.00/mo if monthly); 3x compute time, 5MB file upload, priority expert support"
+        }
+      ],
+      "freeTier": "Free Basic query engine (without step-by-step derivations)",
+      "trial": null
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "Chrome Omnibox / Context Menu"
+    ],
+    "featuresStated": [
+      "Deterministic symbolic computation and curated knowledgebase built on Wolfram Language (35+ years R&D)",
+      "Step-by-step math/physics/chemistry derivations and practice problems with hints (Pro)",
+      "Guided calculators for calculus, algebra, finance, nutrition, and data analysis",
+      "Chrome extension adds toolbar query popup, '=' omnibox shortcut, and right-click context search"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/wolframalpha-official/icncamkooinmbehmkeilcccmoljfkdhp",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.wolframalpha.com/",
+      "https://www.wolframalpha.com/pro/pricing",
+      "https://www.wolframalpha.com/pro/pricing/students/",
+      "https://chromewebstore.google.com/detail/wolframalpha-official/icncamkooinmbehmkeilcccmoljfkdhp"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified homepage, /pro/pricing, /pro/pricing/students/, and official CWS listing on 2026-11-27."
+  }
+]

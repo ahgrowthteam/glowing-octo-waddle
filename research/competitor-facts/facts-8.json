@@ -1,85 +1,126 @@
 [
   {
     "domain": "answersai.com",
-    "name": "AnswersAI",
+    "name": "AnswersAi",
     "url": "https://answersai.com",
     "reachable": true,
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Free plan; Pro $12.99/month, or $39.99 billed yearly ($3.33/month)",
+      "summary": "Free ($0/mo, 5 answers/day, 3 saved materials); Pro is $12.99/month billed monthly or $39.99/year ($3.33/mo, save 74%).",
       "plans": [
         {
           "name": "Free",
           "price": 0,
           "currency": "USD",
           "period": "month",
-          "notes": "5 answers a day"
+          "notes": "5 answers/day resetting at midnight, step-by-step working, 3 saved study materials, English only."
         },
         {
-          "name": "Pro (monthly)",
+          "name": "Pro (Monthly)",
           "price": 12.99,
           "currency": "USD",
           "period": "month",
-          "notes": null
+          "notes": "Unlimited answers/follow-ups, Lecture Mode (up to 90 min), PDF/DOC/slides up to 100 pages/file, YouTube/articles (5 sources), adaptive flashcards, topic-scored quizzes, podcast notes, 80+ languages."
         },
         {
-          "name": "Pro (yearly)",
+          "name": "Pro (Yearly)",
           "price": 39.99,
           "currency": "USD",
           "period": "year",
-          "notes": "$3.33/month equivalent"
+          "notes": "Shown as $3.33/month ($39.99 billed yearly, save $116 / 74%)."
         }
       ],
-      "freeTier": "Free plan: 5 answers a day, resets at midnight",
+      "freeTier": "5 answers/day resetting at midnight + 3 saved study materials (no credit card required).",
       "trial": null
     },
-    "platformsStated": [],
+    "platformsStated": [
+      "Web app",
+      "iOS and Android mobile apps",
+      "Any website via Chrome screenshot extension (Snapshot by AnswersAi)",
+      "PDF/DOC/Slides uploads (up to 100 pages/file)",
+      "YouTube lectures & articles"
+    ],
     "featuresStated": [
-      "Snap a photo or screenshot of a question for the answer with steps",
-      "Follow-up questions",
-      "Lecture recording and notes",
-      "Upload PDFs, documents and slides",
-      "Flashcards and quizzes"
+      "Screenshot-based Snap & Solve with step-by-step 'why' explanations and follow-up chat",
+      "Lecture Mode (record up to 90 min of class audio for written notes)",
+      "Notes-to-podcast two-voice audio generator",
+      "Adaptive flashcards (Again/Hard/Good/Easy spaced repetition) and topic-scored quizzes",
+      "Folder sharing (Owner/Editor/Viewer) and 80+ languages on Pro"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/snapshot-by-answersai/kmdgaoalcjcefbgaiookdaigjeepoldf",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
       "https://answersai.com/",
-      "https://answersai.com/pricing"
+      "https://answersai.com/pricing",
+      "https://chromewebstore.google.com/detail/snapshot-by-answersai/kmdgaoalcjcefbgaiookdaigjeepoldf"
     ],
     "confidence": "high",
-    "notes": "Site renders client-side; read in a real browser. Site claims 2M+ students (unverified)."
+    "notes": "Static HTML is a 15KB React SPA shell; verified full homepage and /pricing Monthly/Yearly toggles via live headless Chrome rendering plus CWS listing. /features returned 404."
   },
   {
     "domain": "transcript.study",
     "name": "Transcript",
     "url": "https://transcript.study",
-    "reachable": false,
+    "reachable": true,
     "primaryPurpose": "study-tools",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": null,
-      "plans": [],
-      "freeTier": null,
+      "summary": "iOS App Store IAP lists Monthly $11.99, Quarterly $29.49 ($9.83/mo), and Yearly $79.99 ($6.67/mo); web checkout pricing is gated behind /dashboard login.",
+      "plans": [
+        {
+          "name": "Yearly (iOS App Store IAP)",
+          "price": 79.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Verified on official Apple App Store listing ($6.67/mo effective); web dashboard pricing requires login"
+        },
+        {
+          "name": "Quarterly (iOS App Store IAP)",
+          "price": 29.49,
+          "currency": "USD",
+          "period": "quarter",
+          "notes": "Verified on official Apple App Store listing ($9.83/mo effective)"
+        },
+        {
+          "name": "Monthly (iOS App Store IAP)",
+          "price": 11.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Verified on official Apple App Store listing; third-party web reviews report $14.99/mo web tier"
+        }
+      ],
+      "freeTier": "Unverified (sign-up required on dashboard; free starter access reported)",
       "trial": null
     },
-    "platformsStated": [],
-    "featuresStated": [
-      "AI homework helper listed on the Chrome Web Store"
+    "platformsStated": [
+      "Any webpage (universal browser extension)",
+      "iOS",
+      "Android",
+      "Web Notebook"
     ],
-    "extensionStoreUrl": "https://chromewebstore.google.com/detail/transcript/klknhfgkblobpfimidmhkclikdalnoke",
+    "featuresStated": [
+      "Text Select & 'The Button': highlight text and click on-page button to solve",
+      "Snapshot (Cmd/Ctrl+Shift+1): drag screenshot crop for math and visual problems",
+      "Notebook study hub: upload PDFs/DOCX/lectures for smart notes, flashcards, practice quizzes, and Lecture Listen audio summaries",
+      "Voice chat with AI Tutor and cross-device mobile-to-desktop sync"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/transcript-ai-study-compa/klknhfgkblobpfimidmhkclikdalnoke",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://chromewebstore.google.com/detail/transcript/klknhfgkblobpfimidmhkclikdalnoke"
+      "https://transcript.study/",
+      "https://transcript.study/features/extension",
+      "https://transcript.study/features/notebook",
+      "https://chromewebstore.google.com/detail/transcript-ai-study-compa/klknhfgkblobpfimidmhkclikdalnoke",
+      "https://apps.apple.com/us/app/transcript-study-companion/id6461646295"
     ],
-    "confidence": "low",
-    "notes": "The site served an automated-access challenge, so pricing and features were not read. The product's Chrome Web Store listing ('Transcript - AI Homework Helper') confirms it exists. Not verified."
+    "confidence": "medium",
+    "notes": "Automated curl returns HTTP 403 (Cloudflare), but homepage, /features/extension, /features/notebook rendered in Chrome, and CWS + Apple App Store listings returned HTTP 200. Exact web checkout pricing behind /dashboard login was not readable without an account."
   }
 ]

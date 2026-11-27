@@ -1,7 +1,6 @@
-import LeanCompare, { leanCompareMetadata } from "@/components/compare/LeanCompare";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = leanCompareMetadata("quizper-vs-examghost");
-
+// quizper.ai is NXDOMAIN with no CWS extension. Consolidate to /compare.
 export default function Page() {
-    return <LeanCompare slug="quizper-vs-examghost" />;
+    permanentRedirect("/compare");
 }

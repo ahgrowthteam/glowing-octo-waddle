@@ -7,9 +7,9 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": false,
     "pricing": {
-      "summary": "Not stated in page HTML (pricing page renders client-side); extension is free to install, some limits depend on plan",
+      "summary": "Free to install extension and free web study tools; paid subscription prices on solvely.ai/pricing and App Store are client-rendered/login-gated and not exposed in public static HTML.",
       "plans": [],
-      "freeTier": "Free to install from Chrome Web Store; site says some features or usage limits may depend on account/plan",
+      "freeTier": "Free to install on Chrome/Edge; free web calculators/tools; extension usage caps depend on account/plan",
       "trial": null
     },
     "platformsStated": [
@@ -19,25 +19,28 @@
       "Google Classroom"
     ],
     "featuresStated": [
-      "Screenshot a question for step-by-step solution",
-      "One-click solve of all questions on a page (per Chrome Web Store listing)",
-      "Homework solver, flashcards, quizzes, exam prep, AI notes, writing/AI-detector tools (web and mobile apps)",
-      "Save problems for later review"
+      "Screenshot question solving (Alt+Shift+S / Ctrl+Shift+S) and 'One-Click Solve All' for an entire page of questions",
+      "Step-by-step explanations and saved problem history",
+      "Real-time YouTube video summaries with timestamped chapters + webpage/paper summarizer",
+      "Broad web/mobile suite: AI Math Solver, Study Guides, Flashcards, Quiz Maker, Mock Exam & Cheat Sheet generator, AI Humanizer & AI Detector, Lecture Transcription",
+      "Multi-model answer cross-checking; iOS & Android apps"
     ],
-    "extensionStoreUrl": "https://chromewebstore.google.com/detail/aedglnfjjccpifohekdeoogffomjcikm",
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/solvelyai-ai-homework-tut/aedglnfjjccpifohekdeoogffomjcikm",
     "browsersStated": [
       "Chrome",
       "Edge"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://solvely.ai/",
+      "https://solvely.ai",
       "https://solvely.ai/extension",
       "https://solvely.ai/pricing",
-      "https://chromewebstore.google.com/detail/aedglnfjjccpifohekdeoogffomjcikm"
+      "https://chromewebstore.google.com/detail/solvelyai-ai-homework-tut/aedglnfjjccpifohekdeoogffomjcikm",
+      "https://microsoftedge.microsoft.com/addons/detail/mmbhhcmacpojimkcgnkkfemajlfhdhoh",
+      "https://apps.apple.com/us/app/solvely-ai-study-tools/id6446930976"
     ],
     "confidence": "medium",
-    "notes": "Prices not found (pricing page is client-rendered; API-driven). Chrome Web Store (publisher Aignite Inc): 4.5 stars from 206 ratings, 100,000 users at check time. Site claims 10M+ students, 97-98% accuracy, 4.6 web-store rating (all unverified; 4.6 differs from listing's 4.5). Broader product is a study suite, extension is the screenshot-solver."
+    "notes": "Verified live 2026-11-27. Marked 'partial' because paid pricing on solvely.ai/pricing and App Store is client-rendered/auth-gated and not directly verifiable in static HTML/JS (per zero-fabrication standard, no unverified third-party aggregator prices recorded)."
   },
   {
     "domain": "thecampusai.com",
@@ -45,54 +48,57 @@
     "url": "https://www.thecampusai.com",
     "reachable": true,
     "primaryPurpose": "ai-answers",
-    "claimsUndetectable": false,
+    "claimsUndetectable": true,
     "pricing": {
-      "summary": "$4.99/month billed monthly or $39.99/year ($3.33/month); both plans say 'limited questions'",
+      "summary": "Monthly Plan is $4.99/month; Yearly Plan is $3.33/month ($39.99 billed yearly). Cards list 'Answer limited questions' without disclosing numeric cap.",
       "plans": [
         {
-          "name": "Monthly",
+          "name": "Monthly Plan",
           "price": 4.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Billed monthly; 'answer limited questions'"
+          "notes": "Extension, Memory Bank, AI Study Tools; card states 'Answer limited questions'."
         },
         {
-          "name": "Yearly",
-          "price": 39.99,
+          "name": "Yearly Plan",
+          "price": 3.33,
           "currency": "USD",
-          "period": "year",
-          "notes": "Shown as $3.33/mo billed yearly; most popular"
+          "period": "month",
+          "notes": "Billed $39.99/year; same features as Monthly Plan ('Answer limited questions')."
         }
       ],
       "freeTier": null,
       "trial": null
     },
     "platformsStated": [
-      "Canvas",
+      "Canvas 2.0",
       "Blackboard",
+      "D2L Brightspace",
       "Moodle",
-      "D2L"
+      "Any learning platform via right-click text selection and screenshot"
     ],
     "featuresStated": [
-      "Screenshot and solve questions",
-      "Step-by-step explanations and AI chat follow-ups",
-      "Practice-quiz mode on quiz questions",
-      "Upload notes to make quizzes and flashcards",
-      "Automatic subject sorting and Memory Bank of past questions"
+      "In-page button on Canvas 2.0, Blackboard, D2L Brightspace, and Moodle",
+      "Screenshot & Solve for graphs and images",
+      "Right-click text selection across unsupported sites",
+      "Memory Bank stores past screenshots and answers sorted automatically by subject",
+      "Practice Quiz Inside the Quiz and custom Flashcards from uploaded files/notes/slides",
+      "Supports 15+ languages"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/campusai/gbkgialchigfapopdbliekaekaanhpen",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.thecampusai.com/",
+      "https://www.thecampusai.com",
       "https://www.thecampusai.com/resources/pricing",
+      "https://www.thecampusai.com/resources/faq",
       "https://www.thecampusai.com/solutions/chrome-extension",
-      "https://chromewebstore.google.com/detail/campusai/gbkgialchigfapopdbliekaekaanhpen?hl=en"
+      "https://chromewebstore.google.com/detail/campusai/gbkgialchigfapopdbliekaekaanhpen"
     ],
-    "confidence": "medium",
-    "notes": "Pricing page also shows a '-50% OFF 12 Months $9.99 USD/month' banner whose meaning is unclear (possibly a crossed-out list price); the per-plan prices above are what the cards show. 'Limited questions' cap not quantified. No free tier/trial stated. Chrome Web Store listing: 4.7 stars, 88 ratings, 3,000 users (listed as 'Campus AI - Canvas AI Homework Help'). Site claims 10K+ students (unverified). Formerly Canvas AI."
+    "confidence": "high",
+    "notes": "Verified live across homepage, /resources/pricing, /resources/faq, /solutions/chrome-extension, and CWS."
   },
   {
     "domain": "examclutch.com",
@@ -102,35 +108,28 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "$9/week, $19/month, $129/year, $149 one-time lifetime (US only)",
+      "summary": "No free tier. Live /pricing tiers: Weekly $9/week (was $15), Monthly $19/month (was $25), Annual $129/year (was $150); unlimited answers.",
       "plans": [
         {
           "name": "Weekly",
-          "price": 9,
+          "price": 9.0,
           "currency": "USD",
           "period": "week",
-          "notes": "Per structured data on pricing page; visible price loads client-side"
+          "notes": "Shown as $9/week (strikethrough $15); unlimited answers, cancel anytime."
         },
         {
           "name": "Monthly",
-          "price": 19,
+          "price": 19.0,
           "currency": "USD",
           "period": "month",
-          "notes": null
+          "notes": "Marked 'Most Popular'; shown as $19/month (strikethrough $25); unlimited answers, cancel anytime."
         },
         {
           "name": "Annual",
-          "price": 129,
+          "price": 129.0,
           "currency": "USD",
           "period": "year",
-          "notes": null
-        },
-        {
-          "name": "Lifetime Pro",
-          "price": 149,
-          "currency": "USD",
-          "period": "one-time",
-          "notes": "US customers only"
+          "notes": "Shown as $129/year (strikethrough $150); unlimited answers, cancel anytime."
         }
       ],
       "freeTier": null,
@@ -138,10 +137,9 @@
     },
     "platformsStated": [
       "Canvas",
-      "Brightspace",
+      "Brightspace (D2L)",
       "Blackboard",
       "Moodle",
-      "D2L",
       "McGraw Hill Connect",
       "Macmillan Achieve",
       "ALEKS",
@@ -154,24 +152,24 @@
       "Google Forms"
     ],
     "featuresStated": [
-      "Answers multiple choice, multi-select, dropdown and fill-in-the-blank",
-      "Keyboard shortcut triggers answering (~30 seconds)",
-      "Three modes: Invisible, Sneaky, Homework",
-      "Pairing-code setup from Chrome extension",
-      "States answers are not stored"
+      "Cmd/Ctrl+Shift+X pre-fetches quiz answers (~30 seconds), then double-click any question to mark",
+      "Pairing-code extension activation",
+      "Short-form quiz focus: multiple choice, multi-select, dropdowns, fill-in-the-blank",
+      "Three modes: Minimal UI Mode, Sneaky Mode, Homework Mode",
+      "Broad 14-platform LMS/homework list including Macmillan Achieve and Oracle Academy"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/bhkcpoocnjadjpgghjfejkgopgkkenab",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.examclutch.com/",
+      "https://www.examclutch.com",
       "https://www.examclutch.com/pricing",
       "https://chromewebstore.google.com/detail/bhkcpoocnjadjpgghjfejkgopgkkenab"
     ],
-    "confidence": "medium",
-    "notes": "Visible pricing cards show 'Loading price' in raw HTML; the prices above come from the page's JSON-LD offer data, not visible text, so a human should confirm on the live page. Chrome Web Store: 5.0 stars from 3 ratings, 263 users. No free tier stated."
+    "confidence": "high",
+    "notes": "Verified live on examclutch.com, /pricing (via headless Chrome to resolve 'Loading price' placeholders), and CWS listing (v2.1.9, Nov 22, 2026)."
   },
   {
     "domain": "quizboost.cc",
@@ -181,28 +179,28 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "$9.99/week, $19.99/month, $199.99/year (shown as 50% off $19.99, $39.99, $399.99)",
+      "summary": "50 free answer credits on sign-up; paid unlimited plans at $9.99/week, $19.99/month, or $199.99/year ($16.67/mo equivalent) with '50% off' promotional pricing (list $19.99/wk, $39.99/mo, $399.99/yr).",
       "plans": [
         {
           "name": "Weekly",
           "price": 9.99,
           "currency": "USD",
           "period": "week",
-          "notes": "List price $19.99; 'Unlimited Questions'"
+          "notes": "Shown as 50% off $19.99/week; Unlimited Questions"
         },
         {
           "name": "Monthly",
           "price": 19.99,
           "currency": "USD",
           "period": "month",
-          "notes": "List price $39.99; marked Popular"
+          "notes": "Shown as 50% off $39.99/month; marked Popular"
         },
         {
           "name": "Yearly",
           "price": 199.99,
           "currency": "USD",
           "period": "year",
-          "notes": "List price $399.99"
+          "notes": "Shown as 50% off $399.99/year ($16.67/mo equivalent)"
         }
       ],
       "freeTier": "50 free answer credits on sign-up",
@@ -220,24 +218,23 @@
       "Kahoot"
     ],
     "featuresStated": [
-      "Auto-fills answers via double-click",
-      "Handles multiple choice, multiple select, fill-in-the-blank and matching",
-      "Three display modes: Invisible, Sneaky, Homework",
-      "About 25 second wait per run",
-      "Unlimited questions on paid plans"
+      "25-second page pre-analysis followed by double-click auto-fill on questions",
+      "Supports multiple choice, multiple select, fill-in-the-blank, and matching",
+      "Three UI modes: Minimal UI Mode, Sneaky Mode, Homework Mode",
+      "50 free starter credits, unlimited on paid plans"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/quiz-boost-ai-smart-test/hlcaoodgfafdkmengcogimabhoaepgch",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://quizboost.cc/",
+      "https://quizboost.cc",
       "https://quizboost.cc/pricing",
-      "https://chromewebstore.google.com/detail/hlcaoodgfafdkmengcogimabhoaepgch"
+      "https://chromewebstore.google.com/detail/quiz-boost-ai-smart-test/hlcaoodgfafdkmengcogimabhoaepgch"
     ],
     "confidence": "high",
-    "notes": "Discounted prices are labelled a 'limited time' 50% offer. Site claims 98% average score and 1k+ customers (unverified). Chrome Web Store: 5.0 stars from 10 ratings, 159 users."
+    "notes": "Verified live 2026-11-27. CWS users dropped slightly from 159 (Nov 19) to 140 (Nov 27), still 5.0 rating (10 ratings), v1.0.3 updated March 9, 2026."
   },
   {
     "domain": "mindko.com",
@@ -247,39 +244,54 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "3-day free trial, then $19.99/month (cancel anytime)",
+      "summary": "3-day free trial (with question/feature limit), then $19.99/month or $59.99/year ($5.00/mo equivalent); free standalone web solver tools also listed.",
       "plans": [
         {
-          "name": "Monthly after trial",
+          "name": "Monthly",
           "price": 19.99,
           "currency": "USD",
           "period": "month",
-          "notes": "Offer text: '3 days FREE', 'Renews at $19.99/month'"
+          "notes": "3-day free trial on web and mobile; renews at $19.99/month per homepage and /terms"
+        },
+        {
+          "name": "Annual",
+          "price": 59.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Verified in /terms section 4 ($5.00/mo equivalent)"
         }
       ],
-      "freeTier": "Site says free solver tools available (details not stated)",
-      "trial": "3 days free"
+      "freeTier": "Standalone free web solvers (/free-solver/math, accounting, etc.); extension/app requires trial/subscription",
+      "trial": "3-day free trial on web and mobile apps (with question/feature caps)"
     },
-    "platformsStated": [],
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Google Classroom",
+      "Moodle"
+    ],
     "featuresStated": [
-      "Chrome extension: select text or screenshot a question for step-by-step answers",
-      "AI side-panel chat on any page",
-      "Upload course material for context-aware answers",
-      "Study Set tools: notes, flashcards, quizzes, mind map, study podcast, lecture recorder",
-      "iOS app with scan-and-solve"
+      "Chrome & Edge extension with in-page question button, text-selection right-click ('Ask Mindko'), and screenshot solve",
+      "AI Sidepanel Chat on any website with web-source citations and YouTube explainer links",
+      "Upload course PDFs/textbooks/slides for context-aware answers",
+      "Full Study Set suite: AI Notes, Lecture Recorder, AI Flashcards, AI Quiz, Mind Map, two-host Study Podcast, Active Recall grader, Essay Grader",
+      "iOS app with camera Scan & Solve"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/homework-solver-by-mindko/iiikmhonbbmbdjfokdmmncdohjionkmf",
     "browsersStated": [
-      "Chrome"
+      "Chrome",
+      "Edge"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.mindko.com/",
+      "https://www.mindko.com",
       "https://www.mindko.com/browser/chrome-extension",
+      "https://www.mindko.com/browser/edge",
+      "https://www.mindko.com/terms",
       "https://chromewebstore.google.com/detail/homework-solver-by-mindko/iiikmhonbbmbdjfokdmmncdohjionkmf"
     ],
-    "confidence": "medium",
-    "notes": "Only one price point found on the home page; /pricing returned 404, so other plans (if any) were not seen. Chrome Web Store (formerly College Tools): 3.2 stars from 211 ratings, 10,000 users. Site claims 4.8 stars, 250k+ students, 98% accuracy (unverified; 4.8 appears to be the App Store rating). No specific LMS platforms named on the pages read. Mixed product: answer extension plus broad study suite; classified by the extension/homework-helper headline."
+    "confidence": "high",
+    "notes": "Verified live 2026-11-27. /pricing is 404, but /terms explicitly states Monthly ($19.99/mo) and Annual ($59.99/yr) plus 3-day free trial. CWS lists 10,000 users, 3.2 rating (211 ratings), v3.0.5 (updated Nov 28, 2025)."
   },
   {
     "domain": "canvastoolkit.com",
@@ -289,54 +301,52 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "$9.99/month, $14.99/month, $29.99/month (launch sale 50% off list $14.99, $29.99, $60.00)",
+      "summary": "Three monthly tiers at '50% Off Launch Sale': Standard Monthly $9.99/mo (was $14.99), AI Integration Monthly $14.99/mo (was $29.99), Pro Monthly $29.99/mo (was $60.00).",
       "plans": [
         {
-          "name": "Stealth",
+          "name": "Standard Monthly",
           "price": 9.99,
           "currency": "USD",
           "period": "month",
-          "notes": "List $14.99; launch sale"
+          "notes": "Listed at $9.99/mo (strikethrough $14.99); real-time AI quiz answering across supported AI models."
         },
         {
-          "name": "Complete (AI Integration)",
+          "name": "AI Integration Monthly",
           "price": 14.99,
           "currency": "USD",
           "period": "month",
-          "notes": "List $29.99; marked Recommended"
+          "notes": "Listed at $14.99/mo (strikethrough $29.99); full toolkit access with live AI assistance."
         },
         {
-          "name": "Lockdown",
+          "name": "Pro Monthly",
           "price": 29.99,
           "currency": "USD",
           "period": "month",
-          "notes": "List $60.00; site says available on getnolock.com"
+          "notes": "Listed at $29.99/mo (strikethrough $60.00); full CanvasToolkit extension suite."
         }
       ],
       "freeTier": null,
       "trial": null
     },
     "platformsStated": [
-      "Canvas"
+      "Canvas LMS"
     ],
     "featuresStated": [
-      "Auto-answers Canvas quiz questions with an AI button",
-      "Choice of AI models",
-      "Optional low-visibility mode",
-      "Feature to turn off Canvas tab-switch logging",
-      "Discord community"
+      "Selectable model dropdown on site (displays 'GPT 6.1 Sol (High Thinking)', 'GPT 6 Astra (High Thinking)', 'GPT 5.4', 'DeepSeek V3.2 Speciale', 'Gemini 3.1 Pro', 'Gemini 3.8 Flash (Thinking)', 'Grok 4.1 Fast')",
+      "Inline AI auto-answering with Standard Mode",
+      "Grabs hidden Canvas content (per CWS overview)"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvastoolkit/pahbokefgdmeialdpkjknghmfnnbllme",
     "browsersStated": [
       "Chrome"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://www.canvastoolkit.com/",
+      "https://www.canvastoolkit.com",
       "https://chromewebstore.google.com/detail/canvastoolkit/pahbokefgdmeialdpkjknghmfnnbllme"
     ],
-    "confidence": "medium",
-    "notes": "Purpose judgement: sold as an AI quiz answerer (headline, model picker, AI button) with a prominent tab-switch-log feature; classified ai-answers but a human may weigh the activity-hiding half more. Plan feature lists on the page are ambiguous about which features each tier includes. Countdown timer on the page means 'sale' prices may be time-limited. Operator listed as Viper Industries. Chrome Web Store: 5.0 stars from 2 ratings, 1,000 users, v2.2 updated 2026-04-08; listing states in-app purchases."
+    "confidence": "high",
+    "notes": "Verified live on canvastoolkit.com and CWS listing (v2.2, Apr 8, 2026). FAQ accordion bodies were collapsed in static HTML."
   },
   {
     "domain": "formsolver.app",
@@ -346,33 +356,47 @@
     "primaryPurpose": "ai-answers",
     "claimsUndetectable": true,
     "pricing": {
-      "summary": "Price not stated on site; 3 free solves, then a paid Pro plan",
-      "plans": [],
-      "freeTier": "3 free solves",
-      "trial": null
+      "summary": "3 free solves to try; Pro subscription required for unlimited access and GPT-4 Vision images (exact USD price not published on website or CWS — gated inside extension/iOS IAP).",
+      "plans": [
+        {
+          "name": "Free Trial",
+          "price": 0,
+          "currency": "USD",
+          "period": "once",
+          "notes": "3 free solves total ('You get 3 free solves to try it out')."
+        },
+        {
+          "name": "Pro (Cross-Platform)",
+          "price": null,
+          "currency": "USD",
+          "period": "subscription",
+          "notes": "Covers Desktop Chrome + iOS app/Safari Extension; exact price not disclosed publicly on formsolver.app or CWS."
+        }
+      ],
+      "freeTier": "3 free solves total (not daily).",
+      "trial": "3 free solves to try it out."
     },
     "platformsStated": [
       "Google Forms",
-      "Moodle"
+      "Moodle Quizzes (stated on CWS listing)"
     ],
     "featuresStated": [
-      "One-click auto-fill of Google Form answers",
-      "Handles text and image questions (Pro uses GPT-4 Vision per site)",
-      "iOS app and Safari extension share the same subscription",
-      "Pro: unlimited solves"
+      "1-click 'Solve' inside Chrome extension to auto-fill Google Forms and Moodle quizzes",
+      "GPT-4 Vision for charts, diagrams, and image questions (Pro)",
+      "Cross-platform iOS app + iOS Safari share-sheet extension synced under one subscription"
     ],
     "extensionStoreUrl": "https://chromewebstore.google.com/detail/form-solver/bcpmdhffpajbbmnndnipoohmoiahbgdj",
     "browsersStated": [
       "Chrome",
-      "Safari (iOS)"
+      "Safari (iOS Safari Extension)"
     ],
-    "lastChecked": "2026-11-19",
+    "lastChecked": "2026-11-27",
     "sources": [
-      "https://formsolver.app/",
-      "https://formsolver.app/_astro/FAQ.BnQD_HKm.js",
-      "https://chromewebstore.google.com/detail/form-solver/bcpmdhffpajbbmnndnipoohmoiahbgdj"
+      "https://formsolver.app",
+      "https://chromewebstore.google.com/detail/form-solver/bcpmdhffpajbbmnndnipoohmoiahbgdj",
+      "https://apps.apple.com/app/id6757654609"
     ],
-    "confidence": "medium",
-    "notes": "No Pro price anywhere on the site (likely in-app/extension purchase); recorded as null. Moodle support comes from the Chrome Web Store listing, not the site. Chrome Web Store: 2.5 stars from 100 ratings, 20,000 users. Site claims '100% accuracy' (unverified; not repeated here)."
+    "confidence": "high",
+    "notes": "Verified live on formsolver.app (including interactive Radix FAQ accordions via headless Chrome) and CWS listing (v7.2.2, May 21, 2026). Apple App Store URL id6757654609 blocked non-browser urllib fetch (None) but is directly linked from formsolver.app."
   }
 ]
