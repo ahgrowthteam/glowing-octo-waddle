@@ -93,8 +93,8 @@ export default function Navbar() {
                 <nav
                     className={`pointer-events-auto max-w-[1080px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between gap-2 px-2.5 sm:px-4 py-2 backdrop-blur-xl ${
                         scrolled
-                            ? 'bg-white/90 border border-black/10 ring-1 ring-white/60 shadow-[0_12px_36px_rgba(40,30,10,0.14)]'
-                            : 'bg-white/75 border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.07)]'
+                            ? 'bg-white/92 border border-black/10 ring-1 ring-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_12px_36px_rgba(40,30,10,0.12)]'
+                            : 'bg-white/78 border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.07)]'
                     }`}
                     aria-label="Main"
                 >

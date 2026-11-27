@@ -6,7 +6,7 @@ import { INSTALL_URL } from "./config";
 
 export default function Difference() {
     return (
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24 bg-white/70 border-y border-black/[0.06]">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
                 <p className="text-sm font-semibold text-ink-muted mb-3">The difference</p>
                 <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
@@ -17,17 +17,17 @@ export default function Difference() {
                 </p>
 
                 <Reveal className="grid sm:grid-cols-2 gap-4 text-left">
-                    <div className="rounded-3xl bg-white border border-black/10 shadow-card p-6 sm:p-7">
+                    <div className="rounded-3xl bg-white border border-black/10 surface-card p-6 sm:p-7">
                         <div className="flex items-center justify-between text-sm text-ink-muted mb-6">
-                            <span>Looking it up</span><span>9:52 PM</span>
+                            <span>Looking it up</span><span className="tabular-nums">9:52 PM</span>
                         </div>
                         <p className="font-display text-xl font-semibold text-ink mb-5">Copying the question…</p>
                         <div className="h-2.5 rounded-full bg-black/10 overflow-hidden mb-2"><span className="block h-full w-[30%] bg-black/35 rounded-full" /></div>
                         <p className="text-sm text-ink-muted">3 of 10 done</p>
                     </div>
-                    <div className="rounded-3xl bg-ink text-white ring-1 ring-white/10 shadow-lift p-6 sm:p-7">
+                    <div className="rounded-3xl bg-ink text-white ring-1 ring-white/10 surface-dark-card p-6 sm:p-7">
                         <div className="flex items-center justify-between text-sm text-white/70 mb-6">
-                            <span>With ExamGhost</span><span>9:06 PM</span>
+                            <span>With ExamGhost</span><span className="tabular-nums">9:06 PM</span>
                         </div>
                         <p className="font-display text-xl font-semibold mb-5 flex items-center gap-2">
                             <Check className="w-5 h-5 text-[#cdeecb]" aria-hidden="true" /> All 10 done. Night&apos;s free.

@@ -50,7 +50,7 @@ export default function ContactPage() {
             <section className="pb-16 sm:pb-24">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-5 items-start">
                     <div className="lg:col-span-2 space-y-5">
-                        <div className="dark-surface bg-ink text-white rounded-3xl shadow-lift ring-1 ring-white/10 p-6 sm:p-8">
+                        <div className="dark-surface bg-ink text-white rounded-3xl surface-dark-card ring-1 ring-white/10 p-6 sm:p-8">
                             <FaDiscord className="w-7 h-7 mb-4 text-white/80" aria-hidden="true" />
                             <h2 className="font-display text-xl font-bold mb-1.5">Discord</h2>
                             <p className="text-sm text-white/70 leading-relaxed mb-6">
@@ -66,7 +66,7 @@ export default function ContactPage() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
+                        <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
                             <Mail className="w-6 h-6 mb-4 text-ink-muted" aria-hidden="true" />
                             <h2 className="font-display text-xl font-bold mb-1.5">Email</h2>
                             <p className="text-[15px] mb-2">
@@ -78,7 +78,7 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-3 bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
+                    <div className="lg:col-span-3 bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
                         <h2 className="font-display text-xl sm:text-2xl font-bold mb-1.5">Send a message</h2>
                         <p className="text-sm text-ink-muted mb-6">
                             This opens your email app with the message ready to send to {EMAIL}.

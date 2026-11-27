@@ -9,36 +9,42 @@ import { MEDIA } from "./config";
 const DEMOS = [
     {
         id: "doubleClick",
+        tag: "Double-click",
         title: "Double-click on your course site",
         body: "On Canvas, Blackboard, Moodle and other quiz pages, double-click a question and the answer appears right next to it. Multiple choice, multi-select, dropdowns and short answers all work.",
         variant: "solve" as const,
     },
     {
         id: "snap",
+        tag: "Alt+S",
         title: "Snap anything, anywhere",
         body: "On any other page, press Alt+S and drag a box around the question. If you can see it, ExamGhost can read it: diagrams, graphs, screenshots and selected text.",
         variant: "snap" as const,
     },
     {
         id: "scan",
+        tag: "Batch scan",
         title: "Scan the whole page",
         body: "Click Scan page & answer and ExamGhost scrolls through the page, reads every question and fills the answers in batches.",
         variant: "scan" as const,
     },
     {
         id: "equations",
+        tag: "LaTeX + OCR",
         title: "Reads equations properly",
         body: "Math written as equation images or LaTeX is rebuilt into text before it's solved, so formulas aren't lost on the way to the answer.",
         variant: "snap" as const,
     },
     {
         id: "subjects",
+        tag: "13 subjects",
         title: "Tuned for 13 subjects",
         body: "Math, physics, chemistry, biology, computer science, economics, history, accounting, geography, literature, psychology, English and logic. Harder subjects get more reasoning time.",
         variant: "scan" as const,
     },
     {
         id: "shortcuts",
+        tag: "Alt+1 / 2 / 3",
         title: "Shortcuts and a power switch",
         body: "Alt+1, Alt+2 and Alt+3 change the answer style, Alt+S starts a snip, and one master switch turns the extension off when you're not studying.",
         variant: "solve" as const,
@@ -58,8 +64,11 @@ export default function FeatureDemos() {
 
                 <Reveal className="grid md:grid-cols-2 gap-6 lg:gap-8">
                     {DEMOS.map((d) => (
-                        <article key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-5 sm:p-7 flex flex-col hover:border-white/[0.15] transition-colors">
-                            <h3 className="font-display text-2xl sm:text-[26px] font-bold tracking-tight leading-snug mb-2.5">{d.title}</h3>
+                        <article key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] surface-dark-card p-5 sm:p-7 flex flex-col hover:border-white/[0.16] hover:-translate-y-0.5 transition-all duration-300">
+                            <div className="flex items-start justify-between gap-3 mb-2.5">
+                                <h3 className="font-display text-2xl sm:text-[26px] font-bold tracking-tight leading-snug">{d.title}</h3>
+                                <span className="kbd-key-dark shrink-0 mt-1">{d.tag}</span>
+                            </div>
                             <p className="text-[15px] sm:text-base text-white/65 leading-relaxed mb-6">{d.body}</p>
                             <div className="mt-auto aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift">
                                 <MediaSlot

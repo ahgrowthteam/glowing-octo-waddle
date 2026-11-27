@@ -73,7 +73,7 @@ export default function TermsPage() {
                     </p>
                 </header>
 
-                <nav aria-label="Contents" className="bg-white rounded-3xl border border-black/10 shadow-card p-6 mb-8">
+                <nav aria-label="Contents" className="bg-white rounded-3xl border border-black/10 surface-card p-6 mb-8">
                     <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-3">Contents</p>
                     <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-[15px] text-ink-secondary list-decimal pl-5">
                         <li><a href="#s1" className="hover:text-ink underline underline-offset-4 decoration-black/20 hover:decoration-black">Acceptance of Terms</a></li>
@@ -86,7 +86,7 @@ export default function TermsPage() {
                     </ol>
                 </nav>
 
-                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 shadow-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
+                <div className="rounded-3xl bg-white border border-black/10 p-6 sm:p-10 surface-card space-y-10 text-[15px] text-ink-secondary leading-relaxed">
                     <section id="s1" className="space-y-3 scroll-mt-24">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink">1. Acceptance of Terms</h2>
                         <p>

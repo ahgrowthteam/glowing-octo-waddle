@@ -128,7 +128,7 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                             </Link>
                         </div>
                     </div>
-                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
+                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
                         <HeroVideo videoId={p.youtubeId ?? ""} />
                     </div>
                 </div>
@@ -169,7 +169,7 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
                                     <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />

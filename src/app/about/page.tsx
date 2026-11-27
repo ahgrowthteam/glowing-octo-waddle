@@ -108,7 +108,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <dl className="grid sm:grid-cols-2 gap-3">
             {facts.map((f) => (
-              <div key={f.label} className="bg-white rounded-2xl border border-black/10 shadow-card p-4 sm:p-5">
+              <div key={f.label} className="bg-white rounded-2xl border border-black/10 surface-card p-4 sm:p-5">
                 <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted mb-1">{f.label}</dt>
                 <dd className="text-[15px] font-medium text-ink">{f.value}</dd>
               </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
+          <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-3">Use it responsibly</h2>
             <p className="text-ink-secondary leading-relaxed">
               Schools and instructors set their own rules, and many restrict AI tools on graded work. You are

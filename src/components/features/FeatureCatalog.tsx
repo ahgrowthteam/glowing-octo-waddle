@@ -65,15 +65,22 @@ export default function FeatureCatalog() {
             </p>
 
             {shown.length === 0 ? (
-                <p className="rounded-3xl border border-dashed border-black/15 bg-white/60 px-6 py-12 text-center text-ink-muted">
-                    No features match &ldquo;{q}&rdquo;. Try &ldquo;screenshot&rdquo;, &ldquo;mode&rdquo; or &ldquo;shortcut&rdquo;.
-                </p>
+                <div className="rounded-3xl border border-dashed border-black/15 bg-white/60 px-6 py-12 text-center text-ink-muted">
+                    <p>No features match &ldquo;{q}&rdquo;. Try &ldquo;screenshot&rdquo;, &ldquo;mode&rdquo; or &ldquo;shortcut&rdquo;.</p>
+                    <button
+                        type="button"
+                        onClick={() => { setQ(""); setCat("All"); }}
+                        className="btn-soft mt-4 px-5 py-2 text-sm"
+                    >
+                        Reset filters
+                    </button>
+                </div>
             ) : (
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {shown.map((f) => {
                         const { icon: Icon, tint } = ICON[f.category];
                         return (
-                            <li key={f.id} className="flex flex-col bg-white rounded-3xl border border-black/10 shadow-card p-6 hover:border-black/20 hover:shadow-lift transition-all duration-200">
+                            <li key={f.id} className="flex flex-col bg-white rounded-3xl border border-black/10 surface-card p-6 hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-200">
                                 <div className="flex items-center justify-between mb-4">
                                     <span className="grid place-items-center w-10 h-10 rounded-xl" style={{ backgroundColor: tint }}>
                                         <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />

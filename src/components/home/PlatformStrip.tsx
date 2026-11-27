@@ -15,7 +15,7 @@ export default function PlatformStrip() {
                             {p.indexable ? (
                                 <Link
                                     href={`/${p.slug}`}
-                                    className="inline-flex items-center rounded-full bg-white/90 border border-black/[0.07] px-3.5 py-1.5 text-[13px] font-medium text-ink-secondary shadow-[0_1px_2px_rgba(40,30,10,0.03)] hover:border-black/20 hover:bg-white hover:text-ink transition-all"
+                                    className="inline-flex items-center rounded-full bg-white/90 border border-black/[0.07] px-3.5 py-1.5 text-[13px] font-medium text-ink-secondary shadow-[0_1px_2px_rgba(40,30,10,0.03)] hover:border-black/20 hover:bg-white hover:text-ink hover:-translate-y-0.5 hover:shadow-soft transition-all"
                                 >
                                     {p.name}
                                 </Link>

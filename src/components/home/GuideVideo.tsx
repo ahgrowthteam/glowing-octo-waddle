@@ -5,7 +5,7 @@ import { MEDIA } from "./config";
 
 export default function GuideVideo() {
     return (
-        <section id="guide" className="py-16 sm:py-24 bg-white/60 border-y border-black/5 scroll-mt-20">
+        <section id="guide" className="py-16 sm:py-24 bg-white/70 border-y border-black/[0.06] scroll-mt-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
                 <p className="text-sm font-semibold text-ink-muted mb-3">
                     Full walkthrough
@@ -17,7 +17,7 @@ export default function GuideVideo() {
                     A start-to-finish walkthrough: installing the extension, switching modes, double-clicking a question and using Snap-It.
                 </p>
                 <Reveal>
-                    <div className="rounded-[24px] sm:rounded-[30px] bg-white p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift">
+                    <div className="rounded-[24px] sm:rounded-[30px] bg-white p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card">
                         <HeroVideo slot="guide" videoId={MEDIA.guide.youtube} />
                     </div>
                 </Reveal>

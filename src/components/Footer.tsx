@@ -13,7 +13,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
             {/* Pre-Footer CTA Card (OneMacApp Style) */}
             {!hideCta && (
             <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 w-full mb-16">
-                <div className="relative overflow-hidden bg-[#111111] text-white rounded-3xl p-8 sm:p-14 text-center shadow-lift">
+                <div className="relative overflow-hidden bg-[#111111] text-white rounded-3xl p-8 sm:p-14 text-center surface-dark-card">
                     {/* Soft pastel glow (brand palette) */}
                     <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#c4d0f8] opacity-[0.16] blur-3xl" />
                     <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-16 w-80 h-80 rounded-full bg-[#cdeecb] opacity-[0.14] blur-3xl" />

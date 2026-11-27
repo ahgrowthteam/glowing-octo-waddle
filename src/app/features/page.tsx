@@ -66,7 +66,7 @@ export default function FeaturesPage() {
                     <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-center mb-10 sm:mb-14">See it in action</h2>
                     <Reveal className="grid md:grid-cols-3 gap-6">
                         {DEMOS.map((d) => (
-                            <div key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-5 flex flex-col hover:border-white/[0.15] transition-colors">
+                            <div key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] surface-dark-card p-5 flex flex-col hover:border-white/[0.16] hover:-translate-y-0.5 transition-all duration-300">
                                 <div className="aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift mb-4">
                                     <MediaSlot slot={`features.${d.id}`} src={MEDIA.features[d.id]} label={`${d.title} demo`} fallback={<MockQuiz variant={d.variant} />} />
                                 </div>
@@ -81,7 +81,7 @@ export default function FeaturesPage() {
             <section className="py-16 sm:py-24">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6">
                     <Reveal>
-                        <div className="rounded-[2rem] bg-white border border-black/10 shadow-card p-7 sm:p-12 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
+                        <div className="rounded-[2rem] bg-white border border-black/10 surface-card p-7 sm:p-12 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
                             <div>
                                 <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight leading-[1.1] mb-3">How does it compare?</h2>
                                 <p className="text-ink-muted leading-relaxed mb-6">
@@ -97,9 +97,9 @@ export default function FeaturesPage() {
                                     { n: String(PLATFORMS_DATA.length), l: "platforms named" },
                                     { n: "5/day", l: "free solves" },
                                 ].map((s) => (
-                                    <div key={s.l} className="rounded-2xl bg-cream border border-black/5 px-3 py-5">
+                                    <div key={s.l} className="rounded-2xl bg-[#faf8f4] border border-black/[0.08] px-3 py-5">
                                         <dt className="sr-only">{s.l}</dt>
-                                        <dd className="font-display text-3xl font-bold text-ink">{s.n}</dd>
+                                        <dd className="font-display text-3xl font-bold text-ink tabular-nums">{s.n}</dd>
                                         <dd className="text-xs text-ink-muted mt-1">{s.l}</dd>
                                     </div>
                                 ))}
@@ -114,7 +114,7 @@ export default function FeaturesPage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {FEATURE_FAQS.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
                                     <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />

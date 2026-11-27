@@ -55,6 +55,14 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
         return out;
     }, [rows, q, onlyFree, onlyCanvas, onlyAnswers, sort]);
 
+    const resetFilters = () => {
+        setQ("");
+        setOnlyFree(false);
+        setOnlyCanvas(false);
+        setOnlyAnswers(false);
+        setSort("name");
+    };
+
     const chip = (on: boolean) =>
         `rounded-full border px-4 py-2 text-sm font-medium transition-colors ${on ? "bg-ink text-white border-ink" : "bg-white border-black/10 hover:border-black/25"}`;
 
@@ -98,9 +106,9 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
             <p className="text-xs text-ink-muted mb-3" aria-live="polite">Showing {shown.length} of {rows.length} extensions plus ExamGhost</p>
 
             {/* Desktop table */}
-            <div className="hidden md:block bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden">
+            <div className="hidden md:block bg-white rounded-3xl border border-black/10 surface-card overflow-hidden">
                 <table className="w-full text-left text-[15px]">
-                    <thead className="bg-[#faf8f4] text-xs uppercase tracking-wider text-ink-muted">
+                    <thead className="sticky top-0 z-10 bg-[#faf8f4]/95 backdrop-blur text-xs uppercase tracking-wider text-ink-muted border-b border-black/5">
                         <tr>
                             <th className="px-5 py-3.5 font-semibold">Extension</th>
                             <th className="px-5 py-3.5 font-semibold">Price (as listed)</th>
@@ -111,7 +119,12 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                     </thead>
                     <tbody>
                         <tr className="bg-[#eef3ff] border-t border-black/5">
-                            <th scope="row" className="px-5 py-4 font-display font-bold">ExamGhost</th>
+                            <th scope="row" className="px-5 py-4 font-display font-bold">
+                                ExamGhost
+                                <span className="ml-2 inline-flex items-center rounded-full bg-ink text-white px-2 py-0.5 text-[10px] font-sans font-semibold align-middle">
+                                    Our tool
+                                </span>
+                            </th>
                             <td className="px-5 py-4">{examghost.priceSummary}</td>
                             <td className="px-5 py-4">{examghost.freeTier}</td>
                             <td className="px-5 py-4"><span className="font-semibold">{examghost.platformCount} named</span> plus any page via Alt+S screenshot</td>
@@ -136,19 +149,31 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                         ))}
                     </tbody>
                 </table>
-                {shown.length === 0 && <p className="px-5 py-8 text-center text-ink-muted">No extensions match those filters.</p>}
+                {shown.length === 0 && (
+                    <div className="px-5 py-10 text-center text-ink-muted">
+                        <p>No extensions match those filters.</p>
+                        <button type="button" onClick={resetFilters} className="btn-soft mt-3 px-5 py-2 text-sm">
+                            Reset filters
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Mobile cards */}
             <div className="md:hidden space-y-3">
                 <div className="rounded-2xl bg-[#eef3ff] border border-black/10 p-4">
-                    <p className="font-display font-bold mb-1">ExamGhost</p>
+                    <p className="font-display font-bold mb-1 flex items-center gap-2">
+                        ExamGhost
+                        <span className="inline-flex items-center rounded-full bg-ink text-white px-2 py-0.5 text-[10px] font-sans font-semibold">
+                            Our tool
+                        </span>
+                    </p>
                     <p className="text-sm">{examghost.priceSummary}</p>
                     <p className="text-sm text-ink-secondary">{examghost.freeTier}</p>
                     <p className="text-sm text-ink-secondary">{examghost.platformCount} platforms named, plus any page via Alt+S</p>
                 </div>
                 {shown.map((r) => (
-                    <Link key={r.slug} href={`/${r.slug}`} className="block rounded-2xl bg-white border border-black/10 p-4 shadow-card hover:border-black/25 hover:shadow-lift transition-all">
+                    <Link key={r.slug} href={`/${r.slug}`} className="block rounded-2xl bg-white border border-black/10 p-4 surface-card hover:border-black/25 hover:shadow-lift transition-all">
                         <div className="flex items-center justify-between">
                             <p className="font-display font-semibold">{r.name}</p>
                             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -159,7 +184,14 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                         <p className="text-sm text-ink-muted">{r.freeTier ?? "Free tier not stated"}</p>
                     </Link>
                 ))}
-                {shown.length === 0 && <p className="py-6 text-center text-ink-muted">No extensions match those filters.</p>}
+                {shown.length === 0 && (
+                    <div className="py-8 text-center text-ink-muted">
+                        <p>No extensions match those filters.</p>
+                        <button type="button" onClick={resetFilters} className="btn-soft mt-3 px-5 py-2 text-sm">
+                            Reset filters
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -862,11 +862,11 @@ export default function DemoPage() {
                     <div className="lg:col-span-8">
                         <div 
                             ref={quizAreaRef}
-                            className="rounded-3xl bg-white border border-black/10 shadow-lift overflow-hidden relative select-none"
+                            className="rounded-3xl bg-white border border-black/10 surface-card overflow-hidden relative select-none"
                         >
                             
                             {/* Single Clean macOS Title Bar (Single Line, Zero Wrapping) */}
-                            <div className="bg-[#f7f5f0] px-4 sm:px-6 py-3 border-b border-black/6 flex items-center justify-between gap-2">
+                            <div className="bg-[#f4f1ea] px-4 sm:px-6 py-3 border-b border-black/6 flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2 min-w-0">
                                     <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block shrink-0" />
                                     <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block shrink-0" />
@@ -1505,7 +1505,7 @@ export default function DemoPage() {
                             {/* Explain-mode side panel (slides in like the extension's banner) */}
                             {displayMode === 'explain' && explainOpen[activeQuestion] && (
                                 <aside
-                                    className="animate-fade-in mx-4 mb-4 sm:mx-0 sm:mb-0 sm:absolute sm:z-30 sm:right-4 sm:top-[150px] sm:w-[272px] rounded-2xl bg-[#18181b] text-white p-4 shadow-lift ring-1 ring-white/10"
+                                    className="animate-fade-in mx-4 mb-4 sm:mx-0 sm:mb-0 sm:absolute sm:z-30 sm:right-4 sm:top-[150px] sm:w-[272px] rounded-2xl bg-[#18181b] text-white p-4 surface-dark-card ring-1 ring-white/10"
                                     aria-label="ExamGhost explanation"
                                 >
                                     <div className="flex items-center gap-2 mb-3">
@@ -1633,7 +1633,7 @@ export default function DemoPage() {
 
                     {/* Right Column (4 Cols): Single Unified ExamGhost HUD Card */}
                     <div className="lg:col-span-4 space-y-4">
-                        <div className="rounded-3xl bg-white border border-black/10 p-6 shadow-lift space-y-5">
+                        <div className="rounded-3xl bg-white border border-black/10 p-6 surface-card space-y-5">
                             
                             {/* HUD Header & Master Toggle */}
                             <div className="flex items-center justify-between pb-4 border-b border-black/6">
@@ -1810,7 +1810,7 @@ export default function DemoPage() {
                         ].map((c) => {
                             const Icon = c.icon;
                             return (
-                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 shadow-card hover:border-black/20 hover:shadow-lift transition-all duration-200">
+                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 surface-card hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-200">
                                     <span className="grid place-items-center w-11 h-11 rounded-2xl mb-5" style={{ backgroundColor: c.tint }}>
                                         <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
                                     </span>
@@ -1828,7 +1828,7 @@ export default function DemoPage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {DEMO_FAQS.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
                                     <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />

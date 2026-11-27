@@ -146,8 +146,8 @@ export default function Home() {
       <HomeHero />
       <PlatformStrip />
       <HowItWorks />
-      <GuideVideo />
       <TryDemo />
+      <GuideVideo />
       <QuestionGrid />
       <AnswerStyles />
       <FeatureDemos />

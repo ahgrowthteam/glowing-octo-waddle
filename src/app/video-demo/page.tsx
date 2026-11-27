@@ -44,7 +44,7 @@ export default function VideoDemoPage() {
                     <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
                         See ExamGhost answer a quiz question on the page, then open the guide for your platform.
                     </p>
-                    <div className="mb-8 text-left rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
+                    <div className="mb-8 text-left rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
                         <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -68,9 +68,9 @@ export default function VideoDemoPage() {
                             <Link
                                 key={p.slug}
                                 href={`/${p.slug}`}
-                                className="group bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden hover:border-black/25 hover:shadow-lift transition-all duration-200"
+                                className="group bg-white rounded-3xl border border-black/10 surface-card overflow-hidden hover:border-black/25 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-200"
                             >
-                                <div className="aspect-video bg-[#eef0f3] overflow-hidden">
+                                <div className="aspect-video bg-[#f4f1ea] overflow-hidden">
                                     <MediaSlot
                                         slot={`demo.${p.slug}`}
                                         src={p.src}

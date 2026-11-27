@@ -9,7 +9,7 @@ export default function FinalCta({ secondary = "discord" }: { secondary?: "disco
     return (
         <section className="dark-surface py-16 sm:py-24">
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
-                <div className="relative overflow-hidden bg-[#111111] text-white rounded-[2rem] px-6 py-14 sm:py-20 text-center shadow-lift ring-1 ring-inset ring-white/[0.08]">
+                <div className="relative overflow-hidden bg-[#111111] text-white rounded-[2rem] px-6 py-14 sm:py-20 text-center surface-dark-card ring-1 ring-inset ring-white/[0.08]">
                     <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#c4d0f8] opacity-[0.16] blur-3xl" />
                     <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-16 w-80 h-80 rounded-full bg-[#cdeecb] opacity-[0.14] blur-3xl" />
                     <div className="relative">

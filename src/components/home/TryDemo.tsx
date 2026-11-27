@@ -64,7 +64,7 @@ export default function TryDemo() {
                             aria-checked={style === s.id}
                             onClick={() => setStyle(s.id)}
                             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                                style === s.id ? "bg-white text-ink" : "bg-white/10 text-white/75 hover:bg-white/15"
+                                style === s.id ? "bg-white text-ink shadow-sm" : "bg-white/[0.08] text-white/80 ring-1 ring-white/10 hover:bg-white/15"
                             }`}
                         >
                             {s.label}
@@ -73,7 +73,7 @@ export default function TryDemo() {
                 </div>
                 <p className="text-center text-sm text-white/55 mb-7 min-h-[1.25rem]" aria-live="polite">{current.hint}</p>
 
-                <div className="rounded-2xl bg-[#18181b] ring-1 ring-white/10 overflow-hidden shadow-lift">
+                <div className="rounded-2xl bg-[#18181b] ring-1 ring-white/10 overflow-hidden surface-dark-card">
                     <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                         <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
@@ -106,7 +106,7 @@ export default function TryDemo() {
                                     {phase === "scanning" && (
                                         <span className="absolute left-0 right-0 h-0.5 bg-[#4361ee] shadow-[0_0_12px_#4361ee] animate-laser-scan z-10" aria-hidden="true" />
                                     )}
-                                    <div className="flex items-center justify-between bg-[#f5f5f5] border-b border-black/10 px-4 py-2.5 text-sm font-semibold">
+                                    <div className="flex items-center justify-between bg-[#f7f5f0] border-b border-black/10 px-4 py-2.5 text-sm font-semibold">
                                         <span>Question 1</span>
                                         {phase === "idle" && (
                                             <span className="ml-auto mr-3 hidden sm:inline-flex items-center gap-1 rounded-full bg-[#4361ee]/10 px-2.5 py-0.5 text-[11px] font-medium text-[#2b55c7]">
@@ -176,7 +176,7 @@ export default function TryDemo() {
                             </div>
 
                             {showPanel && (
-                                <aside className="animate-pop-in w-full lg:w-[300px] shrink-0 rounded-xl bg-[#18181b] text-white p-4 shadow-lift ring-1 ring-white/10" aria-label="ExamGhost explanation">
+                                <aside className="animate-pop-in w-full lg:w-[300px] shrink-0 rounded-xl bg-[#18181b] text-white p-4 surface-dark-card ring-1 ring-white/10" aria-label="ExamGhost explanation">
                                     <div className="flex items-center gap-2 mb-3">
                                         <Ghost size={18} />
                                         <span className="text-xs font-semibold">ExamGhost</span>

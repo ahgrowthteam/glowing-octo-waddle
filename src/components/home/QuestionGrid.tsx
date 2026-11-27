@@ -78,12 +78,13 @@ export default function QuestionGrid() {
         setShortText("");
         setMatched(0);
     };
-    const anySolved = KINDS.some((k) => solved[k]);
-    const allSolved = KINDS.every((k) => solved[k]);
+    const solvedCount = KINDS.filter((k) => solved[k]).length;
+    const anySolved = solvedCount > 0;
+    const allSolved = solvedCount === KINDS.length;
 
     const card = (isSolved: boolean) =>
-        `relative flex flex-col bg-white rounded-3xl border shadow-card p-6 select-none cursor-pointer transition-all duration-200 ${
-            isSolved ? "border-emerald-500/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift"
+        `relative flex flex-col bg-white rounded-3xl border surface-card p-6 select-none cursor-pointer transition-all duration-200 ${
+            isSolved ? "border-emerald-500/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5"
         }`;
     const why = (k: Kind) => (
         <p className={`mt-auto pt-4 text-[13px] leading-relaxed text-ink-muted transition-opacity duration-500 ${solved[k] ? "opacity-100" : "opacity-0"}`} aria-live="polite">
@@ -238,17 +239,25 @@ export default function QuestionGrid() {
                     </article>
                 </div>
 
-                <div className="flex justify-center gap-3 mt-8">
-                    {!allSolved && (
-                        <button onClick={() => KINDS.forEach(solve)} className="btn-dark px-6 py-3 text-sm">
-                            Solve all six
-                        </button>
-                    )}
-                    {anySolved && (
-                        <button onClick={reset} className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-medium hover:border-black/25 transition-colors">
-                            <RotateCcw className="w-4 h-4" aria-hidden="true" /> Reset
-                        </button>
-                    )}
+                <div className="mt-8 flex flex-col items-center gap-4">
+                    <div className="inline-flex items-center gap-3 rounded-full bg-white border border-black/[0.08] px-4 py-1.5 text-xs font-medium text-ink-secondary shadow-2xs" aria-live="polite">
+                        <span className="w-20 h-1.5 rounded-full bg-black/10 overflow-hidden">
+                            <span className="block h-full rounded-full bg-emerald-500 transition-all duration-300" style={{ width: `${(solvedCount / KINDS.length) * 100}%` }} />
+                        </span>
+                        <span className="tabular-nums">{solvedCount} of {KINDS.length} solved</span>
+                    </div>
+                    <div className="flex justify-center gap-3">
+                        {!allSolved && (
+                            <button onClick={() => KINDS.forEach(solve)} className="btn-dark px-6 py-3 text-sm">
+                                Solve all six
+                            </button>
+                        )}
+                        {anySolved && (
+                            <button onClick={reset} className="btn-soft px-6 py-3 text-sm">
+                                <RotateCcw className="w-4 h-4" aria-hidden="true" /> Reset
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </section>

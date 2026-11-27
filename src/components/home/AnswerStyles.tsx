@@ -57,7 +57,7 @@ export default function AnswerStyles() {
     const current = STYLES.find((s) => s.id === active)!;
 
     return (
-        <section id="answer-styles" className="py-16 sm:py-24 bg-white/60 border-y border-black/5 scroll-mt-20">
+        <section id="answer-styles" className="py-16 sm:py-24 bg-white/70 border-y border-black/[0.06] scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
                     <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
@@ -103,7 +103,7 @@ export default function AnswerStyles() {
                                     role="tab"
                                     aria-selected={on}
                                     onClick={() => setActive(s.id)}
-                                    className={`text-left flex items-center gap-4 rounded-2xl border-2 p-5 transition-all ${
+                                    className={`text-left flex items-center gap-4 rounded-2xl border-2 p-5 surface-card transition-all ${
                                         on ? "border-ink bg-white shadow-lift" : "border-black/[0.08] bg-white/75 hover:bg-white hover:border-black/20"
                                     }`}
                                 >
@@ -132,7 +132,7 @@ export default function AnswerStyles() {
                     {/* Preview: browser frame, no cropping, stays in view while you read the cards */}
                     <div className="lg:sticky lg:top-24">
                         <div className="rounded-2xl bg-white ring-1 ring-black/10 shadow-lift overflow-hidden">
-                            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#f1f3f5] border-b border-black/5">
+                            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#f4f1ea] border-b border-black/5">
                                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                                 <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
                                 <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
@@ -141,7 +141,7 @@ export default function AnswerStyles() {
                                     <span className="truncate">canvas.university.edu/courses/2/quizzes/7/take</span>
                                 </span>
                             </div>
-                            <div className="aspect-video bg-[#f7f8fa]">
+                            <div className="aspect-video bg-[#faf8f4]">
                                 <MediaSlot
                                     key={active}
                                     slot={`modes.${current.id}`}

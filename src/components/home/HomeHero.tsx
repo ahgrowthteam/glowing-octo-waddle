@@ -99,7 +99,7 @@ export default function HomeHero() {
                         AI Chrome extension for 20 platforms and any page
                     </p>
 
-                    <h1 className="font-display text-[40px] sm:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.05] text-ink mb-5">
+                    <h1 className="font-display text-[40px] sm:text-5xl lg:text-[56px] font-bold tracking-[-0.03em] leading-[1.05] text-ink mb-5">
                         Double-click any question.{" "}
                         <span className="relative isolate inline-block">
                             <span className="absolute inset-x-[-4px] bottom-[0.06em] h-[0.34em] -z-10 rounded-md bg-[#ffe9a0]" aria-hidden="true" />
@@ -141,7 +141,7 @@ export default function HomeHero() {
                 </div>
 
                 {/* Right: video */}
-                <div className="rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
+                <div className="rounded-[24px] sm:rounded-[30px] bg-white/80 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
                     <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
                 </div>
             </div>

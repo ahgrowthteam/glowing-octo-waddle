@@ -136,7 +136,7 @@ export default function ComparePage() {
 
             <section className="pb-10">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
+                    <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight mb-1">Platform coverage</h2>
                         <p className="text-sm text-ink-muted mb-5">
                             {coverageLine}. It also solves any page you can see: press <kbd className="kbd-key mx-0.5">Alt+S</kbd>, drag a box around the question and it reads the screenshot. Counts are the platforms each vendor names on its own site; others may work on more.
@@ -189,7 +189,7 @@ export default function ComparePage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
                                     <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />

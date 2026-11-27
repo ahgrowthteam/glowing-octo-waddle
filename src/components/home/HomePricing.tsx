@@ -66,10 +66,10 @@ export default function HomePricing() {
                     {PLANS.map((p) => (
                         <div
                             key={p.name}
-                            className={`relative rounded-3xl p-6 flex flex-col ${
+                            className={`relative rounded-3xl p-6 flex flex-col transition-all duration-300 ${
                                 p.featured
-                                    ? "bg-ink text-white shadow-lift ring-1 ring-white/10 lg:-translate-y-1.5"
-                                    : "bg-white border border-black/10 shadow-card"
+                                    ? "bg-ink text-white surface-dark-card ring-1 ring-white/10 lg:-translate-y-1.5"
+                                    : "bg-white border border-black/10 surface-card hover:border-black/20 hover:-translate-y-0.5"
                             }`}
                         >
                             {p.featured && (
@@ -79,8 +79,13 @@ export default function HomePricing() {
                             )}
                             <h3 className="font-display text-lg font-bold mb-3">{p.name}</h3>
                             <p className="flex items-baseline gap-1 mb-1">
-                                <span className="font-display text-4xl font-bold">{p.price}</span>
+                                <span className="font-display text-4xl font-bold tabular-nums">{p.price}</span>
                                 <span className={p.featured ? "text-white/60" : "text-ink-muted"}>{p.unit}</span>
+                                {p.featured && (
+                                    <span className="ml-2 rounded-full bg-[#cdeecb]/20 border border-[#cdeecb]/30 px-2 py-0.5 text-[11px] font-semibold text-[#cdeecb]">
+                                        Save 57%
+                                    </span>
+                                )}
                             </p>
                             <p className={`text-[13px] mb-5 ${p.featured ? "text-white/60" : "text-ink-muted"}`}>{p.note}</p>
                             <ul className="space-y-2 mb-6 text-[14px] flex-1">
@@ -108,6 +113,14 @@ export default function HomePricing() {
                         </div>
                     ))}
                 </Reveal>
+                <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-ink-muted">
+                    {["No credit card for Free", "Cancel anytime", "14-day money-back guarantee"].map((item) => (
+                        <li key={item} className="inline-flex items-center gap-1.5">
+                            <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                            {item}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     );

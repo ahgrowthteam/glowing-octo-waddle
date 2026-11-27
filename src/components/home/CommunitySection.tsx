@@ -16,7 +16,7 @@ export default function CommunitySection() {
         <section id="community" className="py-16 sm:py-24 scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <Reveal>
-                    <div className="relative overflow-hidden rounded-[2rem] bg-[#eceefd] border border-[#5865F2]/15 p-7 sm:p-12 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
+                    <div className="relative overflow-hidden rounded-[2rem] bg-[#eceefd] border border-[#5865F2]/15 ring-1 ring-inset ring-white/60 shadow-card p-7 sm:p-12 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
                         <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#5865F2] opacity-[0.08] blur-3xl" />
 
                         <div className="relative text-center lg:text-left">
@@ -41,7 +41,7 @@ export default function CommunitySection() {
                                 </a>
                                 <a
                                     href="mailto:support@examghost.com"
-                                    className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-8 py-4 font-medium text-ink hover:border-black/25 transition-colors"
+                                    className="btn-soft px-8 py-4"
                                 >
                                     Email us instead <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                 </a>
@@ -51,7 +51,7 @@ export default function CommunitySection() {
 
                         <ul className="relative grid sm:grid-cols-2 gap-3">
                             {TILES.map(({ icon: Icon, tint, title, body }) => (
-                                <li key={title} className="rounded-2xl bg-white border border-black/5 shadow-card p-5">
+                                <li key={title} className="rounded-2xl bg-white border border-black/[0.06] surface-card hover:-translate-y-0.5 hover:border-black/15 transition-all duration-200 p-5">
                                     <span className="grid place-items-center w-10 h-10 rounded-xl mb-4" style={{ backgroundColor: tint }}>
                                         <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
                                     </span>

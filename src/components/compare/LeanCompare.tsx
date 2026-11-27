@@ -166,11 +166,14 @@ function Table({ f }: { f: CompetitorFact }) {
     return (
         <section className="pb-16 sm:pb-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden">
+                <div className="bg-white rounded-3xl border border-black/10 surface-card overflow-hidden">
                     <div className="hidden sm:grid grid-cols-[150px_1fr_1fr] gap-x-6 px-6 py-4 bg-[#faf8f4] border-b border-black/5 text-sm font-display font-bold">
                         <span />
                         <span>{f.name}</span>
-                        <span>ExamGhost</span>
+                        <span className="inline-flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                            ExamGhost
+                        </span>
                     </div>
                     <dl>
                         <Row label="Price" them={f.priceSummary ?? unknown} us={EXAMGHOST.priceSummary} />
@@ -313,12 +316,12 @@ export default function LeanCompare({ slug }: { slug: string }) {
             ) : (
                 <section className="pb-16 sm:pb-20">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 gap-4">
-                        <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
+                        <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
                             <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-2">{name}</p>
                             <p className="font-display text-2xl font-bold mb-2">See {domain}</p>
                             <p className="text-sm text-ink-muted">Check their site for current pricing and features. We haven&apos;t verified this product yet.</p>
                         </div>
-                        <div className="bg-ink text-white rounded-3xl shadow-lift p-6 sm:p-8">
+                        <div className="bg-ink text-white rounded-3xl surface-dark-card ring-1 ring-white/10 p-6 sm:p-8">
                             <p className="text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">ExamGhost</p>
                             <p className="font-display text-2xl font-bold mb-2">{EXAMGHOST.priceSummary}</p>
                             <p className="text-sm text-white/70">{EXAMGHOST.freeTier}. {EXAMGHOST.refund}.</p>
@@ -354,7 +357,7 @@ export default function LeanCompare({ slug }: { slug: string }) {
                         <ul className="grid sm:grid-cols-2 gap-3">
                             {alternatives.map((a) => (
                                 <li key={a.slug}>
-                                    <Link href={`/${a.slug}`} className="group flex items-center justify-between gap-3 h-full rounded-2xl border border-black/10 bg-white p-4 shadow-card hover:border-black/25 hover:shadow-lift transition-all">
+                                    <Link href={`/${a.slug}`} className="group flex items-center justify-between gap-3 h-full rounded-2xl border border-black/10 bg-white p-4 surface-card hover:border-black/25 hover:shadow-lift hover:-translate-y-0.5 transition-all">
                                         <div className="min-w-0">
                                             <span className="font-display font-semibold text-ink">{a.name}</span>
                                             <span className="block text-sm text-ink-muted mt-1 line-clamp-2">{a.priceSummary ?? "Price not stated"}</span>
@@ -387,7 +390,7 @@ export default function LeanCompare({ slug }: { slug: string }) {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((q) => (
-                            <details key={q.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                            <details key={q.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{q.q}</h3>
                                     <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
