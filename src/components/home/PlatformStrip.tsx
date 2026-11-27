@@ -9,15 +9,26 @@ export default function PlatformStrip() {
                 Works on {PLATFORMS_DATA.length} platforms, and any page you can see
             </p>
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
-                <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2.5 text-[14px] font-display font-semibold text-ink-secondary/80">
+                <ul className="flex flex-wrap justify-center gap-2">
                     {PLATFORMS_DATA.map((p) => (
                         <li key={p.slug}>
-                            {p.indexable ? <Link href={`/${p.slug}`} className="hover:text-ink transition-colors">{p.name}</Link> : <span>{p.name}</span>}
+                            {p.indexable ? (
+                                <Link
+                                    href={`/${p.slug}`}
+                                    className="inline-flex items-center rounded-full bg-white/90 border border-black/[0.07] px-3.5 py-1.5 text-[13px] font-medium text-ink-secondary shadow-[0_1px_2px_rgba(40,30,10,0.03)] hover:border-black/20 hover:bg-white hover:text-ink transition-all"
+                                >
+                                    {p.name}
+                                </Link>
+                            ) : (
+                                <span className="inline-flex items-center rounded-full bg-white/55 border border-black/[0.05] px-3.5 py-1.5 text-[13px] font-medium text-ink-muted">
+                                    {p.name}
+                                </span>
+                            )}
                         </li>
                     ))}
                 </ul>
                 <p className="mt-5 text-center text-sm text-ink-muted">
-                    Not listed? Press <kbd className="rounded-md bg-black/5 px-1.5 py-0.5 text-xs font-sans font-medium text-ink">Alt+S</kbd> and drag a box around any question: ExamGhost solves whatever is on your screen.
+                    Not listed? Press <kbd className="kbd-key mx-0.5">Alt+S</kbd> and drag a box around any question: ExamGhost solves whatever is on your screen.
                 </p>
             </div>
         </section>

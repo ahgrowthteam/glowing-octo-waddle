@@ -44,7 +44,7 @@ export default function TryDemo() {
     const current = STYLES.find((s) => s.id === style)!;
 
     return (
-        <section id="try" className="py-16 sm:py-24 bg-[#0c0c0e] text-white scroll-mt-20">
+        <section id="try" className="dark-surface py-16 sm:py-24 bg-[#0c0c0e] text-white scroll-mt-20">
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-8 sm:mb-10">
                     <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-4">
@@ -106,8 +106,13 @@ export default function TryDemo() {
                                     {phase === "scanning" && (
                                         <span className="absolute left-0 right-0 h-0.5 bg-[#4361ee] shadow-[0_0_12px_#4361ee] animate-laser-scan z-10" aria-hidden="true" />
                                     )}
-                                    <div className="flex justify-between bg-[#f5f5f5] border-b border-black/10 px-4 py-2.5 text-sm font-semibold">
+                                    <div className="flex items-center justify-between bg-[#f5f5f5] border-b border-black/10 px-4 py-2.5 text-sm font-semibold">
                                         <span>Question 1</span>
+                                        {phase === "idle" && (
+                                            <span className="ml-auto mr-3 hidden sm:inline-flex items-center gap-1 rounded-full bg-[#4361ee]/10 px-2.5 py-0.5 text-[11px] font-medium text-[#2b55c7]">
+                                                <MousePointerClick className="w-3 h-3" aria-hidden="true" /> Double-click to solve
+                                            </span>
+                                        )}
                                         <span className="font-normal text-ink-muted">1 pts</span>
                                     </div>
                                     <div className="px-4 py-4">

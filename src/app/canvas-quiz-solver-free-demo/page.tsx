@@ -765,7 +765,7 @@ export default function DemoPage() {
                         <Link prefetch={false} href="/" className="flex items-center gap-2 group">
                             <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 bg-[#c4d0f8] shrink-0">
                                 <img 
-                                    src="/images/ghost/ghost_mascot_hero.jpg" 
+                                    src="/images/ghost/ghost_mascot_avatar.jpg" 
                                     alt="ExamGhost Mascot" 
                                     width={28} 
                                     height={28} 
@@ -1647,7 +1647,7 @@ export default function DemoPage() {
                                         </span>
                                         <span className="text-xs text-emerald-700 font-semibold flex items-center gap-1.5 mt-1">
                                             <span className={`w-2 h-2 rounded-full ${isExtensionOn ? 'bg-emerald-500 animate-pulse' : 'bg-ink-muted'}`} />
-                                            <span>{isExtensionOn ? 'Stealth Active' : 'Paused'}</span>
+                                            <span>{isExtensionOn ? 'Extension Active' : 'Paused'}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -1748,9 +1748,9 @@ export default function DemoPage() {
 
                             {/* Compact Hotkey Footer */}
                             <div className="pt-3 border-t border-black/6 flex items-center justify-between text-[11px] text-ink-muted">
-                                <span>Master Panic Hotkey</span>
-                                <kbd className="px-2 py-0.5 rounded-md bg-[#faf8f5] border border-black/10 font-mono font-semibold text-ink text-[10px]">
-                                    ⌘ + Shift + U
+                                <span>Diagram Snip Shortcut</span>
+                                <kbd className="kbd-key">
+                                    Alt + S
                                 </kbd>
                             </div>
                         </div>
@@ -1810,7 +1810,7 @@ export default function DemoPage() {
                         ].map((c) => {
                             const Icon = c.icon;
                             return (
-                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 shadow-card">
+                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 shadow-card hover:border-black/20 hover:shadow-lift transition-all duration-200">
                                     <span className="grid place-items-center w-11 h-11 rounded-2xl mb-5" style={{ backgroundColor: c.tint }}>
                                         <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
                                     </span>
@@ -1828,11 +1828,12 @@ export default function DemoPage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {DEMO_FAQS.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>

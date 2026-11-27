@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { MousePointerClick, SlidersHorizontal, ListChecks, ScanLine, Power, Search, type LucideIcon } from "lucide-react";
+import { MousePointerClick, SlidersHorizontal, ListChecks, ScanLine, Power, Search, X, type LucideIcon } from "lucide-react";
 import { FEATURES, FEATURE_CATEGORIES, type FeatureCategory } from "./featuresData";
 
 const ICON: Record<FeatureCategory, { icon: LucideIcon; tint: string }> = {
@@ -39,8 +39,18 @@ export default function FeatureCatalog() {
                         value={q}
                         onChange={(e) => setQ(e.target.value)}
                         placeholder={`Search ${FEATURES.length} features`}
-                        className="w-full rounded-full border border-black/10 bg-white pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-black/30"
+                        className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-sm focus:outline-none focus:border-black/30"
                     />
+                    {q && (
+                        <button
+                            type="button"
+                            onClick={() => setQ("")}
+                            aria-label="Clear search"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-black/5 text-ink-muted"
+                        >
+                            <X className="w-3.5 h-3.5" aria-hidden="true" />
+                        </button>
+                    )}
                 </label>
                 <div role="group" aria-label="Filter by category" className="flex flex-wrap gap-2">
                     {(["All", ...FEATURE_CATEGORIES] as const).map((c) => (
@@ -63,13 +73,13 @@ export default function FeatureCatalog() {
                     {shown.map((f) => {
                         const { icon: Icon, tint } = ICON[f.category];
                         return (
-                            <li key={f.id} className="flex flex-col bg-white rounded-3xl border border-black/10 shadow-card p-6">
+                            <li key={f.id} className="flex flex-col bg-white rounded-3xl border border-black/10 shadow-card p-6 hover:border-black/20 hover:shadow-lift transition-all duration-200">
                                 <div className="flex items-center justify-between mb-4">
                                     <span className="grid place-items-center w-10 h-10 rounded-xl" style={{ backgroundColor: tint }}>
                                         <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
                                     </span>
                                     {f.key && (
-                                        <kbd className="rounded-md bg-black/5 px-2 py-1 text-[11px] font-sans font-medium text-ink-secondary">{f.key}</kbd>
+                                        <kbd className="kbd-key">{f.key}</kbd>
                                     )}
                                 </div>
                                 <h3 className="font-display text-lg font-bold text-ink leading-snug mb-1.5">{f.title}</h3>

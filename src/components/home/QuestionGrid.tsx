@@ -81,7 +81,10 @@ export default function QuestionGrid() {
     const anySolved = KINDS.some((k) => solved[k]);
     const allSolved = KINDS.every((k) => solved[k]);
 
-    const card = "relative flex flex-col bg-white rounded-3xl border border-black/10 shadow-card p-6 select-none cursor-pointer";
+    const card = (isSolved: boolean) =>
+        `relative flex flex-col bg-white rounded-3xl border shadow-card p-6 select-none cursor-pointer transition-all duration-200 ${
+            isSolved ? "border-emerald-500/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift"
+        }`;
     const why = (k: Kind) => (
         <p className={`mt-auto pt-4 text-[13px] leading-relaxed text-ink-muted transition-opacity duration-500 ${solved[k] ? "opacity-100" : "opacity-0"}`} aria-live="polite">
             {solved[k] ? <><span className="font-semibold text-ink-secondary">Why: </span>{WHY[k]}</> : "\u00a0"}
@@ -89,13 +92,13 @@ export default function QuestionGrid() {
     );
     const row = (on: boolean) => `flex items-center gap-3 rounded-lg px-3 py-2 transition-colors duration-300 ${on ? "bg-emerald-100" : ""}`;
     const field = (on: boolean) =>
-        `w-full rounded-lg border px-3 py-2 text-sm pointer-events-none transition-colors duration-300 ${on ? "border-emerald-500 bg-emerald-100" : "border-black/15 bg-white text-ink-muted"}`;
+        `select-chevron w-full rounded-lg border px-3 py-2 text-sm pointer-events-none transition-colors duration-300 ${on ? "border-emerald-500 bg-emerald-100 text-ink font-medium" : "border-black/15 bg-white text-ink-muted"}`;
 
     return (
         <section id="question-types" className="py-16 sm:py-24 scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12">
-                    <p className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2b55c7] bg-[#e8effd] rounded-full px-3 py-1 mb-4">
+                    <p className="text-sm font-semibold text-ink-muted mb-3">
                         Every question format
                     </p>
                     <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-4">
@@ -108,9 +111,9 @@ export default function QuestionGrid() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {/* Single choice */}
-                    <article className={card} onDoubleClick={() => solve("choice")} aria-label="Single choice example">
+                    <article className={card(solved.choice)} onDoubleClick={() => solve("choice")} aria-label="Single choice example">
                         {!touched && (
-                            <span className="absolute -top-3 right-5 rounded-full bg-[#3b6fe0] px-3.5 py-1 text-xs font-semibold text-white shadow-card">
+                            <span className="absolute -top-3 right-5 rounded-full bg-ink px-3.5 py-1 text-xs font-semibold text-white ring-2 ring-cream shadow-card">
                                 Double click
                             </span>
                         )}
@@ -128,7 +131,7 @@ export default function QuestionGrid() {
                     </article>
 
                     {/* Multi-select */}
-                    <article className={card} onDoubleClick={() => solve("multi")} aria-label="Multi-select example">
+                    <article className={card(solved.multi)} onDoubleClick={() => solve("multi")} aria-label="Multi-select example">
                         <Head label="Multi-select" kind="multi" solved={solved.multi} onSolve={solve} />
                         <p className="font-medium text-ink mb-3">Which of these numbers are prime?</p>
                         <ul>
@@ -146,7 +149,7 @@ export default function QuestionGrid() {
                     </article>
 
                     {/* Fill in the blank */}
-                    <article className={card} onDoubleClick={() => solve("blank")} aria-label="Fill in the blank example">
+                    <article className={card(solved.blank)} onDoubleClick={() => solve("blank")} aria-label="Fill in the blank example">
                         <Head label="Fill in the blank" kind="blank" solved={solved.blank} onSolve={solve} />
                         <div className="mx-auto mb-3 w-[130px] rounded-lg border border-black/10 bg-[#faf8f4] p-2">
                             <svg viewBox="0 0 120 90" className="w-full" aria-label="Right triangle with legs 3 and 4">
@@ -168,7 +171,7 @@ export default function QuestionGrid() {
                     </article>
 
                     {/* Dropdown select */}
-                    <article className={card} onDoubleClick={() => solve("dropdown")} aria-label="Dropdown example">
+                    <article className={card(solved.dropdown)} onDoubleClick={() => solve("dropdown")} aria-label="Dropdown example">
                         <Head label="Dropdown select" kind="dropdown" solved={solved.dropdown} onSolve={solve} />
                         <p className="font-medium text-ink mb-3">What is the chemical symbol for sodium?</p>
                         <select
@@ -194,7 +197,7 @@ export default function QuestionGrid() {
                     </article>
 
                     {/* Matching */}
-                    <article className={card} onDoubleClick={() => solve("match")} aria-label="Matching example">
+                    <article className={card(solved.match)} onDoubleClick={() => solve("match")} aria-label="Matching example">
                         <Head label="Matching" kind="match" solved={solved.match} onSolve={solve} />
                         <p className="font-medium text-ink mb-3">Match each term with its meaning:</p>
                         <div className="space-y-2">
@@ -220,7 +223,7 @@ export default function QuestionGrid() {
                     </article>
 
                     {/* Short written answer */}
-                    <article className={card} onDoubleClick={() => solve("short")} aria-label="Short answer example">
+                    <article className={card(solved.short)} onDoubleClick={() => solve("short")} aria-label="Short answer example">
                         <Head label="Short answer" kind="short" solved={solved.short} onSolve={solve} />
                         <p className="font-medium text-ink mb-3">In one sentence, what does GDP measure?</p>
                         <div

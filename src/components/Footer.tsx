@@ -4,7 +4,7 @@ import { Ghost, Star } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
 import { allFacts, isIndexable } from '@/data/competitor-facts';
 import { PLATFORMS_DATA } from '@/data/platforms';
-import { DISCORD_URL } from '@/components/home/config';
+import { DISCORD_URL, INSTALL_URL } from '@/components/home/config';
 
 export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
     return (
@@ -65,7 +65,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
 
                     <div className="relative flex flex-wrap items-center justify-center gap-3">
                         <a 
-                            href="https://discord.gg/aCcsyKYJq4" 
+                            href={INSTALL_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2.5 bg-white text-ink font-semibold px-7 py-3.5 text-sm rounded-full hover:bg-[#f4f1ea] transition-all shadow-sm"
@@ -74,7 +74,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
                             <span>Get Extension</span>
                         </a>
                         <a 
-                            href="https://discord.gg/aCcsyKYJq4"
+                            href={DISCORD_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2.5 bg-[#5865F2] text-white font-semibold px-6 py-3.5 text-sm rounded-full hover:bg-[#4752c4] transition-all shadow-sm"

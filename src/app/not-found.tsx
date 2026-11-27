@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main id="main-content" className="min-h-screen bg-cream text-ink">
+    <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
       <Navbar />
       <section className="max-w-xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">404</p>
@@ -32,14 +32,14 @@ export default function NotFound() {
           <Link
             href="/canvas-quiz-solver-free-demo"
             prefetch={false}
-            className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors"
+            className="btn-soft px-7 py-4 text-base"
           >
             Try the live demo
           </Link>
           <Link
             href="/compare"
             prefetch={false}
-            className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors"
+            className="btn-soft px-7 py-4 text-base"
           >
             Compare tools
           </Link>

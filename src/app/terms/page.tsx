@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Check } from 'lucide-react';
+import { DISCORD_URL } from '@/components/home/config';
 
 export const metadata: Metadata = {
     title: "Terms of Service",
@@ -56,7 +57,7 @@ export default function TermsPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink flex flex-col justify-between">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col justify-between">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(termsJsonLd) }}
@@ -154,7 +155,7 @@ export default function TermsPage() {
                             <div><strong>Operating Entity:</strong> FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110)</div>
                             <div><strong>Legal Inquiries:</strong> legal@examghost.com</div>
                             <div><strong>Customer &amp; Billing Support:</strong> support@examghost.com</div>
-                            <div><strong>Community Server:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a></div>
+                            <div><strong>Community Server:</strong> <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Join Discord</a></div>
                         </div>
                     </section>
                 </div>

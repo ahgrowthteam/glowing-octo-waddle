@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { Check, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCta from "@/components/home/FinalCta";
@@ -114,13 +115,14 @@ export default function ComparePage() {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <p className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2b55c7] bg-[#e8effd] rounded-full px-3 py-1 mb-4">
+                    <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
                         Updated {fmtDate(lastChecked)}
                     </p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
@@ -137,13 +139,13 @@ export default function ComparePage() {
                     <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
                         <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight mb-1">Platform coverage</h2>
                         <p className="text-sm text-ink-muted mb-5">
-                            {coverageLine}. It also solves any page you can see: press Alt+S, drag a box around the question and it reads the screenshot. Counts are the platforms each vendor names on its own site; others may work on more.
+                            {coverageLine}. It also solves any page you can see: press <kbd className="kbd-key mx-0.5">Alt+S</kbd>, drag a box around the question and it reads the screenshot. Counts are the platforms each vendor names on its own site; others may work on more.
                         </p>
                         <ul className="space-y-2.5" aria-label="Platforms named, by extension">
                             {bars.map((b) => (
                                 <li key={b.name} className="grid grid-cols-[110px_1fr_28px] sm:grid-cols-[150px_1fr_32px] items-center gap-3 text-sm">
                                     <span className={b.us ? "font-semibold text-ink" : "text-ink-secondary"}>{b.name}</span>
-                                    <span className="h-2.5 rounded-full bg-black/[0.06] overflow-hidden"><span className={`block h-full rounded-full ${b.us ? "bg-[#3b6fe0]" : "bg-black/25"}`} style={{ width: `${(b.count / Math.max(egCount, ...bars.map((x) => x.count))) * 100}%` }} /></span>
+                                    <span className="h-2.5 rounded-full bg-black/[0.06] overflow-hidden"><span className={`block h-full rounded-full ${b.us ? "bg-ink" : "bg-black/20"}`} style={{ width: `${(b.count / Math.max(egCount, ...bars.map((x) => x.count))) * 100}%` }} /></span>
                                     <span className="text-right tabular-nums text-ink-muted">{b.count}</span>
                                 </li>
                             ))}
@@ -173,7 +175,10 @@ export default function ComparePage() {
                             "A clear refund policy",
                             "A price you can read before signing up",
                         ].map((t) => (
-                            <li key={t} className="bg-white rounded-2xl border border-black/10 px-4 py-3.5 text-[15px]">{t}</li>
+                            <li key={t} className="flex items-start gap-2.5 bg-white rounded-2xl border border-black/10 shadow-2xs px-4 py-3.5 text-[15px]">
+                                <Check className="w-4 h-4 mt-1 shrink-0 text-emerald-600" aria-hidden="true" />
+                                <span>{t}</span>
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -184,11 +189,12 @@ export default function ComparePage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>

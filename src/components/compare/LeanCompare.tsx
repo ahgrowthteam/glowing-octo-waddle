@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Check, ExternalLink, Info } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ExternalLink, Info } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -152,7 +152,7 @@ export function leanCompareMetadata(slug: string): Metadata {
 
 function Row({ label, them, us }: { label: string; them: React.ReactNode; us: React.ReactNode }) {
     return (
-        <div className="grid sm:grid-cols-[150px_1fr_1fr] gap-x-6 gap-y-1 px-5 sm:px-6 py-4 border-t border-black/5 first:border-t-0">
+        <div className="grid sm:grid-cols-[150px_1fr_1fr] gap-x-6 gap-y-1 px-5 sm:px-6 py-4 border-t border-black/5 first:border-t-0 hover:bg-[#faf8f4]/60 transition-colors">
             <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted sm:pt-0.5">{label}</dt>
             <dd className="text-[15px] text-ink-secondary">{them}</dd>
             <dd className="text-[15px] text-ink font-medium">{us}</dd>
@@ -254,7 +254,7 @@ export default function LeanCompare({ slug }: { slug: string }) {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
@@ -276,7 +276,8 @@ export default function LeanCompare({ slug }: { slug: string }) {
                             <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                             Add to Chrome — it&apos;s free
                         </a>
-                        <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                        <Link href={DEMO_URL} className="btn-soft px-7 py-4 text-base">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                             Try the live demo
                         </Link>
                     </div>
@@ -353,9 +354,12 @@ export default function LeanCompare({ slug }: { slug: string }) {
                         <ul className="grid sm:grid-cols-2 gap-3">
                             {alternatives.map((a) => (
                                 <li key={a.slug}>
-                                    <Link href={`/${a.slug}`} className="block h-full rounded-2xl border border-black/10 bg-white p-4 hover:border-black/25 transition-colors">
-                                        <span className="font-display font-semibold text-ink">{a.name}</span>
-                                        <span className="block text-sm text-ink-muted mt-1 line-clamp-2">{a.priceSummary ?? "Price not stated"}</span>
+                                    <Link href={`/${a.slug}`} className="group flex items-center justify-between gap-3 h-full rounded-2xl border border-black/10 bg-white p-4 shadow-card hover:border-black/25 hover:shadow-lift transition-all">
+                                        <div className="min-w-0">
+                                            <span className="font-display font-semibold text-ink">{a.name}</span>
+                                            <span className="block text-sm text-ink-muted mt-1 line-clamp-2">{a.priceSummary ?? "Price not stated"}</span>
+                                        </div>
+                                        <ArrowRight className="w-4 h-4 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                                     </Link>
                                 </li>
                             ))}
@@ -383,11 +387,12 @@ export default function LeanCompare({ slug }: { slug: string }) {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((q) => (
-                            <details key={q.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                            <details key={q.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{q.q}</h3>
+                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{q.a}</p>
+                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{q.a}</p>
                             </details>
                         ))}
                     </div>

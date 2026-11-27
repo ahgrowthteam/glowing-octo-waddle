@@ -86,7 +86,7 @@ const link = "underline underline-offset-4 decoration-black/30 hover:decoration-
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-cream text-ink">
+    <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
 
@@ -126,10 +126,10 @@ export default function AboutPage() {
           </p>
           <ul className="space-y-2.5 text-ink-secondary">
             <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
-              <strong className="text-ink">Three answer styles.</strong> Alt+1 quick answer, Alt+2 highlight, Alt+3 explain.
+              <strong className="text-ink">Three answer styles.</strong> <kbd className="kbd-key">Alt+1</kbd> quick answer, <kbd className="kbd-key">Alt+2</kbd> highlight, <kbd className="kbd-key">Alt+3</kbd> explain.
             </li>
             <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
-              <strong className="text-ink">Snap-It (Alt+S).</strong> Draw a box around a graph, diagram or image and solve that.
+              <strong className="text-ink">Snap-It (<kbd className="kbd-key">Alt+S</kbd>).</strong> Draw a box around a graph, diagram or image and solve that.
             </li>
             <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
               <strong className="text-ink">Works on 20+ platforms,</strong> including Canvas, Blackboard, Moodle, D2L Brightspace and Google Forms.

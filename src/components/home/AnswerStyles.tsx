@@ -104,16 +104,16 @@ export default function AnswerStyles() {
                                     aria-selected={on}
                                     onClick={() => setActive(s.id)}
                                     className={`text-left flex items-center gap-4 rounded-2xl border-2 p-5 transition-all ${
-                                        on ? "border-emerald-500 bg-white shadow-card" : "border-black/10 bg-white/70 hover:border-black/25"
+                                        on ? "border-ink bg-white shadow-lift" : "border-black/[0.08] bg-white/75 hover:bg-white hover:border-black/20"
                                     }`}
                                 >
-                                    <span className={`grid place-items-center w-12 h-12 rounded-full shrink-0 transition-colors ${on ? "bg-emerald-500 text-white" : "bg-[#e6e9ee] text-ink-secondary"}`}>
+                                    <span className={`grid place-items-center w-12 h-12 rounded-full shrink-0 transition-colors ${on ? "bg-ink text-white" : "bg-[#f2efe9] text-ink-secondary"}`}>
                                         <Icon className="w-5 h-5" aria-hidden="true" />
                                     </span>
                                     <span className="block">
                                         <span className="flex items-center gap-2 font-display text-lg font-bold text-ink">
                                             {s.title}
-                                            <kbd className="text-[11px] font-sans font-medium text-ink-muted bg-black/5 rounded-md px-1.5 py-0.5">{s.key}</kbd>
+                                            <kbd className="kbd-key">{s.key}</kbd>
                                         </span>
                                         <span className="block text-[15px] text-ink-muted leading-snug mt-1">{s.body}</span>
                                     </span>
@@ -156,7 +156,7 @@ export default function AnswerStyles() {
                             <div>
                                 <p className="font-display font-bold text-ink flex items-center gap-2">
                                     {current.title}
-                                    <kbd className="text-[11px] font-sans font-medium text-ink-muted bg-black/5 rounded-md px-1.5 py-0.5">{current.key}</kbd>
+                                    <kbd className="kbd-key">{current.key}</kbd>
                                 </p>
                                 <p className="lg:hidden text-sm text-ink-muted mt-1 leading-relaxed">{current.body}</p>
                             </div>

@@ -68,12 +68,12 @@ export default function HomePricing() {
                             key={p.name}
                             className={`relative rounded-3xl p-6 flex flex-col ${
                                 p.featured
-                                    ? "bg-ink text-white shadow-lift"
+                                    ? "bg-ink text-white shadow-lift ring-1 ring-white/10 lg:-translate-y-1.5"
                                     : "bg-white border border-black/10 shadow-card"
                             }`}
                         >
                             {p.featured && (
-                                <span className="absolute -top-3 left-6 text-[11px] font-bold uppercase tracking-wider bg-[#ffd23f] text-ink px-3 py-1 rounded-full">
+                                <span className="absolute -top-3 left-6 text-[11px] font-bold uppercase tracking-wider bg-[#ffd23f] text-ink px-3 py-1 rounded-full shadow-sm">
                                     Most popular
                                 </span>
                             )}
@@ -97,7 +97,9 @@ export default function HomePricing() {
                                 rel="noopener noreferrer"
                                 className={`inline-flex items-center justify-center rounded-full py-3 text-[15px] font-medium transition-colors ${
                                     p.featured
-                                        ? "bg-white text-ink hover:bg-[#f2ede4]"
+                                        ? "bg-white text-ink hover:bg-[#ffe9a0]"
+                                        : p.name === "Free"
+                                        ? "border border-black/15 bg-[#faf8f4] text-ink hover:bg-ink hover:text-white"
                                         : "bg-ink text-white hover:bg-[#252422]"
                                 }`}
                             >

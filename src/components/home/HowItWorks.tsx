@@ -103,9 +103,12 @@ export default function HowItWorks() {
                 <Reveal>
                     <ol className="grid md:grid-cols-3 gap-5">
                         {STEPS.map((s) => (
-                            <li key={s.n} className="bg-[#f1f4f5] rounded-3xl p-6 sm:p-7 flex flex-col">
-                                <div className="h-[170px] grid place-items-center mb-8">{s.graphic}</div>
-                                <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-ink text-white text-sm font-bold mb-4">{s.n}</span>
+                            <li key={s.n} className="bg-white rounded-3xl border border-black/[0.08] shadow-card hover:shadow-lift transition-shadow duration-300 p-6 sm:p-7 flex flex-col">
+                                <div className="h-[176px] rounded-2xl bg-[#f7f4ee] border border-black/[0.05] p-4 grid place-items-center mb-6">{s.graphic}</div>
+                                <div className="inline-flex items-center gap-2 mb-3">
+                                    <span className="inline-grid place-items-center w-7 h-7 rounded-full bg-ink text-white text-xs font-bold">{s.n}</span>
+                                    <span className="text-xs font-semibold text-ink-muted">Step {s.n}</span>
+                                </div>
                                 <h3 className="font-display text-xl font-bold text-ink mb-1.5">{s.title}</h3>
                                 <p className="text-[15px] text-ink-muted leading-relaxed">{s.body}</p>
                             </li>

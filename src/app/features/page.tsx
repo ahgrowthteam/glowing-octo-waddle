@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,7 +31,8 @@ export default function FeaturesPage() {
 
             <section className="pt-12 sm:pt-16 pb-10 sm:pb-12 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <p className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2b55c7] bg-[#e8effd] rounded-full px-3 py-1 mb-4">
+                    <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
                         {FEATURES.length} features
                     </p>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
@@ -45,7 +46,8 @@ export default function FeaturesPage() {
                             <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                             Add to Chrome — it&apos;s free
                         </a>
-                        <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                        <Link href={DEMO_URL} className="btn-soft px-7 py-4 text-base">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                             Try the live demo
                         </Link>
                     </div>
@@ -59,17 +61,17 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
-            <section className="py-16 sm:py-24 bg-[#18181b] text-white">
+            <section className="dark-surface py-16 sm:py-24 bg-[#18181b] text-white">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-center mb-10 sm:mb-14">See it in action</h2>
                     <Reveal className="grid md:grid-cols-3 gap-6">
                         {DEMOS.map((d) => (
-                            <div key={d.id}>
-                                <div className="aspect-video rounded-3xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift mb-3">
+                            <div key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-5 flex flex-col hover:border-white/[0.15] transition-colors">
+                                <div className="aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift mb-4">
                                     <MediaSlot slot={`features.${d.id}`} src={MEDIA.features[d.id]} label={`${d.title} demo`} fallback={<MockQuiz variant={d.variant} />} />
                                 </div>
-                                <h3 className="font-display text-lg font-bold">{d.title}</h3>
-                                <p className="text-sm text-white/60">{d.body}</p>
+                                <h3 className="font-display text-lg font-bold mb-1">{d.title}</h3>
+                                <p className="text-sm text-white/65">{d.body}</p>
                             </div>
                         ))}
                     </Reveal>
@@ -112,11 +114,12 @@ export default function FeaturesPage() {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {FEATURE_FAQS.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>

@@ -47,7 +47,7 @@ const DEMOS = [
 
 export default function FeatureDemos() {
     return (
-        <section id="features" className="py-16 sm:py-24 bg-[#18181b] text-white scroll-mt-20">
+        <section id="features" className="dark-surface py-16 sm:py-24 bg-[#18181b] text-white scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                     <p className="text-sm font-semibold text-white/50 mb-3">Features</p>
@@ -56,12 +56,12 @@ export default function FeatureDemos() {
                     </h2>
                 </div>
 
-                <Reveal className="grid md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-14 sm:gap-y-16">
+                <Reveal className="grid md:grid-cols-2 gap-6 lg:gap-8">
                     {DEMOS.map((d) => (
-                        <article key={d.id} className="flex flex-col">
-                            <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-3">{d.title}</h3>
-                            <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-6">{d.body}</p>
-                            <div className="mt-auto aspect-video rounded-3xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift">
+                        <article key={d.id} className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-5 sm:p-7 flex flex-col hover:border-white/[0.15] transition-colors">
+                            <h3 className="font-display text-2xl sm:text-[26px] font-bold tracking-tight leading-snug mb-2.5">{d.title}</h3>
+                            <p className="text-[15px] sm:text-base text-white/65 leading-relaxed mb-6">{d.body}</p>
+                            <div className="mt-auto aspect-video rounded-2xl overflow-hidden bg-[#0c0c0e] ring-1 ring-white/10 shadow-lift">
                                 <MediaSlot
                                     slot={`features.${d.id}`}
                                     src={MEDIA.features[d.id]}

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { ChevronRight, Menu, X } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 import { INSTALL_URL } from '@/components/home/config';
 
@@ -72,10 +72,12 @@ export default function Navbar() {
 
     const linkClass = (l: NavLink) =>
         `px-3 lg:px-3.5 py-2 min-h-[36px] rounded-full transition-colors whitespace-nowrap flex items-center gap-1.5 ${
-            l.live
-                ? 'bg-emerald-500/10 text-emerald-800 font-semibold border border-emerald-500/30 hover:bg-emerald-500/20'
+            l.live && isActive(l)
+                ? 'bg-emerald-600 text-white font-semibold shadow-sm'
+                : l.live
+                ? 'bg-emerald-500/10 text-emerald-800 font-semibold border border-emerald-500/25 hover:bg-emerald-500/20'
                 : isActive(l)
-                ? 'bg-ink text-white'
+                ? 'bg-ink text-white shadow-sm'
                 : 'hover:bg-black/5 hover:text-ink'
         }`;
 
@@ -89,9 +91,9 @@ export default function Navbar() {
             </a>
             <header className="sticky top-3 sm:top-4 z-50 pointer-events-none px-3 sm:px-6">
                 <nav
-                    className={`pointer-events-auto max-w-[1040px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between gap-2 px-2.5 sm:px-4 py-2 backdrop-blur-xl ${
+                    className={`pointer-events-auto max-w-[1080px] mx-auto rounded-full transition-all duration-300 flex items-center justify-between gap-2 px-2.5 sm:px-4 py-2 backdrop-blur-xl ${
                         scrolled
-                            ? 'bg-white/90 border border-black/10 shadow-[0_12px_36px_rgba(40,30,10,0.14)]'
+                            ? 'bg-white/90 border border-black/10 ring-1 ring-white/60 shadow-[0_12px_36px_rgba(40,30,10,0.14)]'
                             : 'bg-white/75 border border-black/5 shadow-[0_8px_24px_rgba(40,30,10,0.07)]'
                     }`}
                     aria-label="Main"
@@ -139,7 +141,7 @@ export default function Navbar() {
                 </nav>
 
                 {open && (
-                    <div id="mobile-menu" className="pointer-events-auto lg:hidden mt-2 max-w-[1040px] mx-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-black/10 p-3 shadow-xl animate-pop-in">
+                    <div id="mobile-menu" className="pointer-events-auto lg:hidden mt-2 max-w-[1080px] mx-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-black/10 p-3 shadow-xl animate-pop-in">
                         <ul className="flex flex-col">
                             {NAV_LINKS.map((l) => (
                                 <li key={l.name}>
@@ -155,7 +157,7 @@ export default function Navbar() {
                                             {l.live && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />}
                                             {l.name}
                                         </span>
-                                        <span aria-hidden="true" className="opacity-50">→</span>
+                                        <ChevronRight className="w-4 h-4 opacity-40" aria-hidden="true" />
                                     </Link>
                                 </li>
                             ))}

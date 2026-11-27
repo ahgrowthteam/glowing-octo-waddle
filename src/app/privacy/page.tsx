@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { DISCORD_URL } from '@/components/home/config';
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
@@ -55,7 +56,7 @@ export default function PrivacyPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream text-ink flex flex-col justify-between">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col justify-between">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(privacyJsonLd) }}
@@ -130,7 +131,7 @@ export default function PrivacyPage() {
                         <div className="p-4 rounded-2xl bg-[#faf8f4] border border-black/5 text-sm space-y-1">
                             <div><strong>Operating Entity:</strong> FoundryOne LLC (1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110)</div>
                             <div><strong>Email:</strong> privacy@examghost.com</div>
-                            <div><strong>Discord:</strong> <a href="https://discord.gg/aCcsyKYJq4" target="_blank" rel="noopener noreferrer" className="text-emerald-700 font-semibold underline">Join the ExamGhost Discord</a> for general support (do not post private details in public channels).</div>
+                            <div><strong>Discord:</strong> <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="text-emerald-700 font-semibold underline">Join the ExamGhost Discord</a> for general support (do not post private details in public channels).</div>
                         </div>
                     </section>
                 </div>

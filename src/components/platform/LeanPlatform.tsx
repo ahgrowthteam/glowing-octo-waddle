@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -110,7 +110,7 @@ export default function LeanPlatform({ slug }: { slug: string }) {
             <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-20 overflow-hidden">
                 <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
                     <div className="text-center lg:text-left">
-                        <p className="inline-flex text-xs font-semibold text-ink-secondary bg-white/80 border border-black/5 rounded-full px-3 py-1.5 mb-5 shadow-sm">
+                        <p className="inline-flex text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
                             {p.kind}
                         </p>
                         <h1 className="font-display text-4xl sm:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.06] mb-5">
@@ -122,12 +122,15 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                                 <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                                 Add to Chrome — it&apos;s free
                             </a>
-                            <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                            <Link href={DEMO_URL} className="btn-soft px-7 py-4 text-base">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                                 Try the live demo
                             </Link>
                         </div>
                     </div>
-                    <HeroVideo videoId={p.youtubeId ?? ""} />
+                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
+                        <HeroVideo videoId={p.youtubeId ?? ""} />
+                    </div>
                 </div>
             </section>
 
@@ -145,7 +148,7 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                         ))}
                     </ul>
                     <p className="mt-6 text-center text-sm text-ink-muted">
-                        Using a different platform? Double-click works on most quiz pages, and <kbd className="rounded-md bg-black/5 px-1.5 py-0.5 text-xs font-medium text-ink">Alt+S</kbd> solves anything you can see on screen.
+                        Using a different platform? Double-click works on most quiz pages, and <kbd className="kbd-key mx-0.5">Alt+S</kbd> solves anything you can see on screen.
                     </p>
                 </Reveal>
             </section>
@@ -166,11 +169,12 @@ export default function LeanPlatform({ slug }: { slug: string }) {
                     <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
                     <div className="space-y-3">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
+                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
                                     <h3 className="text-base sm:text-lg">{f.q}</h3>
+                                    <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>

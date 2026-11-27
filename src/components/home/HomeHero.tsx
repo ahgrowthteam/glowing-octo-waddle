@@ -66,9 +66,11 @@ export function HeroVideo({ videoId = "", src = "", slot = "video" }: { videoId?
                         </div>
                     </div>
                     <PlayBadge />
-                    <span className="absolute left-3 bottom-3 text-[11px] font-medium text-white/90 bg-black/60 backdrop-blur px-2.5 py-1 rounded-full">
-                        {slot} · graphic (no file set)
-                    </span>
+                    {process.env.NODE_ENV !== "production" && (
+                        <span className="absolute left-3 bottom-3 text-[11px] font-medium text-white/90 bg-black/60 backdrop-blur px-2.5 py-1 rounded-full">
+                            {slot} · graphic (no file set)
+                        </span>
+                    )}
                 </>
             )}
         </div>
@@ -92,8 +94,8 @@ export default function HomeHero() {
             <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-12 items-center">
                 {/* Left: text */}
                 <div className="text-center lg:text-left">
-                    <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/80 border border-black/5 rounded-full px-3 py-1.5 mb-5 shadow-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
                         AI Chrome extension for 20 platforms and any page
                     </p>
 
@@ -121,13 +123,14 @@ export default function HomeHero() {
                         </a>
                         <Link
                             href={DEMO_URL}
-                            className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium text-ink hover:border-black/25 transition-colors"
+                            className="btn-soft px-7 py-4 text-base"
                         >
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                             Try the live demo
                         </Link>
                     </div>
 
-                    <ul className="flex flex-wrap gap-x-5 gap-y-1.5 justify-center lg:justify-start text-[13px] text-ink-muted">
+                    <ul className="flex flex-wrap gap-x-5 gap-y-1.5 justify-center lg:justify-start text-[13px] font-medium text-ink-secondary/80">
                         {["5 free solves a day", "Cancel anytime", "14-day money-back"].map((t) => (
                             <li key={t} className="inline-flex items-center gap-1.5">
                                 <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
@@ -138,7 +141,9 @@ export default function HomeHero() {
                 </div>
 
                 {/* Right: video */}
-                <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
+                <div className="rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
+                    <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
+                </div>
             </div>
         </section>
     );

@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, X } from "lucide-react";
 
 export interface CompareRow {
     slug: string;
@@ -68,8 +68,18 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                         value={q}
                         onChange={(e) => setQ(e.target.value)}
                         placeholder="Search by name"
-                        className="w-full rounded-full border border-black/10 bg-white pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-black/30"
+                        className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-sm focus:outline-none focus:border-black/30"
                     />
+                    {q && (
+                        <button
+                            type="button"
+                            onClick={() => setQ("")}
+                            aria-label="Clear search"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-black/5 text-ink-muted"
+                        >
+                            <X className="w-3.5 h-3.5" aria-hidden="true" />
+                        </button>
+                    )}
                 </label>
                 <div className="flex flex-wrap gap-2 items-center">
                     <button type="button" aria-pressed={onlyFree} onClick={() => setOnlyFree((v) => !v)} className={chip(onlyFree)}>Has a free tier or trial</button>
@@ -77,7 +87,7 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                     <button type="button" aria-pressed={onlyCanvas} onClick={() => setOnlyCanvas((v) => !v)} className={chip(onlyCanvas)}>Mentions Canvas</button>
                     <label className="text-sm text-ink-muted flex items-center gap-2">
                         Sort
-                        <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="rounded-full border border-black/10 bg-white px-3 py-2 text-sm text-ink">
+                        <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="select-chevron appearance-none rounded-full border border-black/10 bg-white pl-3.5 pr-9 py-2 text-sm text-ink">
                             <option value="name">Name A–Z</option>
                             <option value="price">Lowest listed price</option>
                             <option value="platforms">Most platforms named</option>
@@ -108,7 +118,7 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                             <td className="px-5 py-4 text-right"><Link href="/" className="inline-flex items-center gap-1 font-medium underline underline-offset-4 decoration-black/20 hover:decoration-ink">Home</Link></td>
                         </tr>
                         {shown.map((r) => (
-                            <tr key={r.slug} className="border-t border-black/5 align-top">
+                            <tr key={r.slug} className="border-t border-black/5 align-top hover:bg-[#faf8f4]/80 transition-colors">
                                 <th scope="row" className="px-5 py-4 font-display font-semibold">
                                     {r.name}
                                     <span className="block text-xs font-sans font-normal text-ink-muted">{r.domain}</span>
@@ -138,7 +148,7 @@ export default function CompareTable({ rows, examghost }: { rows: CompareRow[]; 
                     <p className="text-sm text-ink-secondary">{examghost.platformCount} platforms named, plus any page via Alt+S</p>
                 </div>
                 {shown.map((r) => (
-                    <Link key={r.slug} href={`/${r.slug}`} className="block rounded-2xl bg-white border border-black/10 p-4 shadow-card">
+                    <Link key={r.slug} href={`/${r.slug}`} className="block rounded-2xl bg-white border border-black/10 p-4 shadow-card hover:border-black/25 hover:shadow-lift transition-all">
                         <div className="flex items-center justify-between">
                             <p className="font-display font-semibold">{r.name}</p>
                             <ArrowRight className="w-4 h-4" aria-hidden="true" />

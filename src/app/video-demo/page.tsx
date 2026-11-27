@@ -44,7 +44,7 @@ export default function VideoDemoPage() {
                     <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
                         See ExamGhost answer a quiz question on the page, then open the guide for your platform.
                     </p>
-                    <div className="mb-8 text-left">
+                    <div className="mb-8 text-left rounded-[24px] sm:rounded-[30px] bg-white/75 p-1.5 sm:p-2.5 ring-1 ring-black/[0.08] shadow-lift backdrop-blur-sm">
                         <HeroVideo slot="hero" videoId={MEDIA.hero.youtube} src={MEDIA.hero.video} />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -52,7 +52,8 @@ export default function VideoDemoPage() {
                             <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                             Add to Chrome — it&apos;s free
                         </a>
-                        <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                        <Link href={DEMO_URL} className="btn-soft px-7 py-4 text-base">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
                             Try the live demo
                         </Link>
                     </div>
@@ -67,7 +68,7 @@ export default function VideoDemoPage() {
                             <Link
                                 key={p.slug}
                                 href={`/${p.slug}`}
-                                className="group bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden hover:border-black/25 transition-colors"
+                                className="group bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden hover:border-black/25 hover:shadow-lift transition-all duration-200"
                             >
                                 <div className="aspect-video bg-[#eef0f3] overflow-hidden">
                                     <MediaSlot

@@ -12,12 +12,12 @@ export default function HomeFaq() {
                 </h2>
                 <Reveal className="space-y-3">
                     {HOME_FAQS.map((f) => (
-                        <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
+                        <details key={f.q} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
                                 <h3 className="text-base sm:text-lg">{f.q}</h3>
                                 <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                             </summary>
-                            <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                            <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                         </details>
                     ))}
                 </Reveal>

@@ -36,7 +36,7 @@ const jsonLd = {
 
 export default function FAQPage() {
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
@@ -70,12 +70,12 @@ export default function FAQPage() {
                             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-4">{g}</h2>
                             <div className="space-y-3">
                                 {FAQS.filter((f) => f.group === g).map((f) => (
-                                    <details key={f.id} id={f.id} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card scroll-mt-24">
+                                    <details key={f.id} id={f.id} className="group bg-white rounded-2xl border border-black/10 hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card scroll-mt-24">
                                         <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
                                             <h3 className="text-base sm:text-lg">{f.q}</h3>
                                             <ChevronDown className="w-5 h-5 shrink-0 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
                                         </summary>
-                                        <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                        <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                                     </details>
                                 ))}
                             </div>

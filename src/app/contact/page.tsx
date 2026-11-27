@@ -32,7 +32,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <Navbar />
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
@@ -50,7 +50,7 @@ export default function ContactPage() {
             <section className="pb-16 sm:pb-24">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-5 items-start">
                     <div className="lg:col-span-2 space-y-5">
-                        <div className="bg-ink text-white rounded-3xl shadow-lift p-6 sm:p-8">
+                        <div className="dark-surface bg-ink text-white rounded-3xl shadow-lift ring-1 ring-white/10 p-6 sm:p-8">
                             <FaDiscord className="w-7 h-7 mb-4 text-white/80" aria-hidden="true" />
                             <h2 className="font-display text-xl font-bold mb-1.5">Discord</h2>
                             <p className="text-sm text-white/70 leading-relaxed mb-6">
@@ -99,7 +99,7 @@ export default function ContactPage() {
                             <div>
                                 <label htmlFor="contact-topic" className="block text-sm font-medium mb-1.5">Topic</label>
                                 <select id="contact-topic" name="topic" value={form.topic}
-                                    onChange={(e) => setForm({ ...form, topic: e.target.value })} className={field}>
+                                    onChange={(e) => setForm({ ...form, topic: e.target.value })} className={`${field} select-chevron appearance-none`}>
                                     {TOPICS.map((t) => (<option key={t} value={t}>{t}</option>))}
                                 </select>
                             </div>
