@@ -108,57 +108,67 @@ export default function LeanPlatform({ slug }: { slug: string }) {
             <Navbar />
 
             <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-20 overflow-hidden">
-                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
+                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
                     <div className="text-center lg:text-left">
-                        <p className="inline-flex text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
+                        <p className="inline-flex items-center gap-2 text-xs font-medium text-ink-secondary bg-paper border border-ink/[0.09] rounded-full px-3.5 py-1.5 mb-5 shadow-xs">
+                            <span className="w-2 h-2 rounded-full bg-emeraldBrand" aria-hidden="true" />
                             {p.kind}
                         </p>
-                        <h1 className="font-display text-4xl sm:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.06] mb-5">
+                        <h1 className="font-display text-[36px] sm:text-[50px] lg:text-[54px] font-bold tracking-[-0.035em] leading-[1.05] text-ink mb-5">
                             {seoFor(slug).h1}
                         </h1>
                         <p className="aeo-summary text-base sm:text-lg text-ink-muted leading-relaxed max-w-lg mx-auto lg:mx-0 mb-7">{p.note}</p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                            <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-4 text-base shadow-lift">
-                                <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                            <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-3.5 sm:py-4 text-[15px] sm:text-base shadow-lift">
+                                <FaChrome className="w-4 h-4 text-sky" aria-hidden="true" />
                                 Add to Chrome — it&apos;s free
                             </a>
-                            <Link href={DEMO_URL} className="btn-soft px-7 py-4 text-base">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                            <Link href={DEMO_URL} className="btn-soft px-7 py-3.5 sm:py-4 text-[15px] sm:text-base">
+                                <span className="w-2 h-2 rounded-full bg-emeraldBrand" aria-hidden="true" />
                                 Try the live demo
                             </Link>
                         </div>
                     </div>
-                    <div className="rounded-[24px] sm:rounded-[30px] bg-white/85 p-2 sm:p-2.5 ring-1 ring-black/[0.08] surface-card backdrop-blur-sm">
-                        <div className="flex items-center justify-between gap-2 px-3 pt-1 pb-2 text-[11px] text-ink-muted">
-                            <div className="flex items-center gap-1.5" aria-hidden="true">
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]/80" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]/80" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]/80" />
+
+                    <div className="relative">
+                        <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute -inset-4 rounded-[32px] bg-[radial-gradient(circle_at_30%_20%,rgba(59,91,219,0.12),transparent_65%)] -z-10"
+                        />
+                        <div className="rounded-2xl sm:rounded-3xl bg-paper p-2 sm:p-2.5 ring-1 ring-ink/[0.09] shadow-lift">
+                            <div className="flex items-center gap-2 rounded-xl bg-surface-subtle border border-ink/[0.07] px-3 py-2 mb-2">
+                                <span className="flex items-center gap-1.5 shrink-0" aria-hidden="true">
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                                </span>
+                                <span className="ml-1 flex-1 min-w-0 inline-flex items-center gap-1.5 rounded-lg bg-paper border border-ink/[0.07] px-2.5 py-1 text-[11px] font-mono text-ink-muted">
+                                    <Lock className="w-2.5 h-2.5 shrink-0" aria-hidden="true" />
+                                    <span className="truncate">{p.name} · {p.kind}</span>
+                                </span>
+                                <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-emeraldBrand-soft border border-emeraldBrand/20 px-2.5 py-0.5 text-[11px] font-semibold text-emeraldBrand shrink-0">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emeraldBrand" aria-hidden="true" />
+                                    ExamGhost · Active
+                                </span>
                             </div>
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f4ee] px-2.5 py-0.5 border border-black/[0.06] font-medium text-ink-secondary">
-                                <Lock size={10} className="text-ink-muted" aria-hidden="true" />
-                                {p.name} · {p.kind}
-                            </span>
-                            <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
-                                ExamGhost · Active
-                            </span>
+                            <HeroVideo videoId={p.youtubeId ?? ""} />
                         </div>
-                        <HeroVideo videoId={p.youtubeId ?? ""} />
                     </div>
                 </div>
             </section>
 
-            <section className="py-14 sm:py-16 bg-white/60 border-y border-black/5">
+            <section className="py-14 sm:py-16 bg-paper border-y border-ink/[0.08]">
                 <Reveal className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-center mb-7">
+                    <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-7">
                         Question types on {p.name}
                     </h2>
                     <ul className="flex flex-wrap justify-center gap-2.5">
                         {p.types.map((t) => (
-                            <li key={t} className="inline-flex items-center gap-2 bg-white rounded-full border border-black/10 px-4 py-2 text-[15px]">
-                                <Check className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                                {t}
+                            <li key={t} className="inline-flex items-center gap-2.5 bg-surface-subtle/70 rounded-xl border border-ink/[0.09] px-4 py-2.5 text-[15px] font-medium text-ink">
+                                <span className="w-5 h-5 rounded-full bg-emeraldBrand-soft text-emeraldBrand grid place-items-center shrink-0">
+                                    <Check className="w-3 h-3" strokeWidth={2.75} aria-hidden="true" />
+                                </span>
+                                <span>{t}</span>
                             </li>
                         ))}
                     </ul>
@@ -171,44 +181,51 @@ export default function LeanPlatform({ slug }: { slug: string }) {
             {p.blurb && (
                 <section className="py-14 sm:py-16">
                     <Reveal className="max-w-3xl mx-auto px-4 sm:px-6">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-center mb-4">
-                            About {p.name} {p.kind.toLowerCase()}
-                        </h2>
-                        <p className="text-center text-[17px] text-ink-secondary leading-relaxed">{p.blurb}</p>
+                        <div className="bg-paper rounded-2xl border border-ink/[0.09] p-6 sm:p-8 shadow-xs text-center">
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-[-0.03em] mb-4">
+                                About {p.name} {p.kind.toLowerCase()}
+                            </h2>
+                            <p className="text-[16.5px] sm:text-[17px] text-ink-secondary leading-relaxed">{p.blurb}</p>
+                        </div>
                     </Reveal>
                 </section>
             )}
 
-            <section className="py-14 sm:py-20">
+            <section className="py-14 sm:py-20 bg-paper border-y border-ink/[0.08]">
                 <Reveal className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
-                    <div className="space-y-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-8">Questions</h2>
+                    <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
-                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
-                                    <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
-                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                            <details key={f.q} className="group py-4 sm:py-5">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-[17px] leading-snug group-hover:text-cobalt transition-colors">{f.q}</h3>
+                                    <span className="w-8 h-8 rounded-full bg-surface-subtle border border-ink/[0.08] text-ink-muted grid place-items-center shrink-0 transition-colors group-open:bg-surface-dark group-open:text-white group-open:border-surface-dark">
+                                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
                                     </span>
                                 </summary>
-                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pr-10 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>
                 </Reveal>
             </section>
 
-            <section className="pb-6">
+            <section className="pt-12 pb-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">Other platforms</p>
+                    <p className="text-sm font-semibold text-ink-muted mb-4">Other platforms</p>
                     <ul className="flex flex-wrap justify-center gap-2">
                         {related.map((r) => (
                             <li key={r.slug}>
-                                <Link href={`/${r.slug}`} className="inline-block rounded-full border border-black/10 bg-white px-4 py-2 text-sm hover:border-black/25 transition-colors">
+                                <Link href={`/${r.slug}`} className="inline-block rounded-full border border-ink/[0.12] bg-paper px-4 py-2 text-sm text-ink-secondary hover:border-cobalt hover:text-cobalt transition-colors">
                                     {r.name}
                                 </Link>
                             </li>
                         ))}
+                        <li>
+                            <Link href="/features" className="inline-block rounded-full bg-surface-dark text-white px-4 py-2 text-sm font-medium hover:bg-ink-secondary transition-colors">
+                                See all features
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </section>

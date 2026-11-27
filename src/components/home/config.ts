@@ -20,8 +20,6 @@ export const DEMO_URL = "/canvas-quiz-solver-free-demo";
 
 // TEST clips (borrowed). One per product area so the previews look different.
 const TEST_HERO = "https://www.examclutch.com/hero-demo.mp4";
-const TEST_INVISIBLE = "https://www.examclutch.com/invisible-mode-demo.mp4";
-const TEST_SNEAKY = "https://www.examclutch.com/sneaky-mode-demo.mp4";
 const TEST_NORMAL = "https://www.examclutch.com/normal-mode-demo.mp4";
 const TEST_INLINE = "https://smartsolve.ai/video/en/direct-integration.mp4";
 const TEST_SIDEBAR = "https://www.snapgpt.me/images/sidebar.mp4";
@@ -35,8 +33,8 @@ export const MEDIA = {
 
     // Section 7 · "Pick how answers show up", one clip per mode.
     modes: {
-        quick: TEST_INVISIBLE, // Alt+1
-        highlight: TEST_SNEAKY, // Alt+2
+        quick: "", // Alt+1 (built-in studio MockQuiz preview)
+        highlight: "", // Alt+2 (built-in studio MockQuiz preview)
         explain: TEST_NORMAL, // Alt+3
         screenshot: "", // Alt+S (no test clip: shows the graphic)
     },
@@ -48,7 +46,7 @@ export const MEDIA = {
         scan: TEST_NORMAL,
         equations: TEST_SIDEBAR,
         subjects: TEST_INLINE,
-        shortcuts: TEST_SNEAKY,
+        shortcuts: "",
     },
 };
 

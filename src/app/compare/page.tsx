@@ -121,14 +121,14 @@ export default function ComparePage() {
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <p className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary bg-white/85 border border-black/[0.08] rounded-full px-3.5 py-1.5 mb-5 shadow-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                    <p className="inline-flex items-center gap-2 text-xs font-medium text-ink-secondary bg-paper border border-ink/[0.09] rounded-full px-3.5 py-1.5 mb-5 shadow-xs">
+                        <span className="w-2 h-2 rounded-full bg-emeraldBrand" aria-hidden="true" />
                         Updated {fmtDate(lastChecked)}
                     </p>
-                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+                    <h1 className="font-display text-[36px] sm:text-[54px] font-bold tracking-[-0.035em] leading-[1.05] text-ink mb-5">
                         AI quiz solver Chrome extensions compared
                     </h1>
-                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto">
+                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-2xl mx-auto leading-relaxed">
                         We make ExamGhost, so we&apos;re not neutral. This page sets our free and paid plans next to {facts.length} tools students ask us about, using each product&apos;s own public site or store listing, and shows when it was checked. Where a detail isn&apos;t published, we say so. Every tool can be wrong, so use them to check work and follow your course&apos;s AI policy.
                     </p>
                 </div>
@@ -136,21 +136,28 @@ export default function ComparePage() {
 
             <section className="pb-10">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
-                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight mb-1">Platform coverage</h2>
-                        <p className="text-sm text-ink-muted mb-5">
+                    <div className="bg-paper rounded-2xl border border-ink/[0.09] surface-card p-6 sm:p-8">
+                        <h2 className="font-display text-xl sm:text-2xl font-bold tracking-[-0.03em] mb-1.5">Platform coverage</h2>
+                        <p className="text-sm text-ink-muted mb-6 leading-relaxed">
                             {coverageLine}. It also solves any page you can see: press <kbd className="kbd-key mx-0.5">Alt+S</kbd>, drag a box around the question and it reads the screenshot. Counts are the platforms each vendor names on its own site; others may work on more.
                         </p>
-                        <ul className="space-y-2.5" aria-label="Platforms named, by extension">
+                        <ul className="space-y-3" aria-label="Platforms named, by extension">
                             {bars.map((b) => (
-                                <li key={b.name} className="grid grid-cols-[110px_1fr_36px] sm:grid-cols-[150px_1fr_40px] items-center gap-3 text-sm">
+                                <li key={b.name} className="grid grid-cols-[110px_1fr_42px] sm:grid-cols-[150px_1fr_46px] items-center gap-3 text-sm">
                                     <span className={b.us ? "font-semibold text-ink" : "text-ink-secondary"}>{b.name}</span>
-                                    <span className="h-2.5 rounded-full bg-black/[0.06] overflow-hidden"><span className={`block h-full rounded-full ${b.us ? "bg-ink" : "bg-black/20"}`} style={{ width: `${(b.count / Math.max(egCount, ...bars.map((x) => x.count))) * 100}%` }} /></span>
+                                    <span className="h-2.5 rounded-full bg-surface-subtle overflow-hidden">
+                                        <span
+                                            className={`block h-full rounded-full ${b.us ? "bg-cobalt" : "bg-ink/20"}`}
+                                            style={{ width: `${(b.count / Math.max(egCount, ...bars.map((x) => x.count))) * 100}%` }}
+                                        />
+                                    </span>
                                     <span className="text-right">
                                         {b.us ? (
-                                            <span className="inline-block bg-ink text-white rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums">{b.count}</span>
+                                            <span className="inline-block bg-cobalt-soft border border-cobalt/20 text-cobalt font-mono rounded-md px-2 py-0.5 text-xs font-semibold tabular-nums">
+                                                {b.count}
+                                            </span>
                                         ) : (
-                                            <span className="tabular-nums text-ink-muted">{b.count}</span>
+                                            <span className="font-mono text-xs tabular-nums text-ink-muted">{b.count}</span>
                                         )}
                                     </span>
                                 </li>
@@ -169,10 +176,10 @@ export default function ComparePage() {
                 </div>
             </section>
 
-            <section className="py-16 sm:py-20 bg-white/60 border-y border-black/5">
+            <section className="py-16 sm:py-20 bg-surface-subtle/75 border-y border-ink/[0.08]">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">What to look for</h2>
-                    <ul className="grid sm:grid-cols-2 gap-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-8">What to look for</h2>
+                    <ul className="grid sm:grid-cols-2 gap-px bg-ink/[0.08] rounded-2xl border border-ink/[0.09] overflow-hidden shadow-xs">
                         {[
                             "A free tier you can test before paying",
                             "Support for the platforms you use",
@@ -181,8 +188,10 @@ export default function ComparePage() {
                             "A clear refund policy",
                             "A price you can read before signing up",
                         ].map((t) => (
-                            <li key={t} className="flex items-start gap-2.5 bg-white rounded-2xl border border-black/10 shadow-2xs px-4 py-3.5 text-[15px]">
-                                <Check className="w-4 h-4 mt-1 shrink-0 text-emerald-600" aria-hidden="true" />
+                            <li key={t} className="flex items-start gap-3 bg-paper px-5 py-4 text-[15px] text-ink">
+                                <span className="w-5 h-5 rounded-full bg-emeraldBrand-soft text-emeraldBrand grid place-items-center shrink-0 mt-0.5">
+                                    <Check className="w-3 h-3" strokeWidth={2.75} aria-hidden="true" />
+                                </span>
                                 <span>{t}</span>
                             </li>
                         ))}
@@ -190,19 +199,19 @@ export default function ComparePage() {
                 </div>
             </section>
 
-            <section className="py-16 sm:py-20">
+            <section className="py-16 sm:py-20 bg-paper border-b border-ink/[0.08]">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
-                    <div className="space-y-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-8">Questions</h2>
+                    <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
                         {faqs.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors px-5 sm:px-6 py-4 sm:py-5 open:shadow-card">
-                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
-                                    <h3 className="text-base sm:text-lg">{f.q}</h3>
-                                    <span className="w-8 h-8 rounded-full bg-[#f7f4ee] group-open:bg-ink group-open:text-white grid place-items-center shrink-0 text-ink-muted transition-colors">
-                                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                            <details key={f.q} className="group py-4 sm:py-5">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-[17px] leading-snug group-hover:text-cobalt transition-colors">{f.q}</h3>
+                                    <span className="w-8 h-8 rounded-full bg-surface-subtle border border-ink/[0.08] text-ink-muted grid place-items-center shrink-0 transition-colors group-open:bg-surface-dark group-open:text-white group-open:border-surface-dark">
+                                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
                                     </span>
                                 </summary>
-                                <p className="mt-3 pt-3 border-t border-black/5 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pr-10 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>

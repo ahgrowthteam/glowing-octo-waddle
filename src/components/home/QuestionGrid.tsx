@@ -28,27 +28,40 @@ const WHY: Record<Kind, string> = {
 
 const none = (): Record<Kind, boolean> => ({ choice: false, multi: false, blank: false, dropdown: false, match: false, short: false });
 
-const TAG_TINT: Record<Kind, string> = {
-    choice: "#e8edfc",
-    multi: "#efe6fd",
-    blank: "#fff2c2",
-    dropdown: "#e1f3fc",
-    match: "#ffe5df",
-    short: "#dcf4da",
-};
-
-function Head({ label, kind, solved, onSolve }: { label: string; kind: Kind; solved: boolean; onSolve: (k: Kind) => void }) {
+function Head({
+    label,
+    kind,
+    solved,
+    highlightHint,
+    onSolve,
+}: {
+    label: string;
+    kind: Kind;
+    solved: boolean;
+    highlightHint?: boolean;
+    onSolve: (k: Kind) => void;
+}) {
     return (
-        <div className="flex items-center justify-between mb-4">
-            <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-ink" style={{ backgroundColor: TAG_TINT[kind] }}>{label}</span>
+        <div className="flex items-center justify-between gap-2 pb-3.5 mb-4 border-b border-ink/[0.07]">
+            <span className="inline-flex items-center rounded-md bg-surface-subtle border border-ink/[0.08] px-2.5 py-1 text-[11px] font-semibold text-ink">
+                {label}
+            </span>
             {solved ? (
-                <span className="animate-pop-in inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+                <span className="animate-pop-in inline-flex items-center gap-1 rounded-md bg-emeraldBrand-soft px-2 py-1 text-[11px] font-semibold text-emeraldBrand">
                     <Check className="w-3.5 h-3.5" aria-hidden="true" /> Solved
                 </span>
             ) : (
                 <button
-                    onClick={() => onSolve(kind)}
-                    className="inline-flex items-center gap-1 text-[11px] text-ink-muted hover:text-ink transition-colors"
+                    type="button"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onSolve(kind);
+                    }}
+                    className={`inline-flex items-center gap-1.5 min-h-[32px] rounded-md px-2.5 py-1 text-[11px] font-medium transition-colors ${
+                        highlightHint
+                            ? "bg-cobalt-soft text-cobalt border border-cobalt/20 hover:bg-cobalt hover:text-white"
+                            : "text-ink-muted hover:text-cobalt hover:bg-cobalt-soft/70"
+                    }`}
                     aria-label={`Double click to solve the ${label} example`}
                 >
                     <MousePointerClick className="w-3.5 h-3.5" aria-hidden="true" /> Double click
@@ -92,17 +105,40 @@ export default function QuestionGrid() {
     const allSolved = solvedCount === KINDS.length;
 
     const card = (isSolved: boolean) =>
-        `relative flex flex-col bg-white rounded-3xl border surface-card p-6 select-none cursor-pointer transition-all duration-200 ${
-            isSolved ? "border-emerald-500/40 bg-emerald-50/35 shadow-lift" : "border-black/10 hover:border-black/20 hover:shadow-lift hover:-translate-y-0.5"
+        `relative flex flex-col bg-paper rounded-2xl border p-5 sm:p-6 select-none cursor-pointer transition-all duration-200 ${
+            isSolved
+                ? "border-emeraldBrand/45 shadow-card ring-1 ring-emeraldBrand/15"
+                : "border-ink/[0.09] shadow-xs hover:border-cobalt/35 hover:shadow-soft"
         }`;
+
     const why = (k: Kind) => (
-        <p className={`mt-auto pt-4 text-[13px] leading-relaxed text-ink-muted transition-opacity duration-500 ${solved[k] ? "opacity-100 border-t border-black/[0.06]" : "opacity-0"}`} aria-live="polite">
-            {solved[k] ? <><span className="font-semibold text-ink-secondary">Why: </span>{WHY[k]}</> : "\u00a0"}
-        </p>
+        <div
+            className={`mt-auto pt-4 mt-5 border-t text-[13px] leading-relaxed transition-colors duration-300 ${
+                solved[k]
+                    ? "border-emeraldBrand/20 text-ink-secondary"
+                    : "border-ink/[0.06] text-ink-muted"
+            }`}
+            aria-live="polite"
+        >
+            {solved[k] ? (
+                <p className="rounded-lg bg-emeraldBrand-soft/70 border border-emeraldBrand/15 px-3 py-2 text-ink">
+                    <span className="font-semibold text-emeraldBrand">Why: </span>
+                    {WHY[k]}
+                </p>
+            ) : (
+                <p className="text-xs text-ink-muted">Double-click or tap Double click to see the explanation.</p>
+            )}
+        </div>
     );
-    const row = (on: boolean) => `flex items-center gap-3 rounded-lg px-3 py-2 transition-colors duration-300 ${on ? "bg-emerald-100" : ""}`;
+
+    const row = (on: boolean) =>
+        `flex items-center gap-3 rounded-lg px-3 py-2 transition-colors duration-300 ${
+            on ? "bg-emeraldBrand-soft text-ink font-medium" : ""
+        }`;
     const field = (on: boolean) =>
-        `select-chevron w-full rounded-lg border px-3 py-2 text-sm pointer-events-none transition-colors duration-300 ${on ? "border-emerald-500 bg-emerald-100 text-ink font-medium" : "border-black/15 bg-white text-ink-muted"}`;
+        `select-chevron w-full rounded-lg border px-3 py-2 text-sm pointer-events-none transition-colors duration-300 ${
+            on ? "border-emeraldBrand bg-emeraldBrand-soft text-ink font-medium" : "border-ink/15 bg-paper text-ink-muted"
+        }`;
 
     return (
         <section id="question-types" className="py-16 sm:py-24 scroll-mt-20">
@@ -122,22 +158,17 @@ export default function QuestionGrid() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {/* Single choice */}
                     <article className={card(solved.choice)} onDoubleClick={() => solve("choice")} aria-label="Single choice example">
-                        {!touched && (
-                            <span className="absolute -top-3 right-5 rounded-full bg-ink px-3.5 py-1 text-xs font-semibold text-white ring-2 ring-cream shadow-card">
-                                Double click
-                            </span>
-                        )}
-                        <Head label="MCQ · Single choice" kind="choice" solved={solved.choice} onSolve={solve} />
+                        <Head label="MCQ · Single choice" kind="choice" solved={solved.choice} highlightHint={!touched} onSolve={solve} />
                         <p className="font-medium text-ink mb-3">What is the derivative of f(x) = x²?</p>
                         <ul>
                             {["x", "2x", "x²", "2"].map((o, i) => (
                                 <li key={o} className={row(solved.choice && i === 1)}>
-                                    <input type="radio" readOnly checked={solved.choice && i === 1} className="w-4 h-4 accent-[#0b6bff] pointer-events-none" aria-label={o} />
+                                    <input type="radio" readOnly checked={solved.choice && i === 1} className="w-4 h-4 accent-[#3B5BDB] pointer-events-none" aria-label={o} />
                                     <span>{String.fromCharCode(65 + i)}. {o}</span>
                                 </li>
                             ))}
                         </ul>
-                                            {why("choice")}
+                        {why("choice")}
                     </article>
 
                     {/* Multi-select */}
@@ -149,35 +180,39 @@ export default function QuestionGrid() {
                                 const on = solved.multi && (i === 0 || i === 2);
                                 return (
                                     <li key={o} className={row(on)}>
-                                        <input type="checkbox" readOnly checked={on} className="w-4 h-4 accent-[#0b6bff] pointer-events-none" aria-label={o} />
+                                        <input type="checkbox" readOnly checked={on} className="w-4 h-4 accent-[#3B5BDB] pointer-events-none" aria-label={o} />
                                         <span>{String.fromCharCode(65 + i)}. {o}</span>
                                     </li>
                                 );
                             })}
                         </ul>
-                                            {why("multi")}
+                        {why("multi")}
                     </article>
 
                     {/* Fill in the blank */}
                     <article className={card(solved.blank)} onDoubleClick={() => solve("blank")} aria-label="Fill in the blank example">
                         <Head label="Fill in the blank" kind="blank" solved={solved.blank} onSolve={solve} />
-                        <div className="mx-auto mb-3 w-[130px] rounded-lg border border-black/10 bg-[#faf8f4] p-2">
+                        <div className="mx-auto mb-3 w-[136px] rounded-lg border border-ink/10 bg-surface-subtle bg-warm-grid p-2.5">
                             <svg viewBox="0 0 120 90" className="w-full" aria-label="Right triangle with legs 3 and 4">
-                                <path d="M14 76 L14 16 L94 76 Z" fill="#e9eefc" stroke="#4361ee" strokeWidth="2" />
-                                <path d="M14 66 L24 66 L24 76" fill="none" stroke="#4361ee" strokeWidth="1.5" />
-                                <text x="3" y="50" fontSize="11" fill="#111">3</text>
-                                <text x="50" y="87" fontSize="11" fill="#111">4</text>
-                                <text x="60" y="38" fontSize="11" fill="#111">c</text>
+                                <path d="M14 76 L14 16 L94 76 Z" fill="#EEF2FF" stroke="#3B5BDB" strokeWidth="2" />
+                                <path d="M14 66 L24 66 L24 76" fill="none" stroke="#3B5BDB" strokeWidth="1.5" />
+                                <text x="3" y="50" fontSize="11" fill="#101114">3</text>
+                                <text x="50" y="87" fontSize="11" fill="#101114">4</text>
+                                <text x="60" y="38" fontSize="11" fill="#101114">c</text>
                             </svg>
                         </div>
                         <p className="text-ink-secondary leading-relaxed">
                             A right triangle has legs 3 and 4. The hypotenuse c ={" "}
-                            <span className={`inline-block min-w-[64px] rounded-md border px-3 py-1 text-center align-middle transition-colors duration-300 ${solved.blank ? "border-emerald-500 bg-emerald-100 text-ink" : "border-black/20 text-transparent"}`}>
+                            <span
+                                className={`inline-block min-w-[64px] rounded-md border px-3 py-1 text-center align-middle font-mono transition-colors duration-300 ${
+                                    solved.blank ? "border-emeraldBrand bg-emeraldBrand-soft text-ink font-semibold" : "border-ink/20 text-transparent"
+                                }`}
+                            >
                                 {typed || "·"}
                             </span>
                             .
                         </p>
-                                            {why("blank")}
+                        {why("blank")}
                     </article>
 
                     {/* Dropdown select */}
@@ -203,7 +238,7 @@ export default function QuestionGrid() {
                             <option value="">Select an answer…</option>
                             {["Saturn", "Jupiter", "Neptune", "Earth"].map((o) => <option key={o} value={o}>{o}</option>)}
                         </select>
-                                            {why("dropdown")}
+                        {why("dropdown")}
                     </article>
 
                     {/* Matching */}
@@ -229,7 +264,7 @@ export default function QuestionGrid() {
                                 );
                             })}
                         </div>
-                                            {why("match")}
+                        {why("match")}
                     </article>
 
                     {/* Short written answer */}
@@ -238,31 +273,34 @@ export default function QuestionGrid() {
                         <p className="font-medium text-ink mb-3">In one sentence, what does GDP measure?</p>
                         <div
                             className={`min-h-[116px] rounded-lg border px-3 py-2.5 text-sm leading-relaxed transition-colors duration-300 ${
-                                solved.short ? "border-emerald-500 bg-emerald-50 text-ink" : "border-black/15 bg-white text-ink-muted"
+                                solved.short ? "border-emeraldBrand bg-emeraldBrand-soft/65 text-ink" : "border-ink/15 bg-surface-subtle/50 text-ink-muted"
                             }`}
                             aria-label="Answer box"
                         >
                             {shortText || "Type your answer here…"}
                         </div>
-                                            {why("short")}
+                        {why("short")}
                     </article>
                 </div>
 
                 <div className="mt-9 flex justify-center">
-                    <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-white border border-black/[0.08] surface-card px-4 py-2">
+                    <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-paper border border-ink/[0.09] surface-card px-4 py-2">
                         <div className="inline-flex items-center gap-2.5 pl-1 pr-2 text-xs font-medium text-ink-secondary" aria-live="polite">
-                            <span className="w-20 h-1.5 rounded-full bg-black/10 overflow-hidden">
-                                <span className="block h-full rounded-full bg-emerald-500 transition-all duration-300" style={{ width: `${(solvedCount / KINDS.length) * 100}%` }} />
+                            <span className="w-20 h-1.5 rounded-full bg-ink/10 overflow-hidden">
+                                <span
+                                    className="block h-full rounded-full bg-emeraldBrand transition-all duration-300"
+                                    style={{ width: `${(solvedCount / KINDS.length) * 100}%` }}
+                                />
                             </span>
-                            <span className="tabular-nums">{solvedCount} of {KINDS.length} solved</span>
+                            <span className="font-mono tabular-nums">{solvedCount} of {KINDS.length} solved</span>
                         </div>
                         {!allSolved && (
-                            <button onClick={() => KINDS.forEach(solve)} className="btn-dark px-5 py-2.5 text-sm">
+                            <button type="button" onClick={() => KINDS.forEach(solve)} className="btn-dark px-5 py-2.5 text-sm">
                                 Solve all six
                             </button>
                         )}
                         {anySolved && (
-                            <button onClick={reset} className="btn-soft px-5 py-2.5 text-sm">
+                            <button type="button" onClick={reset} className="btn-soft px-5 py-2.5 text-sm">
                                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Reset
                             </button>
                         )}

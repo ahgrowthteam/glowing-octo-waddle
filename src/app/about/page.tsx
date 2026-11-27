@@ -83,7 +83,7 @@ const facts: { label: string; value: string }[] = [
   { label: "Browsers", value: "Chrome, Edge, Brave, Arc (macOS & Windows)" },
 ];
 
-const link = "underline underline-offset-4 decoration-black/30 hover:decoration-black";
+const link = "font-medium text-ink underline underline-offset-4 decoration-ink/30 hover:text-cobalt hover:decoration-cobalt transition-colors";
 
 export default function AboutPage() {
   return (
@@ -91,26 +91,26 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
 
-      <section className="pt-12 sm:pt-16 pb-10">
+      <section className="pt-10 sm:pt-14 pb-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">About</p>
-              <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+              <p className="text-sm font-medium text-cobalt mb-3">About ExamGhost</p>
+              <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05]">
                 Built to help you study faster.
               </h1>
             </div>
-            <div className="hidden sm:block shrink-0 rounded-2xl bg-white p-1.5 border border-black/10 surface-card shadow-card mt-6">
+            <div className="self-start shrink-0 rounded-2xl bg-paper p-1.5 border border-ink/[0.09] shadow-card">
               <Image
                 src="/images/ghost/ghost_mascot_hero.jpg"
                 alt="ExamGhost mascot"
-                width={88}
-                height={88}
-                className="w-[88px] h-[88px] rounded-xl object-cover"
+                width={96}
+                height={96}
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover"
               />
             </div>
           </div>
-          <p className="text-lg sm:text-xl text-ink-secondary leading-relaxed">
+          <p className="text-lg sm:text-xl text-ink-secondary max-w-[64ch] leading-relaxed">
             ExamGhost is a Chrome extension that answers quiz and homework questions right on the page, with a
             step-by-step explanation when you want one. It is built and run by FoundryOne LLC in Albuquerque,
             New Mexico.
@@ -118,38 +118,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="pb-14 sm:pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <dl className="grid sm:grid-cols-2 gap-3">
-            {facts.map((f) => (
-              <div key={f.label} className="bg-white rounded-2xl border border-black/10 surface-card hover:border-black/20 transition-colors p-4 sm:p-5">
-                <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted mb-1">{f.label}</dt>
-                <dd className="text-[15px] font-medium text-ink">{f.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="rounded-2xl bg-paper border border-ink/[0.09] shadow-xs overflow-hidden">
+            <div className="px-5 py-3 bg-surface-subtle border-b border-ink/[0.08] flex items-center justify-between">
+              <span className="text-xs font-semibold text-ink-muted">Company &amp; product specification</span>
+              <span className="font-mono text-[11px] text-ink-muted">FoundryOne LLC</span>
+            </div>
+            <dl className="divide-y divide-ink/[0.08]">
+              {facts.map((f) => (
+                <div key={f.label} className="px-5 py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <dt className="sm:w-36 shrink-0 text-xs font-medium text-ink-muted">{f.label}</dt>
+                  <dd className="text-[15px] font-medium text-ink">{f.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-white/60 border-y border-black/5">
+      <section className="py-14 sm:py-20 bg-surface-subtle border-y border-ink/[0.08]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-5">How it works</h2>
-          <p className="text-ink-secondary leading-relaxed mb-5">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.025em] mb-4">How it works</h2>
+          <p className="text-ink-secondary max-w-[64ch] leading-relaxed mb-6">
             Install the extension, open a quiz or homework page, and double-click a question. ExamGhost reads the
             question and options, asks an AI model, and shows the answer on the page.
           </p>
-          <ul className="space-y-2.5 text-ink-secondary">
-            <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
+          <ul className="rounded-2xl bg-paper border border-ink/[0.09] divide-y divide-ink/[0.08] text-ink-secondary">
+            <li className="px-5 py-4">
               <strong className="text-ink">Three answer styles.</strong> <kbd className="kbd-key">Alt+1</kbd> quick answer, <kbd className="kbd-key">Alt+2</kbd> highlight, <kbd className="kbd-key">Alt+3</kbd> explain.
             </li>
-            <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
+            <li className="px-5 py-4">
               <strong className="text-ink">Snap-It (<kbd className="kbd-key">Alt+S</kbd>).</strong> Draw a box around a graph, diagram or image and solve that.
             </li>
-            <li className="bg-white rounded-2xl border border-black/10 px-4 py-3.5">
+            <li className="px-5 py-4">
               <strong className="text-ink">Works on 20+ platforms,</strong> including Canvas, Blackboard, Moodle, D2L Brightspace and Google Forms.
             </li>
           </ul>
-          <p className="text-ink-secondary leading-relaxed mt-5">
+          <p className="text-ink-secondary leading-relaxed mt-6">
             Want to see it first? Try the{" "}
             <Link href="/canvas-quiz-solver-free-demo" className={link}>live demo</Link>{" "}
             or read the <Link href="/faq" className={link}>FAQ</Link>. Legal details are in the{" "}
@@ -159,11 +165,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-3xl border border-black/10 surface-card p-6 sm:p-8">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-3">Use it responsibly</h2>
-            <p className="text-ink-secondary leading-relaxed">
+          <div className="rounded-r-2xl rounded-l-md bg-paper border border-ink/[0.09] border-l-4 border-l-cobalt p-6 sm:p-8 shadow-xs">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-[-0.025em] mb-3">Use it responsibly</h2>
+            <p className="text-ink-secondary max-w-[64ch] leading-relaxed">
               Schools and instructors set their own rules, and many restrict AI tools on graded work. You are
               responsible for following your institution&apos;s academic-integrity policy. ExamGhost is a study
               aid: use it to check your work, learn from the explanations and practise.

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
     darkMode: ["class"],
@@ -51,33 +52,71 @@ const config: Config = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                cream: "#fcf9f5",
-                paper: "#ffffff",
+                cream: "#FAF8F5",
+                paper: "#FFFFFF",
+                surface: {
+                    DEFAULT: "#FAF8F5",
+                    subtle: "#F3EFE8",
+                    elevated: "#FFFFFF",
+                    dark: "#101114",
+                    "dark-elevated": "#181A20",
+                },
                 ink: {
-                    DEFAULT: "#111111",
-                    secondary: "#2b2926",
-                    muted: "#6d6a63",
+                    DEFAULT: "#101114",
+                    secondary: "#2B2D33",
+                    muted: "#5E626B",
+                },
+                cobalt: {
+                    DEFAULT: "#3B5BDB",
+                    bright: "#4361EE",
+                    soft: "#EEF2FF",
+                },
+                emeraldBrand: {
+                    DEFAULT: "#0F9D68",
+                    soft: "#E6F7F0",
+                },
+                discord: {
+                    DEFAULT: "#5865F2",
+                    hover: "#4752C4",
+                    soft: "#EEF0FE",
                 },
                 peri: "#c4d0f8",
-                sky: "#bfe3f6",
+                sky: {
+                    ...colors.sky,
+                    DEFAULT: "#bfe3f6",
+                },
                 lilac: "#e2d3fa",
                 mint: "#cdeecb",
                 blush: "#ffd5cc",
-                teal: "#bfe9d9",
+                teal: {
+                    ...colors.teal,
+                    DEFAULT: "#bfe9d9",
+                },
                 yellow: {
+                    ...colors.yellow,
                     DEFAULT: "#ffd23f",
                     butter: "#ffe9a0",
                 },
             },
             fontFamily: {
-                display: ["ui-rounded", '"SF Pro Rounded"', "var(--font-nunito)", '"Quicksand"', "system-ui", "-apple-system", "sans-serif"],
-                sans: ["var(--font-inter)", "Inter", "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"],
+                display: ["var(--font-display)", '"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+                sans: ["var(--font-sans)", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+                mono: ["var(--font-mono)", '"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
             },
             borderRadius: {
-                xl: "36px",
-                lg: "26px",
-                md: "18px",
-                sm: "12px",
+                sm: "6px",
+                md: "8px",
+                lg: "12px",
+                xl: "16px",
+                "2xl": "20px",
+                "3xl": "24px",
+            },
+            boxShadow: {
+                hairline: "0 0 0 1px rgba(16, 17, 20, 0.08)",
+                xs: "0 1px 2px rgba(16, 17, 20, 0.04)",
+                soft: "0 1px 2px rgba(16, 17, 20, 0.04), 0 8px 24px rgba(16, 17, 20, 0.06)",
+                card: "0 1px 2px rgba(16, 17, 20, 0.04), 0 10px 28px rgba(16, 17, 20, 0.05)",
+                lift: "0 2px 6px rgba(16, 17, 20, 0.06), 0 20px 48px rgba(16, 17, 20, 0.12)",
             },
             keyframes: {
                 "accordion-down": {

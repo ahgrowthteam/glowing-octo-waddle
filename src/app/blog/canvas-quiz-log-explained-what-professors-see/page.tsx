@@ -10,12 +10,10 @@ import LmsServiceFaq, { LmsFaqItem } from '@/components/LmsServiceFaq';
 import {
     ShieldCheck,
     CheckCircle2,
-    ArrowRight,
+    ArrowUpRight,
     Terminal,
     BookOpen,
-    Layers,
     AlertTriangle,
-    Sparkles,
     Keyboard,
 } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
@@ -64,9 +62,9 @@ const canvasQuizLogConfig: any = {
     h1Highlight: 'What Professors Actually See',
     aeoSummary: (
         <>
-            <strong className="text-[#1a1a1a]">What Professors See in a Canvas Quiz Log:</strong> When an instructor clicks{' '}
-            <strong className="text-[#1a1a1a]">&ldquo;View Log&rdquo;</strong> on your Canvas quiz attempt, Canvas displays a chronological timeline of{' '}
-            <strong className="text-[#1a1a1a]">five exact event types</strong>: (1) <span className="text-emerald-700 font-semibold">Sessionstarted</span>, (2) <span className="text-blue-700 font-semibold">Viewed (and possibly read) a question</span>, (3) <span className="text-emerald-700 font-semibold">Answered a question</span>, (4) <span className="text-red-600 font-semibold">Stopped viewing the Canvas quiz-taking page</span> (triggered by <code className="font-mono text-[13px] bg-white px-1.5 py-0.5 rounded border border-gray-200">window.blur</code>), and (5) <span className="text-amber-700 font-semibold">Resumed</span>. Canvas does <strong className="text-[#1a1a1a]">not</strong> record your screen, webcam, or clipboard text without a separate proctoring tool.
+            <strong className="text-ink">What Professors See in a Canvas Quiz Log:</strong> When an instructor clicks{' '}
+            <strong className="text-ink">&ldquo;View Log&rdquo;</strong> on your Canvas quiz attempt, Canvas displays a chronological timeline of{' '}
+            <strong className="text-ink">five exact event types</strong>: (1) <span className="text-emerald-700 font-semibold">Session started</span>, (2) <span className="text-blue-700 font-semibold">Viewed (and possibly read) a question</span>, (3) <span className="text-emerald-700 font-semibold">Answered a question</span>, (4) <span className="text-red-600 font-semibold">Stopped viewing the Canvas quiz-taking page</span> (triggered by <code className="font-mono text-[13px] bg-white px-1.5 py-0.5 rounded border border-ink/[0.1]">window.blur</code>), and (5) <span className="text-amber-700 font-semibold">Resumed</span>. Canvas does <strong className="text-ink">not</strong> record your screen, webcam, or clipboard text without a separate proctoring tool.
         </>
     ),
     videoDemo: {
@@ -174,7 +172,7 @@ const canvasQuizLogConfig: any = {
                 prompt:
                     'Many TikTok videos claim Canvas only checks if you left the tab every 15 or 30 seconds. How does Canvas’s actual JavaScript listener work in the source code?',
                 options: [
-                    'It only checks once every 30 seconds, so switching tabs for 10 seconds is invisible.',
+                    'It only checks once every 30 seconds, so switching tabs for 10 seconds is never recorded.',
                     'It uses instant event listeners (window.onblur and document.onvisibilitychange) that record the exact millisecond you leave the tab—even for 1 second—and batches those timestamped events to the server.',
                     'It only logs tab switches if you press Ctrl+C.',
                     'It only works on Safari.',
@@ -209,16 +207,16 @@ const canvasQuizLogConfig: any = {
                 title: '1. Why the "Under 15 Seconds" Tab-Switch Trick Is a Myth',
                 desc: (
                     <>
-                        A viral myth claims that switching tabs for less than 15 seconds won&apos;t show up on Canvas. In reality, Canvas flushes its event buffer every 15–60 seconds, <strong className="text-[#1a1a1a]">but the <code className="font-mono text-[12px] bg-gray-100 px-1.5 py-0.5 rounded">window.blur</code> listener fires at 0.001 seconds</strong> and stores the event in the queue. Only staying inside the tab prevents <code className="font-mono text-[12px] bg-gray-100 px-1.5 py-0.5 rounded">page_blurred</code>.
+                        A viral myth claims that switching tabs for less than 15 seconds won&apos;t show up on Canvas. In reality, Canvas flushes its event buffer every 15–60 seconds, <strong className="text-ink">but the <code className="font-mono text-[12px] bg-surface-subtle px-1.5 py-0.5 rounded">window.blur</code> listener fires at 0.001 seconds</strong> and stores the event in the queue. Only staying inside the tab prevents <code className="font-mono text-[12px] bg-surface-subtle px-1.5 py-0.5 rounded">page_blurred</code>.
                     </>
                 ),
-                image: '/images/ghost/ghost_card_stealth.jpg',
+                image: '/images/ghost/ghost_scene_modes.jpg',
             },
             {
                 title: '2. Keeping "Viewed" and "Answered" Events Natural',
                 desc: (
                     <>
-                        In a normal student log, <strong className="text-[#1a1a1a]">&ldquo;Viewed (and possibly read) a question&rdquo;</strong> is followed 35 to 90 seconds later by <strong className="text-[#1a1a1a]">&ldquo;Answered a question&rdquo;</strong>. Double-clicking one question at a time with ExamGhost produces this exact green-check sequence without a single red focus warning.
+                        In a normal student log, <strong className="text-ink">&ldquo;Viewed (and possibly read) a question&rdquo;</strong> is followed 35 to 90 seconds later by <strong className="text-ink">&ldquo;Answered a question&rdquo;</strong>. Double-clicking one question at a time with ExamGhost produces this exact green-check sequence without a single red focus warning.
                     </>
                 ),
                 image: '/images/ghost/ghost_card_hud.jpg',
@@ -227,7 +225,7 @@ const canvasQuizLogConfig: any = {
                 title: '3. Solving Diagrams In-Page Without Saving Images',
                 desc: (
                     <>
-                        Right-clicking a quiz diagram and clicking <em>&ldquo;Save image as...&rdquo;</em> opens the OS file dialog, which immediately steals focus from Chrome and logs <strong className="text-[#1a1a1a]">&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</strong>. Pressing <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-200 rounded text-[11px] font-mono">Alt+S</kbd> crops the diagram inside the viewport with zero OS dialogs.
+                        Right-clicking a quiz diagram and clicking <em>&ldquo;Save image as...&rdquo;</em> opens the OS file dialog, which immediately steals focus from Chrome and logs <strong className="text-ink">&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</strong>. Pressing <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-200 rounded text-[11px] font-mono">Alt+S</kbd> crops the diagram inside the viewport with zero OS dialogs.
                     </>
                 ),
                 image: '/images/ghost/ghost_card_vision.jpg',
@@ -312,17 +310,17 @@ const canvasQuizLogConfig: any = {
         ],
     },
     customSection: (
-        <div className="rounded-[34px] bg-white border border-black/10 p-6 sm:p-10 shadow-lift space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/8 pb-4">
+        <div className="rounded-3xl bg-paper border border-ink/[0.09] p-6 sm:p-10 shadow-card space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/[0.08] pb-4">
                 <div className="space-y-1">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800">
-                        Side-by-Side Instructor View Comparison
+                    <span className="text-xs font-semibold text-emerald-800">
+                        Side-by-side instructor view comparison
                     </span>
-                    <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink">
+                    <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-[-0.025em] text-ink">
                         What Your Professor Actually Sees: Tab-Switching vs. ExamGhost 1-by-1
                     </h3>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-[#faf8f5] border border-black/10 font-mono text-xs font-bold text-ink">
+                <span className="px-3 py-1 rounded-full bg-surface-subtle border border-ink/[0.09] font-mono text-xs font-semibold text-ink">
                     /courses/:id/quizzes/:id/submissions/:id/log
                 </span>
             </div>
@@ -330,15 +328,15 @@ const canvasQuizLogConfig: any = {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Left: Flagged Tab-Switcher Log */}
                 <div className="rounded-2xl bg-[#fff1f2]/60 border border-rose-200 p-5 space-y-3">
-                    <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider text-rose-800">
-                            ✗ Student Using ChatGPT Tab / Split-Screen
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <span className="text-xs font-bold text-rose-800">
+                            ✗ Student using ChatGPT tab / split-screen
                         </span>
                         <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 font-mono text-[11px] font-bold">
                             4 Red Blur Flags
                         </span>
                     </div>
-                    <div className="rounded-xl bg-white border border-rose-200/80 divide-y divide-black/6 font-mono text-xs">
+                    <div className="rounded-xl bg-paper border border-rose-200/80 divide-y divide-ink/[0.08] font-mono text-xs">
                         <div className="p-2.5 flex items-center justify-between">
                             <span className="text-ink-muted">00:02</span>
                             <span className="text-ink">Session started</span>
@@ -363,16 +361,16 @@ const canvasQuizLogConfig: any = {
                 </div>
 
                 {/* Right: Spotless ExamGhost 1-by-1 Log */}
-                <div className="rounded-2xl bg-[#cdeecb]/35 border border-emerald-300 p-5 space-y-3">
-                    <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider text-emerald-950">
-                            ✓ Student Using ExamGhost (1-by-1 Double-Click)
+                <div className="rounded-2xl bg-emeraldBrand-soft/70 border border-emeraldBrand/25 p-5 space-y-3">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <span className="text-xs font-bold text-emerald-950">
+                            ✓ Student using ExamGhost (1-by-1 double-click)
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#cdeecb] text-emerald-950 font-mono text-[11px] font-bold">
-                            0 Blur Flags • 100% Green
+                        <span className="px-2.5 py-0.5 rounded-full bg-emeraldBrand-soft text-emerald-950 border border-emeraldBrand/25 font-mono text-[11px] font-bold">
+                            0 Blur Flags · 100% Green
                         </span>
                     </div>
-                    <div className="rounded-xl bg-white border border-emerald-300/80 divide-y divide-black/6 font-mono text-xs">
+                    <div className="rounded-xl bg-paper border border-emeraldBrand/25 divide-y divide-ink/[0.08] font-mono text-xs">
                         <div className="p-2.5 flex items-center justify-between">
                             <span className="text-ink-muted">00:02</span>
                             <span className="text-ink">Session started</span>
@@ -420,7 +418,7 @@ const canvasQuizLogConfig: any = {
                 eventCode: 'Webcam, Microphone & Desktop Screen Capture',
                 whenTriggered: 'Taking a standard Canvas Classic or New Quiz in Chrome',
                 professorView: 'CANNOT SEE your screen or webcam unless Honorlock/Proctorio/Respondus is installed',
-                examghostStatus: 'Invisible Mode (Alt+1) 1px Dot',
+                examghostStatus: 'Quick Mode (Alt+1) 1px Dot',
                 isSafe: true,
             },
             {
@@ -550,18 +548,18 @@ const canvasQuizLogConfig: any = {
         'Clear, source-code-verified answers to the most common student questions about Canvas Quiz Action Logs.',
     faqs: [
         {
-            category: 'stealth',
+            category: 'focus',
             q: 'Do Canvas Quiz Logs automatically grade or deduct points when "Stopped viewing" appears?',
             a: (
                 <>
-                    No. Canvas does not automatically deduct points for <code className="font-mono text-[12px] bg-gray-100 px-1.5 py-0.5 rounded">page_blurred</code> events. Instead, the red <strong className="text-[#1a1a1a]">&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</strong> warnings are shown to the professor or TA when they manually inspect your quiz log. Keeping zero red warnings ensures your log never raises suspicion during an audit.
+                    No. Canvas does not automatically deduct points for <code className="font-mono text-[12px] bg-gray-100 px-1.5 py-0.5 rounded">page_blurred</code> events. Instead, the red <strong className="text-ink">&ldquo;Stopped viewing the Canvas quiz-taking page&rdquo;</strong> warnings are shown to the professor or TA when they manually inspect your quiz log. Keeping zero red warnings ensures your log never raises suspicion during an audit.
                 </>
             ),
             plainTextAnswer:
                 'No. Canvas does not automatically deduct points for page_blurred events. Instead, the red Stopped viewing the Canvas quiz-taking page warnings are shown to the professor or TA when they manually inspect your quiz log. Keeping zero red warnings ensures your log never raises suspicion during an audit.',
         },
         {
-            category: 'stealth',
+            category: 'focus',
             q: 'Can a professor see if I use a second phone or iPad not connected to Canvas?',
             a: (
                 <>
@@ -572,7 +570,7 @@ const canvasQuizLogConfig: any = {
                 'Canvas only monitors the browser tab running the quiz. However, looking up complex multi-part STEM equations or graphs on a phone takes several minutes of typing and often leads to idle timeouts on the computer. ExamGhost solves the exact question on your computer screen in seconds via a simple double-click without leaving the tab.',
         },
         {
-            category: 'stealth',
+            category: 'focus',
             q: 'Does Canvas log when I copy text (Ctrl+C) on a quiz?',
             a: (
                 <>
@@ -598,7 +596,7 @@ const canvasQuizLogConfig: any = {
             q: 'Does Canvas New Quizzes have the same Action Log as Classic Quizzes?',
             a: (
                 <>
-                    Yes. In <strong className="text-[#1a1a1a]">Canvas New Quizzes</strong>, the instructor clicks <strong className="text-[#1a1a1a]">Moderate → View Log</strong> to see an <strong className="text-[#1a1a1a]">Activity Log</strong> that records the exact same events: session start, question viewed/answered timestamps, and whether the student navigated away from the assessment window.
+                    Yes. In <strong className="text-ink">Canvas New Quizzes</strong>, the instructor clicks <strong className="text-ink">Moderate → View Log</strong> to see an <strong className="text-ink">Activity Log</strong> that records the exact same events: session start, question viewed/answered timestamps, and whether the student navigated away from the assessment window.
                 </>
             ),
             plainTextAnswer:
@@ -620,7 +618,7 @@ const canvasQuizLogConfig: any = {
             q: 'What does a 100% clean Canvas Quiz Log look like?',
             a: (
                 <>
-                    A clean log contains <strong className="text-[#1a1a1a]">Session started</strong> at 00:00, followed by steady <strong className="text-[#1a1a1a]">Viewed</strong> and <strong className="text-[#1a1a1a]">Answered</strong> entries spaced 35 to 120 seconds apart, and <strong className="text-[#1a1a1a]">zero red &ldquo;Stopped viewing&rdquo; lines</strong>. That is the exact log pattern produced when you solve questions one by one with ExamGhost.
+                    A clean log contains <strong className="text-ink">Session started</strong> at 00:00, followed by steady <strong className="text-ink">Viewed</strong> and <strong className="text-ink">Answered</strong> entries spaced 35 to 120 seconds apart, and <strong className="text-ink">zero red &ldquo;Stopped viewing&rdquo; lines</strong>. That is the exact log pattern produced when you solve questions one by one with ExamGhost.
                 </>
             ),
             plainTextAnswer:
@@ -631,7 +629,7 @@ const canvasQuizLogConfig: any = {
             q: 'Can I test the Canvas Quiz Action Log simulator right now?',
             a: (
                 <>
-                    Yes! Scroll up to the interactive <strong className="text-[#1a1a1a]">Canvas Instructor Action Log Simulator</strong> on this page to see how each event is logged and test ExamGhost&apos;s one-by-one double-click and <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-200 rounded text-[11px] font-mono">Alt+S</kbd> workflow.
+                    Yes! Scroll up to the interactive <strong className="text-ink">Canvas Instructor Action Log Simulator</strong> on this page to see how each event is logged and test ExamGhost&apos;s one-by-one double-click and <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-200 rounded text-[11px] font-mono">Alt+S</kbd> workflow.
                 </>
             ),
             plainTextAnswer:
@@ -663,7 +661,7 @@ const canvasQuizLogConfig: any = {
             {
                 '@type': 'SoftwareApplication',
                 '@id': 'https://www.examghost.com/blog/canvas-quiz-log-explained-what-professors-see#software',
-                name: 'ExamGhost Canvas Quiz Log Stealth Solver',
+                name: 'ExamGhost Canvas Quiz Solver',
                 applicationCategory: 'EducationalApplication',
                 operatingSystem: 'Chrome, Edge, Brave, Arc, macOS, Windows',
                 offers: {
@@ -830,9 +828,19 @@ export default function CanvasQuizLogExplainedPage() {
 
     const mascotImgSrc = config.architecture.mascotImage || '/images/ghost/ghost_privacy.jpg';
     const isBlogArticle = config.slug.startsWith('blog/');
+    const jumpLinks = [
+        { href: '#explainer-film', label: '16s 2.5D Explainer Film' },
+        ...(config.questionTypesSection ? [{ href: '#supported-question-types', label: `${config.platformShort} Question Types` }] : []),
+        ...(config.telemetryForensicsSection ? [{ href: '#instructor-telemetry-audit', label: 'Instructor Log Forensics' }] : []),
+        ...(config.howToSection ? [{ href: '#step-by-step-workflow', label: '1-by-1 Solve Workflow' }] : []),
+        { href: '#platform-architecture', label: 'Shadow DOM Architecture' },
+        { href: '#benchmark-matrix', label: 'Accuracy Benchmark' },
+        ...(config.courseModulesSection ? [{ href: '#supported-courses', label: 'Courses & Textbooks' }] : []),
+        { href: '#lms-faq', label: 'Technical FAQ' },
+    ];
 
     return (
-        <div className="min-h-screen bg-cream text-ink font-sans selection:bg-emerald-500/20">
+        <div className="min-h-screen bg-cream text-ink font-sans page-glow">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(enrichedJsonLd) }}
@@ -841,10 +849,10 @@ export default function CanvasQuizLogExplainedPage() {
 
             <main id="main-content">
                 {/* Breadcrumb Navigation */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-3">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-3">
                     <nav aria-label="Breadcrumb" className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium text-ink-muted">
                         <div className="flex items-center gap-2">
-                            <Link prefetch={false} href="/" className="hover:text-ink transition-colors">
+                            <Link prefetch={false} href="/" className="hover:text-cobalt transition-colors">
                                 Home
                             </Link>
                             <span>/</span>
@@ -853,66 +861,67 @@ export default function CanvasQuizLogExplainedPage() {
                                     <Link
                                         prefetch={false}
                                         href="/compare-canvas-hack-extensions"
-                                        className="hover:text-ink transition-colors"
+                                        className="hover:text-cobalt transition-colors"
                                     >
                                         Security &amp; Telemetry Research
                                     </Link>
                                     <span>/</span>
-                                    <span className="text-ink font-bold">{config.platformName}</span>
+                                    <span className="text-ink font-semibold">{config.platformName}</span>
                                 </>
                             ) : (
                                 <>
                                     <Link
                                         prefetch={false}
                                         href="/canvas-quiz-solver-free-demo"
-                                        className="hover:text-ink transition-colors"
+                                        className="hover:text-cobalt transition-colors"
                                     >
                                         Live Sandbox
                                     </Link>
                                     <span>/</span>
-                                    <span className="text-ink font-bold">{config.platformName} Solver</span>
+                                    <span className="text-ink font-semibold">{config.platformName} Solver</span>
                                 </>
                             )}
                         </div>
-                        <div className="inline-flex items-center gap-2 text-[11px] font-semibold text-ink-muted bg-white/80 px-3 py-1 rounded-full border border-black/8">
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                            <span>Reviewed by the ExamGhost team • Updated Oct 2026</span>
+                        <div className="inline-flex items-center gap-2 text-[11px] font-medium text-ink-muted bg-paper px-3 py-1 rounded-full border border-ink/[0.09]">
+                            <ShieldCheck className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
+                            <span>Reviewed by the ExamGhost team · Updated Oct 2026</span>
                         </div>
                     </nav>
                 </div>
 
                 {/* 1. HERO + BESPOKE 3-SCENE FRAMER MOTION DEMO */}
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
-                    <div className="max-w-3xl mb-8 sm:mb-10 space-y-4">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-xs font-bold text-ink shadow-2xs">
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
+                    <div className="max-w-[72ch] mb-8 sm:mb-10 space-y-4">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-paper border border-ink/[0.1] text-xs font-semibold text-ink">
                             <span
                                 className="w-2 h-2 rounded-full animate-pulse"
                                 style={{ backgroundColor: config.heroDotColor }}
+                                aria-hidden="true"
                             />
                             <span>{config.heroBadge}</span>
                         </div>
 
-                        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink leading-[1.06]">
+                        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-[-0.03em] text-ink leading-[1.06]">
                             {config.h1Title}{' '}
-                            <span className="text-ink-muted font-normal">{config.h1Highlight}</span>
+                            <span className="text-ink-muted font-medium">{config.h1Highlight}</span>
                         </h1>
 
                         {isBlogArticle && (
-                            <div className="flex flex-wrap items-center gap-3 pt-1 pb-1 text-xs text-ink-muted">
-                                <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-black/8 shadow-2xs">
+                            <div className="flex flex-wrap items-center gap-2.5 pt-1 pb-1 text-xs text-ink-muted">
+                                <div className="inline-flex items-center gap-2 bg-paper px-3 py-1.5 rounded-full border border-ink/[0.09]">
                                     <img
                                         src="/images/ghost/ghost_mascot_hero.jpg"
                                         alt="ExamGhost"
                                         width={22}
                                         height={22}
-                                        className="w-5 h-5 rounded-full object-cover border border-black/10"
+                                        className="w-5 h-5 rounded-full object-cover border border-ink/[0.1]"
                                     />
                                     <span className="font-semibold text-ink">The ExamGhost team</span>
                                 </div>
-                                <span>•</span>
+                                <span>·</span>
                                 <span>Reviewed against Instructure Canvas Open-Source Repo</span>
-                                <span>•</span>
-                                <time dateTime="2026-10-23" className="font-semibold text-emerald-800 bg-[#cdeecb]/60 px-2.5 py-0.5 rounded-full">
+                                <span>·</span>
+                                <time dateTime="2026-10-23" className="font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full">
                                     Updated Oct 23, 2026
                                 </time>
                             </div>
@@ -927,7 +936,7 @@ export default function CanvasQuizLogExplainedPage() {
                                 href="https://chromewebstore.google.com/detail/curio-ai-tutor-homework-h/dejkoepiachnbgjjooocnnmampldmpde"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-dark px-6 py-3 text-sm font-bold shadow-soft hover:shadow-lift"
+                                className="btn-dark px-6 py-3 text-sm font-semibold shadow-soft hover:shadow-lift"
                             >
                                 <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
                                 <span>Add to Chrome — 5 Free Solves / Day</span>
@@ -938,24 +947,23 @@ export default function CanvasQuizLogExplainedPage() {
                                 rel="noopener noreferrer"
                                 className="btn-soft px-5 py-3 text-sm font-semibold"
                             >
-                                <FaDiscord className="w-4 h-4 text-[#5865F2]" aria-hidden="true" />
+                                <FaDiscord className="w-4 h-4 text-discord" aria-hidden="true" />
                                 <span>Join 15,000+ Students on Discord</span>
                             </a>
                         </div>
 
-                        {/* Modern Stealth Hotkeys & Pricing Invariants */}
+                        {/* Keyboard Shortcuts & Pricing Invariants */}
                         <div className="pt-2 space-y-2">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-ink-muted">
-                                <span className="font-semibold text-ink">Stealth Hotkeys:</span>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">Double-Click</kbd>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">Alt+S</kbd>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">Alt+1</kbd>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">Alt+2</kbd>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">Alt+3</kbd>
-                                <kbd className="px-2 py-0.5 rounded bg-black/6 border border-black/10 font-mono text-[11px] text-ink font-semibold">⌘+Shift+U</kbd>
+                                <span className="font-semibold text-ink">Keyboard Shortcuts:</span>
+                                <kbd className="kbd-key">Double-Click</kbd>
+                                <kbd className="kbd-key">Alt+S</kbd>
+                                <kbd className="kbd-key">Alt+1</kbd>
+                                <kbd className="kbd-key">Alt+2</kbd>
+                                <kbd className="kbd-key">Alt+3</kbd>
                             </div>
                             <div className="text-xs text-ink-muted font-medium">
-                                <span className="text-emerald-700 font-bold">5 Free Solves / Day ($0 · Auto-refills every 24h · No credit card required)</span> · $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
+                                <span className="text-emeraldBrand font-semibold">5 Free Solves / Day ($0 · Auto-refills every 24h · No credit card required)</span> · $19/mo · $99/yr ($8.25/mo) · $199 Lifetime
                             </div>
                         </div>
                     </div>
@@ -963,561 +971,539 @@ export default function CanvasQuizLogExplainedPage() {
                     {/* Embedded Bespoke 3-Scene Framer Motion Video Demo */}
                     <CanvasQuizLogMotionDemo />
 
-                    {/* Quick Jump Navigation Bar */}
-                    <div className="mt-8 flex flex-wrap items-center gap-2 pt-2">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted mr-1">
-                            On This Page:
+                    {/* Mobile / Tablet Quick Jump Navigation Bar */}
+                    <nav aria-label="On this page" className="lg:hidden mt-8 flex flex-wrap items-center gap-2 pt-2">
+                        <span className="text-xs font-semibold text-ink-muted mr-1">
+                            On this page:
                         </span>
-                        <a
-                            href="#explainer-film"
-                            className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                        >
-                            16s 2.5D Explainer Film
-                        </a>
-                        {config.questionTypesSection && (
+                        {jumpLinks.map((item) => (
                             <a
-                                href="#supported-question-types"
-                                className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
+                                key={item.href}
+                                href={item.href}
+                                className="px-3 py-1.5 rounded-full bg-paper hover:bg-surface-dark hover:text-white border border-ink/[0.1] text-xs font-medium text-ink transition-colors"
                             >
-                                {config.platformShort} Question Types
+                                {item.label}
                             </a>
-                        )}
-                        {config.telemetryForensicsSection && (
-                            <a
-                                href="#instructor-telemetry-audit"
-                                className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                            >
-                                Instructor Log Forensics
-                            </a>
-                        )}
-                        {config.howToSection && (
-                            <a
-                                href="#step-by-step-workflow"
-                                className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                            >
-                                1-by-1 Solve Workflow
-                            </a>
-                        )}
-                        <a
-                            href="#platform-architecture"
-                            className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                        >
-                            Shadow DOM Architecture
-                        </a>
-                        <a
-                            href="#benchmark-matrix"
-                            className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                        >
-                            Accuracy Benchmark
-                        </a>
-                        {config.courseModulesSection && (
-                            <a
-                                href="#supported-courses"
-                                className="px-3 py-1.5 rounded-full bg-white hover:bg-ink hover:text-white border border-black/10 text-xs font-semibold text-ink transition-all shadow-2xs"
-                            >
-                                Courses &amp; Textbooks
-                            </a>
-                        )}
-                    </div>
+                        ))}
+                    </nav>
                 </section>
 
                 {/* 2. DEEP BESPOKE PLATFORM CONTENT + ARCHITECTURE + BENCHMARK + FAQ */}
-                <section className="border-t border-black/5 bg-cream py-20 sm:py-28 px-4 sm:px-6">
-                    <div className="max-w-6xl mx-auto space-y-20 sm:space-y-28">
-                        {/* Unique 16s 2.5D Motion Explainer MP4 Film */}
-                        <div id="explainer-film" className="scroll-mt-28">
-                            <LmsExplainerFilmCard
-                                slug={config.slug}
-                                platformName={config.platformName}
-                                heroDotColor={config.heroDotColor}
-                            />
-                        </div>
+                <section className="border-t border-ink/[0.08] bg-cream py-16 sm:py-24 px-4 sm:px-6">
+                    <div className="max-w-7xl mx-auto grid lg:grid-cols-[220px_minmax(0,1fr)] gap-10 lg:gap-12 items-start">
+                        <aside className="hidden lg:block sticky top-24">
+                            <p className="text-xs font-semibold text-ink-muted mb-3">On this page</p>
+                            <nav aria-label="On this page" className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
+                                {jumpLinks.map((item) => (
+                                    <a
+                                        key={item.href}
+                                        href={item.href}
+                                        className="block py-2.5 text-xs font-medium text-ink-secondary hover:text-cobalt transition-colors"
+                                    >
+                                        {item.label}
+                                    </a>
+                                ))}
+                            </nav>
+                        </aside>
 
-                        {/* BESPOKE SECTION A: SUPPORTED QUESTION TYPES & DOM MATRIX */}
-                        {config.questionTypesSection && (
-                            <div id="supported-question-types" className="scroll-mt-28 space-y-8">
-                                <div className="max-w-3xl space-y-3">
-                                    <p className="eyebrow">
-                                        <span
-                                            className="w-2 h-2 rounded-full"
-                                            style={{ backgroundColor: config.heroDotColor }}
-                                        />
-                                        <span>{config.questionTypesSection.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink leading-[1.08]">
-                                        {config.questionTypesSection.heading}
-                                    </h2>
-                                    <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                        {config.questionTypesSection.lead}
-                                    </p>
-                                </div>
+                        <div className="min-w-0 space-y-16 sm:space-y-24">
+                            {/* Unique 16s 2.5D Motion Explainer MP4 Film */}
+                            <div id="explainer-film" className="scroll-mt-24">
+                                <LmsExplainerFilmCard
+                                    slug={config.slug}
+                                    platformName={config.platformName}
+                                    heroDotColor={config.heroDotColor}
+                                />
+                            </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                                    {config.questionTypesSection.items.map((qItem: any, idx: number) => (
-                                        <article
-                                            key={idx}
-                                            className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card flex flex-col justify-between space-y-4 hover:border-black/20 transition-all"
-                                        >
-                                            <div className="space-y-3">
-                                                <div className="flex items-center justify-between gap-2 flex-wrap">
-                                                    <span className="px-2.5 py-1 rounded-lg bg-[#faf8f5] border border-black/8 font-mono text-[11px] font-bold text-ink">
-                                                        {qItem.codeTag}
-                                                    </span>
-                                                    <span
-                                                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                                                            qItem.triggerMethod === 'Alt+S Vision OCR'
-                                                                ? 'bg-[#e2d3fa]/60 text-purple-950 border border-purple-900/15'
-                                                                : qItem.triggerMethod === 'Hybrid DOM + OCR'
-                                                                ? 'bg-[#c4d0f8]/60 text-blue-950 border border-blue-900/15'
-                                                                : 'bg-[#cdeecb] text-emerald-950 border border-emerald-900/15'
-                                                        }`}
-                                                    >
-                                                        {qItem.triggerMethod}
-                                                    </span>
+                            {/* BESPOKE SECTION A: SUPPORTED QUESTION TYPES & DOM MATRIX */}
+                            {config.questionTypesSection && (
+                                <div id="supported-question-types" className="scroll-mt-24 space-y-8">
+                                    <div className="max-w-[72ch] space-y-3">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt">
+                                            <span
+                                                className="w-2 h-2 rounded-full"
+                                                style={{ backgroundColor: config.heroDotColor }}
+                                                aria-hidden="true"
+                                            />
+                                            <span>{config.questionTypesSection.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.025em] text-ink leading-[1.08]">
+                                            {config.questionTypesSection.heading}
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                            {config.questionTypesSection.lead}
+                                        </p>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                                        {config.questionTypesSection.items.map((qItem: any, idx: number) => (
+                                            <article
+                                                key={idx}
+                                                className="rounded-2xl bg-paper border border-ink/[0.09] p-6 shadow-card flex flex-col justify-between space-y-4 hover:border-ink/20 transition-colors"
+                                            >
+                                                <div className="space-y-3">
+                                                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                                                        <span className="px-2.5 py-1 rounded-md bg-surface-subtle border border-ink/[0.08] font-mono text-[11px] font-semibold text-ink">
+                                                            {qItem.codeTag}
+                                                        </span>
+                                                        <span
+                                                            className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${
+                                                                qItem.triggerMethod === 'Alt+S Vision OCR'
+                                                                    ? 'bg-[#e2d3fa]/60 text-purple-950 border border-purple-900/15'
+                                                                    : qItem.triggerMethod === 'Hybrid DOM + OCR'
+                                                                    ? 'bg-cobalt-soft text-cobalt border border-cobalt/20'
+                                                                    : 'bg-emeraldBrand-soft text-emerald-950 border border-emeraldBrand/20'
+                                                            }`}
+                                                        >
+                                                            {qItem.triggerMethod}
+                                                        </span>
+                                                    </div>
+
+                                                    <h3 className="font-display text-lg font-bold text-ink leading-snug">
+                                                        {qItem.name}
+                                                    </h3>
+
+                                                    <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
+                                                        {qItem.description}
+                                                    </p>
                                                 </div>
 
-                                                <h3 className="font-display text-lg font-bold text-ink leading-snug">
-                                                    {qItem.name}
-                                                </h3>
-
-                                                <p className="text-xs sm:text-[13px] text-ink-secondary leading-relaxed">
-                                                    {qItem.description}
-                                                </p>
-                                            </div>
-
-                                            <div className="pt-3 border-t border-black/6 flex items-center justify-between text-xs">
-                                                <span className="font-semibold text-ink-muted">Verified Accuracy</span>
-                                                <span className="font-mono font-bold text-emerald-800 bg-[#cdeecb]/60 px-2.5 py-0.5 rounded-full">
-                                                    {qItem.accuracy}
-                                                </span>
-                                            </div>
-                                        </article>
-                                    ))}
+                                                <div className="pt-3 border-t border-ink/[0.08] flex items-center justify-between text-xs">
+                                                    <span className="font-medium text-ink-muted">Verified Accuracy</span>
+                                                    <span className="font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft px-2.5 py-0.5 rounded-full">
+                                                        {qItem.accuracy}
+                                                    </span>
+                                                </div>
+                                            </article>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
 
-                        {/* 3D Ghost Architecture Showcase Card */}
-                        <div
-                            id="platform-architecture"
-                            className="scroll-mt-28 bg-white rounded-[36px] p-7 sm:p-10 md:p-14 border border-black/10 shadow-lift"
-                        >
-                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-                                <div className="lg:col-span-5">
-                                    <div
-                                        className="rounded-3xl p-6 sm:p-8 border flex flex-col items-center justify-center text-center relative overflow-hidden group"
-                                        style={{
-                                            backgroundColor: config.architecture.cardBg,
-                                            borderColor: config.architecture.cardBorder,
-                                        }}
-                                    >
-                                        <div className="w-48 h-48 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border border-black/8 shadow-soft bg-cream relative mb-4">
-                                            <img
-                                                src={mascotImgSrc}
-                                                alt={`${config.platformName} Closed Shadow DOM Stealth Mascot`}
-                                                width={208}
-                                                height={208}
-                                                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                            {/* 3D Ghost Architecture Showcase Card */}
+                            <div
+                                id="platform-architecture"
+                                className="scroll-mt-24 bg-paper rounded-3xl p-6 sm:p-10 md:p-12 border border-ink/[0.09] shadow-lift"
+                            >
+                                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+                                    <div className="lg:col-span-5">
+                                        <div
+                                            className="rounded-2xl p-6 sm:p-8 border flex flex-col items-center justify-center text-center relative overflow-hidden group"
+                                            style={{
+                                                backgroundColor: config.architecture.cardBg,
+                                                borderColor: config.architecture.cardBorder,
+                                            }}
+                                        >
+                                            <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-ink/[0.08] shadow-soft bg-cream relative mb-4">
+                                                <img
+                                                    src={mascotImgSrc}
+                                                    alt={`${config.platformName} Closed Shadow DOM Mascot`}
+                                                    width={192}
+                                                    height={192}
+                                                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            </div>
+                                            <div className="font-display font-bold text-xl text-ink mb-1">
+                                                {config.architecture.mascotTitle}
+                                            </div>
+                                            <p className="text-xs text-ink-muted max-w-[270px]">
+                                                {config.architecture.mascotSubtitle}
+                                            </p>
+
+                                            <div className="mt-5 flex flex-wrap gap-2 justify-center">
+                                                {config.architecture.pills.map((pill: string) => (
+                                                    <span
+                                                        key={pill}
+                                                        className="text-xs font-medium px-3 py-1 rounded-full bg-paper text-ink border border-ink/[0.09] shadow-xs"
+                                                    >
+                                                        {pill}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="lg:col-span-7 space-y-5">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt">
+                                            <span
+                                                className="w-2 h-2 rounded-full"
+                                                style={{ backgroundColor: config.heroDotColor }}
+                                                aria-hidden="true"
                                             />
-                                        </div>
-                                        <div className="font-display font-bold text-xl text-ink mb-1">
-                                            {config.architecture.mascotTitle}
-                                        </div>
-                                        <p className="text-xs text-ink-muted max-w-[270px]">
-                                            {config.architecture.mascotSubtitle}
+                                            <span>{config.architecture.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.025em] text-ink leading-[1.08]">
+                                            {config.architecture.heading}
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-ink-secondary max-w-[68ch] leading-relaxed">
+                                            {config.architecture.lead}
                                         </p>
 
-                                        <div className="mt-5 flex flex-wrap gap-2 justify-center">
-                                            {config.architecture.pills.map((pill: string) => (
-                                                <span
-                                                    key={pill}
-                                                    className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-ink border border-black/8 shadow-xs"
+                                        <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
+                                            {config.architecture.pillars.map((pillar: any) => (
+                                                <article
+                                                    key={pillar.title}
+                                                    className="py-4 flex items-start gap-3.5"
                                                 >
-                                                    {pill}
-                                                </span>
+                                                    <img
+                                                        src={pillar.image}
+                                                        alt={pillar.title}
+                                                        width={44}
+                                                        height={44}
+                                                        className="w-11 h-11 rounded-xl object-cover border border-ink/[0.1] shrink-0 mt-0.5"
+                                                    />
+                                                    <div className="min-w-0 flex-1 space-y-1">
+                                                        <h3 className="font-display font-bold text-sm sm:text-base text-ink leading-snug break-words">
+                                                            {pillar.title}
+                                                        </h3>
+                                                        <p className="text-xs sm:text-[13px] text-ink-muted leading-relaxed break-words">
+                                                            {pillar.desc}
+                                                        </p>
+                                                    </div>
+                                                </article>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div className="lg:col-span-7 space-y-5">
-                                    <p className="eyebrow">
-                                        <span
-                                            className="w-2 h-2 rounded-full"
-                                            style={{ backgroundColor: config.heroDotColor }}
-                                        />
-                                        <span>{config.architecture.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.08]">
-                                        {config.architecture.heading}
-                                    </h2>
-                                    <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                        {config.architecture.lead}
-                                    </p>
+                            {/* BESPOKE SECTION B: INSTRUCTOR TELEMETRY & LOG FORENSIC AUDIT */}
+                            {config.telemetryForensicsSection && (
+                                <div id="instructor-telemetry-audit" className="scroll-mt-24 space-y-6">
+                                    <div className="max-w-[72ch] space-y-3">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt">
+                                            <Terminal className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{config.telemetryForensicsSection.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-[-0.025em] leading-[1.08]">
+                                            {config.telemetryForensicsSection.heading}
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                            {config.telemetryForensicsSection.lead}
+                                        </p>
+                                    </div>
 
-                                    <div className="grid grid-cols-1 gap-3.5 pt-2">
-                                        {config.architecture.pillars.map((pillar: any) => (
+                                    <div className="dark-surface rounded-3xl bg-surface-dark bg-dark-grid text-cream border border-white/10 surface-dark-card overflow-hidden">
+                                        <div className="px-6 py-4 bg-white/[0.04] border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
+                                            <div className="flex items-center gap-2.5">
+                                                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" aria-hidden="true" />
+                                                <span className="font-mono text-xs font-semibold text-white">
+                                                    {config.telemetryForensicsSection.logTableTitle}
+                                                </span>
+                                            </div>
+                                            <span className="text-[11px] font-mono text-emerald-300 bg-emerald-400/10 border border-emerald-400/25 px-3 py-1 rounded-full">
+                                                {config.telemetryForensicsSection.citationNote}
+                                            </span>
+                                        </div>
+
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[680px]">
+                                                <thead>
+                                                    <tr className="border-b border-white/10 bg-white/[0.02] text-white/70 font-mono text-xs">
+                                                        <th className="py-3.5 px-6 font-medium">Telemetry / Log Event</th>
+                                                        <th className="py-3.5 px-6 font-medium">What Triggers It</th>
+                                                        <th className="py-3.5 px-6 font-medium">What Instructor Sees</th>
+                                                        <th className="py-3.5 px-6 font-medium">ExamGhost 1-by-1 Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-white/10">
+                                                    {config.telemetryForensicsSection.events.map((ev: any, eIdx: number) => (
+                                                        <tr key={eIdx} className="hover:bg-white/[0.02]">
+                                                            <td className="py-4 px-6 font-mono font-semibold text-emerald-300">
+                                                                {ev.eventCode}
+                                                            </td>
+                                                            <td className="py-4 px-6 text-white/80">{ev.whenTriggered}</td>
+                                                            <td className="py-4 px-6 text-white/75">{ev.professorView}</td>
+                                                            <td className="py-4 px-6">
+                                                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-400/15 text-emerald-300 border border-emerald-400/30">
+                                                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" aria-hidden="true" />
+                                                                    <span>{ev.examghostStatus}</span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div className="p-6 sm:p-7 bg-white/[0.04] border-t border-white/10 flex flex-col sm:flex-row items-start gap-4">
+                                            <div className="w-10 h-10 rounded-xl bg-amber-300/15 border border-amber-300/30 flex items-center justify-center shrink-0 mt-0.5">
+                                                <AlertTriangle className="w-5 h-5 text-amber-300" aria-hidden="true" />
+                                            </div>
+                                            <div className="space-y-1.5 max-w-[68ch]">
+                                                <h3 className="font-display font-bold text-base text-white">
+                                                    {config.telemetryForensicsSection.whyNoSolveAllTitle}
+                                                </h3>
+                                                <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
+                                                    {config.telemetryForensicsSection.whyNoSolveAllBody}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* BESPOKE SECTION C: 4-STEP OPERATIONAL WORKFLOW (HOW-TO) */}
+                            {config.howToSection && (
+                                <div id="step-by-step-workflow" className="scroll-mt-24 space-y-8">
+                                    <div className="max-w-[72ch] space-y-3">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt">
+                                            <Keyboard className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{config.howToSection.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.025em] text-ink leading-[1.08]">
+                                            {config.howToSection.heading}
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                            {config.howToSection.lead}
+                                        </p>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        {config.howToSection.steps.map((step: any) => (
                                             <article
-                                                key={pillar.title}
-                                                className="p-4 sm:p-5 rounded-2xl bg-[#faf8f5] border border-black/6 flex items-start gap-3.5"
+                                                key={step.stepNumber}
+                                                className="rounded-2xl bg-paper border border-ink/[0.09] p-6 sm:p-7 shadow-card flex flex-col justify-between space-y-4"
                                             >
-                                                <img
-                                                    src={pillar.image}
-                                                    alt={pillar.title}
-                                                    width={44}
-                                                    height={44}
-                                                    className="w-11 h-11 rounded-xl object-cover border border-black/10 shrink-0 mt-0.5"
-                                                />
-                                                <div className="min-w-0 flex-1 space-y-1">
-                                                    <h3 className="font-display font-bold text-sm sm:text-base text-ink leading-snug break-words">
-                                                        {pillar.title}
+                                                <div className="space-y-3">
+                                                    <div className="flex items-center justify-between gap-3">
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-dark text-white font-display font-bold text-sm">
+                                                            {step.stepNumber}
+                                                        </span>
+                                                        <span className="px-3 py-1 rounded-full bg-surface-subtle border border-ink/[0.09] font-mono text-xs font-semibold text-ink">
+                                                            {step.shortcutBadge}
+                                                        </span>
+                                                    </div>
+                                                    <h3 className="font-display text-lg sm:text-xl font-bold text-ink leading-snug">
+                                                        {step.title}
                                                     </h3>
-                                                    <p className="text-xs sm:text-[13px] text-ink-muted leading-relaxed break-words">
-                                                        {pillar.desc}
+                                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                                        {step.description}
                                                     </p>
                                                 </div>
                                             </article>
                                         ))}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            )}
 
-                        {/* BESPOKE SECTION B: INSTRUCTOR TELEMETRY & LOG FORENSIC AUDIT */}
-                        {config.telemetryForensicsSection && (
-                            <div id="instructor-telemetry-audit" className="scroll-mt-28 space-y-6">
-                                <div className="max-w-3xl space-y-3">
-                                    <p className="eyebrow">
-                                        <Terminal className="w-3.5 h-3.5 text-ink" />
-                                        <span>{config.telemetryForensicsSection.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-tight leading-[1.08]">
-                                        {config.telemetryForensicsSection.heading}
-                                    </h2>
-                                    <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                        {config.telemetryForensicsSection.lead}
-                                    </p>
+                            {/* OPTIONAL FREEFORM CUSTOM SECTION */}
+                            {config.customSection && <div>{config.customSection}</div>}
+
+                            {/* macOS Window Benchmark Table */}
+                            <div id="benchmark-matrix" className="scroll-mt-24 space-y-6">
+                                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                                    <div className="max-w-[68ch]">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt mb-2">
+                                            <span className="w-2 h-2 rounded-full bg-ink" aria-hidden="true" />
+                                            <span>{config.benchmark.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-[-0.025em]">
+                                            {config.benchmark.heading}
+                                        </h2>
+                                    </div>
+                                    <Link
+                                        prefetch={false}
+                                        href="/compare-canvas-hack-extensions"
+                                        className="btn-soft px-4 py-2 text-xs font-semibold"
+                                    >
+                                        <span>Compare all 57 extensions</span>
+                                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                    </Link>
                                 </div>
 
-                                <div className="rounded-[32px] bg-[#141413] text-[#faf8f5] border border-black/20 shadow-lift overflow-hidden">
-                                    <div className="px-6 py-4 bg-white/5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
-                                        <div className="flex items-center gap-2.5">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-[#34d399]" />
-                                            <span className="font-mono text-xs font-bold tracking-wide text-white">
-                                                {config.telemetryForensicsSection.logTableTitle}
+                                <div className="rounded-2xl bg-paper border border-ink/[0.09] shadow-card overflow-hidden">
+                                    <div className="bg-surface-subtle border-b border-ink/[0.08] px-5 py-3.5 flex flex-wrap items-center justify-between gap-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-ink/10 inline-block" aria-hidden="true" />
+                                            <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-ink/10 inline-block" aria-hidden="true" />
+                                            <span className="w-3 h-3 rounded-full bg-[#28c840] border border-ink/10 inline-block" aria-hidden="true" />
+                                            <span className="text-xs font-semibold text-ink ml-2 font-mono">
+                                                {config.benchmark.windowTitle}
                                             </span>
                                         </div>
-                                        <span className="text-[11px] font-mono text-[#cdeecb] bg-[#cdeecb]/10 border border-[#cdeecb]/25 px-3 py-1 rounded-full">
-                                            {config.telemetryForensicsSection.citationNote}
+                                        <span className="text-[11px] font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full">
+                                            {config.benchmark.windowBadge}
                                         </span>
                                     </div>
 
                                     <div className="overflow-x-auto">
                                         <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[680px]">
                                             <thead>
-                                                <tr className="border-b border-white/10 bg-white/[0.02] text-white/70 font-mono text-[11px] uppercase tracking-wider">
-                                                    <th className="py-3.5 px-6">Telemetry / Log Event</th>
-                                                    <th className="py-3.5 px-6">What Triggers It</th>
-                                                    <th className="py-3.5 px-6">What Instructor Sees</th>
-                                                    <th className="py-3.5 px-6">ExamGhost 1-by-1 Status</th>
+                                                <tr className="border-b border-ink/[0.08] bg-surface-subtle/60 text-ink font-display">
+                                                    <th className="py-4 px-6 font-bold">
+                                                        {config.platformShort} Capability / Telemetry Vector
+                                                    </th>
+                                                    <th className="py-4 px-6 font-bold bg-emeraldBrand-soft/60">
+                                                        <span className="inline-flex items-center gap-1.5">
+                                                            <ShieldCheck
+                                                                className="w-4 h-4 text-emeraldBrand"
+                                                                aria-hidden="true"
+                                                            />
+                                                            <span>ExamGhost (In-Page AI)</span>
+                                                        </span>
+                                                    </th>
+                                                    <th className="py-4 px-6 font-semibold text-ink-secondary">
+                                                        ChatGPT Tab-Switching
+                                                    </th>
+                                                    <th className="py-4 px-6 font-semibold text-ink-secondary">
+                                                        Legacy Sidebar Extensions
+                                                    </th>
                                                 </tr>
                                             </thead>
-                                            <tbody className="divide-y divide-white/10">
-                                                {config.telemetryForensicsSection.events.map((ev: any, eIdx: number) => (
-                                                    <tr key={eIdx} className="hover:bg-white/[0.02]">
-                                                        <td className="py-4 px-6 font-mono font-bold text-[#cdeecb]">
-                                                            {ev.eventCode}
+                                            <tbody className="divide-y divide-ink/[0.08]">
+                                                {config.benchmark.rows.map((row: any, rIdx: number) => (
+                                                    <tr key={rIdx}>
+                                                        <td className="py-4 px-6 font-semibold text-ink">
+                                                            {row.capability}
                                                         </td>
-                                                        <td className="py-4 px-6 text-white/80">{ev.whenTriggered}</td>
-                                                        <td className="py-4 px-6 text-white/75">{ev.professorView}</td>
-                                                        <td className="py-4 px-6">
-                                                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#cdeecb]/15 text-[#cdeecb] border border-[#cdeecb]/30">
-                                                                <CheckCircle2 className="w-3.5 h-3.5 text-[#34d399] shrink-0" />
-                                                                <span>{ev.examghostStatus}</span>
+                                                        <td className="py-4 px-6 font-semibold text-ink bg-emeraldBrand-soft/25">
+                                                            <span className="inline-flex items-center gap-1.5 text-emerald-900">
+                                                                <CheckCircle2
+                                                                    className="w-4 h-4 text-emeraldBrand shrink-0"
+                                                                    aria-hidden="true"
+                                                                />
+                                                                <span>{row.examghost}</span>
                                                             </span>
                                                         </td>
+                                                        <td className="py-4 px-6 text-ink-muted">{row.chatgpt}</td>
+                                                        <td className="py-4 px-6 text-ink-muted">{row.sidebar}</td>
                                                     </tr>
                                                 ))}
                                             </tbody>
                                         </table>
                                     </div>
-
-                                    <div className="p-6 sm:p-7 bg-white/[0.04] border-t border-white/10 flex flex-col sm:flex-row items-start gap-4">
-                                        <div className="w-10 h-10 rounded-2xl bg-[#fde68a]/20 border border-[#fde68a]/40 flex items-center justify-center shrink-0 mt-0.5">
-                                            <AlertTriangle className="w-5 h-5 text-[#fde68a]" />
-                                        </div>
-                                        <div className="space-y-1.5">
-                                            <h3 className="font-display font-bold text-base text-white">
-                                                {config.telemetryForensicsSection.whyNoSolveAllTitle}
-                                            </h3>
-                                            <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
-                                                {config.telemetryForensicsSection.whyNoSolveAllBody}
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                        )}
 
-                        {/* BESPOKE SECTION C: 4-STEP OPERATIONAL WORKFLOW (HOW-TO) */}
-                        {config.howToSection && (
-                            <div id="step-by-step-workflow" className="scroll-mt-28 space-y-8">
-                                <div className="max-w-3xl space-y-3">
-                                    <p className="eyebrow">
-                                        <Keyboard className="w-3.5 h-3.5 text-ink" />
-                                        <span>{config.howToSection.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink leading-[1.08]">
-                                        {config.howToSection.heading}
-                                    </h2>
-                                    <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                        {config.howToSection.lead}
-                                    </p>
-                                </div>
+                            {/* BESPOKE SECTION D: TOP UNIVERSITY COURSES, TEXTBOOKS & MODULES COVERED */}
+                            {config.courseModulesSection && (
+                                <div id="supported-courses" className="scroll-mt-24 space-y-8">
+                                    <div className="max-w-[72ch] space-y-3">
+                                        <p className="inline-flex items-center gap-2 text-sm font-medium text-cobalt">
+                                            <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <span>{config.courseModulesSection.eyebrow}</span>
+                                        </p>
+                                        <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-[-0.025em] leading-[1.08]">
+                                            {config.courseModulesSection.heading}
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+                                            {config.courseModulesSection.lead}
+                                        </p>
+                                    </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                    {config.howToSection.steps.map((step: any) => (
-                                        <article
-                                            key={step.stepNumber}
-                                            className="rounded-[28px] bg-white border border-black/10 p-6 sm:p-7 shadow-card flex flex-col justify-between space-y-4"
-                                        >
-                                            <div className="space-y-3">
-                                                <div className="flex items-center justify-between gap-3">
-                                                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-ink text-white font-display font-bold text-sm">
-                                                        {step.stepNumber}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        {config.courseModulesSection.modules.map((mod: any, mIdx: number) => (
+                                            <article
+                                                key={mIdx}
+                                                className="rounded-2xl bg-paper border border-ink/[0.09] p-6 shadow-card space-y-3"
+                                            >
+                                                <div className="flex items-center justify-between gap-2 flex-wrap">
+                                                    <span className="text-xs font-semibold text-ink-muted">
+                                                        {mod.department}
                                                     </span>
-                                                    <span className="px-3 py-1 rounded-full bg-[#faf8f5] border border-black/10 font-mono text-xs font-bold text-ink">
-                                                        {step.shortcutBadge}
+                                                    <span className="px-2.5 py-0.5 rounded-full bg-surface-subtle border border-ink/[0.09] font-mono text-[11px] font-semibold text-ink">
+                                                        {mod.courseCodes}
                                                     </span>
                                                 </div>
-                                                <h3 className="font-display text-lg sm:text-xl font-bold text-ink leading-snug">
-                                                    {step.title}
+                                                <h3 className="font-display text-base sm:text-lg font-bold text-ink">
+                                                    {mod.textbooksOrModules}
                                                 </h3>
                                                 <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                                    {step.description}
+                                                    {mod.keyChallengeSolved}
                                                 </p>
-                                            </div>
-                                        </article>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* OPTIONAL FREEFORM CUSTOM SECTION */}
-                        {config.customSection && <div>{config.customSection}</div>}
-
-                        {/* macOS Window Benchmark Table */}
-                        <div id="benchmark-matrix" className="scroll-mt-28 space-y-6">
-                            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                                <div>
-                                    <p className="eyebrow mb-2">
-                                        <span className="w-2 h-2 rounded-full bg-ink" />
-                                        <span>{config.benchmark.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-tight">
-                                        {config.benchmark.heading}
-                                    </h2>
-                                </div>
-                                <Link
-                                    prefetch={false}
-                                    href="/compare-canvas-hack-extensions"
-                                    className="btn-soft px-4 py-2 text-xs font-semibold"
-                                >
-                                    <span>Compare all 57 extensions</span>
-                                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                                </Link>
-                            </div>
-
-                            <div className="rounded-[32px] bg-white border border-black/10 shadow-card overflow-hidden">
-                                <div className="bg-[#f7f5f0] border-b border-black/6 px-5 py-3.5 flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block" />
-                                        <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block" />
-                                        <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block" />
-                                        <span className="text-xs font-bold text-ink ml-2">
-                                            {config.benchmark.windowTitle}
-                                        </span>
+                                            </article>
+                                        ))}
                                     </div>
-                                    <span className="text-[11px] font-semibold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
-                                        {config.benchmark.windowBadge}
-                                    </span>
+                                </div>
+                            )}
+
+                            {/* Study & Homework AI Workspace Showcase */}
+                            <StudyAiHubShowcase compact />
+
+                            {/* Two-Card Bento Hub */}
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+                                <div className="lg:col-span-6 rounded-3xl bg-cobalt-soft/60 border border-cobalt/20 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <span className="text-xs font-semibold text-cobalt">
+                                                20+ Supported Platforms
+                                            </span>
+                                            <img
+                                                src="/images/ghost/ghost_card_lms.jpg"
+                                                alt="Supported University LMS Platforms"
+                                                width={40}
+                                                height={40}
+                                                className="w-10 h-10 rounded-xl object-cover border border-ink/[0.1] shadow-xs"
+                                            />
+                                        </div>
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                            Explore other LMS &amp; STEM homework guides
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                            One extension works across your entire university schedule—switch seamlessly between LMS portals and STEM labs:
+                                        </p>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2 text-xs">
+                                        {ALL_LMS_LINKS.filter((item) => item.href !== `/${config.slug}`).map((item) => (
+                                            <Link
+                                                prefetch={false}
+                                                key={item.href}
+                                                href={item.href}
+                                                className="px-3 py-1.5 rounded-full bg-paper hover:bg-surface-dark hover:text-white border border-ink/[0.09] text-ink font-medium transition-colors"
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
 
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[680px]">
-                                        <thead>
-                                            <tr className="border-b border-black/8 bg-[#faf8f5] text-ink font-display">
-                                                <th className="py-4 px-6 font-bold">
-                                                    {config.platformShort} Capability / Telemetry Vector
-                                                </th>
-                                                <th className="py-4 px-6 font-bold bg-[#cdeecb]/35">
-                                                    <span className="inline-flex items-center gap-1.5">
-                                                        <ShieldCheck
-                                                            className="w-4 h-4 text-emerald-700"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <span>ExamGhost (In-Page AI)</span>
-                                                    </span>
-                                                </th>
-                                                <th className="py-4 px-6 font-semibold text-ink-secondary">
-                                                    ChatGPT Tab-Switching
-                                                </th>
-                                                <th className="py-4 px-6 font-semibold text-ink-secondary">
-                                                    Legacy Sidebar Extensions
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-black/6">
-                                            {config.benchmark.rows.map((row: any, rIdx: number) => (
-                                                <tr key={rIdx}>
-                                                    <td className="py-4 px-6 font-semibold text-ink">
-                                                        {row.capability}
-                                                    </td>
-                                                    <td className="py-4 px-6 font-semibold text-ink bg-[#cdeecb]/15">
-                                                        <span className="inline-flex items-center gap-1.5 text-emerald-900">
-                                                            <CheckCircle2
-                                                                className="w-4 h-4 text-emerald-600 shrink-0"
-                                                                aria-hidden="true"
-                                                            />
-                                                            <span>{row.examghost}</span>
-                                                        </span>
-                                                    </td>
-                                                    <td className="py-4 px-6 text-ink-muted">{row.chatgpt}</td>
-                                                    <td className="py-4 px-6 text-ink-muted">{row.sidebar}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                <div className="lg:col-span-6 rounded-3xl bg-[#e2d3fa]/40 border border-[#e2d3fa] p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <span className="text-xs font-semibold text-ink-secondary">
+                                                2026 Extension Teardowns
+                                            </span>
+                                            <img
+                                                src="/images/ghost/ghost_card_proctor.jpg"
+                                                alt="Extension Security Comparisons"
+                                                width={40}
+                                                height={40}
+                                                className="w-10 h-10 rounded-xl object-cover border border-ink/[0.1] shadow-xs"
+                                            />
+                                        </div>
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
+                                            Side-by-side accuracy &amp; architecture teardowns
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                                            See how ExamGhost’s Closed Shadow DOM and dual-model AI routing compare against 50+ legacy quiz extensions:
+                                        </p>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2 text-xs">
+                                        {ALL_COMPETITOR_LINKS.map((item) => (
+                                            <Link
+                                                prefetch={false}
+                                                key={item.href}
+                                                href={item.href}
+                                                className="px-3 py-1.5 rounded-full bg-paper hover:bg-surface-dark hover:text-white border border-ink/[0.09] text-ink font-medium transition-colors"
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* Interactive Category-Filtered FAQ */}
+                            <LmsServiceFaq
+                                platformName={config.platformShort}
+                                subtitle={config.faqSubtitle}
+                                faqs={config.faqs}
+                            />
                         </div>
-
-                        {/* BESPOKE SECTION D: TOP UNIVERSITY COURSES, TEXTBOOKS & MODULES COVERED */}
-                        {config.courseModulesSection && (
-                            <div id="supported-courses" className="scroll-mt-28 space-y-8">
-                                <div className="max-w-3xl space-y-3">
-                                    <p className="eyebrow">
-                                        <BookOpen className="w-3.5 h-3.5 text-ink" />
-                                        <span>{config.courseModulesSection.eyebrow}</span>
-                                    </p>
-                                    <h2 className="font-display text-2xl sm:text-4xl font-bold text-ink tracking-tight leading-[1.08]">
-                                        {config.courseModulesSection.heading}
-                                    </h2>
-                                    <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                                        {config.courseModulesSection.lead}
-                                    </p>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                    {config.courseModulesSection.modules.map((mod: any, mIdx: number) => (
-                                        <article
-                                            key={mIdx}
-                                            className="rounded-[28px] bg-white border border-black/10 p-6 shadow-card space-y-3"
-                                        >
-                                            <div className="flex items-center justify-between gap-2 flex-wrap">
-                                                <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
-                                                    {mod.department}
-                                                </span>
-                                                <span className="px-2.5 py-0.5 rounded-full bg-[#faf8f5] border border-black/10 font-mono text-[11px] font-bold text-ink">
-                                                    {mod.courseCodes}
-                                                </span>
-                                            </div>
-                                            <h3 className="font-display text-base sm:text-lg font-bold text-ink">
-                                                {mod.textbooksOrModules}
-                                            </h3>
-                                            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                                {mod.keyChallengeSolved}
-                                            </p>
-                                        </article>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Study & Homework AI Workspace Showcase */}
-                        <StudyAiHubShowcase compact />
-
-                        {/* Two-Card Pastel Bento Hub */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
-                            <div className="lg:col-span-6 rounded-[32px] bg-[#c4d0f8]/45 border border-[#c4d0f8] p-6 sm:p-8 flex flex-col justify-between space-y-5">
-                                <div className="space-y-3">
-                                    <div className="flex items-center justify-between gap-3">
-                                        <span className="text-[11px] font-bold uppercase tracking-wider text-ink/70">
-                                            20+ Supported Platforms
-                                        </span>
-                                        <img
-                                            src="/images/ghost/ghost_card_lms.jpg"
-                                            alt="Supported University LMS Platforms"
-                                            width={40}
-                                            height={40}
-                                            className="w-10 h-10 rounded-2xl object-cover border border-black/10 shadow-xs"
-                                        />
-                                    </div>
-                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                        Explore other LMS &amp; STEM homework guides
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        One extension works across your entire university schedule—switch seamlessly between LMS portals and STEM labs:
-                                    </p>
-                                </div>
-
-                                <div className="flex flex-wrap gap-2 text-xs">
-                                    {ALL_LMS_LINKS.filter((item) => item.href !== `/${config.slug}`).map((item) => (
-                                        <Link
-                                            prefetch={false}
-                                            key={item.href}
-                                            href={item.href}
-                                            className="px-3 py-1.5 rounded-full bg-white/90 hover:bg-ink hover:text-white border border-black/8 text-ink font-semibold shadow-2xs transition-all"
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="lg:col-span-6 rounded-[32px] bg-[#e2d3fa]/45 border border-[#e2d3fa] p-6 sm:p-8 flex flex-col justify-between space-y-5">
-                                <div className="space-y-3">
-                                    <div className="flex items-center justify-between gap-3">
-                                        <span className="text-[11px] font-bold uppercase tracking-wider text-ink/70">
-                                            2026 Extension Teardowns
-                                        </span>
-                                        <img
-                                            src="/images/ghost/ghost_card_proctor.jpg"
-                                            alt="Extension Security Comparisons"
-                                            width={40}
-                                            height={40}
-                                            className="w-10 h-10 rounded-2xl object-cover border border-black/10 shadow-xs"
-                                        />
-                                    </div>
-                                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink">
-                                        Side-by-side accuracy &amp; stealth teardowns
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                                        See how ExamGhost’s Closed Shadow DOM and dual-model AI routing compare against 50+ legacy quiz extensions:
-                                    </p>
-                                </div>
-
-                                <div className="flex flex-wrap gap-2 text-xs">
-                                    {ALL_COMPETITOR_LINKS.map((item) => (
-                                        <Link
-                                            prefetch={false}
-                                            key={item.href}
-                                            href={item.href}
-                                            className="px-3 py-1.5 rounded-full bg-white/90 hover:bg-ink hover:text-white border border-black/8 text-ink font-semibold shadow-2xs transition-all"
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Interactive Category-Filtered FAQ */}
-                        <LmsServiceFaq
-                            platformName={config.platformShort}
-                            subtitle={config.faqSubtitle}
-                            faqs={config.faqs}
-                        />
                     </div>
                 </section>
             </main>
