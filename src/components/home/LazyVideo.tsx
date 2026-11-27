@@ -24,6 +24,11 @@ export default function LazyVideo({
     const [load, setLoad] = useState(false);
     const [failed, setFailed] = useState(false);
     const [ready, setReady] = useState(!defer);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        setVisible(false);
+    }, [src]);
 
     // Above-the-fold videos wait until the page has loaded and gone idle, and skip entirely for
     // visitors who ask for reduced motion or data saving. The fallback graphic stays instead.
@@ -70,7 +75,7 @@ export default function LazyVideo({
     const video = failed ? null : (
         <video
             ref={ref}
-            className={fallback ? `absolute inset-0 ${className}` : className}
+            className={fallback ? `absolute inset-0 transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} ${className}` : className}
             src={load && ready ? src : undefined}
             poster={poster}
             muted
@@ -79,6 +84,7 @@ export default function LazyVideo({
             autoPlay
             preload="none"
             aria-label={label}
+            onLoadedData={() => setVisible(true)}
             onError={() => setFailed(true)}
         />
     );

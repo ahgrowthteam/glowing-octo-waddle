@@ -64,7 +64,8 @@ export interface PlatformDemoConfig {
     getTelemetry: (progress: number) => TelemetryState;
   };
   scene1: {
-    stealthBadge: string;
+    focusBadge?: string;
+    [extra: string]: unknown;
     courseHeader: string;
     points: string;
     prompt: React.ReactNode;
@@ -134,7 +135,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
   }
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-4 dark-surface">
       <MotionDemoFrame
         title={config.title}
         domainBadge={config.domainBadge}
@@ -167,7 +168,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
               className="space-y-4"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-[11px] font-mono text-rose-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="text-[11px] font-mono text-rose-400 font-semibold flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5 text-rose-500" />
                   {scene0.warningBadge}
                 </span>
@@ -248,9 +249,9 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
               className="space-y-4"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-[11px] font-mono text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="text-[11px] font-mono text-emerald-400 font-semibold flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  {scene1.stealthBadge}
+                  {scene1.focusBadge ?? String(Object.entries(scene1).find(([k]) => k.endsWith('Badge'))?.[1] ?? 'ExamGhost Focus Shield Active')}
                 </span>
                 <span className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold">
                   0 Blur Events · 100% Focus Shield
@@ -332,7 +333,7 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
               className="space-y-4"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-[11px] font-mono text-indigo-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="text-[11px] font-mono text-indigo-400 font-semibold flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
                   {scene2.hubTitle}
                 </span>
@@ -343,11 +344,13 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
 
               {/* Model Tabs Header */}
               <div className="rounded-2xl bg-white/[0.04] border border-white/10 p-4 sm:p-5">
-                <div className="flex items-center gap-2 pb-3 mb-3 border-b border-white/10 overflow-x-auto">
+                <div role="tablist" aria-label="Study AI reasoning models" className="flex items-center gap-2 pb-3 mb-3 border-b border-white/10 overflow-x-auto">
                   <button
                     type="button"
+                    role="tab"
+                    aria-selected={activeModelTab === 'claude'}
                     onClick={() => setActiveModelTab('claude')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
+                    className={`min-h-[36px] px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
                       activeModelTab === 'claude'
                         ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm'
                         : 'text-slate-400 hover:text-slate-200'
@@ -358,8 +361,10 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   </button>
                   <button
                     type="button"
+                    role="tab"
+                    aria-selected={activeModelTab === 'chatgpt'}
                     onClick={() => setActiveModelTab('chatgpt')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
+                    className={`min-h-[36px] px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
                       activeModelTab === 'chatgpt'
                         ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm'
                         : 'text-slate-400 hover:text-slate-200'
@@ -370,8 +375,10 @@ export function BasePlatformMotionDemo({ config }: { config: PlatformDemoConfig 
                   </button>
                   <button
                     type="button"
+                    role="tab"
+                    aria-selected={activeModelTab === 'deepseek'}
                     onClick={() => setActiveModelTab('deepseek')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
+                    className={`min-h-[36px] px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
                       activeModelTab === 'deepseek'
                         ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm'
                         : 'text-slate-400 hover:text-slate-200'
@@ -464,7 +471,7 @@ export function CanvasLmsQuizMotionDemo() {
           : { speedGrader: '0 window.blur flags · Quiz in progress', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Focus Shield Active · Closed Shadow DOM',
+      focusBadge: 'ExamGhost Focus Shield Active · Closed Shadow DOM',
       courseHeader: 'BIO 204 · Cell Biology Exam · Question 18 of 50',
       points: '3.0 Points',
       prompt: (
@@ -482,7 +489,7 @@ export function CanvasLmsQuizMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click (0.3s)', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · Focus Shield Active · 100% In-Page',
@@ -566,7 +573,7 @@ export function BlackboardQuizMotionDemo() {
           : { speedGrader: '0 Access-Log Flags · Assessment in drawer', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'Blackboard Ultra Shield Active · Closed Shadow DOM',
+      focusBadge: 'Blackboard Ultra Shield Active · Closed Shadow DOM',
       courseHeader: 'ECON 101 · Principles of Macroeconomics · Question 12',
       points: '5.0 Points',
       prompt: (
@@ -584,7 +591,7 @@ export function BlackboardQuizMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click In-Drawer', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+2' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 Access-Log Flags · In-Drawer Shield Active · 100% In-Page',
@@ -668,7 +675,7 @@ export function MoodleQuizMotionDemo() {
           : { speedGrader: 'mdl_quiz_attempt_steps: normal dwell', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Closed Shadow DOM · 0 Moodle DOM Mutation',
+      focusBadge: 'ExamGhost Closed Shadow DOM · 0 Moodle DOM Mutation',
       courseHeader: 'CS 340 · Database Systems Midterm · Question 7 of 25',
       points: '4.0 Points',
       prompt: (
@@ -686,7 +693,7 @@ export function MoodleQuizMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click .que', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option C', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option C', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · Natural mdl_quiz step pacing · Clean',
@@ -770,7 +777,7 @@ export function D2LBrightspaceQuizMotionDemo() {
           : { speedGrader: '0 Event-Log Flags · Daylight Active', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Daylight Shield · iframe#quiz_start_frame_auto',
+      focusBadge: 'ExamGhost Daylight Shield · iframe#quiz_start_frame_auto',
       courseHeader: 'CS 2510 · Data Structures & Algorithms · Question 14 of 30',
       points: '4.0 Points',
       prompt: (
@@ -788,7 +795,7 @@ export function D2LBrightspaceQuizMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click Daylight', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 Event-Log Flags · Daylight Shield Active · Continuous Focus',
@@ -875,7 +882,7 @@ export function McgrawHillAleksQuizMotionDemo() {
           : { speedGrader: '0 blur flags · Connect session active', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Vision OCR · ezto.mheducation.com Active',
+      focusBadge: 'ExamGhost Vision OCR · ezto.mheducation.com Active',
       courseHeader: 'ACCT 201 · Financial Accounting · General Journal Adjusting Entries',
       points: '10.0 Points',
       prompt: (
@@ -893,7 +900,7 @@ export function McgrawHillAleksQuizMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Alt+S Vision OCR Snip', tag: 'snip' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'solve' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · EZTO Ledger Verified · 100% In-Page',
@@ -980,7 +987,7 @@ export function PearsonMyLabMasteringDemo() {
           : { speedGrader: '0 window.blur flags · TDX Viewport', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost TDX Formatter Active · Closed Shadow DOM',
+      focusBadge: 'ExamGhost TDX Formatter Active · Closed Shadow DOM',
       courseHeader: 'MATH 1152 · Calculus II Exam · Question 9 of 24',
       points: '4.0 Points',
       prompt: (
@@ -1001,7 +1008,7 @@ export function PearsonMyLabMasteringDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click Prompt', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'TDX Fraction Formatter', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled 1/6 (Correct!)', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled 1/6 (Correct!)', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · TDX Focus Maintained · Fraction Verified',
@@ -1085,7 +1092,7 @@ export function CengageWebAssignDemo() {
           : { speedGrader: '0 blur flags · WebAssign assignment in progress', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Red-Variable DOM Parser · Closed Shadow DOM',
+      focusBadge: 'ExamGhost Red-Variable DOM Parser · Closed Shadow DOM',
       courseHeader: 'MATH 1241 · Stewart Calculus 9e · Problem 4.1.028',
       points: '5.0 Points',
       prompt: (
@@ -1103,7 +1110,7 @@ export function CengageWebAssignDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click Card', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'calcPad Formatter', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled 12 m (Green Check!)', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled 12 m (Green Check!)', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · WebAssign Focus Shield Active · calcPad Verified',
@@ -1187,7 +1194,7 @@ export function GradescopeExamDemo() {
           : { speedGrader: '0 blur flags · Gradescope autosave healthy', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Alt+S KaTeX Vision OCR · Closed Shadow DOM',
+      focusBadge: 'ExamGhost Alt+S KaTeX Vision OCR · Closed Shadow DOM',
       courseHeader: 'CS 180 · Design & Analysis of Algorithms · Question 11',
       points: '4.0 Points',
       prompt: (
@@ -1205,7 +1212,7 @@ export function GradescopeExamDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Alt+S Vision OCR', tag: 'snip' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+2' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option C', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option C', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · Gradescope Session Continuous · Master Case 2',
@@ -1289,7 +1296,7 @@ export function GoogleFormsQuizDemo() {
           : { speedGrader: '0 blur flags · Google Form active', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Closed Shadow DOM · div[role="listitem"] Active',
+      focusBadge: 'ExamGhost Closed Shadow DOM · div[role="listitem"] Active',
       courseHeader: 'AP Psychology · Biological Bases of Behavior · Item 16',
       points: '2.0 Points',
       prompt: (
@@ -1307,7 +1314,7 @@ export function GoogleFormsQuizDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click Prompt', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+2' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Selected Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · Form Focus 100% Maintained · Shadow DOM Shield',
@@ -1391,7 +1398,7 @@ export function SchoologyLearnosityDemo() {
           : { speedGrader: '0 blur flags · Learnosity assessment healthy', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Isolated World · Learnosity Safe Interaction',
+      focusBadge: 'ExamGhost Isolated World · Learnosity Safe Interaction',
       courseHeader: 'AP Biology · Cellular Energetics Assessment · Item 8',
       points: '3.0 Points',
       prompt: (
@@ -1409,7 +1416,7 @@ export function SchoologyLearnosityDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click .lrn_question', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+2' };
-        return { x: 45, y: 70, clicking: true, label: 'Cleanly Saved: Option B', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Cleanly Saved: Option B', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: '0 window.blur flags · Learnosity State Clean · Isolated World Shield',
@@ -1493,7 +1500,7 @@ export function DeltaMathMotionDemo() {
           : { speedGrader: '0 blur flags · DeltaMath skill active', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost MathQuill Parser · Closed Shadow DOM',
+      focusBadge: 'ExamGhost MathQuill Parser · Closed Shadow DOM',
       courseHeader: 'Algebra 2 · Polynomial Factor Theorem · Problem 4 of 5',
       points: 'Score: 5/5 (Complete)',
       prompt: (
@@ -1511,7 +1518,7 @@ export function DeltaMathMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click problem-div', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'MathQuill Injector', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled k = -7 (Streak 5/5!)', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Auto-Filled k = -7 (Streak 5/5!)', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: 'DeltaMath MathQuill Hook: 0 Blur Events · Streak 5/5 Intact',
@@ -1595,7 +1602,7 @@ export function EdgenuityMotionDemo() {
           : { speedGrader: '0 blur flags · #stageFrame active', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Isolated World · 0 SCORM Tampering',
+      focusBadge: 'ExamGhost Isolated World · 0 SCORM Tampering',
       courseHeader: 'US History 11 · Unit 4 Cumulative Exam · Question 19 of 50',
       points: '100% Weighted',
       prompt: (
@@ -1613,7 +1620,7 @@ export function EdgenuityMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click #stageFrame', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+2' };
-        return { x: 45, y: 70, clicking: true, label: 'Natural Dwell Submit (52s)', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Natural Dwell Submit (52s)', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: 'Edgenuity #stageFrame: Normal Active Time (52s) · 0 SCORM Anomalies',
@@ -1697,7 +1704,7 @@ export function CanvasExtensionDetectionMotionDemo() {
           : { speedGrader: '0 window.blur flags · Quiz focus continuous', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost MV3 Isolated World · element.shadowRoot === null',
+      focusBadge: 'ExamGhost MV3 Isolated World · element.shadowRoot === null',
       courseHeader: 'AUDIT-VEC-01 · Chromium Focus & Visibility Telemetry Test',
       points: 'Research Audit',
       prompt: (
@@ -1715,7 +1722,7 @@ export function CanvasExtensionDetectionMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Double-Click in page', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Closed Shadow DOM HUD', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: 'Option B selected (0 blur)', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: 'Option B selected (0 blur)', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: 'MV3 Isolated World · element.shadowRoot === null · 0 Blur Events',
@@ -1733,7 +1740,7 @@ export function CanvasExtensionDetectionMotionDemo() {
         <p className="text-slate-200">{"Manifest V2 vs Manifest V3: Under MV3, Web Accessible Resources cannot be fingerprinted without explicit declarations. Canvas cannot discover installed extension IDs via fetch(&quot;chrome-extension://...&quot;) probing without triggering security exceptions."}</p>
       ),
       deepseekDerivation: (
-        <p className="text-slate-200">{"W3C Shadow DOM encapsulation: By invoking attachShadow({ mode: &apos;closed&apos; }), element.shadowRoot returns null to all host-page MutationObservers and querySelectors, rendering the ExamGhost UI completely invisible to Canvas scripts."}</p>
+        <p className="text-slate-200">{"W3C Shadow DOM encapsulation: By invoking attachShadow({ mode: &apos;closed&apos; }), element.shadowRoot returns null to all host-page MutationObservers and querySelectors, isolating the ExamGhost shadow tree from host-page Canvas scripts."}</p>
       ),
       getCursor: (p) => {
         if (p < 35) return { x: 20, y: 15, clicking: true, label: 'Claude', tag: 'default' };
@@ -1799,7 +1806,7 @@ export function CanvasQuizLogMotionDemo() {
           : { speedGrader: 'Reading instructor action log stream...', focusShield: false, blurEvents: 0, status: 'clean' },
     },
     scene1: {
-      stealthBadge: 'ExamGhost Clean Quiz Log Protocol · 100% Green Events',
+      focusBadge: 'ExamGhost Clean Quiz Log Protocol · 100% Green Events',
       courseHeader: 'STAT 301 · SpeedGrader Action Log Analysis · Student Attempt',
       points: 'Instructor Forensic View',
       prompt: (
@@ -1817,7 +1824,7 @@ export function CanvasQuizLogMotionDemo() {
       getCursor: (p) => {
         if (p < 35) return { x: 35, y: 32, clicking: true, label: 'Inspects ExamGhost log', tag: 'solve' };
         if (p < 70) return { x: 50, y: 50, clicking: false, label: 'Spotless Timeline', tag: 'alt+1' };
-        return { x: 45, y: 70, clicking: true, label: '100% Clean Green Checks', tag: 'invisible' };
+        return { x: 45, y: 70, clicking: true, label: '100% Clean Green Checks', tag: 'alt+1' };
       },
       getTelemetry: () => ({
         speedGrader: 'Instructor Action Log: 100% Clean Green Events · 0 Blur Warnings',

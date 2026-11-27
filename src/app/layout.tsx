@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Nunito } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-// Self-hosted via next/font: consistent typography on Chrome/Windows/Android (previously fell back to
-// Hiragino Maru / Segoe UI because ui-rounded and Inter were never actually loaded). Safari keeps SF Pro Rounded.
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
-const nunito = Nunito({ subsets: ["latin"], weight: ["600", "700", "800"], display: "swap", variable: "--font-nunito" });
+// Self-hosted via next/font: unified cross-browser studio typography (display + body + monospace).
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["500", "600", "700", "800"], display: "swap", variable: "--font-display" });
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap", variable: "--font-mono" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.examghost.com'),
@@ -101,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${nunito.variable}`}>
+    <html lang="en" className={`scroll-smooth ${plusJakartaSans.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           async
@@ -115,7 +115,7 @@ gtag('js', new Date());`,
           }}
         />
       </head>
-      <body className="font-sans bg-cream text-ink antialiased selection:bg-[#c4d0f8] selection:text-[#111] min-h-screen">
+      <body className="font-sans bg-cream text-ink antialiased selection:bg-[#3B5BDB]/15 selection:text-ink min-h-screen">
         {children}
         <Analytics />
       </body>

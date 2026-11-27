@@ -36,7 +36,7 @@ export default function MediaSlot({
                 fallback
             )}
             {process.env.NODE_ENV !== "production" && (
-                <span className="pointer-events-none absolute left-2 bottom-2 z-20 rounded-full bg-black/70 px-2.5 py-1 font-mono text-[10px] text-white/90 backdrop-blur">
+                <span className="pointer-events-none absolute left-2.5 bottom-2.5 z-20 rounded-md bg-surface-dark/85 border border-white/10 px-2 py-0.5 font-mono text-[10px] text-white/90 backdrop-blur">
                     {slot} · {src ? (isVideo ? "video" : "image") : "graphic (no file set)"}
                 </span>
             )}

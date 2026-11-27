@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Check, ExternalLink, Info } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ExternalLink, Info } from "lucide-react";
 import { FaChrome } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -150,12 +150,21 @@ export function leanCompareMetadata(slug: string): Metadata {
     };
 }
 
-function Row({ label, them, us }: { label: string; them: React.ReactNode; us: React.ReactNode }) {
+function Row({ label, themName, them, us }: { label: string; themName: string; them: React.ReactNode; us: React.ReactNode }) {
     return (
-        <div className="grid sm:grid-cols-[150px_1fr_1fr] gap-x-6 gap-y-1 px-5 sm:px-6 py-4 border-t border-black/5 first:border-t-0">
-            <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted sm:pt-0.5">{label}</dt>
-            <dd className="text-[15px] text-ink-secondary">{them}</dd>
-            <dd className="text-[15px] text-ink font-medium">{us}</dd>
+        <div className="grid sm:grid-cols-[160px_1fr_1fr] gap-x-6 gap-y-2.5 px-5 sm:px-6 py-4 border-t border-ink/[0.06] first:border-t-0 hover:bg-surface-subtle/45 transition-colors">
+            <dt className="text-xs font-semibold text-ink-muted sm:pt-0.5">{label}</dt>
+            <dd className="text-[15px] text-ink-secondary min-w-0">
+                <span className="sm:hidden block text-[11px] font-semibold text-ink-muted mb-0.5">{themName}</span>
+                {them}
+            </dd>
+            <dd className="text-[15px] text-ink font-medium min-w-0 sm:bg-cobalt-soft/40 sm:-my-4 sm:py-4 sm:px-4">
+                <span className="sm:hidden inline-flex items-center gap-1.5 text-[11px] font-semibold text-cobalt mb-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emeraldBrand" aria-hidden="true" />
+                    ExamGhost
+                </span>
+                <div>{us}</div>
+            </dd>
         </div>
     );
 }
@@ -166,50 +175,62 @@ function Table({ f }: { f: CompetitorFact }) {
     return (
         <section className="pb-16 sm:pb-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                <div className="bg-white rounded-3xl border border-black/10 shadow-card overflow-hidden">
-                    <div className="hidden sm:grid grid-cols-[150px_1fr_1fr] gap-x-6 px-6 py-4 bg-[#faf8f4] border-b border-black/5 text-sm font-display font-bold">
+                <div className="bg-paper rounded-2xl border border-ink/[0.09] surface-card overflow-hidden">
+                    <div className="hidden sm:grid grid-cols-[160px_1fr_1fr] gap-x-6 px-6 py-4 bg-surface-subtle border-b border-ink/[0.08] text-sm font-display font-bold">
                         <span />
-                        <span>{f.name}</span>
-                        <span>ExamGhost</span>
+                        <span className="text-ink">{f.name}</span>
+                        <span className="inline-flex items-center gap-1.5 sm:px-4 text-cobalt">
+                            <span className="w-2 h-2 rounded-full bg-emeraldBrand" aria-hidden="true" />
+                            ExamGhost
+                        </span>
                     </div>
                     <dl>
-                        <Row label="Price" them={f.priceSummary ?? unknown} us={EXAMGHOST.priceSummary} />
-                        <Row label="Free tier / trial" them={f.freeTier ?? f.trial ?? unknown} us={EXAMGHOST.freeTier} />
+                        <Row label="Price" themName={f.name} them={f.priceSummary ?? unknown} us={EXAMGHOST.priceSummary} />
+                        <Row label="Free tier / trial" themName={f.name} them={f.freeTier ?? f.trial ?? unknown} us={EXAMGHOST.freeTier} />
                         <Row
                             label="Works on"
+                            themName={f.name}
                             them={f.platforms.length ? `${f.platforms.length} named: ${list(f.platforms, 6)}${f.platforms.length > 6 ? "…" : ""}` : unknown}
                             us={`${PLATFORMS_DATA.length} named (Canvas, Blackboard, Moodle, D2L Brightspace and more), plus any page via Alt+S screenshot`}
                         />
                         {!hides && (
                             <Row
                                 label="Any page, by screenshot"
+                                themName={f.name}
                                 them={f.features.some((x) => /screenshot|snap|image|photo|camera|crop|snip/i.test(x)) ? "Screenshot or image solving listed" : <span className="text-ink-muted">Not in the features we recorded; check {f.domain}</span>}
                                 us="Yes: press Alt+S and drag a box around anything you can see"
                             />
                         )}
-                        <Row label="Browser" them={list(f.browsers, 4) ?? unknown} us={EXAMGHOST.browsers.join(", ")} />
+                        <Row label="Browser" themName={f.name} them={list(f.browsers, 4) ?? unknown} us={EXAMGHOST.browsers.join(", ")} />
                         {!hides && (
                             <Row
                                 label="Features"
+                                themName={f.name}
                                 them={
                                     f.features.length ? (
-                                        <ul className="space-y-1">
+                                        <ul className="space-y-1.5">
                                             {f.features.slice(0, 4).map((x) => (
-                                                <li key={x} className="flex gap-2"><Check className="w-4 h-4 mt-1 text-ink-muted shrink-0" aria-hidden="true" />{x}</li>
+                                                <li key={x} className="flex gap-2">
+                                                    <Check className="w-4 h-4 mt-1 text-ink-muted shrink-0" aria-hidden="true" />
+                                                    <span>{x}</span>
+                                                </li>
                                             ))}
                                         </ul>
                                     ) : unknown
                                 }
                                 us={
-                                    <ul className="space-y-1">
+                                    <ul className="space-y-1.5">
                                         {EXAMGHOST.features.slice(0, 4).map((x) => (
-                                            <li key={x} className="flex gap-2"><Check className="w-4 h-4 mt-1 text-emerald-600 shrink-0" aria-hidden="true" />{x}</li>
+                                            <li key={x} className="flex gap-2">
+                                                <Check className="w-4 h-4 mt-1 text-emeraldBrand shrink-0" aria-hidden="true" />
+                                                <span>{x}</span>
+                                            </li>
                                         ))}
                                     </ul>
                                 }
                             />
                         )}
-                        <Row label="Refund" them={<span className="text-ink-muted">See {f.domain}</span>} us={EXAMGHOST.refund} />
+                        <Row label="Refund" themName={f.name} them={<span className="text-ink-muted">See {f.domain}</span>} us={EXAMGHOST.refund} />
                     </dl>
                 </div>
             </div>
@@ -254,29 +275,30 @@ export default function LeanCompare({ slug }: { slug: string }) {
     };
 
     return (
-        <main className="min-h-screen bg-cream text-ink">
+        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <nav aria-label="Breadcrumb" className="text-xs text-ink-muted mb-4">
-                        <Link href="/compare" className="hover:text-ink">Compare</Link> <span aria-hidden="true">/</span> {name}
+                    <nav aria-label="Breadcrumb" className="text-xs font-medium text-ink-muted mb-4">
+                        <Link href="/compare" className="hover:text-cobalt transition-colors">Compare</Link> <span aria-hidden="true">/</span> {name}
                     </nav>
-                    <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+                    <h1 className="font-display text-[36px] sm:text-[54px] font-bold tracking-[-0.035em] leading-[1.05] text-ink mb-5">
                         {name} <span className="text-ink-muted">vs</span> ExamGhost
                     </h1>
-                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
+                    <p className="aeo-summary text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8 leading-relaxed">
                         {f
                             ? `We make ExamGhost, so we're not neutral. This is price, free tier, platforms and features side by side, from each product's own site (checked ${fmtDate(f.lastChecked)}).`
                             : `Compare ${name} (${domain}) and ExamGhost, then try ExamGhost free.`}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-4 text-base shadow-lift">
-                            <FaChrome className="w-4 h-4 text-[#bfe3f6]" aria-hidden="true" />
+                        <a href={INSTALL_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-7 py-3.5 sm:py-4 text-[15px] sm:text-base shadow-lift">
+                            <FaChrome className="w-4 h-4 text-sky" aria-hidden="true" />
                             Add to Chrome — it&apos;s free
                         </a>
-                        <Link href={DEMO_URL} className="inline-flex items-center justify-center px-7 py-4 rounded-full border border-black/10 bg-white text-base font-medium hover:border-black/25 transition-colors">
+                        <Link href={DEMO_URL} className="btn-soft px-7 py-3.5 sm:py-4 text-[15px] sm:text-base">
+                            <span className="w-2 h-2 rounded-full bg-emeraldBrand" aria-hidden="true" />
                             Try the live demo
                         </Link>
                     </div>
@@ -286,7 +308,7 @@ export default function LeanCompare({ slug }: { slug: string }) {
             {f && (f.purpose === "activity-hiding" || !f.verified) && (
                 <section className="pb-8">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                        <div className="flex gap-3 rounded-2xl border border-amber-300/60 bg-amber-50 px-5 py-4 text-[15px] text-ink-secondary leading-relaxed">
+                        <div className="flex gap-3 rounded-2xl border border-amber-300/70 bg-amber-50/90 px-5 py-4 text-[15px] text-ink-secondary leading-relaxed">
                             <Info className="w-5 h-5 mt-0.5 shrink-0 text-amber-700" aria-hidden="true" />
                             <p>
                                 {f.purpose === "activity-hiding"
@@ -301,8 +323,10 @@ export default function LeanCompare({ slug }: { slug: string }) {
             {f && f.verified && (
                 <section className="pb-8">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-3">{name} and ExamGhost at a glance</h2>
-                        <p className="text-[16px] text-ink-secondary leading-relaxed">{glance.join(" ")}</p>
+                        <div className="bg-paper rounded-2xl border border-ink/[0.09] border-l-[3px] border-l-cobalt p-6 sm:p-7 surface-card">
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-[-0.03em] mb-2.5">{name} and ExamGhost at a glance</h2>
+                            <p className="text-[15.5px] sm:text-[16px] text-ink-secondary leading-relaxed">{glance.join(" ")}</p>
+                        </div>
                     </div>
                 </section>
             )}
@@ -312,15 +336,18 @@ export default function LeanCompare({ slug }: { slug: string }) {
             ) : (
                 <section className="pb-16 sm:pb-20">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 gap-4">
-                        <div className="bg-white rounded-3xl border border-black/10 shadow-card p-6 sm:p-8">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-2">{name}</p>
-                            <p className="font-display text-2xl font-bold mb-2">See {domain}</p>
-                            <p className="text-sm text-ink-muted">Check their site for current pricing and features. We haven&apos;t verified this product yet.</p>
+                        <div className="bg-paper rounded-2xl border border-ink/[0.09] surface-card p-6 sm:p-8">
+                            <p className="text-xs font-semibold text-ink-muted mb-2">{name}</p>
+                            <p className="font-display text-2xl font-bold tracking-tight mb-2">See {domain}</p>
+                            <p className="text-sm text-ink-muted leading-relaxed">Check their site for current pricing and features. We haven&apos;t verified this product yet.</p>
                         </div>
-                        <div className="bg-ink text-white rounded-3xl shadow-lift p-6 sm:p-8">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">ExamGhost</p>
-                            <p className="font-display text-2xl font-bold mb-2">{EXAMGHOST.priceSummary}</p>
-                            <p className="text-sm text-white/70">{EXAMGHOST.freeTier}. {EXAMGHOST.refund}.</p>
+                        <div className="dark-surface bg-surface-dark bg-dark-grid text-white rounded-2xl surface-dark-card border border-white/10 p-6 sm:p-8">
+                            <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/75 mb-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emeraldBrand" aria-hidden="true" />
+                                ExamGhost
+                            </p>
+                            <p className="font-display text-2xl font-bold tracking-tight mb-2">{EXAMGHOST.priceSummary}</p>
+                            <p className="text-sm text-white/70 leading-relaxed">{EXAMGHOST.freeTier}. {EXAMGHOST.refund}.</p>
                         </div>
                     </div>
                 </section>
@@ -333,7 +360,7 @@ export default function LeanCompare({ slug }: { slug: string }) {
                             Sources, as of {fmtDate(f.lastChecked)}:{" "}
                             {srcs.map((u, i) => (
                                 <span key={u}>
-                                    <a href={u} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2 inline-flex items-center gap-0.5">
+                                    <a href={u} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2 hover:text-cobalt inline-flex items-center gap-0.5 transition-colors">
                                         {host(u)}<ExternalLink className="w-3 h-3" aria-hidden="true" />
                                     </a>
                                     {i < srcs.length - 1 ? ", " : ""}
@@ -348,46 +375,59 @@ export default function LeanCompare({ slug }: { slug: string }) {
             {alternatives.length > 0 && isIndexable(f) && (
                 <section className="pb-16 sm:pb-20">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">Alternatives to {name}</h2>
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-[-0.03em] mb-2">Alternatives to {name}</h2>
                         <p className="text-ink-muted mb-6">Other quiz and homework helpers with a similar listed price, from our comparison.</p>
-                        <ul className="grid sm:grid-cols-2 gap-3">
-                            {alternatives.map((a) => (
-                                <li key={a.slug}>
-                                    <Link href={`/${a.slug}`} className="block h-full rounded-2xl border border-black/10 bg-white p-4 hover:border-black/25 transition-colors">
-                                        <span className="font-display font-semibold text-ink">{a.name}</span>
-                                        <span className="block text-sm text-ink-muted mt-1 line-clamp-2">{a.priceSummary ?? "Price not stated"}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="rounded-2xl border border-ink/[0.09] bg-paper overflow-hidden shadow-xs">
+                            <ul className="grid sm:grid-cols-2 -mb-px -mr-px">
+                                {alternatives.map((a) => (
+                                    <li key={a.slug} className="border-b border-r border-ink/[0.08]">
+                                        <Link
+                                            href={`/${a.slug}`}
+                                            className="group flex items-center justify-between gap-3 h-full bg-paper p-4 sm:p-5 hover:bg-cobalt-soft/40 transition-colors"
+                                        >
+                                            <div className="min-w-0">
+                                                <span className="font-display font-semibold text-ink group-hover:text-cobalt transition-colors">{a.name}</span>
+                                                <span className="block text-sm text-ink-muted mt-1 line-clamp-2">{a.priceSummary ?? "Price not stated"}</span>
+                                            </div>
+                                            <ArrowRight className="w-4 h-4 shrink-0 text-ink-muted group-hover:text-cobalt transition-all group-hover:translate-x-0.5" aria-hidden="true" />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </section>
             )}
 
-            <section className="py-16 sm:py-20 bg-white/60 border-y border-black/5">
+            <section className="py-16 sm:py-20 bg-surface-subtle/75 border-y border-ink/[0.08]">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">What you get with ExamGhost</h2>
-                    <ul className="grid sm:grid-cols-2 gap-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-8">What you get with ExamGhost</h2>
+                    <ul className="grid sm:grid-cols-2 gap-px bg-ink/[0.08] rounded-2xl border border-ink/[0.09] overflow-hidden shadow-xs">
                         {EXAMGHOST_INCLUDES.map((t) => (
-                            <li key={t} className="flex items-start gap-2.5 bg-white rounded-2xl border border-black/10 px-4 py-3.5 text-[15px]">
-                                <Check className="w-4 h-4 mt-1 shrink-0 text-emerald-600" aria-hidden="true" />
-                                {t}
+                            <li key={t} className="flex items-start gap-3 bg-paper px-5 py-4 text-[15px] text-ink">
+                                <span className="w-5 h-5 rounded-full bg-emeraldBrand-soft text-emeraldBrand grid place-items-center shrink-0 mt-0.5">
+                                    <Check className="w-3 h-3" strokeWidth={2.75} aria-hidden="true" />
+                                </span>
+                                <span>{t}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
             </section>
 
-            <section className="py-16 sm:py-20">
+            <section className="py-16 sm:py-20 bg-paper border-b border-ink/[0.08]">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8">Questions</h2>
-                    <div className="space-y-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-center mb-8">Questions</h2>
+                    <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
                         {faqs.map((q) => (
-                            <details key={q.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
-                                    <h3 className="text-base sm:text-lg">{q.q}</h3>
+                            <details key={q.q} className="group py-4 sm:py-5">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-[17px] leading-snug group-hover:text-cobalt transition-colors">{q.q}</h3>
+                                    <span className="w-8 h-8 rounded-full bg-surface-subtle border border-ink/[0.08] text-ink-muted grid place-items-center shrink-0 transition-colors group-open:bg-surface-dark group-open:text-white group-open:border-surface-dark">
+                                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{q.a}</p>
+                                <p className="mt-3 pr-10 text-[15px] text-ink-muted leading-relaxed">{q.a}</p>
                             </details>
                         ))}
                     </div>
@@ -395,19 +435,19 @@ export default function LeanCompare({ slug }: { slug: string }) {
             </section>
 
             {related.length > 0 && (
-                <section className="pb-6">
+                <section className="pt-12 pb-6">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted mb-4">More comparisons</p>
+                        <p className="text-sm font-semibold text-ink-muted mb-4">More comparisons</p>
                         <ul className="flex flex-wrap justify-center gap-2">
                             {related.map((r) => (
                                 <li key={r.slug}>
-                                    <Link href={`/${r.slug}`} className="inline-block rounded-full border border-black/10 bg-white px-4 py-2 text-sm hover:border-black/25 transition-colors">
+                                    <Link href={`/${r.slug}`} className="inline-block rounded-full border border-ink/[0.12] bg-paper px-4 py-2 text-sm text-ink-secondary hover:border-cobalt hover:text-cobalt transition-colors">
                                         {r.name} vs ExamGhost
                                     </Link>
                                 </li>
                             ))}
                             <li>
-                                <Link href="/compare" className="inline-block rounded-full bg-ink text-white px-4 py-2 text-sm hover:bg-[#252422] transition-colors">
+                                <Link href="/compare" className="inline-block rounded-full bg-surface-dark text-white px-4 py-2 text-sm font-medium hover:bg-ink-secondary transition-colors">
                                     See all comparisons
                                 </Link>
                             </li>

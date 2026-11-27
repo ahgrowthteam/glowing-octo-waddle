@@ -13,7 +13,7 @@ const FILM_SCENES = [
     { id: 0, time: 0.0, code: '0:00', label: '2.5D Architecture Hook' },
     { id: 1, time: 3.0, code: '0:03', label: '1-by-1 Double-Click Solve' },
     { id: 2, time: 7.0, code: '0:07', label: 'Alt+S Vision OCR Scan' },
-    { id: 3, time: 10.5, code: '0:10', label: 'Stealth Telemetry Audit' },
+    { id: 3, time: 10.5, code: '0:10', label: 'Focus & Telemetry Audit' },
     { id: 4, time: 13.5, code: '0:13', label: '5 Free Solves/Day CTA' },
 ];
 
@@ -129,7 +129,7 @@ export default function LmsExplainerFilmCard({
         <div
             itemScope
             itemType="https://schema.org/VideoObject"
-            className="rounded-[34px] bg-white border border-black/10 shadow-lift p-5 sm:p-8 space-y-5"
+            className="rounded-3xl bg-paper border border-ink/[0.09] shadow-lift p-5 sm:p-8 space-y-5"
         >
             <meta itemProp="name" content={`${platformName} AI Quiz Solver — 2.5D Explainer & Product Demo Film`} />
             <meta
@@ -143,16 +143,17 @@ export default function LmsExplainerFilmCard({
 
             {/* Top Header Row */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="space-y-1">
-                    <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ink-muted">
+                <div className="space-y-1.5">
+                    <div className="inline-flex items-center gap-2 text-xs font-medium text-ink-muted">
                         <span
                             className="w-2 h-2 rounded-full"
                             style={{ backgroundColor: heroDotColor }}
+                            aria-hidden="true"
                         />
-                        <Film className="w-3.5 h-3.5 text-ink" />
-                        <span>2.5D Motion Explainer Film • 16s HD (120 BPM Audio + Foley)</span>
+                        <Film className="w-3.5 h-3.5 text-ink" aria-hidden="true" />
+                        <span>2.5D motion explainer film · 16s HD (120 BPM audio &amp; foley)</span>
                     </div>
-                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink tracking-tight">
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink tracking-[-0.025em]">
                         Watch how ExamGhost runs inside {platformName} in 16 seconds
                     </h2>
                 </div>
@@ -162,20 +163,21 @@ export default function LmsExplainerFilmCard({
                     <button
                         type="button"
                         onClick={toggleMute}
-                        className={`px-3.5 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 border transition-all cursor-pointer ${
+                        aria-label={isMuted ? 'Unmute explainer film audio' : 'Mute explainer film audio'}
+                        className={`min-h-[40px] px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 border transition-colors cursor-pointer ${
                             !isMuted
-                                ? 'bg-[#cdeecb] text-[#064e3b] border-emerald-600/30 shadow-2xs'
-                                : 'bg-[#faf8f5] text-ink border-black/10 hover:bg-black/5'
+                                ? 'bg-emeraldBrand-soft text-emeraldBrand border-emeraldBrand/25'
+                                : 'bg-surface-subtle text-ink border-ink/[0.09] hover:border-ink/25'
                         }`}
                     >
                         {!isMuted ? (
                             <>
-                                <Volume2 className="w-3.5 h-3.5 text-emerald-700" />
+                                <Volume2 className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                 <span>120 BPM Sound On</span>
                             </>
                         ) : (
                             <>
-                                <VolumeX className="w-3.5 h-3.5 text-ink-muted" />
+                                <VolumeX className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                                 <span>Unmute Audio &amp; SFX</span>
                             </>
                         )}
@@ -184,16 +186,17 @@ export default function LmsExplainerFilmCard({
                     <button
                         type="button"
                         onClick={togglePlay}
-                        className="px-4 py-2 rounded-full bg-ink text-white text-xs font-bold flex items-center gap-1.5 hover:bg-ink/90 transition-all cursor-pointer shadow-2xs"
+                        aria-label={isPlaying ? 'Pause explainer film' : 'Play explainer film'}
+                        className="min-h-[40px] px-4 py-2 rounded-full bg-surface-dark text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-[#1E2129] transition-colors cursor-pointer"
                     >
                         {isPlaying ? (
                             <>
-                                <Pause className="w-3.5 h-3.5 fill-current" />
+                                <Pause className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
                                 <span>Pause</span>
                             </>
                         ) : (
                             <>
-                                <Play className="w-3.5 h-3.5 fill-current" />
+                                <Play className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
                                 <span>Play Film</span>
                             </>
                         )}
@@ -202,27 +205,29 @@ export default function LmsExplainerFilmCard({
                     <button
                         type="button"
                         onClick={() => handleSeek(0)}
-                        className="px-3 py-2 rounded-full bg-[#faf8f5] hover:bg-black/5 border border-black/10 text-xs font-semibold text-ink flex items-center gap-1 transition-colors cursor-pointer"
+                        aria-label="Replay film from 0:00"
+                        className="min-h-[40px] px-3.5 py-2 rounded-full bg-surface-subtle hover:bg-paper border border-ink/[0.09] hover:border-ink/25 text-xs font-semibold text-ink flex items-center gap-1.5 transition-colors cursor-pointer"
                         title="Replay from 0:00"
                     >
-                        <RotateCcw className="w-3.5 h-3.5" />
+                        <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                         <span className="hidden sm:inline">Replay</span>
                     </button>
 
                     <a
                         href={videoSrc}
                         download={`${safeSlug}-examghost-explainer.mp4`}
-                        className="px-3 py-2 rounded-full bg-[#faf8f5] hover:bg-black/5 border border-black/10 text-xs font-semibold text-ink flex items-center gap-1 transition-colors"
+                        aria-label={`Download ${platformName} MP4 explainer film`}
+                        className="min-h-[40px] px-3.5 py-2 rounded-full bg-surface-subtle hover:bg-paper border border-ink/[0.09] hover:border-ink/25 text-xs font-semibold text-ink flex items-center gap-1.5 transition-colors"
                         title="Download MP4 Film"
                     >
-                        <Download className="w-3.5 h-3.5" />
+                        <Download className="w-3.5 h-3.5" aria-hidden="true" />
                         <span className="hidden md:inline">MP4</span>
                     </a>
                 </div>
             </div>
 
             {/* Video Viewport Frame */}
-            <div className="relative rounded-[24px] overflow-hidden border border-black/12 bg-[#fcf9f5] shadow-card">
+            <div className="relative rounded-2xl overflow-hidden border border-ink/[0.1] bg-surface-subtle shadow-card">
                 <video
                     ref={videoRef}
                     src={isInView ? videoSrc : undefined}
@@ -246,21 +251,21 @@ export default function LmsExplainerFilmCard({
                             key={scene.id}
                             type="button"
                             onClick={() => handleSeek(scene.time)}
-                            className={`text-left p-3 rounded-2xl border transition-all cursor-pointer ${
+                            className={`text-left p-3 rounded-xl border transition-colors cursor-pointer min-h-[56px] ${
                                 isActive
-                                    ? 'bg-ink text-white border-ink shadow-xs'
-                                    : 'bg-[#faf8f5] hover:bg-white text-ink border-black/8'
+                                    ? 'dark-surface bg-surface-dark text-white border-surface-dark shadow-xs'
+                                    : 'bg-surface-subtle hover:bg-paper text-ink border-ink/[0.08] hover:border-ink/20'
                             }`}
                         >
                             <div className="flex items-center justify-between gap-1 text-[11px] font-mono mb-0.5">
-                                <span className={isActive ? 'text-[#cdeecb] font-bold' : 'text-ink-muted'}>
+                                <span className={isActive ? 'text-emerald-300 font-bold' : 'text-ink-muted'}>
                                     {scene.code}
                                 </span>
                                 {isActive && (
-                                    <Sparkles className="w-3 h-3 text-[#34d399] shrink-0" />
+                                    <Sparkles className="w-3 h-3 text-emerald-300 shrink-0" aria-hidden="true" />
                                 )}
                             </div>
-                            <div className="text-xs font-bold leading-snug truncate">
+                            <div className="text-xs font-semibold leading-snug truncate">
                                 {scene.label}
                             </div>
                         </button>

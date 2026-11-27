@@ -3,16 +3,25 @@
 @tailwind utilities;
 
 :root {
-  /* OneMacApp Color System */
-  --cream: #fcf9f5;
-  --paper: #ffffff;
-  --ink: #111111;
-  --ink-2: #2b2926;
-  --muted: #6d6a63;
-  --line: rgba(17, 17, 17, 0.08);
-  --line-strong: rgba(17, 17, 17, 0.14);
+  /* ExamGhost Studio Design System */
+  --cream: #FAF8F5;
+  --paper: #FFFFFF;
+  --surface-subtle: #F3EFE8;
+  --ink: #101114;
+  --ink-2: #2B2D33;
+  --muted: #5E626B;
+  --dark-surface: #101114;
+  --dark-elevated: #181A20;
+  --cobalt: #3B5BDB;
+  --cobalt-bright: #4361EE;
+  --cobalt-soft: #EEF2FF;
+  --emerald-brand: #0F9D68;
+  --discord: #5865F2;
+  --line: rgba(16, 17, 20, 0.09);
+  --line-strong: rgba(16, 17, 20, 0.16);
+  --line-dark: rgba(255, 255, 255, 0.10);
 
-  /* Pastel Palette */
+  /* Preserved Accent Palette */
   --peri: #c4d0f8;
   --sky: #bfe3f6;
   --lilac: #e2d3fa;
@@ -22,20 +31,21 @@
   --yellow: #ffd23f;
   --butter: #ffe9a0;
 
-  /* Radii */
-  --radius-xl: 36px;
-  --radius-lg: 26px;
-  --radius-md: 18px;
-  --radius-sm: 12px;
+  /* Radii (monotonic studio scale) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 
   /* Shadows */
-  --shadow-soft: 0 1px 2px rgba(40, 30, 10, 0.04), 0 8px 24px rgba(40, 30, 10, 0.06);
-  --shadow-lift: 0 2px 4px rgba(40, 30, 10, 0.05), 0 24px 60px rgba(40, 30, 10, 0.12);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(40, 30, 10, 0.05);
+  --shadow-soft: 0 1px 2px rgba(16, 17, 20, 0.04), 0 8px 24px rgba(16, 17, 20, 0.06);
+  --shadow-lift: 0 2px 6px rgba(16, 17, 20, 0.06), 0 20px 48px rgba(16, 17, 20, 0.12);
+  --shadow-card: 0 1px 2px rgba(16, 17, 20, 0.04), 0 10px 28px rgba(16, 17, 20, 0.05);
 
   /* Fonts */
-  --display: ui-rounded, "SF Pro Rounded", var(--font-nunito), "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  --display: var(--font-display), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: var(--font-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Transitions */
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
@@ -58,6 +68,7 @@
     background-color: var(--cream);
     color: var(--ink);
     font-family: var(--sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -65,7 +76,7 @@
 
   h1, h2, h3, h4, .font-display {
     font-family: var(--display);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
   }
 
   /* Even line lengths on headlines: no single-word widows like "worry" / "again." */
@@ -79,12 +90,17 @@
 
   /* Visible keyboard focus everywhere, invisible for mouse users */
   :focus-visible {
-    outline: 2px solid var(--ink);
-    outline-offset: 3px;
+    outline: 2px solid var(--cobalt);
+    outline-offset: 2px;
+  }
+
+  .dark-surface :focus-visible {
+    outline: 2px solid #8EA4FF;
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: var(--peri);
+    background: rgba(59, 91, 219, 0.16);
     color: var(--ink);
   }
 
@@ -164,12 +180,12 @@
   animation: laserScan 0.85s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Eyebrow badge style */
+/* Eyebrow badge style (preserved for legacy consumers) */
 .eyebrow {
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -184,7 +200,8 @@
   font-weight: 500;
   font-size: 15px;
   letter-spacing: -0.01em;
-  transition: all 0.2s var(--ease-smooth);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 1px 2px rgba(16, 17, 20, 0.16), 0 8px 20px rgba(16, 17, 20, 0.10);
+  transition: background-color 0.18s var(--ease-smooth), transform 0.18s var(--ease-smooth), box-shadow 0.18s var(--ease-smooth);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -194,26 +211,25 @@
 }
 
 .btn-dark:hover {
-  background: #252422;
+  background: #1E2129;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(17, 17, 17, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 4px 16px rgba(16, 17, 20, 0.22);
 }
 
 .btn-dark:active {
-  transform: scale(0.98);
+  transform: scale(0.985);
 }
 
 .btn-soft {
-  background: rgba(255, 255, 255, 0.85);
+  background: #ffffff;
   color: var(--ink);
-  border: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  border: 1px solid var(--line-strong);
   border-radius: 9999px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: -0.01em;
-  box-shadow: 0 1px 3px rgba(40, 30, 10, 0.05);
-  transition: all 0.2s var(--ease-smooth);
+  box-shadow: 0 1px 2px rgba(16, 17, 20, 0.04);
+  transition: background-color 0.18s var(--ease-smooth), border-color 0.18s var(--ease-smooth), transform 0.18s var(--ease-smooth), box-shadow 0.18s var(--ease-smooth);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -224,13 +240,13 @@
 
 .btn-soft:hover {
   background: #ffffff;
-  border-color: rgba(17, 17, 17, 0.16);
+  border-color: rgba(16, 17, 20, 0.26);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(40, 30, 10, 0.08);
+  box-shadow: 0 4px 14px rgba(16, 17, 20, 0.07);
 }
 
 .btn-soft:active {
-  transform: scale(0.98);
+  transform: scale(0.985);
 }
 
 /* Pastel Cards */
@@ -376,6 +392,12 @@ nav[aria-label="Breadcrumb"] a {
   to { opacity: 1; transform: none; }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in { animation: fade-in 0.28s var(--ease-smooth) both; }
+
 @keyframes pop-in {
   from { opacity: 0; transform: translateY(8px) scale(0.97); }
   to { opacity: 1; transform: none; }
@@ -386,13 +408,86 @@ nav[aria-label="Breadcrumb"] a {
   to { transform: scaleX(1); }
 }
 
-/* Soft lavender glow that starts at the very top of the page, so it also shows behind the floating navbar. */
+/* Subtle studio cobalt atmospheric sheen fading cleanly into --cream */
 .page-glow {
-  background-image: linear-gradient(to bottom, #e9eefc, var(--cream));
-  background-size: 100% 640px;
+  background-image:
+    radial-gradient(ellipse 80% 380px at 50% -60px, rgba(59, 91, 219, 0.08), transparent 72%),
+    linear-gradient(to bottom, #F4F5FA 0%, var(--cream) 520px);
+  background-size: 100% 600px;
   background-repeat: no-repeat;
 }
 
 /* Large screens: scale rem-based type and spacing so sections don't look small in a narrow column. */
 @media (min-width: 1600px) { html { font-size: 112.5%; } }
 @media (min-width: 2200px) { html { font-size: 125%; } }
+
+/* Tactile keyboard shortcut badge */
+.kbd-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 17, 20, 0.14);
+  background: #ffffff;
+  padding: 2px 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink-2);
+  box-shadow: 0 1px 0 rgba(16, 17, 20, 0.10);
+}
+
+/* Crisp studio hairline surfaces & depth */
+.surface-hairline {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.surface-card {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(16, 17, 20, 0.04), 0 10px 28px rgba(16, 17, 20, 0.05);
+}
+
+.surface-dark-card {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(16, 17, 20, 0.28);
+}
+
+.aeo-summary {
+  text-wrap: pretty;
+}
+
+.kbd-key-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* Subtle architectural coordinate grids for studio light & dark sheets */
+.bg-warm-grid {
+  background-image: radial-gradient(rgba(16, 17, 20, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-dark-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Crisp custom chevron for appearance-none select controls */
+.select-chevron {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235E626B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+  background-size: 14px 14px;
+  padding-right: 2.25rem;
+}

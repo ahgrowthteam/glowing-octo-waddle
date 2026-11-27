@@ -8,8 +8,8 @@ import { DEMO_FAQS } from './demoFaqs';
 import { INSTALL_URL } from '@/components/home/config';
 import { 
     Check, Sparkles, CheckCircle2, Lock, 
-    RefreshCw, ChevronRight, ChevronLeft, ArrowLeft, ArrowRight, BookOpen, ShieldCheck, Clock, Crop, 
-    Volume2, VolumeX, Flag, Zap, X, GraduationCap, ChevronDown, MousePointerClick, ScrollText, Power
+    RefreshCw, ChevronRight, ChevronLeft, ArrowLeft, BookOpen, Clock, Crop, 
+    Volume2, VolumeX, Zap, X, GraduationCap, ChevronDown, MousePointerClick, ScrollText, Power
 } from 'lucide-react';
 import { FaChrome } from 'react-icons/fa';
 
@@ -31,21 +31,26 @@ const Q8_PAIRS: { term: string; answer: string }[] = [
 ];
 
 export default function DemoPage() {
-    // Active Question Tab (1 to 5) — keeps only 1 question visible at a time for zero visual clutter
+    // Active Question Tab (1 to 8) — keeps only 1 question visible at a time for zero visual clutter
     const [activeQuestion, setActiveQuestion] = useState<number>(1);
 
     // Simulator Mode Controls
-    const [displayMode, setDisplayMode] = useState<'invisible' | 'stealth' | 'explain'>('stealth');
+    const [displayMode, setDisplayMode] = useState<'quick' | 'highlight' | 'explain'>('highlight');
     const [answerMethod, setAnswerMethod] = useState<'autofill' | 'highlight' | 'clipboard'>('autofill');
     const [isExtensionOn, setIsExtensionOn] = useState(true);
     const [soundEnabled, setSoundEnabled] = useState(true);
 
     // Canvas Exam Time & State
     const [timeLeft, setTimeLeft] = useState(1694); // 28 mins 14 secs
-    const [isTimerRunning, setIsTimerRunning] = useState(true);
-    const [flaggedQuestions, setFlaggedQuestions] = useState<number[]>([]);
+    const [isTimerRunning] = useState(true);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
-    const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [, setHasSubmitted] = useState(false);
+
+    // Modal focus management refs
+    const modalRef = useRef<HTMLDivElement>(null);
+    const modalCloseRef = useRef<HTMLButtonElement>(null);
+    const submitBtnRef = useRef<HTMLButtonElement>(null);
+    const prevModalOpenRef = useRef(false);
 
     // Question Answers State
     const [q1State, setQ1State] = useState<string | null>(null);
@@ -206,17 +211,42 @@ export default function DemoPage() {
         setTimeout(() => setClipboardNotice(null), 3000);
     };
 
-    const toggleFlag = (qNum: number) => {
-        playAudio('click');
-        setFlaggedQuestions(prev => 
-            prev.includes(qNum) ? prev.filter(n => n !== qNum) : [...prev, qNum]
-        );
-    };
-
     const selectQuestion = (qNum: number) => {
         setActiveQuestion(qNum);
         playAudio('click');
     };
+
+    // Modal focus entry, Tab trap, and focus restore
+    useEffect(() => {
+        if (isSubmitModalOpen) {
+            prevModalOpenRef.current = true;
+            const raf = requestAnimationFrame(() => modalCloseRef.current?.focus());
+            const trapFocus = (e: KeyboardEvent) => {
+                if (e.key !== 'Tab' || !modalRef.current) return;
+                const focusables = modalRef.current.querySelectorAll<HTMLElement>(
+                    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                );
+                if (focusables.length === 0) return;
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            };
+            window.addEventListener('keydown', trapFocus);
+            return () => {
+                cancelAnimationFrame(raf);
+                window.removeEventListener('keydown', trapFocus);
+            };
+        } else if (prevModalOpenRef.current) {
+            prevModalOpenRef.current = false;
+            submitBtnRef.current?.focus();
+        }
+    }, [isSubmitModalOpen]);
 
     // Keyboard Shortcuts Listener
     useEffect(() => {
@@ -238,26 +268,18 @@ export default function DemoPage() {
 
             if (e.altKey && (e.code === 'Digit1' || e.key === '1')) {
                 e.preventDefault();
-                setDisplayMode('invisible');
+                setDisplayMode('quick');
                 playAudio('click');
             }
             if (e.altKey && (e.code === 'Digit2' || e.key === '2')) {
                 e.preventDefault();
-                setDisplayMode('stealth');
+                setDisplayMode('highlight');
                 playAudio('click');
             }
             if (e.altKey && (e.code === 'Digit3' || e.key === '3')) {
                 e.preventDefault();
                 setDisplayMode('explain');
                 playAudio('click');
-            }
-
-            if (isModifier && e.shiftKey && e.key.toLowerCase() === 'u') {
-                e.preventDefault();
-                setIsExtensionOn(prev => {
-                    playAudio('click');
-                    return !prev;
-                });
             }
 
             if (e.key === 'Escape' && isSubmitModalOpen) {
@@ -285,7 +307,7 @@ export default function DemoPage() {
         setActiveQuestion(1);
         setSolvingId(1);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -308,7 +330,7 @@ export default function DemoPage() {
         setActiveQuestion(2);
         setSolvingId(2);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -331,7 +353,7 @@ export default function DemoPage() {
         setActiveQuestion(3);
         setSolvingId(3);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -354,7 +376,7 @@ export default function DemoPage() {
         setActiveQuestion(4);
         setSolvingId(4);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -375,7 +397,7 @@ export default function DemoPage() {
         setActiveQuestion(5);
         setSolvingId(5);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 450;
+        const delay = displayMode === 'quick' ? 120 : 450;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -398,7 +420,7 @@ export default function DemoPage() {
         setActiveQuestion(6);
         setSolvingId(6);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -419,7 +441,7 @@ export default function DemoPage() {
         setActiveQuestion(7);
         setSolvingId(7);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 400;
+        const delay = displayMode === 'quick' ? 120 : 400;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -437,7 +459,7 @@ export default function DemoPage() {
         setActiveQuestion(8);
         setSolvingId(8);
         playAudio('click');
-        const delay = displayMode === 'invisible' ? 120 : 450;
+        const delay = displayMode === 'quick' ? 120 : 450;
         setTimeout(() => {
             setSolvingId(null);
             playAudio('solve');
@@ -514,7 +536,6 @@ export default function DemoPage() {
         setSnipeBox(null);
         setSnipResult(null);
         setIsSniping(false);
-        setFlaggedQuestions([]);
         setHasSubmitted(false);
         setTimeLeft(1694);
         setActiveQuestion(1);
@@ -748,24 +769,24 @@ export default function DemoPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-cream text-ink font-sans selection:bg-emerald-500/20">
+        <div className="min-h-screen bg-cream text-ink font-sans selection:bg-cobalt/15">
             
             {/* Minimal, Breathable Top Navbar */}
-            <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-black/6 px-4 sm:px-6 py-3">
+            <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-xl border-b border-ink/[0.08] px-4 sm:px-6 py-3">
                 <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                         <Link prefetch={false} 
                             href="/" 
-                            className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary hover:text-ink transition-colors px-2.5 py-1.5 rounded-full hover:bg-black/5"
+                            className="inline-flex items-center gap-2 text-xs font-semibold text-ink-secondary hover:text-ink transition-colors px-2.5 py-1.5 rounded-full hover:bg-surface-subtle"
                         >
                             <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
                             <span>Back</span>
                         </Link>
-                        <span className="h-4 w-px bg-black/10" />
+                        <span className="h-4 w-px bg-ink/[0.12]" />
                         <Link prefetch={false} href="/" className="flex items-center gap-2 group">
-                            <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 bg-[#c4d0f8] shrink-0">
+                            <div className="w-7 h-7 rounded-full overflow-hidden border border-ink/[0.12] bg-cobalt-soft shrink-0">
                                 <img 
-                                    src="/images/ghost/ghost_mascot_hero.jpg" 
+                                    src="/images/ghost/ghost_mascot_avatar.jpg" 
                                     alt="ExamGhost Mascot" 
                                     width={28} 
                                     height={28} 
@@ -781,23 +802,24 @@ export default function DemoPage() {
                     <div className="flex items-center gap-1.5 sm:gap-2.5">
                         <a
                             href="#what-it-does"
-                            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-ink-secondary hover:text-ink hover:bg-black/5 transition-colors"
+                            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-ink-secondary hover:text-ink hover:bg-surface-subtle transition-colors"
                         >
                             <BookOpen className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                             <span>What it does</span>
                         </a>
 
                         <button
+                            type="button"
                             onClick={() => {
                                 setSoundEnabled(!soundEnabled);
                                 playAudio('click');
                             }}
-                            className="p-2 rounded-full bg-white border border-black/8 text-ink-secondary hover:text-ink transition-colors cursor-pointer"
+                            className="p-2 rounded-full bg-paper border border-ink/[0.09] text-ink-secondary hover:text-ink hover:border-ink/[0.20] transition-colors cursor-pointer"
                             aria-label={soundEnabled ? "Mute audio" : "Unmute audio"}
                             title={soundEnabled ? "Sound On" : "Muted"}
                         >
                             {soundEnabled ? (
-                                <Volume2 className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                <Volume2 className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                             ) : (
                                 <VolumeX className="w-3.5 h-3.5 text-ink-muted" aria-hidden="true" />
                             )}
@@ -809,7 +831,7 @@ export default function DemoPage() {
                             rel="noopener noreferrer"
                             className="btn-dark px-3 sm:px-4 py-2 text-xs font-semibold rounded-full shadow-xs inline-flex items-center gap-2"
                         >
-                            <FaChrome className="w-3.5 h-3.5 text-[#bfe3f6]" aria-hidden="true" />
+                            <FaChrome className="w-3.5 h-3.5 text-sky" aria-hidden="true" />
                             <span className="sm:hidden">Install</span>
                             <span className="hidden sm:inline">Add to Chrome — Free</span>
                         </a>
@@ -818,14 +840,14 @@ export default function DemoPage() {
             </header>
 
             {/* Clean Editorial Header */}
-            <section className="pt-5 sm:pt-6 pb-4 px-4 sm:px-6 max-w-6xl mx-auto">
+            <section className="pt-5 sm:pt-7 pb-4 px-4 sm:px-6 max-w-6xl mx-auto">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/8 shadow-2xs text-[11px] font-semibold text-ink mb-2">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>LIVE SANDBOX · NOTHING TO INSTALL</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper border border-ink/[0.09] shadow-xs text-xs font-medium text-ink-secondary mb-2.5">
+                            <span className="w-2 h-2 rounded-full bg-emeraldBrand animate-pulse" aria-hidden="true" />
+                            <span>Live sandbox · Nothing to install</span>
                         </div>
-                        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
+                        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-[-0.03em] text-ink leading-tight">
                             Try ExamGhost on a Canvas-style quiz
                         </h1>
                         <p className="aeo-summary text-xs sm:text-sm text-ink-muted mt-1.5 max-w-2xl leading-relaxed">
@@ -835,17 +857,19 @@ export default function DemoPage() {
 
                     <div className="flex items-center gap-2 shrink-0">
                         <button
+                            type="button"
                             onClick={handleSpeedrunAll}
                             disabled={isSpeedrunning || !isExtensionOn}
-                            className="px-4 py-2.5 rounded-full bg-ink hover:bg-ink/90 text-white text-xs font-semibold transition-all flex items-center gap-2 disabled:opacity-50 shadow-soft cursor-pointer"
+                            className="px-4 py-2.5 rounded-full bg-surface-dark hover:bg-ink-secondary text-white text-xs font-semibold transition-all flex items-center gap-2 disabled:opacity-50 shadow-soft cursor-pointer"
                         >
-                            <Zap className="w-3.5 h-3.5 text-[#ffd23f]" aria-hidden="true" />
+                            <Zap className="w-3.5 h-3.5 text-cobalt-bright" aria-hidden="true" />
                             <span>{isSpeedrunning ? `Solving All ${TOTAL_Q}...` : `Auto-Solve All (${TOTAL_Q})`}</span>
                         </button>
 
                         <button
+                            type="button"
                             onClick={handleResetAll}
-                            className="px-3.5 py-2.5 rounded-full bg-white hover:bg-[#faf8f4] border border-black/10 text-ink-secondary hover:text-ink text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs cursor-pointer"
+                            className="px-3.5 py-2.5 rounded-full bg-paper hover:bg-surface-subtle border border-ink/[0.12] text-ink-secondary hover:text-ink text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer"
                         >
                             <RefreshCw className="w-3.5 h-3.5" aria-hidden="true" />
                             <span>Reset</span>
@@ -855,66 +879,66 @@ export default function DemoPage() {
             </section>
 
             {/* Main 2-Column Interactive Workspace */}
-            <main className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+            <main id="main-content" className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                     
                     {/* Left Column (8 Cols): Focused macOS Canvas Window */}
                     <div className="lg:col-span-8">
                         <div 
                             ref={quizAreaRef}
-                            className="rounded-3xl bg-white border border-black/10 shadow-lift overflow-hidden relative select-none"
+                            className="rounded-2xl sm:rounded-3xl bg-paper border border-ink/[0.09] shadow-lift overflow-hidden relative select-none"
                         >
                             
                             {/* Single Clean macOS Title Bar (Single Line, Zero Wrapping) */}
-                            <div className="bg-[#f7f5f0] px-4 sm:px-6 py-3 border-b border-black/6 flex items-center justify-between gap-2">
+                            <div className="bg-surface-subtle px-4 sm:px-6 py-3 border-b border-ink/[0.08] flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2 min-w-0">
-                                    <span className="w-3 h-3 rounded-full bg-[#ff5f57] border border-black/10 inline-block shrink-0" />
-                                    <span className="w-3 h-3 rounded-full bg-[#febc2e] border border-black/10 inline-block shrink-0" />
-                                    <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 inline-block shrink-0" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57] inline-block shrink-0" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e] inline-block shrink-0" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840] inline-block shrink-0" />
                                     <span className="text-xs text-ink-muted font-mono ml-1.5 truncate hidden sm:inline-block">
                                         canvas.edu/quizzes/midterm
                                     </span>
                                 </div>
 
                                 <div className="flex items-center gap-2 shrink-0">
-                                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-black/8 text-xs font-mono font-semibold text-ink">
-                                        <Clock className="w-3 h-3 text-emerald-600" aria-hidden="true" />
+                                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-paper border border-ink/[0.08] text-xs font-mono font-semibold text-ink">
+                                        <Clock className="w-3 h-3 text-emeraldBrand" aria-hidden="true" />
                                         <span>{formatTimer(timeLeft)}</span>
                                     </div>
-
                                 </div>
                             </div>
 
-                            {/* Interactive 5-Question Switcher Bar (Full Width, Zero Scrollbar) */}
-                            <div className="px-4 sm:px-6 py-2.5 bg-[#faf8f5] border-b border-black/6 grid grid-cols-4 sm:grid-cols-8 gap-1.5 sm:gap-2">
+                            {/* Interactive 8-Question Switcher Bar (Full Width, Zero Scrollbar) */}
+                            <div className="px-4 sm:px-6 py-2.5 bg-cream/70 border-b border-ink/[0.08] grid grid-cols-4 sm:grid-cols-8 gap-1.5 sm:gap-2">
                                 {questionsMeta.map((q) => {
                                     const isActive = activeQuestion === q.id;
                                     return (
                                         <button
                                             key={q.id}
+                                            type="button"
                                             onClick={() => selectQuestion(q.id)}
                                             title={`${q.title} · ${q.topic} · ${q.pts}`}
                                             aria-current={isActive ? 'true' : undefined}
                                             className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                                                 isActive
-                                                    ? 'bg-ink text-white shadow-xs'
+                                                    ? 'bg-surface-dark text-white shadow-xs'
                                                     : q.solved
-                                                    ? 'bg-[#cdeecb]/60 text-ink border border-emerald-500/30 hover:bg-[#cdeecb]'
-                                                    : 'bg-white text-ink-secondary border border-black/8 hover:border-black/20 hover:text-ink'
+                                                    ? 'bg-emeraldBrand-soft text-ink border border-emeraldBrand/30 hover:bg-emeraldBrand/15'
+                                                    : 'bg-paper text-ink-secondary border border-ink/[0.09] hover:border-cobalt/40 hover:text-ink'
                                             }`}
                                         >
                                             <span>{q.title}</span>
                                             
                                             {q.solved && (
                                                 <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                                                    isActive ? 'bg-[#cdeecb] text-ink' : 'bg-emerald-600 text-white'
+                                                    isActive ? 'bg-emeraldBrand text-white' : 'bg-emeraldBrand text-white'
                                                 }`}>
                                                     ✓
                                                 </span>
                                             )}
                                             {!q.solved && q.isOcr && (
-                                                <span className={`hidden sm:inline-block text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
-                                                    isActive ? 'bg-[#e2d3fa] text-ink' : 'bg-[#e2d3fa]/80 text-ink'
+                                                <span className={`hidden sm:inline-block text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-md shrink-0 ${
+                                                    isActive ? 'bg-cobalt text-white' : 'bg-cobalt-soft text-cobalt'
                                                 }`}>
                                                     OCR
                                                 </span>
@@ -926,13 +950,13 @@ export default function DemoPage() {
 
                             {solvedCount === 0 && (
                                 <p className="px-5 sm:px-7 pt-3 text-xs text-ink-muted flex items-center gap-1.5">
-                                    <MousePointerClick className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                    <MousePointerClick className="w-3.5 h-3.5 text-cobalt" aria-hidden="true" />
                                     Tip: double-click a question to solve it, or press Alt+S to snip a diagram.
                                 </p>
                             )}
 
-                            {/* Focused Single-Question Stage (All 5 remain in DOM for SEO) */}
-                            <div className={`p-5 sm:p-7 bg-white flex flex-col justify-between relative transition-[padding] duration-200 ${explainPanelOpen ? 'sm:pr-[304px]' : ''}`}>
+                            {/* Focused Single-Question Stage (All 8 remain in DOM) */}
+                            <div className={`p-5 sm:p-7 bg-paper flex flex-col justify-between relative transition-[padding] duration-200 ${explainPanelOpen ? 'lg:pr-[312px]' : ''}`}>
 
                                 {/* QUESTION 1: Biology MCQ */}
                                 <div 
@@ -941,26 +965,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 1 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 1 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 1...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 1 of 8 · Cell Biology
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 2.0 pts
                                             </span>
                                         </div>
                                         <button 
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ1(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q1Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -979,31 +1004,33 @@ export default function DemoPage() {
                                             const isSelected = q1State === opt.id;
                                             const isGlow = opt.correct && q1Highlighted;
                                             return (
-                                                <div 
+                                                <button
                                                     key={opt.id}
-                                                    onClick={() => setQ1State(opt.id)}
-                                                    className={`p-4 rounded-2xl border text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
+                                                    type="button"
+                                                    aria-pressed={isSelected}
+                                                    onClick={(e) => { e.stopPropagation(); setQ1State(opt.id); }}
+                                                    className={`w-full text-left p-4 rounded-xl border text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
                                                         isSelected 
-                                                            ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink font-semibold shadow-2xs'
+                                                            ? 'bg-emeraldBrand-soft/55 border-emeraldBrand text-ink font-semibold shadow-xs'
                                                             : isGlow
-                                                            ? 'bg-[#ffe9a0]/60 border-amber-400 text-ink font-semibold ring-2 ring-amber-300'
-                                                            : 'bg-white border-black/8 text-ink hover:border-black/20'
+                                                            ? 'bg-cobalt-soft/75 border-cobalt text-ink font-semibold ring-2 ring-cobalt/25'
+                                                            : 'bg-paper border-ink/[0.10] text-ink hover:border-ink/[0.25]'
                                                     }`}
                                                 >
                                                     <div className="flex items-center gap-3">
-                                                        <span className={`w-4 h-4 rounded-full border flex items-center justify-center font-bold text-[10px] ${
-                                                            isSelected ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-black/25 bg-white'
+                                                        <span className={`w-4 h-4 rounded-full border flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                                                            isSelected ? 'border-emeraldBrand bg-emeraldBrand text-white' : 'border-ink/25 bg-paper'
                                                         }`}>
                                                             {isSelected ? '✓' : ''}
                                                         </span>
                                                         <span>{opt.text}</span>
                                                     </div>
                                                     {isGlow && (
-                                                        <span className="text-[11px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2.5 py-0.5 rounded-full">
+                                                        <span className="text-[11px] font-mono font-semibold text-cobalt bg-cobalt-soft border border-cobalt/20 px-2.5 py-0.5 rounded-full">
                                                             Highlighted
                                                         </span>
                                                     )}
-                                                </div>
+                                                </button>
                                             );
                                         })}
                                     </div>
@@ -1017,26 +1044,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 2 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 2 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 2...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 2 of 8 · Psychology
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 1.0 pt
                                             </span>
                                         </div>
                                         <button 
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ2(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q2Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1056,18 +1084,19 @@ export default function DemoPage() {
                                                 <button
                                                     key={opt.id}
                                                     type="button"
-                                                    onClick={() => setQ2State(opt.id)}
-                                                    className={`p-5 rounded-2xl border text-base font-bold transition-all flex items-center justify-between cursor-pointer ${
+                                                    aria-pressed={isSelected}
+                                                    onClick={(e) => { e.stopPropagation(); setQ2State(opt.id); }}
+                                                    className={`p-5 rounded-xl border text-base font-bold transition-all flex items-center justify-between cursor-pointer ${
                                                         isSelected
-                                                            ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink shadow-2xs'
+                                                            ? 'bg-emeraldBrand-soft/55 border-emeraldBrand text-ink shadow-xs'
                                                             : isGlow
-                                                            ? 'bg-[#ffe9a0]/60 border-amber-400 text-ink ring-2 ring-amber-300'
-                                                            : 'bg-white border-black/8 text-ink hover:border-black/20'
+                                                            ? 'bg-cobalt-soft/75 border-cobalt text-ink ring-2 ring-cobalt/25'
+                                                            : 'bg-paper border-ink/[0.10] text-ink hover:border-ink/[0.25]'
                                                     }`}
                                                 >
                                                     <span>{opt.label}</span>
-                                                    {isSelected && <span className="text-xs font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">✓ Verified</span>}
-                                                    {isGlow && <span className="text-xs font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2.5 py-0.5 rounded-full">Highlighted</span>}
+                                                    {isSelected && <span className="text-xs font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full">✓ Verified</span>}
+                                                    {isGlow && <span className="text-xs font-mono font-semibold text-cobalt bg-cobalt-soft border border-cobalt/20 px-2.5 py-0.5 rounded-full">Highlighted</span>}
                                                 </button>
                                             );
                                         })}
@@ -1082,26 +1111,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 3 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 3 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 3...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 3 of 8 · Data Structures
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 3.0 pts
                                             </span>
                                         </div>
                                         <button 
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ3(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q3Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1120,33 +1150,36 @@ export default function DemoPage() {
                                             const isChecked = q3State.includes(opt.id);
                                             const isGlow = opt.correct && q3Highlighted;
                                             return (
-                                                <div 
+                                                <button
                                                     key={opt.id}
-                                                    onClick={() => {
+                                                    type="button"
+                                                    aria-pressed={isChecked}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
                                                         setQ3State(prev => isChecked ? prev.filter(x => x !== opt.id) : [...prev, opt.id]);
                                                     }}
-                                                    className={`p-4 rounded-2xl border text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
+                                                    className={`w-full text-left p-4 rounded-xl border text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
                                                         isChecked
-                                                            ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink font-semibold shadow-2xs'
+                                                            ? 'bg-emeraldBrand-soft/55 border-emeraldBrand text-ink font-semibold shadow-xs'
                                                             : isGlow
-                                                            ? 'bg-[#ffe9a0]/60 border-amber-400 text-ink font-semibold ring-2 ring-amber-300'
-                                                            : 'bg-white border-black/8 text-ink hover:border-black/20'
+                                                            ? 'bg-cobalt-soft/75 border-cobalt text-ink font-semibold ring-2 ring-cobalt/25'
+                                                            : 'bg-paper border-ink/[0.10] text-ink hover:border-ink/[0.25]'
                                                     }`}
                                                 >
                                                     <div className="flex items-center gap-3">
-                                                        <span className={`w-4 h-4 rounded border flex items-center justify-center font-bold text-[10px] ${
-                                                            isChecked ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-black/25 bg-white'
+                                                        <span className={`w-4 h-4 rounded border flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                                                            isChecked ? 'border-emeraldBrand bg-emeraldBrand text-white' : 'border-ink/25 bg-paper'
                                                         }`}>
                                                             {isChecked && '✓'}
                                                         </span>
                                                         <span>{opt.text}</span>
                                                     </div>
                                                     {isChecked && opt.correct && (
-                                                        <span className="text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">
+                                                        <span className="text-[11px] font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full">
                                                             Correct
                                                         </span>
                                                     )}
-                                                </div>
+                                                </button>
                                             );
                                         })}
                                     </div>
@@ -1160,26 +1193,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 4 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 4 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Synthesizing Short Answer...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 4 of 8 · Chemistry
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 4.0 pts
                                             </span>
                                         </div>
                                         <button 
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ4(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q4Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1194,11 +1228,11 @@ export default function DemoPage() {
                                             value={q4Text}
                                             onChange={(e) => setQ4Text(e.target.value)}
                                             placeholder="Double-click anywhere or click 'Solve Question' to auto-type the answer..."
-                                            className="w-full p-4 rounded-2xl border border-black/12 bg-[#faf8f5]/60 focus:bg-white text-sm text-ink leading-relaxed focus:outline-none focus:border-emerald-600 resize-none"
+                                            className="w-full p-4 rounded-xl border border-ink/[0.14] bg-cream/60 focus:bg-paper text-sm text-ink leading-relaxed focus:outline-none focus-visible:border-cobalt focus-visible:ring-2 focus-visible:ring-cobalt/20 resize-none transition-colors"
                                             aria-label="Short answer essay text field for Question 4"
                                         />
                                         {q4Solved && (
-                                            <div className="absolute bottom-3.5 right-3.5 text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full pointer-events-none">
+                                            <div className="absolute bottom-3.5 right-3.5 text-[11px] font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full pointer-events-none">
                                                 ✓ Auto-Typed
                                             </div>
                                         )}
@@ -1213,39 +1247,40 @@ export default function DemoPage() {
                                     className={activeQuestion === 5 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 5 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Running Snap-It Vision OCR...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 5 of 8 · Calculus &amp; Trig
                                             </span>
-                                            <span className="text-xs bg-[#e2d3fa] px-2.5 py-0.5 rounded-full font-bold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-cobalt-soft text-cobalt border border-cobalt/20 px-2.5 py-0.5 rounded-full font-semibold whitespace-nowrap">
                                                 5.0 pts · Diagram OCR
                                             </span>
                                         </div>
                                         <button
+                                            type="button"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 triggerPresetSnipe(5);
                                             }}
-                                            className="px-3.5 py-1.5 rounded-full bg-ink hover:bg-ink/90 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-surface-dark hover:bg-ink-secondary text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-xs cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Crop className="w-3.5 h-3.5 text-[#cdeecb]" aria-hidden="true" />
+                                            <Crop className="w-3.5 h-3.5 text-cobalt-bright" aria-hidden="true" />
                                             <span>Snip &amp; Solve Diagram</span>
                                         </button>
                                     </div>
 
                                     <h2 className="font-display text-base sm:text-lg font-bold text-ink mb-4 leading-snug">
-                                        Find hypotenuse <span className="font-mono text-emerald-800">c</span> (legs <span className="font-mono">a = 6, b = 8</span>) and derivative <span className="font-mono text-emerald-800">dy/dx</span> of <span className="font-mono">y = 0.5x² - 2x + 4</span> at <span className="font-mono">x = 4</span>:
+                                        Find hypotenuse <span className="font-mono text-cobalt">c</span> (legs <span className="font-mono">a = 6, b = 8</span>) and derivative <span className="font-mono text-emeraldBrand">dy/dx</span> of <span className="font-mono">y = 0.5x² - 2x + 4</span> at <span className="font-mono">x = 4</span>:
                                     </h2>
 
                                     {/* Clean Diagram Canvas */}
-                                    <div className="mb-4 p-3 rounded-2xl bg-[#faf8f5] border border-black/8 flex justify-center">
+                                    <div className="mb-4 p-3 rounded-xl bg-cream border border-ink/[0.08] flex justify-center">
                                         <svg 
                                             viewBox="0 0 460 155" 
                                             className="w-full max-w-md h-auto"
@@ -1259,14 +1294,14 @@ export default function DemoPage() {
                                             <rect width="460" height="155" fill="url(#grid)" rx="12" />
                                             <line x1="30" y1="135" x2="430" y2="135" stroke="#94a3b8" strokeWidth="1.5" />
                                             <line x1="40" y1="145" x2="40" y2="15" stroke="#94a3b8" strokeWidth="1.5" />
-                                            <polygon points="60,135 230,135 230,30" fill="#c4d0f8" fillOpacity="0.55" stroke="#4f46e5" strokeWidth="2.5" />
-                                            <rect x="216" y="121" width="14" height="14" fill="none" stroke="#4f46e5" strokeWidth="1.5" />
-                                            <text x="130" y="150" fontSize="12" fontWeight="bold" fill="#1e1b4b" fontFamily="monospace">a = 6</text>
-                                            <text x="238" y="88" fontSize="12" fontWeight="bold" fill="#1e1b4b" fontFamily="monospace">b = 8</text>
-                                            <text x="115" y="75" fontSize="13" fontWeight="bold" fill="#4f46e5" fontFamily="monospace">c = ?</text>
-                                            <path d="M 265,120 Q 335,55 410,22" fill="none" stroke="#059669" strokeWidth="2.5" strokeDasharray="4 2" />
-                                            <circle cx="350" cy="45" r="4.5" fill="#059669" />
-                                            <text x="310" y="30" fontSize="11" fontWeight="bold" fill="#065f46" fontFamily="monospace">dy/dx at x = 4</text>
+                                            <polygon points="60,135 230,135 230,30" fill="#c4d0f8" fillOpacity="0.55" stroke="#3B5BDB" strokeWidth="2.5" />
+                                            <rect x="216" y="121" width="14" height="14" fill="none" stroke="#3B5BDB" strokeWidth="1.5" />
+                                            <text x="130" y="150" fontSize="12" fontWeight="bold" fill="#101114" fontFamily="monospace">a = 6</text>
+                                            <text x="238" y="88" fontSize="12" fontWeight="bold" fill="#101114" fontFamily="monospace">b = 8</text>
+                                            <text x="115" y="75" fontSize="13" fontWeight="bold" fill="#3B5BDB" fontFamily="monospace">c = ?</text>
+                                            <path d="M 265,120 Q 335,55 410,22" fill="none" stroke="#0F9D68" strokeWidth="2.5" strokeDasharray="4 2" />
+                                            <circle cx="350" cy="45" r="4.5" fill="#0F9D68" />
+                                            <text x="310" y="30" fontSize="11" fontWeight="bold" fill="#0F9D68" fontFamily="monospace">dy/dx at x = 4</text>
                                         </svg>
                                     </div>
 
@@ -1280,31 +1315,33 @@ export default function DemoPage() {
                                             const isSelected = q5State === opt.id;
                                             const isGlow = opt.correct && q5Highlighted;
                                             return (
-                                                <div 
+                                                <button
                                                     key={opt.id}
-                                                    onClick={() => setQ5State(opt.id)}
-                                                    className={`p-3.5 rounded-2xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
+                                                    type="button"
+                                                    aria-pressed={isSelected}
+                                                    onClick={(e) => { e.stopPropagation(); setQ5State(opt.id); }}
+                                                    className={`w-full text-left p-3.5 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-between cursor-pointer ${
                                                         isSelected 
-                                                            ? 'bg-[#cdeecb]/40 border-emerald-500 text-ink font-semibold shadow-2xs'
+                                                            ? 'bg-emeraldBrand-soft/55 border-emeraldBrand text-ink font-semibold shadow-xs'
                                                             : isGlow
-                                                            ? 'bg-[#ffe9a0]/60 border-amber-400 text-ink font-semibold ring-2 ring-amber-300'
-                                                            : 'bg-white border-black/8 text-ink hover:border-black/20'
+                                                            ? 'bg-cobalt-soft/75 border-cobalt text-ink font-semibold ring-2 ring-cobalt/25'
+                                                            : 'bg-paper border-ink/[0.10] text-ink hover:border-ink/[0.25]'
                                                     }`}
                                                 >
                                                     <div className="flex items-center gap-2.5">
-                                                        <span className={`w-4 h-4 rounded-full border flex items-center justify-center font-bold text-[10px] ${
-                                                            isSelected ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-black/25 bg-white'
+                                                        <span className={`w-4 h-4 rounded-full border flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                                                            isSelected ? 'border-emeraldBrand bg-emeraldBrand text-white' : 'border-ink/25 bg-paper'
                                                         }`}>
                                                             {isSelected ? '✓' : ''}
                                                         </span>
                                                         <span className="font-mono">{opt.text}</span>
                                                     </div>
                                                     {isSelected && (
-                                                        <span className="text-[10px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2 py-0.5 rounded-full">
+                                                        <span className="text-[10px] font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2 py-0.5 rounded-full">
                                                             OCR ✓
                                                         </span>
                                                     )}
-                                                </div>
+                                                </button>
                                             );
                                         })}
                                     </div>
@@ -1318,26 +1355,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 6 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 6 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 6...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 6 of 8 · Geography
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 1.0 pt
                                             </span>
                                         </div>
                                         <button
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ6(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q6Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1351,12 +1389,12 @@ export default function DemoPage() {
                                             value={q6State}
                                             onChange={(e) => setQ6State(e.target.value)}
                                             aria-label="Capital city of Australia"
-                                            className={`w-full appearance-none rounded-2xl border px-4 py-4 text-base font-medium text-ink cursor-pointer transition-all focus:outline-none ${
+                                            className={`w-full appearance-none rounded-xl border px-4 py-4 text-base font-medium text-ink cursor-pointer transition-all focus:outline-none focus-visible:border-cobalt focus-visible:ring-2 focus-visible:ring-cobalt/20 ${
                                                 q6Solved
-                                                    ? 'bg-[#cdeecb]/40 border-emerald-500'
+                                                    ? 'bg-emeraldBrand-soft/55 border-emeraldBrand'
                                                     : q6Highlighted
-                                                    ? 'bg-[#ffe9a0]/60 border-amber-400 ring-2 ring-amber-300'
-                                                    : 'bg-white border-black/12 hover:border-black/25'
+                                                    ? 'bg-cobalt-soft/75 border-cobalt ring-2 ring-cobalt/25'
+                                                    : 'bg-paper border-ink/[0.14] hover:border-ink/[0.28]'
                                             }`}
                                         >
                                             <option value="">Select an answer…</option>
@@ -1367,10 +1405,10 @@ export default function DemoPage() {
                                         </select>
                                         <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" aria-hidden="true" />
                                         {q6Solved && (
-                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full pointer-events-none">✓ Selected</span>
+                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full pointer-events-none">✓ Selected</span>
                                         )}
                                         {q6Highlighted && !q6Solved && (
-                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2.5 py-0.5 rounded-full pointer-events-none">Highlighted: Canberra</span>
+                                            <span className="absolute right-11 top-1/2 -translate-y-1/2 text-[11px] font-mono font-semibold text-cobalt bg-cobalt-soft border border-cobalt/20 px-2.5 py-0.5 rounded-full pointer-events-none">Highlighted: Canberra</span>
                                         )}
                                     </div>
                                 </div>
@@ -1382,26 +1420,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 7 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 7 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 7...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 7 of 8 · Algebra
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 3.0 pts
                                             </span>
                                         </div>
                                         <button
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ7(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q7Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1419,12 +1458,12 @@ export default function DemoPage() {
                                             onChange={(e) => setQ7Text(e.target.value)}
                                             placeholder="?"
                                             aria-label="Answer for x"
-                                            className={`w-28 rounded-xl border px-4 py-3 text-center text-lg font-semibold focus:outline-none transition-colors ${
-                                                q7Solved ? 'bg-[#cdeecb]/40 border-emerald-500' : 'bg-white border-black/15 focus:border-emerald-600'
+                                            className={`w-28 rounded-xl border px-4 py-3 text-center text-lg font-semibold focus:outline-none focus-visible:border-cobalt focus-visible:ring-2 focus-visible:ring-cobalt/20 transition-colors ${
+                                                q7Solved ? 'bg-emeraldBrand-soft/55 border-emeraldBrand' : 'bg-paper border-ink/[0.15]'
                                             }`}
                                         />
                                         {q7Solved && (
-                                            <span className="text-[11px] font-mono font-bold text-emerald-900 bg-[#cdeecb] px-2.5 py-0.5 rounded-full">✓ Filled in</span>
+                                            <span className="text-[11px] font-mono font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/25 px-2.5 py-0.5 rounded-full">✓ Filled in</span>
                                         )}
                                     </div>
                                 </div>
@@ -1436,26 +1475,27 @@ export default function DemoPage() {
                                     className={activeQuestion === 8 ? "block animate-fade-in cursor-pointer" : "hidden"}
                                 >
                                     {solvingId === 8 && (
-                                        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                        <div className="absolute inset-0 bg-paper/85 backdrop-blur-[2px] z-20 flex items-center justify-center gap-2.5 text-sm font-bold text-ink">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-cobalt animate-ping" />
                                             <span>Solving Question 8...</span>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-black/6">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-ink/[0.08]">
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                                            <span className="text-xs font-mono font-medium text-ink-muted">
                                                 Question 8 of 8 · Cell Biology
                                             </span>
-                                            <span className="text-xs bg-[#f4f1ea] px-2.5 py-0.5 rounded-full font-semibold text-ink whitespace-nowrap">
+                                            <span className="text-xs bg-surface-subtle px-2.5 py-0.5 rounded-full font-semibold text-ink-secondary whitespace-nowrap">
                                                 4.0 pts
                                             </span>
                                         </div>
                                         <button
+                                            type="button"
                                             onClick={(e) => { e.stopPropagation(); handleSolveQ8(); }}
-                                            className="px-3.5 py-1.5 rounded-full bg-[#cdeecb] hover:bg-[#bde6ba] text-ink font-bold text-xs transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                                            className="px-3.5 py-1.5 rounded-full bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                                         >
-                                            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <Sparkles className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                             <span>{q8Solved ? 'Solved ✓' : 'Solve Question'}</span>
                                         </button>
                                     </div>
@@ -1476,12 +1516,12 @@ export default function DemoPage() {
                                                             id={`q8-${pr.term}`}
                                                             value={val}
                                                             onChange={(e) => setQ8State((prev) => ({ ...prev, [pr.term]: e.target.value }))}
-                                                            className={`w-full appearance-none rounded-xl border px-3.5 py-2.5 text-sm cursor-pointer focus:outline-none transition-all ${
+                                                            className={`w-full appearance-none rounded-xl border px-3.5 py-2.5 text-sm cursor-pointer focus:outline-none focus-visible:border-cobalt focus-visible:ring-2 focus-visible:ring-cobalt/20 transition-all ${
                                                                 ok
-                                                                    ? 'bg-[#cdeecb]/40 border-emerald-500 font-semibold'
+                                                                    ? 'bg-emeraldBrand-soft/55 border-emeraldBrand font-semibold'
                                                                     : q8Highlighted
-                                                                    ? 'bg-[#ffe9a0]/50 border-amber-400 ring-2 ring-amber-300'
-                                                                    : 'bg-white border-black/12 hover:border-black/25'
+                                                                    ? 'bg-cobalt-soft/75 border-cobalt ring-2 ring-cobalt/25'
+                                                                    : 'bg-paper border-ink/[0.14] hover:border-ink/[0.28]'
                                                             }`}
                                                         >
                                                             <option value="">Select function…</option>
@@ -1491,7 +1531,7 @@ export default function DemoPage() {
                                                         </select>
                                                         <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" aria-hidden="true" />
                                                         {q8Highlighted && !ok && (
-                                                            <span className="absolute right-9 top-1/2 -translate-y-1/2 hidden sm:inline text-[10px] font-mono font-bold text-amber-950 bg-[#ffe9a0] px-2 py-0.5 rounded-full pointer-events-none">{pr.answer}</span>
+                                                            <span className="absolute right-9 top-1/2 -translate-y-1/2 hidden sm:inline text-[10px] font-mono font-semibold text-cobalt bg-cobalt-soft border border-cobalt/20 px-2 py-0.5 rounded-full pointer-events-none">{pr.answer}</span>
                                                         )}
                                                     </div>
                                                 </div>
@@ -1505,40 +1545,42 @@ export default function DemoPage() {
                             {/* Explain-mode side panel (slides in like the extension's banner) */}
                             {displayMode === 'explain' && explainOpen[activeQuestion] && (
                                 <aside
-                                    className="animate-fade-in mx-4 mb-4 sm:mx-0 sm:mb-0 sm:absolute sm:z-30 sm:right-4 sm:top-[150px] sm:w-[272px] rounded-2xl bg-[#18181b] text-white p-4 shadow-lift ring-1 ring-white/10"
+                                    className="animate-fade-in mx-4 mb-4 lg:mx-0 lg:mb-0 lg:absolute lg:z-30 lg:right-4 lg:top-[150px] lg:w-[272px] rounded-2xl dark-surface bg-surface-dark-elevated text-white p-4 surface-dark-card border border-white/10"
                                     aria-label="ExamGhost explanation"
                                 >
                                     <div className="flex items-center gap-2 mb-3">
-                                        <span className="w-5 h-5 rounded-full overflow-hidden bg-[#c4d0f8] shrink-0">
+                                        <span className="w-5 h-5 rounded-full overflow-hidden bg-cobalt-soft shrink-0">
                                             <img src="/images/ghost/ghost_mascot_avatar.jpg" alt="" width={20} height={20} className="w-full h-full object-cover scale-110" />
                                         </span>
                                         <span className="text-xs font-semibold">ExamGhost</span>
-                                        <span className="ml-auto text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 rounded-full px-2 py-0.5">Solved</span>
-                                        <button onClick={() => dismissExplain(activeQuestion)} className="p-1 -mr-1 rounded hover:bg-white/10 cursor-pointer" aria-label="Close explanation">
+                                        <span className="ml-auto text-[10px] font-semibold bg-emeraldBrand/20 text-[#6EE7B7] rounded-full px-2 py-0.5">Solved</span>
+                                        <button type="button" onClick={() => dismissExplain(activeQuestion)} className="p-1 -mr-1 rounded hover:bg-white/10 cursor-pointer" aria-label="Close explanation">
                                             <X className="w-3.5 h-3.5" aria-hidden="true" />
                                         </button>
                                     </div>
-                                    <p className="text-[11px] text-white/50 mb-1">Answer</p>
-                                    <p className="rounded-lg bg-white/10 px-3 py-2 text-[13px] font-semibold mb-3">{EXPLAIN_PANEL[activeQuestion].answer}</p>
-                                    <p className="text-[12px] leading-relaxed text-white/70">{EXPLAIN_PANEL[activeQuestion].why}</p>
+                                    <p className="text-[11px] text-white/55 mb-1">Answer</p>
+                                    <p className="rounded-lg bg-white/[0.08] border border-white/10 px-3 py-2 text-[13px] font-semibold mb-3">{EXPLAIN_PANEL[activeQuestion].answer}</p>
+                                    <p className="text-[12px] leading-relaxed text-white/75">{EXPLAIN_PANEL[activeQuestion].why}</p>
                                 </aside>
                             )}
 
                             {/* Clean Bottom Question Pagination & Submit Bar */}
-                            <div className="px-5 sm:px-6 py-4 bg-[#f7f5f0] border-t border-black/6 flex flex-wrap items-center justify-between gap-3 text-xs">
+                            <div className="px-5 sm:px-6 py-4 bg-surface-subtle/80 border-t border-ink/[0.08] flex flex-wrap items-center justify-between gap-3 text-xs">
                                 <div className="flex items-center gap-2">
                                     <button
+                                        type="button"
                                         onClick={() => selectQuestion(Math.max(1, activeQuestion - 1))}
                                         disabled={activeQuestion === 1}
-                                        className="px-3.5 py-2 rounded-xl bg-white border border-black/8 text-ink font-semibold hover:bg-black/5 disabled:opacity-40 transition-colors flex items-center gap-1 cursor-pointer"
+                                        className="px-3.5 py-2 rounded-xl bg-paper border border-ink/[0.09] text-ink font-semibold hover:bg-surface-subtle disabled:opacity-40 transition-colors flex items-center gap-1 cursor-pointer"
                                     >
                                         <ChevronLeft className="w-3.5 h-3.5" aria-hidden="true" />
                                         <span>Prev</span>
                                     </button>
                                     <button
+                                        type="button"
                                         onClick={() => selectQuestion(Math.min(TOTAL_Q, activeQuestion + 1))}
                                         disabled={activeQuestion === TOTAL_Q}
-                                        className="px-3.5 py-2 rounded-xl bg-white border border-black/8 text-ink font-semibold hover:bg-black/5 disabled:opacity-40 transition-colors flex items-center gap-1 cursor-pointer"
+                                        className="px-3.5 py-2 rounded-xl bg-paper border border-ink/[0.09] text-ink font-semibold hover:bg-surface-subtle disabled:opacity-40 transition-colors flex items-center gap-1 cursor-pointer"
                                     >
                                         <span>Next Question</span>
                                         <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -1546,20 +1588,22 @@ export default function DemoPage() {
                                 </div>
 
                                 <div className="flex items-center gap-3">
-                                    <span className="hidden sm:block w-24 h-1.5 rounded-full bg-black/10 overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={TOTAL_Q} aria-valuenow={solvedCount} aria-label="Questions solved">
-                                        <span className="block h-full bg-emerald-500 rounded-full transition-all duration-500" style={{ width: `${(solvedCount / TOTAL_Q) * 100}%` }} />
+                                    <span className="hidden sm:block w-24 h-1.5 rounded-full bg-ink/10 overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={TOTAL_Q} aria-valuenow={solvedCount} aria-label="Questions solved">
+                                        <span className="block h-full bg-emeraldBrand rounded-full transition-all duration-500" style={{ width: `${(solvedCount / TOTAL_Q) * 100}%` }} />
                                     </span>
                                     <span className="font-mono font-semibold text-ink-secondary">
                                         {solvedCount}/{TOTAL_Q} Solved · <strong className="text-ink">{earnedPoints}/{totalPoints} pts</strong>
                                     </span>
                                     <button
+                                        ref={submitBtnRef}
+                                        type="button"
                                         onClick={() => {
                                             playAudio('click');
                                             setIsSubmitModalOpen(true);
                                         }}
-                                        className="px-4 py-2 rounded-xl bg-ink hover:bg-ink/90 text-white font-bold transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                                        className="px-4 py-2 rounded-xl bg-surface-dark hover:bg-ink-secondary text-white font-semibold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
                                     >
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-[#cdeecb]" aria-hidden="true" />
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-emeraldBrand" aria-hidden="true" />
                                         <span>Submit Quiz</span>
                                     </button>
                                 </div>
@@ -1568,7 +1612,7 @@ export default function DemoPage() {
                             {/* Interactive In-Page Snipe Overlay */}
                             {isSniping && (
                                 <div 
-                                    className="absolute inset-0 z-40 cursor-crosshair bg-slate-900/40 backdrop-blur-[1px] select-none touch-none"
+                                    className="dark-surface absolute inset-0 z-40 cursor-crosshair bg-surface-dark/45 backdrop-blur-[1px] select-none touch-none"
                                     onMouseDown={handleSnipeMouseDown}
                                     onMouseMove={handleSnipeMouseMove}
                                     onMouseUp={handleSnipeMouseUp}
@@ -1579,10 +1623,12 @@ export default function DemoPage() {
                                     aria-label="Snap-It Snipe Tool Interactive Selection Canvas"
                                 >
                                     <div className="sticky top-4 z-50 flex flex-col items-center gap-2 pointer-events-none px-3">
-                                        <div className="pointer-events-auto px-4 py-2 rounded-full bg-ink text-white text-xs font-semibold shadow-lift border border-white/15 flex items-center gap-2.5">
-                                            <span className="w-2 h-2 rounded-full bg-[#cdeecb] animate-ping shrink-0" />
+                                        <div className="pointer-events-auto px-4 py-2 rounded-full bg-surface-dark text-white text-xs font-semibold shadow-lift border border-white/15 flex items-center gap-2.5">
+                                            <span className="w-2 h-2 rounded-full bg-cobalt-bright animate-ping shrink-0" />
                                             <span>Drag a box over any question or diagram to solve</span>
                                             <button
+                                                type="button"
+                                                onMouseDown={(e) => e.stopPropagation()}
                                                 onClick={() => {
                                                     setIsSniping(false);
                                                     setSnipeBox(null);
@@ -1597,19 +1643,24 @@ export default function DemoPage() {
 
                                     {isDragging && dragStart && currentDrag && (
                                         <div 
-                                            className="absolute border-2 border-emerald-400 bg-emerald-400/15 pointer-events-none"
+                                            className="absolute border-2 border-cobalt-bright bg-cobalt-bright/15 pointer-events-none"
                                             style={{
                                                 left: Math.min(dragStart.x, currentDrag.x),
                                                 top: Math.min(dragStart.y, currentDrag.y),
                                                 width: Math.abs(currentDrag.x - dragStart.x),
                                                 height: Math.abs(currentDrag.y - dragStart.y),
                                             }}
-                                        />
+                                        >
+                                            <span className="absolute -top-1 -left-1 w-2 h-2 bg-paper border border-cobalt-bright" />
+                                            <span className="absolute -top-1 -right-1 w-2 h-2 bg-paper border border-cobalt-bright" />
+                                            <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-paper border border-cobalt-bright" />
+                                            <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-paper border border-cobalt-bright" />
+                                        </div>
                                     )}
 
                                     {snipeBox && (
                                         <div
-                                            className="absolute border-2 border-emerald-400 bg-emerald-400/10 overflow-hidden"
+                                            className="absolute border-2 border-cobalt-bright bg-cobalt-bright/10 overflow-hidden"
                                             style={{
                                                 left: snipeBox.x,
                                                 top: snipeBox.y,
@@ -1618,9 +1669,9 @@ export default function DemoPage() {
                                             }}
                                         >
                                             {isScanning && (
-                                                <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-cyan-300 to-emerald-400 animate-laser-scan" />
+                                                <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-cobalt-bright via-sky to-cobalt-bright animate-laser-scan" />
                                             )}
-                                            <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-ink text-[10px] font-mono font-bold text-[#cdeecb]">
+                                            <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-dark border border-white/15 text-[10px] font-mono font-semibold text-white">
                                                 {isScanning ? "Reading screenshot…" : "✓ Solved"}
                                             </div>
                                         </div>
@@ -1633,36 +1684,39 @@ export default function DemoPage() {
 
                     {/* Right Column (4 Cols): Single Unified ExamGhost HUD Card */}
                     <div className="lg:col-span-4 space-y-4">
-                        <div className="rounded-3xl bg-white border border-black/10 p-6 shadow-lift space-y-5">
+                        <div className="rounded-2xl bg-paper border border-ink/[0.09] p-6 surface-card space-y-5">
                             
                             {/* HUD Header & Master Toggle */}
-                            <div className="flex items-center justify-between pb-4 border-b border-black/6">
+                            <div className="flex items-center justify-between pb-4 border-b border-ink/[0.08]">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-2xl overflow-hidden border border-black/10 bg-[#c4d0f8] shrink-0">
+                                    <div className="w-10 h-10 rounded-xl overflow-hidden border border-ink/[0.10] bg-cobalt-soft shrink-0">
                                         <img src="/images/ghost/ghost_peace.jpg" alt="ExamGhost HUD" width={40} height={40} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                                     </div>
                                     <div>
                                         <span className="font-display font-bold text-base text-ink block leading-none">
                                             ExamGhost HUD
                                         </span>
-                                        <span className="text-xs text-emerald-700 font-semibold flex items-center gap-1.5 mt-1">
-                                            <span className={`w-2 h-2 rounded-full ${isExtensionOn ? 'bg-emerald-500 animate-pulse' : 'bg-ink-muted'}`} />
-                                            <span>{isExtensionOn ? 'Stealth Active' : 'Paused'}</span>
+                                        <span className={`text-xs font-semibold flex items-center gap-1.5 mt-1 ${isExtensionOn ? 'text-emeraldBrand' : 'text-ink-muted'}`}>
+                                            <span className={`w-2 h-2 rounded-full ${isExtensionOn ? 'bg-emeraldBrand animate-pulse' : 'bg-ink-muted'}`} />
+                                            <span>{isExtensionOn ? 'Extension Active' : 'Paused'}</span>
                                         </span>
                                     </div>
                                 </div>
 
                                 <button
+                                    type="button"
+                                    role="switch"
+                                    aria-checked={isExtensionOn}
                                     onClick={() => {
                                         setIsExtensionOn(!isExtensionOn);
                                         playAudio('click');
                                     }}
                                     className={`w-11 h-6 rounded-full p-0.5 transition-colors cursor-pointer ${
-                                        isExtensionOn ? 'bg-ink' : 'bg-black/20'
+                                        isExtensionOn ? 'bg-surface-dark' : 'bg-ink/20'
                                     }`}
                                     aria-label="Toggle Extension Master Power"
                                 >
-                                    <div className={`w-5 h-5 rounded-full bg-white shadow-2xs transition-transform ${
+                                    <div className={`w-5 h-5 rounded-full bg-paper shadow-xs transition-transform ${
                                         isExtensionOn ? 'translate-x-5' : 'translate-x-0'
                                     }`} />
                                 </button>
@@ -1670,38 +1724,41 @@ export default function DemoPage() {
 
                             {/* Display Mode Selector */}
                             <div className="space-y-2">
-                                <span className="text-[11px] font-bold text-ink-muted uppercase tracking-wider block">
-                                    1. Solver Mode (Alt+1 / 2 / 3)
+                                <span id="solver-mode-label" className="text-xs font-semibold text-ink-muted block">
+                                    1. Solver mode (Alt+1 / 2 / 3)
                                 </span>
-                                <div className="grid grid-cols-3 gap-1 p-1 rounded-2xl bg-[#f4f1ea] border border-black/6 text-xs font-semibold">
+                                <div role="radiogroup" aria-labelledby="solver-mode-label" className="grid grid-cols-3 gap-1 p-1 rounded-xl bg-surface-subtle border border-ink/[0.07] text-xs font-semibold">
                                     {[
-                                        { id: 'invisible', label: 'Invisible', key: 'Alt+1' },
-                                        { id: 'stealth', label: 'Stealth', key: 'Alt+2' },
+                                        { id: 'quick', label: 'Quick', key: 'Alt+1' },
+                                        { id: 'highlight', label: 'Highlight', key: 'Alt+2' },
                                         { id: 'explain', label: 'Explain', key: 'Alt+3' }
                                     ].map((m) => (
                                         <button
                                             key={m.id}
+                                            type="button"
+                                            role="radio"
+                                            aria-checked={displayMode === m.id}
                                             onClick={() => {
-                                                setDisplayMode(m.id as 'invisible' | 'stealth' | 'explain');
+                                                setDisplayMode(m.id as 'quick' | 'highlight' | 'explain');
                                                 playAudio('click');
                                             }}
-                                            className={`py-2 rounded-xl transition-all cursor-pointer flex flex-col items-center justify-center leading-tight ${
-                                                displayMode === m.id ? 'bg-white text-ink font-bold shadow-2xs' : 'text-ink-secondary hover:text-ink'
+                                            className={`py-2 rounded-lg transition-all cursor-pointer flex flex-col items-center justify-center leading-tight ${
+                                                displayMode === m.id ? 'bg-paper text-ink font-bold shadow-xs border border-ink/[0.08]' : 'text-ink-secondary hover:text-ink'
                                             }`}
                                         >
                                             <span>{m.label}</span>
-                                            <span className="text-[9px] font-mono text-ink-muted mt-0.5">{m.key}</span>
+                                            <span className="text-[10px] font-mono text-ink-muted mt-0.5">{m.key}</span>
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Answer Method Selector (Clean, No Redundant Badges) */}
+                            {/* Answer Method Selector */}
                             <div className="space-y-2">
-                                <span className="text-[11px] font-bold text-ink-muted uppercase tracking-wider block">
-                                    2. Answer Delivery
+                                <span id="answer-delivery-label" className="text-xs font-semibold text-ink-muted block">
+                                    2. Answer delivery
                                 </span>
-                                <div className="grid grid-cols-3 gap-1 p-1 rounded-2xl bg-[#f4f1ea] border border-black/6 text-xs font-semibold">
+                                <div role="radiogroup" aria-labelledby="answer-delivery-label" className="grid grid-cols-3 gap-1 p-1 rounded-xl bg-surface-subtle border border-ink/[0.07] text-xs font-semibold">
                                     {[
                                         { id: 'autofill', label: 'Auto-fill' },
                                         { id: 'highlight', label: 'Highlight' },
@@ -1709,12 +1766,15 @@ export default function DemoPage() {
                                     ].map((met) => (
                                         <button
                                             key={met.id}
+                                            type="button"
+                                            role="radio"
+                                            aria-checked={answerMethod === met.id}
                                             onClick={() => {
                                                 setAnswerMethod(met.id as 'autofill' | 'highlight' | 'clipboard');
                                                 playAudio('click');
                                             }}
-                                            className={`py-2 rounded-xl transition-all cursor-pointer ${
-                                                answerMethod === met.id ? 'bg-white text-ink font-bold shadow-2xs' : 'text-ink-secondary hover:text-ink'
+                                            className={`py-2 rounded-lg transition-all cursor-pointer ${
+                                                answerMethod === met.id ? 'bg-paper text-ink font-bold shadow-xs border border-ink/[0.08]' : 'text-ink-secondary hover:text-ink'
                                             }`}
                                         >
                                             {met.label}
@@ -1726,40 +1786,42 @@ export default function DemoPage() {
                             {/* Primary Action Buttons */}
                             <div className="pt-2 space-y-2.5">
                                 <button
+                                    type="button"
                                     onClick={handleSolveActive}
                                     disabled={!isExtensionOn}
-                                    className="w-full py-3 rounded-2xl bg-[#cdeecb] hover:bg-[#bde6ba] text-ink text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs cursor-pointer"
+                                    className="w-full py-3 rounded-xl bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                                 >
-                                    <Sparkles className="w-4 h-4" aria-hidden="true" />
+                                    <Sparkles className="w-4 h-4 text-emeraldBrand" aria-hidden="true" />
                                     <span>Solve Question {activeQuestion} Now</span>
                                 </button>
 
                                 <button
+                                    type="button"
                                     onClick={() => triggerPresetSnipe(5)}
-                                    className="w-full py-3 rounded-2xl bg-ink hover:bg-ink/90 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs cursor-pointer"
+                                    className="w-full py-3 rounded-xl bg-surface-dark hover:bg-ink-secondary text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer"
                                 >
-                                    <Crop className="w-3.5 h-3.5 text-[#cdeecb]" aria-hidden="true" />
+                                    <Crop className="w-3.5 h-3.5 text-cobalt-bright" aria-hidden="true" />
                                     <span>Snip Q5 Math Diagram</span>
-                                    <kbd className="px-1.5 py-0.5 rounded bg-white/15 font-mono text-[10px] text-white/90">
+                                    <kbd className="kbd-key-dark">
                                         Alt+S
                                     </kbd>
                                 </button>
                             </div>
 
                             {/* Compact Hotkey Footer */}
-                            <div className="pt-3 border-t border-black/6 flex items-center justify-between text-[11px] text-ink-muted">
-                                <span>Master Panic Hotkey</span>
-                                <kbd className="px-2 py-0.5 rounded-md bg-[#faf8f5] border border-black/10 font-mono font-semibold text-ink text-[10px]">
-                                    ⌘ + Shift + U
+                            <div className="pt-3 border-t border-ink/[0.08] flex items-center justify-between text-[11px] text-ink-muted">
+                                <span>Diagram Snip Shortcut</span>
+                                <kbd className="kbd-key">
+                                    Alt + S
                                 </kbd>
                             </div>
                         </div>
 
                         {/* Live OCR Result Toast (Only shown after snipping) */}
                         {snipResult && (
-                            <div className="rounded-2xl bg-white border border-emerald-500/40 p-4 shadow-soft flex items-center justify-between gap-3 animate-fade-in">
+                            <div className="rounded-2xl bg-paper border border-emeraldBrand/40 p-4 shadow-soft flex items-center justify-between gap-3 animate-fade-in">
                                 <div className="min-w-0">
-                                    <span className="text-[10px] font-mono font-bold text-emerald-800 uppercase block">
+                                    <span className="text-[11px] font-mono font-semibold text-emeraldBrand block">
                                         ✓ Snip solved
                                     </span>
                                     <p className="text-xs font-bold text-ink truncate mt-0.5">
@@ -1767,8 +1829,9 @@ export default function DemoPage() {
                                     </p>
                                 </div>
                                 <button
+                                    type="button"
                                     onClick={() => setSnipResult(null)}
-                                    className="p-1 rounded-lg hover:bg-black/5 text-ink-muted shrink-0 cursor-pointer"
+                                    className="p-1 rounded-lg hover:bg-surface-subtle text-ink-muted shrink-0 cursor-pointer"
                                     aria-label="Dismiss OCR result"
                                 >
                                     <X className="w-3.5 h-3.5" />
@@ -1778,8 +1841,8 @@ export default function DemoPage() {
 
                         {/* Clipboard Toast */}
                         {clipboardNotice && (
-                            <div role="status" aria-live="polite" className="p-3.5 rounded-2xl bg-ink text-white text-xs font-semibold flex items-center gap-2 shadow-soft animate-fade-in">
-                                <Check className="w-4 h-4 text-[#cdeecb] shrink-0" aria-hidden="true" />
+                            <div role="status" aria-live="polite" className="p-3.5 rounded-xl bg-surface-dark text-white text-xs font-semibold flex items-center gap-2 shadow-soft animate-fade-in">
+                                <Check className="w-4 h-4 text-emeraldBrand shrink-0" aria-hidden="true" />
                                 <span>{clipboardNotice}</span>
                             </div>
                         )}
@@ -1789,30 +1852,30 @@ export default function DemoPage() {
             </main>
 
             {/* What the extension does (matches the extension's real behaviour) */}
-            <section id="what-it-does" className="py-16 sm:py-20 bg-white/60 border-y border-black/5 scroll-mt-20">
+            <section id="what-it-does" className="py-16 sm:py-20 bg-surface-subtle/75 border-y border-ink/[0.08] scroll-mt-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-                        <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.05] mb-3">
+                        <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-[-0.03em] text-ink leading-[1.05] mb-3">
                             What you just tried
                         </h2>
                         <p className="text-base sm:text-lg text-ink-muted">
                             The same controls the Chrome extension gives you on a real quiz page.
                         </p>
                     </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/[0.08] rounded-2xl border border-ink/[0.09] overflow-hidden shadow-xs">
                         {[
-                            { icon: MousePointerClick, tint: '#c4d0f8', title: 'Double-click to solve', body: 'Double-click a question and the answer lands on the page. Multiple choice, true/false, multi-select, dropdowns and short answers are all handled.' },
-                            { icon: Sparkles, tint: '#cdeecb', title: 'Three modes (Alt+1 / 2 / 3)', body: 'Invisible applies the answer with no panel. Stealth, the default, fills it in or marks it with a small ✓. Explain adds a side panel with the reasoning.' },
-                            { icon: Check, tint: '#e2d3fa', title: 'Three ways to deliver', body: 'Auto-fill selects the answer for you, Highlight marks it so you click it yourself, and Clipboard copies it to paste into a written answer.' },
-                            { icon: Crop, tint: '#bfe3f6', title: 'Snap-It (Alt+S)', body: 'Drag a box around a graph, diagram or image-based question. The extension reads the screenshot and returns the answer with the working.' },
-                            { icon: ScrollText, tint: '#ffe9a0', title: 'Scan the whole page', body: 'Click Scan page & answer in the popup and the extension scrolls the page, reads every question and fills answers in batches.' },
-                            { icon: Power, tint: '#ffd5cc', title: 'Master on/off switch', body: 'One toggle in the extension popup pauses everything, so shortcuts and double-click do nothing while you browse normally.' },
+                            { icon: MousePointerClick, title: 'Double-click to solve', body: 'Double-click a question and the answer lands on the page. Multiple choice, true/false, multi-select, dropdowns and short answers are all handled.' },
+                            { icon: Sparkles, title: 'Three modes (Alt+1 / 2 / 3)', body: 'Quick (Alt+1) applies the answer immediately with no panel. Highlight (Alt+2) marks the right option with a small ✓. Explain (Alt+3) adds a side panel with the reasoning.' },
+                            { icon: Check, title: 'Three ways to deliver', body: 'Auto-fill selects the answer for you, Highlight marks it so you click it yourself, and Clipboard copies it to paste into a written answer.' },
+                            { icon: Crop, title: 'Snap-It (Alt+S)', body: 'Drag a box around a graph, diagram or image-based question. The extension reads the screenshot and returns the answer with the working.' },
+                            { icon: ScrollText, title: 'Scan the whole page', body: 'Click Scan page & answer in the popup and the extension scrolls the page, reads every question and fills answers in batches.' },
+                            { icon: Power, title: 'Master on/off switch', body: 'One toggle in the extension popup pauses everything, so shortcuts and double-click do nothing while you browse normally.' },
                         ].map((c) => {
                             const Icon = c.icon;
                             return (
-                                <article key={c.title} className="bg-white rounded-3xl border border-black/10 p-6 shadow-card">
-                                    <span className="grid place-items-center w-11 h-11 rounded-2xl mb-5" style={{ backgroundColor: c.tint }}>
-                                        <Icon className="w-5 h-5 text-ink" strokeWidth={1.9} aria-hidden="true" />
+                                <article key={c.title} className="bg-paper p-6 hover:bg-surface-subtle/40 transition-colors">
+                                    <span className="grid place-items-center w-9 h-9 rounded-lg bg-surface-subtle border border-ink/[0.08] text-ink mb-4">
+                                        <Icon className="w-4 h-4" strokeWidth={1.9} aria-hidden="true" />
                                     </span>
                                     <h3 className="font-display text-lg font-bold text-ink mb-1.5">{c.title}</h3>
                                     <p className="text-[15px] text-ink-muted leading-relaxed">{c.body}</p>
@@ -1823,16 +1886,19 @@ export default function DemoPage() {
                 </div>
             </section>
 
-            <section id="demo-faq" className="py-16 sm:py-20 scroll-mt-20">
+            <section id="demo-faq" className="py-16 sm:py-20 bg-paper border-b border-ink/[0.08] scroll-mt-20">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink text-center mb-8">Questions</h2>
-                    <div className="space-y-3">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-ink text-center mb-8">Questions</h2>
+                    <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
                         {DEMO_FAQS.map((f) => (
-                            <details key={f.q} className="group bg-white rounded-2xl border border-black/10 px-5 py-4 open:shadow-card">
-                                <summary className="cursor-pointer list-none font-display font-semibold [&::-webkit-details-marker]:hidden">
-                                    <h3 className="text-base sm:text-lg">{f.q}</h3>
+                            <details key={f.q} className="group py-4 sm:py-5">
+                                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                                    <h3 className="text-base sm:text-[17px] leading-snug group-hover:text-cobalt transition-colors">{f.q}</h3>
+                                    <span className="w-8 h-8 rounded-full bg-surface-subtle border border-ink/[0.08] text-ink-muted grid place-items-center shrink-0 transition-colors group-open:bg-surface-dark group-open:text-white group-open:border-surface-dark">
+                                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
+                                    </span>
                                 </summary>
-                                <p className="mt-3 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
+                                <p className="mt-3 pr-10 text-[15px] text-ink-muted leading-relaxed">{f.a}</p>
                             </details>
                         ))}
                     </div>
@@ -1845,20 +1911,25 @@ export default function DemoPage() {
             {/* Canvas Submit Quiz Confirmation Modal */}
             {isSubmitModalOpen && (
                 <div 
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm animate-fade-in"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-dark/60 backdrop-blur-sm animate-fade-in"
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="submit-modal-title"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) setIsSubmitModalOpen(false);
+                    }}
                 >
-                    <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-lift border border-black/10 space-y-4">
-                        <div className="flex items-center justify-between pb-3 border-b border-black/6">
+                    <div ref={modalRef} className="bg-paper rounded-2xl max-w-md w-full p-6 shadow-lift border border-ink/[0.10] space-y-4">
+                        <div className="flex items-center justify-between pb-3 border-b border-ink/[0.08]">
                             <div className="flex items-center gap-2 text-ink font-bold text-sm">
-                                <GraduationCap className="w-4 h-4 text-emerald-700" aria-hidden="true" />
+                                <GraduationCap className="w-4 h-4 text-emeraldBrand" aria-hidden="true" />
                                 <span id="submit-modal-title">Quiz Submission Summary</span>
                             </div>
                             <button
+                                ref={modalCloseRef}
+                                type="button"
                                 onClick={() => setIsSubmitModalOpen(false)}
-                                className="p-1 rounded-lg hover:bg-black/5 text-ink-muted cursor-pointer"
+                                className="p-1.5 rounded-lg hover:bg-surface-subtle text-ink-muted hover:text-ink cursor-pointer"
                                 aria-label="Close modal"
                             >
                                 <X className="w-4 h-4" aria-hidden="true" />
@@ -1866,7 +1937,7 @@ export default function DemoPage() {
                         </div>
 
                         <div className="text-center py-3 space-y-2">
-                            <div className="w-12 h-12 rounded-2xl bg-[#cdeecb] text-ink flex items-center justify-center mx-auto text-xl font-bold">
+                            <div className="w-12 h-12 rounded-2xl bg-emeraldBrand-soft text-emeraldBrand flex items-center justify-center mx-auto text-xl font-bold">
                                 ✓
                             </div>
                             <h4 className="font-display text-xl font-bold text-ink">
@@ -1879,12 +1950,13 @@ export default function DemoPage() {
 
                         <div className="flex items-center gap-2.5 pt-1">
                             <button
+                                type="button"
                                 onClick={() => {
                                     setHasSubmitted(true);
                                     setIsSubmitModalOpen(false);
                                     playAudio('success');
                                 }}
-                                className="flex-1 py-2.5 rounded-xl bg-ink text-white text-xs font-bold hover:bg-ink/90 transition-colors cursor-pointer"
+                                className="flex-1 py-2.5 rounded-xl bg-surface-dark text-white text-xs font-semibold hover:bg-ink-secondary transition-colors cursor-pointer"
                             >
                                 Done
                             </button>
@@ -1892,7 +1964,7 @@ export default function DemoPage() {
                                 href={INSTALL_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 py-2.5 rounded-xl bg-[#cdeecb] hover:bg-[#bde6ba] text-ink text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                                className="flex-1 py-2.5 rounded-xl bg-emeraldBrand-soft hover:bg-emeraldBrand/20 border border-emeraldBrand/25 text-ink text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                             >
                                 <FaChrome className="w-3.5 h-3.5" aria-hidden="true" />
                                 <span>Add to Chrome</span>
