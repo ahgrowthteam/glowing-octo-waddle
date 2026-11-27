@@ -9,19 +9,22 @@ const LAST_MODIFIED_HOME = new Date('2026-11-19T00:00:00.000Z'); // homepage reb
 const LAST_MODIFIED_CORE = new Date('2026-11-19T00:00:00.000Z'); // features, demo, faq rebuilt
 const LAST_MODIFIED_LEGAL = new Date('2026-03-01T00:00:00.000Z');
 const LAST_MODIFIED_LMS = new Date('2026-10-23T00:00:00.000Z');
-const LAST_MODIFIED_COMPARISONS = new Date('2026-11-19T00:00:00.000Z'); // all 42 tools re-verified and rebuilt
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.examghost.com';
 
-    // Unique canonical competitor slugs (excluding redirecting alias classlogy-vs-examghost)
-    // Only comparison pages backed by verified facts are indexable; thin legacy pages are noindex and left out.
-    const competitorRoutes = Object.keys(FACTS)
-        .filter((slug) => isIndexable(FACTS[slug]))
-        .map((slug) => ({
-            url: `${baseUrl}/${slug}`,
-            lastModified: LAST_MODIFIED_COMPARISONS,
-        }));
+    // Only the 42 M3 "index" comparison pages are emitted; consolidated redirects and noindex pages are excluded.
+    const indexableSlugs = Object.keys(FACTS).filter((slug) => isIndexable(FACTS[slug]));
+    const latestComparisonIso = indexableSlugs.reduce(
+        (m, slug) => (FACTS[slug].lastChecked > m ? FACTS[slug].lastChecked : m),
+        '2026-11-27'
+    );
+    const lastModifiedCompare = new Date(`${latestComparisonIso}T00:00:00.000Z`);
+
+    const competitorRoutes = indexableSlugs.map((slug) => ({
+        url: `${baseUrl}/${slug}`,
+        lastModified: new Date(`${FACTS[slug].lastChecked}T00:00:00.000Z`),
+    }));
 
     // Only platform pages with unique content are indexable.
     const lmsServiceSlugs = PLATFORMS_DATA.filter((p) => p.indexable).map((p) => p.slug);
@@ -34,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
         { url: baseUrl, lastModified: LAST_MODIFIED_HOME },
         { url: `${baseUrl}/canvas-quiz-solver-free-demo`, lastModified: LAST_MODIFIED_CORE },
-        { url: `${baseUrl}/compare`, lastModified: LAST_MODIFIED_COMPARISONS },
+        { url: `${baseUrl}/compare`, lastModified: lastModifiedCompare },
         ...lmsRoutes,
         { url: `${baseUrl}/features`, lastModified: LAST_MODIFIED_CORE },
         { url: `${baseUrl}/video-demo`, lastModified: LAST_MODIFIED_CORE },

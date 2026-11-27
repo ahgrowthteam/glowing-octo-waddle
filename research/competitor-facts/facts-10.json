@@ -1,0 +1,628 @@
+[
+  {
+    "domain": "examripper.com",
+    "name": "Examripper",
+    "url": "https://examripper.com/",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "No free tier. Active desktop /Pricing shows Monthly ($19.99/mo) and Ultra ($97 / 6 months, $16.17/mo); legacy Lite ($3.99/mo) and Day Pass ($8.99/day) are omitted via CSS.",
+      "plans": [
+        {
+          "name": "Examripper Monthly",
+          "price": 19.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "All supported sites, automated quiz runner, PDF Filler, Discord support, cancel anytime."
+        },
+        {
+          "name": "Examripper Ultra",
+          "price": 97,
+          "currency": "USD",
+          "period": "6 months",
+          "notes": "Stated ~$16/month ('save $22.94'); includes everything in Monthly."
+        },
+        {
+          "name": "Examripper Lite (omitted in Nov 2026)",
+          "price": 3.99,
+          "currency": "USD",
+          "period": "month",
+          "omitted": true,
+          "notes": "Present in static DOM (.framer-hdh7tb) but omitted in Nov 2026 via CSS display:none !important; excluded IXL and Apex Learning."
+        },
+        {
+          "name": "Examripper Day Pass (omitted in Nov 2026)",
+          "price": 8.99,
+          "currency": "USD",
+          "period": "one-day",
+          "omitted": true,
+          "notes": "Present in static DOM (.framer-1hvu19) but omitted in Nov 2026 via CSS display:none !important; 3 quizzes/day."
+        }
+      ],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Apex Learning (Apexvs)",
+      "Edpuzzle",
+      "Google Docs (Auto Typer)",
+      "Kahoot",
+      "Quizizz (Quizziz)",
+      "Blooket",
+      "Google Forms Quizzes",
+      "IXL",
+      "Quizlet (named in hidden Lite card)",
+      "PDFs (PDF Filler)"
+    ],
+    "featuresStated": [
+      "Apex Learning auto-finish for quizzes, tests, and written assignments",
+      "Edpuzzle video timeline skip and auto-answer",
+      "Google Docs human-like auto-typer (paste text)",
+      "Kahoot, Quizizz, and Blooket auto-answer",
+      "Google Forms 1-click answer and submit-all",
+      "IXL instant skill answer retrieval",
+      "PDF Filler (v3.2.2)",
+      "Database search plus multi-AI models (ChatGPT, Claude, DeepSeek, Gemini)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/examripper-hacks-for-apex/deepanfkojflalfajnkcnlhiejeomdgk?hl=en",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://examripper.com/",
+      "https://examripper.com/Pricing",
+      "https://examripper.com/supported-sites",
+      "https://examripper.com/changelog",
+      "https://chromewebstore.google.com/detail/examripper-hacks-for-apex/deepanfkojflalfajnkcnlhiejeomdgk?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Verified live across examripper.com (/, /Pricing, /supported-sites, /changelog) and CWS listing (3,000 users, 4.9/5 across 380 ratings, v3.2.2, Featured). Legacy Lite ($3.99/mo) and Day Pass ($8.99/day) cards exist in static DOM but are omitted via CSS display:none !important in Nov 2026; /Pricing also contains an unfinished 'Enigma' testimonial placeholder."
+  },
+  {
+    "domain": "gauthmath.com",
+    "name": "Gauth",
+    "url": "https://gauthmath.com",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Freemium; iOS App Store IAP lists Gauth Plus at $11.99/mo, $31.99/quarter ($26.99 special), or $99.99/year ($8.33/mo; $49.99/yr special offer) with 3-day free trial.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Limited daily AI answers and assignment credits"
+        },
+        {
+          "name": "Gauth Plus Annual (iOS IAP)",
+          "price": 99.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$8.33/mo effective; 3-day free trial; promotional $49.99/yr special offer also listed"
+        },
+        {
+          "name": "Gauth Plus Quarterly (iOS IAP)",
+          "price": 31.99,
+          "currency": "USD",
+          "period": "quarter",
+          "notes": "$10.66/mo effective; 3-day free trial; special discount $26.99 listed"
+        },
+        {
+          "name": "Gauth Plus Monthly (iOS IAP)",
+          "price": 11.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Verified on official Apple App Store listing (Gauthtech Pte. Ltd.)"
+        }
+      ],
+      "freeTier": "Limited daily free AI queries",
+      "trial": "3-day free trial on annual/quarterly plans"
+    },
+    "platformsStated": [
+      "iOS",
+      "Android",
+      "Web (drag/paste image solver)"
+    ],
+    "featuresStated": [
+      "Mobile camera snap-and-solve and web image drag/drop or Cmd+V paste calculator",
+      "Gauth AI step-by-step solutions across Math, Calculus, Chemistry, Biology, Physics, Economics, Literature, Business",
+      "Gauth Atlas visual interactive knowledge explorer",
+      "50,000+ 24/7 verified human tutors returning solutions in as little as 5 minutes"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.gauthmath.com/",
+      "https://apps.apple.com/us/app/gauth-ai-study-companion/id1542571008"
+    ],
+    "confidence": "medium",
+    "notes": "Automated HTTP/curl returned Akamai 403, but homepage rendered in Chrome and official Apple App Store page returned 200 with full IAP pricing. No official Chrome extension found on gauthmath.com."
+  },
+  {
+    "domain": "homeworkhelperplus.com",
+    "name": "Homework Helper+",
+    "url": "https://homeworkhelperplus.com",
+    "reachable": false,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "McGrawHill",
+      "Blackboard",
+      "Moodle",
+      "D2L",
+      "All websites"
+    ],
+    "featuresStated": [
+      "Highlight / right-click & ask universal solver",
+      "Supports multiple choice, true/false, and essay / free-response questions",
+      "Claims dataset + AI backing"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/homework-helper-study-qui/ppojalbcialfpnanlmjkalgmmfdcedjo",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://chromewebstore.google.com/detail/homework-helper-study-qui/ppojalbcialfpnanlmjkalgmmfdcedjo?hl=en"
+    ],
+    "confidence": "medium",
+    "notes": "homeworkhelperplus.com and www.homeworkhelperplus.com return DNS NXDOMAIN. Marked 'partial' because the CWS listing is active and updated Jan 13, 2026, while pricing and website are inaccessible."
+  },
+  {
+    "domain": "homeworkify.st",
+    "name": "Homeworkify",
+    "url": "https://homeworkify.st",
+    "reachable": false,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Permanently shut down since July 26, 2024 (previously unblurred Chegg Q&A URLs)"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://homeworkify.st/mirror-1/"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified https://homeworkify.st redirects to https://homeworkify.st/mirror-1/ (HTTP 200) displaying the official July 26, 2024 shutdown notice."
+  },
+  {
+    "domain": "knowt.com",
+    "name": "Knowt",
+    "url": "https://knowt.com",
+    "reachable": true,
+    "primaryPurpose": "study-tools",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free Basic plan (unlimited flashcards, Learn Mode, spaced repetition); Knowt Ultra is $7.99/mo billed annually ($95.99/yr) or $24.99/mo billed monthly.",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Unlimited file creation, storage, flashcards, free Learn Mode, matching, spaced repetition, practice tests"
+        },
+        {
+          "name": "Ultra - Annual",
+          "price": 95.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "$7.99/mo billed upfront at $95.99/yr; ad-free + unlimited AI summarizer, AI Podcast, Kai voice tutor, AP/SAT/ACT prep"
+        },
+        {
+          "name": "Ultra - Monthly",
+          "price": 24.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Full Ultra AI features billed monthly"
+        }
+      ],
+      "freeTier": "Free forever Basic tier with unlimited Learn Mode & flashcards",
+      "trial": null
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "Quizlet",
+      "Kahoot",
+      "Wayground",
+      "YouTube"
+    ],
+    "featuresStated": [
+      "Free Quizlet flashcard importer (2 clicks) and free Learn Mode / spaced repetition / matching game",
+      "Exam Predictor & Custom Study Plan from uploaded syllabus/course files (up to 30 files)",
+      "AI PDF, Video, PPT, and live Lecture Recording summarizer + AI Podcast generator",
+      "Kai AI voice tutor and AP/SAT/ACT exam prep hubs with mock exams and score calculators"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/knowt-quizlet-import-ai-n/akegecpdcdbkjioddaingaedacjgfjhm",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://knowt.com/",
+      "https://knowt.com/plans",
+      "https://chromewebstore.google.com/detail/knowt-quizlet-import-ai-n/akegecpdcdbkjioddaingaedacjgfjhm"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified homepage, /plans, and CWS listing on 2026-11-27. Strictly a study/flashcard/exam-prep suite rather than an in-quiz solver."
+  },
+  {
+    "domain": "mathos.ai",
+    "name": "Mathos AI",
+    "url": "https://mathos.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free tier ($0); Basic is $5.98/week (weekly) or $2.99/week billed yearly (~$155.48/yr, $12.96/mo); Prime is $9.98/week (weekly) or $4.99/week billed yearly (~$259.48/yr, $21.62/mo); 3-day free trial.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Limited MathosPro, 6 video min/day, limited image input, flashcards & quiz, graphing"
+        },
+        {
+          "name": "Basic (Yearly)",
+          "price": 2.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Displayed as $2.99/week billed annually (~$155.48/yr or ~$12.96/mo); unlimited MathosPro, 100 MathosMax/day, 15 video min/day"
+        },
+        {
+          "name": "Basic (Weekly)",
+          "price": 5.98,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Weekly billing (~$25.89/mo); 3-day free trial"
+        },
+        {
+          "name": "Prime (Yearly)",
+          "price": 4.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Displayed as $4.99/week billed annually (~$259.48/yr or ~$21.62/mo); unlimited MathosMax, 30 video min/day, 20x PDF Helper, unlimited voice"
+        },
+        {
+          "name": "Prime (Weekly)",
+          "price": 9.98,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Weekly billing (~$43.21/mo); 3-day free trial"
+        }
+      ],
+      "freeTier": "Free plan with limited MathosPro & 6 video min/day",
+      "trial": "3-day free trial on paid plans"
+    },
+    "platformsStated": [
+      "Web",
+      "iOS",
+      "Android",
+      "PDF Upload"
+    ],
+    "featuresStated": [
+      "MathosPro & MathosMax AI math solver with LaTeX step-by-step breakdowns",
+      "Ultrafast animated math video lesson generation (first frame in 5–10 seconds)",
+      "Interactive AI Whiteboard Tutor that watches steps and catches mistakes in real time",
+      "PDF Homework Helper, interactive graphing calculator, and adaptive prerequisite diagnosis"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/mathos-ai/pcalipadghojhpoinlkbgdkjkgbpnikn",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.mathos.ai/",
+      "https://www.mathos.ai/pricing",
+      "https://chromewebstore.google.com/detail/mathos-ai/pcalipadghojhpoinlkbgdkjkgbpnikn"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified homepage, /pricing (both Weekly and Yearly toggle states via browser), and CWS listing on 2026-11-27."
+  },
+  {
+    "domain": "mylabsolver.com",
+    "name": "MyLab Solver",
+    "url": "https://mylabsolver.com",
+    "reachable": false,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": null,
+      "plans": [],
+      "freeTier": null,
+      "trial": null
+    },
+    "platformsStated": [],
+    "featuresStated": [
+      "Discontinued (tombstone notice only: 'This website and the associated Chrome extension have been discontinued. Contact: support@mylabsolver.com')"
+    ],
+    "extensionStoreUrl": null,
+    "browsersStated": [],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.mylabsolver.com/"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified https://www.mylabsolver.com/ on 2026-11-27 returns HTTP 200 with exact discontinuation tombstone."
+  },
+  {
+    "domain": "questionai.com",
+    "name": "QuestionAI",
+    "url": "https://www.questionai.com/",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Website and CWS claim free access ('all free', 'no fees' / 'without usage limits or hidden fees'); /pricing returns 404 on questionai.com.",
+      "plans": [
+        {
+          "name": "Free (stated on site & CWS)",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "questionai.com states 'unique features and all free'; CWS states 'Real-Time AI Conversations with no fees' without paid tiers."
+        }
+      ],
+      "freeTier": "Stated as free on questionai.com and CWS ('all free', 'no fees')",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "McGraw",
+      "Any website",
+      "Windows",
+      "Mac",
+      "iOS",
+      "Android"
+    ],
+    "featuresStated": [
+      "One-click screenshot solving & image upload",
+      "LaTeX equation recognition",
+      "Sidebar AI Copilot chat & text selection solving",
+      "PDF file upload & textbook summarizer",
+      "AI writing, translating, and grammar checking"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/questionai-homework-power/hajphibbdloomfdkeoejchiikjggnaif",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://www.questionai.com/",
+      "https://www.questionai.com/extension",
+      "https://chromewebstore.google.com/detail/questionai-homework-power/hajphibbdloomfdkeoejchiikjggnaif?hl=en"
+    ],
+    "confidence": "medium",
+    "notes": "Website homepage, /extension, and CWS listing are live and verified; marked 'partial' because /pricing and /chrome-extension return 404 and app-store IAP pricing could not be fetched (App Store returned 429, Play Store 404)."
+  },
+  {
+    "domain": "quizard.ai",
+    "name": "Quizard AI",
+    "url": "https://quizard.ai",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free tier with limited usage on web/CWS; /pricing returns 404 on quizard.ai; iOS App Store IAPs list Weekly $6.99–$9.99, Monthly $17.99–$19.99, 6-Month $39.99, Yearly $29.99–$79.99.",
+      "plans": [
+        {
+          "name": "Free (limited)",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "CWS FAQ states 'Yes, we offer limited...' free usage; homepage calls it 'best free AI Homework Tutor'."
+        },
+        {
+          "name": "Weekly (iOS IAP)",
+          "price": 6.99,
+          "currency": "USD",
+          "period": "week",
+          "notes": "Listed price: $6.99 / $9.99. Unlimited answers weekly IAP tiers observed on Apple App Store."
+        },
+        {
+          "name": "Quizard Pro Monthly (iOS IAP)",
+          "price": 17.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "Listed price: $17.99 / $19.99. Monthly IAP tiers observed on Apple App Store."
+        },
+        {
+          "name": "Quizard Pro 6 Months (iOS IAP)",
+          "price": 39.99,
+          "currency": "USD",
+          "period": "6 months",
+          "notes": "6-month IAP tier observed on Apple App Store."
+        },
+        {
+          "name": "Quizard Pro Yearly (iOS IAP)",
+          "price": 29.99,
+          "currency": "USD",
+          "period": "year",
+          "notes": "Listed price: $29.99 - $79.99. Multiple yearly IAP price points ($29.99, $39.99, $59.99, $69.99, $79.99) listed on Apple App Store."
+        }
+      ],
+      "freeTier": "Limited free usage stated on CWS FAQ and homepage",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas",
+      "Blackboard",
+      "Moodle",
+      "Google Classroom",
+      "iOS",
+      "Android",
+      "Web"
+    ],
+    "featuresStated": [
+      "Screenshot capture & symbol-heavy math solver",
+      "Text highlight & direct question typing",
+      "Keyboard shortcut Cmd/Ctrl+Shift+K",
+      "Follow-up questions & curated related web resources",
+      "Mobile photo scan-and-solve (iOS/Android)"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizard-ai-homework-tutor/kfnboibnjcpldbmeielppdepcpliogeb",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://quizard.ai",
+      "https://quizard.ai/about",
+      "https://chromewebstore.google.com/detail/quizard-ai-homework-tutor/kfnboibnjcpldbmeielppdepcpliogeb?hl=en",
+      "https://apps.apple.com/us/app/quizard-ai-homework-helper/id1667996582"
+    ],
+    "confidence": "high",
+    "notes": "Verified homepage, /about (Quizard AI, Inc.), CWS listing, and Apple App Store IAPs; marked 'partial' because web /pricing is 404."
+  },
+  {
+    "domain": "quizloader.canvas.ext",
+    "name": "Canvas Quiz Loader",
+    "url": "https://chromewebstore.google.com/detail/canvas-quiz-loader/pfagnepdndhkmilceinbebdfbmiddagl",
+    "reachable": true,
+    "primaryPurpose": "other",
+    "claimsUndetectable": false,
+    "pricing": {
+      "summary": "Free browser extension on Chrome Web Store and Firefox Add-ons; no paid plans.",
+      "plans": [
+        {
+          "name": "Free Extension",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "Open/free Chrome & Firefox extension by Alex Shnyrov"
+        }
+      ],
+      "freeTier": "100% free",
+      "trial": null
+    },
+    "platformsStated": [
+      "Canvas"
+    ],
+    "featuresStated": [
+      "Scans previous Canvas quiz submissions to extract previously marked-correct answers",
+      "Automatically populates saved correct answers into a subsequent retake attempt",
+      "Caveats on listing: breaks if formula/variables change, and does not auto-populate fill-in-multiple-blanks"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/canvas-quiz-loader/pfagnepdndhkmilceinbebdfbmiddagl",
+    "browsersStated": [
+      "Chrome",
+      "Firefox"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://chromewebstore.google.com/detail/canvas-quiz-loader/pfagnepdndhkmilceinbebdfbmiddagl"
+    ],
+    "confidence": "high",
+    "notes": "Live-verified official CWS listing on 2026-11-27 (50,000 users, 4.1 stars, 70 ratings, v0.5.4 Apr 16, 2025) and confirmed quizloader.canvas.ext is NXDOMAIN placeholder."
+  },
+  {
+    "domain": "quizonator.com",
+    "name": "Quizonator",
+    "url": "https://quizonator.com/en/",
+    "reachable": true,
+    "primaryPurpose": "ai-answers",
+    "claimsUndetectable": true,
+    "pricing": {
+      "summary": "Free ($0, 20 answers/mo, no card); PRO $14.99/mo (or $74.95/6mo = $12.50/mo, 300 answers/mo); PRO+ $28.99/mo (or $144.95/6mo = $24.16/mo, 1,200 answers/mo); 7-day refund if <20 answers used.",
+      "plans": [
+        {
+          "name": "FREE",
+          "price": 0,
+          "currency": "USD",
+          "period": "free",
+          "notes": "20 answers to start + 20 answers/month, Default mode, Kahoot in extension (solo), no card required."
+        },
+        {
+          "name": "PRO (Monthly)",
+          "price": 14.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "300 answers/month, all 4 modes (Default, Instant, Minimal UI, Snapshot), Live Kahoot on iOS (5 answers/question), Polish pricing 34.99 PLN/mo."
+        },
+        {
+          "name": "PRO (6 months)",
+          "price": 74.95,
+          "currency": "USD",
+          "period": "6 months",
+          "notes": "Listed price: $74.95 ($12.50/mo). 1,800 answers upfront for 6 months (pay for 5 months, save $14.99)."
+        },
+        {
+          "name": "PRO+ (Monthly)",
+          "price": 28.99,
+          "currency": "USD",
+          "period": "month",
+          "notes": "1,200 answers/month, personal notes & PDF library, practice & self-tests in web dashboard, Polish pricing 69.99 PLN/mo."
+        },
+        {
+          "name": "PRO+ (6 months)",
+          "price": 144.95,
+          "currency": "USD",
+          "period": "6 months",
+          "notes": "Listed price: $144.95 ($24.16/mo). 7,200 answers upfront for 6 months (pay for 5 months, save $28.99)."
+        }
+      ],
+      "freeTier": "20 answers to start + 20 answers every month, no card required",
+      "trial": null
+    },
+    "platformsStated": [
+      "Kahoot",
+      "Quizizz (Wayground)",
+      "Blooket",
+      "Google Forms",
+      "Canvas LMS (Classic Quizzes)",
+      "Moodle",
+      "Microsoft Forms",
+      "Socrative",
+      "Testportal",
+      "Szkoła w Chmurze"
+    ],
+    "featuresStated": [
+      "Auto-reads quiz pages and displays answer + explanation",
+      "4 modes: Default, Instant, Minimal UI, and Snapshot (screen area capture)",
+      "Auto-fill and submit answers where supported",
+      "Live Kahoot camera-pointing mode on iOS (beta) & solo Kahoot in Chrome",
+      "Personal notes/PDF reference library & practice tests (PRO+)",
+      "Cross-platform sync across Chrome, Android, and iOS"
+    ],
+    "extensionStoreUrl": "https://chromewebstore.google.com/detail/quizonator/dhphdklknbffcgahfpiipdmafoncnndi",
+    "browsersStated": [
+      "Chrome"
+    ],
+    "lastChecked": "2026-11-27",
+    "sources": [
+      "https://quizonator.com",
+      "https://quizonator.com/en/",
+      "https://quizonator.com/en/pricing",
+      "https://quizonator.com/cennik",
+      "https://quizonator.com/en/platforms",
+      "https://chromewebstore.google.com/detail/quizonator/dhphdklknbffcgahfpiipdmafoncnndi?hl=en"
+    ],
+    "confidence": "high",
+    "notes": "Fully verified on quizonator.com/en/, /en/pricing (both Monthly and 6-month billing), /cennik, /en/platforms, and CWS."
+  }
+]

@@ -1,7 +1,6 @@
-import LeanCompare, { leanCompareMetadata } from "@/components/compare/LeanCompare";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = leanCompareMetadata("cheatpal-vs-examghost");
-
+// cheatpal.com is a parked for-sale domain with no active extension. Consolidate to /compare.
 export default function Page() {
-    return <LeanCompare slug="cheatpal-vs-examghost" />;
+    permanentRedirect("/compare");
 }

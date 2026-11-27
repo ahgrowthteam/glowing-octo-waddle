@@ -1,7 +1,6 @@
-import LeanCompare, { leanCompareMetadata } from "@/components/compare/LeanCompare";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = leanCompareMetadata("canvasanswers-vs-examghost");
-
+// canvasanswers.com redirects downloads to SmartSolve (smartsolve.ai). Consolidate with a permanent redirect.
 export default function Page() {
-    return <LeanCompare slug="canvasanswers-vs-examghost" />;
+    permanentRedirect("/smartsolve-vs-examghost");
 }

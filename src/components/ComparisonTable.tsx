@@ -4,8 +4,8 @@ import { CheckCircle2, XCircle, AlertTriangle } from 'lucide-react';
 
 export default function ComparisonTable() {
     const tableRows = [
-        { feature: "Shadow DOM Stealth", examghost: true, cheatmate: false, quietly: false, testbro: false },
-        { feature: "100% Canvas Focus Immunity", examghost: true, cheatmate: 'warn', quietly: false, testbro: 'warn' },
+        { feature: "Shadow DOM UI Isolation", examghost: true, cheatmate: false, quietly: false, testbro: false },
+        { feature: "In-Page Study Overlay", examghost: true, cheatmate: 'warn', quietly: false, testbro: 'warn' },
         { feature: "Off-screen Rendering", examghost: true, cheatmate: false, quietly: false, testbro: false },
         { feature: "Graph Analysis", examghost: true, cheatmate: true, quietly: false, testbro: false },
     ];
@@ -30,8 +30,8 @@ export default function ComparisonTable() {
                         <span className="w-1.5 h-1.5 rounded-full bg-ink" />
                         The Head-to-Head Comparison
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-ink tracking-tight mt-1">Don't get caught with outdated tools</h2>
-                    <p className="text-ink/60 text-base max-w-xl mx-auto mt-2">See why students drop detectable extensions for ExamGhost's client-side Shadow DOM engine.</p>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-ink tracking-tight mt-1">Compare study extensions side by side</h2>
+                    <p className="text-ink/60 text-base max-w-xl mx-auto mt-2">See how ExamGhost&apos;s isolated Shadow DOM interface, screenshot OCR, and multi-LMS support compare with alternatives.</p>
                 </motion.div>
 
                 <motion.div

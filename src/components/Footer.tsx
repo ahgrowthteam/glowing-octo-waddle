@@ -2,9 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import { Star } from 'lucide-react';
 import { FaChrome, FaDiscord } from 'react-icons/fa';
-import { allFacts, isIndexable } from '@/data/competitor-facts';
+import { factsFor, isIndexable } from '@/data/competitor-facts';
 import { PLATFORMS_DATA } from '@/data/platforms';
 import { DISCORD_URL, INSTALL_URL } from '@/components/home/config';
+
+const CURATED_COMPARE_SLUGS = [
+    'gauth-vs-examghost',
+    'coursehero-vs-examghost',
+    'knowt-vs-examghost',
+    'solvely-vs-examghost',
+    'coursology-vs-examghost',
+    'examripper-vs-examghost',
+    'canvasquiz-vs-examghost',
+];
 
 export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
     return (
@@ -118,9 +128,11 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean } = {}) 
                     <nav aria-label="Compare" className="lg:col-span-3">
                         <h3 className="font-display font-semibold text-[13px] text-ink mb-3.5">Compare</h3>
                         <ul className="space-y-1 text-sm text-ink-secondary">
-                            {allFacts().filter(isIndexable).slice(0, 7).map((f) => (
-                                <li key={f.slug}><Link prefetch={false} href={`/${f.slug}`} className="inline-block py-1.5 hover:text-ink hover:underline underline-offset-4 decoration-ink/25 transition-colors">{f.name} vs ExamGhost</Link></li>
-                            ))}
+                            {CURATED_COMPARE_SLUGS.map((s) => factsFor(s))
+                                .filter((f): f is NonNullable<typeof f> => isIndexable(f))
+                                .map((f) => (
+                                    <li key={f.slug}><Link prefetch={false} href={`/${f.slug}`} className="inline-block py-1.5 hover:text-ink hover:underline underline-offset-4 decoration-ink/25 transition-colors">{f.name} vs ExamGhost</Link></li>
+                                ))}
                             <li><Link prefetch={false} href="/compare" className="inline-block py-1.5 font-medium text-ink underline underline-offset-4 decoration-ink/25 hover:decoration-ink">All comparisons</Link></li>
                         </ul>
                     </nav>

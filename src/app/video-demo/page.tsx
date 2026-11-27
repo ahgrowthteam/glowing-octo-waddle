@@ -34,8 +34,9 @@ const VARIANTS = ["solve", "snap", "scan", "study"] as const;
 
 export default function VideoDemoPage() {
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="relative pt-12 sm:pt-16 pb-14 sm:pb-20 overflow-hidden">
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -118,8 +119,9 @@ export default function VideoDemoPage() {
                 </div>
             </section>
 
+            </main>
             <FinalCta />
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

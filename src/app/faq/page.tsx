@@ -36,9 +36,10 @@ const jsonLd = {
 
 export default function FAQPage() {
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="pt-10 sm:pt-14 pb-8 sm:pb-12 border-b border-ink/[0.08]">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -160,8 +161,9 @@ export default function FAQPage() {
                 </div>
             </section>
 
+            </main>
             <FinalCta />
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

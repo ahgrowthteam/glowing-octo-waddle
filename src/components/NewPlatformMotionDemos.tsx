@@ -395,7 +395,7 @@ export function WebWorkMotionDemo() {
           <p className="text-sky-300 font-bold">Theoretical Rigor & AST Grammar:</p>
           <p>• Continuous integrand e^(-r²) on compact domain confirms Fubini applicability.</p>
           <p>• PGML parser recognizes standard transcendental tokens: pi, exp(), sqrt(), sin().</p>
-          <p>• Relative tolerance (tolType =&gt; 'relative', tol =&gt; 0.001) automatically satisfied by exact closed form.</p>
+          <p>• Relative tolerance (tolType =&gt; &apos;relative&apos;, tol =&gt; 0.001) automatically satisfied by exact closed form.</p>
         </div>
       ),
       getCursor: (progress: number): CursorState => {

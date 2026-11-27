@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCta from "@/components/home/FinalCta";
 import CompareTable, { type CompareRow } from "@/components/compare/CompareTable";
-import { EXAMGHOST, allFacts, monthlyFrom } from "@/data/competitor-facts";
+import { EXAMGHOST, allFacts, isIndexable, monthlyFrom } from "@/data/competitor-facts";
 import { PLATFORMS_DATA } from "@/data/platforms";
 
 const URL = "https://www.examghost.com/compare";
@@ -25,7 +25,7 @@ function fmtDate(iso: string) {
 }
 
 export default function ComparePage() {
-    const facts = allFacts();
+    const facts = allFacts().filter((f) => isIndexable(f));
     const rows: CompareRow[] = facts.map((f) => ({
         slug: f.slug,
         name: f.name,
@@ -115,9 +115,10 @@ export default function ComparePage() {
     };
 
     return (
-        <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+        <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
+            <main id="main-content" className="flex-1">
 
             <section className="pt-12 sm:pt-16 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -218,8 +219,9 @@ export default function ComparePage() {
                 </div>
             </section>
 
+            </main>
             <FinalCta />
             <Footer hideCta />
-        </main>
+        </div>
     );
 }

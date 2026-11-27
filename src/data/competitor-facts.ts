@@ -14,6 +14,8 @@ export interface Plan {
     currency: string;
     period: string | null; // "week" | "month" | "year" | "once" | null
     notes: string | null;
+    /** True when a legacy tier remains in static vendor DOM (e.g. CSS display:none) and is excluded from active pricing. */
+    omitted?: boolean;
 }
 
 export interface CompetitorFact {
@@ -24,6 +26,8 @@ export interface CompetitorFact {
     purpose: Purpose;
     /** false = we could not read the vendor's own site, so the page shows what we know and is noindex. */
     verified: boolean;
+    /** Explicit indexation flag from M3 indexation-plan.json (42 index / 27 noindex / 6 distinct consolidate). */
+    indexable: boolean;
     priceSummary: string | null;
     plans: Plan[];
     freeTier: string | null;
@@ -48,14 +52,19 @@ export function allFacts(): CompetitorFact[] {
     return Object.values(FACTS).sort((a, b) => a.name.localeCompare(b.name));
 }
 
-/** Lowest monthly-equivalent price (USD) among PAID recurring plans (free plans don't count), for sorting. Null if unknown. */
+/** Lowest monthly-equivalent price (USD) among active PAID recurring plans (free and omitted/legacy plans don't count), for sorting. Null if unknown. */
 export function monthlyFrom(f: CompetitorFact): number | null {
     const vals: number[] = [];
     for (const p of f.plans) {
+        if (p.omitted || /\(omitted\b/i.test(p.name)) continue;
         if (p.price == null || p.price <= 0 || p.currency !== "USD") continue;
-        if (p.period === "month") vals.push(p.price);
-        else if (p.period === "week" || p.period === "7 days") vals.push(p.price * 4.33);
-        else if (p.period === "year") vals.push(p.price / 12);
+        const period = (p.period ?? "").toLowerCase().trim();
+        if (period === "month" || period.startsWith("month (")) vals.push(p.price);
+        else if (period === "week" || period === "7 days") vals.push(p.price * 4.33);
+        else if (period === "quarter" || period === "3 months") vals.push(p.price / 3);
+        else if (period === "4 months" || period === "semester") vals.push(p.price / 4);
+        else if (period === "6 months") vals.push(p.price / 6);
+        else if (period === "year") vals.push(p.price / 12);
     }
     return vals.length ? Math.min(...vals) : null;
 }
@@ -83,5 +92,5 @@ export const EXAMGHOST = {
  * but stay noindex so the site doesn't rank for those searches.
  */
 export function isIndexable(f: CompetitorFact | undefined): boolean {
-    return !!f && f.verified && f.purpose !== "activity-hiding";
+    return !!f && f.verified && f.indexable === true && f.purpose !== "activity-hiding";
 }

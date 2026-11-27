@@ -2,19 +2,18 @@ import { allFacts, isIndexable } from "@/data/competitor-facts";
 import { PLATFORMS_DATA } from "@/data/platforms";
 
 // Generated so the page lists can't go stale: platform pages come from src/data/platforms.ts and the
-// comparison pages from the verified dataset plus the legacy competitor list.
+// comparison pages from the indexable verified dataset.
 export const dynamic = "force-static";
 
 const BASE = "https://www.examghost.com";
 
 export function GET() {
-    const verified = allFacts();
-    const lastChecked = verified.reduce((m, f) => (f.lastChecked > m ? f.lastChecked : m), "2026-01-01");
+    const indexable = allFacts().filter((f) => isIndexable(f));
+    const lastChecked = indexable.reduce((m, f) => (f.lastChecked > m ? f.lastChecked : m), "2026-01-01");
 
     const platformLines = PLATFORMS_DATA.map((p) => `- [${p.name}](${BASE}/${p.slug}): ${p.kind}`).join("\n");
 
-    const compareLines = verified
-        .filter((f) => isIndexable(f))
+    const compareLines = indexable
         .map((f) => `- [${f.name} vs ExamGhost](${BASE}/${f.slug})`)
         .join("\n");
 
@@ -45,7 +44,7 @@ Last updated: ${lastChecked}
 - [Features](${BASE}/features): Solver modes, screenshot snip, page scan, subjects and answer delivery
 - [FAQ](${BASE}/faq): Common questions on setup, pricing, platforms and refunds
 - [Pricing (Markdown)](${BASE}/pricing.md): Plan table with prices and dates
-- [Compare](${BASE}/compare): Master comparison of ${verified.length} quiz and homework tools with prices from each vendor's own site (last checked ${lastChecked})
+- [Compare](${BASE}/compare): Master comparison of ${indexable.length} quiz and homework tools with prices from each vendor's own site (last checked ${lastChecked})
 - [Free Canvas demo](${BASE}/canvas-quiz-solver-free-demo): Try the solver on a sample Canvas-style quiz in the browser
 - [About](${BASE}/about): Who builds ExamGhost (FoundryOne LLC)
 - [Contact](${BASE}/contact): Support and contact details

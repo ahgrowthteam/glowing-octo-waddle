@@ -13,6 +13,46 @@ const nextConfig = {
                 destination: '/canvas-quiz-solver-free-demo',
                 permanent: true,
             },
+            {
+                source: '/classlogy-vs-examghost',
+                destination: '/classology-vs-examghost',
+                permanent: true,
+            },
+            {
+                source: '/collegetools-vs-examghost',
+                destination: '/mindko-vs-examghost',
+                permanent: true,
+            },
+            {
+                source: '/canvasanswers-vs-examghost',
+                destination: '/smartsolve-vs-examghost',
+                permanent: true,
+            },
+            {
+                source: '/cheatpal-vs-examghost',
+                destination: '/compare',
+                permanent: true,
+            },
+            {
+                source: '/mylabsolver-vs-examghost',
+                destination: '/compare',
+                permanent: true,
+            },
+            {
+                source: '/quizper-vs-examghost',
+                destination: '/compare',
+                permanent: true,
+            },
+            {
+                source: '/studybotpro-vs-examghost',
+                destination: '/compare',
+                permanent: true,
+            },
+            {
+                source: '/compare-canvas-hack-extensions',
+                destination: '/compare',
+                permanent: true,
+            },
         ];
     },
     async headers() {

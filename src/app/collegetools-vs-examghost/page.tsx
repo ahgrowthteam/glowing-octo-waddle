@@ -1,7 +1,6 @@
-import LeanCompare, { leanCompareMetadata } from "@/components/compare/LeanCompare";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = leanCompareMetadata("collegetools-vs-examghost");
-
+// collegetools.io redirects 301 to mindko.com (rebrand). Consolidate with a permanent redirect.
 export default function Page() {
-    return <LeanCompare slug="collegetools-vs-examghost" />;
+    permanentRedirect("/mindko-vs-examghost");
 }

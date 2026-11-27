@@ -87,9 +87,10 @@ const link = "font-medium text-ink underline underline-offset-4 decoration-ink/3
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-cream text-ink page-glow">
+    <div className="min-h-screen bg-cream text-ink page-glow flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
+      <main id="main-content" className="flex-1">
 
       <section className="pt-10 sm:pt-14 pb-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -183,8 +184,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      </main>
       <FinalCta />
       <Footer hideCta />
-    </main>
+    </div>
   );
 }
